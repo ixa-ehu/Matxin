@@ -1,0 +1,20 @@
+===================
+*     README      *
+===================
+
+1. Install
+
+	a. Requirements:
+	  - i686, ppc, SPARC, etc.
+		- g++ >= 3.x
+		- freeling 2.0 
+		- lttoolbox 2.0
+		- libxml2 (last version)
+		- gnu make
+
+	b. Building & installing
+		$ ./configure
+		$ make
+		# make install
+
+For build options, please see the INSTALL file.
