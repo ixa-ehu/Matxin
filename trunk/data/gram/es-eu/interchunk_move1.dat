@@ -1,0 +1,14 @@
+prep!=''/prep	type=~'emen'/prep	up	overwrite
+prep!=''/casref	type=~'emen'/casref	up	overwrite
+prep!=''/casalloc	type=~'emen'/casalloc	up	overwrite
+
+spost!=''/spost	si='dobj'/cas	down	overwrite
+spost!=''/spostref	si='dobj'/casref	down	overwrite
+spost!=''/spostalloc	si='dobj'/casalloc	down	overwrite
+
+vpost!=''/vpost	type='adi-kat'/rel	down	concat
+vpost!=''/vpostref	type='adi-kat'/relref	down	concat
+vpost!=''/vpostalloc	type='adi-kat'/relalloc	down	concat
+
+type='ez'/'adi-kat-ez'	type='adi-kat'/type	up	overwrite
+type='ez'/'adi-pas-ez'	type='adi-pas'/type	up	overwrite

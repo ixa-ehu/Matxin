@@ -1,0 +1,503 @@
+# Format:
+# prepEs	caseEU		condition	    exclusion  ## comment
+#
+# condition:   (baldintza betetzen bada, itzulpen hori hartu da )
+#   chunk.attrib='value'
+#
+#   chunk:   
+#     my	= the current chunk
+#     parent	= the parent of the current chunk
+#
+# exclusion
+#   -  : ez ba du baldintza betetzen, itzulpen hori ez da kontutan hartuko
+#   + : baldintza ez bada betetzen,hurrengo urratsean itzulpen hori kontutan hartuko da
+
+
+# prepEs	caseEU		 condition	    exclusion  ## comment
+
+# Not preposition
+#####################
+
+#-     [ZERO]	my.type!=('is' || 'adjs' || 'post-izls' || 'post-sint' || 'zki' || 'emen' || 'emen-post' || 'emen-is' || 'emen-adjs' || 'mend-p' || 'mend' || 'adi-ger-mend' || 'erlt-sint' || 'erlt' || 'adi-inf' || 'adi-ger' || 'adi-par' || 'morf-pron' || 'adi-inf' || 'post-sint-inf')   -
+-     [ZERO]    my.type='p-koma'	-   # Puntuazio ikurrak ez dute kasurik behar...
+-     [ZERO]    my.type='p-ez-koma'	-   # Puntuazio ikurrak ez dute kasurik behar...
+-     [ZERO]    my.type='p-buka'	-   # Puntuazio ikurrak ez dute kasurik behar...
+-     [ZERO]    my.type='adi-par'	-   # partizipioa ez da deklinatzen.
+-     [ZERO]    my.type='adbs'		-   # adberbioak ez dira deklinatzen.
+-     [INE]     (my.type='data' || my.headsem=~'[DEN+]') && parent.headlem!='izan'   -   # el cuatro de julio, uztailaren lauan    ##Bestelako osagarriak, datak ##denbora adierazten duten hitzak: arratsaldean.
+-     [ABS]	parent.type='adi-pas'	-   # El libro ha sido comprado: liburua erosi du
+-     [ABS]	my.si='dobj'		-   # he comprado un libro, nik liburua erosi dut
+-     [ABS]	my.si='att'		-   # yo soy guapo: polita naiz
+-     [ABS]	my.si!='subj'		-   # Subjektua ez denean...
+-     [ERG]	-			+   # la chica le ha dado el libro, neskak liburua eman dio   ##DU aditza
+-     [ABS]	-			+   # Garikoitz se ha enfadado, Garikoitz haserretu egin da   ##DA aditza
+
+
+# Sinple prepositions
+#####################
+
+# sinple unambiguous
+
+bajo		pe[ATZ][INE]		-	    +			
+contra		[GEN]++kontra		-	    +
+desde		[ABL]			-	    +			
+dirección	[ABZ]			-	    +
+entre		[GEN]++artean/INE	-	      +	   ## Colocala entre las dos mesas, argia bi mahaien artean ipin ezazu
+
+# sinple ambiguous
+
+a		+[AMM][ADIZE]+[DEK][ALA]	my.headpos='[ADI][SIN]'	-	##han ido a comprar patatas
+a		[INE]	my.headpos='[Zm]' || my.headsem=~'[DEN+]'	    -	   ## lo han vendido a 3 euros, 3 eurotan saldu dute	##ez-bizidun, prezioa
+a		[DAT]	-		    +	   ## le he dado el libro a Jon, Joni eman diot liburua	##zehar objektua + biziduna
+a		[ABS]	-	    	    +	   ## he visto a Jon, Jon ikusi dut	##objektu zuzena + biziduna
+a		[ALA]	my.si='cc'	    +	   ## he ido a casa, etxera joan naiz;	##ez-bizidun, lekua + mugimenduzko aditza;
+ante		[GEN]++aldean/INE  parent.headlem='izan'  -	## Cualquier casa es pequeña ante la suya, edozein etxe da txikia harenaren aldean ## konparaketa... ##'ser' aditza???; aurretik ADJ. Agian kendu???
+ante		[GEN]++aurrean/INE	-	    +      ## se sentó ante el rey, erregearen aurrean eseri zen	##aditz estatikoak
+ante		[GEN]++aurrera/ALA	-	    +      ## lo llevaron ante el rey, erregearen aurrera eraman zuten##mugimenduzko aditzak
+con		+[AMM][PART]+[ERL][MEN][MOD]	my.headpos='[ADI][SIN]'	-	##cree que con hacer eso ya lo tiene todo hecho.
+con		[SOZ]			-	    +
+de		+[AMM][ADIZE]+[DEK][GEL]	(my.headpos='[ADI][SIN]' && parent.headpos='[IZE][ARR]')	-	##la petición de ilegalizar... = legez kanpo uzteko eskaera.
+de		+[AMM][PART]+[ASP][BURU]++izatera	my.headpos='[ADI][SIN]'	-      ##de saberlo antes, no hubiese venido.
+de		[INS]	my.headpos='[ADJ]' || my.headsem=~'[DEN+]'	-	## || ( my.headpos='[IZE][ARR]' && my.mi='[MG]' ) Halakoak itzultzeko erabili daiteke, baina arazoak ematen ditu zenbakiak daramatzaten sintagmekin ('la muerte de 45 inmigrantes'): lo están pintando de verde, berdez pintatzen ari dira;## osasunez hobeto nago##adj eta izen abstraktoa, determinante gabe  ## arratsaldez
+de		[INS]+[GEL]		   my.headsem=~'[GAI+]'		-	## egurrezko
+de		[GEN]	my.headsem=~'[BIZ+]' || my headpos='[IZE][IZB]'	    +					     ## la casa de Juan, Jon-en etxea
+de		[GEL]	parent.type!='adi-kat' && my.headsem=~'[BIZ-]' || parent.type='adi-kat' && parent.headlem='izan' || parent.type!='adi-kat' && ( my.headpos='[Z]' || my.leafpos='[Z]' || my.headpos='[W]' )   +	## la casa del monte, mendiko etxea 
+de		[ABL]			-	      +    ## no sale de casa, ez da etxetik irteten##abiapuntua denean, mugim. aditza
+durante		[INS]	my.headsem=~'[DEN+]'	      -	   ## durante un mes, hilabetez
+durante		[INE]		        -	      +	   ## lo hiciero durante el invierno, neguan egin zuten ## durante 1957	##urteekin
+en		[INS]	my.headsem=~'[GLU+]' || my.headsem=~'[HZK+]' 	      -	   ## gailuekin: trenez, kotxez,...; eta hizkuntzekin: euskaraz, espainieraz,...
+en		[INE]			-	    +	   ## está en Donosti, Donostian dago	##
+hacia		[ABS]++aldera/ALA	my.headpos='[W]' -	   ## hacia las diez, hamarrak aldera	##orduak, datak (W)
+hacia		[ABZ]			-	      +	   ## El niño va hacia su madre: umea bere amaganantz doa	##bizidunekin
+hasta		+[AMM][PART]+[ASP][BURU]++arte	my.headpos='[ADI][SIN]'	-      ##hasta llegar, todo era muy bonito.
+hasta		[ABS]++arte		my.headpos='[W]' -	   ## hasta las doce, hamabiak arte; noiz arte	##denbora
+hasta		[ABU]			-	      +	   ## hasta donostia, Donostiaraino		##lekuak
+para		+[AMM][ADIZE]+[DEK][GEL]	my.headpos='[ADI][SIN]'	-	##he venido para comprarlo.
+para		[DES]			-	      +	   ## esto es para el niño, haurrarentzat da	##bizidunak
+para		[ABZ]			-	      +	   ## Vamos para la escuela: eskolarantz goaz	##lekuak
+por		+[AMM][ADIZE]+[DEK][GEL]	my.headpos='[ADI][SIN]'	-	##he venido por verle.
+por		[ERG]	parent.type='adi-pas'	      -	   ## ha sido firmado por el alcalde, alkateak sinatua izan da	##pasiba
+por		[GEL]	my.headpos='[ADI]'	      -	   ## está por hacer, egiteko dago	##por + infinitibo!!!!!!!!!!!????????
+por		[GEL]	my.headsem=~'[NEU+]'	      -	   ## por kilómetro.
+por		[INE]	my.headsem=~'[DEN+]'	      -	   ## por la tarde, arratsaldean. 
+por		[INS]	my.headsem=~'[KOM+]'	      -	   ## komunikazioa: por telefono, telefonoz; por radio, irratiz,...
+por		[MOT]			-	      +	   ## lo he hecho por tí, zuregatik egin dut	##bizidunak
+por		[ABL]			-	      +	   ## vinieron por otro camino, beste bide batetik etorri ziren	##
+por		[GEL]			-	      +	   ## helburuzkoa
+por		[GEN]++ordez		-	      +	   ## vete tú por mi, joan zaitez nire ordez	##
+por		[GEN]++alde		-	      +	   ## estoy por la paz, bakearen alde nago	##
+sin		+[AMM][PART]+[ASP][BURU]++gabe	my.headpos='[ADI][SIN]'	-      ##lo hacen sin pensar
+sin		[PAR]++gabe		-	    +	
+sobre		[ABS]++inguru		my.headpos='[W]' -	   ## sobre las diez, hamarrak inguru	##denbora
+sobre		[GEN]++gainetik/ABL	-	      +	   ## pasó sobre el puente, zubi gainetik pasa zen	##
+sobre		[GEN]++gainean/INE	-	      +	   ## está sobre la mesa, mahai gainean dago	##
+tras		[GEN]++ondoren		my.type='data' || my.headsem=~'[DEN+]'	+	   ## tras el invierno, neguaren ondoren	##denbora adierazten duten hitzak
+tras		[GEN]++atzera/ALA	-	      +	   ## llévalo tras la casa, etxe atzera eraman ezazu	##
+tras		[GEN]++atzean/INE	-	      +	   ## está tras la casa, etxe atzean dago	##
+
+
+# Multiword prepositions
+########################
+
+# multiword unambiguous
+
+a_base_de       [GEN]++bidez            -       +
+a_beneficio_de	[GEN]++alde		-	+
+a_cambio_de     [GEN]++truke            -       +
+a_causa_de      [GEN]++ondorioz         -       +
+a_cerca_de      [ZERO]++inguru          -       +
+a_comienzos_de  [GEN]++hasieran         -       +
+a_condición_de  +[AMM][ADIZE]+[DEK][GEL]++baldintzapean	my.headpos='[ADI][SIN]'          -
+a_consecuencia_de       [GEN]++ondorioz         -       +
+a_continuación_de       [GEN]++ondoren          -       +
+a_costa_de	[GEN]++kontura		-	+
+a_cuenta_de     [GEN]++kontura          -       +
+a_disposición_de	[GEN]++eskura	-	+
+a_distinción_de		[SOZ]++bereizteko               -       +
+a_dos_dedos_de  [ABL]++oso_hurbil               -       +
+a_eso_de        [ABS]++aldean           -       +
+a_espaldas_de   [GEN]++isilpean         -       +
+a_este_lado_de  [INS]++honaindian               -       +
+a_excepción_de  [ABS]++izan_ezik                -       +
+a_expensas_de   [GEN]++bizkar           -       +
+a_falta_de	[PAR]++ezean	-	+
+a_favor_de      [GEN]++alde             -       +
+a_fines_de      [GEN]++bukaeran         -       +
+a_fuerza_de     [GEN]++poderioz         -       +
+a_guisa_de      [ZERO]++gisa            -       +
+a_imitación_de	[GEN]++antzera		-	+
+a_instancia_de	[ERG]++eskatuta		-	+
+a_instancias_de	[ERG]++eskatuta		-	+
+a_juzgar_por    [GEN]++arabera          -       +
+a_la_altura_de	[GEN]++parean		-	+
+a_la_atención_de	[DES]		-	+
+a_la_busca_de   [GEN]++bila             -       +
+a_la_espera_de  [GEN]++zain             -       +
+a_la_luz_de	[GEN]++argitan		-	+
+a_la_manera_de  [GEN]++erara            -       +
+a_la_salud_de	[GEN]++osasunerako	-	+
+a_la_sombra_de  [GEN]++itzalean         -       +
+a_la_usanza_de  [GEN]++usadioan         -       +
+a_la_vuelta_de  [ABL]++bueltan          -       +
+a_la_zona_de    [GEL]++partera          -       +
+a_lo_ancho_de   [INE]++zehar            -       +
+a_lo_largo_de   [INE]++zehar            -       +
+a_lo_largo_y_ancho_de   [INE]++zehar            -       +
+a_manera_de     [ZERO]++gisa            -       +
+a_mediados_de   [GEN]++erdialdean               -       +
+a_merced_de	[GEN]++esku			-	+
+a_mitad_de      [GEN]++erdialdean               -       +
+a_modo_de       [ZERO]++gisa            -       +
+a_nombre_de     [GEN]++izenean          -       +
+a_orillas_de	[GEN]++ertzean	-	+
+a_partir_de     [ABL]++aurrera          -       +
+a_petición_de   [ERG]++eskatuta         -       +
+a_presencia_de	[GEN]++aurrera		-	+
+a_principios_de		[GEN]++hasieran         -       +
+a_propósito_de  [GEN]++ildotik          -       +
+a_prueba_de     [GEN]++kontra_babestua          -       +
+a_punto_de      +[AMM][ADIZE]+[DEK][GEL]++zorian	my.headpos='[ADI][SIN]'          -
+a_raíz_de       [INS]++geroztik         -       +
+a_ras_de        [GEN]++arrasean         -       +
+a_retaguardia_de        [GEN]++atzealdean               -       +
+a_riesgo_de     +[AMM][ADIZE]+[DEK][GEL]++arriskuaz	my.headpos='[ADI][SIN]'          -
+a_ruego_de	[GEN]++eskariz			-	+
+a_semejanza_de  [GEN]++antzera          -       +
+a_súplica_de    [GEN]++eskariz          -       +
+a_suplicación_de        [GEN]++eskariz          -       +
+a_tenor_de      [GEN]++arabera          -       +
+a_título_de     [ZERO]++gisa            -       +
+a_todo_lo_largo_de      [INE]++zehar            -       +
+a_un_lado_de    [GEN]++alde_batera              -       +
+a_usanza_de     [GEN]++usadioan         -       +
+a_vueltas_con	[SOZ]++bueltaka		-	+
+acerca_de       [DAT]++buruz            -       +
+además_de       [INS]++gain             -       +
+acompañado_de	[SOZ]			-	+
+al_abrigo_de    [GEN]++babesean         -       +
+al_acceso_de	[GEN]++eskura		    -	    +
+al_alcance_de	[GEN]++eskueran		    -	    +
+al_amparo_de	[GEN]++babesean		    -	    +
+al_arrimo_de	[GEN]++arrimuan		    -	    +
+al_cabo_de      [GEN]++buruan           -       +
+al_calor_de     [GEN]++babesean         -       +
+al_cargo_de     [GEN]++kontura          -       +
+al_centro_de    [GEN]++erdira           -       +
+al_conjuro_de   [GEN]++kariaz           -       +
+al_cuidado_de	[GEN]++kargu		-	+
+al_decir_de     [GEN]++arabera          -       +
+al_derredor_de  [GEN]++inguruan         -       +
+al_hilo_de	[GEN]++harian		    -	    +
+al_filo_de      [ABS]++aldera           -       +
+al_frente_de    [GEN]++buruan           -       +
+al_interior_de  [GEN]++barnera          -       +
+al_margen_de	[INS]++at		-	+
+al_modo_de      [GEN]++erara            -       +
+al_objeto_de    +[AMM][ADIZE]+[DEK][GEL]++asmoz	my.headpos='[ADI][SIN]'          -
+al_olor_de      [GEN]++usainean         -       +
+al_par_de	[GEN]++parean		-	+
+al_parecer_de	[GEN]++iritziz		-	+
+al_sentir_de	[GEN]++ustez		-	+
+al_servicio_de  [GEN]++zerbitzura               -       +
+al_socaire_de   [GEN]++babesean         -       +
+al_tenor_de     [GEN]++arabera          -       +
+allende_de      [INS]++bestalde         -       +
+amén_de		[INS]++gain			-	+
+anterior_a      [ABS]++baino_lehen              -       +
+antes_de        [ABS]++baino_lehen              -       +
+aparte_de       [INS]++gain             -       +
+arriba_de       [GEN]++gainean          -       +
+bajo_el_poder_de        [GEN]++mendean          -       +
+bajo_la_condición_de	+[AMM][ADIZE]+[DEK][GEL]++baldintzapean	my.headpos='[ADI][SIN]'          -
+bajo_la_responsabilidad_de      [GEN]++esku             -       +
+bajo_pena_de	[GEL]++zigorra_ezarriko_da_bestela	-	+
+camino_de	[GEL]++bidean	-	+
+cara_a		[DAT]++begira	-	+
+como_cosa_de	[GEN]++bat	-	+
+como_muestra_de	[GEN]++erakusgarri		-	+
+como_para	+[AMM][ADIZE]+[DEK][GEL]++moduan	my.headpos='[ADI][SIN]'          -
+con_ánimo_de	+[AMM][ADIZE]+[DEK][GEL]++gogoz	my.headpos='[ADI][SIN]'          -
+con_anterioridad_a	[GEN]++aurretik			-	+
+con_arreglo_a	[GEN]++arabera				-	+
+con_destino_a	[ALA]++doan	-	+
+con_honores_de  [ZERO]++moduko          -       +
+con_independencia_de	[DAT]++kasurik_egin_gabe	-	+
+con_la_condición_de     +[AMM][ADIZE]+[DEK][GEL]++baldintzapean	my.headpos='[ADI][SIN]'          -
+con_lo_que_respecta_a   [ZERO]++dela_eta                -       +
+con_miras_a     +[AMM][ADIZE]+[DEK][GEL]++helburuz	my.headpos='[ADI][SIN]'          -
+con_motivo_de	[GEN]++kariaz			-	+
+con_objeto_de   +[AMM][ADIZE]+[DEK][GEL]++asmoz	my.headpos='[ADI][SIN]'          -
+con_ocasión_de  [GEN]++kariaz           -       +
+con_referencia_a	[DAT]++dagokionez	-	+
+con_relación_a  [DAT]++buruz            -       +
+con_respecto_a  [DAT]++buruz            -       +
+con_respecto_de		[DAT]++buruz            -       +
+con_valor_de    [GEN]++balioarekin              -       +
+conforme_a      [GEN]++arabera          -       +
+de_acuerdo_con  [GEN]++arabera          -       +
+de_aquí_a	[GEN]++buruan		-	+
+de_allí_a	[GEN]++buruan		-	+
+de_cara_a       [DAT]++begira           -       +
+de_conformidad_con	[GEN]++arabera	-	+
+de_cuenta_de	[GEN]++kontura		-	+
+de_la_mano_de   [GEN]++eskutik          -       +
+de_parte_de	[GEN]++partetik		-	+
+del_poder_de    [GEN]++menetik          -       +
+después_de      [GEN]++ondoren         -       +
+dirección_a     [ABZ]           -       +
+en_alabanza_de	[GEN]++goresgarri	-	+
+en_aras_de      [GEN]++onerako          -       +
+en_atención_a   [ABS]++kontuan_hartuta          -       +
+en_ausencia_de  [PAR]++gabe             -       +
+en_beneficio_de	[GEN]++alde		-	+
+en_bien_de	[GEN]++onerako		-	+
+en_busca_de     [GEN]++bila            -       +
+en_calidad_de   [ZERO]++gisa            -       +
+en_cambio_de    [GEN]++truke            -       +
+en_caso_de      [INS]++gero	 my.headpos='[ADI][SIN]'          +
+en_compañía_de  [SOZ]           -       +
+en_comparación_con      [SOZ]++konparatuz               -       +
+en_compensación_de      [GEN]++aldera           -       +
+en_concepto_de  [ZERO]++gisa            -       +
+en_condiciones_de	+[AMM][ADIZE]+[DEK][GEL]++moduan	my.headpos='[ADI][SIN]'          -
+en_conformidad_con	[GEN]++arabera	-	+
+en_contra_de    [GEN]++aurka            -       +
+en_contra_de_la_voluntad_de	[GEN]++borondatearen_kontra	-	+
+en_cuanto_a	[DAT]++dagokionez	-	+
+en_defecto_de   [PAR]++ezean            -       +
+en_demanda_de   [ZERO]++eske            -       +
+en_derredor_de  [GEN]++inguruan         -       +
+en_dirección_a  [ABZ]           -       +
+en_disposición_de	+[AMM][ADIZE]+[DEK][GEL]++moduan	my.headpos='[ADI][SIN]'          -
+en_el_bien_de	[GEN]++onerako	-	+
+en_el_caso_de	[GEN]++kasuan	-	+
+en_el_centro_de		[GEN]++erdian           -       +
+en_el_curso_de	[INE]	-	+
+en_el_entorno_de        [GEN]++inguruan         -       +
+en_el_espacio_de	[GEN]++buruan		    -	    +
+en_el_interior_de       [GEN]++barnean          -       +
+en_el_otro_lado_de      [INS]++bestaldean               -       +
+en_el_término_de	[GEL]++epean	-		    +
+en_el_plazo_de  [ZERO]++barru           -       +
+en_el_sentir_de	[GEN]++ustez		-	+
+en_espera_de    [GEN]++zain             -       +
+en_evitación_de		[ZERO]++saihestuz               -       +
+en_favor_de     [GEN]++alde             -       +
+en_función_de	[GEN]++arabera		-	+
+en_guisa_de     [ZERO]++gisa            -       +
+en_honor_de     [GEN]++ohoretan         -       +
+en_interés_de	[GEN]++onerako		-	+
+en_la_necesidad_de      [GEN]++beharrean                -       +
+en_la_temporada_de      [ZERO]++partean         -       +
+en_la_zona_de   [GEL]++partean          -       +
+en_las_cercanías_de     [GEN]++inguruan                -       +
+en_las_inmediaciones_de	[GEN]++inguruan			    -	    +
+en_las_proximidades_de  [GEN]++inguruan                -       +
+en_lo_alto_de	    [GEN]++goialdean			    -	    +
+en_lo_que_respecta_a	[GEN]++gainean	-	+
+en_lo_tocante_a	[DAT]++dagokionez	-	+
+en_manos_de     [GEN]++esku             -       +
+en_medio_de     [GEN]++erdian           -       +
+en_memoria_de   [GEN]++oroimenez                -       +
+en_menos_de     [ZERO]++baino_gutxiago          -       +
+en_mitad_de     [GEN]++erdian           -       +
+en_muestra_de	[GEN]++erakusgarri	    -	    +
+en_nombre_de    [GEN]++izenean          -       +
+en_opinión_de	[GEN]++iritziz		-	+
+en_oposición_a  [GEN]++aurka            -       +
+en_pago_de	[INE]++ordainetan	-	+
+en_perjuicio_de	[GEN]++kaltetan		-	+
+en_pos_de       [GEN]++atzetik          -       +
+en_presencia_de	[GEN]++aitzinean	-	+
+en_pro_de       [GEN]++alde             -       +
+en_provecho_de	[GEN]++onerako		-	+
+en_prueba_de    [GEN]++proba_gisa               -       +
+en_recuerdo_de  [GEN]++oroimenez                -       +
+en_relación_a   [DAT]++buruz            -       +
+en_representación_de    [GEN]++izenean          -       +
+en_seguimiento_de	[GEN]++atzetik		-	+
+en_señal_de     [GEN]++adierazgarri             -       +
+en_socorro_de	[GEN]++sokorri		-	+
+en_tiempo_de    [GEN]++garaian          -       +
+en_trueque_de	[GEN]++truke		-	+
+en_un_plazo_de	[GEN]++buruan		-	+
+en_vez_de       [GEN]++ordez            -       +
+en_vías_de      +[AMM][ADIZE]+[DEK][GEL]++bidean	my.headpos='[ADI][SIN]'          -
+en_virtud_de    [DAT]++jarraiki         -       +
+en_vista_de     [ABS]++ikusita          -       +
+encima_de       [GEN]++gainean          -       +
+esperando_a     [GEN]++zain             -       +
+frente_a	[GEN]++aurrean		-	+
+gracias_a       [DAT]++esker            -       +
+hacia_mediados_de       [GEN]++erdialdean               -       +
+hasta_debajo_de	[GEN]++azpiraino	-	+
+igual_a		[GEN]++berdin		-	+
+impropio_de	[DAT]++ez_dagokion	-	+
+inmediatamente_después_de       [ABL]++lekora           -       +
+junto_con       [SOZ]           -       +
+la_mayor_parte_de	[PAR]++gehien	-	+
+merced_a	[DAT]++esker		-	+
+natural_de	[INE]++jaioa		-	+
+no_sin		[INS]			-	+
+para_bien_de	[GEN]++onerako		-	+
+para_el_bien_de	[GEN]++onerako		-	+
+parecido_a      [GEN]++antzeko          -       +
+parte_de	[GEL]++batzuk		-	+
+pletórico_de	[INS]++betea			-			+
+por_al_lado_de  [GEN]++aldamenetik              -       +
+por_bien_de	[GEN]++onerako	-	+
+por_causa_de    [GEN]++ondorioz         -       +
+por_cuenta_de   [GEN]++kontura          -       +
+por_debajo_de   [GEN]++azpitik          -       +
+por_delante_de  [GEN]++aurretik         -       +
+por_dentro_de   [GEN]++barrutik         -       +
+por_detrás_de   [GEN]++atzetik          -       +
+por_el_bien_de	[GEN]++onerako		-	+
+por_el_centro_de        [GEN]++erditik          -       +
+por_el_otro_lado_de     [GEN]++bestaldetik      -       +
+por_encima_de   [GEN]++gainetik         -       +
+por_espacio_de	[INS]			-	+
+por_este_lado_de        [GEN]++alde_honetatik   -       +
+por_exigencias_de	[ERG]++behartuta	-	+
+por_gentileza_de	[ERG]++eskainita	-	+
+por_intermedio_de	[GEN]++bitartez		-	+
+por_lo_que_respecta_a	[GEN]++gainean	-	+
+por_mediación_de    [GEN]++bidez	-	+
+por_medio_de    [GEN]++bidez            -       +
+por_mor_de	[GEN]++mesedetan	-	+
+por_motivo_de   [GEN]++kariaz           -       +
+por_obra_de     [GEN]++eskutik          -       +
+por_obra_y_gracia_de    [GEN]++eskutik	-       +
+por_orden_de	[GEN]++aginduz		-	+
+por_parte_de	[GEN]++aldetik		-	+
+por_valor_de    [GEL]++balioarekin	-       +
+por_vía_de      [GEN]++bidez            -       +
+pro_de		[GEN]++alde             -       +
+procedente_de	[ABL]++datorren		-	+
+respecto_a      [DAT]++buruz            -       +
+respecto_de     [DAT]++buruz            -       +
+rico_en		[INE]++aberatsa		-	+
+rodeado_de_un_halo_de	[INS]++inguraturik	-	+
+según_el_decir_de       [GEN]++arabera          -       +
+semejante_a     [GEN]++antzeko          -       +
+si_no_es_por    [MOT]++ez_bada                -       +
+similar_a       [GEN]++antzeko          -       +
+sin_ánimo_de	+[AMM][ADIZE]+[DEK][GEL]++gogorik_gabe	my.headpos='[ADI][SIN]'          +
+sin_contar_con  [ABS]++kontuan_hartu_gabe               -       +
+sin_perjuicio_de        [DAT]++utzi_gabe                -       +
+so_pena_de	[GEL]++zigorra_ezarriko_da_bestela	-	+
+tras_de		+[AMM][ADIZE]+[DEK][INS][NUMS]++gain	my.headpos='[ADI][SIN]'	-	##tras de venir tarde = berandu etortzeaz gain.
+una_especie_de		[GEN]++moduko			-	+
+
+# multiword ambiguous
+
+a_cargo_de      [GEN]++kargu            -			     +
+a_cargo_de      [GEN]++kontura          -			     +
+a_despecho_de   nahiz_eta		my.headpos='[ADI][SIN]'	     -       ## A pesar de comer mucho no engorda: asko jaten badu ere, ez da gizentzen    ##aditzaren aurrean
+a_despecho_de   [GEN]++gogoz_bestera    my.headpos='[IZE][ARR]'      -       ## A pesar del jefe, hemos hecho huelga: nagusiaren gogoz bestera, greba egin dugu ##izenaren aurrean
+a_fin_de        +[AMM][ADIZE]+[DEK][GEL]	my.headpos='[ADI][SIN]'	     -       ## ##aditzaren aurrean
+a_fin_de        [GEN]++bukaeran		my.headpos='[IZE][ARR]'      -       ## ##izenaren aurrean
+a_la_mitad_de   [GEN]++erdiei/DAT       -			     +       ## han zeudenen erdiei ezetz esan nien  ##
+a_la_mitad_de   [GEN]++erdiak/ABS       -			     +       ## han zeudenen erdiak ezagutzen nituen ##
+a_la_mitad_de   [GEN]++erdira/ALA       -			     +       ## desertuaren erdira joan nintzen   ##lekua + mugim aditza
+a_pesar_de      nahiz_eta		my.headpos='[ADI][SIN]'       -   ## pesar de comer mucho no engorda: asko jaten badu ere ##aditz aurrean
+a_pesar_de      [GEN]++gogoz_bestera    my.headpos='[IZE][ARR]'      +       ## A pesar del jefe, hemos hecho huelga: nagusia kontra egon arren, greba egin dugu     ##izenaren aurrean
+a_través_de     [INE]++barrena		-       +       ## fue a través del mar, itsasoan barrena joan zen;     ##ez bizidunak
+a_través_de     [GEN]++bitartez		-       +       ## lo he sabido a través de la radio, radioaren bitartez jakin dut      ##gehienak bizidunak (radioa, telebista,... izan ezik) Entzun, jakin-ekin zerikusia duten gauzak.       ##ZERRENDA EGIN
+a_trueco_de     +[AMM][ADIZE]+[DEK][GEN][NUMS]++trukean	my.headpos='[ADI][SIN]'          -
+a_trueco_de	[GEN]++truke	-	+
+a_trueque_de     +[AMM][ADIZE]+[DEK][GEN][NUMS]++trukean	my.headpos='[ADI][SIN]'          -
+a_trueque_de	[GEN]++truke	-	+
+abajo_de       [GEN]++azpian/INE	-       +       ## ponte debajo de ese árbol, zuhaitz horren azpian jar zaitez  ##
+abajo_de       [GEN]++azpira/ALA	-       +       ## vete debajo de ese árbol, zuhaitz horren azpira joan zaitez  ##mugimenduzko aditza
+al_lado_de      [GEN]++ondoan/INE	    -	+       ## se sentó al lado de la casa, etxearen ondoan eseri zen  ##aditz estatikoak
+al_lado_de      [GEN]++ondotik/ABL	    -	+       ## pasó al lado de la casa, etxearen ondotik pasa zen   ##mugim aditzak + bidea
+al_lado_de      [GEN]++ondora/ALA	    -	+       ## llegó al lado de la casa, etxearen ondora iritsi zen ##mugim aditzak + goal
+al_otro_lado_de		[GEN]++bestaldean/INE       -	+  ## se sentó al otro lado de la casa, etxearen bestaldean eseri zen    ##aditz estatikoak
+al_otro_lado_de		[GEN]++bestaldetik/ABL      -	+  ## pasó al otro lado de la casa, etxearen bestaldetik pasa zen  ##mugimenduzko aditzak
+al_otro_lado_de		[GEN]++bestaldera/ALA       -	+  ## llegó al otro lado de la casa, etxearen bestaldera iritsi zen    ##mugim aditzak
+al_principio_de		[GEN]++hasieran/INE	    -	+       ## ##aditz estatikoak
+al_principio_de		[GEN]++hasierara/ALA        -	+       ## ##mugimenduzko aditzak
+algo_de	     +[AMM][ADIZE]+[DEK][GEL]++zerbait	      my.headpos='[ADI][SIN]'    -   ## Quiero algo de beber: edateko zerbait nahi dut   ##aditzaren aurretik
+algo_de	     [ZERO]++pixka_bat		    -       +       ## Te he dejado algo de pan:  ogi-apur bat utzi dizut    ##izenaren aurretik
+algo_de	     [PAR]				    -       +       ## Si necesitas algo de dinero: dirurik behar baduzu    ##izenaren aurretik
+alrededor_de    [ZERO]++inguru	  my.headpos='[Z]'    -   ## son alrededor de las seis, seiak inguru dira; sei euro inguru dira   ##zenbakiekin
+alrededor_de    [GEN]++inguruan/INE	    -	    +   ## está alrededor de la casa, etxearen inguruan dago  ##aditz estatikoak
+alrededor_de    [GEN]++ingurutik/ABL        -       +   ## pasó alrededor de casa, etxearen ingurutik pasa zen  ##mugimenduzko aditzak
+alrededor_de    [GEN]++ingurura/ALA	    -       +   ## llegó alrededor de casa, etxearen ingurura iritsi zen    ##mugimenduzko aditzak
+cerca_de        [ABL]++gertu/INE	    -       +   ## Vivo cerca de la iglesia: elizatik gertu bizi naiz   ##aditz estatikoa
+cerca_de        [GEN]++hurrera/ALA	    -       +   ## Se los llevaron cerca del puente: zubiaren hurrera eraman zituzten ##mugim aditza
+cerca_de        [ZERO]++inguru   ( my.leafpos='[Z]' || my.headpos='[Z]' ) && my.mi='[MG]'   -   ## Había cerca de cien personas:ehun lagun inguru zegoen  ##zenbakiekin
+cerca_de        [ABS]++inguru    my.headpos='[Z]' && my.mi='[MUG]'  -   ## eran cerca de las diez, hamarrak inguru ziren  ##zenbakiak + determ
+con_achaque_de	+[AMM][ADIZE]+[DEK][GEL]++aitzakiarekin	my.headpos='[ADI][SIN]'   -
+con_achaque_de	[GEN]++aitzakiarekin		-	+
+con_vistas_a	+[AMM][ADIZE]+[DEK][GEL]	my.headpos='[ADI][SIN]'	  -
+con_vistas_a    [ALA]++begira           -       +
+con_tal_de      +[AMM][ADIZE]+[DEK][GEL]+[DEK][INE][MG]       my.headpos='[ADI][SIN]'	  -   ## No le importa trabajar, con tal de recibir algo a cambio: lan egiteak ez dio ardura, horren truke zerbait jasotzekotan
+con_tal_de      +[AMM][ADIZE]+[DEK][NUMS]+[DEK][MOT]	my.headpos='[ADI][SIN]'   -	  ## Con tal de no fregar, es capaz de...: harrikoa ez egiteagatik,...
+de_al_lado_de   [GEN]++ondotik/ABL	-		     +    ## salió de al lado de casa, etxe ondotik irten zen     ##
+de_al_lado_de   [GEN]++ondoko		parent.type!='adi-kat'    -    ## el banco de al lado de casa  ##izenlaguna denean
+de_debajo_de    [GEN]++azpitik/ABL	-		     +	  ## salió de debajo de casa, etxe azpitik irten zen      ##
+de_debajo_de    [GEN]++azpiko		parent.type!='adi-kat'    -    ## el banco de debajo de casa   ##izenlaguna denean
+de_delante_de   [GEN]++aurretik/ABL    -		     +       ## salió de delante de casa, etxe ondotik irten zen     ##
+de_delante_de   [GEN]++aurreko		parent.type!='adi-kat'    -       ## el banco de delante de casa  ##izenlaguna denean
+de_dentro_de    [GEN]++barrutik/ABL    -		     +       ## salió de dentro de casa, etxe barrutik irten zen     ##
+de_dentro_de    [GEN]++barruko		parent.type!='adi-kat'    -       ## el banco de dentro de casa   ##izenlaguna denean
+de_detrás_de    [GEN]++atzetik/ABL	-		     +       ## salió de detrás de casa, etxe atzetik irten zen      ##
+de_detrás_de    [GEN]++atzeko		parent.type!='adi-kat'    -       ## el banco de detrás de casa   ##izenlaguna denean
+de_este_lado_de	 [INS]++honainditik/ABL  -		     +       ## salió de este lado de casa, etxeaz honaiditik irten zen      ##
+de_este_lado_de	 [INS]++honaindiko       parent.type!='adi-kat'    -     ## el banco de este lado de casa, etxeaz honaindiko bankua ##izenlaguna 
+de_fuera_de     [GEN]++kanpotik/ABL    -		     +       ## salió de fuera de casa, etxe kanpotik irten zen      ##
+de_fuera_de     [GEN]++kanpoko		parent.type!='adi-kat'    -       ## el banco de fuera de casa    ##izenlaguna denean
+de_la_zona_de   [GEL]++partetik/ABL	-		     +       ## salió de la zona de casa, etxeko partetik irten zen  ##
+de_la_zona_de   [GEL]++parteko		parent.type!='adi-kat'    -       ## el banco de la zona de casa, etxeko parteko bankua   ##izenlaguna
+debajo_de       [GEN]++azpian/INE	-       +       ## ponte debajo de ese árbol, zuhaitz horren azpian jar zaitez  ##
+debajo_de       [GEN]++azpira/ALA	-       +       ## vete debajo de ese árbol, zuhaitz horren azpira joan zaitez  ##mugimenduzko aditza
+debido_a        [MOT]			my.headpos='[IZE][ARR]'    -   ## Debido a la lluvia: euriagatik       ##izenaren aurretik
+debido_a        +lako[ERL][MEN][KAUS]    my.headpos='[ADI][SIN]'	   +   ## Debido a que no hay peras, he comido una manzana: udarerik ez dagoelako sagarra jan dut      ##aditzaren aurretik!!!???
+del_otro_lado_de        [INS]++bestaldetik/ABL	-		   +   ## salió del otro lado de casa, etxeaz bestaldetik irten zen    ##
+del_otro_lado_de        [INS]++bestaldeko       parent.type!='adi-kat'  +   ## el banco del otro lado de casa, etxeaz bestaldeko bankua ##izenlagu
+delante_de      [GEN]++aurrean/INE  -       +       ## ponte delante de ese árbol, zuhaitz horren aurrean jar zaitez   #
+delante_de      [GEN]++aurrera/ALA  -       +       ## vete delante de ese árbol, zuhaitz horren aurrera joan zaitez   ##mugimenduzko adedelante de      [GEN]++aurretik/ABL  -       +       ## pasó delante de ese árbol, zuhaitz horren aurretik pasa zen   ##mugimenduzko aditza
+dentro_de       [GEN]++barruan/INE  -       +       ## ponte dentro de casa, etxe barruan jar zaitez        ##
+dentro_de       [GEN]++barrura/ALA  -       +       ## vete dentro de casa, etxe barrura joan zaitez        ##mugimenduzko aditza
+dentro_de       [ZERO]++barru	    -       +	    ## dentro de dos años, bi urte barru    ##zenbakiekin
+detrás_de       [GEN]++atzetik/ABL -       +       ## el camino pasa detrás de la casa, bidea etxe atzetik doa     ##
+detrás_de       [GEN]++ondoren	    -       +       ## detrás de la guerra vino el hambre, gerraren ondoren gosea etorri zen    ##denbora
+detrás_de       [GEN]++atzean/INE  -       +       ## el amigo está detrás de casa, laguna etxe atzean dago        ##aditz estatikoa
+detrás_de       [GEN]++atzera/ALA  -       +       ## vete detrás de casa, etxe atzera joan zaitez		    ##mugimenduzko aditza
+en_cuestión_de  [INE]++gutxi_gorabehera   my.leafpos='[Z]' && my.mi='[MG]'    -    ## Lo hizo en cuestión de tres semanas: gutxi gorabehera hiru astetan egin zuen ##zenbakiekin, denbora
+en_cuestión_de  [DAT]++buruz	    -       +       ## En cuestión de gustos no hay nada escrito: gustuei buruz ez dago ezer idatzirik      #
+en_lugar_de	[AMM][PART]+[ASP][BURU]++ordez	my.headpos='[ADI][SIN]'          -
+en_lugar_de     [GEN]++ordez            -       +
+en_orden_a      +[AMM][ADIZE]+[DEK][MOT]    my.headpos='[ADI][SIN]'       -    ## Reunión celebrada en orden a la consecución de un acuerdo: akordio bat lortzearren egindako bilera   ##aditzen aurrean
+en_orden_a      [DAT]++buruz    my.headpos='[IZE][ARR]'  -    ## Lo que nos interesa en orden a la situación mundial: munduko egoerari dagokionez interesatzen zaiguna        ##izenen aurrean
+en_plan_de      +[AMM][ADIZE]+[DEK][GEL]++eran   my.headpos='[ADI][SIN]'	      - ## Está en plan de decir que no:ezetz esateko jarrera hartu du  ##aditzen aur
+en_plan_de      [ZERO]++eran	     my.headpos='[IZE][ARR]'  -	## en plan de paz, bake eran    ##izenen aurrean
+en_torno_a      [ABS]++aldera/ALA    my.headpos='[W]'       -     ## Volveremos en torno a las diez: hamarrak inguruan itzuliko gara ##denbora
+en_torno_a      [GEN]++inguruan/INE  -       +       ## hemos dado una vuelta en torno al pueblo: buelta eman dugu herriaren inguruan ##lekua
+en_torno_a      [DAT]++buruz    -       +       ## No tengo más que decir en torno a este asunto: ez dut gai honi buruz beste ezer esateko  
+en_torno_de     [ZERO]++inguru  ( my.leafpos='[Z]' || my.headpos='[Z]' ) && my.mi='[MG]'     -  ## Alrededor de 200 pts./ 8000 espectadores     ##zenbakiak, kopuruak
+en_torno_de     [ABS]++aldera/ALA   my.headpos='[W]'       -      ## Llegaremos alrededor del día 20      ##denbora, zenbakiak
+en_torno_de     [GEN]++inguruan/INE -       +       ## Alrededor del mundo  ##lekua
+enfrente_de     [GEN]++parean/INE  -       +       ## está enfrente de casa, etxe parean dago      ##lekua
+enfrente_de     [GEN]++paretik/ABL -       +       ## ha pasado enfrente de casa, etxe paretik pasa da     ##mugimenduzko aditza 
+enfrente_de     [GEN]++parera/ALA  -       +       ## ha llegado enfrente de casa, etxe parera iritsi da   ##mugimenduzko aditza    
+fuera_de	[ABL]++kanpora/ALA  -       +       ## lo mandó fuera de casa, etxetik kanpora bidali zuen  ##lekua, mugimenduzko aditza
+fuera_de        [INS]++kanpo	    -       +	    ## Entregaste los papeles fuera de tiempo: garaiz kanpo eman zenituen paperak   ##denbora
+junto_a		[GEN]++ondoan/INE  -       +	    ## está junto a la casa, etxe ondoan dago       ##
+junto_a		[GEN]++ondotik	    -	    +	    ##pasó junto a la casa, etxe ondotik pasa zen     ## ##mugimendua
+lejos_de        +[AMM][PART]+[ASP][BURU]++ordez	    my.headpos='[ADI][SIN]'    -   ## lejos de acercarme,huyo; hurbildu ordez,urrundu egiten naiz ##aditzaren aur
+lejos_de        [ABL]++urrun	    my.headpos='[IZE][ARR]'   -	    ## está lejos de casa, etxetik urrun dago.      ##izenaren aurretik
+más_allá_de     [ABL]++aurrera/ALA  -       +       ## está más allá de Tolosa, Tolosatik aurrera dago      ##
+más_allá_de     [ABL]++gora/ALA     (my.leafpos='[Z]' || my.headpos='[Z]') && my.mi='[MG]'   -    ## más allá de siete,zazpitik gora##zenbakiekin
+mirando_a       [DAT]++begira   my.headpos=~'[BIZ+]   -     ## estaba mirándome a mi, niri begira zegoen; arazo horri begira      ##bizidunak
+mirando_a       [ALA]++begira   -       +		   ## rezan mirando a la meca, mekara begira errezatzen dute       ##lekuak
+mirando_hacia   [DAT]++begira    my.headpos=~'[BIZ+]   -    ## estaba mirando hacia mi, niri begira zegoen; ##bizidunak
+mirando_hacia   [ALA]++begira   -       +		   ## rezan mirando hacia la meca, mekara begira errezatzen dute   ##lekuak
+pendiente_de	+[AMM][ADIZE]+[DEK][GEL]	my.headpos='[ADI][SIN]'    -
+pendiente_de	[DAT]++begira		-	+
+pese_a  [GEN]++gogoz_bestera     my.headpos='[IZE][ARR]'       +       ## Pese al jefe, hemos hecho huelga: nagusia kontra egon arren, greba egin dugu ##izenaren aurretik
+pese_a  nahiz_eta       my.headpos='[ADI][SIN]'       +       ## pese a comer mucho no engorda: asko jaten badu ere, ez da gizentzen  ##aditzaren aurretik  #???!!!!!!???????
+sin_necesidad_de    [ZERO]++beharrik_gabe   my.headpos='[IZE][ARR]'  +   ## sin necesidad de dinero, diru beharrik gabe  ##izenaren aurretik
+sin_necesidad_de    +[AMM][PART]+[ASP][BURU]++beharrik_gabe  my.headpos='[ADI][SIN]'  +   ## sin necesidad de ir, joan beharrik gabe      ##aditzaren aurretik

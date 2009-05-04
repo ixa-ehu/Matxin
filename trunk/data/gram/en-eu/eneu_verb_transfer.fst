@@ -1,0 +1,355 @@
+h! EN->EU Aditz Kateen Transferentziarako FST definizioa
+
+
+echo >> Definizioak ; 
+
+!Karak barruan daudenak, espresio erregular bihurtzerakoan (konpilatzekoan) tratatzen dira, eta hemengoei ez zaie kasurik egiten.
+
+!define Alfabeto      [  a | b | c | d | e | f | g | h | i | j | k | l | m | n |
+!                        o | p | q | r | s | t | u | v | w | x | y | z ] ;
+!define AlfabetoLarri [  A | B | C | D | E | F | G | H | I | J | K | L | M | N |
+!                        O | P | Q | R | S | T | U | V | W | X | Y | Z ] ;
+!define Zifrak        [ %0 | 1 | 2 | 3 | 4 | 5 | 6 | 7 | 8 | 9 ] ;
+define Karak         [ Alfabeto | AlfabetoLarri | Zifrak | "_" | "-" ] ;
+
+
+define KarakPlus     [  Karak | "+" ] ;
+
+define KarakPlusPar     [ Karak | "+" | "." | %[ | %] ] ;
+
+define XXX	     [ "=" "=" ">" ];
+
+define IMInf	     [ "[" [ {VB} "]" ] KarakPlus* ] ;
+define IMPar	     [ "[" [ {VBN} "]" ] KarakPlus* ] ;
+define IMGer	     [ "[" [ {VBG} "]" ] KarakPlus* ] ;
+
+<<<<<<< def_aditz_transf.aer
+
+>>>>>>> 1.22
+
+
+define IMJok	[ "[" [ {VB}|{VBD}|{VBZ}|{VBP}|{MD} ] "]" KarakPlusPar*  ];
+define IMEzJok	[ "[" [ {VBG}|{VBN} ] "]" KarakPlusPar*  ];
+
+define AdNES	     [ "_" Karak+  "_" ] ;
+define AdNEU	     [ Karak+  ] ;
+define HaberLag	     [ {.have.} ] ;
+define Wil	     [ {.will.} ] ;
+define Do	     [ {.do.} ] ;
+
+
+echo >> Perifrastikoen definizioak;
+define Perts	     [ %0 | 1 | 2 | 3 ];
+define Num	     [ %0 | s | p ];
+
+define Sub	     [ "[" {sub} Perts Num "]" ];
+define Obj	     [ "[" {obj} Perts Num "]" ];
+define Dat	     [ "[" {dat} Perts Num "]" ];
+
+define Trans         [ "[" [ {DA} | {DU} | {ZAIO} | {DIO}] "]" ];
+
+define AdTrTran	     [ {edun} | {ukan} | {eduki} | {eraman} | {ekarri} | {jakin} ] ;
+define AdTrIntr	     [ {izan} | {egon}  | {etorri}  | {joan}            ] ;
+define AdTrinkoa     [ AdTrTran | AdTrIntr ];
+
+define AdKEJ          [							   AdNES IMEzJok "&" Sub Obj Dat "&" Trans "&" AdNEU ] ;
+define AdKArrSin      [							   AdNES IMJok "&" Sub Obj Dat "&" Trans "&" AdNEU ] ;
+define AdKArrDo       [ Do	 	IMJok	?*		        %+ AdNES IMInf "&" Sub Obj Dat "&" Trans "&" AdNEU ] ;
+define AdKArrLag      [ HaberLag 	IMJok			        %+ AdNES IMPar "&" Sub Obj Dat "&" Trans "&" AdNEU ] ;
+define AdKArrWil      [ Wil	 	IMJok			        %+ AdNES IMInf "&" Sub Obj Dat "&" Trans "&" AdNEU ] ;
+define AdKArrWilLag   [ Wil IMJok %+ HaberLag IMJok			%+ AdNES IMPar "&" Sub Obj Dat "&" Trans "&" AdNEU ] ;
+
+
+echo >> Sarrera ;
+
+define AdKArrSin  	[ AdKArrSin ] ;
+define AdKArrLag  	[ AdKArrLag ] ;
+define AdKArrDo 	[ AdKArrDo ] ;
+define AdKArrWil  	[ AdKArrWil ] ;
+define AdKArrWilLag  	[ AdKArrWilLag ] ;
+define AdKArr  	  	[ AdKArrSin | AdKArrLag | AdKArrWil | AdKArrWilLag | AdKArrDo ] ;
+
+echo >> Irteera ; 
+
+define IrtEJ 		[ XXX {EJ}")" 		"<NAG>" {AspN}									 {Erl} ] ;
+define IrtAR 		[ XXX {AR}")"	 	"<NAG>" {AspN}			 "/" {AdM} {AspM} "/"{AdL} {DenMod} {Nr}{Ni}{Nk} {Erl} ] ;
+define IrtARLag 	[ XXX {ARLAG}")" 	"<NAG>" {AspN}			  "/" {AdM} {AspM} "/"{AdL} {DenMod} {Nr}{Ni}{Nk} {Erl} ] ;
+define IrtARWil 	[ XXX {ARWIL}")" 	"<NAG>" {AspN}			  "/" {AdM} {AspM} "/"{AdL} {DenMod} {Nr}{Ni}{Nk} {Erl} ] ;
+define IrtARWilLag 	[ XXX {ARWILLAG}")"	"<NAG>" {AspN}			  "/" {AdM} {AspM} "/"{AdL} {DenMod} {Nr}{Ni}{Nk} {Erl} ] ;
+define IrtARDo	 	[ XXX {ARDO}")" 	"<NAG>" {AspN}		"/" {NOT}  "/" {AdM} {AspM} "/"{AdL} {DenMod} {Nr}{Ni}{Nk} {Erl} ] ;
+
+
+
+
+echo >> + Sarrera->irteera ;
+ 
+define TransPatrEJ    [ 
+				[ "$" -> IrtEJ 		"$" || "#" AdKEJ   _ ] 
+]  ;
+
+define TransPatrArr   	[ 
+				[ "$" -> IrtAR 		"$" || "#" AdKArrSin _ ] 
+]  ;
+
+define TransPatrArrLag 	[ 
+				[ "$" -> IrtARLag 	"$" || "#" AdKArrLag _ ] 
+] ;
+
+define TransPatrArrDo 	[ 
+				[ "$" -> IrtARDo 	"$" || "#" AdKArrDo _ ] 
+] ;
+
+define TransPatrArrWil 	[ 
+				[ "$" -> IrtARWil 	"$" || "#" AdKArrWil _ ] 
+] ;
+
+define TransPatrArrWil 	[ 
+				[ "$" -> IrtARWilLag 	"$" || "#" AdKArrWilLag _ ] 
+] ;
+
+echo >> + TransPatr ;
+
+
+echo >> + Ordezkapenak ;
+
+define edunUkan [
+       [  {_edun} -> "_ukan"    ||  ?* _ ?* ]
+       .o.##|
+       [  {_edun} -> "_ukan"    ||  ?* _ ?* ]
+];
+
+!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+echo >> Trinkoetan: "/"{AdM}{AspM}"/"{AdL}  bihurtu [ADT]
+
+!!!!trinkoak
+define TransTrinkArr [ 
+       [  {AspN} ?* "/" {AdL}  -> "[ADT]"	||  ?* [ VB ["]"|Z|P|D] ]  ?* AdTrinkoa ?* XXX {AR} %)  ?*  _ ?* ]
+];
+
+
+!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+echo >> Aditz nagusiaren aspektua (AspN)
+
+define TransAspNEJ [ 
+       [ {AspN} -> "ADIZE"	||  ?* IMInf		?*  XXX {EJ} ?* _ ?* ] 
+       .o.##|
+       [ {AspN} -> "INE"	||  ?* IMGer		?*  XXX {EJ} ?* _ ?* ] 
+       .o.##|
+       [ {AspN} -> "MOD"	||  ?* IMPar		?*  XXX {EJ} ?* _ ?* ] 
+] ;
+!       .o.##|
+!       [ {AspN} -> "BURU"	||  ?* IMAdjPar		?*  XXX {EJ} ?* _ ?* ] 
+
+
+define TransAspNArr [ 
+       [ {AspN} -> "EZBU" ||  ?* [ VB ["]"|Z|P] ]				?*  XXX {AR} %) ?* _ ?*  ] 
+       .o.##|
+       [ {AspN} -> "BURU" ||  ?* [ VBD ]					?*  XXX {AR} %) ?* _ ?*  ] 
+       .o.##|
+       [ {AspN} -> "BURU" ||  ?* [ VH [0|Z|D] ]					?*  XXX {ARLAG} %)  ?* _ ?*  ] 
+       .o.##|
+       [ {AspN} -> "GERO" ||  ?* [ IMInf ]				?*  XXX {ARWIL} %)  ?* _ ?*  ] 
+       .o.##|
+       [ {AspN} -> "GERO" ||  ?* [ IMPar ]				?*  XXX {ARWILLAG} %)  ?* _ ?*  ] 
+] ;
+
+!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+echo >> Ezezkoa ({EZ})
+
+define TransEZAldatu [
+       [ {NOT}	 	-> "ez[PRT][EGI]"		||   "#" ?* {XX%+} ?* XXX {ARDO} ?* _ ?* ]
+] ;
+
+define TransEZAldatuAL [
+       [ {NOT}	 	-> "al[PRT][ZIU]"		||   "#" ?* %+%+ ?* XXX {ARDO} ?* _ ?* ]
+] ;
+
+define TransEZKendu [
+       [ "/" {NOT}	 	-> ""			||   "#" ?* XXX {ARDO} ?* _ ?* ]
+] ;
+
+!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+echo >> Aditz modala eta bere aspektua (AdMod /AspM)
+
+
+define TransAdMAspMKendu1 [
+       [ "/" {AdM} {AspM} 	-> ""		||   "#" [ AdKArr ] ?* XXX {AR} ?* _ ?* ]
+] ;
+
+!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+echo >> Aditz laguntzailea (Bestelako kasuetan) ;
+
+define TransAdL [	
+        [ {AdL}    -> "edin<ADL>""[ADL]"	||   ?* [VMSP | VMSI | VMM] ?* [{DA} | {ZAIO}]  ?*  XXX ?* _ ?* ] 
+	.o.##|
+        [ {AdL}    -> "izan<ADL>""[ADL]"	||   ?* [{DA} | {ZAIO}]				?*  XXX ?* _ ?* ] 
+	.o.##|
+	[ {AdL}    -> "ezan<ADL>""[ADL]"	||   ?* [VMSP | VMSI | VMM] ?* [{DU} | {DIO}]   ?*  XXX ?* _ ?* ] 
+	.o.##|
+	[ {AdL}    -> "edun<ADL>""[ADL]"	||   ?* [{DU} | {DIO}]				?*  XXX ?* _ ?* ] 
+] ;
+
+!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+echo >> Denbora Modua (DenMod) ;
+
+define TransDenMod [	
+        [ {DenMod}    -> "[B1]"	||   ?*  VH0 ?*  IMPar	 			?*  XXX {ARWILLAG} %) 	?*  _ ?* ] 
+	.o.##|
+        [ {DenMod}    -> "[A1]"	||   ?* [ VB [ "]" | Z | P ] ]			?*  XXX {AR} [{LAG} | {WIL}]* %) ?*  _ ?* ] 
+	.o.##|
+        [ {DenMod}    -> "[A1]"	||   ?* [ VD [0|Z] ]				?*  XXX {ARDO} %) ?*  _ ?* ] 
+	.o.##|
+	[ {DenMod}    -> "[B1]"	||   ?* [ VBD ]					?*  XXX 		?*  _ ?* ] 
+] ;
+
+
+!        [ {Erl}    -> "+n[ERL][MEN][HELB]"	||   ?*  ["edin<ADL>" | "ezan<ADL>" ] ?* [ "[A1]" | "[A3]" | "[B2]"  | "[B5B]"] ?* _ ?* ] 
+!	.o.##|
+define ErlMorf [	
+        [ {Erl}    -> ""	                ||   ?* _ ?* ] 
+] ;
+
+
+!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+echo >> Nor(Nr) Sub;
+
+!!!!!!SUB informazioa dugunean hurrengoa ona eta 00 duena kendu.
+!	[ {Nr}    -> "[NR_HU]"	|| ?* {sub3s} Karak	?* [ "izan<ADL>" | AdTrIntr ?* "[ADT]" | "edin<ADL>" ] ?*  _ ?* ] 
+!	.o.##| 
+define TransNrSub [	
+        [ {Nr}    -> "[NR_NI]"	|| ?* {sub1s} ?* [ "izan<ADL>" | AdTrIntr ?* "[ADT]" | "edin<ADL>" ] ?*  _ ?* ] 
+	.o.##|
+	[ {Nr}    -> "[NR_ZU]"	|| ?* {sub2s} ?* [ "izan<ADL>" | AdTrIntr ?* "[ADT]" | "edin<ADL>" ] ?*  _ ?* ] 
+	.o.##| 
+	[ {Nr}    -> "[NR_HU]"	|| ?* {sub}[{3s}|{00}] ?* [ "izan<ADL>" | AdTrIntr ?* "[ADT]" | "edin<ADL>" ] ?*  _ ?* ] 
+	.o.##| 
+	[ {Nr}    -> "[NR_GU]"	|| ?* {sub1p} ?* [ "izan<ADL>" | AdTrIntr ?* "[ADT]" | "edin<ADL>" ] ?*  _ ?* ] 
+	.o.##| 
+	[ {Nr}    -> "[NR_ZK]"	|| ?* {sub2p} ?* [ "izan<ADL>" | AdTrIntr ?* "[ADT]" | "edin<ADL>" ] ?*  _ ?* ] 
+	.o.##| 
+	[ {Nr}    -> "[NR_HK]"	|| ?* {sub3p} ?* [ "izan<ADL>" | AdTrIntr ?* "[ADT]" | "edin<ADL>" ] ?*  _ ?* ] 
+] ;
+
+echo >> Nor(Nr) Obj;
+
+define TransNrObj [	
+        [ {Nr}    -> "[NR_NI]"	|| ?*  {obj1s}		?* [ "edun<ADL>" | AdTrTran ?* "[ADT]" | "ezan<ADL>" ]  ?*  _ ?* ] 
+	.o.##|
+	[ {Nr}    -> "[NR_ZU]"	|| ?*  {obj2s}		?* [ "edun<ADL>" | AdTrTran ?* "[ADT]" | "ezan<ADL>" ]  ?*  _ ?* ] 
+	.o.##| 
+	[ {Nr}    -> "[NR_HU]"	|| ?*  {obj}[{3s}|{00}] ?* [ "edun<ADL>" | AdTrTran ?* "[ADT]" | "ezan<ADL>" ]  ?*  _ ?* ] 
+	.o.##| 
+	[ {Nr}    -> "[NR_GU]"	|| ?*  {obj1p}		?* [ "edun<ADL>" | AdTrTran ?* "[ADT]" | "ezan<ADL>" ]  ?*  _ ?* ] 
+	.o.##| 
+	[ {Nr}    -> "[NR_ZK]"	|| ?*  {obj2p}		?* [ "edun<ADL>" | AdTrTran ?* "[ADT]" | "ezan<ADL>" ]  ?*  _ ?* ] 
+	.o.##| 
+	[ {Nr}    -> "[NR_HK]"	|| ?*  {obj3p}		?* [ "edun<ADL>" | AdTrTran ?* "[ADT]" | "ezan<ADL>" ]  ?*  _ ?* ] 
+] ;
+
+!##define TransNr [  TransNrSub | TransNrObj | ~ [ "#" ?* {Nr} ?* "$" ] ];
+
+
+echo >> Nori(Ni);
+
+define TransNi [	
+        [ {Ni}    -> "[NI_NI]"	||   ?* {dat1s} ?* _ ?* ] 
+	.o.##|
+	[ {Ni}    -> "[NI_ZU]"	||   ?* {dat2s} ?* _ ?* ] 
+	.o.##| 
+	[ {Ni}    -> "[NI_HU]"	||   ?* [ {dat3s}| "utzi""<PER>" ] ?* _ ?* ] 
+	.o.##| 
+	[ {Ni}    -> "[NI_GU]"	||   ?* {dat1p} ?* _ ?* ] 
+	.o.##| 
+	[ {Ni}    -> "[NI_ZK]"	||   ?* {dat2p} ?* _ ?* ] 
+	.o.##| 
+	[ {Ni}    -> "[NI_HK]"	||   ?* {dat3p} ?* _ ?* ] 
+	.o.##| 
+	[ {Ni}    -> ""		||   ?* {dat00} ?* _ ?* ] 
+] ;
+
+
+echo >> Nork(Nk);
+
+!!!!!!SUB informazioa dugunean hurrengoa ona eta 00 duena kendu.
+!	[ {Nk}    -> "[NK_HU]"	||    ?* {sub3s} ?* [ "edun<ADL>" | AdTrTran ?* "[ADT]" | "ezan<ADL>" ] ?*    _ ?* ]
+!	.o.##| 
+define TransNk [	
+        [ {Nk}    -> "[NK_NI]"	||    ?* {sub1s} ?* [ "edun<ADL>" | AdTrTran ?* "[ADT]" | "ezan<ADL>" ] ?*    _ ?* ] 
+	.o.##|
+	[ {Nk}    -> "[NK_ZU]"	||    ?* {sub2s} ?* [ "edun<ADL>" | AdTrTran ?* "[ADT]" | "ezan<ADL>" ] ?*    _ ?* ]
+	.o.##| 
+	[ {Nk}    -> "[NK_HU]"	||    ?* {sub}[{3s}|{00}] ?* [ "edun<ADL>" | AdTrTran ?* "[ADT]" | "ezan<ADL>" ] ?*    _ ?* ]
+	.o.##| 
+	[ {Nk}    -> "[NK_GU]"	||    ?* {sub1p} ?* [ "edun<ADL>" | AdTrTran ?* "[ADT]" | "ezan<ADL>" ] ?*    _ ?* ]
+	.o.##| 
+	[ {Nk}    -> "[NK_ZK]"	||    ?* {sub2p} ?* [ "edun<ADL>" | AdTrTran ?* "[ADT]" | "ezan<ADL>" ] ?*    _ ?* ]
+	.o.##| 
+	[ {Nk}    -> "[NK_HK]"	||    ?* {sub3p} ?* [ "edun<ADL>" | AdTrTran ?* "[ADT]" | "ezan<ADL>" ] ?*    _ ?* ]
+	.o.##| 
+	[ {Nk}    -> ""		||    ?*	       [ "izan<ADL>" | AdTrIntr 	   | "edin<ADL>" ] ?*    _ ?* ] 
+] ;
+
+
+
+!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+echo >>  Aspektuak osatu ;
+
+
+define TransAspOsatu [  		     		     		     		     
+       [  "PART"   -> "[ADI][SIN]+[AMM][PART]" ]				     #!!#
+       .o.								     
+       [  "ADOIN"  -> "[ADI][SIN]+[AMM][ADOIN]" ]				     #!!#
+       .o.								     
+       [  "EZBU"   -> "[ADI][SIN]+[AMM][ADOIN]+[ASP][EZBU]" ] 		     #!!#
+       .o.								    
+       [  "BURU"   -> "[ADI][SIN]+[AMM][PART]+[ASP][BURU]" ]		     #!!#
+       .o.								    
+       [  "GERO"   -> "[ADI][SIN]+[AMM][PART]+[ASP][GERO]" ]		     #!!#
+       .o.								    
+       [  "ADPGER" -> "[ADI][SIN]+[AMM][PART]+[ASP][GERO]" ]		     #!!#
+       .o.								    
+       [  "MOD"    -> "[ADI][SIN]+[AMM][PART]+[ERL][MEN][MOD]" ]		     #!!#
+       .o.								    
+       [  "ADIZE"  -> "[ADI][SIN]+[AMM][ADIZE]" ]				     #!!#
+       .o.								    
+       [  "HUR"    -> "[ADI][SIN]+[AMM][ADOIN]+[ASP][EZBU][HUR]" ]	     #!!#
+       .o.								    
+       [  "ALA"    -> "[ADI][SIN]+[AMM][ADIZE]+[DEK][ALA]" ]		     #!!#
+       .o.								    
+       [  "DAT"    -> "[ADI][SIN]+[AMM][ADIZE]+[DEK][DAT][NUMS]" ]	     #!!#
+       .o.								    
+       [  "INE"    -> "[ADI][SIN]+[AMM][ADIZE]+[DEK][INE]" ]		     #!!#
+       .o.								    
+       [  "IZE"    -> "[IZE][ARR]"  ||                        "<PER>" _ ?* ]					     #!!#
+];
+
+
+define ukanIzan [
+		      [ "ukan" -> "izan" || ?* _ XXX ?* "<""NAG"">""[""ADI""]""[""SIN""]" ?* ]
+		      .o.
+		      [ "ukan" -> "izan" || ?* _ XXX ?* "<""NAG"">""[""ADI""]""[""SIN""]" ?* ]
+
+];
+
+
+!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+echo >> Irteera garbitzeko;
+
+define TransIrteera1 [
+		      [ "#" ?* "&" ?* "&" -> "" ]
+		      .o.
+		      [ XXX  ?* ")"		 -> "" ]
+		    ];	
+
+define TransIrteera2 [
+		      [ "$"			-> ""	]
+		      .o.
+		      [ "#"			-> ""	]
+		    ];
+
+!##define TransIrteera [TransIrteera1 .o. TransIrteera2 ];
+
+
+
+echo 
+echo >> + Automatak gorde
