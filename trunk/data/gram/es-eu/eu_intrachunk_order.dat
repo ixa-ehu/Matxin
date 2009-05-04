@@ -1,7 +1,0 @@
-is	([DET][IZL])([DET][IZL])([DET][IZL])([DET][IZL])([DET][ORD])([ADB][ADOARR])([ADJ][IZL])([ADJ][IZL])([ADJ][IZL])([ADJ][IZL])([Z])([IZE][IZB])([IZE][IZB])([IZE][IZB])([IZE][IZB])([IZE][ARR])([IZE][ARR])([BURUA])([ADJ][IZO])([ADJ][IZO])([ADJ][IZO])([LOT][JNT])([ADJ][IZO])([DET][IZO])([DET][IZO])([DET][IZO])([DET][IZO])
-post-izls	([DET][IZL])([DET][IZL])([DET][IZL])([DET][IZL])([DET][ORD])([ADB][ADOARR])([ADJ][IZL])([ADJ][IZL])([ADJ][IZL])([ADJ][IZL])([Z])([IZE][IZB])([IZE][IZB])([IZE][IZB])([IZE][IZB])([IZE][ARR])([IZE][ARR])([BURUA])([ADJ][IZO])([ADJ][IZO])([ADJ][IZO])([LOT][JNT])([ADJ][IZO])([DET][IZO])([DET][IZO])([DET][IZO])([DET][IZO])
-post-sint	([DET][IZL])([DET][IZL])([DET][IZL])([DET][IZL])([DET][ORD])([ADB][ADOARR])([ADJ][IZL])([ADJ][IZL])([ADJ][IZL])([ADJ][IZL])([Z])([IZE][IZB])([IZE][IZB])([IZE][IZB])([IZE][IZB])([IZE][ARR])([IZE][ARR])([BURUA])([ADJ][IZO])([ADJ][IZO])([ADJ][IZO])([LOT][JNT])([ADJ][IZO])([DET][IZO])([DET][IZO])([DET][IZO])([DET][IZO])
-adjs	([DET][IZL])([DET][IZL])([DET][IZL])([DET][IZL])([DET][ORD])([ADB][ADOARR])([ADJ][IZL])([ADJ][IZL])([ADJ][IZL])([ADJ][IZL])([Z])([ADJ][IZO])([ADJ][IZO])([ADJ][IZO])([BURUA])([ADJ][IZO])([DET][IZO])([DET][IZO])([DET][IZO])([DET][IZO])
-adi-kat	([ADB])([BURUA])([PER])([PRT])([ADM])([ADL])
-adi-kat-ez	([PRT])([ADL])([ADB])([BURUA])([PER])([ADM])
-adbs	([ADB][ADOARR])([ADB][ADOARR])([BURUA])
