@@ -1,0 +1,6 @@
+trans='DIO'/'[ERG]'	si='ncsubj'/cas	down	overwrite
+trans='DU'/'[ERG]'	si='ncsubj'/cas	down	overwrite
+trans='ZAIO'/'[ABS]'	si='ncsubj'/cas	down	overwrite
+trans='DA'/'[ABS]'	si='ncsubj'/cas	down	overwrite
+
+type=~'emen'/cas	type='is'/cas	down	overwrite

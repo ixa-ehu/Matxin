@@ -1,0 +1,22 @@
+===================
+*     README      *
+===================
+
+1. Install
+
+    a. Requirements:
+      - i686, ppc, SPARC, etc.
+      - g++ >= 3.x
+      - freeling-svn
+      - lttoolbox >= 3.1.0
+      - libxml2 >= 2.6.17
+      - libpcre >= 6.4
+      - gnu make
+
+    b. Building & installing
+      $ ./autogen.sh
+      $ make
+      # make install
+
+For build options, please see the INSTALL file.
+

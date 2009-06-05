@@ -1,0 +1,10 @@
+prefix=@prefix@
+exec_prefix=@exec_prefix@
+libdir=@libdir@
+includedir=@includedir@
+
+Name: matxin
+Description: Transfer-based machine translation engine.
+Version: @VERSION@
+Libs: -L${libdir} -l@GENERIC_LIBRARY_NAME@
+Cflags: -I${includedir}/@GENERIC_LIBRARY_NAME@ -I${libdir}/@GENERIC_LIBRARY_NAME@/include
