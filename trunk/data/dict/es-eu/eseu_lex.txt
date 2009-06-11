@@ -1,0 +1,15 @@
+#
+# Rules to solve lexical ambiguity
+#
+# Format:
+# lemmaES				lemmaEU          condition           maintain?  ## comment
+#
+# condition: if the condition evaluates to true, then it returns the target lemma
+#
+# maintain?
+#   if the condition evaluates to false, then:
+#     - : remove the translation
+#     + : maintain the current translation
+
+posición	postu	parent.headlem='jaitsi' || parent.headlem='igo'	-
+

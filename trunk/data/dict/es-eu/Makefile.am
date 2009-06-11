@@ -1,6 +1,7 @@
 dictdataeseudir = $(pkgdatadir)/dict/es-eu
 dictdataeseu_DATA = eseu_chunk_type.txt \
                     eseu_mur.xml \
+                    eseu_lex.txt \
                     eseu_prep.txt \
                     eu_changes_morph.xml \
                     eu_changes_sint.txt \
