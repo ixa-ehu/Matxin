@@ -53,8 +53,8 @@
 #define RELAX 1
 
 // codes for dependency parsers
-#define TXALA	0
-#define MALT	1
+#define TXALA 0
+#define MALT  1
 
 // codes for sense annotation
 #define NONE  0
@@ -189,156 +189,156 @@ class config {
       // Auxiliary for boolean handling
       int flush,noflush, sufx,nosufx,   loc,noloc,   numb,nonumb,
           punt,nopunt,   date,nodate,   quant,noquant, dict,nodict, prob,noprob,
-	  nec,nonec,     dup,nodup,      retok,noretok,
-	  trace,notrace, vtrace,novtrace, gtrace,nogtrace, ptrace,noptrace,
-	Usubcat,noUsubcat, Urules,noUrules, Utripletes,noUtripletes, fcase, nofcase; 
+          nec,nonec,     dup,nodup,      retok,noretok,
+          trace,notrace, vtrace,novtrace, gtrace,nogtrace, ptrace,noptrace,
+          Usubcat,noUsubcat, Urules,noUrules, Utripletes,noUtripletes, fcase, nofcase;
 
       int write_xslt_lag;
 
       char *cf_flush, *cf_sufx, *cf_loc,   *cf_numb,
            *cf_punt,  *cf_date, *cf_quant, *cf_dict, *cf_prob,
-	   *cf_nec,  *cf_dup,   *cf_retok,
-	   *cf_Usubcat,  *cf_Urules, *cf_Utripletes, *cf_first_case,
-	   *cf_trace,    *cf_vtrace, *cf_gtrace, *cf_ptrace;
+           *cf_nec,  *cf_dup,   *cf_retok,
+           *cf_Usubcat,  *cf_Urules, *cf_Utripletes, *cf_first_case,
+           *cf_trace,    *cf_vtrace, *cf_gtrace, *cf_ptrace;
  
       // Options structure
       struct cfg_option OptionList[] = {  // initialization
-	{"help",    'h',  NULL,                      CFG_BOOL, (void *) &help, 0},
-	{NULL,      'f',  NULL,                      CFG_STR,  (void *) &ConfigFile, 0},
-	// general options
-	{"lang",    '\0', "Lang",                    CFG_STR,  (void *) &Lang, 0},
-	{"tlevel",   'l', "TraceLevel",              CFG_INT,  (void *) &traces::TraceLevel, 0},
-	{"tmod",     'm', "TraceModule",             CFG_INT,  (void *) &traces::TraceModule, 0},
-	{"inpf",    '\0', "InputFormat",             CFG_STR,  (void *) &InputF, 0},
-	{"outf",    '\0', "OutputFormat",            CFG_STR,  (void *) &OutputF, 0},
-	{"flush",   '\0', NULL,                      CFG_BOOL, (void *) &flush, 0},
-	{"noflush", '\0', NULL,                      CFG_BOOL, (void *) &noflush, 0},
-	{NULL,      '\0', "AlwaysFlush",             CFG_STR,  (void *) &cf_flush, 0},
-	// tokenizer options
-	{"ftok",    '\0', "TokenizerFile",           CFG_STR, (void *) &TOK_TokenizerFile, 0},
-	// splitter options
-	{"fsplit",  '\0', "SplitterFile",            CFG_STR,  (void *) &SPLIT_SplitterFile, 0},
-	// morfo options
-	{"sufx",    '\0', NULL,                      CFG_BOOL, (void *) &sufx, 0},
-	{"nosufx",  '\0', NULL,                      CFG_BOOL, (void *) &nosufx, 0},
-	{NULL,      '\0', "SuffixAnalysis",          CFG_STR,  (void *) &cf_sufx, 0},
-	{"loc",     '\0', NULL,                      CFG_BOOL, (void *) &loc, 0},
-	{"noloc",   '\0', NULL,                      CFG_BOOL, (void *) &noloc, 0},
-	{NULL,      '\0', "MultiwordsDetection",     CFG_STR,  (void *) &cf_loc, 0},
-	{"numb",    '\0', NULL,                      CFG_BOOL, (void *) &numb, 0},
-	{"nonumb",  '\0', NULL,                      CFG_BOOL, (void *) &nonumb, 0},
-	{NULL,      '\0', "NumbersDetection",        CFG_STR,  (void *) &cf_numb, 0},
-	{"punt",    '\0', NULL,                      CFG_BOOL, (void *) &punt, 0},
-	{"nopunt",  '\0', NULL,                      CFG_BOOL, (void *) &nopunt, 0},
-	{NULL,      '\0', "PunctuationDetection",    CFG_STR,  (void *) &cf_punt, 0},
-	{"date",    '\0', NULL,                      CFG_BOOL, (void *) &date, 0},
-	{"nodate",  '\0', NULL,                      CFG_BOOL, (void *) &nodate, 0},
-	{NULL,      '\0', "DatesDetection",          CFG_STR,  (void *) &cf_date, 0},
-	{"quant",   '\0', NULL,                      CFG_BOOL, (void *) &quant, 0},
-	{"noquant", '\0', NULL,                      CFG_BOOL, (void *) &noquant, 0},
-	{NULL,      '\0', "QuantitiesDetection",     CFG_STR,  (void *) &cf_quant, 0},
-	{"dict",    '\0', NULL,                      CFG_BOOL, (void *) &dict, 0},
-	{"nodict",  '\0', NULL,                      CFG_BOOL, (void *) &nodict, 0},
-	{NULL,      '\0', "DictionarySearch",        CFG_STR,  (void *) &cf_dict, 0},
-	{"prob",    '\0', NULL,                      CFG_BOOL, (void *) &prob, 0},
-	{"noprob",  '\0', NULL,                      CFG_BOOL, (void *) &noprob, 0},
-	{NULL,      '\0', "ProbabilityAssignment",   CFG_STR,  (void *) &cf_prob, 0},
-	{"ner",     '\0', "NERecognition",           CFG_STR,  (void *) &Ner, 0},
-	{"dec",     '\0', "DecimalPoint",            CFG_STR,  (void *) &MACO_Decimal, 0},
-	{"thou",    '\0', "ThousandPoint",           CFG_STR,  (void *) &MACO_Thousand, 0},
-	{"floc",    'L',  "LocutionsFile",           CFG_STR,  (void *) &MACO_LocutionsFile, 0},
-	{"fqty",    'Q',  "QuantitiesFile",          CFG_STR,  (void *) &MACO_QuantitiesFile, 0},
-	{"fsuf",    'S',  "SuffixFile",              CFG_STR,  (void *) &MACO_SuffixFile, 0},
-	{"fprob",   'P',  "ProbabilityFile",         CFG_STR,  (void *) &MACO_ProbabilityFile, 0},
-	{"thres",   'e', "ProbabilityThreshold",    CFG_DOUBLE, (void *) &MACO_ProbabilityThreshold, 0},
-	{"fdict",   'D',  "DictionaryFile",          CFG_STR,  (void *) &MACO_DictionaryFile, 0},
-	{"fnp",     'N',  "NPDataFile",              CFG_STR,  (void *) &MACO_NPdataFile, 0},
-	{"fpunct",  'F',  "PunctuationFile",         CFG_STR,  (void *) &MACO_PunctuationFile, 0},
-	// NEC options
-	{"nec",     '\0', NULL,                      CFG_BOOL, (void *) &nec, 0},
-	{"nonec",   '\0', NULL,                      CFG_BOOL, (void *) &nonec, 0},
-	{NULL,      '\0', "NEClassification",        CFG_STR,  (void *) &cf_nec, 0},
-	{"fnec",    '\0', "NECFilePrefix",           CFG_STR,  (void *) &NEC_FilePrefix, 0},
-	// Sense options
-	{"sense",   's', "SenseAnnotation",         CFG_STR,  (void *) &SenseAnot, 0},
-	{"fsense",  'W',  "SenseFile",               CFG_STR,  (void *) &SENSE_SenseFile, 0},
-	{"dup",     '\0', NULL,                      CFG_BOOL, (void *) &dup, 0},
-	{"nodup",   '\0', NULL,                      CFG_BOOL, (void *) &nodup, 0},
-	{NULL,      '\0', "DuplicateAnalysis",       CFG_STR,  (void *) &cf_dup, 0},
-	// tagger options
-	{"hmm",  'H',  "TaggerHMMFile",              CFG_STR,  (void *) &TAGGER_HMMFile, 0},
-	{"rlx",  'R',  "TaggerRelaxFile",            CFG_STR,  (void *) &TAGGER_RelaxFile, 0},
-	{"tag",  't',  "Tagger",                     CFG_STR,  (void *) &Tagger, 0},
-	{"iter", 'i', "TaggerRelaxMaxIter",         CFG_INT,  (void *) &TAGGER_RelaxMaxIter, 0},
-	{"sf",   'r', "TaggerRelaxScaleFactor",     CFG_DOUBLE, (void *) &TAGGER_RelaxScaleFactor, 0},
-	{"eps",  '\0', "TaggerRelaxEpsilon",         CFG_DOUBLE, (void *) &TAGGER_RelaxEpsilon, 0},
-	{"rtk",   '\0', NULL,                        CFG_BOOL, (void *) &retok, 0},
-	{"nortk", '\0', NULL,                        CFG_BOOL, (void *) &noretok, 0},
-	{NULL,      '\0', "TaggerRetokenize",        CFG_STR,  (void *) &cf_retok, 0},
-	{"force", '\0', "TaggerForceSelect",         CFG_STR,  (void *) &Force, 0},
-	// parser options
-	{"grammar", 'G',  "GrammarFile",             CFG_STR,  (void *) &PARSER_GrammarFile, 0},
+  {"help",    'h',  NULL,                      CFG_BOOL, (void *) &help, 0},
+  {NULL,      'f',  NULL,                      CFG_STR,  (void *) &ConfigFile, 0},
+  // general options
+  {"lang",    '\0', "Lang",                    CFG_STR,  (void *) &Lang, 0},
+  {"tlevel",   'l', "TraceLevel",              CFG_INT,  (void *) &traces::TraceLevel, 0},
+  {"tmod",     'm', "TraceModule",             CFG_INT,  (void *) &traces::TraceModule, 0},
+  {"inpf",    '\0', "InputFormat",             CFG_STR,  (void *) &InputF, 0},
+  {"outf",    '\0', "OutputFormat",            CFG_STR,  (void *) &OutputF, 0},
+  {"flush",   '\0', NULL,                      CFG_BOOL, (void *) &flush, 0},
+  {"noflush", '\0', NULL,                      CFG_BOOL, (void *) &noflush, 0},
+  {NULL,      '\0', "AlwaysFlush",             CFG_STR,  (void *) &cf_flush, 0},
+  // tokenizer options
+  {"ftok",    '\0', "TokenizerFile",           CFG_STR, (void *) &TOK_TokenizerFile, 0},
+  // splitter options
+  {"fsplit",  '\0', "SplitterFile",            CFG_STR,  (void *) &SPLIT_SplitterFile, 0},
+  // morfo options
+  {"sufx",    '\0', NULL,                      CFG_BOOL, (void *) &sufx, 0},
+  {"nosufx",  '\0', NULL,                      CFG_BOOL, (void *) &nosufx, 0},
+  {NULL,      '\0', "SuffixAnalysis",          CFG_STR,  (void *) &cf_sufx, 0},
+  {"loc",     '\0', NULL,                      CFG_BOOL, (void *) &loc, 0},
+  {"noloc",   '\0', NULL,                      CFG_BOOL, (void *) &noloc, 0},
+  {NULL,      '\0', "MultiwordsDetection",     CFG_STR,  (void *) &cf_loc, 0},
+  {"numb",    '\0', NULL,                      CFG_BOOL, (void *) &numb, 0},
+  {"nonumb",  '\0', NULL,                      CFG_BOOL, (void *) &nonumb, 0},
+  {NULL,      '\0', "NumbersDetection",        CFG_STR,  (void *) &cf_numb, 0},
+  {"punt",    '\0', NULL,                      CFG_BOOL, (void *) &punt, 0},
+  {"nopunt",  '\0', NULL,                      CFG_BOOL, (void *) &nopunt, 0},
+  {NULL,      '\0', "PunctuationDetection",    CFG_STR,  (void *) &cf_punt, 0},
+  {"date",    '\0', NULL,                      CFG_BOOL, (void *) &date, 0},
+  {"nodate",  '\0', NULL,                      CFG_BOOL, (void *) &nodate, 0},
+  {NULL,      '\0', "DatesDetection",          CFG_STR,  (void *) &cf_date, 0},
+  {"quant",   '\0', NULL,                      CFG_BOOL, (void *) &quant, 0},
+  {"noquant", '\0', NULL,                      CFG_BOOL, (void *) &noquant, 0},
+  {NULL,      '\0', "QuantitiesDetection",     CFG_STR,  (void *) &cf_quant, 0},
+  {"dict",    '\0', NULL,                      CFG_BOOL, (void *) &dict, 0},
+  {"nodict",  '\0', NULL,                      CFG_BOOL, (void *) &nodict, 0},
+  {NULL,      '\0', "DictionarySearch",        CFG_STR,  (void *) &cf_dict, 0},
+  {"prob",    '\0', NULL,                      CFG_BOOL, (void *) &prob, 0},
+  {"noprob",  '\0', NULL,                      CFG_BOOL, (void *) &noprob, 0},
+  {NULL,      '\0', "ProbabilityAssignment",   CFG_STR,  (void *) &cf_prob, 0},
+  {"ner",     '\0', "NERecognition",           CFG_STR,  (void *) &Ner, 0},
+  {"dec",     '\0', "DecimalPoint",            CFG_STR,  (void *) &MACO_Decimal, 0},
+  {"thou",    '\0', "ThousandPoint",           CFG_STR,  (void *) &MACO_Thousand, 0},
+  {"floc",    'L',  "LocutionsFile",           CFG_STR,  (void *) &MACO_LocutionsFile, 0},
+  {"fqty",    'Q',  "QuantitiesFile",          CFG_STR,  (void *) &MACO_QuantitiesFile, 0},
+  {"fsuf",    'S',  "SuffixFile",              CFG_STR,  (void *) &MACO_SuffixFile, 0},
+  {"fprob",   'P',  "ProbabilityFile",         CFG_STR,  (void *) &MACO_ProbabilityFile, 0},
+  {"thres",   'e', "ProbabilityThreshold",    CFG_DOUBLE, (void *) &MACO_ProbabilityThreshold, 0},
+  {"fdict",   'D',  "DictionaryFile",          CFG_STR,  (void *) &MACO_DictionaryFile, 0},
+  {"fnp",     'N',  "NPDataFile",              CFG_STR,  (void *) &MACO_NPdataFile, 0},
+  {"fpunct",  'F',  "PunctuationFile",         CFG_STR,  (void *) &MACO_PunctuationFile, 0},
+  // NEC options
+  {"nec",     '\0', NULL,                      CFG_BOOL, (void *) &nec, 0},
+  {"nonec",   '\0', NULL,                      CFG_BOOL, (void *) &nonec, 0},
+  {NULL,      '\0', "NEClassification",        CFG_STR,  (void *) &cf_nec, 0},
+  {"fnec",    '\0', "NECFilePrefix",           CFG_STR,  (void *) &NEC_FilePrefix, 0},
+  // Sense options
+  {"sense",   's', "SenseAnnotation",         CFG_STR,  (void *) &SenseAnot, 0},
+  {"fsense",  'W',  "SenseFile",               CFG_STR,  (void *) &SENSE_SenseFile, 0},
+  {"dup",     '\0', NULL,                      CFG_BOOL, (void *) &dup, 0},
+  {"nodup",   '\0', NULL,                      CFG_BOOL, (void *) &nodup, 0},
+  {NULL,      '\0', "DuplicateAnalysis",       CFG_STR,  (void *) &cf_dup, 0},
+  // tagger options
+  {"hmm",  'H',  "TaggerHMMFile",              CFG_STR,  (void *) &TAGGER_HMMFile, 0},
+  {"rlx",  'R',  "TaggerRelaxFile",            CFG_STR,  (void *) &TAGGER_RelaxFile, 0},
+  {"tag",  't',  "Tagger",                     CFG_STR,  (void *) &Tagger, 0},
+  {"iter", 'i', "TaggerRelaxMaxIter",         CFG_INT,  (void *) &TAGGER_RelaxMaxIter, 0},
+  {"sf",   'r', "TaggerRelaxScaleFactor",     CFG_DOUBLE, (void *) &TAGGER_RelaxScaleFactor, 0},
+  {"eps",  '\0', "TaggerRelaxEpsilon",         CFG_DOUBLE, (void *) &TAGGER_RelaxEpsilon, 0},
+  {"rtk",   '\0', NULL,                        CFG_BOOL, (void *) &retok, 0},
+  {"nortk", '\0', NULL,                        CFG_BOOL, (void *) &noretok, 0},
+  {NULL,      '\0', "TaggerRetokenize",        CFG_STR,  (void *) &cf_retok, 0},
+  {"force", '\0', "TaggerForceSelect",         CFG_STR,  (void *) &Force, 0},
+  // parser options
+  {"grammar", 'G',  "GrammarFile",             CFG_STR,  (void *) &PARSER_GrammarFile, 0},
         // dep options
-	{"txala", 'T', "DepTxalaFile",               CFG_STR, (void *) &DEP_TxalaFile, 0},
-	{"malt",  'M', "DepMaltFile",		     CFG_STR, (void *) &DEP_MaltFile,0},
-	{"dep",   'd', "DepParser",		     CFG_STR, (void *) &DepParser, 0},
-	// Matxin options
-	{"xsl",      '\0', NULL,                     CFG_BOOL, (void *) &write_xslt_lag, 0},
-	{"trace",    '\0', NULL,                     CFG_BOOL, (void *) &trace, 0},
-	{"notrace",  '\0', NULL,                     CFG_BOOL, (void *) &notrace, 0},
-	{NULL,       '\0', "DoTrace",                CFG_STR,  (void *) &cf_trace, 0},
-	{"vtrace",   '\0', NULL,                     CFG_BOOL, (void *) &vtrace, 0},
-	{"novtrace", '\0', NULL,                     CFG_BOOL, (void *) &novtrace, 0},
-	{NULL,       '\0', "DoVerbTrace",            CFG_STR,  (void *) &cf_vtrace, 0},
-	{"gtrace",   '\0', NULL,                     CFG_BOOL, (void *) &gtrace, 0},
-	{"nogtrace", '\0', NULL,                     CFG_BOOL, (void *) &nogtrace, 0},
-	{NULL,       '\0', "DoGenTrace",             CFG_STR,  (void *) &cf_gtrace, 0},
-	{"ptrace",   '\0', NULL,                     CFG_BOOL, (void *) &ptrace, 0},
-	{"noptrace", '\0', NULL,                     CFG_BOOL, (void *) &noptrace, 0},
-	{NULL,       '\0', "DoPrepTrace",            CFG_STR,  (void *) &cf_ptrace, 0},
-	{"TraceFile", '\0', "TraceFile",             CFG_STR,  (void *) &Trace_File, 0},
-	// lexTrans options
-	{"tDict",    '\0', "TransDictFile",          CFG_STR,  (void *) &DictionaryFile, 0},
-	{"chunkT",   '\0', "ChunkTypeDict",          CFG_STR,  (void *) &ChunkType_DictFile, 0},
-	{"noumSem",  '\0', "NoumSemFile",            CFG_STR,  (void *) &Noum_SemanticFile, 0},
-	// sintTrans options
-	{"intraMov", '\0', "IntraMoveFile",          CFG_STR,  (void *) &Intra_MovementsFile, 0},
-	{"inter",    '\0', NULL,                     CFG_INT,  (void *) &Inter_Phase, 0},
-	{"interMov1", '\0', "InterMoveFile1",        CFG_STR,  (void *) &Inter_Movements1File, 0},
-	{"interMov2", '\0', "InterMoveFile2",        CFG_STR,  (void *) &Inter_Movements2File, 0},
-	{"interMov3", '\0', "InterMoveFile3",        CFG_STR,  (void *) &Inter_Movements3File, 0},
-	{"subcatF",  '\0', "SubCatFile",             CFG_STR,  (void *) &SubcatFile, 0},
-	{"prep",     '\0', "PrepFile",               CFG_STR,  (void *) &PrepositionsFile, 0},
-	{"tripletF", '\0', "TripletsFile",           CFG_STR,  (void *) &Noum_SubcatFile, 0},
-	{"verbtrans", '\0', "VerbTransferFile",      CFG_STR,  (void *) &Verb_TransferFile, 0},
-	{"chunkord", '\0', "ChunkOrderFile",         CFG_STR,  (void *) &Chunk_OrderFile, 0},
-	{"nodeord",  '\0', "NodeOrderFile",          CFG_STR,  (void *) &Node_OrderFile, 0},
-	{"POStrans", '\0', "POSTransFile",           CFG_STR,  (void *) &POS_ToOrderFile, 0},
-	{"morphgen", '\0', "MorphGenFile",           CFG_STR,  (void *) &Morpho_GenFile, 0},
-	{"measugen", '\0', "MeasuresGenFile",        CFG_STR,  (void *) &Measures_GenFile, 0},
-	{"nolexgen", '\0', "NoLexGenFile",           CFG_STR,  (void *) &NoLex_GenFile, 0},
-	{"gentags",  '\0', "GenerationTagsFile",     CFG_STR,  (void *) &Tag_ToGenFile, 0},
-	{"tagorder", '\0', "TagOrderFile",           CFG_STR,  (void *) &Tag_OrderFile, 0},
-	// Preposizioen artikuluan erabiltzeko
-	{"fcase",    '\0', NULL,                     CFG_BOOL, (void *) &fcase, 0},
-	{"nofcase",  '\0', NULL,                     CFG_BOOL, (void *) &nofcase, 0},
-	{NULL,       '\0', "FirstCase",              CFG_STR,  (void *) &cf_first_case, 0},
-	{"rules",    '\0', NULL,                     CFG_BOOL, (void *) &Urules, 0},
-	{"norules",  '\0', NULL,                     CFG_BOOL, (void *) &noUrules, 0},
-	{NULL,       '\0', "UseRules",               CFG_STR,  (void *) &cf_Urules, 0},
-	{"subcat",   '\0', NULL,                     CFG_BOOL, (void *) &Usubcat, 0},
-	{"nosubcat", '\0', NULL,                     CFG_BOOL, (void *) &noUsubcat, 0},
-	{NULL,       '\0', "UseSubcat",              CFG_STR,  (void *) &cf_Usubcat, 0},
-	{"tripl",    '\0', NULL,                     CFG_BOOL, (void *) &Utripletes, 0},
-	{"notripl",  '\0', NULL,                     CFG_BOOL, (void *) &noUtripletes, 0},
-	{NULL,       '\0', "UseTripletes",           CFG_STR,  (void *) &cf_Utripletes, 0},
-	CFG_END_OF_LIST
+  {"txala", 'T', "DepTxalaFile",               CFG_STR, (void *) &DEP_TxalaFile, 0},
+  {"malt",  'M', "DepMaltFile",        CFG_STR, (void *) &DEP_MaltFile,0},
+  {"dep",   'd', "DepParser",        CFG_STR, (void *) &DepParser, 0},
+  // Matxin options
+  {"xsl",      '\0', NULL,                     CFG_BOOL, (void *) &write_xslt_lag, 0},
+  {"trace",    '\0', NULL,                     CFG_BOOL, (void *) &trace, 0},
+  {"notrace",  '\0', NULL,                     CFG_BOOL, (void *) &notrace, 0},
+  {NULL,       '\0', "DoTrace",                CFG_STR,  (void *) &cf_trace, 0},
+  {"vtrace",   '\0', NULL,                     CFG_BOOL, (void *) &vtrace, 0},
+  {"novtrace", '\0', NULL,                     CFG_BOOL, (void *) &novtrace, 0},
+  {NULL,       '\0', "DoVerbTrace",            CFG_STR,  (void *) &cf_vtrace, 0},
+  {"gtrace",   '\0', NULL,                     CFG_BOOL, (void *) &gtrace, 0},
+  {"nogtrace", '\0', NULL,                     CFG_BOOL, (void *) &nogtrace, 0},
+  {NULL,       '\0', "DoGenTrace",             CFG_STR,  (void *) &cf_gtrace, 0},
+  {"ptrace",   '\0', NULL,                     CFG_BOOL, (void *) &ptrace, 0},
+  {"noptrace", '\0', NULL,                     CFG_BOOL, (void *) &noptrace, 0},
+  {NULL,       '\0', "DoPrepTrace",            CFG_STR,  (void *) &cf_ptrace, 0},
+  {"TraceFile", '\0', "TraceFile",             CFG_STR,  (void *) &Trace_File, 0},
+  // lexTrans options
+  {"tDict",    '\0', "TransDictFile",          CFG_STR,  (void *) &DictionaryFile, 0},
+  {"chunkT",   '\0', "ChunkTypeDict",          CFG_STR,  (void *) &ChunkType_DictFile, 0},
+  {"noumSem",  '\0', "NoumSemFile",            CFG_STR,  (void *) &Noum_SemanticFile, 0},
+  // sintTrans options
+  {"intraMov", '\0', "IntraMoveFile",          CFG_STR,  (void *) &Intra_MovementsFile, 0},
+  {"inter",    '\0', NULL,                     CFG_INT,  (void *) &Inter_Phase, 0},
+  {"interMov1", '\0', "InterMoveFile1",        CFG_STR,  (void *) &Inter_Movements1File, 0},
+  {"interMov2", '\0', "InterMoveFile2",        CFG_STR,  (void *) &Inter_Movements2File, 0},
+  {"interMov3", '\0', "InterMoveFile3",        CFG_STR,  (void *) &Inter_Movements3File, 0},
+  {"subcatF",  '\0', "SubCatFile",             CFG_STR,  (void *) &SubcatFile, 0},
+  {"prep",     '\0', "PrepFile",               CFG_STR,  (void *) &PrepositionsFile, 0},
+  {"tripletF", '\0', "TripletsFile",           CFG_STR,  (void *) &Noum_SubcatFile, 0},
+  {"verbtrans", '\0', "VerbTransferFile",      CFG_STR,  (void *) &Verb_TransferFile, 0},
+  {"chunkord", '\0', "ChunkOrderFile",         CFG_STR,  (void *) &Chunk_OrderFile, 0},
+  {"nodeord",  '\0', "NodeOrderFile",          CFG_STR,  (void *) &Node_OrderFile, 0},
+  {"POStrans", '\0', "POSTransFile",           CFG_STR,  (void *) &POS_ToOrderFile, 0},
+  {"morphgen", '\0', "MorphGenFile",           CFG_STR,  (void *) &Morpho_GenFile, 0},
+  {"measugen", '\0', "MeasuresGenFile",        CFG_STR,  (void *) &Measures_GenFile, 0},
+  {"nolexgen", '\0', "NoLexGenFile",           CFG_STR,  (void *) &NoLex_GenFile, 0},
+  {"gentags",  '\0', "GenerationTagsFile",     CFG_STR,  (void *) &Tag_ToGenFile, 0},
+  {"tagorder", '\0', "TagOrderFile",           CFG_STR,  (void *) &Tag_OrderFile, 0},
+  // Preposizioen artikuluan erabiltzeko
+  {"fcase",    '\0', NULL,                     CFG_BOOL, (void *) &fcase, 0},
+  {"nofcase",  '\0', NULL,                     CFG_BOOL, (void *) &nofcase, 0},
+  {NULL,       '\0', "FirstCase",              CFG_STR,  (void *) &cf_first_case, 0},
+  {"rules",    '\0', NULL,                     CFG_BOOL, (void *) &Urules, 0},
+  {"norules",  '\0', NULL,                     CFG_BOOL, (void *) &noUrules, 0},
+  {NULL,       '\0', "UseRules",               CFG_STR,  (void *) &cf_Urules, 0},
+  {"subcat",   '\0', NULL,                     CFG_BOOL, (void *) &Usubcat, 0},
+  {"nosubcat", '\0', NULL,                     CFG_BOOL, (void *) &noUsubcat, 0},
+  {NULL,       '\0', "UseSubcat",              CFG_STR,  (void *) &cf_Usubcat, 0},
+  {"tripl",    '\0', NULL,                     CFG_BOOL, (void *) &Utripletes, 0},
+  {"notripl",  '\0', NULL,                     CFG_BOOL, (void *) &noUtripletes, 0},
+  {NULL,       '\0', "UseTripletes",           CFG_STR,  (void *) &cf_Utripletes, 0},
+  CFG_END_OF_LIST
       };
       
       // Creating context 
       con = cfg_get_context(OptionList);
       if (con == NULL) {
-	ERROR_CRASH("Error creating context. Not enough memory?");
+  ERROR_CRASH("Error creating context. Not enough memory?");
       }
       
       // init auxiliary variables
@@ -401,60 +401,178 @@ class config {
       cfg_set_cmdline_context(con, 1, -1, argv);
       ret = cfg_parse(con);
       if (ret != CFG_OK) {
-	ERROR_CRASH("Error "+util::int2string(ret)+" parsing command line. "+string(cfg_get_error_str(con)));
+        ERROR_CRASH("Error "+util::int2string(ret)+" parsing command line. "+string(cfg_get_error_str(con)));
       }
       
       // Check options
       
       // Help screen required
       if (help) {
-	PrintHelpScreen();
-	exit(0); // return to system
+        PrintHelpScreen();
+        exit(0); // return to system
       }
       
       // if no config file given, use default
       if (ConfigFile == NULL) {
-	WARNING("No config file specified (option -f). Trying to open default file '"+string(DefaultConfigFile)+"'");
-	ConfigFile = (char *)malloc(sizeof(char)*(1+strlen(DefaultConfigFile)));
- 	strcpy(ConfigFile,DefaultConfigFile);
+        WARNING("No config file specified (option -f). Trying to open default file '"+string(DefaultConfigFile)+"'");
+        ConfigFile = (char *)malloc(sizeof(char)*(1+strlen(DefaultConfigFile)));
+        strcpy(ConfigFile,DefaultConfigFile);
       }
       
       // parse and load options from ConfigFile
       cfg_set_cfgfile_context(con, 0, -1, ConfigFile);
       ret = cfg_parse(con);
       if (ret != CFG_OK) {
-	ERROR_CRASH("Error "+util::int2string(ret)+" parsing config file '"+string(ConfigFile)+"'. "+string(cfg_get_error_str(con)));
+        ERROR_CRASH("Error "+util::int2string(ret)+" parsing config file '"+string(ConfigFile)+"'. "+string(cfg_get_error_str(con)));
       }
 
       // Handle boolean options expressed as strings in config file
-      SetBooleanOptionCF(string(cf_flush),AlwaysFlush,"AlwaysFlush");
-      SetBooleanOptionCF(string(cf_sufx),MACO_SuffixAnalysis,"SuffixAnalysis");
-      SetBooleanOptionCF(string(cf_loc), MACO_MultiwordsDetection,"MultiwordsDetection");
-      SetBooleanOptionCF(string(cf_numb),MACO_NumbersDetection,"NumbersDetection");
-      SetBooleanOptionCF(string(cf_punt),MACO_PunctuationDetection,"PunctuationDetection");
-      SetBooleanOptionCF(string(cf_date),MACO_DatesDetection,"DatesDetection");
-      SetBooleanOptionCF(string(cf_quant),MACO_QuantitiesDetection,"QuantitiesDetection");
-      SetBooleanOptionCF(string(cf_dict),MACO_DictionarySearch,"DictionarySearch");
-      SetBooleanOptionCF(string(cf_prob),MACO_ProbabilityAssignment,"ProbabilityAssignment");
-      SetBooleanOptionCF(string(cf_nec),NEC_NEClassification,"NEClassification");
-      SetBooleanOptionCF(string(cf_dup),SENSE_DuplicateAnalysis,"DuplicateAnalysis");
-      SetBooleanOptionCF(string(cf_retok),TAGGER_Retokenize,"TaggerRetokenize");
 
-      SetBooleanOptionCF(string(cf_trace),DoTrace,"DoTrace");
-      SetBooleanOptionCF(string(cf_vtrace),DoVerbTrace,"DoVerbTrace");
-      SetBooleanOptionCF(string(cf_gtrace),DoGenTrace,"DoGenTrace");
-      SetBooleanOptionCF(string(cf_ptrace),DoGenTrace,"DoPrepTrace");
-      
-      SetBooleanOptionCF(string(cf_first_case),first_case,"FirstCase");
-      SetBooleanOptionCF(string(cf_Urules),UseRules,"UseRules");
-      SetBooleanOptionCF(string(cf_Usubcat),UseSubcat,"UseSubcat");
-      SetBooleanOptionCF(string(cf_Utripletes),UseTripletes,"UseTripletes");
+      if(cf_flush) {
+        SetBooleanOptionCF(string(cf_flush), AlwaysFlush,"AlwaysFlush");
+      } else {
+        WARNING("Empty config variable for AlwaysFlush in the config file.");
+        SetBooleanOptionCF(string("false"), AlwaysFlush,"AlwaysFlush");
+      }
+
+      if(cf_sufx) {
+        SetBooleanOptionCF(string(cf_sufx), MACO_SuffixAnalysis,"SuffixAnalysis");
+      } else {
+        WARNING("Empty config variable for SuffixAnalysis in the config file.");
+        SetBooleanOptionCF(string("false"), MACO_SuffixAnalysis,"SuffixAnalysis");
+      }
+
+      if(cf_loc) {
+        SetBooleanOptionCF(string(cf_loc), MACO_MultiwordsDetection,"MultiwordsDetection");
+      } else {
+        WARNING("Empty config variable for MultiwordsDetection in the config file.");
+        SetBooleanOptionCF(string("false"), MACO_MultiwordsDetection,"MultiwordsDetection");
+      }
+
+      if(cf_numb) {
+        SetBooleanOptionCF(string(cf_numb), MACO_NumbersDetection,"NumbersDetection");
+      } else {
+        WARNING("Empty config variable for NumbersDetection in the config file.");
+        SetBooleanOptionCF(string("false"), MACO_NumbersDetection,"NumbersDetection");
+      }
+
+      if(cf_punt) {
+        SetBooleanOptionCF(string(cf_punt), MACO_PunctuationDetection,"PunctuationDetection");
+      } else {
+        WARNING("Empty config variable for PunctuationDetection in the config file.");
+        SetBooleanOptionCF(string("false"), MACO_PunctuationDetection,"PunctuationDetection");
+      }
+
+      if(cf_date) {
+        SetBooleanOptionCF(string(cf_date), MACO_DatesDetection,"DatesDetection");
+      } else {
+        WARNING("Empty config variable for DatesDetection in the config file.");
+        SetBooleanOptionCF(string("false"), MACO_DatesDetection,"DatesDetection");
+      }
+
+      if(cf_quant) {
+        SetBooleanOptionCF(string(cf_quant), MACO_QuantitiesDetection,"QuantitiesDetection");
+      } else {
+        WARNING("Empty config variable for QuantitiesDetection in the config file.");
+        SetBooleanOptionCF(string("false"), MACO_QuantitiesDetection,"QuantitiesDetection");
+      }
+
+      if(cf_dict) {
+        SetBooleanOptionCF(string(cf_dict), MACO_DictionarySearch,"DictionarySearch");
+      } else {
+        WARNING("Empty config variable for DictionarySearch in the config file.");
+        SetBooleanOptionCF(string("false"), MACO_DictionarySearch,"DictionarySearch");
+      }
+
+      if(cf_prob) {
+        SetBooleanOptionCF(string(cf_prob), MACO_ProbabilityAssignment,"ProbabilityAssignment");
+      } else {
+        WARNING("Empty config variable for ProbabilityAssignment in the config file.");
+        SetBooleanOptionCF(string("false"), MACO_ProbabilityAssignment,"ProbabilityAssignment");
+      }
+
+      if(cf_nec) {
+        SetBooleanOptionCF(string(cf_nec), NEC_NEClassification,"NEClassification");
+      } else {
+        WARNING("Empty config variable for NEClassification in the config file.");
+        SetBooleanOptionCF(string("false"), NEC_NEClassification,"NEClassification");
+      }
+
+      if(cf_dup) {
+        SetBooleanOptionCF(string(cf_dup), SENSE_DuplicateAnalysis,"DuplicateAnalysis");
+      } else {
+        WARNING("Empty config variable for DuplicateAnalysis in the config file.");
+        SetBooleanOptionCF(string("false"), SENSE_DuplicateAnalysis,"DuplicateAnalysis");
+      }
+
+      if(cf_retok) {
+        SetBooleanOptionCF(string(cf_retok), TAGGER_Retokenize,"TaggerRetokenize");
+      } else {
+        WARNING("Empty config variable for TaggerRetokenize in the config file.");
+        SetBooleanOptionCF(string("false"), TAGGER_Retokenize,"TaggerRetokenize");
+      }
+
+      if(cf_trace) {
+        SetBooleanOptionCF(string(cf_trace), DoTrace,"DoTrace");
+      } else {
+        WARNING("Empty config variable for DoTrace in the config file.");
+        SetBooleanOptionCF(string("false"), DoTrace,"DoTrace");
+      }
+
+      if(cf_vtrace) {
+        SetBooleanOptionCF(string(cf_vtrace), DoVerbTrace,"DoVerbTrace");
+      } else {
+        WARNING("Empty config variable for DoVerbTrace in the config file.");
+        SetBooleanOptionCF(string("false"), DoVerbTrace,"DoVerbTrace");
+      }
+
+      if(cf_gtrace) {
+        SetBooleanOptionCF(string(cf_gtrace), DoGenTrace,"DoGenTrace");
+      } else {
+        WARNING("Empty config variable for DoGenTrace in the config file.");
+        SetBooleanOptionCF(string("false"), DoGenTrace,"DoGenTrace");
+      }
+
+      if(cf_ptrace) {
+        SetBooleanOptionCF(string(cf_ptrace), DoPrepTrace,"DoPrepTrace");
+      } else {
+        WARNING("Empty config variable for DoPrepTrace in the config file.");
+        SetBooleanOptionCF(string("false"), DoPrepTrace,"DoPrepTrace");
+      }
+
+      if(cf_first_case) {
+        SetBooleanOptionCF(string(cf_first_case), first_case,"FirstCase");
+      } else {
+        WARNING("Empty config variable for FirstCase in the config file.");
+        SetBooleanOptionCF(string("false"), first_case,"FirstCase");
+      }
+
+      if(cf_Urules) {
+        SetBooleanOptionCF(string(cf_Urules), UseRules,"UseRules");
+      } else {
+        WARNING("Empty config variable for UseRules in the config file.");
+        SetBooleanOptionCF(string("false"), UseRules,"UseRules");
+      }
+
+      if(cf_Usubcat) {
+        SetBooleanOptionCF(string(cf_Usubcat), UseSubcat,"UseSubcat");
+      } else {
+        WARNING("Empty config variable for UseSubcat in the config file.");
+        SetBooleanOptionCF(string("false"), UseSubcat,"UseSubcat");
+      }
+
+      if(cf_Utripletes) {
+        SetBooleanOptionCF(string(cf_Utripletes), UseTripletes,"UseTripletes");
+      } else {
+        WARNING("Empty config variable for UseTripletes in the config file.");
+        SetBooleanOptionCF(string("false"), UseTripletes,"UseTripletes");
+      }
       
       // Reload command line options to override ConfigFile options
       cfg_set_cmdline_context(con, 1, -1, argv);
       ret = cfg_parse(con);
       if (ret != CFG_OK) {
-	ERROR_CRASH("Error "+util::int2string(ret)+" parsing command line. "+string(cfg_get_error_str(con)));
+        ERROR_CRASH("Error "+util::int2string(ret)+" parsing command line. "+string(cfg_get_error_str(con)));
       }
 
       // check options involving Filenames for environment vars expansion.
@@ -474,7 +592,7 @@ class config {
       ExpandFileName(PARSER_GrammarFile); 
       ExpandFileName(DEP_TxalaFile);
       ExpandFileName(DEP_MaltFile);
-	     
+
       // Handle boolean options expressed with --myopt or --nomyopt in command line
       SetBooleanOptionCL(flush,noflush,AlwaysFlush,"flush");
       SetBooleanOptionCL(sufx,nosufx,MACO_SuffixAnalysis,"sufx");
@@ -503,8 +621,8 @@ class config {
 
 
       if (DoTrace && Trace_File==NULL) {
-	WARNING("No trace file specified (option --TraceFile). No trace will be done.");
-	DoTrace=false;
+        WARNING("No trace file specified (option --TraceFile). No trace will be done.");
+        DoTrace=false;
       }
 
       // translate InputF and OutputF strings to more useful integer values.
@@ -564,17 +682,17 @@ class config {
          size_t i=name.find_first_of("/\\",n+1);
          if (i==string::npos) i=name.size();
          char* exp=getenv(name.substr(n+1,i-n-1).c_str());
-	 if (exp==NULL){
-	   WARNING("Undefined variable "+name.substr(n+1,i-n-1)+" in configuration file "+string(ConfigFile)+" expanded as empty string.");
-	   name = name.substr(0,n) + name.substr(i);
-	 }
-	 else {
-	   name = name.substr(0,n) + string(exp) + name.substr(i);
-	 }
+         if (exp==NULL){
+           WARNING("Undefined variable "+name.substr(n+1,i-n-1)+" in configuration file "+string(ConfigFile)+" expanded as empty string.");
+           name = name.substr(0,n) + name.substr(i);
+         }
+         else {
+           name = name.substr(0,n) + string(exp) + name.substr(i);
+         }
  
-	 free(s);
-	 s = (char *) calloc(name.size()+1,sizeof(char));
-	 strcpy (s,name.c_str());
+         free(s);
+         s = (char *) calloc(name.size()+1,sizeof(char));
+         strcpy (s,name.c_str());
        }
     }
 
@@ -584,15 +702,15 @@ class config {
       else if (s=="no" || s=="n" || s=="off" || s=="false")
         opt=false;
       else if (!s.empty())
-	WARNING("Invalid boolean value '"+s+"' for option "+name+" in configuration file. Using default value.");
+        WARNING("Invalid boolean value '"+s+"' for option "+name+" in configuration file. Using default value.");
       //else: s is empty, so the option hasn't been specified. Use default.
     } 
 
     void SetBooleanOptionCL (const int pos, const int neg, int &opt, const string &name) {
       if (pos && neg)  
-	WARNING("Ambiguous specification for option --"+name+" in command line. Using default value.");
+        WARNING("Ambiguous specification for option --"+name+" in command line. Using default value.");
       else if (pos)
-	opt=true;
+        opt=true;
       else if (neg)
         opt=false;
       //else: nothing specified, leave things as they are.
