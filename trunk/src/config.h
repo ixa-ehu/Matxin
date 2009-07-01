@@ -442,8 +442,6 @@ class config {
       }
 
       // Handle boolean options expressed as strings in config file
-<<<<<<< HEAD:src/config.h
-
       if(cf_flush) {
         SetBooleanOptionCF(string(cf_flush), AlwaysFlush,"AlwaysFlush");
       } else {
