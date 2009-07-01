@@ -676,6 +676,11 @@ class config {
  private:
 
     void ExpandFileName(char* &s) {
+      if(!s) {
+        WARNING("Undefined variable");
+        string name("");
+        return;
+      }
        string name(s);
        size_t n=name.find_first_of("$"); 
        if (n!=string::npos) {
