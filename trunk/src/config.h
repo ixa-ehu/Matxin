@@ -141,10 +141,12 @@ class config {
     int DoGenTrace;
     int DoPrepTrace;
 
-    int UseRules;
+    int UsePrepRules;
     int UseSubcat;
     int UseTripletes;
     int first_case;
+
+    int UseLexRules;
 
     char * Trace_File;
 
@@ -152,6 +154,9 @@ class config {
     char * DictionaryFile;
     char * ChunkType_DictFile;
     char * Noum_SemanticFile;
+
+    // Lexical selection options
+    char * LexSelFile;
 
     /// Sintactic transfer options
     char * Intra_MovementsFile;
@@ -187,19 +192,19 @@ class config {
       // Auxiliary for string translation
       char *InputF, *OutputF, *Ner, *Tagger, *SenseAnot, *Force, *DepParser;
       // Auxiliary for boolean handling
-      int flush,noflush, sufx,nosufx,   loc,noloc,   numb,nonumb,
-          punt,nopunt,   date,nodate,   quant,noquant, dict,nodict, prob,noprob,
-          nec,nonec,     dup,nodup,      retok,noretok,
-          trace,notrace, vtrace,novtrace, gtrace,nogtrace, ptrace,noptrace,
-          Usubcat,noUsubcat, Urules,noUrules, Utripletes,noUtripletes, fcase, nofcase;
+      int flush,noflush, sufx,nosufx, loc,noloc, numb,nonumb, punt, nopunt,
+          date, nodate, quant, noquant, dict, nodict, prob, noprob,
+          nec, nonec, dup, nodup, retok, noretok, trace, notrace,
+          vtrace, novtrace, gtrace, nogtrace, ptrace, noptrace, Usubcat, noUsubcat,
+          Urules, noUrules, Utripletes, noUtripletes, fcase, nofcase,
+          Lrules, noLrules;
 
       int write_xslt_lag;
 
-      char *cf_flush, *cf_sufx, *cf_loc,   *cf_numb,
-           *cf_punt,  *cf_date, *cf_quant, *cf_dict, *cf_prob,
-           *cf_nec,  *cf_dup,   *cf_retok,
-           *cf_Usubcat,  *cf_Urules, *cf_Utripletes, *cf_first_case,
-           *cf_trace,    *cf_vtrace, *cf_gtrace, *cf_ptrace;
+      char *cf_flush, *cf_sufx, *cf_loc, *cf_numb, *cf_punt, *cf_date, *cf_quant,
+           *cf_dict, *cf_prob, *cf_nec, *cf_dup, *cf_retok, *cf_Usubcat,
+           *cf_Urules, *cf_Utripletes, *cf_first_case, *cf_trace, *cf_vtrace,
+           *cf_gtrace, *cf_ptrace, *cf_Lrules;
  
       // Options structure
       struct cfg_option OptionList[] = {  // initialization
@@ -279,60 +284,65 @@ class config {
   // parser options
   {"grammar", 'G',  "GrammarFile",             CFG_STR,  (void *) &PARSER_GrammarFile, 0},
         // dep options
-  {"txala", 'T', "DepTxalaFile",               CFG_STR, (void *) &DEP_TxalaFile, 0},
-  {"malt",  'M', "DepMaltFile",        CFG_STR, (void *) &DEP_MaltFile,0},
-  {"dep",   'd', "DepParser",        CFG_STR, (void *) &DepParser, 0},
-  // Matxin options
-  {"xsl",      '\0', NULL,                     CFG_BOOL, (void *) &write_xslt_lag, 0},
-  {"trace",    '\0', NULL,                     CFG_BOOL, (void *) &trace, 0},
-  {"notrace",  '\0', NULL,                     CFG_BOOL, (void *) &notrace, 0},
-  {NULL,       '\0', "DoTrace",                CFG_STR,  (void *) &cf_trace, 0},
-  {"vtrace",   '\0', NULL,                     CFG_BOOL, (void *) &vtrace, 0},
-  {"novtrace", '\0', NULL,                     CFG_BOOL, (void *) &novtrace, 0},
-  {NULL,       '\0', "DoVerbTrace",            CFG_STR,  (void *) &cf_vtrace, 0},
-  {"gtrace",   '\0', NULL,                     CFG_BOOL, (void *) &gtrace, 0},
-  {"nogtrace", '\0', NULL,                     CFG_BOOL, (void *) &nogtrace, 0},
-  {NULL,       '\0', "DoGenTrace",             CFG_STR,  (void *) &cf_gtrace, 0},
-  {"ptrace",   '\0', NULL,                     CFG_BOOL, (void *) &ptrace, 0},
-  {"noptrace", '\0', NULL,                     CFG_BOOL, (void *) &noptrace, 0},
-  {NULL,       '\0', "DoPrepTrace",            CFG_STR,  (void *) &cf_ptrace, 0},
-  {"TraceFile", '\0', "TraceFile",             CFG_STR,  (void *) &Trace_File, 0},
-  // lexTrans options
-  {"tDict",    '\0', "TransDictFile",          CFG_STR,  (void *) &DictionaryFile, 0},
-  {"chunkT",   '\0', "ChunkTypeDict",          CFG_STR,  (void *) &ChunkType_DictFile, 0},
-  {"noumSem",  '\0', "NoumSemFile",            CFG_STR,  (void *) &Noum_SemanticFile, 0},
-  // sintTrans options
-  {"intraMov", '\0', "IntraMoveFile",          CFG_STR,  (void *) &Intra_MovementsFile, 0},
-  {"inter",    '\0', NULL,                     CFG_INT,  (void *) &Inter_Phase, 0},
-  {"interMov1", '\0', "InterMoveFile1",        CFG_STR,  (void *) &Inter_Movements1File, 0},
-  {"interMov2", '\0', "InterMoveFile2",        CFG_STR,  (void *) &Inter_Movements2File, 0},
-  {"interMov3", '\0', "InterMoveFile3",        CFG_STR,  (void *) &Inter_Movements3File, 0},
-  {"subcatF",  '\0', "SubCatFile",             CFG_STR,  (void *) &SubcatFile, 0},
-  {"prep",     '\0', "PrepFile",               CFG_STR,  (void *) &PrepositionsFile, 0},
-  {"tripletF", '\0', "TripletsFile",           CFG_STR,  (void *) &Noum_SubcatFile, 0},
-  {"verbtrans", '\0', "VerbTransferFile",      CFG_STR,  (void *) &Verb_TransferFile, 0},
-  {"chunkord", '\0', "ChunkOrderFile",         CFG_STR,  (void *) &Chunk_OrderFile, 0},
-  {"nodeord",  '\0', "NodeOrderFile",          CFG_STR,  (void *) &Node_OrderFile, 0},
-  {"POStrans", '\0', "POSTransFile",           CFG_STR,  (void *) &POS_ToOrderFile, 0},
-  {"morphgen", '\0', "MorphGenFile",           CFG_STR,  (void *) &Morpho_GenFile, 0},
-  {"measugen", '\0', "MeasuresGenFile",        CFG_STR,  (void *) &Measures_GenFile, 0},
-  {"nolexgen", '\0', "NoLexGenFile",           CFG_STR,  (void *) &NoLex_GenFile, 0},
-  {"gentags",  '\0', "GenerationTagsFile",     CFG_STR,  (void *) &Tag_ToGenFile, 0},
-  {"tagorder", '\0', "TagOrderFile",           CFG_STR,  (void *) &Tag_OrderFile, 0},
-  // Preposizioen artikuluan erabiltzeko
-  {"fcase",    '\0', NULL,                     CFG_BOOL, (void *) &fcase, 0},
-  {"nofcase",  '\0', NULL,                     CFG_BOOL, (void *) &nofcase, 0},
-  {NULL,       '\0', "FirstCase",              CFG_STR,  (void *) &cf_first_case, 0},
-  {"rules",    '\0', NULL,                     CFG_BOOL, (void *) &Urules, 0},
-  {"norules",  '\0', NULL,                     CFG_BOOL, (void *) &noUrules, 0},
-  {NULL,       '\0', "UseRules",               CFG_STR,  (void *) &cf_Urules, 0},
-  {"subcat",   '\0', NULL,                     CFG_BOOL, (void *) &Usubcat, 0},
-  {"nosubcat", '\0', NULL,                     CFG_BOOL, (void *) &noUsubcat, 0},
-  {NULL,       '\0', "UseSubcat",              CFG_STR,  (void *) &cf_Usubcat, 0},
-  {"tripl",    '\0', NULL,                     CFG_BOOL, (void *) &Utripletes, 0},
-  {"notripl",  '\0', NULL,                     CFG_BOOL, (void *) &noUtripletes, 0},
-  {NULL,       '\0', "UseTripletes",           CFG_STR,  (void *) &cf_Utripletes, 0},
-  CFG_END_OF_LIST
+	{"txala", 'T', "DepTxalaFile",               CFG_STR, (void *) &DEP_TxalaFile, 0},
+	{"malt",  'M', "DepMaltFile",		     CFG_STR, (void *) &DEP_MaltFile,0},
+	{"dep",   'd', "DepParser",		     CFG_STR, (void *) &DepParser, 0},
+	// Matxin options
+	{"xsl",      '\0', NULL,                     CFG_BOOL, (void *) &write_xslt_lag, 0},
+	{"trace",    '\0', NULL,                     CFG_BOOL, (void *) &trace, 0},
+	{"notrace",  '\0', NULL,                     CFG_BOOL, (void *) &notrace, 0},
+	{NULL,       '\0', "DoTrace",                CFG_STR,  (void *) &cf_trace, 0},
+	{"vtrace",   '\0', NULL,                     CFG_BOOL, (void *) &vtrace, 0},
+	{"novtrace", '\0', NULL,                     CFG_BOOL, (void *) &novtrace, 0},
+	{NULL,       '\0', "DoVerbTrace",            CFG_STR,  (void *) &cf_vtrace, 0},
+	{"gtrace",   '\0', NULL,                     CFG_BOOL, (void *) &gtrace, 0},
+	{"nogtrace", '\0', NULL,                     CFG_BOOL, (void *) &nogtrace, 0},
+	{NULL,       '\0', "DoGenTrace",             CFG_STR,  (void *) &cf_gtrace, 0},
+	{"ptrace",   '\0', NULL,                     CFG_BOOL, (void *) &ptrace, 0},
+	{"noptrace", '\0', NULL,                     CFG_BOOL, (void *) &noptrace, 0},
+	{NULL,       '\0', "DoPrepTrace",            CFG_STR,  (void *) &cf_ptrace, 0},
+	{"TraceFile", '\0', "TraceFile",             CFG_STR,  (void *) &Trace_File, 0},
+	// lexTrans options
+	{"tDict",    '\0', "TransDictFile",          CFG_STR,  (void *) &DictionaryFile, 0},
+	{"chunkT",   '\0', "ChunkTypeDict",          CFG_STR,  (void *) &ChunkType_DictFile, 0},
+	{"noumSem",  '\0', "NoumSemFile",            CFG_STR,  (void *) &Noum_SemanticFile, 0},
+  // Lexical selection options
+  {"lexrules",    '\0', NULL,                  CFG_BOOL, (void *) &Lrules, 0},
+  {"nolexrules",  '\0', NULL,                  CFG_BOOL, (void *) &noLrules, 0},
+  {NULL,       '\0', "UseLexRules",            CFG_STR,  (void *) &cf_Lrules, 0},
+  {"disF",     '\0', "LexSelFile",             CFG_STR,  (void *) &LexSelFile, 0},
+	// sintTrans options
+	{"intraMov", '\0', "IntraMoveFile",          CFG_STR,  (void *) &Intra_MovementsFile, 0},
+	{"inter",    '\0', NULL,                     CFG_INT,  (void *) &Inter_Phase, 0},
+	{"interMov1", '\0', "InterMoveFile1",        CFG_STR,  (void *) &Inter_Movements1File, 0},
+	{"interMov2", '\0', "InterMoveFile2",        CFG_STR,  (void *) &Inter_Movements2File, 0},
+	{"interMov3", '\0', "InterMoveFile3",        CFG_STR,  (void *) &Inter_Movements3File, 0},
+	{"subcatF",  '\0', "SubCatFile",             CFG_STR,  (void *) &SubcatFile, 0},
+	{"prep",     '\0', "PrepFile",               CFG_STR,  (void *) &PrepositionsFile, 0},
+	{"tripletF", '\0', "TripletsFile",           CFG_STR,  (void *) &Noum_SubcatFile, 0},
+	{"verbtrans", '\0', "VerbTransferFile",      CFG_STR,  (void *) &Verb_TransferFile, 0},
+	{"chunkord", '\0', "ChunkOrderFile",         CFG_STR,  (void *) &Chunk_OrderFile, 0},
+	{"nodeord",  '\0', "NodeOrderFile",          CFG_STR,  (void *) &Node_OrderFile, 0},
+	{"POStrans", '\0', "POSTransFile",           CFG_STR,  (void *) &POS_ToOrderFile, 0},
+	{"morphgen", '\0', "MorphGenFile",           CFG_STR,  (void *) &Morpho_GenFile, 0},
+	{"measugen", '\0', "MeasuresGenFile",        CFG_STR,  (void *) &Measures_GenFile, 0},
+	{"nolexgen", '\0', "NoLexGenFile",           CFG_STR,  (void *) &NoLex_GenFile, 0},
+	{"gentags",  '\0', "GenerationTagsFile",     CFG_STR,  (void *) &Tag_ToGenFile, 0},
+	{"tagorder", '\0', "TagOrderFile",           CFG_STR,  (void *) &Tag_OrderFile, 0},
+	// Preposizioen artikuluan erabiltzeko
+	{"fcase",    '\0', NULL,                     CFG_BOOL, (void *) &fcase, 0},
+	{"nofcase",  '\0', NULL,                     CFG_BOOL, (void *) &nofcase, 0},
+	{NULL,       '\0', "FirstCase",              CFG_STR,  (void *) &cf_first_case, 0},
+	{"preprules",    '\0', NULL,                 CFG_BOOL, (void *) &Urules, 0},
+	{"nopreprules",  '\0', NULL,                 CFG_BOOL, (void *) &noUrules, 0},
+	{NULL,       '\0', "UsePrepRules",           CFG_STR,  (void *) &cf_Urules, 0},
+	{"subcat",   '\0', NULL,                     CFG_BOOL, (void *) &Usubcat, 0},
+	{"nosubcat", '\0', NULL,                     CFG_BOOL, (void *) &noUsubcat, 0},
+	{NULL,       '\0', "UseSubcat",              CFG_STR,  (void *) &cf_Usubcat, 0},
+	{"tripl",    '\0', NULL,                     CFG_BOOL, (void *) &Utripletes, 0},
+	{"notripl",  '\0', NULL,                     CFG_BOOL, (void *) &noUtripletes, 0},
+	{NULL,       '\0', "UseTripletes",           CFG_STR,  (void *) &cf_Utripletes, 0},
+	CFG_END_OF_LIST
       };
       
       // Creating context 
@@ -348,8 +358,11 @@ class config {
       date=false;  nodate=false;  quant=false;  noquant=false;  dict=false; nodict=false; 
       prob=false;  noprob=false;  nec=false;  nonec=false; 
       dup=false;   nodup=false;   retok=false; noretok=false;
-      trace=false; notrace=false;vtrace=false;novtrace=false;  gtrace=false;nogtrace=false;  ptrace=false;noptrace=false;
-      Usubcat=false; noUsubcat=false;Urules=false;noUrules=false;  Utripletes=false;noUtripletes=false; fcase=false; nofcase=false;
+      trace=false; notrace=false; vtrace=false;novtrace=false;
+      gtrace=false;nogtrace=false; ptrace=false;noptrace=false;
+      Usubcat=false; noUsubcat=false; Urules=false; noUrules=false;
+      Lrules = false; noLrules = false;
+      Utripletes=false;noUtripletes=false; fcase=false; nofcase=false;
       cf_flush=NULL; cf_sufx=NULL;  cf_loc=NULL;  cf_numb=NULL; 
       cf_punt=NULL;  cf_date=NULL;  cf_quant=NULL; cf_dict=NULL; cf_prob=NULL;
       cf_nec=NULL;   cf_dup=NULL;   cf_retok=NULL;
@@ -385,7 +398,8 @@ class config {
 
       Inter_Phase=1;
       DoTrace=false;DoVerbTrace=false;DoGenTrace=false;DoPrepTrace=false;
-      UseRules=false;UseSubcat=false;UseTripletes=false;first_case=false;
+      UsePrepRules=false; UseSubcat=false; UseTripletes=false; first_case=false;
+      UseLexRules=false;
       Trace_File=NULL;
       DictionaryFile=NULL; ChunkType_DictFile=NULL;
       Noum_SemanticFile=NULL; Intra_MovementsFile=NULL;
@@ -396,6 +410,7 @@ class config {
       Node_OrderFile=NULL; POS_ToOrderFile=NULL;
       Morpho_GenFile=NULL; Measures_GenFile=NULL;
       NoLex_GenFile=NULL; Tag_ToGenFile=NULL; Tag_OrderFile=NULL;
+      LexSelFile = NULL;
 
        // parse comand line
       cfg_set_cmdline_context(con, 1, -1, argv);
@@ -427,6 +442,7 @@ class config {
       }
 
       // Handle boolean options expressed as strings in config file
+<<<<<<< HEAD:src/config.h
 
       if(cf_flush) {
         SetBooleanOptionCF(string(cf_flush), AlwaysFlush,"AlwaysFlush");
@@ -548,10 +564,10 @@ class config {
       }
 
       if(cf_Urules) {
-        SetBooleanOptionCF(string(cf_Urules), UseRules,"UseRules");
+        SetBooleanOptionCF(string(cf_Urules), UsePrepRules, "UsePrepRules");
       } else {
         WARNING("Empty config variable for UseRules in the config file.");
-        SetBooleanOptionCF(string("false"), UseRules,"UseRules");
+        SetBooleanOptionCF(string("false"), UsePrepRules, "UsePrepRules");
       }
 
       if(cf_Usubcat) {
@@ -566,6 +582,13 @@ class config {
       } else {
         WARNING("Empty config variable for UseTripletes in the config file.");
         SetBooleanOptionCF(string("false"), UseTripletes,"UseTripletes");
+      }
+
+      if(cf_Lrules) {
+        SetBooleanOptionCF(string(cf_Lrules), UseLexRules, "UseLexRules");
+      } else {
+        WARNING("Empty config variable for UseRules in the config file.");
+        SetBooleanOptionCF(string("false"), UseLexRules, "UseLexRules");
       }
       
       // Reload command line options to override ConfigFile options
@@ -613,9 +636,11 @@ class config {
       SetBooleanOptionCL(ptrace,noptrace,DoPrepTrace,"ptrace");
 
       SetBooleanOptionCL(fcase,nofcase,first_case,"fcase");
-      SetBooleanOptionCL(Urules,noUrules,UseRules,"rules");
+      SetBooleanOptionCL(Urules, noUrules, UsePrepRules, "preprules");
       SetBooleanOptionCL(Usubcat,noUsubcat,UseSubcat,"subcat");
       SetBooleanOptionCL(Utripletes,noUtripletes,UseTripletes,"tripl");
+
+      SetBooleanOptionCL(Lrules, noLrules, UseLexRules, "lexrules");
 
       SetBooleanOptionCL(write_xslt_lag,false,write_xslt,"xsl");
 
