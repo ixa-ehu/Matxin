@@ -1338,7 +1338,6 @@ wstring to_upper(wstring input) {
 vector<wstring> verb_noum_subcategoritation(wstring verb_lemma, wstring chunk_head, vector<wstring> &cases, wstring &attributes, wstring sentenceref, int sentencealloc, config &cfg) {
   vector<wstring> subcat = verb_noum_subcat[verb_lemma][chunk_head];
 
-  // FIXME: this cast is legal as far as c_str() returns an ASCII char
   int alloc = watoi(text_attrib(attributes, L"alloc").c_str()) - sentencealloc;
   wstring prep = text_attrib(attributes, L"prep");
   if (prep == L"") prep = L"-";

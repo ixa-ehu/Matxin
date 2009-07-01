@@ -371,7 +371,6 @@ wstring procNODE_notAS(xmlTextReaderPtr reader, bool head,
     wstring NODOA = procNODE_notAS(reader, head_child, attribs, child_attributes, cfg);
     nodes += NODOA;
 
-    // int ret = nextTag(reader); // TODO: Aztertu. Bittor: uste dut beheko dela esan nahi dena.
     ret = nextTag(reader);
     tagName = getTagName(reader);
     tagType = xmlTextReaderNodeType(reader);
@@ -459,7 +458,6 @@ wstring procNODE_AS(xmlTextReaderPtr reader, bool head, wstring& attributes) {
     // NODEa irakurri eta prozesatzen du. NODE hori ez da CHUNKaren burua izango (head=false)
     nodes += procNODE_AS(reader, false, child_attributes);
 
-    // int ret = nextTag(reader); // TODO: Aztertu. Uste dut behekoa dela esan nahi dena.
     ret = nextTag(reader);
     tagName = getTagName(reader);
     tagType=xmlTextReaderNodeType(reader);
@@ -493,7 +491,6 @@ wstring procCHUNK(xmlTextReaderPtr reader, wstring parent_attribs, config cfg) {
     // ord -> ref : ord atributuan dagoen balioa, ref atributuan idazten du
     // type : CHUNKaren type atributua itzultzen da
     // si atributua mantentzen da
-    //TODO: modify get_lexInfo accordingly
     chunkType = get_lexInfo(L"chunkType", attrib(reader, "type"));
 
     if (chunkType == L"") chunkType = attrib(reader, "type");
