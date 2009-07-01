@@ -34,20 +34,42 @@ extern "C" {
 #endif
 
 /*
- * zenbaki positiboak testutik int-era pasatzeko
+ * Converts positive numbers from text (wchar) to int
  */
 int watoi(const wchar_t *buffer);
 
+/*
+ * Returns an array of strings in 'tokens', splitting the input
+ * string 'str' based on the character 'delimiter'.
+ */
 void Tokenize(const wstring& str,
               vector<wstring>& tokens,
-              const wstring& delimiters = L" ");
+              const wstring& delimiter = L" ");
 
+/*
+ * Returns a string in 'tokens', splitting the input
+ * string 'str' based on the character 'delimiter'.
+ */
 void Tokenize2(const wstring& str,
                wstring& tokens,
-               const wstring& delimiters = L" ");
+               const wstring& delimiter = L" ");
 
+/*
+ * Joins all the elements from a vector of wstrings using
+ * the 'delimiter' character and returns the resulting wstring.
+ */
 wstring v2s(vector<wstring> vector, wstring delimiter = L" ");
 
+/*
+ * Splits multi-attribute text from a elment into
+ * attributes from separate elements.
+ *
+ * For example, having this input string:
+ * str = L"lem='beste\bat' pos='[DET][DZG]\[DET][DZH]' pos='4'"
+ * it will return a vector with these elements:
+ * v = {L"lem='beste' pos='[DET][DZG]' pos='4'" ,
+ *      L"lem='bat' pos='[DET][DZH]' pos='4'"}
+ */
 vector<wstring> split_multiattrib(wstring str);
 
 #ifdef __cplusplus
