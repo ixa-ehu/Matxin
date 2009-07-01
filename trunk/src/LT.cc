@@ -103,14 +103,10 @@ wstring get_dict_attributes(wstring const &full) {
   if (full.find(L'<') == wstring::npos)
     return L"";
 
-  wstring output = full.substr(full.find(L'<')) + L"'";
+  wstring output = L"lem='" + full + L"'";
 
   for(uint i = 0; i < output.size(); i++) {
-    if (output[i] == L'<' && i == 0) {
-      output.erase(i, 1);
-      i--;
-    }
-    else if (output[i] == L'<') {
+    if (output[i] == L'<') {
       output.replace(i, 1, L"' ");
       i++;
     }
@@ -130,7 +126,7 @@ wstring getsyn(vector<wstring> translations) {
   wstring output;
 
   for (uint i=0; i< translations.size(); i++) {
-    output += L"<SYN lem='" + lema(translations[i]) + L"' " + get_dict_attributes(translations[i]) + L"/>\n";
+    output += L"<SYN " + translations[i] + L"/>\n";
   }
 
   return output;
@@ -140,35 +136,31 @@ void order_ordainak(vector<wstring> &ordainak) {
   vector<wstring> ordered_ordain;
   int sense;
   bool zero_sense = false;
-  ordered_ordain.insert(ordered_ordain.begin(), ordainak.size(), L"");
 
   vector<wstring>::iterator it;
-  for (it=ordainak.begin(); it!=ordainak.end(); it++) {
+  for (it = ordainak.begin(); it != ordainak.end(); it++)
+  {
     sense = 0;
     size_t pos, pos2;
-    if ((pos = (*it).find(L"<sense>")) != wstring::npos) {
-      if ((pos2 = (*it).find(L"<", pos+1)) != wstring::npos) {
-        // FIXME: this cast is legal as far as c_str() returns an ASCII char
-        sense = watoi((*it).substr(pos+7, pos2-pos-7).c_str());
-        //(*it).erase(pos, pos2-pos);
-      }
-      else {
-        // FIXME: this cast is legal as far as c_str() returns an ASCII char
-        sense = watoi((*it).substr(pos+7).c_str());
-        //(*it).erase(pos);
-      }
+    if ((pos = (*it).find(L" sense='")) != wstring::npos)
+    {
+      if ((pos2 = (*it).find(L"'", pos+8)) != wstring::npos)
+        sense = watoi((*it).substr(pos+8, pos2-pos-8).c_str());
     }
 
-    if (sense == 0) {
+    if (sense == 0)
+    {
       zero_sense = true;
       ordered_ordain.insert(ordered_ordain.begin(), *it);
-      ordered_ordain.pop_back();
     }
-    else if (zero_sense)
-      ordered_ordain[sense] = *it;
     else
-      ordered_ordain[sense-1] = *it;
-
+    {
+      if (!zero_sense)
+        sense--;
+      if (ordered_ordain.size() < sense+1)
+        ordered_ordain.resize(sense+1);
+      ordered_ordain[sense] = *it;
+    }
   }
 
   ordainak = ordered_ordain;
@@ -184,7 +176,7 @@ vector<wstring> disanbiguate(wstring &full) {
 
   for(uint i = 0; i < output.size(); i++) {
     if (output[i] == L'/') {
-      ordainak.push_back(output.substr(0,i));
+      ordainak.push_back(get_dict_attributes(output.substr(0, i)));
 
       output = output.substr(i+1);
       i=0;
@@ -194,21 +186,18 @@ vector<wstring> disanbiguate(wstring &full) {
       output.erase(i, 1);
   }
 
-  ordainak.push_back(output);
-
+  ordainak.push_back(get_dict_attributes(output));
   order_ordainak(ordainak);
+
   return ordainak;
 }
 
-vector<wstring> get_translation(wstring lem, wstring mi, bool &unknown){
+vector<wstring> get_translation(wstring lem, wstring mi, bool fromAS, bool &unknown) {
   vector<wstring> translation;
 
   wstring input = L"^" + lem + L"<parol>" + mi + L"$";
-  //cerr << endl << input << endl;
   wstring trad = fstp.biltrans(input);
-  //cerr << trad << endl;
   trad = trad.substr(1, trad.size()-2);
-  //cerr << trad << endl;
 
   unknown = false;
   if (trad[0] == L'@' || trad.find(L">") < trad.find(L"<")) {
@@ -234,43 +223,38 @@ vector<wstring> get_translation(wstring lem, wstring mi, bool &unknown){
     unknown = true;
   }
 
+  if (fromAS) {
+    trad = L"_" + trad;
+    trad.replace(trad.find(L"<"), 1, L"_<");
+  }
+
   translation = disanbiguate(trad);
   //cerr << translation[0] << endl << endl;
 
   return translation;
 }
 
-wstring multiNodes (xmlTextReaderPtr reader, wstring &full) {
+wstring multiNodes (xmlTextReaderPtr reader, wstring &full, wstring attributes) {
 // Hiztegi elebidunaren euskarazko ordaina NODO bat baino gehiagoz osaturik badago.
 // Adb. oso<ADB><ADOARR><+><MG><+>\eskas<ADB><ADJ><+><MG><+>.
 // Azken NODOa ezik besteak tratatzen ditu
 // IN:  Euskarazko ordain bat, NODO bat baino gehiago izan ditzake.
 // OUT: Lehen NODOei dagokien XML zuhaitza.
   wstring output = L"";
+  vector<wstring> tmp;
 
-  size_t aux = full.find(L"\\");
-  while (aux != wstring::npos) {
+  tmp = split_multiattrib(full);
 
-    wstring trad = full.substr(0, aux);
-    wstring dict_attributes = get_dict_attributes(trad);
-
-    output += L"<NODE ref='" + attrib(reader, "ord") + L"' alloc='" + attrib(reader, "alloc") + L"'";
-    output += L" lem='" + lema(trad) + L"' " + dict_attributes;
-
-    if (text_attrib(dict_attributes, L"pos") == L"[IZE][ARR]" && get_lexInfo(L"noumSem", lema(trad)) != L"" )
-      output += L" sem='" + get_lexInfo(L"noumSem", lema(trad)) + L"'";
-
-    output += L"/>\n";
-
-    full.erase(0, aux + 1);
-    aux = full.find(L"\\");
+  for (size_t i = 1; i < tmp.size(); i++)
+  {
+    output += L"<NODE " + attributes;
+    output += L" " + tmp[i] + L" />\n";
   }
 
   return output;
 }
 
 
-wstring procNODE_notAS(xmlTextReaderPtr reader, bool head) {
 // NODE etiketa irakurri eta prozesatzen du, NODE hori AS motakoa ez den CHUNK baten barruan dagoela:
 // - ord -> ref : ord atributuan dagoen balioa, ref atributuan idazten du (helmugak jatorrizkoaren erreferentzia izateko postedizioan)
 // - (S) preposizioen eta (F) puntuazio ikurren kasuan ez da transferentzia egiten.
@@ -278,86 +262,130 @@ wstring procNODE_notAS(xmlTextReaderPtr reader, bool head) {
 //    - Transferentzia lexikoa egiten da, lem, pos, mi, cas eta sub attributuak sortuz.
 //    - Hitz horren semantika begiratzen da
 // - NODEaren azpian dauden NODEak irakurri eta prozesatzen ditu.
-
-  wstring nodes, subnodes, synonyms;
+wstring procNODE_notAS(xmlTextReaderPtr reader, bool head,
+                       wstring parent_attribs, wstring& attributes, config &cfg)
+{
+  wstring nodes;
+  wstring subnodes;
+  wstring synonyms;
+  wstring child_attributes;
   wstring tagName = getTagName(reader);
-  int tagType=xmlTextReaderNodeType(reader);
-  bool head_child=false;
-  bool unknown=false;
+  vector<wstring> trad;
+  vector<wstring> select;
+  int tagType = xmlTextReaderNodeType(reader);
+  bool head_child = false;
+  bool unknown = false;
 
   // ord -> ref : ord atributuan dagoen balioa, ref atributuan idazten du
   // alloc atributua mantentzen da
-  if (tagName == L"NODE" and tagType != XML_READER_TYPE_END_ELEMENT) {
-    nodes = L"<NODE ref='" + write_xml(attrib(reader, "ord")) + L"' alloc='" + write_xml(attrib(reader, "alloc")) + L"'";
-    nodes += L" UpCase='" + write_xml(upper_type(attrib(reader, "form"), attrib(reader, "mi"), attrib(reader, "ord"))) + L"'";
+  if (tagName == L"NODE" and tagType != XML_READER_TYPE_END_ELEMENT)
+  {
+    nodes = L"<NODE ";
+    attributes = L"ref='" + write_xml(attrib(reader, "ord")) + L"'" +
+                 L" alloc='" + write_xml(attrib(reader, "alloc")) + L"'" +
+                 L" slem='" + write_xml(attrib(reader, "lem")) + L"'" +
+                 L" smi='" + write_xml(attrib(reader, "mi")) + L"'" +
+                 L" UpCase='" + write_xml(upper_type(attrib(reader, "form"),
+                                                     attrib(reader, "mi"),
+                                                     attrib(reader, "ord"))) +
+                 L"'";
 
-    if (attrib(reader, "mi").substr(0,1) == L"W" || attrib(reader, "mi").substr(0,1) == L"Z") {
+    if (attrib(reader, "mi").substr(0,1) == L"W" or
+        attrib(reader, "mi").substr(0,1) == L"Z")
+    {
       // Daten (W) eta zenbakien (Z) kasuan ez da transferentzia egiten.
       // lem eta mi mantentzen dira
-      nodes+= L" lem='" + write_xml(attrib(reader, "lem")) + L"' pos='[" + write_xml(attrib(reader, "mi")) + L"]'";
+      attributes += L" lem='" + write_xml(attrib(reader, "lem")) + L"'" +
+                    L" pos='[" + write_xml(attrib(reader, "mi")) + L"]'";
     }
-    else {
+    else
+    {
       // Beste kasuetan:
       // Transferentzia lexikoa egiten da, lem, pos, mi, cas eta sub attributuak sortuz.
-      vector<wstring> trad = get_translation(attrib(reader, "lem"), attrib(reader, "mi"), unknown);
+      trad = get_translation(attrib(reader, "lem"),
+                             attrib(reader, "mi"), false, unknown);
+
+      if (trad.size() > 1)
+        select = lexical_selection(parent_attribs, attributes, trad, cfg);
+      else
+        select = trad;
 
       if (trad.size() > 1)
         synonyms = getsyn(trad);
 
-      subnodes = multiNodes(reader, trad[0]);
-      wstring dict_attributes = get_dict_attributes(trad[0]);
-      nodes += write_xml(L" lem='" + lema(trad[0]) + L"' " + dict_attributes);
+      subnodes = multiNodes(reader, select[0], attributes);
+      attributes += L" " + select[0];
 
       // Hitz horren semantika begiratzen da
-      if (head && text_attrib(dict_attributes, L"pos") == L"[IZE][ARR]" && get_lexInfo(L"noumSem", lema(trad[0])) != L"" )
-        nodes += L" sem='" + write_xml(get_lexInfo(L"noumSem", lema(trad[0]))) + L"'";
+      if (head && text_attrib(select[0], L"pos") == L"[IZE][ARR]" and
+          get_lexInfo(L"noumSem", text_attrib(select[0], L"lem")) != L"" )
+        attributes += L" sem='" + write_xml(get_lexInfo(L"noumSem",
+                                                        text_attrib(select[0], L"lem"))) + L"'";
 
       if (unknown)
-        nodes += L" unknown='transfer'";
+        attributes += L" unknown='transfer'";
 
-      head_child = head && (lema(trad[0]) == L"");
+      head_child = head && (text_attrib(select[0], L"lem") == L"");
     }
 
-    if (xmlTextReaderIsEmptyElement(reader) == 1 && subnodes == L"" && synonyms == L"") {
+    if (xmlTextReaderIsEmptyElement(reader) == 1 and
+        subnodes == L"" && synonyms == L"")
+    {
       //NODE hutsa bada (<NODE .../>), NODE hutsa sortzen da eta momentuko NODEarekin bukatzen dugu.
-      nodes += L"/>\n";
+      nodes += attributes + L"/>\n";
       return nodes;
     }
-    else if (xmlTextReaderIsEmptyElement(reader) == 1) {
+    else if (xmlTextReaderIsEmptyElement(reader) == 1)
+    {
       //NODE hutsa bada (<NODE .../>), NODE hutsa sortzen da eta momentuko NODEarekin bukatzen dugu.
-      nodes += L">\n" + synonyms + subnodes + L"</NODE>\n";
+      nodes += attributes + L">\n" + synonyms + subnodes + L"</NODE>\n";
       return nodes;
     }
-    else {
+    else
+    {
       //bestela NODE hasiera etiketaren bukaera idatzi eta etiketa barrukoa tratatzera pasatzen gara.
-      nodes += L">\n" + synonyms + subnodes;
+      nodes += attributes + L">\n" + synonyms + subnodes;
     }
   }
-  else {
-    wcerr << L"ERROR: invalid tag: <" << tagName << L"> when <NODE> was expected..." << endl;
+  else
+  {
+    wcerr << L"ERROR: invalid tag: <" << tagName
+          << L"> when <NODE> was expected..." << endl;
     exit(-1);
   }
 
   int ret = nextTag(reader);
   tagName = getTagName(reader);
-  tagType=xmlTextReaderNodeType(reader);
+  tagType = xmlTextReaderNodeType(reader);
+
+  wstring attribs = attributes;
+  if (text_attrib(attributes, L"lem") == L"") attribs = parent_attribs;
 
   // NODEaren azpian dauden NODE guztietarako
-  while (ret == 1 and tagName == L"NODE" and tagType == XML_READER_TYPE_ELEMENT) {
+  while (ret == 1 and tagName == L"NODE" and
+         tagType == XML_READER_TYPE_ELEMENT)
+  {
     // NODEa irakurri eta prozesatzen du.
-    nodes += procNODE_notAS(reader, head_child);
+    //nodes += procNODE_notAS(reader, head_child, attributes, cfg);
+
+    wstring NODOA = procNODE_notAS(reader, head_child, attribs, child_attributes, cfg);
+    nodes += NODOA;
 
     // int ret = nextTag(reader); // TODO: Aztertu. Bittor: uste dut beheko dela esan nahi dena.
     ret = nextTag(reader);
     tagName = getTagName(reader);
-    tagType=xmlTextReaderNodeType(reader);
+    tagType = xmlTextReaderNodeType(reader);
   }
 
+  if (text_attrib(attributes, L"lem") == L"") attributes = child_attributes;
+
   //NODE bukaera etiketa tratatzen da.
-  if (tagName == L"NODE" and tagType == XML_READER_TYPE_END_ELEMENT) {
+  if (tagName == L"NODE" and tagType == XML_READER_TYPE_END_ELEMENT)
+  {
     nodes += L"</NODE>\n";
   }
-  else {
+  else
+  {
     wcerr << L"ERROR: invalid document: found <" << tagName << L"> when </NODE> was expected..." << endl;
     exit(-1);
   }
@@ -366,7 +394,7 @@ wstring procNODE_notAS(xmlTextReaderPtr reader, bool head) {
 }
 
 
-wstring procNODE_AS(xmlTextReaderPtr reader, bool head) {
+wstring procNODE_AS(xmlTextReaderPtr reader, bool head, wstring& attributes) {
 // NODE etiketa irakurri eta prozesatzen du, NODE hori AS motako CHUNK baten barruan dagoela:
 // IN: head ( NODEa CHUNKaren burua den ala ez )
 // - ord -> ref : ord atributuan dagoen balioa, ref atributuan idazten du (helmugak jatorrizkoaren erreferentzia izateko postedizioan)
@@ -375,7 +403,7 @@ wstring procNODE_AS(xmlTextReaderPtr reader, bool head) {
 // - Burua ez bada jatorrizko hizkuntzaren lem puntuen artean markatuko da (.lem.) eta mi atributua mantentzen da.
 // NODEaren azpian dauden NODEak irakurri eta prozesatzen ditu. NODE horiek ez dira CHUNKaren burua izango (head=false)
 
-  wstring nodes, synonyms;
+  wstring nodes, synonyms, child_attributes;
   wstring tagName = getTagName(reader);
   int tagType=xmlTextReaderNodeType(reader);
   bool unknown =false;
@@ -384,36 +412,37 @@ wstring procNODE_AS(xmlTextReaderPtr reader, bool head) {
   if (tagName == L"NODE" and tagType != XML_READER_TYPE_END_ELEMENT) {
     // ord -> ref : ord atributuan dagoen balioa, ref atributuan idazten du
     // alloc atributua mantentzen da
-    nodes = L"<NODE ref='" + write_xml(attrib(reader, "ord")) + L"' alloc='" + write_xml(attrib(reader, "alloc")) + L"'";
-    nodes += L" UpCase='" + write_xml(upper_type(attrib(reader, "form"), attrib(reader, "mi"), attrib(reader, "ord"))) + L"'";
+    nodes = L"<NODE";
+    attributes = L" ref='" + write_xml(attrib(reader, "ord")) + L"' alloc='" + write_xml(attrib(reader, "alloc")) + L"'";
+    attributes += L" UpCase='" + write_xml(upper_type(attrib(reader, "form"), attrib(reader, "mi"), attrib(reader, "ord"))) + L"'";
+    attributes += L" mi='" + attrib(reader, "mi") + L"'";
 
     // CHUNKaren burua bada:
     if (head) {
       // Transferentzia lexikoa egiten da. (lem eta pos atributuen balio berriak sortuz)
-      vector<wstring> trad = get_translation(attrib(reader, "lem"), attrib(reader, "mi"), unknown);
+      vector<wstring> trad = get_translation(attrib(reader, "lem"), attrib(reader, "mi"), true, unknown);
 
       if (trad.size() > 1)
         synonyms = getsyn(trad);
 
-      nodes += L" lem='_" + write_xml(lema(trad[0])) + L"_' mi='" +
-               write_xml(attrib(reader, "mi")) + L"' " +
-               write_xml(text_allAttrib_except(get_dict_attributes(trad[0]), L"mi"));
+      attributes += L" " + trad[0];
+
       if (unknown)
-        nodes += L" unknown='transfer'";
+        attributes += L" unknown='transfer'";
     }
     else {
       // Burua ez bada jatorrizko hizkuntzaren lem puntuen artean markatuko da (.lem.) eta mi atributua mantentzen da.
-      nodes+= L" lem='." + write_xml(attrib(reader, "lem")) + L".' mi='" + write_xml(attrib(reader, "mi")) + L"'";
+      attributes += L" lem='." + write_xml(attrib(reader, "lem")) + L".' mi='" + write_xml(attrib(reader, "mi")) + L"'";
     }
 
     if (xmlTextReaderIsEmptyElement(reader) == 1 && synonyms == L"") {
       //Elementu hutsa bada (<NODE .../>) NODE hutsa sortzen da eta NODE honetkin bukatu dugu.
-      nodes += L"/>\n";
+      nodes += attributes + L"/>\n";
       return nodes;
     }
     else {
       //Ez bada NODE hutsa hasiera etiketa ixten da.
-      nodes += L">\n" + synonyms;
+      nodes += attributes + L">\n" + synonyms;
     }
   }
   else {
@@ -428,7 +457,7 @@ wstring procNODE_AS(xmlTextReaderPtr reader, bool head) {
   // NODEaren azpian dauden NODE guztietarako:
   while (ret == 1 and tagName == L"NODE" and tagType == XML_READER_TYPE_ELEMENT) {
     // NODEa irakurri eta prozesatzen du. NODE hori ez da CHUNKaren burua izango (head=false)
-    nodes += procNODE_AS(reader, false);
+    nodes += procNODE_AS(reader, false, child_attributes);
 
     // int ret = nextTag(reader); // TODO: Aztertu. Uste dut behekoa dela esan nahi dena.
     ret = nextTag(reader);
@@ -449,7 +478,7 @@ wstring procNODE_AS(xmlTextReaderPtr reader, bool head) {
 }
 
 
-wstring procCHUNK(xmlTextReaderPtr reader) {
+wstring procCHUNK(xmlTextReaderPtr reader, wstring parent_attribs, config cfg) {
 // CHUNK etiketa irakurri eta prozesatzen du:
 // - ord -> ref : ord atributuan dagoen balioa, ref atributuan idazten du (helmugak jatorrizkoaren erreferentzia izateko postedizioan)
 // - type : CHUNKaren type atributua itzultzen da
@@ -458,7 +487,7 @@ wstring procCHUNK(xmlTextReaderPtr reader) {
 
   wstring tagName = getTagName(reader);
   int tagType=xmlTextReaderNodeType(reader);
-  wstring tree, chunkType;
+  wstring tree, chunkType, head_attribs;
 
   if (tagName == L"CHUNK" and tagType == XML_READER_TYPE_ELEMENT) {
     // ord -> ref : ord atributuan dagoen balioa, ref atributuan idazten du
@@ -484,10 +513,13 @@ wstring procCHUNK(xmlTextReaderPtr reader) {
   // CHUNK motaren arabera tratamendu desberdina egiten da (procNODE_AS edo procNODE_notAS)
   if (chunkType.substr(0,4) == L"adi-")
     // NODEa irakurri eta prozesatzen du,  CHUNKaren burua izango da (head=true)
-    tree += procNODE_AS(reader,true);
+    tree += procNODE_AS(reader, true, head_attribs);
   else
+  {
     // NODEa irakurri eta prozesatzen du
-    tree += procNODE_notAS(reader,true);
+    wstring NODOA = procNODE_notAS(reader, true, parent_attribs, head_attribs, cfg);
+    tree += NODOA;
+  }
 
   ret = nextTag(reader);
   tagName = getTagName(reader);
@@ -496,7 +528,7 @@ wstring procCHUNK(xmlTextReaderPtr reader) {
   // CHUNK honen barruan dauden CHUNK guztietarako
   while (ret == 1 and tagName == L"CHUNK" and tagType == XML_READER_TYPE_ELEMENT) {
     // CHUNK irakurri eta prozesatzen du.
-    tree += procCHUNK(reader);
+    tree += procCHUNK(reader, head_attribs, cfg);
 
     ret = nextTag(reader);
     tagName = getTagName(reader);
@@ -515,7 +547,7 @@ wstring procCHUNK(xmlTextReaderPtr reader) {
 }
 
 
-wstring procSENTENCE (xmlTextReaderPtr reader) {
+wstring procSENTENCE (xmlTextReaderPtr reader, config &cfg) {
 // SENTENCE etiketa irakurri eta prozesatzen du:
 // - ord -> ref : ord atributuan dagoen balioa, ref atributuan idazten du (helmugak jatorrizkoaren erreferentzia izateko postedizioan)
 // - SENTENCE barruan dauden CHUNKak irakurri eta prozesatzen ditu.
@@ -542,7 +574,7 @@ wstring procSENTENCE (xmlTextReaderPtr reader) {
   // SENTENCE barruan dauden CHUNK guztietarako
   while (ret == 1 and tagName == L"CHUNK") {
     // CHUNKa irakurri eta prozesatzen du.
-    tree += procCHUNK(reader);
+    tree += procCHUNK(reader, L"", cfg);
 
     ret = nextTag(reader);
     tagName = getTagName(reader);
@@ -577,6 +609,8 @@ int main(int argc, char *argv[])
   // Hasieraketa hauek konfigurazio fitxategi batetik irakurri beharko lirateke.
   init_lexInfo(L"noumSem", cfg.Noum_SemanticFile);
   init_lexInfo(L"chunkType", cfg.ChunkType_DictFile);
+  // Init lexical selection reading the rules file
+  init_lexical_selection(cfg.LexSelFile);
 
   // libXml liburutegiko reader hasieratzen da, sarrera estandarreko fitxategia irakurtzeko.
   xmlTextReaderPtr reader;
@@ -604,7 +638,7 @@ int main(int argc, char *argv[])
   while (ret == 1 and tagName == L"SENTENCE") {
 
     //SENTENCE irakurri eta prozesatzen du.
-    wstring tree = procSENTENCE(reader);
+    wstring tree = procSENTENCE(reader, cfg);
     wcout << tree << endl;
     wcout.flush();
 

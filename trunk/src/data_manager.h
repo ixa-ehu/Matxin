@@ -64,8 +64,14 @@ wstring apply_verbTransference(wstring AS_source);
 void init_chunk_order(string fitxName);
 wstring get_chunk_order(wstring parent_type, wstring child_type, int relative_order);
 
-void init_preposition_transference(string fitxName, config &cfg);
+void init_preposition_transference(string fitxName);
 vector<wstring> preposition_transference(wstring parent_attributes, wstring child_attributes, wstring sentenceref, int sentencealloc, config &cfg);
+
+void
+  init_lexical_selection(string filename);
+vector<wstring>
+  lexical_selection(wstring parent_attributes, wstring common_attributes,
+                    vector<wstring> child_attributes, config &cfg);
 
 void init_verb_subcategoritation(string fitxName, config &cfg);
 wstring verb_subcategoritation(wstring verb_lemma, vector<vector<wstring> > &cases, vector<wstring> &attributes, vector<wstring> &subj_cases, wstring subj_attributes, wstring sentenceref, int sentencealloc, config &cfg);

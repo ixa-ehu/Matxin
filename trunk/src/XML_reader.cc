@@ -143,10 +143,12 @@ wstring text_attrib(wstring attributes, wstring const &nombre) {
   if (nombre[0] == L'\'' && nombre[nombre.size()-1] == L'\'')
     return nombre.substr(1, nombre.size()-2);
 
-  wstring to_find = nombre + L"=";
+  wstring to_find = L" " + nombre + L"=";
   size_t startPos = attributes.find(to_find);
-  if (startPos == wstring::npos) return L"";
-  startPos = startPos+nombre.size()+2;
+
+  if (attributes.substr(0, nombre.size()+1) == (nombre + L"=")) startPos = nombre.size()+2;
+  else if (startPos == wstring::npos) return L"";
+  else startPos = startPos+nombre.size()+3;
 
   size_t endPos = attributes.find(L"'", startPos);
   if (endPos == wstring::npos) endPos = attributes.size();

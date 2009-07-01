@@ -787,15 +787,18 @@ wstring get_chunk_order(wstring parent_type, wstring child_type, int relative_or
   return L"";
 }
 
+
+/* Prepositions transference */
+
 struct preposition {
   wstring cas;
   wstring condition;
-  wstring ambigous;
+  wstring maintain;
 };
 
 map<wstring, vector<preposition> > prepositions;
 
-void init_preposition_transference(string fitxName, config &cfg){
+void init_preposition_transference(string fitxName) {
   wifstream fitx;
   fitx.open(fitxName.c_str());
 
@@ -834,9 +837,9 @@ void init_preposition_transference(string fitxName, config &cfg){
 
     current.cas = lerro.substr(sep1+1, sep2-sep1-1);
     current.condition = lerro.substr(sep2+1, sep3-sep2-1);
-    current.ambigous = lerro.substr(sep3+1, lerro.size()-sep3-1);
+    current.maintain = lerro.substr(sep3+1, lerro.size()-sep3-1);
 
-    //cerr << "'" << prep << "' '" << current.cas << "' '" << current.condition << "' '" << current.ambigous << "'" << endl;
+    //cerr << "'" << prep << "' '" << current.cas << "' '" << current.condition << "' '" << current.maintain << "'" << endl;
     prepositions[prep].push_back(current);
   }
 
@@ -845,7 +848,7 @@ void init_preposition_transference(string fitxName, config &cfg){
 }
 
 vector<wstring> preposition_transference(wstring parent_attributes, wstring child_attributes, wstring sentenceref, int sentencealloc, config &cfg) {
-  vector<wstring> ambigous_cases;
+  vector<wstring> maintain_cases;
 
   wstring prep = text_attrib(child_attributes, L"prep");
   int alloc = watoi(text_attrib(child_attributes, L"alloc").c_str()) - sentencealloc;
@@ -854,9 +857,9 @@ vector<wstring> preposition_transference(wstring parent_attributes, wstring chil
     prep = L"-";
 
   if (prepositions[prep].size() == 0) {
-    ambigous_cases.push_back(L"[ZERO]");
+    maintain_cases.push_back(L"[ZERO]");
     wcerr << L"WARNING: unknown preposition " << prep << endl;
-    return ambigous_cases;
+    return maintain_cases;
   }
 
   vector<preposition> current_prep = prepositions[prep];
@@ -864,11 +867,11 @@ vector<wstring> preposition_transference(wstring parent_attributes, wstring chil
   if (cfg.DoPrepTrace) wcerr << sentenceref << L":" << alloc << L":" << prep;
   for (size_t i=0; i < current_prep.size(); i++) {
     if (cfg.DoPrepTrace)
-      wcerr << L"\t" << current_prep[i].cas << L"::" << current_prep[i].condition << L"::" << current_prep[i].ambigous << endl;
-    if (current_prep[i].ambigous == L"+")
-      ambigous_cases.push_back(current_prep[i].cas);
+      wcerr << L"\t" << current_prep[i].cas << L"::" << current_prep[i].condition << L"::" << current_prep[i].maintain << endl;
+    if (current_prep[i].maintain == L"+")
+      maintain_cases.push_back(current_prep[i].cas);
 
-    if (cfg.UseRules && current_prep[i].condition != L"-" && apply_condition(parent_attributes, child_attributes, current_prep[i].condition)) {
+    if (cfg.UsePrepRules && current_prep[i].condition != L"-" && apply_condition(parent_attributes, child_attributes, current_prep[i].condition)) {
       vector<wstring> translation_case;
 
       translation_case.push_back(current_prep[i].cas);
@@ -880,20 +883,123 @@ vector<wstring> preposition_transference(wstring parent_attributes, wstring chil
     //else cerr << "\tfalse" << endl;
   }
 
-  if (ambigous_cases.size() == 0) {
-    ambigous_cases.push_back(L"[ZERO]");
+  if (maintain_cases.size() == 0) {
+    maintain_cases.push_back(L"[ZERO]");
     wcerr << L"WARNING: unknown preposition " << prep << endl;
   }
 
   if (cfg.DoPrepTrace) {
     wcerr << endl << L"HIZTEGIKO ERANTZUNA(" << sentenceref << L":" << alloc << L":" << prep << L"): ";
-    for (size_t j=0; j<ambigous_cases.size(); j++)
-      wcerr << ambigous_cases[j] << L" ";
+    for (size_t j = 0; j < maintain_cases.size(); j++)
+      wcerr << maintain_cases[j] << L" ";
     cerr << endl << endl;
   }
 
-  return ambigous_cases;
+  return maintain_cases;
 }
+
+
+/* Lexical selection */
+
+struct disambiguation_rule {
+  wstring condition;
+  wstring maintain;
+};
+
+map<wstring, map<wstring, disambiguation_rule > > disambiguation_rules;
+
+
+void init_lexical_selection(string filename)
+{
+  wifstream file;
+  wstring trgt_lemma;
+  wstring lerro;
+
+  file.open(filename.c_str());
+
+  while (getline(file, lerro))
+  {
+    // Remove comments
+    if (lerro.find(L'#') != wstring::npos)
+      lerro = lerro.substr(0, lerro.find(L'#'));
+
+    // Strip whitespaces
+    for (int i = 0; i < int(lerro.size()); i++)
+    {
+      if (lerro[i] == L' ' and (lerro[i+1] == L' ' or lerro[i+1] == L'\t'))
+        lerro[i] = L'\t';
+
+      if ((lerro[i] == L' ' or lerro[i] == L'\t') and
+          (i == 0 or lerro[i-1] == L'\t'))
+      {
+        lerro.erase(i, 1);
+        i--;
+      }
+    }
+    if (lerro[lerro.size()-1] == L' ' or lerro[lerro.size()-1] == L'\t')
+      lerro.erase(lerro.size()-1, 1);
+
+    size_t sep1 = lerro.find(L"\t");
+    size_t sep2 = lerro.find(L"\t", sep1 + 1);
+    size_t sep3 = lerro.find(L"\t", sep2 + 1);
+    if (sep1 == wstring::npos or sep2 == wstring::npos or sep3 == wstring::npos)
+      continue;
+
+    disambiguation_rule current;
+    wstring src_lemma = lerro.substr(0, sep1);
+
+    trgt_lemma = lerro.substr(sep1 + 1, sep2 - sep1-1);
+    current.condition = lerro.substr(sep2 + 1, sep3 - sep2-1);
+    current.maintain = lerro.substr(sep3 + 1, lerro.size() - sep3-1);
+
+    disambiguation_rules[src_lemma][trgt_lemma] = current;
+  }
+
+  file.close();
+
+}
+
+
+vector<wstring>
+lexical_selection(wstring parent_attributes, wstring common_attribs,
+                  vector<wstring> child_attributes, config &cfg)
+{
+  vector<wstring> maintain_cases;
+  wstring src_lemma;
+  wstring trgt_lemma;
+  wstring attributes;
+
+  src_lemma = text_attrib(common_attribs, L"slem");
+
+  for (size_t i = 0; i < child_attributes.size(); i++)
+  {
+    attributes = common_attribs + L" " + child_attributes[i];
+
+    trgt_lemma = text_attrib(attributes, L"lem");
+    disambiguation_rule current_rule = disambiguation_rules[src_lemma][trgt_lemma];
+
+    if (current_rule.maintain == L"+")
+      maintain_cases.push_back(child_attributes[i]);
+
+    if (cfg.UseLexRules && current_rule.condition != L"" and
+        apply_condition(parent_attributes, attributes,
+                        current_rule.condition))
+    {
+      vector<wstring> translation_case;
+
+      translation_case.push_back(child_attributes[i]);
+
+      return translation_case;
+    }
+
+  }
+
+  if (maintain_cases.size() == 0)
+    maintain_cases = child_attributes;
+
+  return maintain_cases;
+}
+
 
 
 struct subcategoritation {

@@ -449,7 +449,7 @@ int main(int argc, char *argv[])
   // Output in the locale's encoding
   locale::global(locale(""));
 
-  init_preposition_transference(cfg.PrepositionsFile, cfg);
+  init_preposition_transference(cfg.PrepositionsFile);
   if (cfg.UseSubcat) init_verb_subcategoritation(cfg.SubcatFile, cfg);
   if (cfg.UseTripletes) init_verb_noum_subcategoritation(cfg.Noum_SubcatFile, cfg);
 
