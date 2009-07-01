@@ -11,5 +11,5 @@
 #     - : remove the translation
 #     + : maintain the current translation
 
-posición	postu	parent.headlem='jaitsi' || parent.headlem='igo'	-
+posición	postu	parent.lem='_jaitsi_' || parent.lem='_igo_'	-
 
