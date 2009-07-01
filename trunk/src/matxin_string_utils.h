@@ -22,6 +22,13 @@
 
 #include <wchar.h>
 
+#include <string>
+#include <algorithm>
+#include <vector>
+#include <iostream>
+
+using namespace std;
+
 #ifdef __cplusplus
 extern "C" {
 #endif
@@ -31,6 +38,15 @@ extern "C" {
  */
 int watoi(const wchar_t *buffer);
 
+void Tokenize(const wstring& str,
+              vector<wstring>& tokens,
+              const wstring& delimiters);
+
+void Tokenize2(const wstring& str,
+               wstring& tokens,
+               const wstring& delimiters);
+
+vector<wstring> split_multiattrib(wstring str);
 
 #ifdef __cplusplus
 }
