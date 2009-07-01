@@ -73,10 +73,10 @@ vector<wstring>
   lexical_selection(wstring parent_attributes, wstring common_attributes,
                     vector<wstring> child_attributes, config &cfg);
 
-void init_verb_subcategoritation(string fitxName, config &cfg);
+void init_verb_subcategoritation(string fitxName);
 wstring verb_subcategoritation(wstring verb_lemma, vector<vector<wstring> > &cases, vector<wstring> &attributes, vector<wstring> &subj_cases, wstring subj_attributes, wstring sentenceref, int sentencealloc, config &cfg);
 
-void init_verb_noum_subcategoritation(string fitxName, config &cfg);
+void init_verb_noum_subcategoritation(string fitxName);
 vector<wstring> verb_noum_subcategoritation(wstring verb_lemma, wstring chunk_head, vector<wstring> &cases, wstring &attributes, wstring sentenceref, int sentencealloc, config &cfg);
 
 void init_node_order(string fitxName);

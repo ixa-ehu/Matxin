@@ -1010,7 +1010,7 @@ struct subcategoritation {
 
 map<wstring, vector<subcategoritation> > subcategoritations;
 
-void init_verb_subcategoritation(string fitxName, config &cfg){
+void init_verb_subcategoritation(string fitxName) {
   wifstream fitx;
   fitx.open(fitxName.c_str());
 
@@ -1260,7 +1260,7 @@ wstring verb_subcategoritation(wstring verb_lemma, vector<vector<wstring> > &cas
 
 map <wstring, map<wstring, vector<wstring> > > verb_noum_subcat;
 
-void init_verb_noum_subcategoritation(string fitxName, config &cfg) {
+void init_verb_noum_subcategoritation(string fitxName) {
   wifstream fitx;
   fitx.open(fitxName.c_str());
 

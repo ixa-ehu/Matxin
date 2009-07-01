@@ -450,8 +450,8 @@ int main(int argc, char *argv[])
   locale::global(locale(""));
 
   init_preposition_transference(cfg.PrepositionsFile);
-  if (cfg.UseSubcat) init_verb_subcategoritation(cfg.SubcatFile, cfg);
-  if (cfg.UseTripletes) init_verb_noum_subcategoritation(cfg.Noum_SubcatFile, cfg);
+  if (cfg.UseSubcat) init_verb_subcategoritation(cfg.SubcatFile);
+  if (cfg.UseTripletes) init_verb_noum_subcategoritation(cfg.Noum_SubcatFile);
 
   //libXml liburutegiko reader hasieratzen da, sarrera estandarreko fitxategia irakurtzeko.
   xmlTextReaderPtr reader;
