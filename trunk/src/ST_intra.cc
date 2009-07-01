@@ -197,7 +197,9 @@ wstring procCHUNK(xmlTextReaderPtr reader) {
     vector<movement> attributes_to_move = get_node_movements_byto(my_attributes);
     for (size_t i=0; i<attributes_to_move.size();i++) {
       //cerr << attributesToChunk << "(" << attributes_to_move[i].to.attrib << ")";
-      wstring attribute=text_whole_attrib(attributesToChunk, attributes_to_move[i].to.attrib);
+      wstring attribute = L"'" + text_attrib(attributesToChunk,
+                                             attributes_to_move[i].to.attrib) +
+                          L"'";
       if (text_attrib(attributes, attributes_to_move[i].to.attrib) == L"" && attribute != L"") {
         attributes += attribute;
         //cerr << "\t" << attribute << endl;

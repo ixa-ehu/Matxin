@@ -157,18 +157,6 @@ wstring text_attrib(wstring attributes, wstring const &nombre) {
 }
 
 
-wstring text_whole_attrib(wstring attributes, wstring const &nombre) {
-  wstring to_find = nombre + L"=";
-  size_t startPos = attributes.find(to_find);
-  if (startPos == wstring::npos) return L"";
-
-  size_t endPos = attributes.find(L"'", startPos+nombre.size()+2);
-  if (endPos == wstring::npos) endPos = attributes.size();
-
-  return attributes.substr(startPos-1, endPos-startPos+2);
-}
-
-
 wstring text_allAttrib_except(wstring attributes, wstring const &nombre){
   wstring output = attributes;
   wstring to_find = nombre + L"='";
