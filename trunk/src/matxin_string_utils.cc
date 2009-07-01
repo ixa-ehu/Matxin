@@ -51,6 +51,17 @@ void Tokenize2(const wstring& str,
 }
 
 
+wstring v2s(vector<wstring> vector, wstring delimiter)
+{
+  wstring result = L"";
+
+  for (size_t i = 0; i < vector.size(); i++)
+    result += delimiter + vector[i];
+
+  return result;
+}
+
+
 vector<wstring> split_multiattrib(wstring str)
 {
   vector<wstring> tokens;

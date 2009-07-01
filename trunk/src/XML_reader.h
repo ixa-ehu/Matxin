@@ -47,4 +47,5 @@ wstring text_attrib(wstring attributes, wstring const &nombre);
 
 wstring text_whole_attrib(wstring attributes, wstring const &nombre);
 
-wstring text_allAttrib_except(wstring attributes, wstring const &nombre);
+wstring text_allAttrib_except(wstring attributes, const wstring &nombre);
+

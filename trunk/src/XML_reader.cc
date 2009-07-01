@@ -160,16 +160,24 @@ wstring text_attrib(wstring attributes, const wstring& nombre)
 }
 
 
-wstring text_allAttrib_except(wstring attributes, wstring const &nombre){
-  wstring output = attributes;
-  wstring to_find = nombre + L"='";
-  size_t startPos = output.find(to_find);
-  if (startPos == wstring::npos) return attributes;
+wstring text_allAttrib_except(wstring attributes, const wstring &nombre)
+{
+  vector<wstring> tokens;
 
-  size_t endPos = output.find(L"'", startPos+nombre.size()+2);
-  if (endPos == wstring::npos) endPos = output.size();
+  Tokenize(attributes, tokens);
+  for (size_t i = 0; i < tokens.size(); i++)
+  {
+    vector<wstring> attribs;
 
-  output.erase(startPos-1, endPos-startPos+2);
-  return output;
+    Tokenize(tokens[i], attribs, L"=");
+    if (attribs[0] == nombre)
+    {
+      tokens.erase(tokens.begin() + i);
+      break;
+    }
+  }
+
+  return v2s(tokens);
+
 }
 
