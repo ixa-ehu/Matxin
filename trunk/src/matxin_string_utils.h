@@ -40,11 +40,11 @@ int watoi(const wchar_t *buffer);
 
 void Tokenize(const wstring& str,
               vector<wstring>& tokens,
-              const wstring& delimiters);
+              const wstring& delimiters = L" ");
 
 void Tokenize2(const wstring& str,
                wstring& tokens,
-               const wstring& delimiters);
+               const wstring& delimiters = L" ");
 
 vector<wstring> split_multiattrib(wstring str);
 

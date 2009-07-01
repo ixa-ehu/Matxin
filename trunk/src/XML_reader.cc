@@ -19,7 +19,6 @@
 
 #include <XML_reader.h>
 
-#include <lttoolbox/xml_parse_util.h>
 
 // Converts xmlChar strings used by libxml2 to ordinary strings
 string xmlc2s(xmlChar const *entrada) {
@@ -139,21 +138,25 @@ wstring allAttrib_except(xmlTextReaderPtr reader, wstring attrib_no) {
 }
 
 
-wstring text_attrib(wstring attributes, wstring const &nombre) {
-  if (nombre[0] == L'\'' && nombre[nombre.size()-1] == L'\'')
-    return nombre.substr(1, nombre.size()-2);
+wstring text_attrib(wstring attributes, const wstring& nombre)
+{
+  vector<wstring> tokens;
+  wstring value = L"";
 
-  wstring to_find = L" " + nombre + L"=";
-  size_t startPos = attributes.find(to_find);
+  Tokenize(attributes, tokens);
+  for (size_t i = 0; i < tokens.size(); i++)
+  {
+    vector<wstring> attribs;
 
-  if (attributes.substr(0, nombre.size()+1) == (nombre + L"=")) startPos = nombre.size()+2;
-  else if (startPos == wstring::npos) return L"";
-  else startPos = startPos+nombre.size()+3;
+    Tokenize(tokens[i], attribs, L"=");
+    if (attribs[0] == nombre)
+    {
+      Tokenize2(attribs[1], value, L"'");
+      break;
+    }
+  }
 
-  size_t endPos = attributes.find(L"'", startPos);
-  if (endPos == wstring::npos) endPos = attributes.size();
-
-  return attributes.substr(startPos, endPos-startPos);
+  return value;
 }
 
 

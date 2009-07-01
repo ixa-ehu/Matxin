@@ -17,11 +17,15 @@
  *  02110-1301  USA
  */
 
+#include <string>
+#include <iostream>
+
 #include <libxml/xmlreader.h>
 #include <libxml/encoding.h>
 
-#include <string>
-#include <iostream>
+#include <lttoolbox/xml_parse_util.h>
+
+#include "matxin_string_utils.h"
 
 using namespace std;
 

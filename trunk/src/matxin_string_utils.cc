@@ -11,7 +11,7 @@ int watoi(const wchar_t *buffer) {
 
 void Tokenize(const wstring& str,
               vector<wstring>& tokens,
-              const wstring& delimiters = L" ")
+              const wstring& delimiters)
 {
     // Skip delimiters at beginning
     size_t lastPos = str.find_first_not_of(delimiters, 0);
@@ -32,7 +32,7 @@ void Tokenize(const wstring& str,
 
 void Tokenize2(const wstring& str,
                wstring& tokens,
-               const wstring& delimiters = L" ")
+               const wstring& delimiters)
 {
     // Skip delimiters at beginning
     size_t lastPos = str.find_first_not_of(delimiters, 0);
