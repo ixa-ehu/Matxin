@@ -318,8 +318,8 @@ wstring procNODE_notAS(xmlTextReaderPtr reader, bool head,
 
       // Hitz horren semantika begiratzen da
       if (head && text_attrib(select[0], L"pos") == L"[IZE][ARR]" and
-          get_lexInfo(L"noumSem", text_attrib(select[0], L"lem")) != L"" )
-        attributes += L" sem='" + write_xml(get_lexInfo(L"noumSem",
+          get_lexInfo(L"nounSem", text_attrib(select[0], L"lem")) != L"" )
+        attributes += L" sem='" + write_xml(get_lexInfo(L"nounSem",
                                                         text_attrib(select[0], L"lem"))) + L"'";
 
       if (unknown)
@@ -604,7 +604,7 @@ int main(int argc, char *argv[])
   fstp.initBiltrans();
 
   // Hasieraketa hauek konfigurazio fitxategi batetik irakurri beharko lirateke.
-  init_lexInfo(L"noumSem", cfg.Noum_SemanticFile);
+  init_lexInfo(L"nounSem", cfg.Noun_SemanticFile);
   init_lexInfo(L"chunkType", cfg.ChunkType_DictFile);
   // Init lexical selection reading the rules file
   init_lexical_selection(cfg.LexSelFile);

@@ -8,5 +8,5 @@ dictdataeneu_DATA = eneu_chunk_type.txt \
                     eu_morph_gen_mur.xml \
                     eu_morph_nolex.xml \
                     eu_sem.txt \
-                    eu_verb_noum_subcat.txt \
+                    eu_verb_noun_subcat.txt \
                     eu_verb_subcat.txt

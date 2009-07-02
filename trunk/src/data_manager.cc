@@ -1258,9 +1258,9 @@ wstring verb_subcategoritation(wstring verb_lemma, vector<vector<wstring> > &cas
   return best_trans;
 }
 
-map <wstring, map<wstring, vector<wstring> > > verb_noum_subcat;
+map <wstring, map<wstring, vector<wstring> > > verb_noun_subcat;
 
-void init_verb_noum_subcategoritation(string fitxName) {
+void init_verb_noun_subcategoritation(string fitxName) {
   wifstream fitx;
   fitx.open(fitxName.c_str());
 
@@ -1318,7 +1318,7 @@ void init_verb_noum_subcategoritation(string fitxName) {
       }
       //cerr << endl;
 
-      verb_noum_subcat[verb_lem][chunk_head] = cases;
+      verb_noun_subcat[verb_lem][chunk_head] = cases;
     }
   }
 
@@ -1335,8 +1335,8 @@ wstring to_upper(wstring input) {
   return output;
 }
 
-vector<wstring> verb_noum_subcategoritation(wstring verb_lemma, wstring chunk_head, vector<wstring> &cases, wstring &attributes, wstring sentenceref, int sentencealloc, config &cfg) {
-  vector<wstring> subcat = verb_noum_subcat[verb_lemma][chunk_head];
+vector<wstring> verb_noun_subcategoritation(wstring verb_lemma, wstring chunk_head, vector<wstring> &cases, wstring &attributes, wstring sentenceref, int sentencealloc, config &cfg) {
+  vector<wstring> subcat = verb_noun_subcat[verb_lemma][chunk_head];
 
   int alloc = watoi(text_attrib(attributes, L"alloc").c_str()) - sentencealloc;
   wstring prep = text_attrib(attributes, L"prep");

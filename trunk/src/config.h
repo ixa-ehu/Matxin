@@ -153,7 +153,7 @@ class config {
     /// Lexical transfer options
     char * DictionaryFile;
     char * ChunkType_DictFile;
-    char * Noum_SemanticFile;
+    char * Noun_SemanticFile;
 
     // Lexical selection options
     char * LexSelFile;
@@ -167,7 +167,7 @@ class config {
     char * Inter_Movements3File;
     char * SubcatFile;
     char * PrepositionsFile;
-    char * Noum_SubcatFile;
+    char * Noun_SubcatFile;
 
     char * Verb_TransferFile;
 
@@ -305,7 +305,7 @@ class config {
 	// lexTrans options
 	{"tDict",    '\0', "TransDictFile",          CFG_STR,  (void *) &DictionaryFile, 0},
 	{"chunkT",   '\0', "ChunkTypeDict",          CFG_STR,  (void *) &ChunkType_DictFile, 0},
-	{"noumSem",  '\0', "NoumSemFile",            CFG_STR,  (void *) &Noum_SemanticFile, 0},
+	{"nounSem",  '\0', "NounSemFile",            CFG_STR,  (void *) &Noun_SemanticFile, 0},
   // Lexical selection options
   {"lexrules",    '\0', NULL,                  CFG_BOOL, (void *) &Lrules, 0},
   {"nolexrules",  '\0', NULL,                  CFG_BOOL, (void *) &noLrules, 0},
@@ -319,7 +319,7 @@ class config {
 	{"interMov3", '\0', "InterMoveFile3",        CFG_STR,  (void *) &Inter_Movements3File, 0},
 	{"subcatF",  '\0', "SubCatFile",             CFG_STR,  (void *) &SubcatFile, 0},
 	{"prep",     '\0', "PrepFile",               CFG_STR,  (void *) &PrepositionsFile, 0},
-	{"tripletF", '\0', "TripletsFile",           CFG_STR,  (void *) &Noum_SubcatFile, 0},
+	{"tripletF", '\0', "TripletsFile",           CFG_STR,  (void *) &Noun_SubcatFile, 0},
 	{"verbtrans", '\0', "VerbTransferFile",      CFG_STR,  (void *) &Verb_TransferFile, 0},
 	{"chunkord", '\0', "ChunkOrderFile",         CFG_STR,  (void *) &Chunk_OrderFile, 0},
 	{"nodeord",  '\0', "NodeOrderFile",          CFG_STR,  (void *) &Node_OrderFile, 0},
@@ -402,10 +402,10 @@ class config {
       UseLexRules=false;
       Trace_File=NULL;
       DictionaryFile=NULL; ChunkType_DictFile=NULL;
-      Noum_SemanticFile=NULL; Intra_MovementsFile=NULL;
+      Noun_SemanticFile=NULL; Intra_MovementsFile=NULL;
       Inter_Movements1File=NULL; Inter_Movements2File=NULL; 
       Inter_Movements2File=NULL; SubcatFile=NULL;
-      PrepositionsFile=NULL; Noum_SubcatFile=NULL;
+      PrepositionsFile=NULL; Noun_SubcatFile=NULL;
       Verb_TransferFile=NULL; Chunk_OrderFile=NULL;
       Node_OrderFile=NULL; POS_ToOrderFile=NULL;
       Morpho_GenFile=NULL; Measures_GenFile=NULL;
@@ -798,7 +798,7 @@ class config {
       cout<<"--TraceFile filename   XML zuhaitzen traza botatzeako fitxategia"<<endl;
       cout<<"--tDict filename       Hiztegi elebiduna"<<endl;
       cout<<"--chunkT filename      Chunk moten hiztegia"<<endl;
-      cout<<"--noumSem filename     Izenen semantikaren hiztegia"<<endl;
+      cout<<"--nounSem filename     Izenen semantikaren hiztegia"<<endl;
       cout<<"--intraMov filename    Chunk barruko mugimenduen gramatika"<<endl;
       cout<<"--interMov1 filename   Chunk arteko mugimenduen 1. gramatika"<<endl;
       cout<<"--interMov2 filename   Chunk arteko mugimenduen 2. gramatika"<<endl;

@@ -246,7 +246,7 @@ vector<wstring> procCHUNK(xmlTextReaderPtr reader, wstring &attributesFromParent
         //0. Ratnaparki
         for (size_t i = 0; i < chunk_attributes.size(); i++) {
           wstring chunk_head = text_attrib(chunk_attributes[i], L"headlem");
-          vector<wstring> new_cases = verb_noum_subcategoritation(verb_lemma, chunk_head, chunk_cases[i], chunk_attributes[i], sentenceref, sentencealloc, cfg);
+          vector<wstring> new_cases = verb_noun_subcategoritation(verb_lemma, chunk_head, chunk_cases[i], chunk_attributes[i], sentenceref, sentencealloc, cfg);
           chunk_cases.erase(chunk_cases.begin()+i);
           chunk_cases.insert(chunk_cases.begin()+i, new_cases);
         }
@@ -451,7 +451,7 @@ int main(int argc, char *argv[])
 
   init_preposition_transference(cfg.PrepositionsFile);
   if (cfg.UseSubcat) init_verb_subcategoritation(cfg.SubcatFile);
-  if (cfg.UseTripletes) init_verb_noum_subcategoritation(cfg.Noum_SubcatFile);
+  if (cfg.UseTripletes) init_verb_noun_subcategoritation(cfg.Noun_SubcatFile);
 
   //libXml liburutegiko reader hasieratzen da, sarrera estandarreko fitxategia irakurtzeko.
   xmlTextReaderPtr reader;
