@@ -246,7 +246,7 @@ vector<wstring> procCHUNK(xmlTextReaderPtr reader, wstring &attributesFromParent
         //0. Ratnaparki
         for (size_t i = 0; i < chunk_attributes.size(); i++) {
           wstring chunk_head = text_attrib(chunk_attributes[i], L"headlem");
-          vector<wstring> new_cases = verb_noun_subcategoritation(verb_lemma, chunk_head, chunk_cases[i], chunk_attributes[i], sentenceref, sentencealloc, cfg);
+          vector<wstring> new_cases = verb_noun_subcategorisation(verb_lemma, chunk_head, chunk_cases[i], chunk_attributes[i], sentenceref, sentencealloc, cfg);
           chunk_cases.erase(chunk_cases.begin()+i);
           chunk_cases.insert(chunk_cases.begin()+i, new_cases);
         }
@@ -280,7 +280,7 @@ vector<wstring> procCHUNK(xmlTextReaderPtr reader, wstring &attributesFromParent
         //2. aditz horren agerpenak begiratu menpekoen casuak bereizteko.
         wstring subj_attrib;
         if (subj_attributes.size() > 0) subj_attrib = subj_attributes[0];
-        wstring trans = verb_subcategoritation(verb_lemma, chunk_cases, chunk_attributes, subj_cases, subj_attrib, sentenceref, sentencealloc, cfg);
+        wstring trans = verb_subcategorisation(verb_lemma, chunk_cases, chunk_attributes, subj_cases, subj_attrib, sentenceref, sentencealloc, cfg);
         my_attributes += L" trans='" + trans + L"'";
 
         //3. subjektu beste menpekoekin batera jarri.
@@ -450,8 +450,8 @@ int main(int argc, char *argv[])
   locale::global(locale(""));
 
   init_preposition_transference(cfg.PrepositionsFile);
-  if (cfg.UseSubcat) init_verb_subcategoritation(cfg.SubcatFile);
-  if (cfg.UseTripletes) init_verb_noun_subcategoritation(cfg.Noun_SubcatFile);
+  if (cfg.UseSubcat) init_verb_subcategorisation(cfg.SubcatFile);
+  if (cfg.UseTripletes) init_verb_noun_subcategorisation(cfg.Noun_SubcatFile);
 
   //libXml liburutegiko reader hasieratzen da, sarrera estandarreko fitxategia irakurtzeko.
   xmlTextReaderPtr reader;

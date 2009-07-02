@@ -1002,15 +1002,15 @@ lexical_selection(wstring parent_attributes, wstring common_attribs,
 
 
 
-struct subcategoritation {
+struct subcategorisation {
   wstring trans;
   wstring subj_case;
   wstring cases;
 };
 
-map<wstring, vector<subcategoritation> > subcategoritations;
+map<wstring, vector<subcategorisation> > subcategorisations;
 
-void init_verb_subcategoritation(string fitxName) {
+void init_verb_subcategorisation(string fitxName) {
   wifstream fitx;
   fitx.open(fitxName.c_str());
 
@@ -1051,13 +1051,13 @@ void init_verb_subcategoritation(string fitxName) {
       size_t sep3 = subcat.find(L'/', sep2+1);
       if (sep2 == wstring::npos || sep3 == wstring::npos) continue;
 
-      subcategoritation current;
+      subcategorisation current;
       current.trans = subcat.substr(0, sep2);
       current.subj_case = subcat.substr(sep2+1, sep3-sep2-1);
       current.cases = subcat.substr(sep3+1);
 
       //cerr << "'" << verb_lem << "' '" << current.trans << "' '" << current.cases << "' '" << current.subj_case << "'" << endl;
-      subcategoritations[verb_lem].push_back(current);
+      subcategorisations[verb_lem].push_back(current);
     }
   }
 
@@ -1079,7 +1079,7 @@ wstring get_case (wstring input) {
   return input;
 }
 
-int match_subcategoritation(vector<vector<wstring> > &cases, wstring subcat_pattern){
+int match_subcategorisation(vector<vector<wstring> > &cases, wstring subcat_pattern){
   if (cases.size() == 0)
     return 0;
 
@@ -1113,7 +1113,7 @@ int match_subcategoritation(vector<vector<wstring> > &cases, wstring subcat_patt
     }
 
     if (subcat_pattern.size() > 0)
-      fixed_cases += match_subcategoritation(extra_components, subcat_pattern);
+      fixed_cases += match_subcategorisation(extra_components, subcat_pattern);
 
     if (fixed_cases > best_fixed){
       best_fixed = fixed_cases;
@@ -1136,8 +1136,8 @@ int match_subcategoritation(vector<vector<wstring> > &cases, wstring subcat_patt
   return best_fixed;
 }
 
-wstring verb_subcategoritation(wstring verb_lemma, vector<vector<wstring> > &cases, vector<wstring> &attributes, vector<wstring> &subj_cases, wstring subj_attributes, wstring sentenceref, int sentencealloc, config &cfg){
-  vector<subcategoritation> subcat = subcategoritations[verb_lemma];
+wstring verb_subcategorisation(wstring verb_lemma, vector<vector<wstring> > &cases, vector<wstring> &attributes, vector<wstring> &subj_cases, wstring subj_attributes, wstring sentenceref, int sentencealloc, config &cfg){
+  vector<subcategorisation> subcat = subcategorisations[verb_lemma];
 
   if (cfg.DoPrepTrace) {
     wcerr << L"AZPIKATEGORIZAZIOA APLIKATZEN: " << verb_lemma << endl;
@@ -1186,7 +1186,7 @@ wstring verb_subcategoritation(wstring verb_lemma, vector<vector<wstring> > &cas
       if (get_case(subj_cases[j]) == subcat[i].subj_case)
         matches_subj = true;
 
-    int fixed_cases = match_subcategoritation(final_cases, subcat_pattern);
+    int fixed_cases = match_subcategorisation(final_cases, subcat_pattern);
 
     int subcat_length = 0;
     if (subcat_pattern.size() != 0) subcat_length++;
@@ -1260,7 +1260,7 @@ wstring verb_subcategoritation(wstring verb_lemma, vector<vector<wstring> > &cas
 
 map <wstring, map<wstring, vector<wstring> > > verb_noun_subcat;
 
-void init_verb_noun_subcategoritation(string fitxName) {
+void init_verb_noun_subcategorisation(string fitxName) {
   wifstream fitx;
   fitx.open(fitxName.c_str());
 
@@ -1335,7 +1335,7 @@ wstring to_upper(wstring input) {
   return output;
 }
 
-vector<wstring> verb_noun_subcategoritation(wstring verb_lemma, wstring chunk_head, vector<wstring> &cases, wstring &attributes, wstring sentenceref, int sentencealloc, config &cfg) {
+vector<wstring> verb_noun_subcategorisation(wstring verb_lemma, wstring chunk_head, vector<wstring> &cases, wstring &attributes, wstring sentenceref, int sentencealloc, config &cfg) {
   vector<wstring> subcat = verb_noun_subcat[verb_lemma][chunk_head];
 
   int alloc = watoi(text_attrib(attributes, L"alloc").c_str()) - sentencealloc;
