@@ -414,7 +414,8 @@ wstring procNODE_AS(xmlTextReaderPtr reader, bool head, wstring& attributes) {
     nodes = L"<NODE";
     attributes = L" ref='" + write_xml(attrib(reader, "ord")) + L"' alloc='" + write_xml(attrib(reader, "alloc")) + L"'";
     attributes += L" UpCase='" + write_xml(upper_type(attrib(reader, "form"), attrib(reader, "mi"), attrib(reader, "ord"))) + L"'";
-    attributes += L" mi='" + attrib(reader, "mi") + L"'";
+    attributes += L" slem='" + attrib(reader, "lem") + L"'";
+    attributes += L" smi='" + attrib(reader, "mi") + L"'";
 
     // CHUNKaren burua bada:
     if (head) {
@@ -424,7 +425,8 @@ wstring procNODE_AS(xmlTextReaderPtr reader, bool head, wstring& attributes) {
       if (trad.size() > 1)
         synonyms = getsyn(trad);
 
-      attributes += L" " + trad[0];
+      attributes += L" " + text_allAttrib_except(trad[0], L"mi");
+      attributes += L" mi='" + attrib(reader, "mi") + L"'";
 
       if (unknown)
         attributes += L" unknown='transfer'";
