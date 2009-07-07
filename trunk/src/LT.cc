@@ -95,32 +95,36 @@ wstring lema(wstring const &full) {
   return lemma;
 }
 
-wstring get_dict_attributes(wstring const &full) {
-// Hiztegi elebidunaren euskarazko ordainetik atributuak lortzen ditu.
-// IN:  Euskarazko ordain bat                        ( lema<key1>VALUE1<key2>VALUE2...<keyn>VALUEn )
-// OUT: ezaugarriak XML zuhaitzan txertatzeko moduan ( key1='VALUE1' key2='VALUE2'...keyn='VALUEn' )
 
-  if (full.find(L'<') == wstring::npos)
-    return L"";
+/*
+ * Gets attributes from the bilingual dictionary
+ * input: "lemma<key1>value1<key2>value2...<keyn>valueN"
+ * output: "lem='lemma' key1='value1' ... keyN='valueN'"
+ */
+wstring get_dict_attributes(const wstring full)
+{
+  vector<wstring> tokens;
+  wstring result = L"";
 
-  wstring output = L"lem='" + full + L"'";
-
-  for(uint i = 0; i < output.size(); i++) {
-    if (output[i] == L'<') {
-      output.replace(i, 1, L"' ");
-      i++;
+  Tokenize(full, tokens, L"<");
+  for (size_t i = 0; i < tokens.size(); i ++)
+  {
+    if (i == 0 && tokens.size() > 1)
+    {
+      result += L"lem='" + write_xml(tokens[i]) + L"'";
     }
-    else if (output[i] == L'>') {
-      output.replace(i, 1, L"='");
-      i++;
+    else
+    {
+      vector<wstring> attribs;
+
+      Tokenize(tokens[i], attribs, L">");
+      result += L" " + attribs[0] + L"='" + write_xml(attribs[1]) + L"'";
     }
   }
 
-  if (output.substr(output.size()-3) == L"=''")
-    output = output.substr(0, output.rfind(L" "));
-
-  return output;
+  return result;
 }
+
 
 wstring getsyn(vector<wstring> translations) {
   wstring output;
