@@ -55,6 +55,13 @@ if test "x$prefix" != "x/usr"; then
 fi
 
 #
+# Set default paths for PKG_CONFIG_PATH in case it's not defined
+#
+if ! test $PKG_CONFIG_PATH ; then
+  PKG_CONFIG_PATH="/usr/lib/pkgconfig:/usr/local/lib/pkgconfig"
+fi
+
+#
 # Check for libxml2 usability.
 #
 AC_CHECK_PROG(HAVE_XML2_CONFIG, xml2-config, yes)
