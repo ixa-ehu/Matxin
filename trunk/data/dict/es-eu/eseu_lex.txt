@@ -12,7 +12,7 @@
 
 
 posición	postu	parent.lem='_jaitsi_' || parent.lem='_igo_'	-
-final		amaiera	my.smi=~'NCM'	-
+final		bukaera	my.smi=~'NCM'	-
 final		final	my.smi=~'NCF'	+
 capital	kapital	my.smi=~'NCM'	+
 capital	hiriburu	my.smi=~'NCF'	-
