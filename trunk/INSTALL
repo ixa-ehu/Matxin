@@ -6,7 +6,7 @@ An Open Source transfer Machine Translation engine.
 
 
 Requirements
-============
+------------
 Before proceding to install Matxin, please make sure you have lttoolbox-svn
 (Apertium), freeling-svn, and libxml2 installed on your system.
 
@@ -14,7 +14,7 @@ Also, you will need a GCC compiler 3.x or higher.
 
 
 Installation
-============
+------------
 After meeting the requirements, you can run the installation steps:
 
   $ ./configure
@@ -27,7 +27,7 @@ run configure so you may also want to pass configure options to it.
 
 
 Configure options
-=================
+-----------------
 Matxin ships with Spanish and English language support by default, but you
 can override this and disable a language of your choice by setting a configure
 flag. At the moment, these flags are available:
@@ -53,7 +53,9 @@ configure script also accepts some other, not widely useful, options. Run
 
 
 Troubleshooting
-===============
+---------------
+By default, the configure script will try to search for pkg-config files in
+/usr/lib/pkgconfig and /usr/local/lib/pkgconfig.
 If you have installed the libraries required by Matxin in an unusual location,
 you may also want to set the PKG_CONFIG_PATH environment variable.
 
