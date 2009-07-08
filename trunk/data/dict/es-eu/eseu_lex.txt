@@ -12,4 +12,10 @@
 #     + : maintain the current translation
 
 posición	postu	parent.lem='_jaitsi_' || parent.lem='_igo_'	-
-
+final		amaiera	my.smi=~'NCM'	      +
+final		final	my.smi=~'NCF'	      +
+capital		kapital	my.smi=~'NCM'	      +
+capital		hiriburu	my.smi=~'NCF' +
+corte		gorte	my.smi=~'NCF'	      +
+corte		mozketa	my.smi=~'NCM'	      +
+padre		guraso	my.smi=~'NCMP'	      -
