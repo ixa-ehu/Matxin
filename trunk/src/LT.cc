@@ -105,11 +105,20 @@ wstring get_dict_attributes(const wstring full)
 {
   vector<wstring> tokens;
   wstring result = L"";
+  bool empty_lemma = false;
 
   Tokenize(full, tokens, L"<");
+
+  // Special case, empty lemma
+  if (full.substr(0, 1) == L"<")
+  {
+    result += L"lem=''";
+    empty_lemma = true;
+  }
+
   for (size_t i = 0; i < tokens.size(); i ++)
   {
-    if (i == 0 && tokens.size() > 1)
+    if (i == 0 && !empty_lemma)
     {
       result += L"lem='" + write_xml(tokens[i]) + L"'";
     }
