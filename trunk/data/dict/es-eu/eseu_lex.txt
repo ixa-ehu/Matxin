@@ -2,20 +2,20 @@
 # Rules to solve lexical ambiguity
 #
 # Format:
-# lemmaES				lemmaEU          condition           maintain?  ## comment
+# lemmaSRC        lemmaTRGT          condition           default  ## comment
 #
 # condition: if the condition evaluates to true, then it returns the target lemma
 #
-# maintain?
-#   if the condition evaluates to false, then:
-#     - : remove the translation
-#     + : maintain the current translation
+# default value
+#   if none of the conditions for lemmaSRC evaluates to true:
+#     + : default value for lemmaSRC
+
 
 posición	postu	parent.lem='_jaitsi_' || parent.lem='_igo_'	-
-final		amaiera	my.smi=~'NCM'	      +
-final		final	my.smi=~'NCF'	      +
-capital		kapital	my.smi=~'NCM'	      +
-capital		hiriburu	my.smi=~'NCF' +
-corte		gorte	my.smi=~'NCF'	      +
-corte		mozketa	my.smi=~'NCM'	      +
-padre		guraso	my.smi=~'NCMP'	      -
+final		amaiera	my.smi=~'NCM'	-
+final		final	my.smi=~'NCF'	-
+capital	kapital	my.smi=~'NCM'	-
+capital	hiriburu	my.smi=~'NCF'	-
+corte		gorte	my.smi=~'NCF'	-
+corte		mozketa	my.smi=~'NCM'	-
+padre		guraso	my.smi=~'NCMP'	-
