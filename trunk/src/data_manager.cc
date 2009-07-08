@@ -903,7 +903,7 @@ vector<wstring> preposition_transference(wstring parent_attributes, wstring chil
 
 struct disambiguation_rule {
   wstring condition;
-  wstring maintain;
+  wstring default_value;
 };
 
 map<wstring, map<wstring, disambiguation_rule > > disambiguation_rules;
@@ -950,7 +950,7 @@ void init_lexical_selection(string filename)
 
     trgt_lemma = lerro.substr(sep1 + 1, sep2 - sep1-1);
     current.condition = lerro.substr(sep2 + 1, sep3 - sep2-1);
-    current.maintain = lerro.substr(sep3 + 1, lerro.size() - sep3-1);
+    current.default_value = lerro.substr(sep3 + 1, lerro.size() - sep3-1);
 
     disambiguation_rules[src_lemma][trgt_lemma] = current;
   }
@@ -964,12 +964,16 @@ vector<wstring>
 lexical_selection(wstring parent_attributes, wstring common_attribs,
                   vector<wstring> child_attributes, config &cfg)
 {
-  vector<wstring> maintain_cases;
   wstring src_lemma;
   wstring trgt_lemma;
   wstring attributes;
+  vector<wstring> default_case;
 
   src_lemma = text_attrib(common_attribs, L"slem");
+
+  // Save the first value just in case there's no default set in the rules
+  if (child_attributes.size() > 0)
+    default_case.push_back(child_attributes[0]);
 
   for (size_t i = 0; i < child_attributes.size(); i++)
   {
@@ -978,8 +982,8 @@ lexical_selection(wstring parent_attributes, wstring common_attribs,
     trgt_lemma = text_attrib(attributes, L"lem");
     disambiguation_rule current_rule = disambiguation_rules[src_lemma][trgt_lemma];
 
-    if (current_rule.maintain == L"+")
-      maintain_cases.push_back(child_attributes[i]);
+    if (current_rule.default_value == L"+")
+      default_case.insert(default_case.begin(), child_attributes[i]);
 
     if (cfg.UseLexRules && current_rule.condition != L"" and
         apply_condition(parent_attributes, attributes,
@@ -994,10 +998,7 @@ lexical_selection(wstring parent_attributes, wstring common_attribs,
 
   }
 
-  if (maintain_cases.size() == 0)
-    maintain_cases = child_attributes;
-
-  return maintain_cases;
+  return default_case;
 }
 
 
