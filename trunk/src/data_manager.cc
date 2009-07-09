@@ -159,10 +159,6 @@ bool apply_condition(wstring attributes, wstring condition)
                                        blank_position-operator_position - 2);
 
       return (text_attrib(attributes, attribute).find(value) != wstring::npos);
-      /*
-      Reg_Ex regex = Reg_Ex(value.c_str());
-      return (regex.Search(text_attrib(attributes, attribute).c_str()));
-      */
     }
     else if (condition.find(L"=") != wstring::npos)
     {
