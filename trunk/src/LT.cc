@@ -330,7 +330,8 @@ wstring procNODE_notAS(xmlTextReaderPtr reader, bool head,
       if (trad.size() > 1)
         synonyms = getsyn(trad);
 
-      subnodes = multiNodes(reader, select[0], attributes);
+     if (select[0].find(L"\\") != wstring::npos)
+        subnodes = multiNodes(reader, select[0], attributes);
       attributes += L" " + select[0];
 
       // Hitz horren semantika begiratzen da
