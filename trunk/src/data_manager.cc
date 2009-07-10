@@ -865,7 +865,7 @@ wstring get_chunk_order(wstring parent_type, wstring child_type,
         (order_inter[i].relative_order == ".*?" or
          order_inter[i].relative_order[0] == '=' and
          relative_order ==
-           atoi(order_inter[i].relative_order.substr(1 order_inter[i].relative_order.size()).c_str()) or
+           atoi(order_inter[i].relative_order.substr(1, order_inter[i].relative_order.size()).c_str()) or
          order_inter[i].relative_order[0] == '>' and
          relative_order >
            atoi(order_inter[i].relative_order.substr(1, order_inter[i].relative_order.size()).c_str()) or
