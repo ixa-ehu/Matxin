@@ -209,7 +209,7 @@ vector<wstring> disanbiguate(wstring &full)
 
 
 vector<wstring> get_translation(wstring lem, wstring mi,
-                                bool fromAS, bool &unknown)
+                                bool &unknown)
 {
   vector<wstring> translation;
 
@@ -236,12 +236,6 @@ vector<wstring> get_translation(wstring lem, wstring mi,
         trad = lem + L"<pos>" +  mi.substr(0, 2);
     }
     unknown = true;
-  }
-
-  if (fromAS)
-  {
-    trad = L"_" + trad;
-    trad.replace(trad.find(L"<"), 1, L"_<");
   }
 
   translation = disanbiguate(trad);
@@ -320,7 +314,7 @@ wstring procNODE_notAS(xmlTextReaderPtr reader, bool head,
       // Beste kasuetan:
       // Transferentzia lexikoa egiten da, lem, pos, mi, cas eta sub attributuak sortuz.
       trad = get_translation(attrib(reader, "lem"),
-                             attrib(reader, "mi"), false, unknown);
+                             attrib(reader, "mi"), unknown);
 
       if (trad.size() > 1)
         select = lexical_selection(parent_attribs, attributes, trad, cfg);
@@ -455,12 +449,13 @@ wstring procNODE_AS(xmlTextReaderPtr reader, bool head, wstring& attributes)
       // lem eta pos atributuen balio berriak sortuz
       vector<wstring> trad = get_translation(attrib(reader, "lem"),
                                              attrib(reader, "mi"),
-                                             true, unknown);
+                                             unknown);
 
       if (trad.size() > 1)
         synonyms = getsyn(trad);
 
-      attributes += L" " + text_allAttrib_except(trad[0], L"mi");
+      attributes += L" " + text_allAttrib_except(text_allAttrib_except(trad[0], L"mi"), L"lem");
+      attributes += L" lem='_" + text_attrib(trad[0], L"lem") + L"_'";
       attributes += L" mi='" + attrib(reader, "mi") + L"'";
 
       if (unknown)

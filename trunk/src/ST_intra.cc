@@ -133,7 +133,9 @@ wstring procNODE(xmlTextReaderPtr reader, wstring &attributesToChunk, wstring my
 
   // if there are, process the posible synonyms
   while (ret == 1 and tagName == L"SYN" and tagType == XML_READER_TYPE_ELEMENT) {
-    nodes += procSYN(reader);
+    wstring subtree = procSYN(reader);
+    if (lem != L"")
+      nodes += subtree;
 
     ret = nextTag(reader);
     tagName = getTagName(reader);
