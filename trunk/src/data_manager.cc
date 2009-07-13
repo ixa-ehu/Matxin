@@ -37,7 +37,11 @@ chunk text2chunk(wstring text)
 
 bool apply_condition(wstring attributes, wstring condition)
 {
-  if (condition.find(L"(") != string::npos)
+  if (condition == L"true")
+  {
+    return true;
+  }
+  else if (condition.find(L"(") != string::npos)
   {
     size_t open_position = condition.find(L"(");
     size_t close_position = condition.find(L")", open_position + 1);
@@ -796,10 +800,10 @@ wstring apply_verbTransference(wstring AS_source)
 
 struct chunk_order
 {
-  string parent_type;
-  string child_type;
-  string relative_order;
-  string order;
+  wstring parent_condition;
+  wstring child_condition;
+  wstring relative_order;
+  wstring order;
 };
 
 
@@ -808,40 +812,40 @@ static vector<chunk_order> order_inter;
 
 void init_chunk_order(string fitxName)
 {
-  ifstream fitx;
+  wifstream fitx;
   fitx.open(fitxName.c_str());
 
-  string lerro;
+  wstring lerro;
   while (getline(fitx, lerro))
   {
     // Remove comments
-    if (lerro.find('#') != string::npos)
-      lerro = lerro.substr(0, lerro.find('#'));
+    if (lerro.find(L'#') != wstring::npos)
+      lerro = lerro.substr(0, lerro.find(L'#'));
 
     // Remove whitespace and so...
     for (int i = 0; i<int(lerro.size()); i++)
     {
-      if (lerro[i] == ' ' and (lerro[i+1] == ' ' or lerro[i+1] == '\t'))
-        lerro[i] = '\t';
-      if ((lerro[i] == ' ' or lerro[i] == '\t') and
-          (i == 0 or lerro[i-1] == '\t'))
+      if (lerro[i] == L' ' and (lerro[i+1] == L' ' or lerro[i+1] == L'\t'))
+        lerro[i] = L'\t';
+      if ((lerro[i] == L' ' or lerro[i] == L'\t') and
+          (i == 0 or lerro[i-1] == L'\t'))
       {
         lerro.erase(i,1);
         i--;
       }
     }
-    if (lerro[lerro.size()-1] == ' ' or lerro[lerro.size()-1] == '\t')
+    if (lerro[lerro.size()-1] == L' ' or lerro[lerro.size()-1] == L'\t')
       lerro.erase(lerro.size()-1,1);
 
-    size_t sep1 = lerro.find("\t");
-    size_t sep2 = lerro.find("\t", sep1 + 1);
-    size_t sep3 = lerro.find("\t", sep2 + 1);
-    if (sep1 == string::npos || sep2 == string::npos || sep3 == string::npos)
+    size_t sep1 = lerro.find(L"\t");
+    size_t sep2 = lerro.find(L"\t", sep1 + 1);
+    size_t sep3 = lerro.find(L"\t", sep2 + 1);
+    if (sep1 == wstring::npos || sep2 == wstring::npos || sep3 == wstring::npos)
       continue;
 
     chunk_order current;
-    current.parent_type = lerro.substr(0, sep1);
-    current.child_type = lerro.substr(sep1 + 1, sep2 - sep1 - 1);
+    current.parent_condition = lerro.substr(0, sep1);
+    current.child_condition = lerro.substr(sep1 + 1, sep2 - sep1 - 1);
     current.relative_order = lerro.substr(sep2 + 1, sep3 - sep2 - 1);
     current.order = lerro.substr(sep3 + 1, lerro.size() - sep3 - 1);
 
@@ -852,30 +856,20 @@ void init_chunk_order(string fitxName)
 }
 
 
-wstring get_chunk_order(wstring parent_type, wstring child_type,
+wstring get_chunk_order(wstring parent_attribs, wstring child_attribs,
                         int relative_order)
 {
   for (size_t i = 0; i < order_inter.size(); i++)
   {
-    Reg_Ex regex_parent = Reg_Ex(order_inter[i].parent_type.c_str());
-    Reg_Ex regex_child = Reg_Ex(order_inter[i].child_type.c_str());
 
-    if (regex_parent.Search(UtfConverter::toUtf8(parent_type).c_str()) and
-        regex_child.Search(UtfConverter::toUtf8(child_type).c_str()) and
-        (order_inter[i].relative_order == ".*?" or
-         order_inter[i].relative_order[0] == '=' and
-         relative_order ==
-           atoi(order_inter[i].relative_order.substr(1, order_inter[i].relative_order.size()).c_str()) or
-         order_inter[i].relative_order[0] == '>' and
-         relative_order >
-           atoi(order_inter[i].relative_order.substr(1, order_inter[i].relative_order.size()).c_str()) or
-         order_inter[i].relative_order[0] == '<' and
-         relative_order <
-           atoi(order_inter[i].relative_order.substr(1, order_inter[i].relative_order.size()).c_str())
-         )
-        )
+    if (apply_condition(parent_attribs, order_inter[i].parent_condition) and apply_condition(child_attribs, order_inter[i].child_condition) and
+	(order_inter[i].relative_order == L".*?" or 
+	 order_inter[i].relative_order[0] == L'=' and relative_order == watoi(order_inter[i].relative_order.substr(1, order_inter[i].relative_order.size()).c_str()) or
+	 order_inter[i].relative_order[0] == L'>' and relative_order > watoi(order_inter[i].relative_order.substr(1, order_inter[i].relative_order.size()).c_str()) or
+	 order_inter[i].relative_order[0] == L'<' and relative_order < watoi(order_inter[i].relative_order.substr(1, order_inter[i].relative_order.size()).c_str())
+	 )) 
     {
-      return UtfConverter::fromUtf8(order_inter[i].order);
+      return order_inter[i].order;
     }
   }
 

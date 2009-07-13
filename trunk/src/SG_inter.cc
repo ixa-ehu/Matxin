@@ -248,7 +248,7 @@ wstring procNODE(xmlTextReaderPtr reader){
 }
 
 
-vector<wstring> procCHUNK(xmlTextReaderPtr reader, vector<wstring> &tree, wstring &type, int &ref) {
+vector<wstring> procCHUNK(xmlTextReaderPtr reader, vector<wstring> &tree, wstring &attribs, int &ref) {
   wstring tagName = getTagName(reader);
   int tagType=xmlTextReaderNodeType(reader);
   wstring subtree;
@@ -259,7 +259,7 @@ vector<wstring> procCHUNK(xmlTextReaderPtr reader, vector<wstring> &tree, wstrin
     order.push_back(attrib(reader, "ref"));
     head_index=0;
 
-    type = attrib(reader, "type");
+    attribs = allAttrib(reader);
     ref = watoi(attrib(reader, "ref").c_str());
 
     subtree = write_xml(allAttrib(reader)) + L">\n";
@@ -280,12 +280,12 @@ vector<wstring> procCHUNK(xmlTextReaderPtr reader, vector<wstring> &tree, wstrin
   tagName = getTagName(reader);
   tagType=xmlTextReaderNodeType(reader);
   while (ret == 1 and tagName == L"CHUNK" and tagType == XML_READER_TYPE_ELEMENT) {
-    wstring child_type;
+    wstring child_attribs;
     int child_ref;
-    vector<wstring> suborder = procCHUNK(reader, tree, child_type, child_ref);
+    vector<wstring> suborder = procCHUNK(reader, tree, child_attribs, child_ref);
 
-    wstring relative_order = get_chunk_order(type, child_type, child_ref - ref);
-    //cerr << type << "," << child_type << "," << child_ref - ref << ":" << relative_order << endl;
+    wstring relative_order = get_chunk_order(attribs, child_attribs, child_ref - ref);
+    //cerr << attribs << "," << child_attribs << "," << child_ref - ref << ":" << relative_order << endl;
     order = merge(order, head_index, suborder, relative_order);
 
     ret = nextTag(reader);
@@ -326,10 +326,10 @@ wstring procSENTENCE (xmlTextReaderPtr reader) {
   vector<wstring> order;
 
   while (ret == 1 and tagName == L"CHUNK") {
-    wstring child_type;
+    wstring child_attribs;
     int child_ref;
     vector<wstring> child_subtree;
-    vector<wstring> child_order = procCHUNK(reader, child_subtree, child_type, child_ref);
+    vector<wstring> child_order = procCHUNK(reader, child_subtree, child_attribs, child_ref);
 
     subtree.insert(subtree.end(), child_subtree.begin(), child_subtree.end());
     order.insert(order.end(), child_order.begin(), child_order.end());

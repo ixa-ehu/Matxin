@@ -5,34 +5,24 @@
 #####################################
 
 
-# gurasoPOS  umePOS	posErlt    Ordena
+# guraso	ume	posErlt	Ordena
+type=~'adi-kat'	type=~'MENP'	.*?	x1.x2
 
-adi-kat	     MENP	.*?	   x1.x2
+type=~'adi-kat-ez'	type=~'ez'	.*?	x2+x1	#Ezezko esaldiak
+type=~'adi-kat-gal'	true	=1	x1.x2	#Galderetan ordena mantendu (Ingeleserako egina!!!)
 
-adi-kat-ez   ez		.*?	   x2+x1	  #Ezezko esaldiak
-adi-kat-gal  .*?	 =1	   x1.x2	  #Galderetan ordena mantendu (Ingeleserako egina!!!)
+# Koordinazioetan orden berdina mantendu dezan...
+type=~'emen'	true	>0	x1.x2	# <Juan> <y> <Pedro>  ==> <Juan> <eta> <PEDRO>
+type=~'emen'	true	<0	x2.x1	# <Juan> <y> <Pedro>  ==> <JUAN> <eta> <Pedro>
 
-						  # Koordinazioetan orden berdina mantendu dezan...
-emen	     .*?	 >0        x1.x2          # <Juan> <y> <Pedro>  ==> <Juan> <eta> <PEDRO>
-emen	     .*?	 <0        x2.x1          # <Juan> <y> <Pedro>  ==> <JUAN> <eta> <Pedro>
+# Puntuazio ikurra bukaeran
+.*?	type=~'F'	.*?	x1.x2	# <el perro><.> ==> <txakurra><.>
+.*?	type=~'p-'	.*?	x1.x2	# <el perro><.> ==> <txakurra><.>
 
-						  # Puntuazio ikurra bukaeran
-.*?	     F.*	.*?        x1.x2	  # <el perro><.> ==> <txakurra><.>
-.*?	     p-.*	.*?        x1.x2	  # <el perro><.> ==> <txakurra><.>
+# Aditzaren modiifikatzaileak atzean, gazteleraz aditzaren atzetik bazeuden, 1.a ezik
+type=~'adi-kat'	true	>1	x1.x2	# <Yo><corto><el pan><en casa><para tí> ==> <Nik><ogia><mozten dut><ETXEAN><ZURETZAT>
+type=~'adi-kat'	true	=1	x2.x1	# <Yo><corto><el pan><en casa><para tí> ==> <Nik><OGIA><mozten dut><etxean><zuretzat>
+type=~'adi-kat'	true	<1	x2.x1	# <Yo><corto><el pan><en casa><para tí> ==> <NIK><ogia><mozten dut><etxean><zuretzat>
 
-						  # Aditzaren modiifikatzaileak atzean, gazteleraz aditzaren atzetik bazeuden, 1.a ezik
-adi-kat	     .*?	 >1	   x1.x2	  # <Yo><corto><el pan><en casa><para tí> ==> <Nik><ogia><mozten dut><ETXEAN><ZURETZAT>
-adi-kat	     .*?	 =1	   x2.x1	  # <Yo><corto><el pan><en casa><para tí> ==> <Nik><OGIA><mozten dut><etxean><zuretzat>
-adi-kat	     .*?	 <1	   x2.x1	  # <Yo><corto><el pan><en casa><para tí> ==> <NIK><ogia><mozten dut><etxean><zuretzat>
+true	true	.*?	x2.x1	# by default order (in case any other rule is applied)
 
-
-.*? 	      .*? 	.*?	   x2.x1
-
-
-
-
-
-#						  # ZerGaldera bere menpe dagoen aditzaren aurrean sartzen da
-#ZHG	     .*?         .*?	   x2.x1.x2       # <pregunto><cuándo><vienen><tus amigos> ==> <galdetzen dut><zure lagunak><NOIZ><datozen>
-#MENP	     .*?        .*?	   x1.x2 	  # <noiz><datozen>
-#.*? 	      MENP   .*?	   x1.x2   	  #<<<----???

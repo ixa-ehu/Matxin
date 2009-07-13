@@ -62,7 +62,7 @@ void init_verbTrasference(string fileName, bool traza);
 wstring apply_verbTransference(wstring AS_source);
 
 void init_chunk_order(string fitxName);
-wstring get_chunk_order(wstring parent_type, wstring child_type, int relative_order);
+wstring get_chunk_order(wstring parent_attribs, wstring child_attribs, int relative_order);
 
 void init_preposition_transference(string fitxName);
 vector<wstring> preposition_transference(wstring parent_attributes, wstring child_attributes, wstring sentenceref, int sentencealloc, config &cfg);
