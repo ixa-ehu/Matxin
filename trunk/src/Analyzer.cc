@@ -47,7 +47,7 @@ void PrintDepTree(dep_tree::iterator n, int depth, const config &cfg)
 
        //Print Nodes
        for (d = n->sibling_begin(); d != n->sibling_end(); ++d)
-         if(!d->info.is_chunk())
+         if (!d->info.is_chunk())
            PrintDepTree(d, depth + 1, cfg);
 
        // print CHUNKS (in order)
@@ -60,7 +60,7 @@ void PrintDepTree(dep_tree::iterator n, int depth, const config &cfg)
          min = 9999;
          for (d = n->sibling_begin(); d! = n->sibling_end(); ++d)
          {
-           if(d->info.is_chunk())
+           if (d->info.is_chunk())
            {
              if (d->info.get_chunk_ord()>last && d->info.get_chunk_ord()<min)
              {
@@ -342,7 +342,7 @@ int wordPosition(const sentence &s, const word &w)
     ++position;
     ++i;
   }
-  if(!found)
+  if (!found)
     cerr << "INTERNAL ERROR in determinig Word Position" << endl;
 
   return position;
@@ -414,9 +414,9 @@ string PrintNODE(sentence & s, parse_tree & fulltree, dep_tree &tr,
   tree << " mi='" << xmlencode(w.get_parole()).c_str() << "'>" << endl;
 
   //Print Nodes
-  for (d = n->sibling_begin(); d !=n ->sibling_end(); ++d)
+  for (d = n->sibling_begin(); d != n->sibling_end(); ++d)
   {
-    if(!d->info.is_chunk())
+    if (!d->info.is_chunk())
     {
       tree << PrintNODE(s,fulltree,tr, d, depth + 1, printHead);
     }
