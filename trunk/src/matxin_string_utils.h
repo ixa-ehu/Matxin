@@ -1,5 +1,5 @@
 /*
- *  Copyright (C) 2005 IXA Research Group / IXA Ikerkuntza Taldea.
+ *  Copyright (C) 2009 IXA Research Group / IXA Ikerkuntza Taldea.
  *
  *  This program is free software; you can redistribute it and/or modify
  *  it under the terms of the GNU General Public License as published by
@@ -30,13 +30,15 @@
 using namespace std;
 
 #ifdef __cplusplus
-extern "C" {
+extern "C"
+{
 #endif
 
 /*
  * Converts positive numbers from text (wchar) to int
  */
 int watoi(const wchar_t *buffer);
+
 
 /*
  * Returns an array of strings in 'tokens', splitting the input
@@ -46,6 +48,7 @@ void Tokenize(const wstring& str,
               vector<wstring>& tokens,
               const wstring& delimiter = L" ");
 
+
 /*
  * Returns a string in 'tokens', splitting the input
  * string 'str' based on the character 'delimiter'.
@@ -54,11 +57,13 @@ void Tokenize2(const wstring& str,
                wstring& tokens,
                const wstring& delimiter = L" ");
 
+
 /*
  * Joins all the elements from a vector of wstrings using
  * the 'delimiter' character and returns the resulting wstring.
  */
 wstring v2s(vector<wstring> vector, wstring delimiter = L" ");
+
 
 /*
  * Splits multi-attribute text from a elment into

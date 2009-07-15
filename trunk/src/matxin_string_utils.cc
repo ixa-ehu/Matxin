@@ -2,12 +2,12 @@
 #include <wctype.h>
 #include <assert.h>
 
-/*
- * zenbaki positiboak testutik int-era pasatzeko
- */
-int watoi(const wchar_t *buffer) {
+
+int watoi(const wchar_t *buffer)
+{
     return wcstol(buffer, NULL, 10);
 }
+
 
 void Tokenize(const wstring& str,
               vector<wstring>& tokens,

@@ -29,10 +29,12 @@
 using namespace std;
 
 
-int get_order(vector<wstring> order, wstring attributes){
+int get_order(vector<wstring> order, wstring attributes)
+{
   wstring ref = text_attrib(attributes, L"ref");
 
-  for (size_t i=0; i<order.size(); i++) {
+  for (size_t i = 0; i < order.size(); i++)
+  {
     if (order[i] == ref)
       return i;
   }
@@ -41,10 +43,13 @@ int get_order(vector<wstring> order, wstring attributes){
 }
 
 
-wstring write_CHUNK(vector<wstring> tree, vector<wstring> order) {
+wstring write_CHUNK(vector<wstring> tree, vector<wstring> order)
+{
   wostringstream XMLtree;
-  for (size_t i=0; i<tree.size(); i++) {
-    if (tree[i] != L"") {
+  for (size_t i = 0; i < tree.size(); i++)
+  {
+    if (tree[i] != L"")
+    {
       int ord = get_order(order, tree[i]);
       XMLtree << L"<CHUNK ord='" << ord << L"'" << tree[i];
     }
@@ -56,135 +61,131 @@ wstring write_CHUNK(vector<wstring> tree, vector<wstring> order) {
 }
 
 
-vector<wstring> merge(vector<wstring> order, int &head_index, vector<wstring> child_order, wstring relative_order) {
-  /*
-for (int i=0; i<order.size();i++)
-  cerr << order[i] << " ";
- cerr << "(" << head_index << ")" << endl;
-
-for (int i=0; i<child_order.size();i++)
-  cerr << child_order[i] << " ";
- cerr << endl << endl;
-  */
-
-  if (relative_order == L"x1.x2") {
-    for (size_t i=0; i<child_order.size();i++) {
+vector<wstring> merge(vector<wstring> order, int &head_index,
+                      vector<wstring> child_order, wstring relative_order)
+{
+  if (relative_order == L"x1.x2")
+  {
+    for (size_t i = 0; i < child_order.size(); i++)
+    {
       order.push_back(child_order[i]);
     }
-    /*
-for (int i=0; i<order.size();i++)
-  cerr << order[i] << " ";
- cerr << "(" << head_index << ")" << endl << endl;
-    */
+
     return order;
   }
-  else if (relative_order == L"x2.x1.x2") {
+  else if (relative_order == L"x2.x1.x2")
+  {
     vector<wstring> output_order;
     int output_head;
-    for (int i=0; i<head_index;i++) {
+    for (size_t i = 0; i < head_index; i++)
+    {
       output_order.push_back(order[i]);
     }
 
-    for (size_t i=0; i<child_order.size()-1;i++) {
+    for (size_t i = 0; i < child_order.size() - 1; i++)
+    {
       output_order.push_back(child_order[i]);
     }
 
     output_order.push_back(order[head_index]);
-    output_head = output_order.size()-1;
-    output_order.push_back(child_order[child_order.size()-1]);
+    output_head = output_order.size() - 1;
+    output_order.push_back(child_order[child_order.size() - 1]);
 
-    for (size_t i=head_index+1; i<order.size();i++) {
+    for (size_t i = head_index + 1; i < order.size(); i++)
+    {
       output_order.push_back(order[i]);
     }
     head_index = output_head;
-    /*
-for (int i=0; i<output_order.size();i++)
-  cerr << output_order[i] << " ";
- cerr << "(" << head_index << ")" << endl << endl;
-    */
+
     return output_order;
   }
-  else if (relative_order == L"x2+x1") {
+  else if (relative_order == L"x2+x1")
+  {
     vector<wstring> output_order;
     int output_head;
-    for (int i=0; i<head_index;i++) {
+    for (size_t i = 0; i < head_index; i++)
+    {
       output_order.push_back(order[i]);
     }
 
     output_head = output_order.size();
 
-    for (size_t i=0; i<child_order.size();i++) {
+    for (size_t i = 0; i < child_order.size(); i++)
+    {
       output_order.push_back(child_order[i]);
     }
 
-    for (size_t i=head_index; i<order.size();i++) {
+    for (size_t i = head_index; i < order.size(); i++)
+    {
       output_order.push_back(order[i]);
     }
     head_index = output_head;
-    /*
-for (int i=0; i<output_order.size();i++)
-  cerr << output_order[i] << " ";
- cerr << "(" << head_index << ")" << endl << endl;
-    */
+
     return output_order;
   }
-//  else if (relative_order == "x2.x1") {
-  else {
+  else
+  {
     vector<wstring> output_order;
     int output_head;
-    for (int i=0; i<head_index;i++) {
+    for (size_t i = 0; i < head_index; i++)
+    {
       output_order.push_back(order[i]);
     }
 
-    for (size_t i=0; i<child_order.size();i++) {
+    for (size_t i = 0; i < child_order.size(); i++)
+    {
       output_order.push_back(child_order[i]);
     }
 
     output_order.push_back(order[head_index]);
-    output_head = output_order.size()-1;
+    output_head = output_order.size() - 1;
 
-    for (size_t i=head_index+1; i<order.size();i++) {
+    for (size_t i = head_index + 1; i < order.size(); i++)
+    {
       output_order.push_back(order[i]);
     }
     head_index = output_head;
-    /*
-for (int i=0; i<output_order.size();i++)
-  cerr << output_order[i] << " ";
- cerr << endl << "(" << head_index << ")" << endl << endl;
-    */
-    return output_order;
 
+    return output_order;
   }
 }
 
 
-wstring procSYN (xmlTextReaderPtr reader) {
+wstring procSYN (xmlTextReaderPtr reader)
+{
   wstring syns;
 
   wstring tagName = getTagName(reader);
-  int tagType=xmlTextReaderNodeType(reader);
+  int tagType = xmlTextReaderNodeType(reader);
 
-  if (tagName == L"SYN" and tagType == XML_READER_TYPE_ELEMENT) {
-
+  if (tagName == L"SYN" and tagType == XML_READER_TYPE_ELEMENT)
+  {
     syns += L"<SYN" + write_xml(allAttrib(reader));
-    if (xmlTextReaderIsEmptyElement(reader) == 1) {
+    if (xmlTextReaderIsEmptyElement(reader) == 1)
+    {
       syns += L"/>\n";
       return syns;
     }
-    else {
+    else
+    {
       syns += L">\n";
     }
   }
-  else {
-    wcerr << L"ERROR: invalid tag: <"<< tagName << L"> when <SYN> was expected..." << endl;
+  else
+  {
+    wcerr << L"ERROR: invalid tag: <" << tagName
+          << L"> when <SYN> was expected..." << endl;
     exit(-1);
   }
 
-  if (tagName == L"SYN" and tagType == XML_READER_TYPE_END_ELEMENT) {
+  if (tagName == L"SYN" and tagType == XML_READER_TYPE_END_ELEMENT)
+  {
     syns += L"</SYN>\n";
   }
-  else {
-    wcerr << L"ERROR: invalid document: found <" << tagName << L"> when </SYN> was expected..." << endl;
+  else
+  {
+    wcerr << L"ERROR: invalid document: found <" << tagName
+          << L"> when </SYN> was expected..." << endl;
     exit(-1);
   }
 
@@ -192,55 +193,65 @@ wstring procSYN (xmlTextReaderPtr reader) {
 }
 
 
-wstring procNODE(xmlTextReaderPtr reader){
-
+wstring procNODE(xmlTextReaderPtr reader)
+{
   wstring nodes;
   wstring tagName = getTagName(reader);
-  int tagType=xmlTextReaderNodeType(reader);
+  int tagType = xmlTextReaderNodeType(reader);
 
-  if (tagName == L"NODE" and tagType != XML_READER_TYPE_END_ELEMENT) {
+  if (tagName == L"NODE" and tagType != XML_READER_TYPE_END_ELEMENT)
+  {
     nodes += L"<NODE" + write_xml(allAttrib(reader));
-    if (xmlTextReaderIsEmptyElement(reader) == 1) {
+    if (xmlTextReaderIsEmptyElement(reader) == 1)
+    {
       nodes += L"/>\n";
       return nodes;
     }
-    else {
+    else
+    {
       nodes += L">\n";
     }
   }
-  else {
+  else
+  {
     wcout << nodes;
-    wcerr << L"ERROR: invalid tag: <" << tagName << L"> when <NODE> was expected..." << endl;
+    wcerr << L"ERROR: invalid tag: <" << tagName
+          << L"> when <NODE> was expected..." << endl;
     exit(-1);
   }
 
   int ret = nextTag(reader);
   tagName = getTagName(reader);
-  tagType=xmlTextReaderNodeType(reader);
+  tagType = xmlTextReaderNodeType(reader);
 
   // if there are, process the posible synonyms
-  while (ret == 1 and tagName == L"SYN" and tagType == XML_READER_TYPE_ELEMENT) {
+  while (ret == 1 and tagName == L"SYN" and tagType == XML_READER_TYPE_ELEMENT)
+  {
     nodes += procSYN(reader);
 
     ret = nextTag(reader);
     tagName = getTagName(reader);
-    tagType=xmlTextReaderNodeType(reader);
+    tagType = xmlTextReaderNodeType(reader);
   }
 
-  while (ret == 1 and tagName == L"NODE" and tagType == XML_READER_TYPE_ELEMENT) {
+  while (ret == 1 and tagName == L"NODE" and tagType == XML_READER_TYPE_ELEMENT)
+  {
     nodes += procNODE(reader);
 
     nextTag(reader);
     tagName = getTagName(reader);
-    tagType=xmlTextReaderNodeType(reader);
+    tagType = xmlTextReaderNodeType(reader);
   }
 
-  if (tagName == L"NODE" and tagType == XML_READER_TYPE_END_ELEMENT) {
+  if (tagName == L"NODE" and tagType == XML_READER_TYPE_END_ELEMENT)
+  {
     nodes += L"</NODE>\n";
   }
-  else {
+  else
+  {
     wcout << nodes;
-    wcerr << L"ERROR: invalid document: found <" << tagName << L"> when </NODE> was expected..." << endl;
+    wcerr << L"ERROR: invalid document: found <" << tagName
+          << L"> when </NODE> was expected..." << endl;
     exit(-1);
   }
 
@@ -248,56 +259,64 @@ wstring procNODE(xmlTextReaderPtr reader){
 }
 
 
-vector<wstring> procCHUNK(xmlTextReaderPtr reader, vector<wstring> &tree, wstring &attribs, int &ref) {
+vector<wstring> procCHUNK(xmlTextReaderPtr reader, vector<wstring> &tree,
+                          wstring &attribs, int &ref)
+{
   wstring tagName = getTagName(reader);
-  int tagType=xmlTextReaderNodeType(reader);
+  int tagType = xmlTextReaderNodeType(reader);
   wstring subtree;
   vector<wstring> order;
   int head_index;
 
-  if (tagName == L"CHUNK" and tagType == XML_READER_TYPE_ELEMENT) {
+  if (tagName == L"CHUNK" and tagType == XML_READER_TYPE_ELEMENT)
+  {
     order.push_back(attrib(reader, "ref"));
-    head_index=0;
+    head_index = 0;
 
     attribs = allAttrib(reader);
     ref = watoi(attrib(reader, "ref").c_str());
 
     subtree = write_xml(allAttrib(reader)) + L">\n";
   }
-  else {
-    wcerr << L"ERROR: invalid tag: <" << tagName << L"> when <CHUNK> was expected..." << endl;
+  else
+  {
+    wcerr << L"ERROR: invalid tag: <" << tagName
+          << L"> when <CHUNK> was expected..." << endl;
     exit(-1);
   }
 
   int ret = nextTag(reader);
   tagName = getTagName(reader);
-  tagType=xmlTextReaderNodeType(reader);
+  tagType = xmlTextReaderNodeType(reader);
 
   subtree += procNODE(reader);
   tree.push_back(subtree);
 
   ret = nextTag(reader);
   tagName = getTagName(reader);
-  tagType=xmlTextReaderNodeType(reader);
-  while (ret == 1 and tagName == L"CHUNK" and tagType == XML_READER_TYPE_ELEMENT) {
+  tagType = xmlTextReaderNodeType(reader);
+  while (ret == 1 and tagName == L"CHUNK" and tagType == XML_READER_TYPE_ELEMENT)
+  {
     wstring child_attribs;
     int child_ref;
     vector<wstring> suborder = procCHUNK(reader, tree, child_attribs, child_ref);
 
     wstring relative_order = get_chunk_order(attribs, child_attribs, child_ref - ref);
-    //cerr << attribs << "," << child_attribs << "," << child_ref - ref << ":" << relative_order << endl;
     order = merge(order, head_index, suborder, relative_order);
 
     ret = nextTag(reader);
     tagName = getTagName(reader);
-    tagType=xmlTextReaderNodeType(reader);
+    tagType = xmlTextReaderNodeType(reader);
   }
 
-  if (tagName == L"CHUNK" and tagType == XML_READER_TYPE_END_ELEMENT) {
+  if (tagName == L"CHUNK" and tagType == XML_READER_TYPE_END_ELEMENT)
+  {
     tree.push_back(L"");
   }
-  else {
-    wcerr << L"ERROR: invalid document: found <" << tagName << L"> when </CHUNK> was expected..." << endl;
+  else
+  {
+    wcerr << L"ERROR: invalid document: found <" << tagName
+          << L"> when </CHUNK> was expected..." << endl;
     exit(-1);
   }
 
@@ -305,27 +324,33 @@ vector<wstring> procCHUNK(xmlTextReaderPtr reader, vector<wstring> &tree, wstrin
 }
 
 
-wstring procSENTENCE (xmlTextReaderPtr reader) {
+wstring procSENTENCE (xmlTextReaderPtr reader)
+{
   wstring tree;
   wstring tagName = getTagName(reader);
-  int tagType=xmlTextReaderNodeType(reader);
+  int tagType = xmlTextReaderNodeType(reader);
 
-  if(tagName == L"SENTENCE" and tagType != XML_READER_TYPE_END_ELEMENT) {
-    tree = L"<SENTENCE ord='" + write_xml(attrib(reader, "ref")) + L"'" + write_xml(allAttrib(reader)) + L">\n";
+  if (tagName == L"SENTENCE" and tagType != XML_READER_TYPE_END_ELEMENT)
+  {
+    tree = L"<SENTENCE ord='" + write_xml(attrib(reader, "ref")) + L"'"
+           + write_xml(allAttrib(reader)) + L">\n";
   }
-  else {
-    wcerr << L"ERROR: invalid document: found <" << tagName << L"> when <SENTENCE> was expected..." << endl;
+  else
+  {
+    wcerr << L"ERROR: invalid document: found <" << tagName
+          << L"> when <SENTENCE> was expected..." << endl;
     exit(-1);
   }
 
   int ret = nextTag(reader);
   tagName = getTagName(reader);
-  tagType=xmlTextReaderNodeType(reader);
+  tagType = xmlTextReaderNodeType(reader);
 
   vector<wstring> subtree;
   vector<wstring> order;
 
-  while (ret == 1 and tagName == L"CHUNK") {
+  while (ret == 1 and tagName == L"CHUNK")
+  {
     wstring child_attribs;
     int child_ref;
     vector<wstring> child_subtree;
@@ -336,21 +361,25 @@ wstring procSENTENCE (xmlTextReaderPtr reader) {
 
     ret = nextTag(reader);
     tagName = getTagName(reader);
-    tagType=xmlTextReaderNodeType(reader);
+    tagType = xmlTextReaderNodeType(reader);
   }
 
   tree += write_CHUNK(subtree, order);
 
-  if(ret == 1 and tagName == L"SENTENCE" and tagType == XML_READER_TYPE_END_ELEMENT) {
+  if (ret == 1 and tagName == L"SENTENCE" and tagType == XML_READER_TYPE_END_ELEMENT)
+  {
       tree += L"</SENTENCE>\n";
   }
-  else {
-    wcerr << L"ERROR: invalid document: found <" << tagName << L"> when </SENTENCE> was expected..." << endl;
+  else
+  {
+    wcerr << L"ERROR: invalid document: found <" << tagName
+          << L"> when </SENTENCE> was expected..." << endl;
     exit(-1);
   }
 
   return tree;
 }
+
 
 int main(int argc, char *argv[])
 {
@@ -368,38 +397,45 @@ int main(int argc, char *argv[])
   wstring tagName = getTagName(reader);
   int tagType = xmlTextReaderNodeType(reader);
 
-  if (tagName == L"corpus" and tagType != XML_READER_TYPE_END_ELEMENT) {
+  if (tagName == L"corpus" and tagType != XML_READER_TYPE_END_ELEMENT)
+  {
     wcout << L"<?xml version='1.0' encoding='UTF-8'?>" << endl;
     wcout << L"<corpus " << write_xml(allAttrib(reader)) << L">\n";
   }
-  else {
-    wcerr << L"ERROR: invalid document: found <" << tagName << L"> when <corpus> was expected..." << endl;
+  else
+  {
+    wcerr << L"ERROR: invalid document: found <" << tagName
+          << L"> when <corpus> was expected..." << endl;
     exit(-1);
   }
 
   ret = nextTag(reader);
   tagName = getTagName(reader);
-  tagType=xmlTextReaderNodeType(reader);
+  tagType = xmlTextReaderNodeType(reader);
 
   // corpus barruan dauden SENTENCE guztietarako
-  while (ret == 1 and tagName == L"SENTENCE") {
-
+  while (ret == 1 and tagName == L"SENTENCE")
+  {
     //SENTENCE irakurri eta prozesatzen du.
     wcout << procSENTENCE(reader) << endl;
     wcout.flush();
 
     ret = nextTag(reader);
     tagName = getTagName(reader);
-    tagType=xmlTextReaderNodeType(reader);
+    tagType = xmlTextReaderNodeType(reader);
   }
   xmlFreeTextReader(reader);
   xmlCleanupParser();
 
-  if(ret == 1 and tagName == L"corpus" and tagType == XML_READER_TYPE_END_ELEMENT) {
+  if (ret == 1 and tagName == L"corpus" and tagType == XML_READER_TYPE_END_ELEMENT)
+  {
     wcout << "</corpus>\n";
   }
-  else {
-    wcerr << L"ERROR: invalid document: found <" << tagName << L"> when </corpus> was expected..." << endl;
+  else
+  {
+    wcerr << L"ERROR: invalid document: found <" << tagName
+          << L"> when </corpus> was expected..." << endl;
     exit(-1);
   }
+
 }
