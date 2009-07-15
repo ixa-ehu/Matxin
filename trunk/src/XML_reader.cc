@@ -21,38 +21,45 @@
 
 
 // Converts xmlChar strings used by libxml2 to ordinary strings
-string xmlc2s(xmlChar const *entrada) {
-  if (entrada == NULL) {
+string xmlc2s(xmlChar const *entrada)
+{
+  if (entrada == NULL)
     return "";
-  }
 
   return reinterpret_cast<char const *>(entrada);
 }
 
 
-wstring write_xml(wstring s) {
-  size_t pos=0;
-  while ((pos=s.find(L"&", pos)) != wstring::npos) {
+wstring write_xml(wstring s)
+{
+  size_t pos = 0;
+  while ((pos = s.find(L"&", pos)) != wstring::npos)
+  {
     s.replace(pos, 1, L"&amp;");
     pos += 4;
   }
 
-  while ((pos=s.find(L'"')) != wstring::npos) {
+  while ((pos = s.find(L'"')) != wstring::npos)
+  {
     s.replace(pos, 1, L"&quot;");
   }
 
-  pos=0;
-  while ((pos=s.find(L'\'', pos)) != wstring::npos) {
-    if (s[pos-1] != L'=' && s[pos+1] != L' ' && pos != (s.size()-1))
+  pos = 0;
+  while ((pos = s.find(L'\'', pos)) != wstring::npos)
+  {
+    if (s[pos - 1] != L'=' && s[pos + 1] != L' ' && pos != (s.size() - 1))
       s.replace(pos, 1, L"&apos;");
-    else pos++;
+    else
+      pos++;
   }
 
-  while ((pos=s.find(L"<")) != wstring::npos) {
+  while ((pos = s.find(L"<")) != wstring::npos)
+  {
     s.replace(pos, 1, L"&lt;");
   }
 
-  while ((pos=s.find(L">")) != wstring::npos) {
+  while ((pos = s.find(L">")) != wstring::npos)
+  {
     s.replace(pos, 1, L"&gt;");
   }
 
@@ -60,56 +67,62 @@ wstring write_xml(wstring s) {
 }
 
 
-wstring getTagName(xmlTextReaderPtr reader) {
 //Momentuko etiketaren izena itzultzen du.
+wstring getTagName(xmlTextReaderPtr reader)
+{
   xmlChar const *xname = xmlTextReaderConstName(reader);
   wstring tagName = XMLParseUtil::stows(xmlc2s(xname));
   return tagName;
 }
 
 
-int nextTag(xmlTextReaderPtr reader) {
 //Hurrengo etiketara pasatzen da. Textua eta DTD definizioak saltatzen ditu.
+int nextTag(xmlTextReaderPtr reader)
+{
   int ret = xmlTextReaderRead(reader);
   wstring tagName = getTagName(reader);
   int tagType = xmlTextReaderNodeType(reader);
 
-  while (ret == 1 and (tagType == XML_READER_TYPE_DOCUMENT_TYPE or tagName == L"#text")) {
+  while (ret == 1 and (tagType == XML_READER_TYPE_DOCUMENT_TYPE or tagName == L"#text"))
+  {
     // DTD definizioekin zer egin behar den definitu behar dugu.
-
     ret = xmlTextReaderRead(reader);
     tagName = getTagName(reader);
     tagType = xmlTextReaderNodeType(reader);
   }
 
-  //cerr << tagName << "\t" << tagType << endl;
-
   return ret;
 }
 
 
-wstring attrib(xmlTextReaderPtr reader, string const &nombre) {
-  if (nombre[0] == '\'' && nombre[nombre.size()-1] == '\'')
-    return XMLParseUtil::stows(nombre.substr(1, nombre.size()-2));
+wstring attrib(xmlTextReaderPtr reader, string const &nombre)
+{
+  if (nombre[0] == '\'' && nombre[nombre.size() - 1] == '\'')
+    return XMLParseUtil::stows(nombre.substr(1, nombre.size() - 2));
 
-//atributu izen bat emanda, momentuko elementuaren izen bereko atributuaren balioa itzultzen du.
+  //atributu izen bat emanda, momentuko elementuaren izen bereko
+  // atributuaren balioa itzultzen du.
   xmlChar *nomatrib = xmlCharStrdup(nombre.c_str());
   xmlChar *atrib = xmlTextReaderGetAttribute(reader,nomatrib);
 
-  wstring resultado = XMLParseUtil::stows(xmlc2s(atrib));
+  wstring result = XMLParseUtil::stows(xmlc2s(atrib));
   
   xmlFree(atrib);
   xmlFree(nomatrib);
   
-  return resultado;
+  return result;
 }
 
 
-wstring allAttrib(xmlTextReaderPtr reader) {
- //Momentuko etiketaren atributu guztiak itzultzen ditu.
+//Momentuko etiketaren atributu guztiak itzultzen ditu.
+wstring allAttrib(xmlTextReaderPtr reader)
+{
   wstring output = L"";
 
-  for (int hasAttrib=xmlTextReaderMoveToFirstAttribute(reader); hasAttrib > 0; hasAttrib=xmlTextReaderMoveToNextAttribute(reader)) {
+  for (int hasAttrib = xmlTextReaderMoveToFirstAttribute(reader);
+       hasAttrib > 0;
+       hasAttrib = xmlTextReaderMoveToNextAttribute(reader))
+  {
     xmlChar const *xname = xmlTextReaderConstName(reader);
     xmlChar const *xvalue = xmlTextReaderConstValue(reader);
     output += L" " + XMLParseUtil::stows(xmlc2s(xname)) + L"='" +
@@ -121,11 +134,15 @@ wstring allAttrib(xmlTextReaderPtr reader) {
 }
 
 
-wstring allAttrib_except(xmlTextReaderPtr reader, wstring attrib_no) {
- //Momentuko etiketaren atributu guztiak itzultzen ditu.
+//Momentuko etiketaren atributu guztiak itzultzen ditu.
+wstring allAttrib_except(xmlTextReaderPtr reader, wstring attrib_no)
+{
   wstring output = L"";
 
-  for (int hasAttrib=xmlTextReaderMoveToFirstAttribute(reader); hasAttrib > 0; hasAttrib=xmlTextReaderMoveToNextAttribute(reader)) {
+  for (int hasAttrib=xmlTextReaderMoveToFirstAttribute(reader);
+       hasAttrib > 0;
+       hasAttrib = xmlTextReaderMoveToNextAttribute(reader))
+  {
     xmlChar const *xname = xmlTextReaderConstName(reader);
     xmlChar const *xvalue = xmlTextReaderConstValue(reader);
     if (XMLParseUtil::stows(xmlc2s(xname)) != attrib_no)
