@@ -58,7 +58,7 @@ void PrintDepTree(dep_tree::iterator n, int depth, const config &cfg)
          // while an unprinted chunk is found look, for the one with lower chunk_ord value
          trob = false;
          min = 9999;
-         for (d = n->sibling_begin(); d! = n->sibling_end(); ++d)
+         for (d = n->sibling_begin(); d != n->sibling_end(); ++d)
          {
            if (d->info.is_chunk())
            {
