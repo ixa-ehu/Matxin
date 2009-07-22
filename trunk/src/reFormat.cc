@@ -495,7 +495,10 @@ bool empty_tag(format &file_format, vector<int> allocs)
     {
       is_empty = is_empty && *iter == allocs[i];
       if (*iter == allocs[i])
-        iter = file_format.empty_tags.erase(iter);iter--;
+      {
+        iter = file_format.empty_tags.erase(iter);
+        iter--;
+      }
     }
     if (allocs.size() > 0 && is_empty)
       return is_empty;
