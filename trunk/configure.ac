@@ -332,6 +332,8 @@ fi
 #
 # Checks for libraries.
 #
+AC_CHECK_LIB(boost_filesystem, main, [true],AC_MSG_ERROR([boost_filesystem found]))
+
 PKG_CHECK_MODULES(MATXIN, [dnl
  lttoolbox-3.1 >= required_lttoolbox_version dnl
  libxml-2.0 >= required_libxml_version dnl

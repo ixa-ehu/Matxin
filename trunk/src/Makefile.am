@@ -6,31 +6,31 @@ bin_PROGRAMS = Analyzer LT ST_intra ST_inter ST_prep ST_verb SG_inter SG_intra \
 bin_SCRIPTS = Matxin_translator fst2regex.pl
 
 Analyzer_SOURCES = Analyzer.cc
-Analyzer_LDADD = -lmorfo -lcfg+ -ldb_cxx -lfries -lomlet
+Analyzer_LDADD = -lmorfo -lcfg+ -ldb_cxx -lfries -lomlet -lboost_filesystem
 
 LT_SOURCES = LT.cc utf_converter.cc data_manager.cc XML_reader.cc simpleregex.cc matxin_string_utils.cc matxin_string_utils.h
-LT_LDADD = -lmorfo -lcfg+ -ldb_cxx -lfries -lomlet
+LT_LDADD = -lmorfo -lcfg+ -ldb_cxx -lfries -lomlet -lboost_filesystem
 
 ST_intra_SOURCES = ST_intra.cc utf_converter.cc data_manager.cc XML_reader.cc simpleregex.cc matxin_string_utils.cc matxin_string_utils.h
-ST_intra_LDADD = -lmorfo -lcfg+ -ldb_cxx -lfries -lomlet
+ST_intra_LDADD = -lmorfo -lcfg+ -ldb_cxx -lfries -lomlet -lboost_filesystem
 
 ST_inter_SOURCES = ST_inter.cc utf_converter.cc data_manager.cc XML_reader.cc simpleregex.cc matxin_string_utils.cc matxin_string_utils.h
-ST_inter_LDADD = -lmorfo -lcfg+ -ldb_cxx -lfries -lomlet
+ST_inter_LDADD = -lmorfo -lcfg+ -ldb_cxx -lfries -lomlet -lboost_filesystem
 
 ST_prep_SOURCES = ST_prep.cc utf_converter.cc data_manager.cc XML_reader.cc simpleregex.cc matxin_string_utils.cc matxin_string_utils.h
-ST_prep_LDADD = -lmorfo -lcfg+ -ldb_cxx -lfries -lomlet
+ST_prep_LDADD = -lmorfo -lcfg+ -ldb_cxx -lfries -lomlet -lboost_filesystem
 
 ST_verb_SOURCES = ST_verb.cc utf_converter.cc data_manager.cc XML_reader.cc simpleregex.cc matxin_string_utils.cc matxin_string_utils.h
-ST_verb_LDADD = -lmorfo -lcfg+ -ldb_cxx -lfries -lomlet
+ST_verb_LDADD = -lmorfo -lcfg+ -ldb_cxx -lfries -lomlet -lboost_filesystem
 
 SG_inter_SOURCES = SG_inter.cc utf_converter.cc data_manager.cc XML_reader.cc simpleregex.cc matxin_string_utils.cc matxin_string_utils.h
-SG_inter_LDADD = -lmorfo -lcfg+ -ldb_cxx -lfries -lomlet
+SG_inter_LDADD = -lmorfo -lcfg+ -ldb_cxx -lfries -lomlet -lboost_filesystem
 
 SG_intra_SOURCES = SG_intra.cc utf_converter.cc data_manager.cc XML_reader.cc simpleregex.cc matxin_string_utils.cc matxin_string_utils.h
-SG_intra_LDADD = -lmorfo -lcfg+ -ldb_cxx -lfries -lomlet
+SG_intra_LDADD = -lmorfo -lcfg+ -ldb_cxx -lfries -lomlet -lboost_filesystem
 
 MG_SOURCES = MG.cc data_manager.cc utf_converter.cc XML_reader.cc simpleregex.cc matxin_string_utils.cc matxin_string_utils.h
-MG_LDADD = -lmorfo -lcfg+ -ldb_cxx -lfries -lomlet
+MG_LDADD = -lmorfo -lcfg+ -ldb_cxx -lfries -lomlet -lboost_filesystem
 
 reFormat_SOURCES = reFormat.cc utf_converter.cc data_manager.cc XML_reader.cc simpleregex.cc matxin_string_utils.cc matxin_string_utils.h
 
