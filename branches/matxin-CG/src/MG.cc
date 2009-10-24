@@ -917,8 +917,10 @@ int main(int argc, char *argv[])
   config cfg(argv);
 
   // Set locale information
-  locale::global(locale(""));
-  
+  //locale::global(locale(""));
+  // ^^^ doesn't work on mac, except with C/POSIX
+  setlocale(LC_ALL, "");
+
   // Initialization of the transducer for morphological generation.
   FILE *transducer = fopen(cfg.Morpho_GenFile, "r");
   fstp_generation.load(transducer);

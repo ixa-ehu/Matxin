@@ -366,7 +366,9 @@ int main(int argc, char *argv[])
   config cfg(argv);
 
   // Output in the locale's encoding
-  locale::global(locale(""));
+  //locale::global(locale(""));
+  // ^^^ doesn't work on mac, except with C/POSIX
+  setlocale(LC_ALL, "");
 
   if (cfg.Inter_Phase == 1)
   {

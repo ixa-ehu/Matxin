@@ -639,7 +639,9 @@ int main(int argc, char *argv[])
   format file_format;
   bool mark_unknow = false;
 
-  locale::global(locale(""));
+  //locale::global(locale(""));
+  // ^^^ doesn't work on mac, except with C/POSIX
+  setlocale(LC_ALL, "");
 
 
   if (argc > 1 and strcmp(argv[1], "-u") != 0)

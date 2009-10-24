@@ -386,7 +386,9 @@ int main(int argc, char *argv[])
   config cfg(argv);
 
   // Output in the locale's encoding
-  locale::global(locale(""));
+  //locale::global(locale(""));
+  // ^^^ doesn't work on mac, except with C/POSIX
+  setlocale(LC_ALL, "");
 
   init_chunk_order(cfg.Chunk_OrderFile);
 

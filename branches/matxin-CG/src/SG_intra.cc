@@ -314,7 +314,9 @@ int main(int argc, char *argv[])
   config cfg(argv);
 
   // Output in the locale's encoding
-  locale::global(locale(""));
+  //locale::global(locale(""));
+  // ^^^ doesn't work on mac, except with C/POSIX
+  setlocale(LC_ALL, "");
 
   //ordena definitu ahal izateko kategoria (DET-en azpikategoria) aldaketen biltegia hasieratu...
   init_lexInfo(L"orderPos", cfg.POS_ToOrderFile);
