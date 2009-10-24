@@ -249,7 +249,7 @@ AC_SUBST(OSTYPE)
 
 # We need this to determine whether we use zcat or gzcat
 AM_CONDITIONAL(OS_IS_SOLARIS, [test x"$OSTYPE" = xSunOS])
-
+AM_CONDITIONAL(OS_IS_DARWIN, [test x"$OSTYPE" = xDarwin])
 
 #
 # These programs are required during the make process so we
