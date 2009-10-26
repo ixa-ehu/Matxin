@@ -366,26 +366,27 @@ AC_CHECK_FUNCS([socket])
 #
 AC_CONFIG_FILES([matxin.pc
                  Makefile
-                 data/Makefile
-                 data/config/Makefile
-                 data/dict/Makefile
-                 data/dict/en-eu/Makefile
-                 data/dict/es-eu/Makefile
-                 data/freeling/Makefile
-                 data/freeling/common/Makefile
-                 data/freeling/common/nec/Makefile
-                 data/freeling/en/Makefile
-                 data/freeling/en/chunker/Makefile
-                 data/freeling/en/dep/Makefile
-                 data/freeling/en/nec/Makefile
-                 data/freeling/es/Makefile
-                 data/freeling/es/dep/Makefile
-                 data/freeling/es/nec/Makefile
-                 data/gram/Makefile
-                 data/gram/en-eu/Makefile
-                 data/gram/es-eu/Makefile
                  src/Makefile])
 AC_OUTPUT
+
+#                  data/Makefile
+#                  data/config/Makefile
+#                  data/dict/Makefile
+#                  data/dict/en-eu/Makefile
+#                  data/dict/es-eu/Makefile
+#                  data/freeling/Makefile
+#                  data/freeling/common/Makefile
+#                  data/freeling/common/nec/Makefile
+#                  data/freeling/en/Makefile
+#                  data/freeling/en/chunker/Makefile
+#                  data/freeling/en/dep/Makefile
+#                  data/freeling/en/nec/Makefile
+#                  data/freeling/es/Makefile
+#                  data/freeling/es/dep/Makefile
+#                  data/freeling/es/nec/Makefile
+#                  data/gram/Makefile
+#                  data/gram/en-eu/Makefile
+#                  data/gram/es-eu/Makefile
 
 #
 # Print summary for the selected configuration

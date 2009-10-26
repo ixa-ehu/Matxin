@@ -9,6 +9,7 @@
       - g++ >= 3.x
       - freeling-svn
       - lttoolbox >= 3.1.0
+      - vislcg3 >= 0.9.7.5129
       - libxml2 >= 2.6.17
       - libpcre >= 6.4
       - gnu make
@@ -20,3 +21,19 @@
 
 For build options, please see the INSTALL file.
 
+2. Goals of the Matxin-CG branch
+   
+    This should be general enough that it could be used either in the
+    way Matxin has been used before:
+    
+        FreeLing morphology => FreeLing dependency analysis =>
+        Matxin-transfer => lttoolbox generation
+    
+    or with a dependency analysis from VISL CG-3 as input to
+    Matxin-transfer:
+    
+        lttoolbox or other morphology => CG dependency analysis =>
+        Matxin-transfer => lttoolbox generation
+
+    We don't want to make changes that make it language-pair
+    dependent, nor that break the old Matxin behaviour.
