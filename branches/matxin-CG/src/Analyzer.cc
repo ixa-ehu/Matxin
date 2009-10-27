@@ -217,96 +217,51 @@ int main(int argc, char **argv)
   // read configuration file and command-line options
   config cfg(argv);
 
-  if (!((cfg.InputFormat < cfg.OutputFormat) or
-	(cfg.InputFormat == cfg.OutputFormat and cfg.InputFormat == TAGGED
-	 and cfg.NEC_NEClassification)))
-    {
-      cerr <<"Error - Input format cannot be more complex than desired output."<<endl;
-      exit (1);
-    }
+  // create required analyzers
+  tk = new tokenizer(cfg.TOK_TokenizerFile);
+  sp = new splitter(cfg.SPLIT_SplitterFile);
 
-  //--- create needed analyzers, depending on given options ---//
+  // the morfo class requires several options at creation time.
+  // they are passed packed in a maco_options object.
+  maco_options opt(cfg.Lang);
+  // boolean options to activate/desactivate modules
+  // default: all modules activated (options set to "false")
+  opt.set_active_modules(cfg.MACO_AffixAnalysis,    cfg.MACO_MultiwordsDetection,
+                         cfg.MACO_NumbersDetection, cfg.MACO_PunctuationDetection,
+                         cfg.MACO_DatesDetection,   cfg.MACO_QuantitiesDetection,
+                         cfg.MACO_DictionarySearch, cfg.MACO_ProbabilityAssignment,
+                         cfg.MACO_NER_which,        cfg.MACO_OrthographicCorrection);
+  // decimal/thousand separators used by number detection
+  opt.set_nummerical_points(cfg.MACO_Decimal, cfg.MACO_Thousand);
+  // Minimum probability for a tag for an unkown word
+  opt.set_threshold(cfg.MACO_ProbabilityThreshold);
+  // Data files for morphological submodules. by default set to ""
+  // Only files for active modules have to be specified
+  opt.set_data_files(cfg.MACO_LocutionsFile,   cfg.MACO_QuantitiesFile,
+                     cfg.MACO_AffixFile,       cfg.MACO_ProbabilityFile,
+                     cfg.MACO_DictionaryFile,  cfg.MACO_NPdataFile,
+                     cfg.MACO_PunctuationFile, cfg.MACO_CorrectorFile);
+  // create analyzer with desired options
+  morfo = new maco(opt);
 
-  // tokenizer requested
-  if (cfg.InputFormat < TOKEN and cfg.OutputFormat >= TOKEN)
-    tk = new tokenizer (cfg.TOK_TokenizerFile);
-  // splitter requested
-  if (cfg.InputFormat < SPLITTED and cfg.OutputFormat >= SPLITTED)
-    sp = new splitter (cfg.SPLIT_SplitterFile);
+  if (cfg.TAGGER_which == HMM)
+    tagger = new hmm_tagger(cfg.Lang, cfg.TAGGER_HMMFile, cfg.TAGGER_Retokenize,
+                            cfg.TAGGER_ForceSelect);
+  else if (cfg.TAGGER_which == RELAX)
+    tagger = new relax_tagger(cfg.TAGGER_RelaxFile, cfg.TAGGER_RelaxMaxIter,
+                              cfg.TAGGER_RelaxScaleFactor, cfg.TAGGER_RelaxEpsilon,
+                              cfg.TAGGER_Retokenize, cfg.TAGGER_ForceSelect);
 
-  // morfological analysis requested
-  if (cfg.InputFormat < MORFO and cfg.OutputFormat >= MORFO) {
-      // the morfo class requires several options at creation time.
-      // they are passed packed in a maco_options object.
-      maco_options opt (cfg.Lang);
-      // boolean options to activate/desactivate modules
-      // default: all modules deactivated (options set to "false")
-      opt.set_active_modules (cfg.MACO_SuffixAnalysis,
-			      cfg.MACO_MultiwordsDetection,
-			      cfg.MACO_NumbersDetection,
-			      cfg.MACO_PunctuationDetection,
-			      cfg.MACO_DatesDetection,
-			      cfg.MACO_QuantitiesDetection,
-			      cfg.MACO_DictionarySearch,
-			      cfg.MACO_ProbabilityAssignment,
-			      cfg.MACO_NER_which,
-			      // cfg.MACO_OrthographicCorrection:
-			      false);
-      // decimal/thousand separators used by number detection
-      opt.set_nummerical_points (cfg.MACO_Decimal, cfg.MACO_Thousand);
-      // Minimum probability for a tag for an unkown word
-      opt.set_threshold (cfg.MACO_ProbabilityThreshold);
-      // Data files for morphological submodules. by default set to ""
-      // Only files for active modules have to be specified 
-      opt.set_data_files (cfg.MACO_LocutionsFile, cfg.MACO_QuantitiesFile,
-			  cfg.MACO_SuffixFile, cfg.MACO_ProbabilityFile,
-			  cfg.MACO_DictionaryFile, cfg.MACO_NPdataFile,
-			  cfg.MACO_PunctuationFile,
-			  //cfg.MACO_CorrectorLang, cfg.MACO_CorrectorCommon:
-			  "", "");
-      // no corrector used, so no distance method:
-      //opt.set_corrector_options(cfg.MACO_DistanceMethod);
-      
-      // create analyzer with desired options
-      morfo = new maco (opt);
-  }
+  if (cfg.NEC_NEClassification)
+    neclass = new nec("NP", cfg.NEC_FilePrefix);
 
-  // sense annotation requested
-  if (cfg.InputFormat < SENSE and cfg.OutputFormat >= MORFO
-      and (cfg.SENSE_SenseAnnotation == MFS or cfg.SENSE_SenseAnnotation == ALL))
-    sens = new senses (cfg.SENSE_SenseFile, cfg.SENSE_DuplicateAnalysis);
+  if (cfg.SENSE_SenseAnnotation!=NONE)
+    sens = new senses(cfg.SENSE_SenseFile, cfg.SENSE_DuplicateAnalysis);
 
-  // tagger requested, see which method
-  if (cfg.InputFormat < TAGGED and cfg.OutputFormat >= TAGGED) {
-      if (cfg.TAGGER_which == HMM)
-	tagger =
-	  new hmm_tagger (cfg.Lang, cfg.TAGGER_HMMFile, cfg.TAGGER_Retokenize,
-			  cfg.TAGGER_ForceSelect);
-      else if (cfg.TAGGER_which == RELAX)
-	tagger =
-	  new relax_tagger (cfg.TAGGER_RelaxFile, cfg.TAGGER_RelaxMaxIter,
-			    cfg.TAGGER_RelaxScaleFactor,
-			    cfg.TAGGER_RelaxEpsilon, cfg.TAGGER_Retokenize,
-			    cfg.TAGGER_ForceSelect);
-  }
+  parser = new chart_parser(cfg.PARSER_GrammarFile);
+  dep = new dep_txala(cfg.DEP_TxalaFile, parser->get_start_symbol());
 
-  // NEC requested
-  if (cfg.InputFormat <= TAGGED and cfg.OutputFormat >= TAGGED and 
-          cfg.NEC_NEClassification) {
-      neclass = new nec ("NP", cfg.NEC_FilePrefix);
-  }
-  
-  // Chunking requested
-  if (cfg.InputFormat < PARSED and cfg.OutputFormat >= PARSED) {
-      parser = new chart_parser (cfg.PARSER_GrammarFile);
-  }
 
-  // Dependency parsing requested
-  if (cfg.InputFormat < PARSED and cfg.OutputFormat >= DEP) 
-    dep = new dep_txala (cfg.DEP_TxalaFile, parser->get_start_symbol ());
-  // KBU: The old Analyzer.cc had a check for DEP_which being MALT or
-  // TXALA, is that still needed?
-  
   //PROFIT
   cout << "<?xml version='1.0' encoding='UTF-8' ?>" << endl;
   if (cfg.write_xslt)
