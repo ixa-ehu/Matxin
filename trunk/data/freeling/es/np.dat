@@ -48,10 +48,14 @@ bruce
 carmen
 china
 corriere
+esperanza
 giro
 herrera
+irán
+james
 junta
 mayor
+miren
 miró
 parís
 pelé
@@ -63,5 +67,7 @@ time
 times
 unió
 zapatero
-miren
 </Names>
+<SplitMultiwords>
+no
+</SplitMultiwords>

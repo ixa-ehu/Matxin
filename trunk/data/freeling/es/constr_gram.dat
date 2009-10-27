@@ -39,6 +39,7 @@ VerbCompl = <acentuar> <aceptar> <aconsejar> <acordar> <admitir> <advertir>
 	    <asumir> <avalar> <calcular> <comentar> <comunicar> <concluir>
 	    <confesar> <confirmar> <considerar> <contar> <contestar>
 	    <controlar> <convencer> <creer> <decidir> <decir> <declarar> 
+	    <defender> 
 	    <demostrar> <denunciar> <descartar> <desconfiar> <descubrir>
 	    <desestimar> <desmentir> <detectar> <determinar> <discrepar> 
  	    <discutir> <disponer> <divulgar> <documentar> <dudar> <encontrar>
@@ -64,6 +65,71 @@ VerbCompl = <acentuar> <aceptar> <aconsejar> <acordar> <admitir> <advertir>
 
 
 CONSTRAINTS
+
+%% "mar." "marzo" bezala analizatzeko pisua jaitsi, aurreko hitza zenbakia ez bada.(Garbiñe)
+%-05.0 NCM*
+       %(0 <mar>)
+       %(not -1 Z);
+
+%% NCren pisua jaitsi aurreko hitza ere NC baldin bada.(Garbiñe)
+-2.0 NC*
+       (0 NC* or AQ*)
+       (-1 NC*);
+
+%% NP-ren pisua jaitsi hitzak NC edo AQ baditu etiketa alternatibo bezala: Cadetes y juveniles juegan en Artaleku.(Garbiñe)
+-8.0 NP*
+      (0 NC* or AQ*)
+      (-1 OUT_OF_BOUNDS);
+
+
+%% NP-ren pisua jaitsi hitzak NC edo AQ baditu etiketa alternatibo bezala: Cadetes y juveniles juegan en Artaleku.(Garbiñe)
+%-1.0 NP*
+%      (0 NC* or AQ*)
+%      (-1 OUT_OF_BOUNDS)
+%      (1 SP*);
+
+
+
+%% izen sintagma koordinatu sinple batean koordinatuaren alderdi biak izenak izan daitezen, bigarren sintagmaren etiketa alternatiboa AQ denean: Han elaborado charlas y crónicas. (Garbiñe)
+9.0 NC*
+      (0 AQ*)
+      (-1* CC or NC*);
+
+% izen sintagma koordinatu sinple batean koordinatuaren alderdi biak izenak izan daitezen, lehenengo sintagmaren etiketa alternatiboa AQ denean: Cadetes que vencen. (Garbiñe)
+8.0 NC*
+      (0 AQ*)
+      (1* CC or NC* or <que>)
+      (-1 OUT_OF_BOUNDS);
+
+
+
+%% bajar el peso de AQ después de un determinante, si la palabra tiene NC como etiqueta alternativa: La crónica de un homenaje al legendario portero realista.(Garbiñe)
+-5.0 AQ*
+      (0 AQ* or NC*)
+      (-1 D*);
+
+%% bajar el peso de NP al principio de frase y seguido de coma, si la palabra tiene NC o AQ como etiquetas alternativas: Charlas, audiovisuales, marchas, ... en un completo programa. (Padrók, Garbiñek eskatuta)
+
+    -7.0  NP*
+         (0 NC* or AQ*)
+         (-1 OUT_OF_BOUNDS)
+         (1 Fc);
+
+% "audiovisuales" hitzaren erregela: Charlas, audiovisuales, marchas, ... en un completo programa (AQ analizatzen zuen) (Garbiñe)
+18.0 NC*
+    (0 <audiovisual>)
+    (not -1 NC*)
+    (not -1 NP*);
+
+
+%% prefer indicative to imperative
+0.9 VMI*
+    (0 VMM*);
+
+%% after a preposision, better noun than verb
+4.0 NC*
+    (0 VMS* or VMI* or VMM* or VMG* or VMP*)
+    (-1 SP*);
 
 %% better tag "que" as a PR0CN000 after a noun without no verb before it
 15.0 PR*<que>

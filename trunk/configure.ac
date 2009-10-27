@@ -249,7 +249,7 @@ AC_SUBST(OSTYPE)
 
 # We need this to determine whether we use zcat or gzcat
 AM_CONDITIONAL(OS_IS_SOLARIS, [test x"$OSTYPE" = xSunOS])
-
+AM_CONDITIONAL(OS_IS_DARWIN, [test x"$OSTYPE" = xDarwin])
 
 #
 # These programs are required during the make process so we
@@ -374,13 +374,17 @@ AC_CONFIG_FILES([matxin.pc
                  data/freeling/Makefile
                  data/freeling/common/Makefile
                  data/freeling/common/nec/Makefile
+		 data/freeling/common/corrector/Makefile
                  data/freeling/en/Makefile
                  data/freeling/en/chunker/Makefile
                  data/freeling/en/dep/Makefile
                  data/freeling/en/nec/Makefile
+		 data/freeling/en/corrector/Makefile
                  data/freeling/es/Makefile
                  data/freeling/es/dep/Makefile
                  data/freeling/es/nec/Makefile
+		 data/freeling/es/ner/Makefile
+		 data/freeling/es/corrector/Makefile
                  data/gram/Makefile
                  data/gram/en-eu/Makefile
                  data/gram/es-eu/Makefile

@@ -15,7 +15,11 @@ endif
 if OS_IS_SOLARIS
 ZCAT=gzcat
 else
+if OS_IS_DARWIN
+ZCAT=gzcat 
+else
 ZCAT=zcat
+endif
 endif
 
 # IMPORTANT: ifeq expressions need a leading space, automake bug?

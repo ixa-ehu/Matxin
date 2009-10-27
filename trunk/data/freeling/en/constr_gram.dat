@@ -32,9 +32,6 @@ SETS
 CONSTRAINTS
   %% insert here your manual constraints
 
-20.0 DT
-     (0 (a));
-
 %%% "much/many of" is a pronoun
 5.0 PRP
     (0 <much> or <many>)

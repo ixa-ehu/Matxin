@@ -226,11 +226,11 @@ int main(int argc, char **argv)
   maco_options opt(cfg.Lang);
   // boolean options to activate/desactivate modules
   // default: all modules activated (options set to "false")
-  opt.set_active_modules(cfg.MACO_SuffixAnalysis, cfg.MACO_MultiwordsDetection,
+  opt.set_active_modules(cfg.MACO_AffixAnalysis,    cfg.MACO_MultiwordsDetection,
                          cfg.MACO_NumbersDetection, cfg.MACO_PunctuationDetection,
                          cfg.MACO_DatesDetection,   cfg.MACO_QuantitiesDetection,
                          cfg.MACO_DictionarySearch, cfg.MACO_ProbabilityAssignment,
-                         cfg.MACO_NER_which);
+                         cfg.MACO_NER_which,        cfg.MACO_OrthographicCorrection);
   // decimal/thousand separators used by number detection
   opt.set_nummerical_points(cfg.MACO_Decimal, cfg.MACO_Thousand);
   // Minimum probability for a tag for an unkown word
@@ -238,9 +238,9 @@ int main(int argc, char **argv)
   // Data files for morphological submodules. by default set to ""
   // Only files for active modules have to be specified
   opt.set_data_files(cfg.MACO_LocutionsFile,   cfg.MACO_QuantitiesFile,
-                     cfg.MACO_SuffixFile, cfg.MACO_ProbabilityFile,
-                     cfg.MACO_DictionaryFile, cfg.MACO_NPdataFile,
-                     cfg.MACO_PunctuationFile);
+                     cfg.MACO_AffixFile,       cfg.MACO_ProbabilityFile,
+                     cfg.MACO_DictionaryFile,  cfg.MACO_NPdataFile,
+                     cfg.MACO_PunctuationFile, cfg.MACO_CorrectorFile);
   // create analyzer with desired options
   morfo = new maco(opt);
 
@@ -259,15 +259,8 @@ int main(int argc, char **argv)
     sens = new senses(cfg.SENSE_SenseFile, cfg.SENSE_DuplicateAnalysis);
 
   parser = new chart_parser(cfg.PARSER_GrammarFile);
+  dep = new dep_txala(cfg.DEP_TxalaFile, parser->get_start_symbol());
 
-  if (cfg.DEP_which == TXALA)
-    dep = new dep_txala(cfg.DEP_TxalaFile, parser->get_start_symbol());
-  else if (cfg.DEP_which == MALT)
-  {
-    cerr << "Error - Malt Parser was requested, but malt-plugin was not built." << endl;
-    cerr << "        Use option --enable-maltplugin when running ./configure" << endl;
-    exit (1);
-  }
 
   //PROFIT
   cout << "<?xml version='1.0' encoding='UTF-8' ?>" << endl;

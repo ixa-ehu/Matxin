@@ -1,4 +1,4 @@
-SUBDIRS = dep nec
+SUBDIRS = dep nec ner corrector
 
 freelingesdir = $(pkgdatadir)/freeling/es
 freelinges_DATA =  constr_gram.dat \
@@ -14,7 +14,7 @@ freelinges_DATA =  constr_gram.dat \
                    senses16.db \
                    senses16.src \
                    splitter.dat \
-                   sufixos.dat \
+                   afixos.dat \
                    tagger.dat \
                    tags.dat \
                    tokenizer.dat

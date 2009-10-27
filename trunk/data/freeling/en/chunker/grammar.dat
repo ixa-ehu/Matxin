@@ -1,3 +1,4 @@
+
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%                            %%%%%%%
 %%%%%%%     SINTAGMES NOMINALS     %%%%%%%
@@ -25,19 +26,19 @@ sn-chunk ==> PRP*<"appendix.PRP">.
 sp-chunk ==> +IN, sn-chunk, pred | +IN, n-chunk, pred | +TO, sn-chunk, pred | +TO, n-chunk, pred.
 pred ==> VBN.
 
-sn-coor ==> sn-chunk, +CC, NN.
-sn-coor ==> sn-chunk, +CC, NNS.
-sn-coor ==> sn-chunk, +CC, NP.
-sn-coor ==> sn-chunk, +CC, NNP.
+sn-chunk ==> sn-chunk, +CC, NN.
+sn-chunk ==> sn-chunk, +CC, NNS.
+sn-chunk ==> sn-chunk, +CC, NP.
+sn-chunk ==> sn-chunk, +CC, NNP.
 
-sn-coor ==> NN, +CC, NN.
-sn-coor ==> NNS, +CC, NN.
-sn-coor ==> NNS, +CC, NNS.
-sn-coor ==> NN, +CC, NNS.
-sn-coor ==> NP, +CC, NP.
-sn-coor ==> NNP, +CC, NP.
-sn-coor ==> NNP, +CC, NNP.
-sn-coor ==> NP, +CC, NNP.
+sp-chunk ==> NN, +CC, NN.
+sp-chunk ==> NNS, +CC, NN.
+sp-chunk ==> NNS, +CC, NNS.
+sp-chunk ==> NN, +CC, NNS.
+sp-chunk ==> NP, +CC, NP.
+sp-chunk ==> NNP, +CC, NP.
+sp-chunk ==> NNP, +CC, NNP.
+sp-chunk ==> NP, +CC, NNP.
 
 %%% SERIES
 sn-chunk ==> sn-chunk, +series.
@@ -90,12 +91,11 @@ sn-chunk ==> PDT(all), +sn-chunk | PDT(half), +sn-chunk.
 n-chunk ==> attrib, +n-chunk.
 n-chunk ==> attrib, +ngen | JJS, +ngen | JJR, +ngen.
 n-chunk ==> attrib, +n-chunk.
-n-chunk ==> att-coor, +n-chunk.
 
 % ADJECTIUS PREDICATIUS
 attrib ==> JJ | JJR | JJS | +JJ, RB(enough).
-%att-coor ==> attrib, +att-coor.
-att-coor ==> attrib, +CC, attrib.
+attrib ==> attrib, +att-coor.
+att-coor ==> +CC, attrib.
 attrib ==> +VBG, att-coor | +VBN, att-coor.
 attrib ==> JJR, +JJ.
 
@@ -140,8 +140,8 @@ TO-chunk ==> CC(in_order_to).
 
 % Aquests inclouen totes les preposicions menys "of"
 sp-chunk ==> +spin, sn-chunk | +spin, n-chunk.
-%sp-chunk ==> +spin, sp-chunk | +RB, sp-chunk | +RP, sp-chunk. % agrupacions tracades a les dependencies
-%sp-chunk ==> +spin, sppart | +RB, sppart | +RP, sppart. % agrupacions tractades a les dependencies
+sp-chunk ==> +spin, sp-chunk | +RB, sp-chunk | +RP, sp-chunk.
+sp-chunk ==> +spin, sppart | +RB, sppart | +RP, sppart.
 
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
@@ -300,6 +300,7 @@ part ==> adv, +VBN.
 part ==> adv, +VBG.
 vb-chunk ==> +vb-chunk, RP.
 
+
 %%%%%
 %%%%%	ADVERBIS
 %%%%%
@@ -334,16 +335,6 @@ vb-chunk ==> VB*<help>, +vb-chunk.
 vb-be ==> VBZ<be> | VBP<be> | VBD<be> | VBN<be> | VBG <be> | VB<be>.
 vb-have ==> VBZ<have> | VBP<have> | VBD<have> | VBN<have> | VBG<have> | VB<have>.
 vb-do ==> VBZ<do> | VBP<do> | VBD<do> | VBN<do> | VBG<do> | VB<do>.
-
-
-%%%%%
-%%%%% GRUPS VERBALS 
-%%%%%
-
-vb-chunk ==> mod-chunk,+vb-chunk.
-vb-chunk ==> vb-be,+vb-chunk.
-vb-chunk ==> vb-have,+vb-chunk.
-vb-chunk ==> vb-do,+vb-chunk.
 
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
