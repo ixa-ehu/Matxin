@@ -10,7 +10,7 @@ DetFem  = DA0FS0 DA0FP0 DD0FS0 DD0FP0 DI0FS0 DI0FP0 DP1FSP DP1FPP
 VerbPron = <dar_cuenta> <dar_a_conocer> <acabar> <acentuar> <acoplar> 
            <acordar> <acostar> <acostumbrar> <adentrar> <alimentar>
            <arrepentir> <asentar> <asomar> <atrever> <basar>
-           <colar> <componer> <comportar> <convertir> <decidir>
+           <colar> <componer> <comportar> <conocer> <convertir> <decidir>
            <dejar> <derramar> <derretir> <derrumbar> <deshacer>
            <deslizar> <detener> <disparar> <disponer> <dormir>
            <encender> <encontrar> <entretener> <equivocar> <formar>
@@ -65,6 +65,28 @@ VerbCompl = <acentuar> <aceptar> <aconsejar> <acordar> <admitir> <advertir>
 
 
 CONSTRAINTS
+
+%% NPren pisua jaitsi esaldi hasieran, hitza hiztegian agertzen bada. (Garbiñe)
+-50.0 NP*
+     (0 NC*)
+     (-1 OUT_OF_BOUNDS);
+
+%% prefer a NC* for 'visita' after a D*. (Garbiñe)
+5.0 NC*
+     (0 VM* <visita>)
+     (-1 D*);
+
+%% NCren pisua jaitsi "visita"rentzako aurreko hitza D* ez bada. (Garbiñe)
+-5.0 NC*
+     (0 NC* <visita>)
+     (not -1 D*)
+     (not -1 SP*);
+
+
+%% prefer indicative to imperative after a noun. (Garbiñe)
+%20.0 VMI*
+%    (0 VM*)
+%    (-1 NC*);
 
 %% "mar." "marzo" bezala analizatzeko pisua jaitsi, aurreko hitza zenbakia ez bada.(Garbiñe)
 %-05.0 NCM*
