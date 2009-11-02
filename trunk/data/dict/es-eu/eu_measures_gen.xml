@@ -60812,7 +60812,34 @@
     </e>
 <!--      <par n="IMPG_GARREN_40"/>-->
     <e>
-      <re>[0-9]*[1-9]</re>
+      <p><l>erdi</l><r>2/1<s n="Zp"/></r></p>
+      <par n="I_40"/>
+    </e>
+    <e>
+      <p><l>here</l><r>3/1<s n="Zp"/></r></p>
+      <par n="I_35"/>
+    </e>
+    <e>
+      <p><l>laurde</l><r>4/1<s n="Zp"/></r></p>
+      <par n="I_35"/>
+    </e>
+
+    <e>
+      <re>[234]</re>
+      <p><l>tik_</l><r>/</r></p>
+      <re>[02-9]+</re>
+      <p><l/><r><s n="Zp"/></r></p>
+      <par n="I_40"/>
+    </e>
+    <e>
+      <re>[15-9]</re>
+      <p><l>tik_</l><r>/</r></p>
+      <re>[0-9]+</re>
+      <p><l/><r><s n="Zp"/></r></p>
+      <par n="I_40"/>
+    </e>
+    <e>
+      <re>[0-9]+[1-9]</re>
       <p><l>tik_</l><r>/</r></p>
       <re>[0-9]+</re>
       <p><l/><r><s n="Zp"/></r></p>

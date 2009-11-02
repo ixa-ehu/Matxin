@@ -75,7 +75,8 @@ hasta		[ABU]			-	      +	   ## hasta donostia, Donostiaraino		##lekuak
 para		+[AMM][ADIZE]+[DEK][GEL]	my.headpos='[ADI][SIN]'	-	##he venido para comprarlo.
 para		[DES]			-	      +	   ## esto es para el niño, haurrarentzat da	##bizidunak
 para		[ABZ]			-	      +	   ## Vamos para la escuela: eskolarantz goaz	##lekuak
-por		+[AMM][ADIZE]+[DEK][GEL]	my.headpos='[ADI][SIN]'	-	##he venido por verle.
+por		+[AMM][ADIZE]+[DEK][NUMS]+[DEK][MOT]	my.headpos='[ADI][SIN]'	-	##he venido por verle (ikusteagatik).
+#por		+[AMM][ADIZE]+[DEK][GEL]	my.headpos='[ADI][SIN]'	-	##he venido por verle.
 por		[ERG]	parent.type='adi-pas'	      -	   ## ha sido firmado por el alcalde, alkateak sinatua izan da	##pasiba
 por		[GEL]	my.headpos='[ADI]'	      -	   ## está por hacer, egiteko dago	##por + infinitibo!!!!!!!!!!!????????
 por		[GEL]	my.headsem=~'[NEU+]'	      -	   ## por kilómetro.
