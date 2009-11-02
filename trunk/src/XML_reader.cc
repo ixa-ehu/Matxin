@@ -160,6 +160,8 @@ wstring text_attrib(wstring attributes, const wstring& nombre)
   vector<wstring> tokens;
   wstring value = L"";
 
+  if (nombre[0] == L'\'' && nombre[nombre.size()-1] == L'\'') return nombre.substr(1, nombre.size()-2);
+
   Tokenize(attributes, tokens);
   for (size_t i = 0; i < tokens.size(); i++)
   {
