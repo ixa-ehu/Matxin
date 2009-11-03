@@ -212,8 +212,8 @@ bool apply_condition(wstring attributes, wstring condition)
       }
       else
       {
-        wstring value = condition.substr(operator_position + 2,
-                                         blank_position - operator_position - 3);
+        wstring value = condition.substr(operator_position + 1,
+                                         blank_position - operator_position - 1);
         return watoi(text_attrib(attributes, attribute).c_str()) > watoi(value.c_str());
       }
     }
@@ -240,8 +240,8 @@ bool apply_condition(wstring attributes, wstring condition)
       }
       else
       {
-        wstring value = condition.substr(operator_position + 2,
-                                         blank_position - operator_position - 3);
+        wstring value = condition.substr(operator_position + 1,
+                                         blank_position - operator_position - 1);
         return watoi(text_attrib(attributes, attribute).c_str()) < watoi(value.c_str());
       }
     }
@@ -455,8 +455,8 @@ bool apply_condition(wstring parent_attributes, wstring child_attributes, wstrin
       }
       else
       {
-        wstring value = condition.substr(operator_position + 2,
-                                         blank_position - operator_position - 3);
+        wstring value = condition.substr(operator_position + 1,
+                                         blank_position - operator_position - 1);
 
         if (chunk == L"parent")
           return watoi(text_attrib(parent_attributes, attribute).c_str()) > watoi(value.c_str());
@@ -496,8 +496,8 @@ bool apply_condition(wstring parent_attributes, wstring child_attributes, wstrin
       }
       else
       {
-        wstring value = condition.substr(operator_position + 2,
-                                         blank_position - operator_position - 3);
+        wstring value = condition.substr(operator_position + 1,
+                                         blank_position - operator_position - 1);
 
         if (chunk == L"parent")
           return watoi(text_attrib(parent_attributes, attribute).c_str()) < watoi(value.c_str());
