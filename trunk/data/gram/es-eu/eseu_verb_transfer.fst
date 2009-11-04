@@ -150,7 +150,7 @@ define AdTrIntr	     [ {izan} | {egon}  | {etorri}  | {joan}            ] ;
 define AdTrinkoa     [ AdTrTran | AdTrIntr ];
 
 
-define PaSe	     [ [ {.se.} "[" {P0000000} "]" ] | [ {.él.} "[" {P0300000} "]" ] | [ {.se.} "[" {PP3CN000} "]" ];
+define PaSe	     [ [ {.se.} "[" {P0000000} "]" ] | [ {.él.} "[" {P0300000} "]" ] | [ {.se.} "[" {PP3CN000} "]" ] ];
 define PaMe	     [ [ {.yo.} "[" {PP1CS000} "]" ] | [ {.yo.} "[" {P010S000} "]" ] ];
 define PaTe	     [ [ {.tú.} "[" {PP2CS000} "]" ] | [ {.tú.} "[" {P020S000} "]" ] ];
 define PaLo	     [ {.él.} "[" {PP3MSA00} "]" ];
