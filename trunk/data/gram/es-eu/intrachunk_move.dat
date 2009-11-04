@@ -15,9 +15,11 @@ prep!=''/ref	/casref	concat
 prep!=''/alloc	/casalloc	concat
 lem='' && prep='' && sub='' && cas=''/ref	/casref	concat
 lem='' && prep='' && sub='' && cas=''/alloc	/casalloc	concat
+pos='[Z]'/'[MG]'	/mi	overwrite
+pos='[Zu]'/'[MG]'	/mi	overwrite
+pos='[Zp]'/'[NUMS]'	/mi	overwrite
+pos='[Z]' && lem>1800 && lem<2050/'[NUMS]'	headpos=''/mi	overwrite
 pos!=''/pos	/headpos	no-overwrite
 lem!=''/lem	/headlem	no-overwrite
 sem!=''/sem	/headsem	no-overwrite
 pos='[Z]'/pos	/leafpos	overwrite
-pos='[Z]'/'[MG]'	/mi	overwrite
-pos='[Zu]'/'[MG]'	/mi	overwrite
