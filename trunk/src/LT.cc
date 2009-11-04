@@ -256,6 +256,7 @@ wstring multiNodes (xmlTextReaderPtr reader, wstring &full, wstring attributes)
 
   tmp = split_multiattrib(full);
 
+  full = tmp[0];
   for (size_t i = 1; i < tmp.size(); i++)
   {
     output += L"<NODE " + attributes;
@@ -324,7 +325,7 @@ wstring procNODE_notAS(xmlTextReaderPtr reader, bool head,
       if (trad.size() > 1)
         synonyms = getsyn(trad);
 
-     if (select[0].find(L"\\") != wstring::npos)
+      if (select[0].find(L"\\") != wstring::npos)
         subnodes = multiNodes(reader, select[0], attributes);
       attributes += L" " + select[0];
 
