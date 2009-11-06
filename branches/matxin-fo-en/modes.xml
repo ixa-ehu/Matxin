@@ -14,10 +14,8 @@
       <program name="cg-proc -w">
 	<file name="fo-en.rlx-dep.bin"/>
       </program>
-      <program name="apertium-pretransfer"/>
-      <program name="apertium-transfer">
-        <file name="matxin-fo-en.fo-en.t1x"/>
-        <file name="fo-en.t1x.bin"/>
+      <!-- will pretransfer be needed? -->
+      <program name="matxin-lexfer">
         <file name="fo-en.autobil.bin"/>
       </program>
       <program name="lt-proc $1">

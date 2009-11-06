@@ -626,7 +626,7 @@ REMOVE:PrtNotAdj A IF (-1 NOMINALHEAD + Sg + Nom)(0 (vblex past sg) OR (vblex pa
 
 SELECT:r51 Inf IF (*-1 MODV BARRIER V);
 
-REMOVE (vblex pl) IF (-2 VFIN + Sg)(-1 (prn sg))(0 inf);
+REMOVE (vblex pl) IF (-2 VFIN + Sg)(-1 (prn sg))(0 Inf);
 REMOVE (vblex pl) IF (-1 N + Sg LINK *-1 VFIN + Sg BARRIER NPNH)(0 Inf);
 
 # Imperative
