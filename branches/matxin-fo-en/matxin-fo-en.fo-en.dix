@@ -1,0 +1,43 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<dictionary>
+  <alphabet/>
+  <sdefs>
+    <sdef n="mi"     c="Morphological information"/> 
+    <sdef n="parol"  c="PAROLE style tag"/>
+  </sdefs>
+  <pardefs>
+    <pardef n="DET_ART">
+      <e><p><l><s n="parol"/>DA0CN0</l><r><s n="parol"/>DA</r></p></e>
+      <e><p><l><s n="parol"/>DI0CN0</l><r><s n="parol"/>DI</r></p></e>
+    </pardef>
+    <pardef n="ADJ_STD">
+      <e><p><l><s n="parol"/>AQ0CN0</l><r><s n="parol"/>AQ<s n="mi"/>[PST]</r></p></e>
+    </pardef>
+    <pardef n="NC_STD">
+      <e><p><l><s n="parol"/>NCFSV0</l><r><s n="parol"/>NC<s n="mi"/>[NUMS]</r></p></e>
+      <e><p><l><s n="parol"/>NCFPV0</l><r><s n="parol"/>NC<s n="mi"/>[NUMP]</r></p></e>
+      <e><p><l><s n="parol"/>NCMSV0</l><r><s n="parol"/>NC<s n="mi"/>[NUMS]</r></p></e>
+      <e><p><l><s n="parol"/>NCMPV0</l><r><s n="parol"/>NC<s n="mi"/>[NUMP]</r></p></e>
+    </pardef>
+    <pardef n="VERB_SER">
+      <e><p><l><s n="parol"/>VMIP3S0</l><r><s n="parol"/>VM<s n="mi"/>[IND][PRES][P3][NUMS]</r></p></e>
+    </pardef>
+    <pardef n="PUNT">
+      <e><p><l><s n="parol"/>Fp</l><r><s n="parol"/>Fp</r></p></e>
+    </pardef>
+  </pardefs>
+  <section id="main" type="standard">
+
+    <e><p><l>an</l><r>the</r></p><par n="DET_ART"/></e>
+    <e><p><l>un</l><r>a</r></p><par n="DET_ART"/></e>
+
+    <e><p><l>yezh</l><r>language</r></p><par n="NC_STD"/></e>
+    <e><p><l>brezhoneg</l><r>Breton</r></p><par n="NC_STD"/></e>
+
+    <e><p><l>indezeuropek</l><r>Indo-European</r></p><par n="ADJ_STD"/></e>
+
+    <e><p><l>bezañ</l><r>be</r></p><par n="VERB_SER"/></e>
+
+    <e><re>.</re><par n="PUNT"/></e>
+  </section>
+</dictionary>

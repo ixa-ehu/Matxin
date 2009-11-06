@@ -1,0 +1,8 @@
+<Macros>
+ALPHANUM   [^\]<>[(\.,";:?!'`)^@~|}{_/\\+=&$#*+%\s\-]
+OTHERS     [\]<>[(\.,";:?!'`)^@~|}{_/\\+=&$#*+%\-]
+</Macros>
+<RegExps>
+WORD             0  {ALPHANUM}+
+OTHERS_C         0  {OTHERS}+
+</RegExps>
