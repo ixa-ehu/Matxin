@@ -3,10 +3,15 @@
   <alphabet/>
   <sdefs>
     <sdef n="n"      c="Noun"/>
+    <sdef n="adj"    c="Adjective"/>
+    <sdef n="adv"    c="Adverb"/>
+    <sdef n="vblex"  c="Verb"/>
 
     <sdef n="m"      c="Masculine"/>
     <sdef n="f"      c="Feminine"/>
     <sdef n="nt"     c="Neuter"/>
+
+    <sdef n="sint"   c="Synthetic"/>
 
     <sdef n="mi"     c="Morphological information"/> 
     <sdef n="parol"  c="PAROLE style tag"/>
@@ -17,6 +22,16 @@
       <e><p><l><s n="parol"/>NCFPV0</l><r><s n="parol"/>NC<s n="mi"/>[NUMP]</r></p></e>
       <e><p><l><s n="parol"/>NCMSV0</l><r><s n="parol"/>NC<s n="mi"/>[NUMS]</r></p></e>
       <e><p><l><s n="parol"/>NCMPV0</l><r><s n="parol"/>NC<s n="mi"/>[NUMP]</r></p></e>
+      <e><p><l/><r/></p></e>
+    </pardef>
+    <pardef n="VBLEX_STD">
+      <e><p><l></l><r></r></p></e>
+    </pardef>
+    <pardef n="ADJ_STD">
+      <e><p><l></l><r></r></p></e>
+    </pardef>
+    <pardef n="ADV_STD">
+      <e><p><l></l><r></r></p></e>
     </pardef>
     <pardef n="PUNT">
       <e><p><l><s n="parol"/>Fp</l><r><s n="parol"/>Fp</r></p></e>
@@ -28,7 +43,10 @@
     <e><p><l>myrkur<s n="n"/><s n="nt"/></l><r>darkness<s n="n"/></r></p><par n="NC_STD"/></e>
     <e><p><l>upphav<s n="n"/><s n="nt"/></l><r>beginning<s n="n"/></r></p><par n="NC_STD"/></e>
     <e><p><l>djúp<s n="n"/><s n="nt"/></l><r>deep<s n="n"/></r></p><par n="NC_STD"/></e>
+
+    <e><p><l>himmal<s n="parol"/>[n][m][sg][acc][def]</l><r>sky[n][sg]</r></p><par n="NC_STD"/></e>
     <e><p><l>himmal<s n="n"/><s n="m"/></l><r>sky<s n="n"/></r></p><par n="NC_STD"/></e>
+
     <e><p><l>fuglur<s n="n"/><s n="m"/></l><r>bird<s n="n"/></r></p><par n="NC_STD"/></e>
     <e><p><l>sjógvur<s n="n"/><s n="m"/></l><r>ocean<s n="n"/></r></p><par n="NC_STD"/></e>
     <e><p><l>fiskur<s n="n"/><s n="m"/></l><r>fish<s n="n"/></r></p><par n="NC_STD"/></e>
