@@ -106,6 +106,9 @@ class config {
     char *MACO_LocutionsFile, *MACO_QuantitiesFile, *MACO_AffixFile, 
          *MACO_ProbabilityFile, *MACO_DictionaryFile, 
          *MACO_NPdataFile, *MACO_PunctuationFile;
+    /// Morphological analyzer server options
+    bool server;
+    char *InPipe, *OutPipe;
 	
     /// Orthographic correction options
     char *MACO_CorrectorFile;
@@ -220,6 +223,10 @@ class config {
       struct cfg_option OptionList[] = {  // initialization
   {"help",    'h',  NULL,                      CFG_BOOL, (void *) &help, 0},
   {NULL,      'f',  NULL,                      CFG_STR,  (void *) &ConfigFile, 0},
+  // server options
+  {"server",    '\0',  NULL,                   CFG_BOOL, (void *) &server, 0},
+  {"ipipe",    '\0', NULL,                     CFG_STR,  (void *) &InPipe, 0},
+  {"opipe",    '\0', NULL,                     CFG_STR,  (void *) &OutPipe, 0},
   // general options
   {"lang",    '\0', "Lang",                    CFG_STR,  (void *) &Lang, 0},
   {"tlevel",   'l', "TraceLevel",              CFG_INT,  (void *) &traces::TraceLevel, 0},
@@ -392,6 +399,11 @@ class config {
       cf_Usubcat=NULL; cf_Urules=NULL;cf_Utripletes=NULL;cf_first_case=NULL;
 
       write_xslt=write_xslt_lag=false;
+
+      // server mode options default values
+      server = false;
+      InPipe = NULL;
+      OutPipe = NULL;
 
       // Set built-in default values.
       ConfigFile=NULL; help=false;

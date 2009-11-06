@@ -7,6 +7,7 @@
 
 #include "config.h"
 #include "matxin_string_utils.h"
+#include "IORedirectHandler.hpp"
 
 #include <data_manager.h>
 #include <XML_reader.h>
@@ -945,66 +946,72 @@ int main(int argc, char *argv[])
 
   //cerr << "Fitxategi guztiak irekita." << endl;
 
-  xmlTextReaderPtr reader;
-  reader = xmlReaderForFd(0,"", NULL, 0);
-
-  int ret = nextTag(reader);
-  wstring tagName = getTagName(reader);
-  int tagType = xmlTextReaderNodeType(reader);
-
-  if (tagName == L"corpus" and tagType != XML_READER_TYPE_END_ELEMENT)
+  while (true)
   {
-    wcout << L"<?xml version='1.0' encoding='UTF-8'?>" << endl;
-    wcout << L"<corpus " << write_xml(allAttrib(reader)) << L">\n";
-  }
-  else
-  {
-    wcerr << L"ERROR: invalid document: found <" << tagName
-          << L"> when <corpus> was expected..." << endl;
-    exit(-1);
-  }
-
-  ret = nextTag(reader);
-  tagName = getTagName(reader);
-  tagType = xmlTextReaderNodeType(reader);
-
-  int i = 0;
-  // corpus barruan dauden SENTENCE guztietarako
-  while (ret == 1 and tagName == L"SENTENCE")
-  {
-    //SENTENCE irakurri eta prozesatzen du.
-    wstring tree = procSENTENCE(reader, cfg);
-    wcout << tree << endl;
-    wcout.flush();
-
-    if (cfg.DoTrace)
+    // redirect io
+    Fd0WcoutRedirectHandler ioredirect(cfg);
+    xmlTextReaderPtr reader;
+    reader = xmlReaderForFd(0,"", NULL, 0);
+  
+    int ret = nextTag(reader);
+    wstring tagName = getTagName(reader);
+    int tagType = xmlTextReaderNodeType(reader);
+  
+    if (tagName == L"corpus" and tagType != XML_READER_TYPE_END_ELEMENT)
     {
-      ostringstream log_fileName_osoa;
-      wofstream log_file;
-
-      log_fileName_osoa << cfg.Trace_File << i++ << ".xml";
-
-      log_file.open(log_fileName_osoa.str().c_str(), ofstream::out | ofstream::app);
-      log_file << tree << L"</corpus>\n";
-      log_file.close();
+      wcout << L"<?xml version='1.0' encoding='UTF-8'?>" << endl;
+      wcout << L"<corpus " << write_xml(allAttrib(reader)) << L">\n";
     }
-
+    else
+    {
+      wcerr << L"ERROR: invalid document: found <" << tagName
+            << L"> when <corpus> was expected..." << endl;
+      exit(-1);
+    }
+  
     ret = nextTag(reader);
     tagName = getTagName(reader);
     tagType = xmlTextReaderNodeType(reader);
-  }
-  xmlFreeTextReader(reader);
-  xmlCleanupParser();
-
-  if (ret == 1 and tagName == L"corpus" and tagType == XML_READER_TYPE_END_ELEMENT)
-  {
-    wcout << L"</corpus>\n";
-  }
-  else
-  {
-    wcerr << L"ERROR: invalid document: found <" << tagName
-          << L"> when </corpus> was expected..." << endl;
-    exit(-1);
+  
+    int i = 0;
+    // corpus barruan dauden SENTENCE guztietarako
+    while (ret == 1 and tagName == L"SENTENCE")
+    {
+      //SENTENCE irakurri eta prozesatzen du.
+      wstring tree = procSENTENCE(reader, cfg);
+      wcout << tree << endl;
+      wcout.flush();
+  
+      if (cfg.DoTrace)
+      {
+        ostringstream log_fileName_osoa;
+        wofstream log_file;
+  
+        log_fileName_osoa << cfg.Trace_File << i++ << ".xml";
+  
+        log_file.open(log_fileName_osoa.str().c_str(), ofstream::out | ofstream::app);
+        log_file << tree << L"</corpus>\n";
+        log_file.close();
+      }
+  
+      ret = nextTag(reader);
+      tagName = getTagName(reader);
+      tagType = xmlTextReaderNodeType(reader);
+    }
+    xmlFreeTextReader(reader);
+    xmlCleanupParser();
+  
+    if (ret == 1 and tagName == L"corpus" and tagType == XML_READER_TYPE_END_ELEMENT)
+    {
+      wcout << L"</corpus>\n";
+    }
+    else
+    {
+      wcerr << L"ERROR: invalid document: found <" << tagName
+            << L"> when </corpus> was expected..." << endl;
+      exit(-1);
+    }
+    if (!ioredirect.serverOK())
+      break;
   }
 }
-
