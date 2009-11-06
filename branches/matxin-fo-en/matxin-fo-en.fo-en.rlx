@@ -81,7 +81,7 @@ LIST Guess = Guess ;#TODO
 
 
 
-LIST TAG = n vblex adj adv cnjcoo cnjsub ij pr prn p1 p2 p3 det pos nom acc gen
+LIST TAG = n np vblex adj adv cnjcoo cnjsub ij pr prn p1 p2 p3 det pos nom acc gen
 dat m f nt sg pl def ind comp sup pres past inf pp
 ppres supn imp ; #TODO the rest
 
@@ -113,7 +113,7 @@ LIST REALADJ = adj ;#TODO: was A OR A*, what does that mean?
 
 # Nominal sets
 
-LIST NOMINALHEAD = n num (prn p1) (prn p2) (prn p3) Refl Recipr (prn itg) (prn ind) ;#TODO: this had something like "Pron Interr" -- does that work??
+LIST NOMINALHEAD = n np num (prn p1) (prn p2) (prn p3) Refl Recipr (prn itg) (prn ind) ;#TODO: this had something like "Pron Interr" -- does that work??
 
 LIST PRENAGR = det adj ;
 
@@ -937,8 +937,8 @@ MAP:r73 (@←SUBJ) TARGET ("tú" prn p2 sg nom) IF (*-1 (vblex p2 sg) BARRIER VF
 MAP:r72b (@SUBJ→) TARGET ("eg" prn p1 sg nom) IF (*1 (vblex p1 sg) BARRIER VFIN);
 MAP:r73b (@←SUBJ) TARGET ("eg" prn p1 sg nom) IF (*-1 (vblex p1 sg) BARRIER VFIN);
 
-MAP:r75 (@←SUBJ) TARGET NOMINALHEAD + Sg + Nom IF (*-1 (vblex p3 sg) OR (V Sg) BARRIER NPNH LINK NOT -1 Nom);
-MAP:r74 (@SUBJ→) TARGET NOMINALHEAD + Sg + Nom IF (*1 (vblex p3 sg) OR (V Sg));
+MAP:r75 (@←SUBJ) TARGET NOMINALHEAD + Sg + Nom IF (*-1 (vblex p3 sg) OR (vblex sg) BARRIER NPNH LINK NOT -1 Nom);
+MAP:r74 (@SUBJ→) TARGET NOMINALHEAD + Sg + Nom IF (*1 (vblex p3 sg) OR (vblex sg));
 
 MAP:mapcoordsubj2 (@SUBJ→) TARGET N + Nom IF (*-1 CC BARRIER NPNH LINK -1 N + Nom)(1 VFIN + Pl);
 MAP:mapcoordsubj1 (@SUBJ→) TARGET N + Nom IF (1 CC LINK *1 N + Nom BARRIER NPNH LINK 1 VFIN + Pl);
