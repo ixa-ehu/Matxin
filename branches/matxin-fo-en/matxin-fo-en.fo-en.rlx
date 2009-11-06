@@ -73,7 +73,7 @@ LIST Imp = imp ;
 LIST Sbj = Sbj ;#TODO
 LIST Sup = supn ;
 LIST Cmpnd = Cmpnd ;#we don't have compound handling yet
-LIST CLB = clb ;#TODO
+LIST CLB = clb sent cm ;
 LIST PUNCT = sent cm ;#TODO
 LIST LEFT = LEFT ;#TODO
 LIST RIGHT = RIGHT ;#TODO
@@ -96,9 +96,9 @@ LIST NUMBER = sg pl ;
 # Noun sets
 
 
-SET NounMscFem = (n m) OR (n f) ;
-SET NounMscNeu = (n m) OR (n nt) ;
-SET NounFemNeu = (n f) OR (n nt) ;
+SET NounMscFem = (n m) OR (np m) OR (n f) OR (np f) ;
+SET NounMscNeu = (n m) OR (np m) OR (n nt) OR (np nt) ;
+SET NounFemNeu = (n f) OR (np f) OR (n nt) OR (np nt) ;
 
 SET MscFem = Msc OR Fem ;
 SET MscNeu = Msc OR Neu ;
@@ -195,7 +195,7 @@ SET OBL = Acc | Dat | Gen ;
 
 #SET NO
 
-SET PRE-N =  A | Det | (n gen) | Num | (prn gen) | CC ; # Det???
+SET PRE-N =  A | Det | (n gen) | (np gen) | Num | (prn gen) | CC ; # Det???
 
 SET WORD = N | V | A | Pr | Pron | Det | Adv | CC | CS | Interj | Num | ("\?") ;
 
@@ -264,7 +264,7 @@ SELECT:r21 $$NAGD IF (0C A)(*1C $$NAGD BARRIER NPNHA)(NOT 0 V); #XXX C?
 SELECT:r21b $$NAGD IF (0C A)(-*1C $$NAGD BARRIER NPNHA)(NOT 0 V); #XXX C?
 REMOVE:r22 $$NAGD IF (0 A)(*1C N BARRIER NPNHA LINK NOT 0 $$NAGD);
 
-REMOVE:AVS OBL IF (*-1 VFIN BARRIER NPNH LINK *-1 BOS OR CLB BARRIER NOT-ADV)(0 (n nom));
+REMOVE:AVS OBL IF (*-1 VFIN BARRIER NPNH LINK *-1 BOS OR CLB BARRIER NOT-ADV)(0 (n nom) OR (np nom));
 REMOVE:AVS2 OBL IF (-2 CLB)(-1 Adv OR CC OR CS)(0 Nom)(1 V + THIRDSG)(NOT *2 Nom BARRIER CLB);
 
 REMOVE Nom IF (-2 V)(-1C Pr)(0 N)(1 CLB); # Too specific, this.
@@ -318,11 +318,14 @@ REMOVE:r44 Nom IF (*-1 ACCDATPREP BARRIER NOTACCDAT OR S-BOUNDARY OR V OR Pr OR 
 # CLB makes it weaker, be prepared to compensate.
 
 REMOVE:AccPronNotIndef (n ind) IF (-1 ACCPREP OR ACCDATPREP)(0 (prn acc)) ;
+REMOVE:AccPronNotIndef (np ind) IF (-1 ACCPREP OR ACCDATPREP)(0 (prn acc)) ;
 REMOVE:DatPronNotIndef (n ind) IF (-1 DATPREP OR ACCDATPREP)(0 (prn dat)) ;
+REMOVE:DatPronNotIndef (np ind) IF (-1 DATPREP OR ACCDATPREP)(0 (prn dat)) ;
 
 SELECT:AccNP (n acc) IF (-1C (det acc));
+SELECT:AccNP (np acc) IF (-1C (det acc));
 
-SELECT (adj dat) IF  (*-1 ACCDATPREP BARRIER NPNH)(1 (n dat));
+SELECT (adj dat) IF  (*-1 ACCDATPREP BARRIER NPNH)(1 (n dat) OR (np dat));
 
 # REMOVE:Fragment Dat IF (*-1 ACCDATPREP BARRIER NPNH)(NOT *-1 V)(NOT *1 V);
 # but there are such fragments!
@@ -552,10 +555,11 @@ REMOVE:r32 $$GENDER IF (0 Poss)(*1 N OR A BARRIER NPNHA LINK NOT 0 $$GENDER);
 SELECT:DisPostPoss Poss IF (-1 N + $$GENDER + $$NAGD)(0 $$GENDER + $$NAGD); #(NOT 1 ...)
 
 # Number disambiguation
-REMOVE:r33 Pl IF (*-1 ("eitt" num sg) OR (det sg) BARRIER NOT-A)(0 (n sg));
+REMOVE:r33 Pl IF (*-1 ("eitt" num sg) OR (det sg) BARRIER NOT-A)(0 (n sg) OR (np sg));
 # Here, we need vislcg3 and variable notation!
 
 SELECT:NumNPl (n pl) IF (-1 NUMBERS);
+SELECT:NumNPl (np pl) IF (-1 NUMBERS);
 
 
 # Coordination
@@ -578,8 +582,8 @@ REMOVE:r34 Acc IF (-2 CS)(-1 (vblex pl))(0 (pl nom)) ;
 # ======
 REMOVE:r35 A IF (*-1 Pr OR CLB BARRIER NPNH)(0 N)(1 S-BOUNDARY OR V);
 
-REMOVE (adj f) IF (0 (n nt))(-1 COPULA)(-2 ("tað" nom));
-REMOVE (adj m) IF (0 (n nt))(-1 COPULA)(-2 ("tað" nom));
+REMOVE (adj f) IF (0 (n nt) OR (np nt))(-1 COPULA)(-2 ("tað" nom));
+REMOVE (adj m) IF (0 (n nt) OR (np nt))(-1 COPULA)(-2 ("tað" nom));
 
 
 # Elliptic AP as NP
@@ -611,7 +615,7 @@ REMOVE:CCPrs Prs + 3Sg IF (0 Pl + Nom)(1 CC)(*2 Pl + Nom BARRIER NPNH OR OBL);
 
 # V or A
 
-REMOVE:r48 A IF (0 ("vera"))(1 (n sg));
+REMOVE:r48 A IF (0 ("vera"))(1 (n sg) OR (np sg));
 	## Enskt mál er móðurmál.
 
 SELECT:r49 ("vera" p3 sg) IF (-1 ("tað" prn p3 sg nom));#TODO does it work even if the <r> says prnpers<prn><p3> etc instead of tað<prn><p3> etc. ?
@@ -651,7 +655,7 @@ REMOVE Sup IF (*-1 CLB BARRIER WORD)(0 Imp)(*1 CLB  BARRIER Ind);
 REMOVE:r53 Imp IF (0 N)(1 CC)(*2 N BARRIER NPNHA);
 	## Stýrið og stjórnin hjá...
 
-REMOVE:r54 (imp pl) IF (0 (n nt))(1 VFIN);
+REMOVE:r54 (imp pl) IF (0 (n nt) OR (np nt))(1 VFIN);
 	## Húsið er stórt.
 
 # Supine
@@ -672,7 +676,7 @@ REMOVE:test2 (vblex pri p2 sg) IF (NEGATE 0* ("tú" + prn + p2 + sg + nom)); # T
 
 SELECT 1Sg IF (-1 ("eg" pron p1 sg nom));
 
-REMOVE:r58b (vblex pri p1 sg) IF (*-1 (n sg nom) BARRIER NOT-ADV LINK NOT *1 Pron + 1Sg BARRIER CLB) ;
+REMOVE:r58b (vblex pri p1 sg) IF (*-1 (n sg nom) OR (np sg nom) BARRIER NOT-ADV LINK NOT *1 Pron + 1Sg BARRIER CLB) ;
 SELECT:r59 (vblex pri p3 sg) IF (-1 (np nom) OR (n sg nom) LINK NOT *-1 CC BARRIER NPNHA OR S-BOUNDARY) ;
 
 REMOVE 1Sg IF (-1 V)(0 Acc);
@@ -687,7 +691,7 @@ SELECT:r60 (vblex p2 sg) IF (*-1 ("tú" prn p2 sg nom) BARRIER NOT-ADV);
 
 # Present plural
 
-SELECT:r61 (vblex pl) IF (-1 (n pl nom) OR ("eg" prn p1 pl nom));#TODO pl??? not "vit" then?
+SELECT:r61 (vblex pl) IF (-1 (n pl nom) OR (np pl nom) OR ("eg" prn p1 pl nom));#TODO pl??? not "vit" then?
 
 
 # V + Refl
@@ -741,7 +745,7 @@ SELECT (prn p1 pl nom) IF (1 ("sum"))(2 Pl);
 SELECT (prn p2 pl nom) IF (1 ("sum"))(2 Pl);
 SELECT (prn p3 pl nom) IF (1 ("sum"))(2 Pl);
 
-REMOVE:r66b (pl nom ind) IF (1 (n sg) OR (vblex sg) OR (v p3 sg));
+REMOVE:r66b (pl nom ind) IF (1 (n sg) OR (np sg) OR (vblex sg) OR (v p3 sg));
 
 REMOVE ("vit") IF (*-1 V + Pl BARRIER V)(0 (prn p1 pl nom));
 	## Eru vit helst...
@@ -758,7 +762,7 @@ SELECT:1Sg 1Sg IF (-1C Adv)(0C V)(1 ("eg" prn nom))(NOT 2 CC);
 REMOVE N IF (-1 ("sum" cnjsub))(0 INDSBJ)(NOT 1 INDSBJ);
 
 # VP disambiguation
-REMOVE:r113 V IF (-1 (det nom))(0 (n nom));
+REMOVE:r113 V IF (-1 (det nom))(0 (n nom) OR (np nom));
 
 
 
@@ -771,7 +775,8 @@ REMOVE:r24 (adj pl) IF (1C N + Sg);
 	## í ta døkku moldina.
 
 
-REMOVE (n pl) IF (*-1C (det sg) BARRIER NPNH) (0 (n sg));
+REMOVE (n pl) IF (*-1C (det sg) BARRIER NPNH) (0 (n sg) OR (np sg));
+REMOVE (np pl) IF (*-1C (det sg) BARRIER NPNH) (0 (n sg) OR (np sg));
 
 SELECT:r25 $$NUMBER IF (0 Det)(*1 N + $$NUMBER OR  A + $$NUMBER BARRIER NOT-A);
 
@@ -886,7 +891,7 @@ MAP (@IM) TARGET IM ;
 MAP (@INTERJ) TARGET Interj ;  
 ADD:r67 (@CNP) TARGET CC ;
 ADD:r68 (@CVP) TARGET CS ;
-MAP (@→CS) TARGET ("ein" Det Neu Sg Gen) IF (1 ("og" cnjsub));
+MAP (@→CS) TARGET ("ein" det nt sg gen) IF (1 ("og" cnjsub));
 MAP:sa (@→N) TARGET Prop + Poss IF (*1 N BARRIER NPNH);
 
 MAP:ONEV (@+FMAINV) TARGET VFIN IF (NEGATE *0 V BARRIER S-BOUNDARY2);
@@ -902,29 +907,35 @@ MAP:r70 (@+FAUXV) TARGET AUX + VFIN IF (*0 V BARRIER S-BOUNDARY2) ;
 MAP:r70b (@+FMAINV) TARGET VFIN ;
 #MAP (@+FMAINV) TARGET VFIN IF (NEGATE 0* VFIN BARRIER CS OR CLB);
 
-MAP:DetPossGen (@N←) TARGET (Det Poss Sg Gen) IF (-1 N);
-MAP:PostGenPron (@N←) TARGET (Pron Pers Gen) IF (-1C N + Indef)(NOT *1 N + Indef BARRIER NOT-A);
-#MAP:PostGenPron (@N←) TARGET (Pron Pers Gen) IF (-1 N + Indef);
-MAP:PreGenPron (@→N) TARGET (Pron Pers Gen) IF (*1 N + Indef BARRIER NOT-A) ;
+MAP:DetPossGen (@N←) TARGET (det pos sg gen) IF (-1 N);
+MAP:PostGenPron (@N←) TARGET (prn p1 gen) IF (-1C N + Indef)(NOT *1 N + Indef BARRIER NOT-A);
+MAP:PostGenPron (@N←) TARGET (prn p2 gen) IF (-1C N + Indef)(NOT *1 N + Indef BARRIER NOT-A);
+MAP:PostGenPron (@N←) TARGET (prn p3 gen) IF (-1C N + Indef)(NOT *1 N + Indef BARRIER NOT-A);
+#MAP:PostGenPron (@N←) TARGET (prn p1 p2 p3 gen) IF (-1 N + Indef);
+MAP:PreGenPron (@→N) TARGET (prn p1 gen) IF (*1 N + Indef BARRIER NOT-A) ;
+MAP:PreGenPron (@→N) TARGET (prn p2 gen) IF (*1 N + Indef BARRIER NOT-A) ;
+MAP:PreGenPron (@→N) TARGET (prn p3 gen) IF (*1 N + Indef BARRIER NOT-A) ;
 
-ADD:r71 (@←SPRED) TARGET (N Nom) OR (A Nom) IF (*-1 COPULA BARRIER NPNHA LINK 0 Imp);
-ADD:r71 (@←SPRED) TARGET (N Nom) OR (A Nom) IF (*-1 COPULA BARRIER NPNHA LINK -1 Nom);
+ADD:r71 (@←SPRED) TARGET (n nom) OR (adj nom) IF (*-1 COPULA BARRIER NPNHA LINK 0 Imp);
+ADD:r71 (@←SPRED) TARGET (np nom) OR (adj nom) IF (*-1 COPULA BARRIER NPNHA LINK 0 Imp);
+ADD:r71 (@←SPRED) TARGET (n nom) OR (adj nom) IF (*-1 COPULA BARRIER NPNHA LINK -1 Nom);
+ADD:r71 (@←SPRED) TARGET (np nom) OR (adj nom) IF (*-1 COPULA BARRIER NPNHA LINK -1 Nom);
 #MAP (@SUBJ) TARGET (N Nom) OR (Num Nom) OR (Pron Nom);
 
 MAP (@Pron←) TARGET ("sjálvur") IF (-1 Refl);
-#MAP:PostPoss (@N←) TARGET (Det Poss $$NAGD $$GENDER) IF (-1 (n $$GENDER))(NOT 1 (NPNH OR N $$GENDER $$NAGD));
+#MAP:PostPoss (@N←) TARGET (det pos $$NAGD $$GENDER) IF (-1 (n $$GENDER) OR (np $$GENDER))(NOT 1 (NPNH OR N $$GENDER $$NAGD));
 MAP:PostPoss (@N←) TARGET Det + Poss + $$GENDER IF (-1 N + $$GENDER)(NEGATE 1 NOUNADJ + $$GENDER + $$NAGD);
-#MAP PostPoss (@N←) TARGET (Det Poss $$GENDER) IF (-1 (n $$GENDER));
+#MAP PostPoss (@N←) TARGET (det pos $$GENDER) IF (-1 (n $$GENDER) OR (np $$GENDER));
 # Number can be both NOMINALHEAD and Det, map that first
 
 MAP (@→N) TARGET Num + $$NAGD IF (1 N + $$NAGD);
 MAP (@→N) TARGET Num + $$NAGD IF (1 A + $$NAGD)(2 N + $$NAGD);
 
-MAP:r72 (@SUBJ→) TARGET ("tú" Pron Pers Sg Nom) IF (*1 (vblex p2 sg) BARRIER VFIN);
-MAP:r73 (@←SUBJ) TARGET ("tú" Pron Pers Sg Nom) IF (*-1 (vblex p2 sg) BARRIER VFIN);
+MAP:r72 (@SUBJ→) TARGET ("tú" prn p2 sg nom) IF (*1 (vblex p2 sg) BARRIER VFIN);
+MAP:r73 (@←SUBJ) TARGET ("tú" prn p2 sg nom) IF (*-1 (vblex p2 sg) BARRIER VFIN);
 
-MAP:r72b (@SUBJ→) TARGET ("eg" Pron Pers Sg Nom) IF (*1 (vblex p1 sg) BARRIER VFIN);
-MAP:r73b (@←SUBJ) TARGET ("eg" Pron Pers Sg Nom) IF (*-1 (vblex p1 sg) BARRIER VFIN);
+MAP:r72b (@SUBJ→) TARGET ("eg" prn p1 sg nom) IF (*1 (vblex p1 sg) BARRIER VFIN);
+MAP:r73b (@←SUBJ) TARGET ("eg" prn p1 sg nom) IF (*-1 (vblex p1 sg) BARRIER VFIN);
 
 MAP:r75 (@←SUBJ) TARGET NOMINALHEAD + Sg + Nom IF (*-1 (vblex p3 sg) OR (V Sg) BARRIER NPNH LINK NOT -1 Nom);
 MAP:r74 (@SUBJ→) TARGET NOMINALHEAD + Sg + Nom IF (*1 (vblex p3 sg) OR (V Sg));
@@ -936,12 +947,12 @@ MAP:mapcoordsubj1 (@SUBJ→) TARGET N + Nom IF (1 CC LINK *1 N + Nom BARRIER NPN
 MAP:r76 (@SUBJ→) TARGET NOMINALHEAD + Pl + Nom IF (*1 (vblex pl) BARRIER CLB);#(":" CLB) OR (";" CLB));
 MAP:r77 (@←SUBJ) TARGET NOMINALHEAD + Pl + Nom IF (*-1 (vblex pl));
 
-ADD:rOPR1 (@←OBJ) TARGET (N Acc) OR (Pron Acc) IF (*-1 OBJPREDVERB BARRIER Pr OR S-BOUNDARY)(*1 N + Acc BARRIER NPNHA);
-MAP:rOPR2 (@←OPRED) TARGET (N Acc) OR (Pron Acc) OR (A Acc) IF (*-1 NOMINALHEAD + Acc BARRIER NPNHA LINK *-1 OBJPREDVERB BARRIER S-BOUNDARY);
+ADD:rOPR1 (@←OBJ) TARGET (n acc) OR (np acc) OR (prn acc) IF (*-1 OBJPREDVERB BARRIER Pr OR S-BOUNDARY)(*1 N + Acc BARRIER NPNHA);
+MAP:rOPR2 (@←OPRED) TARGET (n acc) OR (np acc) OR (prn acc) OR (adj acc) IF (*-1 NOMINALHEAD + Acc BARRIER NPNHA LINK *-1 OBJPREDVERB BARRIER S-BOUNDARY);
 
-MAP:r78 (@←OBJ) TARGET (N Acc) OR (Num Acc) OR (Pron Acc) IF (*-1 V BARRIER Pr OR S-BOUNDARY);
+MAP:r78 (@←OBJ) TARGET (n acc) OR (np acc) OR (num acc) OR (prn acc) IF (*-1 V BARRIER Pr OR S-BOUNDARY);
 MAP:r78 (@←OBJ) TARGET (Det Acc) (*-1 V BARRIER Pr OR S-BOUNDARY)(NOT *1 N BARRIER NPNHA);
-MAP:r79 (@←IOBJ) TARGET (N Dat) OR (Num Dat) OR (Pron Dat) IF (*1 (@←OBJ) BARRIER NPNHA);
+MAP:r79 (@←IOBJ) TARGET (n dat) OR (np dat) OR (num dat) OR (prn dat) IF (*1 (@←OBJ) BARRIER NPNHA);
 MAP:r80 (@←OBJ) TARGET Dat IF (*-1 DATV);
 
 # PP
@@ -968,9 +979,9 @@ MAP:r84b (@→N) TARGET Pron + Indef  + $$GENDER + $$NAGD IF (1 N + $$GENDER + $
 MAP:r84a (@→A) TARGET Det + $$GENDER + $$NAGD IF (1 A + $$GENDER + $$NAGD BARRIER NPNHA LINK 1 S-BOUNDARY);
 
 
-MAP:r85 (@→N) TARGET (N Gen) IF (*1 N BARRIER V OR Adv);
+MAP:r85 (@→N) TARGET (n gen) OR (np gen) IF (*1 N BARRIER V OR Adv);
 MAP:r86 (@→N) TARGET Det IF (*1 N BARRIER V OR Adv OR (";"));
-MAP:r87 (@→N) TARGET (Det) IF (*1 N BARRIER V OR Adv);
+MAP:r87 (@→N) TARGET (det) IF (*1 N BARRIER V OR Adv);
 MAP:r88 (@→N) TARGET A + $$NAGD OR Det + $$NAGD IF (*1 N + $$NAGD OR Num + $$NAGD BARRIER NPNHA);
 MAP (@→N) TARGET Num IF (*1 N BARRIER NPNHA);
 
@@ -979,8 +990,8 @@ MAP:r89 (@VFIN) TARGET (V Prs) OR (V Prt) OR (V Imp);
 
 
 
-MAP (@ADVL→) TARGET ("bara" Adv) IF (1 Pron)(2 V);
-MAP (@ADVL→) TARGET ("bara" Adv) IF (*1 N BARRIER NPNH LINK 1 V);
+MAP (@ADVL→) TARGET ("bara" adv) IF (1 Pron)(2 V);
+MAP (@ADVL→) TARGET ("bara" adv) IF (*1 N BARRIER NPNH LINK 1 V);
 
 # PPs
 
@@ -994,18 +1005,20 @@ MAP:r92 (@N←) TARGET Poss IF (0 $$NAGD)(-1 N + $$NAGD);
 
 MAP:advl (@ADVL) TARGET Adv OR Pr ;
 
-MAP:r93 (@N←) TARGET N IF (0 $$NAGD)(-1 (n $$NAGD));
+MAP:r93 (@N←) TARGET N IF (0 $$NAGD)(-1 (n $$NAGD) OR (np $$NAGD));
 
 MAP:r94 (@←SPRED) TARGET A IF (*-1 ("síggja") BARRIER NPNHA)(1 ("út"));
 MAP:r95 (@←SPRED) TARGET A IF (-1 ("síggja"))(1 CC)(*2 A);
 
 MAP (@P←) TARGET Det IF (-1 Pr)(1 EOS);
-MAP:PostGen (@N←) TARGET (N Gen) IF (-1 N);
-# MAP:PronPostGen (@N←) TARGET (Pron Gen) IF (-1 N); This is a Det
+MAP:PostGen (@N←) TARGET (n gen) IF (-1 N);
+MAP:PostGen (@N←) TARGET (np gen) IF (-1 N);
+# MAP:PronPostGen (@N←) TARGET (prn gen) IF (-1 N); This is a Det
 
 
 # Specific constructions
-MAP (@N←) TARGET (N Dat) IF (-1 MIDJA);
+MAP (@N←) TARGET (n dat) IF (-1 MIDJA);
+MAP (@N←) TARGET (np dat) IF (-1 MIDJA);
 
 MAP (@→N) TARGET ("Harri") IF (1 ("Guð"));
     
@@ -1043,7 +1056,7 @@ REMOVE:r100 (@IOBJ) IF (*-1 Pr BARRIER NPNHA);
 
 REMOVE Acc IF (0 (sg @←SUBJ) LINK *-1 (vblex sg) OR (vblex p3 sg) BARRIER (@←SUBJ))(*-1 S-BOUNDARY BARRIER (@SUBJ→)); 
 
-REMOVE:r101 (@P←) IF (*-1 BOS OR (n acc) OR (n dat) OR (n nom) OR V OR CLB OR CS BARRIER Pr OR CC LINK NOT 0 Pr);
+REMOVE:r101 (@P←) IF (*-1 BOS OR (n acc) OR (np acc) OR (n dat) OR (np dat) OR (n nom) OR (np nom) OR V OR CLB OR CS BARRIER Pr OR CC LINK NOT 0 Pr);
 
 REMOVE:r102 (@→N) IF (0C N)(*-1 Pr BARRIER NPNHA);
 
@@ -1065,16 +1078,24 @@ SELECT (@→CS);
 REMOVE (@→N) IF (0 (gen @N←))(-1 N);
 
 SELECT (n sg) IF (1C  Poss + Sg + @N←);
+SELECT (np sg) IF (1C  Poss + Sg + @N←);
 SELECT (n pl) IF (1C  Poss + Pl + @N←);
+SELECT (np pl) IF (1C  Poss + Pl + @N←);
 
 SELECT (pos $$NADJGD) IF (-1C N + $$NAGD)(0 (@N←));
 
 REMOVE (det m) IF (NOT 0 Poss)(*1C (n nt) BARRIER NPNH);
+REMOVE (det m) IF (NOT 0 Poss)(*1C (np nt) BARRIER NPNH);
 REMOVE (det f) IF (NOT 0 Poss)(*1C (n nt) BARRIER NPNH);
+REMOVE (det f) IF (NOT 0 Poss)(*1C (np nt) BARRIER NPNH);
 REMOVE (det nt) IF (NOT 0 Poss)(*1C (n m) BARRIER NPNH);
+REMOVE (det nt) IF (NOT 0 Poss)(*1C (np m) BARRIER NPNH);
 REMOVE (det f) IF (NOT 0 Poss)(*1C (n m) BARRIER NPNH);
+REMOVE (det f) IF (NOT 0 Poss)(*1C (np m) BARRIER NPNH);
 REMOVE (det m) IF (NOT 0 Poss)(*1C (n f) BARRIER NPNH);
+REMOVE (det m) IF (NOT 0 Poss)(*1C (np f) BARRIER NPNH);
 REMOVE (det nt) IF (NOT 0 Poss)(*1C (n f) BARRIER NPNH);
+REMOVE (det nt) IF (NOT 0 Poss)(*1C (np f) BARRIER NPNH);
 
 #REMOVE (@SUBJ→) IF (0 (@→N))(*1 (@SUBJ→) BARRIER NPNH);
 
