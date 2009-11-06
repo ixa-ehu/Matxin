@@ -2,15 +2,15 @@
 # Process this file with autoconf to produce a configure script.
 
 AC_PREREQ(2.59)
-AC_INIT([matxin], [1.4.0-beta])
-AC_CONFIG_SRCDIR([src/Analyzer.cc])
+AC_INIT([matxin], [1.5.0])
+AC_CONFIG_SRCDIR([src/matxin_lexfer.cc])
 AC_CONFIG_AUX_DIR([build-aux])
 PACKAGE=matxin
 
 GENERIC_MAJOR_VERSION=1
 GENERIC_MINOR_VERSION=4
 GENERIC_MICRO_VERSION=0
-GENERIC_EXTRA_VERSION=beta
+GENERIC_EXTRA_VERSION=
 
 GENERIC_RELEASE=$GENERIC_MAJOR_VERSION.$GENERIC_MINOR_VERSION
 GENERIC_RELEASE=$GENERIC_MAJOR_VERSION.$GENERIC_MINOR_VERSION.$GENERIC_MICRO_VERSION-$GENERIC_EXTRA_VERSION
@@ -304,7 +304,7 @@ AC_CHECK_FUNCS([socket])
 #
 # Generate these files
 #
-AC_CONFIG_FILES([matxin.pc
+AC_CONFIG_FILES([matxin-engine.pc
                  Makefile
                  src/Makefile])
 AC_OUTPUT
