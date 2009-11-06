@@ -47,7 +47,7 @@ EXTRA_DIST=$(BASENAME).$(LANG1).dix $(BASENAME).$(PREFIX1).dix \
 	   $(BASENAME).$(LANG2).dix \
            $(BASENAME).$(PREFIX1).rlx \
            $(BASENAME).$(PREFIX1).dep.rlx \
-           $(PREFIX1).prob $(PREFIX2).prob \
+           $(PREFIX1).prob \
 	   $(BASENAME).$(LANG1).tsx \
 	   $(BASENAME).$(LANG2).tsx modes.xml
 
@@ -72,7 +72,7 @@ modes/$(PREFIX2).mode: modes.xml
 matxin_fo_en_DATA=$(PREFIX1).automorf.bin $(PREFIX2).automorf.bin \
                     $(PREFIX1).autobil.bin $(PREFIX2).autobil.bin \
                     $(PREFIX1).autogen.bin $(PREFIX2).autogen.bin \
-                    $(PREFIX1).prob $(PREFIX2).prob \
+                    $(PREFIX1).prob \
 		    $(PREFIX1).rlx.bin $(PREFIX1).dep.rlx.bin \
 	            modes/$(PREFIX1).mode modes/$(PREFIX2).mode modes.xml
 
