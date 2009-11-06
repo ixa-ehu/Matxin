@@ -27,6 +27,7 @@
 
 //#include "config.h"
 #include "matxin_string_utils.h"
+#include "string_utils.h"
 
 #include <data_manager.h>
 #include <XML_reader.h>
@@ -34,7 +35,7 @@
 using namespace std;
 
 FSTProcessor fstp;
-
+unsigned int tag_mode = 0; // PAROLE tag mode
 
 wstring upper_type(wstring form, wstring mi, wstring ord)
 {
@@ -212,10 +213,21 @@ vector<wstring> get_translation(wstring lem, wstring mi,
                                 bool &unknown)
 {
   vector<wstring> translation;
+  wstring trad = L"";
+  wstring input = L"";
 
-  wstring input = L"^" + lem + L"<parol>" + mi + L"$";
-  wstring trad = fstp.biltrans(input);
-  trad = trad.substr(1, trad.size() - 2);
+  if(tag_mode == 1) {
+    wstring mitrans = StringUtils::substitute(mi, L"]", L">");
+    mitrans = StringUtils::substitute(mitrans, L"[", L"<");
+    input = L"^" + lem + mitrans + L"$";
+    trad = fstp.biltrans(input);
+    trad = trad.substr(1, trad.size() - 2);
+    wcerr << input << endl;
+  } else {
+    input = L"^" + lem + L"<parol>" + mi + L"$";
+    trad = fstp.biltrans(input);
+    trad = trad.substr(1, trad.size() - 2);
+  }
 
   unknown = false;
   if (trad[0] == L'@' || trad.find(L">") < trad.find(L"<"))
@@ -658,8 +670,11 @@ wstring procSENTENCE (xmlTextReaderPtr reader)
 int main(int argc, char *argv[])
 {
   if(argc < 2) {
-    cout << "matxin-lexfer [fst]" << endl;
+    cout << "matxin-lexfer [-s] [fst]" << endl;
     exit(-1);
+  }
+  if(argc > 2) {
+    tag_mode = 1;
   }
 //  config cfg(argv);
 
@@ -672,7 +687,12 @@ int main(int argc, char *argv[])
   // Hiztegi elebidunaren hasieraketa.
   // Parametro moduan jasotzen den fitxagia erabiltzen da hasieraketarako.
   
-  FILE *transducer = fopen(argv[1], "r");
+  FILE *transducer = 0;
+  if(argc > 2) {
+    transducer = fopen(argv[2], "r");
+  }else{
+    transducer = fopen(argv[1], "r");
+  }
   fstp.load(transducer);
   fclose(transducer);
   fstp.initBiltrans();

@@ -5,7 +5,7 @@
 #include <string>
 #include <iostream>
 
-#include "config.h"
+//#include "config.h"
 #include "matxin_string_utils.h"
 
 #include <data_manager.h>
@@ -61,14 +61,15 @@ wstring keep_case(wstring form, wstring UpCase)
 
 wstring verb_generation(wstring lemma, wstring pos, wstring suf, wstring cas,
                         wstring mi, wstring chunk_mi, wstring head_sem,
-                        bool is_last, bool &flexioned, config cfg)
+                        bool is_last, bool &flexioned)
 {
   wstring analisys, form, prefix, postposizio, pre_lemma, lemma_osoa;
   lemma_osoa = lemma;
 
+/*
   if (cfg.DoGenTrace)
     wcerr << lemma << L" " << pos << L" " << mi << L" " << cas << endl;
-
+*/
   for (size_t i = 0; i < lemma.size(); i++)
   {
     if (lemma[i] == L'_')
@@ -126,12 +127,15 @@ wstring verb_generation(wstring lemma, wstring pos, wstring suf, wstring cas,
   }
 
   wstring pre_gen = L"^" + lemma_osoa + pos + L"$";
+/*
   if (cfg.DoGenTrace)
     wcerr << pre_gen << endl;
+*/
   wstring lemmaMorf = fstp_pre_generation.biltrans(pre_gen);
+/*
   if (cfg.DoGenTrace)
     wcerr << lemmaMorf << endl;
-
+*/
   if (lemmaMorf[0] == L'^' and lemmaMorf[1] == L'@')
     lemmaMorf = lemma + pos + mi;
   else
@@ -149,14 +153,17 @@ wstring verb_generation(wstring lemma, wstring pos, wstring suf, wstring cas,
   if (is_last)
     lemmaMorf = prefix + lemmaMorf;
 
+/*
   if (cfg.DoGenTrace)
     wcerr << lemmaMorf << endl;
-
+*/
 
   analisys = L"^" + get_generation_order(prefix, lemmaMorf, chunk_mi, cas, head_sem) + L"$";
 
+/*
   if (cfg.DoGenTrace)
     wcerr << analisys << endl;
+*/
 
   if (analisys.find(L"LemaMorf") != wstring::npos)
     analisys.replace(analisys.find(L"LemaMorf"), 8, lemmaMorf);
@@ -183,23 +190,30 @@ wstring verb_generation(wstring lemma, wstring pos, wstring suf, wstring cas,
     }
   }
 
+/*
   if (cfg.DoGenTrace)
     wcerr << L"GEN:" << analisys << endl;
+*/
   form = fstp_generation.biltrans(analisys);
+/*
   if (cfg.DoGenTrace)
     wcerr << L"GEN:" << form << endl;
-
+*/
   form = form.substr(1, form.size() - 2);
 
   if (form.size() == 0 or form[0] == '@' or
       form.find(L"<") != wstring::npos or form.find(L">") != wstring::npos)
   {
+/*
     if (cfg.DoGenTrace)
       wcerr << L"GEN nolex:" << analisys << endl;
+*/
     form = fstp_nolex_generation.biltrans(analisys);
     form = form.substr(1, form.size() - 2);
+/*
     if (cfg.DoGenTrace)
       wcerr << L"GEN nolex:" << form << endl << endl;
+*/
     if (form.size() == 0 or form[0] == L'@' or
         form.find(L"<") != wstring::npos or form.find(L">") != wstring::npos)
     {
@@ -212,16 +226,17 @@ wstring verb_generation(wstring lemma, wstring pos, wstring suf, wstring cas,
   if (flexioned)
     form += postposizio;
 
+/*
   if (cfg.DoGenTrace)
     wcerr << form << endl << endl;
-
+*/
   return form;
 }
 
 
 wstring number_generation(wstring lemma, wstring pos, wstring suf, wstring cas,
                           wstring mi, wstring head_sem, bool is_last,
-                          bool &flexioned, config cfg)
+                          bool &flexioned)
 {
   wstring analisys, form, prefix, postposizio, pre_lemma, lemma_osoa;
 
@@ -914,19 +929,25 @@ wstring procSENTENCE (xmlTextReaderPtr reader, config cfg)
 
 int main(int argc, char *argv[])
 {
-  config cfg(argv);
+//  config cfg(argv);
 
   // Set locale information
   //locale::global(locale(""));
   // ^^^ doesn't work on mac, except with C/POSIX
   setlocale(LC_ALL, "");
 
+  if(argc < 3) {
+    cout << "matxin-gen-morph [fst] [tag order file]" << endl;
+    exit(-1);
+  }
+
   // Initialization of the transducer for morphological generation.
-  FILE *transducer = fopen(cfg.Morpho_GenFile, "r");
+//  FILE *transducer = fopen(cfg.Morpho_GenFile, "r");
+  FILE *transducer = fopen(argv[1], "r");
   fstp_generation.load(transducer);
   fclose(transducer);
   fstp_generation.initBiltrans();
-
+/*
   transducer = fopen(cfg.Measures_GenFile, "r");
   fstp_measures.load(transducer);
   fclose(transducer);
@@ -941,9 +962,11 @@ int main(int argc, char *argv[])
   fstp_nolex_generation.load(transducer);
   fclose(transducer);
   fstp_nolex_generation.initBiltrans();
+*/
 
   //ordena definituko duen zerbitzaria hasieratu...
-  init_generation_order(cfg.Tag_OrderFile);
+//  init_generation_order(cfg.Tag_OrderFile);
+  init_generation_order(argv[2]);
 
   //cerr << "Fitxategi guztiak irekita." << endl;
 
@@ -975,10 +998,11 @@ int main(int argc, char *argv[])
   while (ret == 1 and tagName == L"SENTENCE")
   {
     //SENTENCE irakurri eta prozesatzen du.
-    wstring tree = procSENTENCE(reader, cfg);
+    wstring tree = procSENTENCE(reader);
     wcout << tree << endl;
     wcout.flush();
 
+/*
     if (cfg.DoTrace)
     {
       ostringstream log_fileName_osoa;
@@ -990,7 +1014,7 @@ int main(int argc, char *argv[])
       log_file << tree << L"</corpus>\n";
       log_file.close();
     }
-
+*/
     ret = nextTag(reader);
     tagName = getTagName(reader);
     tagType = xmlTextReaderNodeType(reader);

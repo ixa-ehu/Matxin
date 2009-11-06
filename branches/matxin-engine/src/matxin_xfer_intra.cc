@@ -22,7 +22,7 @@
 #include <iostream>
 #include <locale>
 
-#include "config.h"
+//#include "config.h"
 
 #include <XML_reader.h>
 #include <data_manager.h>
@@ -323,14 +323,20 @@ wstring procSENTENCE (xmlTextReaderPtr reader)
 
 int main(int argc, char *argv[])
 {
-  config cfg(argv);
+  //config cfg(argv);
 
   // Output in the locale's encoding
   //locale::global(locale(""));
   // ^^^ doesn't work on mac, except with C/POSIX
   setlocale(LC_ALL, "");
 
-  init_nodeMovement(cfg.Intra_MovementsFile);
+  if(argc < 2) {
+    cout << "matxin-xfer-intra [movement file]" << endl;
+    exit(-1);
+  }
+
+  //init_nodeMovement(cfg.Intra_MovementsFile);
+  init_nodeMovement(argv[1]);
 
   // libXml liburutegiko reader hasieratzen da, sarrera estandarreko fitxategia irakurtzeko.
   xmlTextReaderPtr reader;

@@ -18,136 +18,50 @@
  */
 
 #include <string>
+#include <vector>
 #include <iostream>
+#include <sstream>
+#include <data_manager.h>
 
-#include "config.h"
-#include "matxin_string_utils.h"
+//#include "config.h"
 
 #include <XML_reader.h>
-#include <data_manager.h>
 
 using namespace std;
 
 
-int get_order(vector<wstring> order, wstring attributes)
+wstring writeNODE(vector<wstring> &subTree, wstring &order)
 {
-  wstring ref = text_attrib(attributes, L"ref");
-
-  for (size_t i = 0; i < order.size(); i++)
+  wostringstream nodes;
+  int counter = 0;
+  for (size_t i = 0; i < subTree.size(); i++)
   {
-    if (order[i] == ref)
-      return i;
-  }
-
-  return order.size();
-}
-
-
-wstring write_CHUNK(vector<wstring> tree, vector<wstring> order)
-{
-  wostringstream XMLtree;
-  for (size_t i = 0; i < tree.size(); i++)
-  {
-    if (tree[i] != L"")
-    {
-      int ord = get_order(order, tree[i]);
-      XMLtree << L"<CHUNK ord='" << ord << L"'" << tree[i];
-    }
+    if (subTree[i] == L"")
+      nodes << L"</NODE>\n";
     else
-      XMLtree << L"</CHUNK>\n";
+    {
+      nodes << L"<NODE";
+
+      size_t pos = order.find(L"-");
+      if (pos == wstring::npos)
+      {
+        if (order == L"")
+          nodes << L" ord='" << counter << L"'";
+        else
+          nodes << L" ord='" << order << L"'";
+      }
+      else
+      {
+        nodes << L" ord='" << order.substr(0, pos) << L"'";
+        order = order.substr(pos + 1);
+      }
+
+      nodes << subTree[i];
+      counter++;
+    }
   }
 
-  return XMLtree.str();
-}
-
-
-vector<wstring> merge(vector<wstring> order, int &head_index,
-                      vector<wstring> child_order, wstring relative_order)
-{
-  if (relative_order == L"x1.x2")
-  {
-    for (size_t i = 0; i < child_order.size(); i++)
-    {
-      order.push_back(child_order[i]);
-    }
-
-    return order;
-  }
-  else if (relative_order == L"x2.x1.x2")
-  {
-    vector<wstring> output_order;
-    int output_head;
-    for (size_t i = 0; i < head_index; i++)
-    {
-      output_order.push_back(order[i]);
-    }
-
-    for (size_t i = 0; i < child_order.size() - 1; i++)
-    {
-      output_order.push_back(child_order[i]);
-    }
-
-    output_order.push_back(order[head_index]);
-    output_head = output_order.size() - 1;
-    output_order.push_back(child_order[child_order.size() - 1]);
-
-    for (size_t i = head_index + 1; i < order.size(); i++)
-    {
-      output_order.push_back(order[i]);
-    }
-    head_index = output_head;
-
-    return output_order;
-  }
-  else if (relative_order == L"x2+x1")
-  {
-    vector<wstring> output_order;
-    int output_head;
-    for (size_t i = 0; i < head_index; i++)
-    {
-      output_order.push_back(order[i]);
-    }
-
-    output_head = output_order.size();
-
-    for (size_t i = 0; i < child_order.size(); i++)
-    {
-      output_order.push_back(child_order[i]);
-    }
-
-    for (size_t i = head_index; i < order.size(); i++)
-    {
-      output_order.push_back(order[i]);
-    }
-    head_index = output_head;
-
-    return output_order;
-  }
-  else
-  {
-    vector<wstring> output_order;
-    int output_head;
-    for (size_t i = 0; i < head_index; i++)
-    {
-      output_order.push_back(order[i]);
-    }
-
-    for (size_t i = 0; i < child_order.size(); i++)
-    {
-      output_order.push_back(child_order[i]);
-    }
-
-    output_order.push_back(order[head_index]);
-    output_head = output_order.size() - 1;
-
-    for (size_t i = head_index + 1; i < order.size(); i++)
-    {
-      output_order.push_back(order[i]);
-    }
-    head_index = output_head;
-
-    return output_order;
-  }
+  return nodes.str();
 }
 
 
@@ -193,28 +107,50 @@ wstring procSYN (xmlTextReaderPtr reader)
 }
 
 
-wstring procNODE(xmlTextReaderPtr reader)
+// NODE etiketa irakurri eta prozesatzen du
+// IN:  head: momentuko NODOa chunk bura den edo ez.
+// OUT: tree: XML etiketen bektore bat.
+// - Kategoriak jasotzen ditu NODOen ordena definitu ahal izateko. Zenbait kasutan benetako kategoria erabili beharrean moldaketa bate egin behar da. Adb. (hau[DET][ERKARR]) -> ([DET][IZO])
+// - NODEaren azpian dauden NODE guztietarako, NODEa irakurri eta prozesatzen du.
+wstring procNODE(xmlTextReaderPtr reader, vector<wstring> &tree, bool head)
 {
-  wstring nodes;
+  wstring pattern, attributes, synonyms;
   wstring tagName = getTagName(reader);
   int tagType = xmlTextReaderNodeType(reader);
 
   if (tagName == L"NODE" and tagType != XML_READER_TYPE_END_ELEMENT)
   {
-    nodes += L"<NODE" + write_xml(allAttrib(reader));
+    wstring lemma = attrib(reader, "lem");
+    wstring pos = attrib(reader, "pos");
+    lemma = lemma + pos;
+    if (get_lexInfo(L"orderPos", lemma) != L"")
+    {
+      pos = get_lexInfo(L"orderPos", lemma).substr(get_lexInfo(L"orderPos", lemma).find(L"["),
+                                                   get_lexInfo(L"orderPos", lemma).size());
+    }
+    if (head)
+      pattern = L"([BURUA])";
+    else
+      pattern = L"(" + pos + L")";
+
+    attributes = write_xml(allAttrib(reader));
+
     if (xmlTextReaderIsEmptyElement(reader) == 1)
     {
-      nodes += L"/>\n";
-      return nodes;
+      //Elementu hutsa bada (<NODE .../>) NODE hutsa sortzen da eta NODE honetkin bukatu dugu.
+      attributes += L"/>\n";
+      tree.push_back(attributes);
+      return pattern;
     }
     else
     {
-      nodes += L">\n";
+      //Ez bada NODE hutsa hasiera etiketa ixten da.
+      attributes += L">\n";
+      //      tree.push_back(attributes);
     }
   }
   else
   {
-    wcout << nodes;
     wcerr << L"ERROR: invalid tag: <" << tagName
           << L"> when <NODE> was expected..." << endl;
     exit(-1);
@@ -227,56 +163,56 @@ wstring procNODE(xmlTextReaderPtr reader)
   // if there are, process the posible synonyms
   while (ret == 1 and tagName == L"SYN" and tagType == XML_READER_TYPE_ELEMENT)
   {
-    nodes += procSYN(reader);
+    synonyms += procSYN(reader);
 
     ret = nextTag(reader);
     tagName = getTagName(reader);
     tagType = xmlTextReaderNodeType(reader);
   }
 
+  attributes += synonyms;
+  tree.push_back(attributes);
+
+  // NODEaren azpian dauden NODE guztietarako:
   while (ret == 1 and tagName == L"NODE" and tagType == XML_READER_TYPE_ELEMENT)
   {
-    nodes += procNODE(reader);
+    // NODEa irakurri eta prozesatzen du. NODE hori ez da CHUNKaren burua izango (head=false)
+    pattern += procNODE(reader, tree, false);
 
     nextTag(reader);
     tagName = getTagName(reader);
     tagType = xmlTextReaderNodeType(reader);
   }
 
+  //NODE bukaera etiketaren tratamendua.
   if (tagName == L"NODE" and tagType == XML_READER_TYPE_END_ELEMENT)
   {
-    nodes += L"</NODE>\n";
+    tree.push_back(L"");
   }
   else
   {
-    wcout << nodes;
     wcerr << L"ERROR: invalid document: found <" << tagName
           << L"> when </NODE> was expected..." << endl;
     exit(-1);
   }
 
-  return nodes;
+  return pattern;
 }
 
 
-vector<wstring> procCHUNK(xmlTextReaderPtr reader, vector<wstring> &tree,
-                          wstring &attribs, int &ref)
+// CHUNK etiketa irakurri eta prozesatzen du:
+// - Bere barruko NODOak tratatu ondoren NODOei dagokien ordena definitzen da, eta XML zuahitza idazten du.
+// - CHUNK honen barruan dauden beste CHUNKak irakurri eta prozesatzen ditu.
+wstring procCHUNK(xmlTextReaderPtr reader)
 {
   wstring tagName = getTagName(reader);
   int tagType = xmlTextReaderNodeType(reader);
-  wstring subtree;
-  vector<wstring> order;
-  int head_index;
+  wstring tree, pattern, chunkType;
 
   if (tagName == L"CHUNK" and tagType == XML_READER_TYPE_ELEMENT)
   {
-    order.push_back(attrib(reader, "ref"));
-    head_index = 0;
-
-    attribs = allAttrib(reader);
-    ref = watoi(attrib(reader, "ref").c_str());
-
-    subtree = write_xml(allAttrib(reader)) + L">\n";
+    tree = L"<CHUNK" + write_xml(allAttrib(reader)) + L">\n";
+    chunkType = attrib(reader, "type");
   }
   else
   {
@@ -289,29 +225,31 @@ vector<wstring> procCHUNK(xmlTextReaderPtr reader, vector<wstring> &tree,
   tagName = getTagName(reader);
   tagType = xmlTextReaderNodeType(reader);
 
-  subtree += procNODE(reader);
-  tree.push_back(subtree);
+  //CHUNK barruko NODOak tratzen dira.
+  vector<wstring> subTree;
+  pattern = procNODE(reader, subTree, true);
+  // CHUNKen ordena jasotzen da.
+  wstring order = get_node_order(chunkType, pattern);
+  // XML zuhaitza sortzen da etiketen bektoreekin eta ordenarekin.
+  tree += writeNODE(subTree,order);
 
+  // CHUNK barruko CHUNKak tratatzen dira.
   ret = nextTag(reader);
   tagName = getTagName(reader);
   tagType = xmlTextReaderNodeType(reader);
   while (ret == 1 and tagName == L"CHUNK" and tagType == XML_READER_TYPE_ELEMENT)
   {
-    wstring child_attribs;
-    int child_ref;
-    vector<wstring> suborder = procCHUNK(reader, tree, child_attribs, child_ref);
-
-    wstring relative_order = get_chunk_order(attribs, child_attribs, child_ref - ref);
-    order = merge(order, head_index, suborder, relative_order);
+    tree += procCHUNK(reader);
 
     ret = nextTag(reader);
     tagName = getTagName(reader);
     tagType = xmlTextReaderNodeType(reader);
   }
 
+  // CHUNK bukaera etiketaren tratamendua.
   if (tagName == L"CHUNK" and tagType == XML_READER_TYPE_END_ELEMENT)
   {
-    tree.push_back(L"");
+    tree += L"</CHUNK>\n";
   }
   else
   {
@@ -320,20 +258,21 @@ vector<wstring> procCHUNK(xmlTextReaderPtr reader, vector<wstring> &tree,
     exit(-1);
   }
 
-  return order;
+  return tree;
 }
 
 
+// SENTENCE etiketa irakurri eta prozesatzen du:
+// - SENTENCE barruan dauden CHUNKak irakurri eta prozesatzen ditu.
 wstring procSENTENCE (xmlTextReaderPtr reader)
 {
   wstring tree;
   wstring tagName = getTagName(reader);
   int tagType = xmlTextReaderNodeType(reader);
 
-  if (tagName == L"SENTENCE" and tagType != XML_READER_TYPE_END_ELEMENT)
+  if(tagName == L"SENTENCE" and tagType != XML_READER_TYPE_END_ELEMENT)
   {
-    tree = L"<SENTENCE ord='" + write_xml(attrib(reader, "ref")) + L"'"
-           + write_xml(allAttrib(reader)) + L">\n";
+    tree += L"<SENTENCE" + write_xml(allAttrib(reader)) + L">\n";
   }
   else
   {
@@ -346,25 +285,14 @@ wstring procSENTENCE (xmlTextReaderPtr reader)
   tagName = getTagName(reader);
   tagType = xmlTextReaderNodeType(reader);
 
-  vector<wstring> subtree;
-  vector<wstring> order;
-
   while (ret == 1 and tagName == L"CHUNK")
   {
-    wstring child_attribs;
-    int child_ref;
-    vector<wstring> child_subtree;
-    vector<wstring> child_order = procCHUNK(reader, child_subtree, child_attribs, child_ref);
-
-    subtree.insert(subtree.end(), child_subtree.begin(), child_subtree.end());
-    order.insert(order.end(), child_order.begin(), child_order.end());
+    tree += procCHUNK(reader);
 
     ret = nextTag(reader);
     tagName = getTagName(reader);
     tagType = xmlTextReaderNodeType(reader);
   }
-
-  tree += write_CHUNK(subtree, order);
 
   if (ret == 1 and tagName == L"SENTENCE" and tagType == XML_READER_TYPE_END_ELEMENT)
   {
@@ -383,26 +311,34 @@ wstring procSENTENCE (xmlTextReaderPtr reader)
 
 int main(int argc, char *argv[])
 {
-  config cfg(argv);
+//  config cfg(argv);
 
   // Output in the locale's encoding
   //locale::global(locale(""));
   // ^^^ doesn't work on mac, except with C/POSIX
   setlocale(LC_ALL, "");
+  if(argc < 3) {
+    cout << "matxin-gen-inter [order pos file] [order file]" << endl;
+    exit(-1);
+  }
 
-  init_chunk_order(cfg.Chunk_OrderFile);
+  //ordena definitu ahal izateko kategoria (DET-en azpikategoria) aldaketen biltegia hasieratu...
+//  init_lexInfo(L"orderPos", cfg.POS_ToOrderFile);
+//  init_node_order(cfg.Node_OrderFile);
+  init_lexInfo(L"orderPos", argv[1]);
+  init_node_order(argv[2]);
 
   xmlTextReaderPtr reader;
-  reader = xmlReaderForFd(0,"", NULL, 0);
+  reader = xmlReaderForFd(0, "", NULL, 0);
 
   int ret = nextTag(reader);
   wstring tagName = getTagName(reader);
   int tagType = xmlTextReaderNodeType(reader);
 
-  if (tagName == L"corpus" and tagType != XML_READER_TYPE_END_ELEMENT)
+  if(tagName == L"corpus" and tagType != XML_READER_TYPE_END_ELEMENT)
   {
-    wcout << L"<?xml version='1.0' encoding='UTF-8'?>" << endl;
-    wcout << L"<corpus " << write_xml(allAttrib(reader)) << L">\n";
+    wcout << L"<?xml version='1.0' encoding='UTF-8' ?>" << endl;
+    wcout << L"<corpus " << allAttrib(reader) << L">\n";
   }
   else
   {
@@ -415,23 +351,38 @@ int main(int argc, char *argv[])
   tagName = getTagName(reader);
   tagType = xmlTextReaderNodeType(reader);
 
+  int i = 0;
   // corpus barruan dauden SENTENCE guztietarako
   while (ret == 1 and tagName == L"SENTENCE")
   {
     //SENTENCE irakurri eta prozesatzen du.
-    wcout << procSENTENCE(reader) << endl;
+    wstring tree = procSENTENCE(reader);
+    wcout << tree << endl;
     wcout.flush();
 
+/*
+    if (cfg.DoTrace)
+    {
+      ostringstream log_fileName_osoa;
+      wofstream log_file;
+
+      log_fileName_osoa << cfg.Trace_File << i++ << ".xml";
+
+      log_file.open(log_fileName_osoa.str().c_str(), ofstream::out | ofstream::app);
+      log_file << tree;
+      log_file.close();
+    }
+*/
     ret = nextTag(reader);
     tagName = getTagName(reader);
-    tagType = xmlTextReaderNodeType(reader);
+    tagType=xmlTextReaderNodeType(reader);
   }
   xmlFreeTextReader(reader);
   xmlCleanupParser();
 
   if (ret == 1 and tagName == L"corpus" and tagType == XML_READER_TYPE_END_ELEMENT)
   {
-    wcout << "</corpus>\n";
+    wcout << L"</corpus>\n";
   }
   else
   {
@@ -439,5 +390,5 @@ int main(int argc, char *argv[])
           << L"> when </corpus> was expected..." << endl;
     exit(-1);
   }
-
 }
+
