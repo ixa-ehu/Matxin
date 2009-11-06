@@ -573,6 +573,26 @@
     <e><p><l>eisini<s n="adv"/></l><r>moreover<s n="adv"/></r></p><par n="ADV_STD"/></e>
     <e><p><l>hví<s n="adv"/></l><r>af<b/>hverju<s n="adv"/></r></p><par n="ADV_STD"/></e>
 
+    <!-- Adjectives -->
+    <e><p><l>fræls<s n="adj"/></l><r>free<s n="adj"/><s n="sint"/></r></p><par n="ADJ_STD"/></e>
+    <e><p><l>jøvn<s n="adj"/></l><r>even<s n="adj"/></r></p><par n="ADJ_STD"/></e>
+    <e><p><l>bláur<s n="adj"/></l><r>blue<s n="adj"/></r></p><par n="ADJ_STD"/></e>
+    <e><p><l>lítil<s n="adj"/></l><r>small<s n="adj"/><s n="sint"/></r></p><par n="ADJ_STD"/></e>
+    <e><p><l>mikil<s n="adj"/></l><r>much<s n="adj"/></r></p><par n="ADJ_STD"/></e>
+    <e><p><l>stórur<s n="adj"/></l><r>big<s n="adj"/><s n="sint"/></r></p><par n="ADJ_STD"/></e>
+    <e><p><l>ríkur<s n="adj"/></l><r>rich<s n="adj"/></r></p><par n="ADJ_STD"/></e>
+    <e><p><l>góður<s n="adj"/></l><r>good<s n="adj"/><s n="sint"/></r></p><par n="ADJ_STD"/></e>
+    <e><p><l>grønur<s n="adj"/></l><r>green<s n="adj"/><s n="sint"/></r></p><par n="ADJ_STD"/></e>
+    <e><p><l>sterkur<s n="adj"/></l><r>strong<s n="adj"/><s n="sint"/></r></p><par n="ADJ_STD"/></e>
+    <e><p><l>skynsamur<s n="adj"/></l><r>intelligent<s n="adj"/></r></p><par n="ADJ_STD"/></e>
+    <e><p><l>oyðin<s n="adj"/></l><r>empty<s n="adj"/><s n="sint"/></r></p><par n="ADJ_STD"/></e>
+    <e><p><l>líkur<s n="adj"/></l><r>alike<s n="adj"/></r></p><par n="ADJ_STD"/></e>
+    <e><p><l>dýrur<s n="adj"/></l><r>dear<s n="adj"/><s n="sint"/></r></p><par n="ADJ_STD"/></e>
+    <e><p><l>fastur<s n="adj"/></l><r>firm<s n="adj"/><s n="sint"/></r></p><par n="ADJ_STD"/></e>
+    <e><p><l>beinur<s n="adj"/></l><r>straight<s n="adj"/></r></p><par n="ADJ_STD"/></e>
+    <e><p><l>eitur<s n="adj"/></l><r>hot<s n="adj"/><s n="sint"/></r></p><par n="ADJ_STD"/></e>
+    <e><p><l>livandi<s n="adj"/></l><r>alive<s n="adj"/></r></p><par n="ADJ_STD"/></e>
+
 
     <e><re>.</re><par n="PUNT"/></e>
   </section>
