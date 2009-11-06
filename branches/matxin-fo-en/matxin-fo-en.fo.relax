@@ -1,9 +1,0 @@
-SETS
-  %% insert here set definitions for your manual constraints, if any.
-
-CONSTRAINTS
- %% insert here your manual constraints
-
-%% after a determiner prefer a noun to an adjective
--8.0 AQ*  (-1 D*);
-
