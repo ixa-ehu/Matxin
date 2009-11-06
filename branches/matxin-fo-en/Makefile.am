@@ -9,8 +9,7 @@ BASENAME=matxin-$(PREFIX1)
 TARGETS_COMMON = $(PREFIX1).automorf.bin $(PREFIX1).autobil.bin $(PREFIX1).autogen.bin \
      $(PREFIX2).automorf.bin $(PREFIX2).autobil.bin \
      $(PREFIX2).autogen.bin \
-     $(PREFIX1).t1x.bin $(PREFIX1).rlx.bin $(PREFIX1)-dep.rlx.bin \
-     $(PREFIX2).t1x.bin 
+     $(PREFIX1).rlx.bin $(PREFIX1).dep.rlx.bin 
 
 $(PREFIX1).automorf.bin: $(BASENAME).$(LANG1).dix
 	apertium-validate-dictionary $(BASENAME).$(LANG1).dix
@@ -28,8 +27,8 @@ $(PREFIX1).autogen.bin: $(BASENAME).$(LANG2).dix
 $(PREFIX1).rlx.bin: $(BASENAME).$(PREFIX1).rlx
 	cg-comp $(BASENAME).$(PREFIX1).rlx $@
 
-$(PREFIX1)-dep.rlx.bin: $(BASENAME).$(PREFIX1)-dep.rlx
-	cg-comp $(BASENAME).$(PREFIX1)-dep.rlx $@
+$(PREFIX1).dep.rlx.bin: $(BASENAME).$(PREFIX1).dep.rlx
+	cg-comp $(BASENAME).$(PREFIX1).dep.rlx $@
 
 
 $(PREFIX2).automorf.bin: $(BASENAME).$(LANG2).dix
@@ -44,21 +43,11 @@ $(PREFIX2).autogen.bin: $(BASENAME).$(LANG1).dix
 	apertium-validate-dictionary $(BASENAME).$(LANG1).dix
 	lt-comp rl $(BASENAME).$(LANG1).dix $@
 
-$(PREFIX1).t1x.bin: $(BASENAME).$(PREFIX1).t1x
-	apertium-validate-transfer $(BASENAME).$(PREFIX1).t1x
-	apertium-preprocess-transfer $(BASENAME).$(PREFIX1).t1x $@
-
-$(PREFIX2).t1x.bin: $(BASENAME).$(PREFIX2).t1x
-	apertium-validate-transfer $(BASENAME).$(PREFIX2).t1x
-	apertium-preprocess-transfer $(BASENAME).$(PREFIX2).t1x $@
-
 EXTRA_DIST=$(BASENAME).$(LANG1).dix $(BASENAME).$(PREFIX1).dix \
 	   $(BASENAME).$(LANG2).dix \
            $(BASENAME).$(PREFIX1).rlx \
-           $(BASENAME).$(PREFIX1)-dep.rlx \
+           $(BASENAME).$(PREFIX1).dep.rlx \
            $(PREFIX1).prob $(PREFIX2).prob \
-	   $(BASENAME).$(PREFIX1).t1x \
-	   $(BASENAME).$(PREFIX2).t1x \
 	   $(BASENAME).$(LANG1).tsx \
 	   $(BASENAME).$(LANG2).tsx modes.xml
 
@@ -84,8 +73,7 @@ matxin_fo_en_DATA=$(PREFIX1).automorf.bin $(PREFIX2).automorf.bin \
                     $(PREFIX1).autobil.bin $(PREFIX2).autobil.bin \
                     $(PREFIX1).autogen.bin $(PREFIX2).autogen.bin \
                     $(PREFIX1).prob $(PREFIX2).prob \
-		    $(PREFIX1).t1x.bin $(PREFIX1).rlx.bin $(PREFIX1)-dep.rlx.bin \
-		    $(PREFIX2).t1x.bin \
+		    $(PREFIX1).rlx.bin $(PREFIX1).dep.rlx.bin \
 	            modes/$(PREFIX1).mode modes/$(PREFIX2).mode modes.xml
 
 install-data-local:
@@ -97,8 +85,6 @@ install-data-local:
 	$(INSTALL_DATA) $(PREFIX1).mode $(matxin_fo_modesdir)
 	$(INSTALL_DATA) $(PREFIX2).mode $(matxin_fo_modesdir)
 	rm $(PREFIX1).mode $(PREFIX2).mode
-	$(INSTALL_DATA) $(BASENAME).$(PREFIX1).t1x $(matxin_fo_endir)
-	$(INSTALL_DATA) $(BASENAME).$(PREFIX2).t1x $(matxin_fo_endir)
 
 
 CLEANFILES = -rf $(TARGETS_COMMON) modes
