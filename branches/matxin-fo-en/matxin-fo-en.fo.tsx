@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<tagger name="Faroese">
+<tagger name="faroese">
   <tagset>
     <def-label name="NOMF">
       <tags-item tags="n.f"/>   <!-- probably broken -->
