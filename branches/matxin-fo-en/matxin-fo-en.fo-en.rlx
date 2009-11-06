@@ -318,12 +318,12 @@ REMOVE:r43 Gen IF (*-1 ACCDATPREP BARRIER NOTACCDAT OR S-BOUNDARY OR V OR Pr OR 
 REMOVE:r44 Nom IF (*-1 ACCDATPREP BARRIER NOTACCDAT OR S-BOUNDARY OR V OR Pr OR CLB);
 # CLB makes it weaker, be prepared to compensate.
 
-REMOVE:AccPronNotIndef (N Indef) IF (-1 ACCPREP OR ACCDATPREP)(0 (prn acc)) ;
-REMOVE:DatPronNotIndef (N Indef) IF (-1 DATPREP OR ACCDATPREP)(0 (prn dat)) ;
+REMOVE:AccPronNotIndef (n ind) IF (-1 ACCPREP OR ACCDATPREP)(0 (prn acc)) ;
+REMOVE:DatPronNotIndef (n ind) IF (-1 DATPREP OR ACCDATPREP)(0 (prn dat)) ;
 
-SELECT:AccNP (N Acc) IF (-1C (det acc));
+SELECT:AccNP (n acc) IF (-1C (det acc));
 
-SELECT (A Dat) IF  (*-1 ACCDATPREP BARRIER NPNH)(1 (n dat));
+SELECT (adj dat) IF  (*-1 ACCDATPREP BARRIER NPNH)(1 (n dat));
 
 # REMOVE:Fragment Dat IF (*-1 ACCDATPREP BARRIER NPNH)(NOT *-1 V)(NOT *1 V);
 # but there are such fragments!
@@ -344,7 +344,7 @@ REMOVE Pers IF (-1 Pr)(0 (det gen))(*1 N OR A BARRIER NPNH);
 
 # Det
 
-REMOVE:r1 (Num) IF (0 ("ein" det))(*1 N OR A BARRIER NPNHA);
+REMOVE:r1 (num) IF (0 ("ein" det))(*1 N OR A BARRIER NPNHA);
 	## eina mynd
 
 # Prop
@@ -362,17 +362,17 @@ REMOVE Pr IF (0 ("at"))(NEGATE 1 NP-MEMBER);
 SELECT Interj IF (-1 BOS)(0 ("á"))(1 COMMA OR CC);
        ## Á, eg veit ikki.
 # ár
-SELECT (Neu Sg Acc) IF (-1 ("i"))(0 ("ár"));
+SELECT (nt sg acc) IF (-1 ("i"))(0 ("ár"));
 
 # bara
-SELECT ("bara" Adv) IF (1 Pron);
-SELECT ("bara" Adv) IF (*1 N OR A BARRIER NPNH);
+SELECT ("bara" adv) IF (1 Pron);
+SELECT ("bara" adv) IF (*1 N OR A BARRIER NPNH);
        ## Bara eygað sá roykin fara uppeftir sum óljóð.
 
 # eg
-SELECT:eg ("eg" Pron Pers Pl Nom) IF (*1 (vblex pl) BARRIER NOT-ADV); #(*1 V + Pl BARRIER NOT-ADV);
+SELECT:eg ("eg" prn p1 pl nom) IF (*1 (vblex pl) BARRIER NOT-ADV); #(*1 V + Pl BARRIER NOT-ADV);
 	  ## Vit mugu sleppa.
-
+#TODO this probably doesn't work ("vit" ? prnpers?)
 # ein
 REMOVE ("eini") IF (0 Dat + Dat )(1 A + Dat OR N + Dat) ;
 
@@ -428,8 +428,8 @@ SELECT Adv IF (0 ("sjálvt"))(1 ("um") OR EOS);
 REMOVE ("skal") IF (0 ("skula"))(1 Inf);
 
 # tann
-SELECT ("tann" Det) IF (1 ("sum"));
-SELECT ("tann" Det $$NAGD) IF (*1 N + $$NAGD OR A + $$NAGD BARRIER NPNH); 
+SELECT ("tann" det) IF (1 ("sum"));
+SELECT ("tann" det $$NADJGD) IF (*1 N + $$NAGD OR A + $$NAGD BARRIER NPNH); 
 
 # tá and tá ið
 SELECT Adv IF  (0 ("tá"))(1 (("ið") OR V OR Det OR Pron OR N);
@@ -473,14 +473,14 @@ REMOVE Adv IF (-1 Det OR Pr)(0 A)(1 N);
 
 # Idioms
 
-SELECT ("stórur" A Neu Sg Dat) IF (-2 ("í"))(-1 ("tað"))(1 ("og"))(2 ("heilur"));
-SELECT ("heilur" A Neu Sg Dat) IF (-4 ("í"))(-3 ("tað"))(-2 ("stórur"))(-1 ("og"));
+SELECT ("stórur" adj nt sg dat) IF (-2 ("í"))(-1 ("tað"))(1 ("og"))(2 ("heilur"));
+SELECT ("heilur" adj nt sg dat) IF (-4 ("í"))(-3 ("tað"))(-2 ("stórur"))(-1 ("og"));
 
-SELECT ("væl" Adv) IF (1 ("skera" pp));
-SELECT ("skera" PrfPrc) IF (-1 ("væl" adv));
+SELECT ("væl" adv) IF (1 ("skera" pp));
+SELECT ("skera" pp) IF (-1 ("væl" adv));
 	## vel skorin
 
-SELECT ("innast" Adv) IF (1 ("inni"));
+SELECT ("innast" adv) IF (1 ("inni"));
 	## innast inni
 	
 # NP internal constraints
@@ -556,7 +556,7 @@ SELECT:DisPostPoss Poss IF (-1 N + $$GENDER + $$NAGD)(0 $$GENDER + $$NAGD); #(NO
 REMOVE:r33 Pl IF (*-1 ("eitt" num sg) OR (det sg) BARRIER NOT-A)(0 (n sg));
 # Here, we need vislcg3 and variable notation!
 
-SELECT:NumNPl (N Pl) IF (-1 NUMBERS);
+SELECT:NumNPl (n pl) IF (-1 NUMBERS);
 
 
 # Coordination
@@ -579,8 +579,8 @@ REMOVE:r34 Acc IF (-2 CS)(-1 (vblex pl))(0 (pl nom)) ;
 # ======
 REMOVE:r35 A IF (*-1 Pr OR CLB BARRIER NPNH)(0 N)(1 S-BOUNDARY OR V);
 
-REMOVE (A Fem) IF (0 (n nt))(-1 COPULA)(-2 ("tað" nom));
-REMOVE (A Msc) IF (0 (n nt))(-1 COPULA)(-2 ("tað" nom));
+REMOVE (adj f) IF (0 (n nt))(-1 COPULA)(-2 ("tað" nom));
+REMOVE (adj m) IF (0 (n nt))(-1 COPULA)(-2 ("tað" nom));
 
 
 # Elliptic AP as NP
@@ -615,7 +615,7 @@ REMOVE:CCPrs Prs + 3Sg IF (0 Pl + Nom)(1 CC)(*2 Pl + Nom BARRIER NPNH OR OBL);
 REMOVE:r48 A IF (0 ("vera"))(1 (n sg));
 	## Enskt mál er móðurmál.
 
-SELECT:r49 ("vera" 3Sg) IF (-1 ("tað" prn p3 sg nom));#TODO does it work even if the <r> says prnpers<prn><p3> etc instead of tað<prn><p3> etc. ?
+SELECT:r49 ("vera" p3 sg) IF (-1 ("tað" prn p3 sg nom));#TODO does it work even if the <r> says prnpers<prn><p3> etc instead of tað<prn><p3> etc. ?
 	## Tað var, sum váru tey sett av tilvild av einum fóti út úr luftini.
 
 REMOVE:PrtNotAdj A IF (-1 NOMINALHEAD + Sg + Nom)(0 (vblex past sg) OR (vblex past p3 sg) OR (vblex past p1 sg)) ;
@@ -626,8 +626,8 @@ REMOVE:PrtNotAdj A IF (-1 NOMINALHEAD + Sg + Nom)(0 (vblex past sg) OR (vblex pa
 
 SELECT:r51 Inf IF (*-1 MODV BARRIER V);
 
-REMOVE (V Pl) IF (-2 VFIN + Sg)(-1 (prn sg))(0 inf);
-REMOVE (V Pl) IF (-1 N + Sg LINK *-1 VFIN + Sg BARRIER NPNH)(0 Inf);
+REMOVE (vblex pl) IF (-2 VFIN + Sg)(-1 (prn sg))(0 inf);
+REMOVE (vblex pl) IF (-1 N + Sg LINK *-1 VFIN + Sg BARRIER NPNH)(0 Inf);
 
 # Imperative
 
@@ -652,7 +652,7 @@ REMOVE Sup IF (*-1 CLB BARRIER WORD)(0 Imp)(*1 CLB  BARRIER Ind);
 REMOVE:r53 Imp IF (0 N)(1 CC)(*2 N BARRIER NPNHA);
 	## Stýrið og stjórnin hjá...
 
-REMOVE:r54 (Imp Pl) IF (0 (n nt))(1 VFIN);
+REMOVE:r54 (imp pl) IF (0 (n nt))(1 VFIN);
 	## Húsið er stórt.
 
 # Supine
@@ -665,30 +665,30 @@ REMOVE:SFregel N IF (0 Sup)(1 VFIN);
 
 # Present singular
 
-SELECT:r57 (V Ind 3Sg) IF (-1 (np nom) OR (n sg nom) OR (prn p3 sg nom) LINK NOT *-1 CC BARRIER NPNHA)(1 (prn refl acc)) ;#TODO refl
+SELECT:r57 (vblex pri p3 sg) IF (-1 (np nom) OR (n sg nom) OR (prn p3 sg nom) LINK NOT *-1 CC BARRIER NPNHA)(1 (prn refl acc)) ;#TODO refl
 
 
-REMOVE:test1 (V Ind 1Sg) IF (NEGATE 0* ("eg" prn p1 sg nom)); 
-REMOVE:test2 (V Ind 2Sg) IF (NEGATE 0* ("tú" + prn + p2 + sg + nom)); # Tino! TODO what? +?
+REMOVE:test1 (vblex pri p1 sg) IF (NEGATE 0* ("eg" prn p1 sg nom)); 
+REMOVE:test2 (vblex pri p2 sg) IF (NEGATE 0* ("tú" + prn + p2 + sg + nom)); # Tino! TODO what? +?
 
 SELECT 1Sg IF (-1 ("eg" pron p1 sg nom));
 
-REMOVE:r58b (V Ind 1Sg) IF (*-1 (n sg nom) BARRIER NOT-ADV LINK NOT *1 Pron + 1Sg BARRIER CLB) ;
-SELECT:r59 (V Ind 3Sg) IF (-1 (np nom) OR (n sg nom) LINK NOT *-1 CC BARRIER NPNHA OR S-BOUNDARY) ;
+REMOVE:r58b (vblex pri p1 sg) IF (*-1 (n sg nom) BARRIER NOT-ADV LINK NOT *1 Pron + 1Sg BARRIER CLB) ;
+SELECT:r59 (vblex pri p3 sg) IF (-1 (np nom) OR (n sg nom) LINK NOT *-1 CC BARRIER NPNHA OR S-BOUNDARY) ;
 
 REMOVE 1Sg IF (-1 V)(0 Acc);
 	"at fáa høvi at..."
 
 
-REMOVE:CoordVerb (V Ind 1Sg) IF (-1 CS OR CC LINK *-1C (vblex ind sg) OR (vblex ind p3 sg) BARRIER 1Sg);
+REMOVE:CoordVerb (vblex pri p1 sg) IF (-1 CS OR CC LINK *-1C (vblex ind sg) OR (vblex ind p3 sg) BARRIER 1Sg);
 		 ## Hann legði høkuna á knappin og læt eygað hvíla.
 
 
-SELECT:r60 (V 2Sg) IF (*-1 ("tú" prn p2 sg nom) BARRIER NOT-ADV);
+SELECT:r60 (vblex p2 sg) IF (*-1 ("tú" prn p2 sg nom) BARRIER NOT-ADV);
 
 # Present plural
 
-SELECT:r61 (V Pl) IF (-1 (n pl nom) OR ("eg" prn p1 pl nom));#TODO pl??? not "vit" then?
+SELECT:r61 (vblex pl) IF (-1 (n pl nom) OR ("eg" prn p1 pl nom));#TODO pl??? not "vit" then?
 
 
 # V + Refl
@@ -738,9 +738,11 @@ REMOVE ("hon") IF (*-1 (imp sg) BARRIER ("tú"));
 REMOVE:r66 ("hannur") IF (0 ("hann" nom))(1 (vblex p3 sg));
        ## Han var her.
 
-SELECT (Pron Pers Pl Nom) IF (1 ("sum"))(2 Pl);
+SELECT (prn p1 pl nom) IF (1 ("sum"))(2 Pl);
+SELECT (prn p2 pl nom) IF (1 ("sum"))(2 Pl);
+SELECT (prn p3 pl nom) IF (1 ("sum"))(2 Pl);
 
-REMOVE:r66b (Pl Nom Indef) IF (1 (n sg) OR (vblex sg) OR (v p3 sg));
+REMOVE:r66b (pl nom ind) IF (1 (n sg) OR (vblex sg) OR (v p3 sg));
 
 REMOVE ("vit") IF (*-1 V + Pl BARRIER V)(0 (prn p1 pl nom));
 	## Eru vit helst...
@@ -764,17 +766,17 @@ REMOVE:r113 V IF (-1 (det nom))(0 (n nom));
 # Number disambiguation
 
 #SELECT $$NUMBER IF (0 A)(1 N + $$NUMBER);
-REMOVE:r23 (A Sg) IF (1C N + Pl);
-REMOVE:r23b (A Sg) IF (1 CC)(2 A + Pl)(3C N + Pl);
-REMOVE:r24 (A Pl) IF (1C N + Sg);
+REMOVE:r23 (adj sg) IF (1C N + Pl);
+REMOVE:r23b (adj sg) IF (1 CC)(2 A + Pl)(3C N + Pl);
+REMOVE:r24 (adj pl) IF (1C N + Sg);
 	## í ta døkku moldina.
 
 
-REMOVE (N Pl) IF (*-1C (det sg) BARRIER NPNH) (0 (n sg));
+REMOVE (n pl) IF (*-1C (det sg) BARRIER NPNH) (0 (n sg));
 
 SELECT:r25 $$NUMBER IF (0 Det)(*1 N + $$NUMBER OR  A + $$NUMBER BARRIER NOT-A);
 
-SELECT (Num Nom) IF (-1 BOS)(1 EOS);
+SELECT (num nom) IF (-1 BOS)(1 EOS);
 
 # Gender disamb of numerals
 
@@ -791,7 +793,7 @@ SELECT:r27 $$NAGD IF (0 Num)(*1C N + $$NAGD BARRIER NOT-A);
 
 
 # Ordinals
-REMOVE:r114 (A Sg) IF (1 (num sg));
+REMOVE:r114 (adj sg) IF (1 (num sg));
 	## fyrstu tríggjar mánðirnar.
 
 
@@ -827,7 +829,7 @@ SUBSTITUTE:sumPr (CS) (Pr) TARGET ("sum") (NOT -1 BOS OR COMMA);
 
 # CC Coordinate NPs
 
-SELECT (V Pl) IF (-1 N + Nom + Sg LINK *-1 CC BARRIER NPNH LINK -1 N + Nom);
+SELECT (vblex pl) IF (-1 N + Nom + Sg LINK *-1 CC BARRIER NPNH LINK -1 N + Nom);
 
 
 
@@ -1045,10 +1047,10 @@ REMOVE:r101 (@P<) IF (*-1 BOS OR (n acc) OR (n dat) OR (n nom) OR V OR CLB OR CS
 
 REMOVE:r102 (@>N) IF (0C N)(*-1 Pr BARRIER NPNHA);
 
-SELECT:r103 (Sg @<SPRED) IF (*-1 COPULA BARRIER NPNHA LINK -1 (sg nom));
+SELECT:r103 (sg @<SPRED) IF (*-1 COPULA BARRIER NPNHA LINK -1 (sg nom));
 
-SELECT:r104 (Pl Nom @<SPRED) IF (*-1 COPULA BARRIER NPNHA LINK -1 (pl nom));
-SELECT:r121 (Pl Nom @<SPRED) IF (*-1 ("síggja") BARRIER NPNHA LINK -1 (pl nom))(*1 ("út") BARRIER NPNHA);
+SELECT:r104 (pl nom @<SPRED) IF (*-1 COPULA BARRIER NPNHA LINK -1 (pl nom));
+SELECT:r121 (pl nom @<SPRED) IF (*-1 ("síggja") BARRIER NPNHA LINK -1 (pl nom))(*1 ("út") BARRIER NPNHA);
 
 REMOVE:r105 (@<SUBJ) IF (*-1 VFIN BARRIER S-BOUNDARY LINK -1 (@SUBJ>));
 REMOVE:r105 (@<SUBJ) IF (*-1 (@<SUBJ) BARRIER S-BOUNDARY LINK *-1 VFIN BARRIER NPNHA);
@@ -1062,24 +1064,24 @@ SELECT (@>CS);
 
 REMOVE (@>N) IF (0 (gen @N<))(-1 N);
 
-SELECT (N Sg) IF (1C  Poss + Sg + @N<);
-SELECT (N Pl) IF (1C  Poss + Pl + @N<);
+SELECT (n sg) IF (1C  Poss + Sg + @N<);
+SELECT (n pl) IF (1C  Poss + Pl + @N<);
 
-SELECT (Poss $$NAGD) IF (-1C N + $$NAGD)(0 (@N<));
+SELECT (pos $$NADJGD) IF (-1C N + $$NAGD)(0 (@N<));
 
-REMOVE (Det Msc) IF (NOT 0 Poss)(*1C (n nt) BARRIER NPNH);
-REMOVE (Det Fem) IF (NOT 0 Poss)(*1C (n nt) BARRIER NPNH);
-REMOVE (Det Neu) IF (NOT 0 Poss)(*1C (n m) BARRIER NPNH);
-REMOVE (Det Fem) IF (NOT 0 Poss)(*1C (n m) BARRIER NPNH);
-REMOVE (Det Msc) IF (NOT 0 Poss)(*1C (n f) BARRIER NPNH);
-REMOVE (Det Neu) IF (NOT 0 Poss)(*1C (n f) BARRIER NPNH);
+REMOVE (det m) IF (NOT 0 Poss)(*1C (n nt) BARRIER NPNH);
+REMOVE (det f) IF (NOT 0 Poss)(*1C (n nt) BARRIER NPNH);
+REMOVE (det nt) IF (NOT 0 Poss)(*1C (n m) BARRIER NPNH);
+REMOVE (det f) IF (NOT 0 Poss)(*1C (n m) BARRIER NPNH);
+REMOVE (det m) IF (NOT 0 Poss)(*1C (n f) BARRIER NPNH);
+REMOVE (det nt) IF (NOT 0 Poss)(*1C (n f) BARRIER NPNH);
 
 #REMOVE (@SUBJ>) IF (0 (@>N))(*1 (@SUBJ>) BARRIER NPNH);
 
 REMOVE Imp IF (0 (@>N));
        ## Hitt størra ljós.
 
-SELECT ($$NAGD) IF (0C (@>N))(*1C N + $$NAGD);
+SELECT ($$NADJGD) IF (0C (@>N))(*1C N + $$NAGD);
 
 # Postverbal subjects
 
@@ -1091,7 +1093,7 @@ SELECT (@<SUBJ) IF (-2 (@OBJ>) OR (@ADVL>))(-1 VFIN + Pl)(0 Pl);
 
 SELECT:onesubj (@SUBJ>) IF (1 VFIN)(NOT *2 (@<SUBJ) BARRIER CLB);
 
-SELECT:defsubj (Def) IF (NOT -1 Indef)(0C (@SUBJ>))(1 VFIN);
+SELECT:defsubj (def) IF (NOT -1 Indef)(0C (@SUBJ>))(1 VFIN);
 	       ## at talan var um ein dyst
 
 SELECT:coordsubj (@SUBJ>) IF (*-1 CC BARRIER NPNH LINK -1 N)(1 VFIN + Pl);
@@ -1153,12 +1155,12 @@ REMOVE:r112b (@HNOUN) IF (*-1 Pr BARRIER NPNH)(0 (@P<));
 
 # Number SPRED disambiguation
 
-SELECT (Nom @>N) IF (*1C N + Nom BARRIER NPNH OR PRE-N + NOTNOM);
-SELECT (Acc @>N) IF (1C N + Acc BARRIER NPNH OR PRE-N + NOTACC);
-SELECT (Dat @>N) IF (1C N + Dat BARRIER NPNH OR PRE-N + NOTDAT);
+SELECT (nom @>N) IF (*1C N + Nom BARRIER NPNH OR PRE-N + NOTNOM);
+SELECT (acc @>N) IF (1C N + Acc BARRIER NPNH OR PRE-N + NOTACC);
+SELECT (dat @>N) IF (1C N + Dat BARRIER NPNH OR PRE-N + NOTDAT);
 
 
-REMOVE:r115 (A @>N) IF (0 V)(NOT 1 N OR A);
+REMOVE:r115 (adj @>N) IF (0 V)(NOT 1 N OR A);
 # Alternatively Demand Nom to the left or Num to the right.
 
 SELECT Pl IF (-1 Pl + (@SUBJ>) LINK *-1 S-BOUNDARY BARRIER NOT-CC)(0 V);
@@ -1176,7 +1178,7 @@ REMOVE (@<ADVL) IF (0 (@<OPRED));
 #SELECT Neu IF (0C (@<OPRED))(*-1 (@<OBJ) + Neu OR (@<OBJ) + ("tað"));
 #so, does OPRED agree with OBJ or with SUBJ?
 
-SELECT (3Sg) IF (-1C (sg @SUBJ>));
+SELECT (p3 sg) IF (-1C (sg @SUBJ>));
 
 
 SELECT:r117 CC IF (-1 BOS)(1C (@SUBJ));
@@ -1206,9 +1208,9 @@ REMOVE Acc IF (0 Dat + (@P<))(*-1 Pr + (@N<) BARRIER NPNH);
 
 # Stray NPs
 
-REMOVE:r118 (Acc @HNOUN) IF (0 (nom @HNOUN));
-REMOVE:r119 (Gen @HNOUN) IF (0 (nom @HNOUN));
-REMOVE:r120 (Dat @HNOUN) IF (0 (nom @HNOUN));
+REMOVE:r118 (acc @HNOUN) IF (0 (nom @HNOUN));
+REMOVE:r119 (gen @HNOUN) IF (0 (nom @HNOUN));
+REMOVE:r120 (dat @HNOUN) IF (0 (nom @HNOUN));
 
 REMOVE:NoHnoun (@HNOUN) IF (0* VFIN);
 
