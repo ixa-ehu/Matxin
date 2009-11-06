@@ -1,5 +1,5 @@
 TAGGER_UNSUPERVISED_ITERATIONS=8
-BASENAME=apertium-fo-en
+BASENAME=matxin-fo-en
 LANG1=fo
 LANG2=en
 TAGGER=$(LANG1)-tagger-data
@@ -40,7 +40,7 @@ $(TAGGER)/$(LANG1).dic: $(BASENAME).$(LANG1).dix $(PREFIX).automorf.bin
 	rm $(LANG1).dic.expanded;
 
 $(TAGGER)/$(LANG1).crp: $(PREFIX).automorf.bin $(TAGGER)/$(LANG1).crp.txt
-	apertium-destxt < $(TAGGER)/$(LANG1).crp.txt | lt-proc $(PREFIX).automorf.bin > $(TAGGER)/$(LANG1).crp
+	apertium-destxt < $(TAGGER)/$(LANG1).crp.txt | lt-proc $(PREFIX).automorf.bin | cg-proc -w fo-en.rlx.bin > $(TAGGER)/$(LANG1).crp
 
 clean:
 	rm -f $(PREFIX).prob

@@ -11,6 +11,9 @@
       <program name="apertium-tagger -pg $2">
         <file name="fo-en.prob"/>
       </program>
+      <program name="cg-proc -w">
+	<file name="fo-en.rlx-dep.bin"/>
+      </program>
       <program name="apertium-pretransfer"/>
       <program name="apertium-transfer">
         <file name="matxin-fo-en.fo-en.t1x"/>
@@ -19,26 +22,6 @@
       </program>
       <program name="lt-proc $1">
         <file name="fo-en.autogen.bin"/>
-      </program>
-    </pipeline>
-  </mode>
-  
-  <mode name="en-fo" install="yes">
-    <pipeline>
-      <program name="lt-proc">
-        <file name="en-fo.automorf.bin"/>
-      </program>
-      <program name="apertium-tagger -g $2">
-        <file name="en-fo.prob"/>
-      </program>
-      <program name="apertium-pretransfer"/>
-      <program name="apertium-transfer">
-        <file name="matxin-fo-en.en-fo.t1x"/>
-        <file name="en-fo.t1x.bin"/>
-        <file name="en-fo.autobil.bin"/>
-      </program>
-      <program name="lt-proc $1">
-        <file name="en-fo.autogen.bin"/>
       </program>
     </pipeline>
   </mode>

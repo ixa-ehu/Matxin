@@ -2,23 +2,15 @@
 <tagger name="faroese">
   <tagset>
     <def-label name="NOMF">
-      <tags-item tags="n.f"/>   <!-- probably broken -->
       <tags-item tags="n.f.*"/>
     </def-label>
     <def-label name="NOMM">
-      <tags-item tags="n.m"/>   <!-- probably broken -->
       <tags-item tags="n.m.*"/>
     </def-label>
-    <!-- nn nt is ~always ambiguous between sg and pl, uncoarsify todo: -->
     <def-label name="NOMNT">
-      <tags-item tags="n.nt"/>  <!-- probably broken -->
       <tags-item tags="n.nt.*"/>
     </def-label>
-    <def-label name="NOMMF">
-      <tags-item tags="n.mf"/>  <!-- probably broken -->
-      <tags-item tags="n.mf.*"/>
-    </def-label>
-
+    
     <def-label name="PROPN">
       <tags-item tags="np.*"/>
     </def-label>
@@ -42,12 +34,24 @@
       <tags-item tags="prn.p3.*"/>
     </def-label>
 
+    <def-label name="PRNNONPERS">
+      <tags-item tags="prn.dem.*"/>
+      <tags-item tags="prn.ind.*"/>
+      <tags-item tags="prn.itg.*"/>
+      <tags-item tags="prn.pos.*"/>
+      <tags-item tags="prn.qnt.*"/>
+    </def-label>
+
     <def-label name="ADJ">
       <tags-item tags="adj.*"/>
     </def-label>
 
     <def-label name="ADV">
       <tags-item tags="adv"/>
+    </def-label>
+
+    <def-label name="IJ">
+      <tags-item tags="ij"/>
     </def-label>
 
     <def-label name="PREP">
@@ -67,7 +71,6 @@
     </def-label>
 
     <def-label name="VBLEX">
-      <tags-item tags="vblex"/>   <!-- entries like this are probably broken -->
       <tags-item tags="vblex.*"/>
     </def-label>
 

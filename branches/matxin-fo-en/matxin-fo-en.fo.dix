@@ -31,6 +31,7 @@
     <sdef n="vbmod"   c="Modal verb"/>
     <sdef n="inf"     c="Infinitive"/>
     <sdef n="pp"      c="Past participle"/>
+    <sdef n="pp"      c="Present participle"/>
     <sdef n="supn"    c="Supine"/>
     <sdef n="past"    c="Past tense"/>
     <sdef n="pri"     c="Present tense"/>
