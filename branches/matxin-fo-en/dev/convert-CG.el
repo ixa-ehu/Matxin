@@ -183,7 +183,8 @@ Maybe I should just write a parser instead."
 
 (defun fo-cg-replace-before-if ()
   (let* (;	 (semicolon (save-excursion (re-search-forward "[^\"\\];")))
-	 (if-point (save-excursion (re-search-forward "\\(\\s \\|)\\)IF\\(\\s \\|(\\)") )))
+	 (if-point (save-excursion (re-search-forward "[^\"\\];"))))
+    ;\\(\\s \\|)\\)IF\\(\\s \\|(\\)
     (while (search-forward "(" if-point t)
       (let* ((s-open (match-beginning 0))
 	     (s-close (fo-cg-scan-sexps s-open if-point)))
