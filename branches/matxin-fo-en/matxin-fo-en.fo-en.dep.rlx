@@ -26,71 +26,71 @@ LIST EOS = (<<<) (</s>); # vislcg and CG-2 together.
    SETS
 # ========
 
-LIST N = N ;
-LIST V = V ;
-LIST A = A ;
-LIST Prop = Prop ;
-LIST Adv = Adv ;
-LIST Num = Num ;
-LIST CC = CC ;
-LIST CS = CS ;
-LIST Interj = Interj ;
-LIST Abbr = Abbr ;
-LIST ACR = ACR ;
-LIST Pr = Pr ;
-LIST Pron = Pron ;
-LIST Pers = Pers ;
-LIST Dem = Dem ;
-LIST Det = Det ;
-LIST Refl = Refl ;
-LIST Recipr = Recipr ;
-LIST Poss = Poss ;
-LIST Interr = Interr ;
-LIST IM = IM ;
+LIST N = n ;
+LIST V = vblex ;
+LIST A = adj ;
+LIST Prop = np ;
+LIST Adv = adv ;
+LIST Num = num ;
+LIST CC = cnjcoo ;
+LIST CS = cnjsub ;
+LIST Interj = ij ;
+LIST Abbr = Abbr ;#TODO
+LIST ACR = acr ;
+LIST Pr = pr ;
+LIST Pron = prn ;
+LIST Pers = p1 p2 p3 ;
+LIST Det = det ;
+LIST Dem = dem ;
+LIST Refl = Refl ;#TODO
+LIST Recipr = Recipr ;#TODO
+LIST Poss = pos ;
+LIST Interr = itg ;
+LIST IM = IM ;#TODO
 
-LIST Nom = Nom ;
-LIST Acc = Acc ;
-LIST Gen = Gen ;
-LIST Dat = Dat ;
-LIST Msc = Msc ;
-LIST Fem = Fem ;
-LIST Neu = Neu ;
-LIST Sg = Sg ;
-LIST Pl = Pl ;
-LIST Def = Def ;
-LIST Indef = Indef ;
-LIST Cmp = Cmp ;
-LIST Superl = Superl ;
-LIST Prs = Prs ;
-LIST Prt = Prt ;
-LIST 1Sg = 1Sg ;
-LIST 2Sg = 2Sg ;
-LIST 3Sg = 3Sg ;
-LIST Inf = Inf ;
-LIST PrfPrc = PrfPrc ;
-LIST PrsPrc = PrsPrc ;
-LIST Imp = Imp ;
-LIST Sup = Sup ;
-LIST Cmpnd = Cmpnd ;
-LIST CLB = CLB ;
-LIST PUNCT = PUNCT ;
-LIST LEFT = LEFT ;
-LIST RIGHT = RIGHT ;
+LIST Nom = nom ;
+LIST Acc = acc ;
+LIST Gen = gen ;
+LIST Dat = dat ;
+LIST Msc = m ;
+LIST Fem = f ;
+LIST Neu = nt ;
+LIST Sg = sg ;
+LIST Pl = pl ;
+LIST Def = def ;
+LIST Indef = ind ;
+LIST Cmp = comp ;
+LIST Superl = sup ;
+LIST Prs = pres ;
+LIST Prt = past ;
+LIST 1Sg = p1 sg ;
+LIST 2Sg = p2 sg ;
+LIST 3Sg = p3 sg ;
+LIST Inf = inf ;
+LIST PrfPrc = pp ;#TODO is PrfPrc past participle?
+LIST PrsPrc = ppres ;#TODO is PrsPrC present participle?
+LIST Imp = imp ;
+LIST Sup = supn ;
+LIST Cmpnd = Cmpnd ;#we don't have compound handling yet
+LIST CLB = clb sent cm ;
+LIST PUNCT = sent cm ;#TODO
+LIST LEFT = LEFT ;#TODO
+LIST RIGHT = RIGHT ;#TODO
 
 LIST V* = V* ;
  
 SET WORD = N | V | A | Pr | Pron | Adv | CC | CS | Interj | Num | ("\?") ;
 
 
-LIST TAG = N V A Adv CC CS Interj Pr Pron Pers Det Refl Recipr Poss Nom Acc Gen
-Dat Msc Fem Neu Sg Pl Def Indef Cmp Sup Prs Prt 1Sg 2Sg 3Sg Inf PrfPrc
-PrsPrc Sup Imp CLB PUNCT LEFT RIGHT ;
+LIST TAG = n np vblex adj adv cnjcoo cnjsub ij pr prn p1 p2 p3 det pos nom acc gen
+dat m f nt sg pl def ind comp sup pres past inf pp
+ppres supn imp ; #TODO the rest
 
 
-LIST NAGD = Nom Acc Gen Dat ;
-LIST GENDER = Msc Fem Neu ;
-LIST NUMBER = Sg Pl ;
-LIST POS = N V A Adv Pr Pron ;
+LIST NAGD = nom acc gen dat ;
+LIST GENDER = m f nt ;
+LIST NUMBER = sg pl ;
+LIST POS = n vblex adj adv pr prn ;
 
 # Sets
 # ====
@@ -104,9 +104,9 @@ SET NounFemNeu = (N Fem) OR (N Neu) ;
 
 # Nominal sets
 
-LIST NOMINALHEAD = N Num Pron ;
+LIST NOMINALHEAD = n num prn ;
 
-LIST PRENAGR = Det Dem A ;
+LIST PRENAGR = det dem adj ;
 
 
 
@@ -123,7 +123,7 @@ SET OBL = Acc | Dat | Gen ;
 
 SET PRE-N =  A | Det | Dem | (N Gen) | Num ; # Det???
 
-LIST COMMA = "," ; 
+LIST COMMA = "," cm ; 
 
 SET MARK =  COMMA | ("\") | ("\;") ; #"
 SET WORDMARK = WORD | MARK ;
@@ -145,10 +145,10 @@ LIST COPULA = "vera" "verða" ;
 
 LIST AUX = "kunna" "skula" "vera" "verða" "hava" ;
 
-LIST VFIN = Prs Prt Imp Sbj ;
-LIST Ind = Prs Prt ;
+LIST VFIN = pres past imp Sbj ; #TODO
+LIST Ind = pres past ; #TODO pri? (pri=present indicative)
 
-LIST NONTHIRDV = 1Sg 2Sg 1Pl 2Pl ;
+LIST NONTHIRDV = p1 p2 ;
 
 LIST VINFIN = Inf Sup PrfPrs PrsPrc ;
 

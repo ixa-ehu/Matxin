@@ -434,7 +434,7 @@ SELECT ("tann" det) IF (1 ("sum"));
 SELECT ("tann" det $$NAGD) IF (*1 N + $$NAGD OR A + $$NAGD BARRIER NPNH); 
 
 # tá and tá ið
-SELECT Adv IF  (0 ("tá"))(1 (("ið") OR V OR Det OR Pron OR N);
+SELECT Adv IF  (0 ("tá"))(1 (("ið") OR V OR Det OR Pron OR N));
 SELECT Adv IF (-1 ("tá"))(0 ("ið"));
 SELECT Adv IF (-1 Adv OR NPNH OR COMMA)(0 ("tá"))(1 Det OR Pron OR V);#TODO: had to remove the parens for this to work (since there's no ("foo") in there… silly visl)
 	# Og tá eg havi...
@@ -683,7 +683,7 @@ REMOVE 1Sg IF (-1 V)(0 Acc);
 	"at fáa høvi at..."
 
 
-REMOVE:CoordVerb (vblex pri p1 sg) IF (-1 CS OR CC LINK *-1C (vblex ind sg) OR (vblex ind p3 sg) BARRIER 1Sg);
+REMOVE:CoordVerb (vblex pri p1 sg) IF (-1 CS OR CC LINK *-1C (vblex pri sg) OR (vblex pri p3 sg) BARRIER 1Sg);
 		 ## Hann legði høkuna á knappin og læt eygað hvíla.
 
 
@@ -985,7 +985,7 @@ MAP:r87 (@→N) TARGET (det) IF (*1 N BARRIER V OR Adv);
 MAP:r88 (@→N) TARGET A + $$NAGD OR Det + $$NAGD IF (*1 N + $$NAGD OR Num + $$NAGD BARRIER NPNHA);
 MAP (@→N) TARGET Num IF (*1 N BARRIER NPNHA);
 
-MAP:r89 (@VFIN) TARGET (V Prs) OR (V Prt) OR (V Imp);
+MAP:r89 (@VFIN) TARGET (vblex pres) OR (vblex past) OR (vblex imp);
 
 
 
