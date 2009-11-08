@@ -281,7 +281,7 @@ REMOVE Dat IF (*-1 V LINK NOT 0 DATV BARRIER NPNH)(0 Acc)(1 EOS OR CS);
 # Preposition or not?
 
 #REMOVE Pr IF (NOT *-1 S-BOUNDARY LINK *1 OBL BARRIER NPNH)(0 Adv)(NOT *1 OBL BARRIER NPNH)
-REMOVE Pr IF (0 Adv)(NOT *1 OBL BARRIER NPNH)
+REMOVE Pr IF (0 Adv)(NOT *1 OBL BARRIER NPNH);
 # This rule does not handle stranded prepositions, it must be relaxed.
 
 REMOVE:PrAdv Adv IF (*-1 N OR V)(0 Pr + SOMEACCPREP)(*1 Acc BARRIER NPNH);
@@ -298,7 +298,7 @@ REMOVE:r38 Adv IF (0 Dat OR Acc)(*-1 ("millum") BARRIER NPNH);
 # til
 SELECT:r39 Pr IF (0 ("til"))(*1 N OR NPNH OR ("at") BARRIER NPNHA);
 
-SELECT:r3 Pr IF (0 ("til"))(*1 (N Gen) BARRIER NPNHA);
+SELECT:r3 Pr IF (0 ("til"))(*1 (n gen) BARRIER NPNHA);
 
 # um
 SELECT:um1 CS IF (-1 ("sjálvur"))(0 ("um"));
@@ -431,12 +431,12 @@ REMOVE ("skal") IF (0 ("skula"))(1 Inf);
 
 # tann
 SELECT ("tann" det) IF (1 ("sum"));
-SELECT ("tann" det $$NADJGD) IF (*1 N + $$NAGD OR A + $$NAGD BARRIER NPNH); 
+SELECT ("tann" det $$NAGD) IF (*1 N + $$NAGD OR A + $$NAGD BARRIER NPNH); 
 
 # tá and tá ið
 SELECT Adv IF  (0 ("tá"))(1 (("ið") OR V OR Det OR Pron OR N);
 SELECT Adv IF (-1 ("tá"))(0 ("ið"));
-SELECT Adv IF (-1 Adv OR NPNH OR COMMA)(0 ("tá"))(1 (det OR prn OR vblex));#TODO NPNH??
+SELECT Adv IF (-1 Adv OR NPNH OR COMMA)(0 ("tá"))(1 Det OR Pron OR V);#TODO: had to remove the parens for this to work (since there's no ("foo") in there… silly visl)
 	# Og tá eg havi...
 	# Fá boð, tá nýtt er at frætta.
 	
@@ -537,11 +537,11 @@ SELECT:r28 $$GENDER IF (-1C (adj) + $$GENDER)(0 N);
 SELECT:r30b $$GENDER IF (-1C (det) + $$GENDER)(0 N);
 SELECT:r30c $$GENDER IF (-1C (prn ind) + $$GENDER)(0 N);
 
-SELECT:r29 $$NAGD IF (-1C (a) + $$NAGD)(0 N);
+SELECT:r29 $$NAGD IF (-1C (adj) + $$NAGD)(0 N);
 SELECT:r30b $$NAGD IF (-1C (det) + $$NAGD)(0 N);
 SELECT:r30c $$NAGD IF (-1C (prn ind) + $$NAGD)(0 N);
 
-SELECT:r30 $$NUMBER IF (-1C (a) + $$NUMBER)(0 N);
+SELECT:r30 $$NUMBER IF (-1C (adj) + $$NUMBER)(0 N);
 SELECT:r30b $$NUMBER IF (-1C (det) + $$NUMBER)(0 N);
 SELECT:r30c $$NUMBER IF (-1C (prn ind) + $$NUMBER)(0 N);
 
@@ -804,7 +804,7 @@ REMOVE:r114 (adj sg) IF (1 (num sg));
 
 # Coordination
 
-SUBSTITUTE:einsog (CC) (CS) TARGET ("og") IF (-1 ("ein" det nt sg gen));
+SUBSTITUTE:einsog (cnjcoo) (cnjsub) TARGET ("og") IF (-1 ("ein" det nt sg gen));
 
 
 SELECT Prt IF (NOT 0 OBL LINK *-1 Pr BARRIER NPNH)(-2C Prt)(-1 CC);
@@ -828,7 +828,7 @@ SELECT A IF (0 (adj $$GENDER $$NAGD))(-1 CC)(-2 (adj $$GENDER $$NAGD));
 
 # Substituting tags
 
-SUBSTITUTE:sumPr (CS) (Pr) TARGET ("sum") (NOT -1 BOS OR COMMA);
+SUBSTITUTE:sumPr (cnjsub) (pr) TARGET ("sum") (NOT -1 BOS OR COMMA);
 
 
 # CC Coordinate NPs
@@ -1082,7 +1082,7 @@ SELECT (np sg) IF (1C  Poss + Sg + @N←);
 SELECT (n pl) IF (1C  Poss + Pl + @N←);
 SELECT (np pl) IF (1C  Poss + Pl + @N←);
 
-SELECT (pos $$NADJGD) IF (-1C N + $$NAGD)(0 (@N←));
+SELECT (pos $$NAGD) IF (-1C N + $$NAGD)(0 (@N←));
 
 REMOVE (det m) IF (NOT 0 Poss)(*1C (n nt) BARRIER NPNH);
 REMOVE (det m) IF (NOT 0 Poss)(*1C (np nt) BARRIER NPNH);
@@ -1102,7 +1102,7 @@ REMOVE (det nt) IF (NOT 0 Poss)(*1C (np f) BARRIER NPNH);
 REMOVE Imp IF (0 (@→N));
        ## Hitt størra ljós.
 
-SELECT ($$NADJGD) IF (0C (@→N))(*1C N + $$NAGD);
+SELECT ($$NAGD) IF (0C (@→N))(*1C N + $$NAGD);
 
 # Postverbal subjects
 
