@@ -98,9 +98,9 @@ LIST POS = n vblex adj adv pr prn ;
 # Noun sets
 
 
-SET NounMscFem = (N Msc) OR (N Fem) ;
-SET NounMscNeu = (N Msc) OR (N Neu) ;
-SET NounFemNeu = (N Fem) OR (N Neu) ;
+SET NounMscFem = (n m) OR (n f) ;
+SET NounMscNeu = (n m) OR (n nt) ;
+SET NounFemNeu = (n f) OR (n nt) ;
 
 # Nominal sets
 
@@ -121,7 +121,7 @@ SET OBL = Acc | Dat | Gen ;
 
 #SET NO
 
-SET PRE-N =  A | Det | Dem | (N Gen) | Num ; # Det???
+SET PRE-N =  A | Det | Dem | (n gen) | Num ; # Det???
 
 LIST COMMA = "," cm ; 
 
@@ -146,11 +146,11 @@ LIST COPULA = "vera" "verða" ;
 LIST AUX = "kunna" "skula" "vera" "verða" "hava" ;
 
 LIST VFIN = pres past imp Sbj ; #TODO
-LIST Ind = pres past ; #TODO pri? (pri=present indicative)
+LIST Ind = pres past ; #TODO pri? (pri=present indicative) fao-dep had LIST INDSBJ = pri Sbj ; and LIST Ind = Ind ;
 
 LIST NONTHIRDV = p1 p2 ;
 
-LIST VINFIN = Inf Sup PrfPrs PrsPrc ;
+LIST VINFIN = inf supn pp pprs ;
 
 LIST MODV = "kunna" "skula" ;
 
@@ -263,7 +263,7 @@ LIST @FV = @FMV @FAUX ;
 LIST @AUX = @IAUX @FAUX ;
 LIST @MV = @IMV @FMV ;
 LIST @FMV = @FMV ;
-LIST KONJ = CS CC ;
+LIST KONJ = cnjsub cnjcoo ;
 
 LIST @-FARG = @-FOBJ @-FSUBJ ;
 SET @ARG = @SUBJ OR @OBJ OR @SPRED OR @OPRED OR @ADVL  ; #  OR @ICL-OBJ OR @<PPRED OR @ADVL>SUBJ
