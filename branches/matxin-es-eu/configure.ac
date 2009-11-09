@@ -126,9 +126,13 @@ AC_C_CONST
 AC_C_INLINE
 AC_TYPE_SIZE_T
 
+
+AC_SUBST(MATXINDATADIR, $prefix/share/matxin/$PACKAGE)
+
 #
 # Generate these files
 #
-AC_CONFIG_FILES([Makefile])
+AC_CONFIG_FILES([Makefile
+		 es-eu.cfg])
 AC_OUTPUT
 

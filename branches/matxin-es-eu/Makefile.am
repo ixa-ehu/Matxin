@@ -9,7 +9,7 @@ PREFIX=$(LANG1)$(LANG2)
 BASENAME=matxin-$(PREFIX1)
 
 TARGETS_COMMON = $(PREFIX).bin $(LANG2)_changes_morph.bin $(LANG2)_measures_gen.bin \
-		 $(LANG2)_morph_gen.bin $(LANG2)_morph_nolex.bin
+		 $(LANG2)_morph_gen.bin $(LANG2)_morph_nolex.bin $(PREFIX1).cfg
 
 TARGETS = $(TARGETS_COMMON)
 
@@ -36,7 +36,7 @@ $(LANG2)_morph_nolex.bin: $(LANG2)_morph_nolex.xml
 EXTRA_DIST=$(PREFIX)_mur.xml $(LANG2)_changes_morph.xml $(LANG2)_measures_gen.xml \
 		$(LANG2)_morph_gen_mur.xml $(LANG2)_morph_nolex.xml
 
-matxin_es_eudir = $(pkgdatadir)/matxin/matxin-es-eu
+matxin_es_eudir = $(datadir)/matxin/matxin-es-eu
 matxin_es_eu_DATA=$(TARGETS)
 
 #dictdataeseu_DATA = eseu_chunk_type.txt \
