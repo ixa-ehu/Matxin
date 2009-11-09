@@ -37,19 +37,18 @@ EXTRA_DIST=$(PREFIX)_mur.xml $(LANG2)_changes_morph.xml $(LANG2)_measures_gen.xm
 		$(LANG2)_morph_gen_mur.xml $(LANG2)_morph_nolex.xml
 
 matxin_es_eudir = $(datadir)/matxin/matxin-es-eu
-matxin_es_eu_DATA=$(TARGETS)
+matxin_es_eu_DATA=$(TARGETS) \
+		  eseu_chunk_type.txt \
+		  eseu_mur.xml \
+		  eseu_lex.txt \
+		  eseu_prep.txt \
+		  eu_changes_morph.xml \
+		  eu_changes_sint.txt \
+		  eu_measures_gen.xml \
+		  eu_morph_gen_mur.xml \
+		  eu_morph_nolex.xml \
+		  eu_sem.txt \
+		  eu_verb_noun_subcat.txt \
+		  eu_verb_subcat.txt
 
-#dictdataeseu_DATA = eseu_chunk_type.txt \
-#                    eseu_mur.xml \
-#                    eseu_lex.txt \
-#                    eseu_prep.txt \
-#                    eu_changes_morph.xml \
-#                    eu_changes_sint.txt \
-#                    eu_measures_gen.xml \
-#                    eu_morph_gen_mur.xml \
-#                    eu_morph_nolex.xml \
-#                    eu_sem.txt \
-#                    eu_verb_noun_subcat.txt \
-#                    eu_verb_subcat.txt
-#
-
+CLEANFILES = -rf $(TARGETS_COMMON)
