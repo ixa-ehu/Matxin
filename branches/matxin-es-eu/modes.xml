@@ -20,13 +20,13 @@
       <program name="matxin-xfer-inter"> <!-- 2 -->
         <file name="interchunk_move2.dat"/>
       </program>
-<!--
       <program name="matxin-xfer-verb">
-        <file name=""/>
+        <file name="eu_verb_transfer.dat"/>
       </program>
       <program name="matxin-xfer-inter"> 
         <file name="interchunk_move3.dat"/>
       </program>
+<!--
       <program name="matxin-gen-inter"> 
         <file name=""/>
       </program>
@@ -39,6 +39,36 @@
 -->
     </pipeline>
   </mode>
+
+  <mode name="es-eu-transfer" install="no">
+    <pipeline>
+      <program name="Analyzer -f">
+        <file name="es-eu.cfg"/>
+      </program>
+      <program name="matxin-xfer-lex">
+        <file name="eseu.bin"/>
+      </program>
+      <program name="matxin-xfer-intra">
+        <file name="intrachunk_move.dat"/>
+      </program>
+      <program name="matxin-xfer-inter"> <!-- 1 -->
+        <file name="interchunk_move1.dat"/>
+      </program>
+      <program name="matxin-xfer-prep">
+        <file name="eseu_prep.txt"/>
+      </program>
+      <program name="matxin-xfer-inter"> <!-- 2 -->
+        <file name="interchunk_move2.dat"/>
+      </program>
+      <program name="matxin-xfer-verb">
+        <file name="eu_verb_transfer.dat"/>
+      </program>
+      <program name="matxin-xfer-inter"> 
+        <file name="interchunk_move3.dat"/>
+      </program>
+    </pipeline>
+  </mode>
+
 <!--
 # The Matxin translation pipe
 ./$DE_FORMATER $FORMAT_TMP $ABS_FILE | iconv -f utf-8 -t iso-8859-1 - | ./Analyzer $MATXIN_PARAM | iconv -f iso-8859-1 -t utf-8 - | ./LT $MATXIN_PARAM | ./ST_intra $MATXIN_PARAM | ./ST_inter inter 1 $MATXIN_PARAM  | ./ST_prep $MATXIN_PARAM  | ./ST_inter inter 2 $MATXIN_PARAM  | ./ST_verb $MATXIN_PARAM | ./ST_inter inter 3 $MATXIN_PARAM  | ./SG_inter $MATXIN_PARAM | ./SG_intra $MATXIN_PARAM | ./MG $MATXIN_PARAM $XML_TMP

@@ -9,7 +9,8 @@ PREFIX=$(LANG1)$(LANG2)
 BASENAME=matxin-$(PREFIX1)
 
 TARGETS_COMMON = $(PREFIX).bin $(LANG2)_changes_morph.bin $(LANG2)_measures_gen.bin \
-		 $(LANG2)_morph_gen.bin $(LANG2)_morph_nolex.bin $(PREFIX1).cfg
+		 $(LANG2)_morph_gen.bin $(LANG2)_morph_nolex.bin $(PREFIX)_verb_transfer.dat \
+		 $(PREFIX1).cfg
 
 TARGETS = $(TARGETS_COMMON)
 
@@ -32,6 +33,10 @@ $(LANG2)_morph_gen.bin: $(LANG2)_morph_gen_mur.xml
 #NoLexGenFile=MATXINDATADIR/dict/es-eu/eu_morph_nolex.bin
 $(LANG2)_morph_nolex.bin: $(LANG2)_morph_nolex.xml
 	lt-comp lr $(LANG2)_morph_nolex.xml $@
+
+#VerbTransferFile=@MATXINDATADIR@/gram/es-eu/eseu_verb_transfer.dat
+$(PREFIX)_verb_transfer.dat: $(PREFIX)_verb_transfer.fst
+	perl $(bindir)/fst2regex.pl < $(PREFIX)_verb_transfer.fst > $@
 
 EXTRA_DIST=$(PREFIX)_mur.xml $(LANG2)_changes_morph.xml $(LANG2)_measures_gen.xml \
 		$(LANG2)_morph_gen_mur.xml $(LANG2)_morph_nolex.xml
