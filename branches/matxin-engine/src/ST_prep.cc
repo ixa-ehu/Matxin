@@ -22,7 +22,9 @@
 #include <sstream>
 #include <locale>
 
-#include "config.h"
+#include <getopt.h>
+
+//#include "config.h"
 #include "matxin_string_utils.h"
 
 #include <data_manager.h>
@@ -30,6 +32,9 @@
 
 using namespace std;
 
+bool DoPrepTrace = false;
+bool UseSubcat = false;
+bool UseTripletes = false;
 
 void merge_cases(vector<wstring> &subj_cases, vector<wstring> &cases)
 {
@@ -196,7 +201,7 @@ wstring procNODE(xmlTextReaderPtr reader, int &length)
 // - NODOrik gabe gelditzen diren CHUNKak desagertzen dira.
 vector<wstring> procCHUNK(xmlTextReaderPtr reader, wstring &attributesFromParent,
                           vector<wstring> &chunk_attributes, wstring sentenceref,
-                          int sentencealloc, config &cfg)
+                          int sentencealloc)
 {
   vector<wstring> chunk_subTrees;
   wstring tagName = getTagName(reader);
@@ -240,7 +245,7 @@ vector<wstring> procCHUNK(xmlTextReaderPtr reader, wstring &attributesFromParent
     // Menpeko CHUNKak irakurri eta tratatzen dira. Gamatika baten arabera
     // zenbait attributu mugitzen dira CHUNK batetik bestera.
     vector<wstring> child_attributes;
-    vector<wstring> child_subTree = procCHUNK(reader, my_attributes, child_attributes, sentenceref, sentencealloc, cfg);
+    vector<wstring> child_subTree = procCHUNK(reader, my_attributes, child_attributes, sentenceref, sentencealloc);
 
     for (size_t i = 0; i < child_attributes.size(); i++)
     {
@@ -271,7 +276,7 @@ vector<wstring> procCHUNK(xmlTextReaderPtr reader, wstring &attributesFromParent
         cases.push_back(text_attrib(chunk_attributes[i], L"rel"));
       }
       else
-        cases  = preposition_transference(my_attributes, chunk_attributes[i], sentenceref, sentencealloc, cfg);
+        cases  = preposition_transference(my_attributes, chunk_attributes[i], sentenceref, sentencealloc);
 
       chunk_cases.push_back(cases);
     }
@@ -284,19 +289,19 @@ vector<wstring> procCHUNK(xmlTextReaderPtr reader, wstring &attributesFromParent
       if (verb_lemma[0]=='_' && verb_lemma[verb_lemma.size() - 1]=='_')
         verb_lemma = verb_lemma.substr(1, verb_lemma.size() - 2);
 
-      if (cfg.UseTripletes)
+      if (UseTripletes)
       {
         //0. Ratnaparki
         for (size_t i = 0; i < chunk_attributes.size(); i++)
         {
           wstring chunk_head = text_attrib(chunk_attributes[i], L"headlem");
-          vector<wstring> new_cases =verb_noun_subcategorisation(verb_lemma, chunk_head, chunk_cases[i], chunk_attributes[i], sentenceref, sentencealloc, cfg);
+          vector<wstring> new_cases =verb_noun_subcategorisation(verb_lemma, chunk_head, chunk_cases[i], chunk_attributes[i], sentenceref, sentencealloc);
           chunk_cases.erase(chunk_cases.begin() + i);
           chunk_cases.insert(chunk_cases.begin() + i, new_cases);
         }
       }
 
-      if (cfg.UseSubcat)
+      if (UseSubcat)
       {
         //1. subjektua bereiztu.
         vector<wstring> subj_cases;
@@ -327,7 +332,7 @@ vector<wstring> procCHUNK(xmlTextReaderPtr reader, wstring &attributesFromParent
         wstring subj_attrib;
         if (subj_attributes.size() > 0)
           subj_attrib = subj_attributes[0];
-        wstring trans = verb_subcategorisation(verb_lemma, chunk_cases, chunk_attributes, subj_cases, subj_attrib, sentenceref, sentencealloc, cfg);
+        wstring trans = verb_subcategorisation(verb_lemma, chunk_cases, chunk_attributes, subj_cases, subj_attrib, sentenceref, sentencealloc);
         my_attributes += L" trans='" + trans + L"'";
 
         //3. subjektu beste menpekoekin batera jarri.
@@ -350,11 +355,12 @@ vector<wstring> procCHUNK(xmlTextReaderPtr reader, wstring &attributesFromParent
       if (prep == L"")
         prep = L"-";
 
-      if (cfg.first_case || chunk_cases[i].size() == 1)
+      //if (cfg.first_case || chunk_cases[i].size() == 1)
+      if (chunk_cases[i].size() == 1)
       {
         if (chunk_cases[i][0] != L"" && chunk_cases[i][0] != L"[ZERO]")
         {
-          if (chunk_cases[i].size() != 1 && cfg.DoPrepTrace)
+          if (chunk_cases[i].size() != 1 && DoPrepTrace)
           {
             wcerr << sentenceref << L":" << alloc << L":"
                   << prep << L" ANBIGUOA GELDITU DA (";
@@ -408,7 +414,7 @@ vector<wstring> procCHUNK(xmlTextReaderPtr reader, wstring &attributesFromParent
 }
 
 
-wstring procSENTENCE (xmlTextReaderPtr reader, config &cfg)
+wstring procSENTENCE (xmlTextReaderPtr reader)
 {
   //SENTENCE etiketa irakurri eta tratatzen du.
   wstring tree, ref;
@@ -441,7 +447,7 @@ wstring procSENTENCE (xmlTextReaderPtr reader, config &cfg)
     vector<wstring> child_attributes;
     vector<vector<wstring> > chunk_cases;
 
-    vector<wstring> subTree = procCHUNK(reader, input, child_attributes, ref, sentencealloc, cfg);
+    vector<wstring> subTree = procCHUNK(reader, input, child_attributes, ref, sentencealloc);
 
     //Preposizioen itzulpena.
     for (size_t i = 0; i < child_attributes.size(); i++)
@@ -458,7 +464,7 @@ wstring procSENTENCE (xmlTextReaderPtr reader, config &cfg)
         cases.push_back(text_attrib(child_attributes[i], L"rel"));
       }
       else
-        cases  = preposition_transference(L"", child_attributes[i], ref, sentencealloc, cfg);
+        cases  = preposition_transference(L"", child_attributes[i], ref, sentencealloc);
 
       chunk_cases.push_back(cases);
     }
@@ -471,12 +477,13 @@ wstring procSENTENCE (xmlTextReaderPtr reader, config &cfg)
       if (prep == L"")
         prep = L"-";
 
-      if ((!cfg.first_case && chunk_cases[i].size() != 1) or 
+      //if ((!cfg.first_case && chunk_cases[i].size() != 1) or 
+      if ((chunk_cases[i].size() != 1) or 
           chunk_cases[i][0] == L"" || chunk_cases[i][0] == L"[ZERO]")
         tree += L"<CHUNK" + write_xml(child_attributes[i]) + L">\n" + subTree[i];
       else
       {
-        if (chunk_cases[i].size() != 1 && cfg.DoPrepTrace)
+        if (chunk_cases[i].size() != 1 && DoPrepTrace)
         {
           wcerr << ref << L":" << alloc << L":"
                 << prep << L" ANBIGUOA GELDITU DA (";
@@ -517,21 +524,91 @@ wstring procSENTENCE (xmlTextReaderPtr reader, config &cfg)
   return tree;
 }
 
+void endProgram(char *name)
+{
+  cout << basename(name) << ": run a preposition transfer grammar" << endl;
+  cout << "USAGE: " << basename(name) << " [-t] [-s subcat_file] [-r subcat_file] prep_file" << endl;
+  cout << "Options:" << endl;
+#if HAVE_GETOPT_LONG
+  cout << "  -s, --subcat-file:   use a subcategorisation file" << endl;
+  cout << "  -r, --triplet-file:  use triplets, noun subcategorisation file" << endl;
+  cout << "  -t, --trace:         perform a trace" << endl;
+#else
+  cout << "  -s:     use a subcategorisation file" << endl;
+  cout << "  -r:     use triplets, noun subcategorisation file" << endl;
+  cout << "  -t:     perform a trace" << endl;
+#endif
+  exit(EXIT_FAILURE);
+}
 
 int main(int argc, char *argv[])
 {
-  config cfg(argv);
+//  config cfg(argv);
 
   // Output in the locale's encoding
   //locale::global(locale(""));
   // ^^^ doesn't work on mac, except with C/POSIX
   setlocale(LC_ALL, "");
 
-  init_preposition_transference(cfg.PrepositionsFile);
-  if (cfg.UseSubcat)
-    init_verb_subcategorisation(cfg.SubcatFile);
-  if (cfg.UseTripletes)
-    init_verb_noun_subcategorisation(cfg.Noun_SubcatFile);
+  cout << argc << endl;
+  if(argc < 2) {
+     endProgram(argv[0]);
+  }
+
+#if HAVE_GETOPT_LONG
+  static struct option long_options[]=
+    {
+      {"subcat-file",        0, 0, 's'},
+      {"triplet-file",      0, 0, 'r'},
+      {"trace",  0, 0, 't'},
+    };
+#endif
+  
+  while(true)
+  {
+#if HAVE_GETOPT_LONG
+    int option_index;
+    int c = getopt_long(argc, argv, "s:r:t", long_options, &option_index);
+#else
+    int c = getopt(argc, argv, "s:r:t");
+#endif
+
+    if(c == -1)
+    {
+      break;
+    }
+
+    switch(c)
+    {
+    case 't':
+      DoPrepTrace = true;
+      break;
+    case 's':
+      UseSubcat = true;
+      init_verb_subcategorisation(optarg);
+      break;
+    case 'r':
+      UseTripletes = true;
+      init_verb_noun_subcategorisation(optarg);
+      break;
+
+    default:
+      endProgram(argv[0]);
+      break;
+    }
+  }
+
+  // ./matxin-xfer-prep -t -s foo_file -r bar_file prep_file
+  //                    1  2  3        4  5        6
+  init_preposition_transference(argv[optind]);
+//  // PrepFile
+//  // SubCatFile
+//  if (cfg.UseSubcat)
+//    init_verb_subcategorisation(cfg.SubcatFile);
+//  // TripletsFile
+//  if (cfg.UseTripletes)
+//    init_verb_noun_subcategorisation(cfg.Noun_SubcatFile);
+//
 
   // libXml liburutegiko reader hasieratzen da, sarrera estandarreko fitxategia irakurtzeko.
   xmlTextReaderPtr reader;
@@ -561,7 +638,7 @@ int main(int argc, char *argv[])
   while (ret == 1 and tagName == L"SENTENCE")
   {
     // SENTENCE irakurri eta prozesatzen du.
-    wcout << procSENTENCE(reader, cfg) << endl;
+    wcout << procSENTENCE(reader) << endl;
     cout.flush();
 
     ret = nextTag(reader);
