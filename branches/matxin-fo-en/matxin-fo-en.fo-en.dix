@@ -65,12 +65,12 @@
     </pardef>
 
     <pardef n="VBLEX_STD">
-      <e><p><l>[pres][p1][sg]</l><r><s n="mi"/>[pres]</r></p></e>
-      <e><p><l>[pres][p2][sg]</l><r><s n="mi"/>[pres]</r></p></e>
-      <e><p><l>[pres][p3][sg]</l><r><s n="mi"/>[pres][p3][sg]</r></p></e>
-      <e><p><l>[pres][p1][pl]</l><r><s n="mi"/>[pres]</r></p></e>
-      <e><p><l>[pres][p2][pl]</l><r><s n="mi"/>[pres]</r></p></e>
-      <e><p><l>[pres][p3][pl]</l><r><s n="mi"/>[pres]</r></p></e>
+      <e><p><l>[pri][p1][sg]</l><r><s n="mi"/>[pres]</r></p></e>
+      <e><p><l>[pri][p2][sg]</l><r><s n="mi"/>[pres]</r></p></e>
+      <e><p><l>[pri][p3][sg]</l><r><s n="mi"/>[pres][p3][sg]</r></p></e>
+      <e><p><l>[pri][p1][pl]</l><r><s n="mi"/>[pres]</r></p></e>
+      <e><p><l>[pri][p2][pl]</l><r><s n="mi"/>[pres]</r></p></e>
+      <e><p><l>[pri][p3][pl]</l><r><s n="mi"/>[pres]</r></p></e>
       <e><p><l>[past][p1][sg]</l><r><s n="mi"/>[past]</r></p></e>
       <e><p><l>[past][p2][sg]</l><r><s n="mi"/>[past]</r></p></e>
       <e><p><l>[past][p3][sg]</l><r><s n="mi"/>[past][p3][sg]</r></p></e>
@@ -232,15 +232,27 @@
       <e><p><l></l><r></r></p></e>
     </pardef>
     <pardef n="PRN_PERSONAL">
-      <e><p><l>[p1][mf][sg][nom]</l><r><s n="mi"/>[p1][mf][sg]</r></p></e>
-      <e><p><l>[p2][mf][sg][nom]</l><r><s n="mi"/>[p2][mf][sg]</r></p></e>
+      <e><p><l>[p1][mf][sg][nom]</l><r><s n="mi"/>[subj][p1][mf][sg]</r></p></e>
+      <e><p><l>[p2][mf][sg][nom]</l><r><s n="mi"/>[subj][p2][mf][sg]</r></p></e>
+      <e><p><l>[p3][m][sg][nom]</l><r><s n="mi"/>[subj][p3][m][sg]</r></p></e>
+      <e><p><l>[p3][f][sg][nom]</l><r><s n="mi"/>[subj][p3][f][sg]</r></p></e>
 
-      <e><p><l>[p1][mf][pl][nom]</l><r><s n="mi"/>[p1][mf][pl]</r></p></e>
-      <e><p><l>[p2][mf][pl][nom]</l><r><s n="mi"/>[p3][mf][pl]</r></p></e>
-      <e><p><l>[p3][mf][pl][nom]</l><r><s n="mi"/>[p4][mf][pl]</r></p></e>
+      <e><p><l>[p1][mf][pl][nom]</l><r><s n="mi"/>[subj][p1][mf][pl]</r></p></e>
+      <e><p><l>[p2][mf][pl][nom]</l><r><s n="mi"/>[subj][p2][mf][pl]</r></p></e>
+      <e><p><l>[p3][mf][pl][nom]</l><r><s n="mi"/>[subj][p3][mf][pl]</r></p></e>
+
+      <e><p><l>[p1][mf][sg][acc]</l><r><s n="mi"/>[obj][p1][mf][sg]</r></p></e>
+      <e><p><l>[p2][mf][sg][acc]</l><r><s n="mi"/>[obj][p2][mf][sg]</r></p></e>
+      <e><p><l>[p3][m][sg][acc]</l><r><s n="mi"/>[obj][p3][m][sg]</r></p></e>
+      <e><p><l>[p3][f][sg][acc]</l><r><s n="mi"/>[obj][p3][f][sg]</r></p></e>
+
+      <e><p><l>[p1][mf][pl][acc]</l><r><s n="mi"/>[obj][p1][mf][pl]</r></p></e>
+      <e><p><l>[p2][mf][pl][acc]</l><r><s n="mi"/>[obj][p2][mf][pl]</r></p></e>
+      <e><p><l>[p3][mf][pl][acc]</l><r><s n="mi"/>[obj][p3][mf][pl]</r></p></e>
+
     </pardef>
     <pardef n="PUNT">
-      <e><p><l>Fp</l><r>Fp</r></p></e>
+      <e><p><l><s n="parol"/>[sent]</l><r><s n="pos"/>[sent]</r></p></e>
     </pardef>
   </pardefs>
   <section id="main" type="standard">
@@ -255,7 +267,7 @@
 
     <!-- Pronouns -->
 
-    <e><p><l>prnpers<s n="parol"/>[prn]</l><r>prnpers<s n="pos"/>[prn]</r></p><par n="PRN_PERSONAL"/></e>
+    <e><p><l>prnpers<s n="parol"/>[prn]</l><r>prpers<s n="pos"/>[prn]</r></p><par n="PRN_PERSONAL"/></e>
 
     <!-- Nouns -->
     <e><p><l>vatn<s n="parol"/>[n][nt]</l><r>water<s n="pos"/>[n]</r></p><par n="NC_STD"/></e>
