@@ -162,6 +162,9 @@ Maybe I should just write a parser instead."
 	to
       (error (concat "Parens mismatch, expected end before char " (number-to-string bound))))))
 
+(defvar fo-cg-stopwords
+  "\\(?:TARGET\\|IF\\)")
+
 (defun fo-cg-replace-all2 ()
   "Does not work with OR on ad-hoc sets (is that legal anyway?), and SUBSTITUTE/MAP/ADD rules without an IF."
   (interactive)
@@ -175,31 +178,49 @@ Maybe I should just write a parser instead."
 ;;   (occur "IF[^;]*\\()[^();]*OR\\|OR[^();]*(\\)")
   )
 
-(defun fo-cg-replace-rules ()
-  (goto-char (point-min))
-  (while (re-search-forward "SELECT\\|REMOVE\\|ADD\\|MAP\\|SUBSTITUTE" (point-max) t)
-    (fo-cg-replace-before-if)
-    (fo-cg-replace-if)))
+(defun fo-cg-replace-rules2 ()
+  (while (re-search-forward "^[^#\\n]*SUBSTITUTE[^ (]* " (point-max) t)
+    (let* ((next (or (save-excursion
+		       (re-search-forward
+			"^[^#()\\n]*\\(SELECT\\|REMOVE\\|ADD\\|MAP\\|SUBSTITUTE\\)" (point-max) t))
+		     (point-max))))
+      (setf next (fo-cg-replace-substitute (point) next)))))
 
-(defun fo-cg-replace-before-if ()
-  (let* (;	 (semicolon (save-excursion (re-search-forward "[^\"\\];")))
-	 (if-point (save-excursion (re-search-forward "[^\"\\];"))))
-    ;\\(\\s \\|)\\)IF\\(\\s \\|(\\)
-    (while (search-forward "(" if-point t)
-      (let* ((s-open (match-beginning 0))
-	     (s-close (fo-cg-scan-sexps s-open if-point)))
-	(incf if-point (- (fo-cg-replace-ad-hoc-set s-open s-close)
-			  s-close))))))
+(defun fo-cg-replace-substitute (beg end)
+  (goto-char beg)
+  (let ((end (fo-cg-scan-sexps (point) end))) ; from
+    (incf end (- (fo-cg-replace-ad-hoc-set (point) end)
+		 end)))
+  (re-search-forward "\s *")
+  (let ((end (fo-cg-scan-sexps (point) end))) ; to
+    (incf end (- (fo-cg-replace-ad-hoc-set (point) end)
+		 end)))
+  (re-search-forward "\s *")
+  (when (string-match fo-cg-stopwords (fo-cg-sexp-at-point))
+    (forward-sexp)
+    (re-search-forward "\s *"))
+  (let ((end (fo-cg-scan-sexps (point) end))) ; target
+    (incf end (- (fo-cg-replace-ad-hoc-set (point) end)
+		 end)))
+  (when (re-search-forward "\s *(" next t)
+    (goto-char (match-beginning 0))
+    (setq end (fo-cg-replace-if end)))
+  end)
 
-(defun fo-cg-replace-if ()
-  "Replace all matches between IF and ;
-Assumes all rules have an ; at the end!"
-  (let ((end (save-excursion (re-search-forward "[^\"\\];"))))
-    (while (search-forward "(" end t)
-      (let* ((c-open (match-beginning 0))
-	     (c-close (fo-cg-scan-sexps c-open end)))
-	(incf end (- (fo-cg-replace-context-condition c-open c-close)
-		     c-close))))))
+
+(defun fo-cg-sexp-at-point ()
+  (let ((bounds (bounds-of-thing-at-point 'sexp nil)))
+    (and bounds (buffer-substring-no-properties (car bounds) (cdr bounds)))))
+
+(defun fo-cg-replace-if (end)
+  "Replace all matches between point (before the first contextual
+test) and `end'"
+  (while (search-forward "(" end t)
+    (let* ((c-open (match-beginning 0))
+	   (c-close (fo-cg-scan-sexps c-open end)))
+      (incf end (- (fo-cg-replace-context-condition c-open c-close)
+		   c-close))))
+  end)
 
 (defun fo-cg-replace-context-condition (c-beg c-end)
   "A context condition is a parenthesis consisting of named SETs
@@ -216,27 +237,38 @@ should be after the end parenthesis."
     (let* ((s-open (match-beginning 0))
 	   (s-close (fo-cg-scan-sexps s-open c-end))
 	   (s-close2
-	    (if (re-search-forward "\\(\\s \\|)\\)OR\\(\\s \\|(\\)" s-close t)
-		(fo-cg-replace-context-condition s-open s-close)
-	      (fo-cg-replace-ad-hoc-set s-open s-close))))
+	    (fo-cg-replace-ad-hoc-set s-open s-close)))
       (incf c-end (- s-close2 s-close))
       (goto-char s-close2)))
   c-end)
-
 
 (defun fo-cg-replace-ad-hoc-set (beg end)
   "Replace all matches within an ad-hoc set. The argument `beg'
 should be before the set parenthesis, `end' should be after the
 end parenthesis."
-  (goto-char (incf beg))
-  (while (re-search-forward "[ )]" end t)
-    (let* ((tag (buffer-substring-no-properties beg (match-beginning 0)))
-	   (repl (assoc tag fo-cg-repls)))
-      (when repl
-	(delete-region beg (match-beginning 0))
-	(goto-char beg)
-	(insert (cdr repl))
-	(incf end (- (length (cdr repl))
-		     (length (car repl))))))
-    (setq beg (point)))
+  (goto-char beg)
+  (if (not (looking-at "("))
+      (forward-sexp)
+    (goto-char (incf beg))
+    (while (re-search-forward "[ )]" end t)
+      (let* ((tag (buffer-substring-no-properties beg (match-beginning 0)))
+	     (repl (assoc tag fo-cg-repls)))
+	(when repl
+	  (delete-region beg (match-beginning 0))
+	  (goto-char beg)
+	  (insert (cdr repl))
+	  (incf end (- (length (cdr repl))
+		       (length (car repl))))))
+      (setq beg (point))))
   end)
+;; if (re-search-forward "\\(\\s \\|)\\)OR\\(\\s \\|(\\)" s-close t)
+;; 		(fo-cg-replace-context-condition s-open s-close)
+
+
+(defun fo-cg-replace-rules () "DEPRECATED"
+  (goto-char (point-min))
+  (while (re-search-forward "SELECT\\|REMOVE\\|ADD\\|MAP\\|SUBSTITUTE" (point-max) t)
+    (let* ((next (save-excursion (re-search-forward "SELECT\\|REMOVE\\|ADD\\|MAP\\|SUBSTITUTE" (point-max) t)))
+	   (semicolon (save-excursion (re-search-forward "[^\"\\];") next t)))
+      (fo-cg-replace-before-if)
+      (fo-cg-replace-if))))

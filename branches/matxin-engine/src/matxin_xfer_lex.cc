@@ -605,6 +605,7 @@ wstring procCHUNK(xmlTextReaderPtr reader, wstring parent_attribs)
   else
   {
     wcerr << L"ERROR: invalid document: found <" << tagName
+	  << L" lem=\"" << attrib(reader, "lem") << "\"..."
           << L"> when </CHUNK> was expected..." << endl;
     exit(-1);
   }
