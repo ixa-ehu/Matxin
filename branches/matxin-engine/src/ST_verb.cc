@@ -23,11 +23,13 @@
 #include <sstream>
 #include <locale>
 
-#include "config.h"
+//#include "config.h"
 #include "matxin_string_utils.h"
 
 #include <XML_reader.h>
 #include <data_manager.h>
+
+bool DoVerbTrace = false;
 
 using namespace std;
 
@@ -536,14 +538,24 @@ wstring procSENTENCE (xmlTextReaderPtr reader)
 
 int main(int argc, char *argv[])
 {
-  config cfg(argv);
+//  config cfg(argv);
 
   // Output in the locale's encoding
   //locale::global(locale(""));
   // ^^^ doesn't work on mac, except with C/POSIX
   setlocale(LC_ALL, "");
 
-  init_verbTrasference(cfg.Verb_TransferFile, cfg.DoVerbTrace);
+  if(argc < 2) {
+    cout << "matxin-xfer-verb [-t] verb_transfer_file" << endl;
+    exit(-1);
+  }
+  if(argc > 2) {
+    DoVerbTrace = true;
+    init_verbTrasference(argv[2], DoVerbTrace);
+  } else {
+    init_verbTrasference(argv[1], DoVerbTrace);
+  }
+
 
   xmlTextReaderPtr reader;
   reader = xmlReaderForFd(0, "", NULL, 0);
@@ -577,6 +589,7 @@ int main(int argc, char *argv[])
     wcout << tree << endl;
     wcout.flush();
 
+/*
     if (cfg.DoTrace)
     {
       ostringstream log_fileName_osoa;
@@ -588,7 +601,7 @@ int main(int argc, char *argv[])
       log_file << tree;
       log_file.close();
     }
-
+*/
     ret = nextTag(reader);
     tagName = getTagName(reader);
     tagType = xmlTextReaderNodeType(reader);
