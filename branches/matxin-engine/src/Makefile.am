@@ -1,7 +1,7 @@
 EXTRA_DIST = config.h data_manager.h matxin_string_utils.h simpleregex.h string_utils.h utf_converter.h XML_reader.h gen_fst2regex.sh gen_Matxin_translator.sh deformat.xsl txt-format.xml rtf-format.xml html-format.xml
 
 bin_PROGRAMS = matxin-xfer-lex matxin-xfer-intra matxin-xfer-inter matxin-xfer-prep matxin-gen-inter matxin-gen-intra \
-	       matxin-gen-morph ST_verb \
+	       matxin-gen-morph matxin-xfer-verb \
                reFormat  
 #txt-deformat html-deformat rtf-deformat
 
@@ -19,8 +19,8 @@ matxin_xfer_inter_LDADD =      -lboost_filesystem
 matxin_xfer_prep_SOURCES = matxin_xfer_prep.cc utf_converter.cc data_manager.cc XML_reader.cc simpleregex.cc matxin_string_utils.cc matxin_string_utils.h
 matxin_xfer_prep_LDADD =      -lboost_filesystem
 
-ST_verb_SOURCES = ST_verb.cc utf_converter.cc data_manager.cc XML_reader.cc simpleregex.cc matxin_string_utils.cc matxin_string_utils.h
-ST_verb_LDADD =      -lboost_filesystem
+matxin_xfer_verb_SOURCES = matxin_xfer_verb.cc utf_converter.cc data_manager.cc XML_reader.cc simpleregex.cc matxin_string_utils.cc matxin_string_utils.h
+matxin_xfer_verb_LDADD =      -lboost_filesystem
 
 matxin_gen_inter_SOURCES = matxin_gen_inter.cc utf_converter.cc data_manager.cc XML_reader.cc simpleregex.cc matxin_string_utils.cc matxin_string_utils.h
 matxin_gen_inter_LDADD =      -lboost_filesystem
