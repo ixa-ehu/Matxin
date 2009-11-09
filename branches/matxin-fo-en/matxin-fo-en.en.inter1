@@ -1,3 +1,0 @@
-#parentChunkType   childChunkType  relativePosition   order
-type='verb-eo'	type='sn' && si='attr-pred'	.*?	x1.x2
-type='punt'	type='verb-eo'	.*?	x2.x1
