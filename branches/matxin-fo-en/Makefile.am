@@ -7,7 +7,7 @@ PREFIX2=$(LANG2)-$(LANG1)
 BASENAME=matxin-$(PREFIX1)
 
 TARGETS_COMMON = $(PREFIX1).automorf.bin $(PREFIX1).autobil.bin $(PREFIX1).autogen.bin \
-     $(PREFIX1).dis.srlx.bin $(PREFIX1).dep.rlx.bin 
+     $(PREFIX1).dis.rlx.bin $(PREFIX1).dep.rlx.bin 
 
 $(PREFIX1).automorf.bin: $(BASENAME).$(LANG1).dix
 	apertium-validate-dictionary $(BASENAME).$(LANG1).dix
@@ -52,12 +52,12 @@ modes/$(PREFIX2).mode: modes.xml
 	apertium-gen-modes modes.xml
 	cp *.mode modes/
 
-matxin_fo_en_DATA=$(PREFIX1).automorf.bin $(PREFIX2).automorf.bin \
-                    $(PREFIX1).autobil.bin $(PREFIX2).autobil.bin \
-                    $(PREFIX1).autogen.bin $(PREFIX2).autogen.bin \
+matxin_fo_en_DATA=$(PREFIX1).automorf.bin  \
+                    $(PREFIX1).autobil.bin  \
+                    $(PREFIX1).autogen.bin  \
                     $(PREFIX1).prob \
 		    $(PREFIX1).dis.rlx.bin $(PREFIX1).dep.rlx.bin \
-	            modes/$(PREFIX1).mode modes/$(PREFIX2).mode modes.xml
+	            modes/$(PREFIX1).mode  modes.xml
 
 install-data-local:
 	mv modes modes.bak

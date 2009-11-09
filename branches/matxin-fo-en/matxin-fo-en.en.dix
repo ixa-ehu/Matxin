@@ -10018,6 +10018,7 @@
     </pardef>
   </pardefs>
   <section id="main" type="standard">
+    <e><p><l>stronger</l><r>strong[adj][sint][comp]</r></p></e>
     <e lm="the most"><p><l>the<b/>most</l><r>the<s n="det"/><s n="def"/><s n="sp"/><j/>most<s n="preadv"/></r></p></e>
     <e lm="I'm"><p><l>I'm</l><r>prpers<s n="prn"/><s n="subj"/><s n="p1"/><s n="mf"/><s n="sg"/><j/>be<s n="vbser"/><s n="pres"/><s n="p1"/><s n="sg"/></r></p></e>
 
