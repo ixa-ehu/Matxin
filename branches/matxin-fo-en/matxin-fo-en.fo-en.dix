@@ -48,6 +48,22 @@
       <e><p><l>[pl][dat][def]</l><r><s n="mi"/>[pl]</r></p></e>
       <e><p><l>[pl][gen][def]</l><r><s n="mi"/>[pl]</r></p></e>
     </pardef>
+    <pardef n="VBSER_STD">
+      <e><p><l>[pri][p1][sg]</l><r><s n="mi"/>[pri][p1][sg]</r></p></e>
+      <e><p><l>[pri][p2][sg]</l><r><s n="mi"/>[pri][p2][sg]</r></p></e>
+      <e><p><l>[pri][p3][sg]</l><r><s n="mi"/>[pri][p3][sg]</r></p></e>
+      <e><p><l>[pri][p1][pl]</l><r><s n="mi"/>[pri][p1][pl]</r></p></e>
+      <e><p><l>[pri][p2][pl]</l><r><s n="mi"/>[pri][p2][pl]</r></p></e>
+      <e><p><l>[pri][p3][pl]</l><r><s n="mi"/>[pri][p3][pl]</r></p></e>
+      <e><p><l>[past][p1][sg]</l><r><s n="mi"/>[past]</r></p></e>
+      <e><p><l>[past][p2][sg]</l><r><s n="mi"/>[past]</r></p></e>
+      <e><p><l>[past][p3][sg]</l><r><s n="mi"/>[past][p3][sg]</r></p></e>
+      <e><p><l>[past][p1][pl]</l><r><s n="mi"/>[past]</r></p></e>
+      <e><p><l>[past][p2][pl]</l><r><s n="mi"/>[past]</r></p></e>
+      <e><p><l>[past][p3][pl]</l><r><s n="mi"/>[past]</r></p></e>
+      <e><p><l></l><r></r></p></e>
+    </pardef>
+
     <pardef n="VBLEX_STD">
       <e><p><l>[pri][p1][sg]</l><r><s n="mi"/>[pres]</r></p></e>
       <e><p><l>[pri][p2][sg]</l><r><s n="mi"/>[pres]</r></p></e>
@@ -63,14 +79,168 @@
       <e><p><l>[past][p3][pl]</l><r><s n="mi"/>[past]</r></p></e>
       <e><p><l></l><r></r></p></e>
     </pardef>
+    <pardef n="ADJ_SINT_STD">
+      <e><p><l>[pst][m][sg][nom]</l><r></r></p></e>
+      <e><p><l>[pst][m][sg][acc]</l><r></r></p></e>
+      <e><p><l>[pst][m][sg][dat]</l><r></r></p></e>
+      <e><p><l>[pst][m][sg][gen]</l><r></r></p></e>
+      <e><p><l>[pst][m][pl][nom]</l><r></r></p></e>
+      <e><p><l>[pst][m][pl][acc]</l><r></r></p></e>
+      <e><p><l>[pst][m][pl][dat]</l><r></r></p></e>
+      <e><p><l>[pst][m][pl][gen]</l><r></r></p></e>
+      <e><p><l>[pst][f][sg][nom]</l><r></r></p></e>
+      <e><p><l>[pst][f][sg][acc]</l><r></r></p></e>
+      <e><p><l>[pst][f][sg][dat]</l><r></r></p></e>
+      <e><p><l>[pst][f][sg][gen]</l><r></r></p></e>
+      <e><p><l>[pst][f][pl][nom]</l><r></r></p></e>
+      <e><p><l>[pst][f][pl][acc]</l><r></r></p></e>
+      <e><p><l>[pst][f][pl][dat]</l><r></r></p></e>
+      <e><p><l>[pst][f][pl][gen]</l><r></r></p></e>
+      <e><p><l>[pst][nt][sg][nom]</l><r></r></p></e>
+      <e><p><l>[pst][nt][sg][acc]</l><r></r></p></e>
+      <e><p><l>[pst][nt][sg][dat]</l><r></r></p></e>
+      <e><p><l>[pst][nt][sg][gen]</l><r></r></p></e>
+      <e><p><l>[pst][nt][pl][nom]</l><r></r></p></e>
+      <e><p><l>[pst][nt][pl][acc]</l><r></r></p></e>
+      <e><p><l>[pst][nt][pl][dat]</l><r></r></p></e>
+      <e><p><l>[pst][nt][pl][gen]</l><r></r></p></e>
+      <e><p><l>[comp][m][sg][nom]</l><r><s n="mi"/>[comp]</r></p></e>
+      <e><p><l>[comp][m][sg][acc]</l><r><s n="mi"/>[comp]</r></p></e>
+      <e><p><l>[comp][m][sg][dat]</l><r><s n="mi"/>[comp]</r></p></e>
+      <e><p><l>[comp][m][sg][gen]</l><r><s n="mi"/>[comp]</r></p></e>
+      <e><p><l>[comp][m][pl][nom]</l><r><s n="mi"/>[comp]</r></p></e>
+      <e><p><l>[comp][m][pl][acc]</l><r><s n="mi"/>[comp]</r></p></e>
+      <e><p><l>[comp][m][pl][dat]</l><r><s n="mi"/>[comp]</r></p></e>
+      <e><p><l>[comp][m][pl][gen]</l><r><s n="mi"/>[comp]</r></p></e>
+      <e><p><l>[comp][f][sg][nom]</l><r><s n="mi"/>[comp]</r></p></e>
+      <e><p><l>[comp][f][sg][acc]</l><r><s n="mi"/>[comp]</r></p></e>
+      <e><p><l>[comp][f][sg][dat]</l><r><s n="mi"/>[comp]</r></p></e>
+      <e><p><l>[comp][f][sg][gen]</l><r><s n="mi"/>[comp]</r></p></e>
+      <e><p><l>[comp][f][pl][nom]</l><r><s n="mi"/>[comp]</r></p></e>
+      <e><p><l>[comp][f][pl][acc]</l><r><s n="mi"/>[comp]</r></p></e>
+      <e><p><l>[comp][f][pl][dat]</l><r><s n="mi"/>[comp]</r></p></e>
+      <e><p><l>[comp][f][pl][gen]</l><r><s n="mi"/>[comp]</r></p></e>
+      <e><p><l>[comp][nt][sg][nom]</l><r><s n="mi"/>[comp]</r></p></e>
+      <e><p><l>[comp][nt][sg][acc]</l><r><s n="mi"/>[comp]</r></p></e>
+      <e><p><l>[comp][nt][sg][dat]</l><r><s n="mi"/>[comp]</r></p></e>
+      <e><p><l>[comp][nt][sg][gen]</l><r><s n="mi"/>[comp]</r></p></e>
+      <e><p><l>[comp][nt][pl][nom]</l><r><s n="mi"/>[comp]</r></p></e>
+      <e><p><l>[comp][nt][pl][acc]</l><r><s n="mi"/>[comp]</r></p></e>
+      <e><p><l>[comp][nt][pl][dat]</l><r><s n="mi"/>[comp]</r></p></e>
+      <e><p><l>[comp][nt][pl][gen]</l><r><s n="mi"/>[comp]</r></p></e>
+      <e><p><l>[sup][m][sg][nom]</l><r><s n="mi"/>[sup]</r></p></e>
+      <e><p><l>[sup][m][sg][acc]</l><r><s n="mi"/>[sup]</r></p></e>
+      <e><p><l>[sup][m][sg][dat]</l><r><s n="mi"/>[sup]</r></p></e>
+      <e><p><l>[sup][m][sg][gen]</l><r><s n="mi"/>[sup]</r></p></e>
+      <e><p><l>[sup][m][pl][nom]</l><r><s n="mi"/>[sup]</r></p></e>
+      <e><p><l>[sup][m][pl][acc]</l><r><s n="mi"/>[sup]</r></p></e>
+      <e><p><l>[sup][m][pl][dat]</l><r><s n="mi"/>[sup]</r></p></e>
+      <e><p><l>[sup][m][pl][gen]</l><r><s n="mi"/>[sup]</r></p></e>
+      <e><p><l>[sup][f][sg][nom]</l><r><s n="mi"/>[sup]</r></p></e>
+      <e><p><l>[sup][f][sg][acc]</l><r><s n="mi"/>[sup]</r></p></e>
+      <e><p><l>[sup][f][sg][dat]</l><r><s n="mi"/>[sup]</r></p></e>
+      <e><p><l>[sup][f][sg][gen]</l><r><s n="mi"/>[sup]</r></p></e>
+      <e><p><l>[sup][f][pl][nom]</l><r><s n="mi"/>[sup]</r></p></e>
+      <e><p><l>[sup][f][pl][acc]</l><r><s n="mi"/>[sup]</r></p></e>
+      <e><p><l>[sup][f][pl][dat]</l><r><s n="mi"/>[sup]</r></p></e>
+      <e><p><l>[sup][f][pl][gen]</l><r><s n="mi"/>[sup]</r></p></e>
+      <e><p><l>[sup][nt][sg][nom]</l><r><s n="mi"/>[sup]</r></p></e>
+      <e><p><l>[sup][nt][sg][acc]</l><r><s n="mi"/>[sup]</r></p></e>
+      <e><p><l>[sup][nt][sg][dat]</l><r><s n="mi"/>[sup]</r></p></e>
+      <e><p><l>[sup][nt][sg][gen]</l><r><s n="mi"/>[sup]</r></p></e>
+      <e><p><l>[sup][nt][pl][nom]</l><r><s n="mi"/>[sup]</r></p></e>
+      <e><p><l>[sup][nt][pl][acc]</l><r><s n="mi"/>[sup]</r></p></e>
+      <e><p><l>[sup][nt][pl][dat]</l><r><s n="mi"/>[sup]</r></p></e>
+      <e><p><l>[sup][nt][pl][gen]</l><r><s n="mi"/>[sup]</r></p></e>
+    </pardef>
+
     <pardef n="ADJ_STD">
-      <e><p><l></l><r></r></p></e>
+      <e><p><l>[pst][m][sg][nom]</l><r></r></p></e>
+      <e><p><l>[pst][m][sg][acc]</l><r></r></p></e>
+      <e><p><l>[pst][m][sg][dat]</l><r></r></p></e>
+      <e><p><l>[pst][m][sg][gen]</l><r></r></p></e>
+      <e><p><l>[pst][m][pl][nom]</l><r></r></p></e>
+      <e><p><l>[pst][m][pl][acc]</l><r></r></p></e>
+      <e><p><l>[pst][m][pl][dat]</l><r></r></p></e>
+      <e><p><l>[pst][m][pl][gen]</l><r></r></p></e>
+      <e><p><l>[pst][f][sg][nom]</l><r></r></p></e>
+      <e><p><l>[pst][f][sg][acc]</l><r></r></p></e>
+      <e><p><l>[pst][f][sg][dat]</l><r></r></p></e>
+      <e><p><l>[pst][f][sg][gen]</l><r></r></p></e>
+      <e><p><l>[pst][f][pl][nom]</l><r></r></p></e>
+      <e><p><l>[pst][f][pl][acc]</l><r></r></p></e>
+      <e><p><l>[pst][f][pl][dat]</l><r></r></p></e>
+      <e><p><l>[pst][f][pl][gen]</l><r></r></p></e>
+      <e><p><l>[pst][nt][sg][nom]</l><r></r></p></e>
+      <e><p><l>[pst][nt][sg][acc]</l><r></r></p></e>
+      <e><p><l>[pst][nt][sg][dat]</l><r></r></p></e>
+      <e><p><l>[pst][nt][sg][gen]</l><r></r></p></e>
+      <e><p><l>[pst][nt][pl][nom]</l><r></r></p></e>
+      <e><p><l>[pst][nt][pl][acc]</l><r></r></p></e>
+      <e><p><l>[pst][nt][pl][dat]</l><r></r></p></e>
+      <e><p><l>[pst][nt][pl][gen]</l><r></r></p></e>
+      <e><p><l>[comp][m][sg][nom]</l><r></r></p></e>
+      <e><p><l>[comp][m][sg][acc]</l><r></r></p></e>
+      <e><p><l>[comp][m][sg][dat]</l><r></r></p></e>
+      <e><p><l>[comp][m][sg][gen]</l><r></r></p></e>
+      <e><p><l>[comp][m][pl][nom]</l><r></r></p></e>
+      <e><p><l>[comp][m][pl][acc]</l><r></r></p></e>
+      <e><p><l>[comp][m][pl][dat]</l><r></r></p></e>
+      <e><p><l>[comp][m][pl][gen]</l><r></r></p></e>
+      <e><p><l>[comp][f][sg][nom]</l><r></r></p></e>
+      <e><p><l>[comp][f][sg][acc]</l><r></r></p></e>
+      <e><p><l>[comp][f][sg][dat]</l><r></r></p></e>
+      <e><p><l>[comp][f][sg][gen]</l><r></r></p></e>
+      <e><p><l>[comp][f][pl][nom]</l><r></r></p></e>
+      <e><p><l>[comp][f][pl][acc]</l><r></r></p></e>
+      <e><p><l>[comp][f][pl][dat]</l><r></r></p></e>
+      <e><p><l>[comp][f][pl][gen]</l><r></r></p></e>
+      <e><p><l>[comp][nt][sg][nom]</l><r></r></p></e>
+      <e><p><l>[comp][nt][sg][acc]</l><r></r></p></e>
+      <e><p><l>[comp][nt][sg][dat]</l><r></r></p></e>
+      <e><p><l>[comp][nt][sg][gen]</l><r></r></p></e>
+      <e><p><l>[comp][nt][pl][nom]</l><r></r></p></e>
+      <e><p><l>[comp][nt][pl][acc]</l><r></r></p></e>
+      <e><p><l>[comp][nt][pl][dat]</l><r></r></p></e>
+      <e><p><l>[comp][nt][pl][gen]</l><r></r></p></e>
+      <e><p><l>[sup][m][sg][nom]</l><r></r></p></e>
+      <e><p><l>[sup][m][sg][acc]</l><r></r></p></e>
+      <e><p><l>[sup][m][sg][dat]</l><r></r></p></e>
+      <e><p><l>[sup][m][sg][gen]</l><r></r></p></e>
+      <e><p><l>[sup][m][pl][nom]</l><r></r></p></e>
+      <e><p><l>[sup][m][pl][acc]</l><r></r></p></e>
+      <e><p><l>[sup][m][pl][dat]</l><r></r></p></e>
+      <e><p><l>[sup][m][pl][gen]</l><r></r></p></e>
+      <e><p><l>[sup][f][sg][nom]</l><r></r></p></e>
+      <e><p><l>[sup][f][sg][acc]</l><r></r></p></e>
+      <e><p><l>[sup][f][sg][dat]</l><r></r></p></e>
+      <e><p><l>[sup][f][sg][gen]</l><r></r></p></e>
+      <e><p><l>[sup][f][pl][nom]</l><r></r></p></e>
+      <e><p><l>[sup][f][pl][acc]</l><r></r></p></e>
+      <e><p><l>[sup][f][pl][dat]</l><r></r></p></e>
+      <e><p><l>[sup][f][pl][gen]</l><r></r></p></e>
+      <e><p><l>[sup][nt][sg][nom]</l><r></r></p></e>
+      <e><p><l>[sup][nt][sg][acc]</l><r></r></p></e>
+      <e><p><l>[sup][nt][sg][dat]</l><r></r></p></e>
+      <e><p><l>[sup][nt][sg][gen]</l><r></r></p></e>
+      <e><p><l>[sup][nt][pl][nom]</l><r></r></p></e>
+      <e><p><l>[sup][nt][pl][acc]</l><r></r></p></e>
+      <e><p><l>[sup][nt][pl][dat]</l><r></r></p></e>
+      <e><p><l>[sup][nt][pl][gen]</l><r></r></p></e>
     </pardef>
     <pardef n="ADV_STD">
       <e><p><l></l><r></r></p></e>
     </pardef>
+    <pardef n="PRN_PERSONAL">
+      <e><p><l>[p1][mf][sg][nom]</l><r><s n="mi"/>[p1][mf][sg]</r></p></e>
+      <e><p><l>[p2][mf][sg][nom]</l><r><s n="mi"/>[p2][mf][sg]</r></p></e>
+
+      <e><p><l>[p1][mf][pl][nom]</l><r><s n="mi"/>[p1][mf][pl]</r></p></e>
+      <e><p><l>[p2][mf][pl][nom]</l><r><s n="mi"/>[p3][mf][pl]</r></p></e>
+      <e><p><l>[p3][mf][pl][nom]</l><r><s n="mi"/>[p4][mf][pl]</r></p></e>
+    </pardef>
     <pardef n="PUNT">
-      <e><p><l><s n="parol"/>Fp</l><r><s n="parol"/>Fp</r></p></e>
+      <e><p><l>Fp</l><r>Fp</r></p></e>
     </pardef>
   </pardefs>
   <section id="main" type="standard">
@@ -81,6 +251,11 @@
     <!-- Conjunctions -->
 
     <e><p><l>og<s n="parol"/>[cnjcoo]</l><r>and<s n="cat"/>[cnjcoo]</r></p></e>
+    <e><p><l>um<s n="parol"/>[cnjsub]</l><r>if<s n="cat"/>[cnjsub]</r></p></e>
+
+    <!-- Pronouns -->
+
+    <e><p><l>prnpers<s n="parol"/>[prn]</l><r>prnpers<s n="cat"/>[prn]</r></p><par n="PRN_PERSONAL"/></e>
 
     <!-- Nouns -->
     <e><p><l>vatn<s n="parol"/>[n][nt]</l><r>water<s n="cat"/>[n]</r></p><par n="NC_STD"/></e>
@@ -498,6 +673,8 @@
     <e><p><l>tóm<s n="parol"/>[n][nt]</l><r>void<s n="cat"/>[n]</r></p><par n="NC_STD"/></e>
 
     <!-- Verbs -->
+    <e><p><l>vera<s n="parol"/>[vbser]</l><r>be<s n="cat"/>[vbser]</r></p><par n="VBSER_STD"/></e>
+
     <e><p><l>skapa<s n="parol"/>[vblex]</l><r>create<s n="cat"/>[vblex]</r></p><par n="VBLEX_STD"/></e>
     <e><p><l>sveima<s n="parol"/>[vblex]</l><r>float<s n="cat"/>[vblex]</r></p><par n="VBLEX_STD"/></e>
     <e><p><l>siga<s n="parol"/>[vblex]</l><r>say<s n="cat"/>[vblex]</r></p><par n="VBLEX_STD"/></e>
@@ -635,24 +812,24 @@
     <e><p><l>hví<s n="adv"/></l><r>af<b/>hverju<s n="adv"/></r></p><par n="ADV_STD"/></e>
 
     <!-- Adjectives -->
-    <e><p><l>fræls<s n="adj"/></l><r>free<s n="adj"/><s n="sint"/></r></p><par n="ADJ_STD"/></e>
-    <e><p><l>jøvn<s n="adj"/></l><r>even<s n="adj"/></r></p><par n="ADJ_STD"/></e>
-    <e><p><l>bláur<s n="adj"/></l><r>blue<s n="adj"/></r></p><par n="ADJ_STD"/></e>
-    <e><p><l>lítil<s n="adj"/></l><r>small<s n="adj"/><s n="sint"/></r></p><par n="ADJ_STD"/></e>
-    <e><p><l>mikil<s n="adj"/></l><r>much<s n="adj"/></r></p><par n="ADJ_STD"/></e>
-    <e><p><l>stórur<s n="adj"/></l><r>big<s n="adj"/><s n="sint"/></r></p><par n="ADJ_STD"/></e>
-    <e><p><l>ríkur<s n="adj"/></l><r>rich<s n="adj"/></r></p><par n="ADJ_STD"/></e>
-    <e><p><l>góður<s n="adj"/></l><r>good<s n="adj"/><s n="sint"/></r></p><par n="ADJ_STD"/></e>
-    <e><p><l>grønur<s n="adj"/></l><r>green<s n="adj"/><s n="sint"/></r></p><par n="ADJ_STD"/></e>
-    <e><p><l>sterkur<s n="adj"/></l><r>strong<s n="adj"/><s n="sint"/></r></p><par n="ADJ_STD"/></e>
-    <e><p><l>skynsamur<s n="adj"/></l><r>intelligent<s n="adj"/></r></p><par n="ADJ_STD"/></e>
-    <e><p><l>oyðin<s n="adj"/></l><r>empty<s n="adj"/><s n="sint"/></r></p><par n="ADJ_STD"/></e>
-    <e><p><l>líkur<s n="adj"/></l><r>alike<s n="adj"/></r></p><par n="ADJ_STD"/></e>
-    <e><p><l>dýrur<s n="adj"/></l><r>dear<s n="adj"/><s n="sint"/></r></p><par n="ADJ_STD"/></e>
-    <e><p><l>fastur<s n="adj"/></l><r>firm<s n="adj"/><s n="sint"/></r></p><par n="ADJ_STD"/></e>
-    <e><p><l>beinur<s n="adj"/></l><r>straight<s n="adj"/></r></p><par n="ADJ_STD"/></e>
-    <e><p><l>eitur<s n="adj"/></l><r>hot<s n="adj"/><s n="sint"/></r></p><par n="ADJ_STD"/></e>
-    <e><p><l>livandi<s n="adj"/></l><r>alive<s n="adj"/></r></p><par n="ADJ_STD"/></e>
+    <e><p><l>fræls<s n="parol"/>[adj]</l><r>free<s n="parol"/>[adj][sint]</r></p><par n="ADJ_SINT_STD"/></e>
+    <e><p><l>lítil<s n="parol"/>[adj]</l><r>small<s n="parol"/>[adj][sint]</r></p><par n="ADJ_SINT_STD"/></e>
+    <e><p><l>stórur<s n="parol"/>[adj]</l><r>big<s n="parol"/>[adj][sint]</r></p><par n="ADJ_SINT_STD"/></e>
+    <e><p><l>jøvn<s n="parol"/>[adj]</l><r>even<s n="parol"/>[adj]</r></p><par n="ADJ_STD"/></e>
+    <e><p><l>bláur<s n="parol"/>[adj]</l><r>blue<s n="parol"/>[adj]</r></p><par n="ADJ_STD"/></e>
+    <e><p><l>mikil<s n="parol"/>[adj]</l><r>much<s n="parol"/>[adj]</r></p><par n="ADJ_STD"/></e>
+    <e><p><l>ríkur<s n="parol"/>[adj]</l><r>rich<s n="parol"/>[adj]</r></p><par n="ADJ_STD"/></e>
+    <e><p><l>góður<s n="parol"/>[adj]</l><r>good<s n="parol"/>[adj][sint]</r></p><par n="ADJ_SINT_STD"/></e>
+    <e><p><l>grønur<s n="parol"/>[adj]</l><r>green<s n="parol"/>[adj][sint]</r></p><par n="ADJ_SINT_STD"/></e>
+    <e><p><l>sterkur<s n="parol"/>[adj]</l><r>strong<s n="parol"/>[adj][sint]</r></p><par n="ADJ_SINT_STD"/></e>
+    <e><p><l>skynsamur<s n="parol"/>[adj]</l><r>intelligent<s n="parol"/>[adj]</r></p><par n="ADJ_STD"/></e>
+    <e><p><l>oyðin<s n="parol"/>[adj]</l><r>empty<s n="parol"/>[adj][sint]</r></p><par n="ADJ_SINT_STD"/></e>
+    <e><p><l>líkur<s n="parol"/>[adj]</l><r>alike<s n="parol"/>[adj]</r></p><par n="ADJ_STD"/></e>
+    <e><p><l>dýrur<s n="parol"/>[adj]</l><r>dear<s n="parol"/>[adj][sint]</r></p><par n="ADJ_SINT_STD"/></e>
+    <e><p><l>fastur<s n="parol"/>[adj]</l><r>firm<s n="parol"/>[adj][sint]</r></p><par n="ADJ_SINT_STD"/></e>
+    <e><p><l>beinur<s n="parol"/>[adj]</l><r>straight<s n="parol"/>[adj]</r></p><par n="ADJ_STD"/></e>
+    <e><p><l>eitur<s n="parol"/>[adj]</l><r>hot<s n="parol"/>[adj][sint]</r></p><par n="ADJ_SINT_STD"/></e>
+    <e><p><l>livandi<s n="parol"/>[adj]</l><r>alive<s n="parol"/>[adj]</r></p><par n="ADJ_STD"/></e>
 
 
     <e><re>.</re><par n="PUNT"/></e>

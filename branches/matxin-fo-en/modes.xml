@@ -32,7 +32,7 @@
       <program name="cg-proc -w">
 	<file name="fo-en.rlx.bin"/>
       </program>
-      <program name="apertium-tagger -pg $2">
+      <program name="apertium-tagger -pg">
         <file name="fo-en.prob"/>
       </program>
       <program name="cg-proc -wf2">
@@ -49,7 +49,7 @@
       <program name="cg-proc -w">
 	<file name="fo-en.rlx.bin"/>
       </program>
-      <program name="apertium-tagger -pg $2">
+      <program name="apertium-tagger -pg">
         <file name="fo-en.prob"/>
       </program>
       <program name="cg-proc -wf2">

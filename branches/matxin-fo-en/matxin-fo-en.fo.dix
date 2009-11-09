@@ -26359,7 +26359,7 @@
     <e lm="á"><i>á</i><par n="við__pr"/></e>
     <e lm="at"><i>at</i><par n="við__pr"/></e>
     <e lm="í"><i>í</i><par n="við__pr"/></e>
-    <e lm="um"><i>um</i><par n="við__pr"/></e>
+ <!--   <e lm="um"><i>um</i><par n="við__pr"/></e> -->
     <e lm="fyri"><i>fyri</i><par n="við__pr"/></e>
     <e lm="frá"><i>frá</i><par n="við__pr"/></e>
     <e lm="hjá"><i>hjá</i><par n="við__pr"/></e>
