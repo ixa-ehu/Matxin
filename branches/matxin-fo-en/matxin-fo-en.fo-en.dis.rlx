@@ -25,7 +25,7 @@ DELIMITERS = "<.>" "<!>" "<?>" "<¶>";
 LIST BOS = (>>>) (<s>); 
 LIST EOS = (<<<) (</s>); # vislcg and CG-2 together.
 
-LIST N = n ;
+LIST N = n np ;
 LIST V = vblex vbser ;
 LIST A = adj ;
 LIST Prop = np ;
@@ -951,7 +951,7 @@ ADD:rOPR1 (@←OBJ) TARGET (n acc) OR (np acc) OR (prn acc) IF (*-1 OBJPREDVERB 
 MAP:rOPR2 (@←OPRED) TARGET (n acc) OR (np acc) OR (prn acc) OR (adj acc) IF (*-1 NOMINALHEAD + Acc BARRIER NPNHA LINK *-1 OBJPREDVERB BARRIER S-BOUNDARY);
 
 MAP:r78 (@←OBJ) TARGET (n acc) OR (np acc) OR (num acc) OR (prn acc) IF (*-1 V BARRIER Pr OR S-BOUNDARY);
-MAP:r78 (@←OBJ) TARGET (Det Acc) (*-1 V BARRIER Pr OR S-BOUNDARY)(NOT *1 N BARRIER NPNHA);
+MAP:r78 (@←OBJ) TARGET (det acc) (*-1 V BARRIER Pr OR S-BOUNDARY)(NOT *1 N BARRIER NPNHA);
 MAP:r79 (@←IOBJ) TARGET (n dat) OR (np dat) OR (num dat) OR (prn dat) IF (*1 (@←OBJ) BARRIER NPNHA);
 MAP:r80 (@←OBJ) TARGET Dat IF (*-1 DATV);
 
