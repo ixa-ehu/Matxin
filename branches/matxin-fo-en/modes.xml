@@ -14,12 +14,15 @@
       <program name="cg-proc -wf2">
 	<file name="fo-en.dis.rlx.bin"/>
       </program>
-      <!-- will pretransfer be needed? -->
       <program name="matxin-xfer-lex">
         <file name="fo-en.autobil.bin"/>
       </program>
-      <program name="lt-proc $1">
-        <file name="fo-en.autogen.bin"/>
+      <program name="matxin-xfer-intra">
+        <file name="matxin-fo-en.fo-en.intra_move.dat"/>
+      </program>
+      <program name="matxin-gen-morph">
+        <file name="fo-en.autogen.bin"/>                       <!--todo-->
+	<file name="../matxin-es-eu/eu_morph_preproc.dat"/>
       </program>
     </pipeline>
   </mode>
@@ -50,6 +53,23 @@
     </pipeline>
   </mode>
 
+  <mode name="fo-en-dep-asf" install="no">
+    <pipeline>
+      <program name="lt-proc -w">
+        <file name="fo-en.automorf.bin"/>
+      </program>
+      <program name="cg-proc -w">
+	<file name="fo-en.dis.rlx.bin"/>
+      </program>
+      <program name="apertium-tagger -pg">
+        <file name="fo-en.prob"/>
+      </program>
+      <program name="cg-proc -w">
+	<file name="fo-en.dep.rlx.bin"/>
+      </program>
+    </pipeline>
+  </mode>
+
   <mode name="fo-en-lexfer" install="no">
     <pipeline>
       <program name="lt-proc -w">
@@ -67,9 +87,7 @@
       <program name="matxin-xfer-lex">
 	<file name="fo-en.autobil.bin"/>
       </program>
-
     </pipeline>
   </mode>
-
-
+  
 </modes>
