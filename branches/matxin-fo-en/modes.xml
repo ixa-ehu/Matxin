@@ -24,6 +24,15 @@
     </pipeline>
   </mode>
 
+  <mode name="fo-en-morph" install="no">
+    <pipeline>
+      <program name="lt-proc -w">
+        <file name="fo-en.automorf.bin"/>
+      </program>
+    </pipeline>
+  </mode>
+
+
   <mode name="fo-en-analysis" install="no">
     <pipeline>
       <program name="lt-proc -w">
