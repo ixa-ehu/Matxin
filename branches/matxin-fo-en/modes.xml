@@ -11,11 +11,11 @@
       <program name="apertium-tagger -pg $2">
         <file name="fo-en.prob"/>
       </program>
-      <program name="cg-proc -w">
+      <program name="cg-proc -wf2">
 	<file name="fo-en.rlx-dep.bin"/>
       </program>
       <!-- will pretransfer be needed? -->
-      <program name="matxin-lexfer">
+      <program name="matxin-xfer-lex">
         <file name="fo-en.autobil.bin"/>
       </program>
       <program name="lt-proc $1">
