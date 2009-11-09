@@ -1,0 +1,27 @@
+<General>
+AllowBetweenMarkers 0
+MaxLines 0
+</General>
+<Markers>
+" "
+( )
+{ }
+/* */
+</Markers>
+<SentenceEnd>
+. 0
+? 0
+! 0
+, 1
+... 1
+- 1
+¿ 1
+« 1
+» 1
+%y 1
+: 1
+</SentenceEnd>
+<SentenceStart>
+¿
+¡
+</SentenceStart>
