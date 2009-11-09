@@ -986,8 +986,8 @@ int main(int argc, char *argv[])
   // ^^^ doesn't work on mac, except with C/POSIX
   setlocale(LC_ALL, "");
 
-  if(argc < 3) {
-    cout << "matxin-gen-morph [fst] [tag order file]" << endl;
+  if(argc < 2) {
+    cout << "matxin-gen-morph fst_file [tag order file]" << endl;
     exit(-1);
   }
 
@@ -1016,7 +1016,7 @@ int main(int argc, char *argv[])
 
   //ordena definituko duen zerbitzaria hasieratu...
 //  init_generation_order(cfg.Tag_OrderFile);
-  init_generation_order(argv[2]);
+  //init_generation_order(argv[2]);
 
   //cerr << "Fitxategi guztiak irekita." << endl;
 
