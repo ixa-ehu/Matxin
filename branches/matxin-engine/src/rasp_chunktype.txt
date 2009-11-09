@@ -1,9 +1,0 @@
-#RASPen erlazioa	Gure type-a	Buruaren informazio morf.
-ncsubj	is
-dobj	is
-obj2	is
-iobj	is
-top	is	^N.*
-top	adi-kat	^V.*
-csubj	adi-kat
-conj	emen
