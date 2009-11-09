@@ -1,4 +1,4 @@
-h! ES->EU Aditz Kateen Transferentziarako FST definizioa
+!! ES->EU Aditz Kateen Transferentziarako FST definizioa
 
 
 echo >> Definizioak ; 
@@ -35,7 +35,7 @@ define IMInfGer	     [ "[" IVM[N|G]   Karak* "]"  ] ;
 define IMEzJok	     [ "[" IVM[N|G|P] Karak* "]"  ] ;
 
 
-<<<<<<< def_aditz_transf.aer
+#<<<<<<< def_aditz_transf.aer
 define VMIP	     [ "[" VM{ip} Karak* "]" ];
 define VMII	     [ "[" VM{ii} Karak* "]" ];
 define VMIS	     [ "[" VM{is} Karak* "]" ];
@@ -52,7 +52,7 @@ define VAIF	     [ "[" VA{if} Karak* "]" ];
 define VAIC	     [ "[" VA{ic} Karak* "]" ];
 define VASP	     [ "[" VA{sp} Karak* "]" ];
 define VASI	     [ "[" VA{si} Karak* "]" ];
-=======
+#=======
 define VMIP	     [ "[" IVM{IP} Karak* "]" ];
 define VMII	     [ "[" IVM{II} Karak* "]" ];
 define VMIS	     [ "[" IVM{IS} Karak* "]" ];
@@ -69,7 +69,7 @@ define VAIF	     [ "[" IVA{IF} Karak* "]" ];
 define VAIC	     [ "[" IVA{IC} Karak* "]" ];
 define VASP	     [ "[" IVA{SP} Karak* "]" ];
 define VASI	     [ "[" IVA{SI} Karak* "]" ];
->>>>>>> 1.22
+#>>>>>>> 1.22
 
 
 !define IMJok	     [ VMIP | VMII | VMIS | VMIF | VMIC | 
@@ -150,19 +150,19 @@ define AdTrIntr	     [ {izan} | {egon}  | {etorri}  | {joan}            ] ;
 define AdTrinkoa     [ AdTrTran | AdTrIntr ];
 
 
-define PaSe	     [ [ {.se.} "[" {P0000000} "]" ] | [ {.él.} "[" {P0300000} "]" ] | [ {.se.} "[" {PP3CN000} "]" ] ];
+define PaSe	     [ [ {.se.} "[" {P0000000} "]" ] | [ {.Ã©l.} "[" {P0300000} "]" ] | [ {.se.} "[" {PP3CN000} "]" ] ];
 define PaMe	     [ [ {.yo.} "[" {PP1CS000} "]" ] | [ {.yo.} "[" {P010S000} "]" ] ];
-define PaTe	     [ [ {.tú.} "[" {PP2CS000} "]" ] | [ {.tú.} "[" {P020S000} "]" ] ];
-define PaLo	     [ {.él.} "[" {PP3MSA00} "]" ];
-define PaLa	     [ {.él.} "[" {PP3FSA00} "]" ];
-define PaLe	     [ {.él.} "[" {PP3CSD00} "]" ];
-define PaOs	     [ [ {.tú.} "[" {PP2CP000} "]" ] | [ {.tú.} "[" {P020P000} "]" ] ];
+define PaTe	     [ [ {.tÃº.} "[" {PP2CS000} "]" ] | [ {.tÃº.} "[" {P020S000} "]" ] ];
+define PaLo	     [ {.Ã©l.} "[" {PP3MSA00} "]" ];
+define PaLa	     [ {.Ã©l.} "[" {PP3FSA00} "]" ];
+define PaLe	     [ {.Ã©l.} "[" {PP3CSD00} "]" ];
+define PaOs	     [ [ {.tÃº.} "[" {PP2CP000} "]" ] | [ {.tÃº.} "[" {P020P000} "]" ] ];
 define PaNos	     [ [ {.yo.} "[" {PP1CP000} "]" ] | [ {.yo.} "[" {P010P000} "]" ] ];
-define PaLos	     [ {.él.} "[" {PP3MPA00} "]" ];
-define PaLas	     [ {.él.} "[" {PP3FPA00} "]" ];
-define PaLes	     [ {.él.} "[" {PP3CPD00} "]" ];
-define PaSePost	     [ {.él.} "[" {PP3CN000} "]" ];
-define PaLoPost	     [ {.él.} "[" {PP3CNA00} "]" ];
+define PaLos	     [ {.Ã©l.} "[" {PP3MPA00} "]" ];
+define PaLas	     [ {.Ã©l.} "[" {PP3FPA00} "]" ];
+define PaLes	     [ {.Ã©l.} "[" {PP3CPD00} "]" ];
+define PaSePost	     [ {.Ã©l.} "[" {PP3CN000} "]" ];
+define PaLoPost	     [ {.Ã©l.} "[" {PP3CNA00} "]" ];
 
 define Pr	     [ PaSe | PaSePost | PaMe | PaTe | PaLo | PaLoPost | PaLa | PaLe | PaNos | PaOs | PaLos | PaLas | PaLes ];
 
@@ -356,7 +356,7 @@ define edunUkan [
        [  {_edun} -> "_ukan"    ||  ?* _ ?* ]
 ];
 
-;
+#;
 
 define LoLa [
        [  {obj00} -> "obj3s"    || ?* [ PaLo  | PaLa  | PaLoPost  ] ?*				 _ ?*  ]
