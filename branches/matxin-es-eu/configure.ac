@@ -2,7 +2,8 @@
 # Process this file with autoconf to produce a configure script.
 
 AC_PREREQ(2.59)
-AC_INIT([matxin-es-eu], [1.5.0])
+AC_INIT([matxin-es-eu], [1.5.0], no-define)
+AM_INIT_AUTOMAKE([matxin-es-eu], [1.5.0], no-define)
 PACKAGE=matxin-es-eu
 
 GENERIC_MAJOR_VERSION=1
@@ -28,13 +29,13 @@ AC_SUBST(GENERIC_LIBRARY_NAME, $PACKAGE)
 #
 m4_define([required_lttoolbox_version], [3.1.1])
 m4_define([required_libxml_version], [2.6.17])
+m4_define([required_matxin_version], [1.5.0])
 m4_define([required_libpcre_version], [6.4])
 
 #
 # Our configure script should create Makefiles
 #
 AM_INIT_AUTOMAKE([-Wall -Werror foreign])
-AM_CONFIG_HEADER([config.h])
 
 #
 # Set default paths for PKG_CONFIG_PATH in case it's not defined
@@ -108,7 +109,7 @@ AC_CHECK_LIB(boost_filesystem, main, [true],AC_MSG_ERROR([boost_filesystem found
 
 PKG_CHECK_MODULES(MATXIN, [dnl
  lttoolbox-3.1 >= required_lttoolbox_version dnl
- matxin-3.1 >= required_lttoolbox_version dnl
+ matxin-engine >= required_matxin_version dnl
  libxml-2.0 >= required_libxml_version dnl
  libpcre >= required_libpcre_version], CPPFLAGS="$CPPFLAGS $MATXIN_CPPFLAGS $MATXIN_CFLAGS"; LIBS="$LIBS $MATXIN_LIBS")
 
@@ -128,7 +129,6 @@ AC_TYPE_SIZE_T
 #
 # Generate these files
 #
-AC_CONFIG_FILES([matxin-engine.pc
-                 Makefile])
+AC_CONFIG_FILES([Makefile])
 AC_OUTPUT
 

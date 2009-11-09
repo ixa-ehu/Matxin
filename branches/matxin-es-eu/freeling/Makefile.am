@@ -1,6 +1,6 @@
 SUBDIRS = dep nec ner corrector
 
-freelingesdir = $(pkgdatadir)/freeling/es
+freelingesdir = $(pkgdatadir)/freeling
 freelinges_DATA =  constr_gram.dat \
                    dicc.src.gz \
                    grammar.dat \
