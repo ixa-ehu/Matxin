@@ -551,7 +551,6 @@ int main(int argc, char *argv[])
   // ^^^ doesn't work on mac, except with C/POSIX
   setlocale(LC_ALL, "");
 
-  cout << argc << endl;
   if(argc < 2) {
      endProgram(argv[0]);
   }

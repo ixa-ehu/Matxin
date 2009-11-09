@@ -1,3 +1,10 @@
+matxindir = $(prefix)/share/matxin
+matxininclude = $(prefix)/include/matxin-$(GENERIC_API_VERSION)
+matxinlib = $(prefix)/lib
+
+matxin_DATA = modes.dtd modes2bash.xsl matxin-createmodes.awk
+
+
 EXTRA_DIST = config.h data_manager.h matxin_string_utils.h simpleregex.h string_utils.h utf_converter.h XML_reader.h gen_fst2regex.sh gen_Matxin_translator.sh deformat.xsl txt-format.xml rtf-format.xml html-format.xml
 
 bin_PROGRAMS = matxin-xfer-lex matxin-xfer-intra matxin-xfer-inter matxin-xfer-prep matxin-gen-inter matxin-gen-intra \

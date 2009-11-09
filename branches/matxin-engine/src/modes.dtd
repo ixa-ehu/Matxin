@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- 
+  DTD for the modes.xml file     
+-->    
+
+<!ELEMENT modes (mode+)>
+
+<!ELEMENT mode (pipeline)>
+<!ATTLIST mode name ID #REQUIRED>
+<!ATTLIST mode install CDATA #IMPLIED>
+
+<!ELEMENT pipeline (program+)>
+
+<!ELEMENT program (file*)>
+<!ATTLIST program name CDATA #REQUIRED>
+<!ATTLIST program prefix CDATA #IMPLIED>
+
+<!ELEMENT file EMPTY>
+<!ATTLIST file name CDATA #REQUIRED>
