@@ -7,6 +7,7 @@
 
 //#include "config.h"
 #include "matxin_string_utils.h"
+#include "string_utils.h"
 
 #include <data_manager.h>
 #include <XML_reader.h>
@@ -104,7 +105,8 @@ wstring verb_generation(wstring lemma, wstring pos, wstring suf, wstring cas,
     pre_lemma = lemma.substr(0, position1 + 1);
     lemma = lemma.substr(position1 + 1, lemma.size());
   }
-
+  
+  // TODO: LANGUAGE INDEPENDENCE
   if (mi.substr(0, 10) == L"[ADI][SIN]")
   {
     pos = L"[ADI][SIN]";
@@ -367,6 +369,7 @@ wstring date_generation(wstring lemma, wstring pos, wstring suf, wstring cas,
 
   lemma = lemma.substr(1, lemma.size() - 2);
 
+  // TODO: LANGUAGE INDEPENDENCE
   if (lemma.substr(0, 2) == L"s:")
   {
     century = lemma.substr(2);
@@ -518,6 +521,10 @@ wstring date_generation(wstring lemma, wstring pos, wstring suf, wstring cas,
 }
 
 
+/* This method needs completely re-writing. Generation should be performed
+   on all nodes in a chunk. The generation should consist of concatenation of
+   the lemma, the part of speech and any morphological information. This should
+   then be looked up in the analyser.  */ 
 wstring generation(wstring lemma, wstring pos, wstring suf, wstring cas,
                    wstring mi, wstring head_sem, bool is_last, bool &flexioned)
 {
@@ -526,8 +533,8 @@ wstring generation(wstring lemma, wstring pos, wstring suf, wstring cas,
 
 /*
   if (cfg.DoGenTrace)
-    wcerr << lemma << L" " << pos << L" " << suf << L" " << mi << L" "
-          << cas << L" " << head_sem << endl;
+    wcerr << L"lem: " << lemma << L" pos: " << pos << L" suf: " << suf << L" mi: " << mi << L" cas: "
+          << cas << L" head_sem: " << head_sem << endl;
 */
   for (size_t i = 0; i < lemma.size(); i++)
   {
@@ -535,13 +542,13 @@ wstring generation(wstring lemma, wstring pos, wstring suf, wstring cas,
       lemma[i]= L' ';
   }
 
-  if ((!is_last && suf == L"") || cas == L"")
-    return lemma;
+//  if ((!is_last && suf == L"") || cas == L"")
+//    return lemma;
 
-  if (mi == L"")
-    mi = L"[NUMS]";
-  if (!is_last)
-    cas = L"";
+//  if (mi == L"")
+//    mi = L"[NUMS]";
+//  if (!is_last)
+//    cas = L"";
 
   flexioned = true;
   if (cas.find(L"++") != wstring::npos)
@@ -570,20 +577,29 @@ wstring generation(wstring lemma, wstring pos, wstring suf, wstring cas,
     lemma = lemma.substr(position1 + 1, lemma.size());
   }
 
-  wstring pre_gen = L"^" + lemma_osoa + pos + L"$";
+  //wstring pre_gen = L"^" + lemma_osoa + pos + L"$";
+  wstring newpos = StringUtils::substitute(pos, L"[", L"<");
+  newpos = StringUtils::substitute(newpos, L"]", L">");
+
+  wstring newmi = StringUtils::substitute(mi, L"[", L"<");
+  newmi = StringUtils::substitute(newmi, L"]", L">");
+
+  wstring pre_gen = L"^" + lemma_osoa + newpos + newmi + L"$";
 /*
   if (cfg.DoGenTrace)
-    wcerr << pre_gen << endl;
+    wcerr << L"pre_gen: " << pre_gen << endl;
 */
-  wstring lemmaMorf = fstp_pre_generation.biltrans(pre_gen);
+  //wstring lemmaMorf = fstp_pre_generation.biltrans(pre_gen);
+  wstring lemmaMorf = fstp_generation.biltrans(pre_gen);
 /*
   if (cfg.DoGenTrace)
-    wcerr << lemmaMorf << endl;
+    wcerr << L"lemmaMorf: " << lemmaMorf << endl;
 */
   if (lemmaMorf[0] == L'^' and lemmaMorf[1] == L'@')
     lemmaMorf = lemma + pos;
   else
     lemmaMorf = lemmaMorf.substr(1, lemmaMorf.size() - 2);
+    return lemmaMorf;
 
   if (suf != L"")
     lemmaMorf += suf;
@@ -750,8 +766,11 @@ wstring procNODE(xmlTextReaderPtr reader, wstring chunk_type, wstring cas,
     }
     else
     {
+//      form = generation(attrib(reader, "lem"), attrib(reader, "pos"),
+//                        attrib(reader, "suf"), cas, mi, head_sem, is_last,
+//                        flexioned);
       form = generation(attrib(reader, "lem"), attrib(reader, "pos"),
-                        attrib(reader, "suf"), cas, mi, head_sem, is_last,
+                        attrib(reader, "suf"), cas, attrib(reader, "mi"), head_sem, is_last,
                         flexioned);
     }
 

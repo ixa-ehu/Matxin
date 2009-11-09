@@ -17,3 +17,4 @@
 
 <!ELEMENT file EMPTY>
 <!ATTLIST file name CDATA #REQUIRED>
+<!ATTLIST file option CDATA #IMPLIED>

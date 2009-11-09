@@ -62,6 +62,8 @@
 </xsl:template>
 
 <xsl:template match="file">
+  <xsl:value-of select="./@option"/>
+  <xsl:value-of select="string(' ')"/>
   <xsl:value-of select="$dataprefix"/>
   <xsl:value-of select="string('/')"/>
   <xsl:value-of select="./@name"/>

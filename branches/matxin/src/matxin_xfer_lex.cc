@@ -25,6 +25,9 @@
 #include <sstream>
 #include <locale>
 
+#include <getopt.h>
+#include <libgen.h>
+
 //#include "config.h"
 #include "matxin_string_utils.h"
 #include "string_utils.h"
@@ -35,7 +38,6 @@
 using namespace std;
 
 FSTProcessor fstp;
-unsigned int tag_mode = 0; // PAROLE tag mode
 
 wstring upper_type(wstring form, wstring mi, wstring ord)
 {
@@ -216,18 +218,9 @@ vector<wstring> get_translation(wstring lem, wstring mi,
   wstring trad = L"";
   wstring input = L"";
 
-  if(tag_mode == 1) {
-    wstring mitrans = StringUtils::substitute(mi, L"]", L">");
-    mitrans = StringUtils::substitute(mitrans, L"[", L"<");
-    input = L"^" + lem + mitrans + L"$";
-    trad = fstp.biltrans(input);
-    trad = trad.substr(1, trad.size() - 2);
-    wcerr << input << endl;
-  } else {
-    input = L"^" + lem + L"<parol>" + mi + L"$";
-    trad = fstp.biltrans(input);
-    trad = trad.substr(1, trad.size() - 2);
-  }
+  input = L"^" + lem + L"<parol>" + mi + L"$";
+  trad = fstp.biltrans(input);
+  trad = trad.substr(1, trad.size() - 2);
 
   unknown = false;
   if (trad[0] == L'@' || trad.find(L">") < trad.find(L"<"))
@@ -667,16 +660,26 @@ wstring procSENTENCE (xmlTextReaderPtr reader)
   return tree;
 }
 
+void endProgram(char *name)
+{
+  cout << basename(name) << ": run lexical transfer" << endl;
+  cout << "USAGE: " << basename(name) << " [-s sem_file] [-c chunktype_file] [-l lex_file] fst_file" << endl;
+  cout << "Options:" << endl;
+#if HAVE_GETOPT_LONG
+  cout << "  -s, --sem-file:        use a semantic file for nouns" << endl;
+  cout << "  -c, --chunktype-file:  give a file listing chunk types" << endl;
+  cout << "  -l, --lex-selec-file:  perform rudimentary lexical selection" << endl;
+#else
+  cout << "  -s:  use a semantic file for nouns" << endl;
+  cout << "  -c:  give a file listing chunk types" << endl;
+  cout << "  -l:  perform rudimentary lexical selection" << endl;
+#endif
+  exit(EXIT_FAILURE);
+}
+
 
 int main(int argc, char *argv[])
 {
-  if(argc < 2) {
-    cout << "matxin-lexfer [-s] [fst]" << endl;
-    exit(-1);
-  }
-  if(argc > 2) {
-    tag_mode = 1;
-  }
 //  config cfg(argv);
 
   // This sets the C++ locale and affects to C and C++ locales.
@@ -687,13 +690,56 @@ int main(int argc, char *argv[])
   
   // Hiztegi elebidunaren hasieraketa.
   // Parametro moduan jasotzen den fitxagia erabiltzen da hasieraketarako.
+
+  if(argc < 2) {
+     endProgram(argv[0]);
+  }
+
+#if HAVE_GETOPT_LONG
+  static struct option long_options[]=
+    {
+      {"sem-file",        0, 0, 's'},
+      {"chunk-file",      0, 0, 'c'},
+      {"lex-selec-file",  0, 0, 'l'},
+    };
+#endif
+
+  while(true)
+  {
+#if HAVE_GETOPT_LONG
+    int option_index;
+    int c = getopt_long(argc, argv, "s:c:l:", long_options, &option_index);
+#else
+    int c = getopt(argc, argv, "s:c:l:");
+#endif
+
+    if(c == -1)
+    {
+      break;
+    }
+
+    switch(c)
+    {
+    case 's':
+      init_lexInfo(L"nounSem", optarg);
+      break;
+    case 'c':
+      init_lexInfo(L"chunkType", optarg);
+      break;
+    case 'l':
+      init_lexical_selection(optarg);
+      break;
+
+    default:
+      endProgram(argv[0]);
+      break;
+    }
+  }
+
+
   
   FILE *transducer = 0;
-  if(argc > 2) {
-    transducer = fopen(argv[2], "r");
-  }else{
-    transducer = fopen(argv[1], "r");
-  }
+  transducer = fopen(argv[optind], "r");
   fstp.load(transducer);
   fclose(transducer);
   fstp.initBiltrans();

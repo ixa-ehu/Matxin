@@ -35,7 +35,7 @@ matxin_gen_inter_LDADD =      -lboost_filesystem
 matxin_gen_intra_SOURCES = matxin_gen_intra.cc utf_converter.cc data_manager.cc XML_reader.cc simpleregex.cc matxin_string_utils.cc matxin_string_utils.h
 matxin_gen_intra_LDADD =      -lboost_filesystem
 
-matxin_gen_morph_SOURCES = matxin_gen_morph.cc data_manager.cc utf_converter.cc XML_reader.cc simpleregex.cc matxin_string_utils.cc matxin_string_utils.h
+matxin_gen_morph_SOURCES = matxin_gen_morph.cc data_manager.cc utf_converter.cc XML_reader.cc simpleregex.cc matxin_string_utils.cc matxin_string_utils.h string_utils.cc
 matxin_gen_morph_LDADD =      -lboost_filesystem
 
 reFormat_SOURCES = reFormat.cc utf_converter.cc data_manager.cc XML_reader.cc simpleregex.cc matxin_string_utils.cc matxin_string_utils.h
