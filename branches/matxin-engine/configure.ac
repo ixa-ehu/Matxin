@@ -3,7 +3,7 @@
 
 AC_PREREQ(2.59)
 AC_INIT([matxin], [1.5.0])
-AC_CONFIG_SRCDIR([src/matxin_lexfer.cc])
+#AC_CONFIG_SRCDIR([src/matxin_lexfer.cc])
 AC_CONFIG_AUX_DIR([build-aux])
 PACKAGE=matxin
 

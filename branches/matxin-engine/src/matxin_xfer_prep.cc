@@ -21,6 +21,7 @@
 #include <iostream>
 #include <sstream>
 #include <locale>
+#include <libgen.h>
 
 #include <getopt.h>
 
