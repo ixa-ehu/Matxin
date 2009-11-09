@@ -2,9 +2,11 @@
 <modes>
   <mode name="es-eu" install="yes">
     <pipeline>
+<!--
       <program name="Analyzer -f">
         <file name="es-eu.cfg"/>
       </program>
+-->
       <program name="matxin-xfer-lex">
         <file name="eseu.bin"/>
       </program>
@@ -42,9 +44,11 @@
 
   <mode name="es-eu-transfer" install="no">
     <pipeline>
+<!--
       <program name="Analyzer -f">
         <file name="es-eu.cfg"/>
       </program>
+-->
       <program name="matxin-xfer-lex">
         <file name="eseu.bin"/>
       </program>
