@@ -292,19 +292,19 @@ SUBSTITUTE:SubNfaux=V (@-FAUXV) (@IAUX) TARGET V ;
 
 # <mv> and <aux>
 # --------------
-SUBSTITUTE:SubV=mv (V) (<mv> V) TARGET @MV ;
-SUBSTITUTE:SubV=aux (V) (<aux> V) TARGET @AUX ;
+SUBSTITUTE:SubV=mv (vblex) (<mv> vblex) TARGET @MV ;
+SUBSTITUTE:SubV=aux (vblex) (<aux> vblex) TARGET @AUX ;
 
 # infinite clauses:
 
-SUBSTITUTE:SubV=mvICL (V) (<mv> V) TARGET NONVFIN (0 @<OBJ LINK NEGATE *1 (@IMV) BARRIER S-BOUNDARY2 OR V) ;
-SUBSTITUTE:SubV=auxICL (V) (<aux> V) TARGET NONVFIN (0 AUX LINK 0 @<OBJ LINK *1 (@IMV) BARRIER S-BOUNDARY2 OR V) ;
+SUBSTITUTE:SubV=mvICL (vblex) (<mv> vblex) TARGET NONVFIN (0 @<OBJ LINK NEGATE *1 (@IMV) BARRIER S-BOUNDARY2 OR V) ;
+SUBSTITUTE:SubV=auxICL (vblex) (<aux> vblex) TARGET NONVFIN (0 AUX LINK 0 @<OBJ LINK *1 (@IMV) BARRIER S-BOUNDARY2 OR V) ;
 
 # the finite verb
 # ------------------
 
 # in subclauses:
-SUBSTITUTE:SubV=FS-STAmv (@FMV)(@FS-STA) TARGET V ((*-1 CS BARRIER VFIN LINK *-1 VFIN));
+SUBSTITUTE:SubV=FS-STAmv (@FMV)(@FS-STA) TARGET V (*-1 CS BARRIER VFIN LINK *-1 VFIN);
 SUBSTITUTE:SubV=FS-IMVcs (@IMV) (@FS-IMV) TARGET V (*-1 (<aux>) BARRIER @MV LINK NOT 0 (@FAUX) LINK *-1 CS BARRIER @MCLV LINK *-1 VFIN) ;
 SUBSTITUTE:SubVmain=FS-STAaux (@FAUX) (@FS-STA) TARGET V (*-1 CC BARRIER @V LINK *-1 (@FS-STA) BARRIER VFIN) ;
 SUBSTITUTE:SubV=FS-IAUXcs (@IAUX) (@FS-IAUX) TARGET V (*-1 (<aux>) BARRIER @MV LINK *-1 CS BARRIER @MV) ;
@@ -320,8 +320,8 @@ SUBSTITUTE:SubVmain=FS-Naux (@FAUX) (@FS-N<) TARGET V (*-1 Interr BARRIER VFIN) 
 SUBSTITUTE:SubV=FSN-IAUX (@IAUX) (@FS-N<IAUX) TARGET V (*-1 (<aux>) BARRIER @MV LINK *-1 Interr BARRIER @MV) ;
 
 
-SUBSTITUTE:SubV=FS-STAmv (@FMV)(@FS-STA) TARGET V ((*-1 CS BARRIER @V LINK *-1 @V)) ;
-SUBSTITUTE:SubV=FS-STAmv (@FMV)(@FS-STA) TARGET V ((*-1 CS BARRIER @V LINK *-1 @V)) ;
+SUBSTITUTE:SubV=FS-STAmv (@FMV)(@FS-STA) TARGET V (*-1 CS BARRIER @V LINK *-1 @V) ;
+SUBSTITUTE:SubV=FS-STAmv (@FMV)(@FS-STA) TARGET V (*-1 CS BARRIER @V LINK *-1 @V) ;
 
 # infinite clauses:
 SUBSTITUTE:SubV=iclaux (@<OBJ) (@ICL-OBJ) TARGET NONVFIN (*-1 @-FSUBJ> BARRIER @V) ;
@@ -350,7 +350,7 @@ SETPARENT:r3 ("sjálvur") TO (-1 ("seg"));
 SETPARENT:r4 ("sum" @CVP) TO (-1 N OR V);
 SETPARENT:r5 ("sum" @CVP) TO (*-1 N OR V BARRIER WORD);
 
-SETPARENT (A $$NAGD) TO (-1 CC)(-2 (A $$NAGD));  # Look at the cc structure !!
+SETPARENT (A $$NAGD) TO (-1 CC)(-2 (adj $$NAGD));  # Look at the cc structure !!
 
 SETPARENT:CCNP (@CNP)(-1 N) TO (*1 N BARRIER NPNH);
 	## Per og Kari
