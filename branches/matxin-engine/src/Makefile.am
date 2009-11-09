@@ -12,7 +12,7 @@ bin_PROGRAMS = matxin-xfer-lex matxin-xfer-intra matxin-xfer-inter matxin-xfer-p
                reFormat  
 #txt-deformat html-deformat rtf-deformat
 
-bin_SCRIPTS = matxin-gen-modes fst2regex.pl
+bin_SCRIPTS = matxin-gen-modes fst2regex.pl matxin
 
 matxin_xfer_lex_SOURCES = matxin_xfer_lex.cc utf_converter.cc data_manager.cc XML_reader.cc simpleregex.cc matxin_string_utils.cc matxin_string_utils.h string_utils.cc string_utils.h
 matxin_xfer_lex_LDADD =  -lboost_filesystem
@@ -71,6 +71,15 @@ matxin-gen-modes: Makefile.am modes-header.sh
           else echo "$(XSLTPROC) $(matxindir)/modes2bash.xsl \$$FILE1 \\\$$prefix=$(prefix)/bin \\\$$dataprefix=\$$FULLDIRNAME| awk -f $(matxindir)/matxin-createmodes.awk PARAM=\$$FULLDIRNAME"; \
           fi >> $@ 
 	@chmod a+x $@
+
+matxin: Makefile.am matxin-header.sh
+	@echo "Creating matxin script"
+	@echo "#!$(BASH)" > $@
+	@echo "MATXIN_PATH=\"$(prefix)/bin\"" >>$@
+	@echo "DEFAULT_DIRECTORY=\"$(prefix)/share/matxin\"" >>$@
+	@cat matxin-header.sh >>$@
+	@chmod a+x $@
+
 
 fst2regex.pl: Makefile.am gen_fst2regex.sh
 	@echo "Creating $@ script"
