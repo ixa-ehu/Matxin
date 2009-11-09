@@ -11,20 +11,50 @@
     <sdef n="f"      c="Feminine"/>
     <sdef n="nt"     c="Neuter"/>
 
+    <sdef n="nom"    c="Nominative"/>
+    <sdef n="dat"    c=""/>
+    <sdef n="gen"    c=""/>
+    <sdef n="acc"    c=""/>
+
+    <sdef n="ind"    c=""/>
+    <sdef n="def"    c=""/>
+
+    <sdef n="sg"     c=""/>
+    <sdef n="pl"     c=""/>
+
     <sdef n="sint"   c="Synthetic"/>
 
+    <sdef n="cat"    c="Category"/> 
+    <sdef n="case"   c="Case"/> 
     <sdef n="mi"     c="Morphological information"/> 
     <sdef n="parol"  c="PAROLE style tag"/>
   </sdefs>
   <pardefs>
     <pardef n="NC_STD">
-      <e><p><l><s n="parol"/>NCFSV0</l><r><s n="parol"/>NC<s n="mi"/>[NUMS]</r></p></e>
-      <e><p><l><s n="parol"/>NCFPV0</l><r><s n="parol"/>NC<s n="mi"/>[NUMP]</r></p></e>
-      <e><p><l><s n="parol"/>NCMSV0</l><r><s n="parol"/>NC<s n="mi"/>[NUMS]</r></p></e>
-      <e><p><l><s n="parol"/>NCMPV0</l><r><s n="parol"/>NC<s n="mi"/>[NUMP]</r></p></e>
-      <e><p><l/><r/></p></e>
+      <e><p><l>[sg][nom][ind]</l><r><s n="mi"/>[sg]</r></p></e>
+      <e><p><l>[sg][acc][ind]</l><r><s n="mi"/>[sg]</r></p></e>
+      <e><p><l>[sg][dat][ind]</l><r><s n="mi"/>[sg]</r></p></e>
+      <e><p><l>[sg][gen][ind]</l><r><s n="mi"/>[sg]</r></p></e>
+      <e><p><l>[sg][nom][def]</l><r><s n="mi"/>[sg]</r></p></e>
+      <e><p><l>[sg][acc][def]</l><r><s n="mi"/>[sg]</r></p></e>
+      <e><p><l>[sg][dat][def]</l><r><s n="mi"/>[sg]</r></p></e>
+      <e><p><l>[sg][gen][def]</l><r><s n="mi"/>[sg]</r></p></e>
+      <e><p><l>[pl][nom][ind]</l><r><s n="mi"/>[pl]</r></p></e>
+      <e><p><l>[pl][acc][ind]</l><r><s n="mi"/>[pl]</r></p></e>
+      <e><p><l>[pl][dat][ind]</l><r><s n="mi"/>[pl]</r></p></e>
+      <e><p><l>[pl][gen][ind]</l><r><s n="mi"/>[pl]</r></p></e>
+      <e><p><l>[pl][nom][def]</l><r><s n="mi"/>[pl]</r></p></e>
+      <e><p><l>[pl][acc][def]</l><r><s n="mi"/>[pl]</r></p></e>
+      <e><p><l>[pl][dat][def]</l><r><s n="mi"/>[pl]</r></p></e>
+      <e><p><l>[pl][gen][def]</l><r><s n="mi"/>[pl]</r></p></e>
     </pardef>
     <pardef n="VBLEX_STD">
+      <e><p><l>[past][p1][sg]</l><r><s n="mi"/>[past]</r></p></e>
+      <e><p><l>[past][p2][sg]</l><r><s n="mi"/>[past]</r></p></e>
+      <e><p><l>[past][p3][sg]</l><r><s n="mi"/>[past][p3][sg]</r></p></e>
+      <e><p><l>[past][p1][pl]</l><r><s n="mi"/>[past]</r></p></e>
+      <e><p><l>[past][p2][pl]</l><r><s n="mi"/>[past]</r></p></e>
+      <e><p><l>[past][p3][pl]</l><r><s n="mi"/>[past]</r></p></e>
       <e><p><l></l><r></r></p></e>
     </pardef>
     <pardef n="ADJ_STD">
@@ -38,535 +68,542 @@
     </pardef>
   </pardefs>
   <section id="main" type="standard">
+    <!-- Prepositions -->
+
+    <e><p><l>í<s n="parol"/>[pr]</l><r>in<s n="cat"/>[pr]<s n="case"/>[acc][dat]</r></p></e>
+
+    <!-- Conjunctions -->
+
+    <e><p><l>og<s n="parol"/>[cnjcoo]</l><r>and<s n="cat"/>[cnjcoo]</r></p></e>
+
     <!-- Nouns -->
-    <e><p><l>vatn<s n="n"/><s n="nt"/></l><r>water<s n="n"/></r></p><par n="NC_STD"/></e>
-    <e><p><l>myrkur<s n="n"/><s n="nt"/></l><r>darkness<s n="n"/></r></p><par n="NC_STD"/></e>
-    <e><p><l>upphav<s n="n"/><s n="nt"/></l><r>beginning<s n="n"/></r></p><par n="NC_STD"/></e>
-    <e><p><l>djúp<s n="n"/><s n="nt"/></l><r>deep<s n="n"/></r></p><par n="NC_STD"/></e>
+    <e><p><l>vatn<s n="parol"/>[n][nt]</l><r>water<s n="cat"/>[n]</r></p><par n="NC_STD"/></e>
+    <e><p><l>myrkur<s n="parol"/>[n][nt]</l><r>darkness<s n="cat"/>[n]</r></p><par n="NC_STD"/></e>
+    <e><p><l>upphav<s n="parol"/>[n][nt]</l><r>beginning<s n="cat"/>[n]</r></p><par n="NC_STD"/></e>
+    <e><p><l>djúp<s n="parol"/>[n][nt]</l><r>deep<s n="cat"/>[n]</r></p><par n="NC_STD"/></e>
 
-    <e><p><l>himmal<s n="parol"/>[n][m][sg][acc][def]</l><r>sky[n][sg]</r></p><par n="NC_STD"/></e>
-    <e><p><l>himmal<s n="n"/><s n="m"/></l><r>sky<s n="n"/></r></p><par n="NC_STD"/></e>
+    <e><p><l>himmal<s n="parol"/>[n][m]</l><r>sky<s n="cat"/>[n]</r></p><par n="NC_STD"/></e>
 
-    <e><p><l>fuglur<s n="n"/><s n="m"/></l><r>bird<s n="n"/></r></p><par n="NC_STD"/></e>
-    <e><p><l>sjógvur<s n="n"/><s n="m"/></l><r>ocean<s n="n"/></r></p><par n="NC_STD"/></e>
-    <e><p><l>fiskur<s n="n"/><s n="m"/></l><r>fish<s n="n"/></r></p><par n="NC_STD"/></e>
-    <e><p><l>jørð<s n="n"/><s n="f"/></l><r>earth<s n="n"/></r></p><par n="NC_STD"/></e>
-    <e><p><l>mynd<s n="n"/><s n="f"/></l><r>picture<s n="n"/></r></p><par n="NC_STD"/></e>
-    <e><p><l>lík<s n="n"/><s n="nt"/></l><r>corpse<s n="n"/></r></p><par n="NC_STD"/></e>
-    <e><p><l>orð<s n="n"/><s n="nt"/></l><r>word<s n="n"/></r></p><par n="NC_STD"/></e>
-    <e><p><l>hús<s n="n"/><s n="nt"/></l><r>house<s n="n"/></r></p><par n="NC_STD"/></e>
-    <e><p><l>blað<s n="n"/><s n="nt"/></l><r>paper<s n="n"/></r></p><par n="NC_STD"/></e>
-    <e><p><l>gras<s n="n"/><s n="nt"/></l><r>grass<s n="n"/></r></p><par n="NC_STD"/></e>
-    <e><p><l>skip<s n="n"/><s n="nt"/></l><r>ship<s n="n"/></r></p><par n="NC_STD"/></e>
-    <e><p><l>svar<s n="n"/><s n="nt"/></l><r>reply<s n="n"/></r></p><par n="NC_STD"/></e>
-    <e><p><l>ljós<s n="n"/><s n="nt"/></l><r>light<s n="n"/></r></p><par n="NC_STD"/></e>
-    <e><p><l>breyð<s n="n"/><s n="nt"/></l><r>bread<s n="n"/></r></p><par n="NC_STD"/></e>
-    <e><p><l>bók<s n="n"/><s n="f"/></l><r>book<s n="n"/></r></p><par n="NC_STD"/></e>
-    <e><p><l>genta<s n="n"/><s n="f"/></l><r>girl<s n="n"/></r></p><par n="NC_STD"/></e>
-    <e><p><l>dóttir<s n="n"/><s n="f"/></l><r>daughter<s n="n"/></r></p><par n="NC_STD"/></e>
-    <e><p><l>vinna<s n="n"/><s n="f"/></l><r>work<s n="n"/></r></p><par n="NC_STD"/></e>
-    <e><p><l>bilur<s n="n"/><s n="m"/></l><r>car<s n="n"/></r></p><par n="NC_STD"/></e>
-    <e><p><l>gudur<s n="n"/><s n="m"/></l><r>God<s n="n"/></r></p><par n="NC_STD"/></e>
-    <e><p><l>hundur<s n="n"/><s n="m"/></l><r>dog<s n="n"/></r></p><par n="NC_STD"/></e>
-    <e><p><l>morgun<s n="n"/><s n="m"/></l><r>morning<s n="n"/></r></p><par n="NC_STD"/></e>
-    <e><p><l>dagur<s n="n"/><s n="m"/></l><r>day<s n="n"/></r></p><par n="NC_STD"/></e>
-    <e><p><l>bróðir<s n="n"/><s n="m"/></l><r>brother<s n="n"/></r></p><par n="NC_STD"/></e>
-    <e><p><l>mamma<s n="n"/><s n="f"/></l><r>mum<s n="n"/></r></p><par n="NC_STD"/></e>
-    <e><p><l>maður<s n="n"/><s n="m"/></l><r>man<s n="n"/></r></p><par n="NC_STD"/></e>
-    <e><p><l>hattur<s n="n"/><s n="m"/></l><r>hat<s n="n"/></r></p><par n="NC_STD"/></e>
-    <e><p><l>hestur<s n="n"/><s n="m"/></l><r>horse<s n="n"/></r></p><par n="NC_STD"/></e>
-    <e><p><l>drongur<s n="n"/><s n="m"/></l><r>boy<s n="n"/></r></p><par n="NC_STD"/></e>
-    <e><p><l>barnabarn<s n="n"/><s n="nt"/></l><r>grandchild<s n="n"/></r></p><par n="NC_STD"/></e>
-    <e><p><l>myrkur<s n="n"/><s n="nt"/></l><r>darkness<s n="n"/></r></p><par n="NC_STD"/></e>
-    <e><p><l>munnur<s n="n"/><s n="m"/></l><r>mouth<s n="n"/></r></p><par n="NC_STD"/></e>
-    <e><p><l>ull<s n="n"/><s n="f"/></l><r>wool<s n="n"/></r></p><par n="NC_STD"/></e>
-    <e><p><l>ótti<s n="n"/><s n="m"/></l><r>fear<s n="n"/></r></p><par n="NC_STD"/></e>
-    <e><p><l>friður<s n="n"/><s n="m"/></l><r>peace<s n="n"/></r></p><par n="NC_STD"/></e>
-    <e><p><l>løn<s n="n"/><s n="f"/></l><r>salary<s n="n"/></r></p><par n="NC_STD"/></e>
-    <e><p><l>frælsi<s n="n"/><s n="nt"/></l><r>freedom<s n="n"/></r></p><par n="NC_STD"/></e>
-    <e><p><l>landamark<s n="n"/><s n="nt"/></l><r>border<s n="n"/></r></p><par n="NC_STD"/></e>
-    <e><p><l>kjøt<s n="n"/><s n="nt"/></l><r>meat<s n="n"/></r></p><par n="NC_STD"/></e>
-    <e><p><l>føði<s n="n"/><s n="f"/></l><r>food<s n="n"/></r></p><par n="NC_STD"/></e>
-    <e><p><l>vørr<s n="n"/><s n="f"/></l><r>lip<s n="n"/></r></p><par n="NC_STD"/></e>
-    <e><p><l>ábyrgd<s n="n"/><s n="f"/></l><r>responsibility<s n="n"/></r></p><par n="NC_STD"/></e>
-    <e><p><l>rættur<s n="n"/><s n="m"/></l><r>course<s n="n"/></r></p><par n="NC_STD"/></e>
-    <e><p><l>munur<s n="n"/><s n="m"/></l><r>difference<s n="n"/></r></p><par n="NC_STD"/></e>
-    <e><p><l>hár<s n="n"/><s n="nt"/></l><r>hair<s n="n"/></r></p><par n="NC_STD"/></e>
-    <e><p><l>vera<s n="n"/><s n="f"/></l><r>creature<s n="n"/></r></p><par n="NC_STD"/></e>
-    <e><p><l>vørrur<s n="n"/><s n="m"/></l><r>goods<s n="n"/></r></p><par n="NC_STD"/></e>
-    <e><p><l>villa<s n="n"/><s n="f"/></l><r>error<s n="n"/></r></p><par n="NC_STD"/></e>
-    <e><p><l>embæti<s n="n"/><s n="nt"/></l><r>office<s n="n"/></r></p><par n="NC_STD"/></e>
-    <e><p><l>framsíða<s n="n"/><s n="f"/></l><r>front<s n="n"/></r></p><par n="NC_STD"/></e>
-    <e><p><l>longd<s n="n"/><s n="f"/></l><r>length<s n="n"/></r></p><par n="NC_STD"/></e>
-    <e><p><l>mynd<s n="n"/><s n="f"/></l><r>picture<s n="n"/></r></p><par n="NC_STD"/></e>
-    <e><p><l>fyrimynd<s n="n"/><s n="f"/></l><r>example<s n="n"/></r></p><par n="NC_STD"/></e>
-    <e><p><l>lík<s n="n"/><s n="nt"/></l><r>corpse<s n="n"/></r></p><par n="NC_STD"/></e>
-    <e><p><l>stund<s n="n"/><s n="f"/></l><r>hour<s n="n"/></r></p><par n="NC_STD"/></e>
-    <e><p><l>gudur<s n="n"/><s n="m"/></l><r>God<s n="n"/></r></p><par n="NC_STD"/></e>
-    <e><p><l>summar<s n="n"/><s n="nt"/></l><r>summer<s n="n"/></r></p><par n="NC_STD"/></e>
-    <e><p><l>talva<s n="n"/><s n="f"/></l><r>pill<s n="n"/></r></p><par n="NC_STD"/></e>
-    <e><p><l>kraftur<s n="n"/><s n="m"/></l><r>power<s n="n"/></r></p><par n="NC_STD"/></e>
-    <e><p><l>tænasta<s n="n"/><s n="f"/></l><r>service<s n="n"/></r></p><par n="NC_STD"/></e>
-    <e><p><l>tonn<s n="n"/><s n="f"/></l><r>tooth<s n="n"/></r></p><par n="NC_STD"/></e>
-    <e><p><l>vegur<s n="n"/><s n="m"/></l><r>road<s n="n"/></r></p><par n="NC_STD"/></e>
-    <e><p><l>yvirvøld<s n="n"/><s n="f"/></l><r>authority<s n="n"/></r></p><par n="NC_STD"/></e>
-    <e><p><l>málevni<s n="n"/><s n="nt"/></l><r>issue<s n="n"/></r></p><par n="NC_STD"/></e>
-    <e><p><l>sangari<s n="n"/><s n="m"/></l><r>singer<s n="n"/></r></p><par n="NC_STD"/></e>
-    <e><p><l>ætt<s n="n"/><s n="f"/></l><r>family<s n="n"/></r></p><par n="NC_STD"/></e>
-    <e><p><l>træl<s n="n"/><s n="nt"/></l><r>slave<s n="n"/></r></p><par n="NC_STD"/></e>
-    <e><p><l>verja<s n="n"/><s n="f"/></l><r>defence<s n="n"/></r></p><par n="NC_STD"/></e>
-    <e><p><l>tjóð<s n="n"/><s n="f"/></l><r>nation<s n="n"/></r></p><par n="NC_STD"/></e>
-    <e><p><l>vinur<s n="n"/><s n="m"/></l><r>male<b/>friend<s n="n"/></r></p><par n="NC_STD"/></e>
-    <e><p><l>avkom<s n="n"/><s n="nt"/></l><r>offspring<s n="n"/></r></p><par n="NC_STD"/></e>
-    <e><p><l>kyn<s n="n"/><s n="nt"/></l><r>gender<s n="n"/></r></p><par n="NC_STD"/></e>
-    <e><p><l>vápn<s n="n"/><s n="nt"/></l><r>weapon<s n="n"/></r></p><par n="NC_STD"/></e>
-    <e><p><l>vøkstur<s n="n"/><s n="m"/></l><r>growth<s n="n"/></r></p><par n="NC_STD"/></e>
-    <e><p><l>vitni<s n="n"/><s n="nt"/></l><r>witness<s n="n"/></r></p><par n="NC_STD"/></e>
-    <e><p><l>fiskur<s n="n"/><s n="m"/></l><r>fish<s n="n"/></r></p><par n="NC_STD"/></e>
-    <e><p><l>fall<s n="n"/><s n="nt"/></l><r>fall<s n="n"/></r></p><par n="NC_STD"/></e>
-    <e><p><l>bardagi<s n="n"/><s n="m"/></l><r>fight<s n="n"/></r></p><par n="NC_STD"/></e>
-    <e><p><l>dómur<s n="n"/><s n="m"/></l><r>verdict<s n="n"/></r></p><par n="NC_STD"/></e>
-    <e><p><l>grundvøllur<s n="n"/><s n="m"/></l><r>basis<s n="n"/></r></p><par n="NC_STD"/></e>
-    <e><p><l>flokkur<s n="n"/><s n="m"/></l><r>group<s n="n"/></r></p><par n="NC_STD"/></e>
-    <e><p><l>træl<s n="n"/><s n="nt"/></l><r>slave<s n="n"/></r></p><par n="NC_STD"/></e>
-    <e><p><l>verja<s n="n"/><s n="f"/></l><r>defence<s n="n"/></r></p><par n="NC_STD"/></e>
-    <e><p><l>tjóð<s n="n"/><s n="f"/></l><r>nation<s n="n"/></r></p><par n="NC_STD"/></e>
-    <e><p><l>tænari<s n="n"/><s n="m"/></l><r>waiter<s n="n"/></r></p><par n="NC_STD"/></e>
-    <e><p><l>boð<s n="n"/><s n="nt"/></l><r>invitation<s n="n"/></r></p><par n="NC_STD"/></e>
-    <e><p><l>upphav<s n="n"/><s n="nt"/></l><r>beginning<s n="n"/></r></p><par n="NC_STD"/></e>
-    <e><p><l>sjógvur<s n="n"/><s n="m"/></l><r>ocean<s n="n"/></r></p><par n="NC_STD"/></e>
-    <e><p><l>ogn<s n="n"/><s n="f"/></l><r>property<s n="n"/></r></p><par n="NC_STD"/></e>
-    <e><p><l>maður<s n="n"/><s n="m"/></l><r>man<s n="n"/></r></p><par n="NC_STD"/></e>
-    <e><p><l>skrivari<s n="n"/><s n="m"/></l><r>secretary<s n="n"/></r></p><par n="NC_STD"/></e>
-    <e><p><l>ísur<s n="n"/><s n="m"/></l><r>ice<b/>cream<s n="n"/></r></p><par n="NC_STD"/></e>
-    <e><p><l>vongur<s n="n"/><s n="m"/></l><r>wing<s n="n"/></r></p><par n="NC_STD"/></e>
-    <e><p><l>fiskur<s n="n"/><s n="m"/></l><r>fish<s n="n"/></r></p><par n="NC_STD"/></e>
-    <e><p><l>fíggindi<s n="n"/><s n="m"/></l><r>enemy<s n="n"/></r></p><par n="NC_STD"/></e>
-    <e><p><l>dreymur<s n="n"/><s n="m"/></l><r>dream<s n="n"/></r></p><par n="NC_STD"/></e>
-    <e><p><l>svøvnur<s n="n"/><s n="m"/></l><r>sleep<s n="n"/></r></p><par n="NC_STD"/></e>
-    <e><p><l>vegur<s n="n"/><s n="m"/></l><r>road<s n="n"/></r></p><par n="NC_STD"/></e>
-    <e><p><l>køka<s n="n"/><s n="f"/></l><r>cake<s n="n"/></r></p><par n="NC_STD"/></e>
-    <e><p><l>lið<s n="n"/><s n="f"/></l><r>side<s n="n"/></r></p><par n="NC_STD"/></e>
-    <e><p><l>leið<s n="n"/><s n="f"/></l><r>way<s n="n"/></r></p><par n="NC_STD"/></e>
-    <e><p><l>ljós<s n="n"/><s n="nt"/></l><r>light<s n="n"/></r></p><par n="NC_STD"/></e>
-    <e><p><l>hond<s n="n"/><s n="f"/></l><r>hand<s n="n"/></r></p><par n="NC_STD"/></e>
-    <e><p><l>alda<s n="n"/><s n="f"/></l><r>century<s n="n"/></r></p><par n="NC_STD"/></e>
-    <e><p><l>rót<s n="n"/><s n="f"/></l><r>root<s n="n"/></r></p><par n="NC_STD"/></e>
-    <e><p><l>maður<s n="n"/><s n="m"/></l><r>man<s n="n"/></r></p><par n="NC_STD"/></e>
-    <e><p><l>háttur<s n="n"/><s n="m"/></l><r>manner<s n="n"/></r></p><par n="NC_STD"/></e>
-    <e><p><l>dóttir<s n="n"/><s n="f"/></l><r>daughter<s n="n"/></r></p><par n="NC_STD"/></e>
-    <e><p><l>summar<s n="n"/><s n="nt"/></l><r>summer<s n="n"/></r></p><par n="NC_STD"/></e>
-    <e><p><l>hermaður<s n="n"/><s n="m"/></l><r>soldier<s n="n"/></r></p><par n="NC_STD"/></e>
-    <e><p><l>eystur<s n="n"/><s n="nt"/></l><r>east<s n="n"/></r></p><par n="NC_STD"/></e>
-    <e><p><l>norður<s n="n"/><s n="nt"/></l><r>north<s n="n"/></r></p><par n="NC_STD"/></e>
-    <e><p><l>suður<s n="n"/><s n="nt"/></l><r>south<s n="n"/></r></p><par n="NC_STD"/></e>
-    <e><p><l>vestur<s n="n"/><s n="nt"/></l><r>west<s n="n"/></r></p><par n="NC_STD"/></e>
-    <e><p><l>silvur<s n="n"/><s n="nt"/></l><r>silver<s n="n"/></r></p><par n="NC_STD"/></e>
-    <e><p><l>vegur<s n="n"/><s n="m"/></l><r>road<s n="n"/></r></p><par n="NC_STD"/></e>
-    <e><p><l>vinur<s n="n"/><s n="m"/></l><r>male<b/>friend<s n="n"/></r></p><par n="NC_STD"/></e>
-    <e><p><l>sonur<s n="n"/><s n="m"/></l><r>son<s n="n"/></r></p><par n="NC_STD"/></e>
-    <e><p><l>flokkur<s n="n"/><s n="m"/></l><r>group<s n="n"/></r></p><par n="NC_STD"/></e>
-    <e><p><l>norður<s n="n"/><s n="nt"/></l><r>north<s n="n"/></r></p><par n="NC_STD"/></e>
-    <e><p><l>vestur<s n="n"/><s n="nt"/></l><r>west<s n="n"/></r></p><par n="NC_STD"/></e>
-    <e><p><l>høvur<s n="n"/><s n="nt"/></l><r>head<s n="n"/></r></p><par n="NC_STD"/></e>
-    <e><p><l>móðir<s n="n"/><s n="f"/></l><r>mother<s n="n"/></r></p><par n="NC_STD"/></e>
-    <e><p><l>heimur<s n="n"/><s n="m"/></l><r>world<s n="n"/></r></p><par n="NC_STD"/></e>
-    <e><p><l>býur<s n="n"/><s n="m"/></l><r>town<s n="n"/></r></p><par n="NC_STD"/></e>
-    <e><p><l>tal<s n="n"/><s n="nt"/></l><r>number<s n="n"/></r></p><par n="NC_STD"/></e>
-    <e><p><l>ríki<s n="n"/><s n="nt"/></l><r>state<s n="n"/></r></p><par n="NC_STD"/></e>
-    <e><p><l>hædd<s n="n"/><s n="f"/></l><r>storey<s n="n"/></r></p><par n="NC_STD"/></e>
-    <e><p><l>skip<s n="n"/><s n="nt"/></l><r>ship<s n="n"/></r></p><par n="NC_STD"/></e>
-    <e><p><l>meistari<s n="n"/><s n="m"/></l><r>master<s n="n"/></r></p><par n="NC_STD"/></e>
-    <e><p><l>grøv<s n="n"/><s n="f"/></l><r>grave<s n="n"/></r></p><par n="NC_STD"/></e>
-    <e><p><l>staður<s n="n"/><s n="m"/></l><r>place<s n="n"/></r></p><par n="NC_STD"/></e>
-    <e><p><l>fat<s n="n"/><s n="nt"/></l><r>platter<s n="n"/></r></p><par n="NC_STD"/></e>
-    <e><p><l>verk<s n="n"/><s n="nt"/></l><r>work<s n="n"/></r></p><par n="NC_STD"/></e>
-    <e><p><l>hálsur<s n="n"/><s n="m"/></l><r>neck<s n="n"/></r></p><par n="NC_STD"/></e>
-    <e><p><l>tak<s n="n"/><s n="nt"/></l><r>roof<s n="n"/></r></p><par n="NC_STD"/></e>
-    <e><p><l>rað<s n="n"/><s n="nt"/></l><r>row<s n="n"/></r></p><par n="NC_STD"/></e>
-    <e><p><l>kongur<s n="n"/><s n="m"/></l><r>king<s n="n"/></r></p><par n="NC_STD"/></e>
-    <e><p><l>vín<s n="n"/><s n="nt"/></l><r>alcohol<s n="n"/></r></p><par n="NC_STD"/></e>
-    <e><p><l>sól<s n="n"/><s n="f"/></l><r>sun<s n="n"/></r></p><par n="NC_STD"/></e>
-    <e><p><l>yvirmaður<s n="n"/><s n="m"/></l><r>boss<s n="n"/></r></p><par n="NC_STD"/></e>
-    <e><p><l>borð<s n="n"/><s n="nt"/></l><r>table<s n="n"/></r></p><par n="NC_STD"/></e>
-    <e><p><l>net<s n="n"/><s n="nt"/></l><r>net<s n="n"/></r></p><par n="NC_STD"/></e>
-    <e><p><l>fuglur<s n="n"/><s n="m"/></l><r>bird<s n="n"/></r></p><par n="NC_STD"/></e>
-    <e><p><l>vald<s n="n"/><s n="nt"/></l><r>authority<s n="n"/></r></p><par n="NC_STD"/></e>
-    <e><p><l>navn<s n="n"/><s n="nt"/></l><r>name<s n="n"/></r></p><par n="NC_STD"/></e>
-    <e><p><l>tekn<s n="n"/><s n="nt"/></l><r>symbol<s n="n"/></r></p><par n="NC_STD"/></e>
-    <e><p><l>ráð<s n="n"/><s n="nt"/></l><r>advice<s n="n"/></r></p><par n="NC_STD"/></e>
-    <e><p><l>hestur<s n="n"/><s n="m"/></l><r>horse<s n="n"/></r></p><par n="NC_STD"/></e>
-    <e><p><l>samfelag<s n="n"/><s n="nt"/></l><r>community<s n="n"/></r></p><par n="NC_STD"/></e>
-    <e><p><l>lamb<s n="n"/><s n="nt"/></l><r>lamb<s n="n"/></r></p><par n="NC_STD"/></e>
-    <e><p><l>venjing<s n="n"/><s n="f"/></l><r>exercise<s n="n"/></r></p><par n="NC_STD"/></e>
-    <e><p><l>nýra<s n="n"/><s n="nt"/></l><r>kidney<s n="n"/></r></p><par n="NC_STD"/></e>
-    <e><p><l>gøta<s n="n"/><s n="f"/></l><r>road<s n="n"/></r></p><par n="NC_STD"/></e>
-    <e><p><l>eingil<s n="n"/><s n="m"/></l><r>angel<s n="n"/></r></p><par n="NC_STD"/></e>
-    <e><p><l>lóg<s n="n"/><s n="f"/></l><r>layer<s n="n"/></r></p><par n="NC_STD"/></e>
-    <e><p><l>fluga<s n="n"/><s n="f"/></l><r>fly<s n="n"/></r></p><par n="NC_STD"/></e>
-    <e><p><l>steinur<s n="n"/><s n="m"/></l><r>stone<s n="n"/></r></p><par n="NC_STD"/></e>
-    <e><p><l>tal<s n="n"/><s n="nt"/></l><r>number<s n="n"/></r></p><par n="NC_STD"/></e>
-    <e><p><l>vika<s n="n"/><s n="f"/></l><r>week<s n="n"/></r></p><par n="NC_STD"/></e>
-    <e><p><l>kona<s n="n"/><s n="f"/></l><r>woman<s n="n"/></r></p><par n="NC_STD"/></e>
-    <e><p><l>nátt<s n="n"/><s n="f"/></l><r>night<s n="n"/></r></p><par n="NC_STD"/></e>
-    <e><p><l>orð<s n="n"/><s n="nt"/></l><r>word<s n="n"/></r></p><par n="NC_STD"/></e>
-    <e><p><l>boð<s n="n"/><s n="nt"/></l><r>invitation<s n="n"/></r></p><par n="NC_STD"/></e>
-    <e><p><l>oyra<s n="n"/><s n="nt"/></l><r>ear<s n="n"/></r></p><par n="NC_STD"/></e>
-    <e><p><l>bann<s n="n"/><s n="nt"/></l><r>ban<s n="n"/></r></p><par n="NC_STD"/></e>
-    <e><p><l>brúdleyp<s n="n"/><s n="nt"/></l><r>wedding<s n="n"/></r></p><par n="NC_STD"/></e>
-    <e><p><l>mannkyn<s n="n"/><s n="nt"/></l><r>male<s n="n"/></r></p><par n="NC_STD"/></e>
-    <e><p><l>hugsan<s n="n"/><s n="f"/></l><r>thought<s n="n"/></r></p><par n="NC_STD"/></e>
-    <e><p><l>jørð<s n="n"/><s n="f"/></l><r>earth<s n="n"/></r></p><par n="NC_STD"/></e>
-    <e><p><l>keisari<s n="n"/><s n="m"/></l><r>emperor<s n="n"/></r></p><par n="NC_STD"/></e>
-    <e><p><l>leður<s n="n"/><s n="nt"/></l><r>skin<s n="n"/></r></p><par n="NC_STD"/></e>
-    <e><p><l>svar<s n="n"/><s n="nt"/></l><r>reply<s n="n"/></r></p><par n="NC_STD"/></e>
-    <e><p><l>grein<s n="n"/><s n="f"/></l><r>article<s n="n"/></r></p><par n="NC_STD"/></e>
-    <e><p><l>snarljós<s n="n"/><s n="nt"/></l><r>lightning<s n="n"/></r></p><par n="NC_STD"/></e>
-    <e><p><l>fjall<s n="n"/><s n="nt"/></l><r>mountain<s n="n"/></r></p><par n="NC_STD"/></e>
-    <e><p><l>ár<s n="n"/><s n="nt"/></l><r>year<s n="n"/></r></p><par n="NC_STD"/></e>
-    <e><p><l>helli<s n="n"/><s n="nt"/></l><r>cave<s n="n"/></r></p><par n="NC_STD"/></e>
-    <e><p><l>dagur<s n="n"/><s n="m"/></l><r>day<s n="n"/></r></p><par n="NC_STD"/></e>
-    <e><p><l>faðir<s n="n"/><s n="m"/></l><r>father<s n="n"/></r></p><par n="NC_STD"/></e>
-    <e><p><l>fangahús<s n="n"/><s n="nt"/></l><r>prison<s n="n"/></r></p><par n="NC_STD"/></e>
-    <e><p><l>vinkona<s n="n"/><s n="f"/></l><r>female<b/>friend<s n="n"/></r></p><par n="NC_STD"/></e>
-    <e><p><l>eyga<s n="n"/><s n="nt"/></l><r>eye<s n="n"/></r></p><par n="NC_STD"/></e>
-    <e><p><l>faðirbróðir<s n="n"/><s n="m"/></l><r>paternal<b/>uncle<s n="n"/></r></p><par n="NC_STD"/></e>
-    <e><p><l>drotning<s n="n"/><s n="f"/></l><r>queen<s n="n"/></r></p><par n="NC_STD"/></e>
-    <e><p><l>sólarljós<s n="n"/><s n="nt"/></l><r>sunlight<s n="n"/></r></p><par n="NC_STD"/></e>
-    <e><p><l>tíð<s n="n"/><s n="f"/></l><r>time<s n="n"/></r></p><par n="NC_STD"/></e>
-    <e><p><l>gull<s n="n"/><s n="nt"/></l><r>gold<s n="n"/></r></p><par n="NC_STD"/></e>
-    <e><p><l>gestur<s n="n"/><s n="m"/></l><r>guest<s n="n"/></r></p><par n="NC_STD"/></e>
-    <e><p><l>rættur<s n="n"/><s n="m"/></l><r>course<s n="n"/></r></p><par n="NC_STD"/></e>
-    <e><p><l>bátur<s n="n"/><s n="m"/></l><r>boat<s n="n"/></r></p><par n="NC_STD"/></e>
-    <e><p><l>morgun<s n="n"/><s n="m"/></l><r>morning<s n="n"/></r></p><par n="NC_STD"/></e>
-    <e><p><l>sólsetur<s n="n"/><s n="nt"/></l><r>sunset<s n="n"/></r></p><par n="NC_STD"/></e>
-    <e><p><l>hurð<s n="n"/><s n="f"/></l><r>door<s n="n"/></r></p><par n="NC_STD"/></e>
-    <e><p><l>tíð<s n="n"/><s n="f"/></l><r>time<s n="n"/></r></p><par n="NC_STD"/></e>
-    <e><p><l>songur<s n="n"/><s n="m"/></l><r>poem<s n="n"/></r></p><par n="NC_STD"/></e>
-    <e><p><l>lutur<s n="n"/><s n="m"/></l><r>object<s n="n"/></r></p><par n="NC_STD"/></e>
-    <e><p><l>dreki<s n="n"/><s n="m"/></l><r>dragon<s n="n"/></r></p><par n="NC_STD"/></e>
-    <e><p><l>leyva<s n="n"/><s n="f"/></l><r>lion<s n="n"/></r></p><par n="NC_STD"/></e>
-    <e><p><l>bak<s n="n"/><s n="nt"/></l><r>back<s n="n"/></r></p><par n="NC_STD"/></e>
-    <e><p><l>bók<s n="n"/><s n="f"/></l><r>book<s n="n"/></r></p><par n="NC_STD"/></e>
-    <e><p><l>hús<s n="n"/><s n="nt"/></l><r>house<s n="n"/></r></p><par n="NC_STD"/></e>
-    <e><p><l>barn<s n="n"/><s n="nt"/></l><r>child<s n="n"/></r></p><par n="NC_STD"/></e>
-    <e><p><l>ferð<s n="n"/><s n="f"/></l><r>trip<s n="n"/></r></p><par n="NC_STD"/></e>
-    <e><p><l>træ<s n="n"/><s n="nt"/></l><r>tree<s n="n"/></r></p><par n="NC_STD"/></e>
-    <e><p><l>víngarður<s n="n"/><s n="m"/></l><r>vineyard<s n="n"/></r></p><par n="NC_STD"/></e>
-    <e><p><l>vindur<s n="n"/><s n="m"/></l><r>wind<s n="n"/></r></p><par n="NC_STD"/></e>
-    <e><p><l>mánaður<s n="n"/><s n="m"/></l><r>month<s n="n"/></r></p><par n="NC_STD"/></e>
-    <e><p><l>luft<s n="n"/><s n="f"/></l><r>air<s n="n"/></r></p><par n="NC_STD"/></e>
-    <e><p><l>gáva<s n="n"/><s n="f"/></l><r>gift<s n="n"/></r></p><par n="NC_STD"/></e>
-    <e><p><l>lív<s n="n"/><s n="nt"/></l><r>life<s n="n"/></r></p><par n="NC_STD"/></e>
-    <e><p><l>kálvur<s n="n"/><s n="m"/></l><r>calf<s n="n"/></r></p><par n="NC_STD"/></e>
-    <e><p><l>hundur<s n="n"/><s n="m"/></l><r>dog<s n="n"/></r></p><par n="NC_STD"/></e>
-    <e><p><l>ljóðføri<s n="n"/><s n="nt"/></l><r>musical<b/>instrument<s n="n"/></r></p><par n="NC_STD"/></e>
-    <e><p><l>bræv<s n="n"/><s n="nt"/></l><r>letter<s n="n"/></r></p><par n="NC_STD"/></e>
-    <e><p><l>himmal<s n="n"/><s n="m"/></l><r>sky<s n="n"/></r></p><par n="NC_STD"/></e>
-    <e><p><l>summar<s n="n"/><s n="nt"/></l><r>summer<s n="n"/></r></p><par n="NC_STD"/></e>
-    <e><p><l>blóma<s n="n"/><s n="f"/></l><r>flower<s n="n"/></r></p><par n="NC_STD"/></e>
-    <e><p><l>skuggi<s n="n"/><s n="m"/></l><r>shadow<s n="n"/></r></p><par n="NC_STD"/></e>
-    <e><p><l>systir<s n="n"/><s n="f"/></l><r>sister<s n="n"/></r></p><par n="NC_STD"/></e>
-    <e><p><l>hav<s n="n"/><s n="nt"/></l><r>sea<s n="n"/></r></p><par n="NC_STD"/></e>
-    <e><p><l>garður<s n="n"/><s n="m"/></l><r>garden<s n="n"/></r></p><par n="NC_STD"/></e>
-    <e><p><l>ørn<s n="n"/><s n="f"/></l><r>eagle<s n="n"/></r></p><par n="NC_STD"/></e>
-    <e><p><l>býur<s n="n"/><s n="m"/></l><r>city<s n="n"/></r></p><par n="NC_STD"/></e>
-    <e><p><l>mál<s n="n"/><s n="nt"/></l><r>language<s n="n"/></r></p><par n="NC_STD"/></e>
-    <e><p><l>vatn<s n="n"/><s n="nt"/></l><r>water<s n="n"/></r></p><par n="NC_STD"/></e>
-    <e><p><l>hjól<s n="n"/><s n="nt"/></l><r>bike<s n="n"/></r></p><par n="NC_STD"/></e>
-    <e><p><l>hjálp<s n="n"/><s n="f"/></l><r>help<s n="n"/></r></p><par n="NC_STD"/></e>
-    <e><p><l>prestur<s n="n"/><s n="m"/></l><r>priest<s n="n"/></r></p><par n="NC_STD"/></e>
-    <e><p><l>líknilsi<s n="n"/><s n="nt"/></l><r>likeness<s n="n"/></r></p><par n="NC_STD"/></e>
-    <e><p><l>vón<s n="n"/><s n="f"/></l><r>hope<s n="n"/></r></p><par n="NC_STD"/></e>
-    <e><p><l>stjørna<s n="n"/><s n="f"/></l><r>star<s n="n"/></r></p><par n="NC_STD"/></e>
-    <e><p><l>mynd<s n="n"/><s n="f"/></l><r>picture<s n="n"/></r></p><par n="NC_STD"/></e>
-    <e><p><l>deyðaríki<s n="n"/><s n="nt"/></l><r>hell<s n="n"/></r></p><par n="NC_STD"/></e>
-    <e><p><l>kvøld<s n="n"/><s n="nt"/></l><r>evening<s n="n"/></r></p><par n="NC_STD"/></e>
-    <e><p><l>máni<s n="n"/><s n="m"/></l><r>moon<s n="n"/></r></p><par n="NC_STD"/></e>
-    <e><p><l>maður<s n="n"/><s n="m"/></l><r>man<s n="n"/></r></p><par n="NC_STD"/></e>
-    <e><p><l>jarn<s n="n"/><s n="nt"/></l><r>iron<s n="n"/></r></p><par n="NC_STD"/></e>
-    <e><p><l>knæ<s n="n"/><s n="nt"/></l><r>knee<s n="n"/></r></p><par n="NC_STD"/></e>
-    <e><p><l>rødd<s n="n"/><s n="f"/></l><r>voice<s n="n"/></r></p><par n="NC_STD"/></e>
-    <e><p><l>eldur<s n="n"/><s n="m"/></l><r>fire<s n="n"/></r></p><par n="NC_STD"/></e>
-    <e><p><l>land<s n="n"/><s n="nt"/></l><r>land<s n="n"/></r></p><par n="NC_STD"/></e>
-    <e><p><l>tunga<s n="n"/><s n="f"/></l><r>tongue<s n="n"/></r></p><par n="NC_STD"/></e>
-    <e><p><l>lækni<s n="n"/><s n="m"/></l><r>doctor<s n="n"/></r></p><par n="NC_STD"/></e>
-    <e><p><l>smiður<s n="n"/><s n="m"/></l><r>carpenter<s n="n"/></r></p><par n="NC_STD"/></e>
-    <e><p><l>strongur<s n="n"/><s n="m"/></l><r>string<s n="n"/></r></p><par n="NC_STD"/></e>
-    <e><p><l>breyð<s n="n"/><s n="nt"/></l><r>bread<s n="n"/></r></p><par n="NC_STD"/></e>
-    <e><p><l>bróst<s n="n"/><s n="nt"/></l><r>breast<s n="n"/></r></p><par n="NC_STD"/></e>
-    <e><p><l>kraftargerð<s n="n"/><s n="f"/></l><r>miracle<s n="n"/></r></p><par n="NC_STD"/></e>
-    <e><p><l>leyva<s n="n"/><s n="f"/></l><r>lion<s n="n"/></r></p><par n="NC_STD"/></e>
-    <e><p><l>fangahús<s n="n"/><s n="nt"/></l><r>prison<s n="n"/></r></p><par n="NC_STD"/></e>
-    <e><p><l>ljóðføri<s n="n"/><s n="nt"/></l><r>musical<b/>instrument<s n="n"/></r></p><par n="NC_STD"/></e>
-    <e><p><l>belti<s n="n"/><s n="nt"/></l><r>belt<s n="n"/></r></p><par n="NC_STD"/></e>
-    <e><p><l>gøta<s n="n"/><s n="f"/></l><r>street<s n="n"/></r></p><par n="NC_STD"/></e>
-    <e><p><l>ørindi<s n="n"/><s n="nt"/></l><r>errand<s n="n"/></r></p><par n="NC_STD"/></e>
-    <e><p><l>klæði<s n="n"/><s n="nt"/></l><r>clothing<s n="n"/></r></p><par n="NC_STD"/></e>
-    <e><p><l>blóð<s n="n"/><s n="nt"/></l><r>blood<s n="n"/></r></p><par n="NC_STD"/></e>
-    <e><p><l>rót<s n="n"/><s n="f"/></l><r>root<s n="n"/></r></p><par n="NC_STD"/></e>
-    <e><p><l>fólk<s n="n"/><s n="nt"/></l><r>people<s n="n"/></r></p><par n="NC_STD"/></e>
-    <e><p><l>ugla<s n="n"/><s n="f"/></l><r>owl<s n="n"/></r></p><par n="NC_STD"/></e>
-    <e><p><l>súpan<s n="n"/><s n="f"/></l><r>soup<s n="n"/></r></p><par n="NC_STD"/></e>
-    <e><p><l>perla<s n="n"/><s n="f"/></l><r>pearl<s n="n"/></r></p><par n="NC_STD"/></e>
-    <e><p><l>tænasta<s n="n"/><s n="f"/></l><r>service<s n="n"/></r></p><par n="NC_STD"/></e>
-    <e><p><l>ljós<s n="n"/><s n="nt"/></l><r>light<s n="n"/></r></p><par n="NC_STD"/></e>
-    <e><p><l>hár<s n="n"/><s n="nt"/></l><r>hair<s n="n"/></r></p><par n="NC_STD"/></e>
-    <e><p><l>andlit<s n="n"/><s n="nt"/></l><r>face<s n="n"/></r></p><par n="NC_STD"/></e>
-    <e><p><l>horn<s n="n"/><s n="nt"/></l><r>corner<s n="n"/></r></p><par n="NC_STD"/></e>
-    <e><p><l>djúp<s n="n"/><s n="nt"/></l><r>deep<s n="n"/></r></p><par n="NC_STD"/></e>
-    <e><p><l>suður<s n="n"/><s n="nt"/></l><r>south<s n="n"/></r></p><par n="NC_STD"/></e>
-    <e><p><l>ok<s n="n"/><s n="nt"/></l><r>yoke<s n="n"/></r></p><par n="NC_STD"/></e>
-    <e><p><l>torg<s n="n"/><s n="nt"/></l><r>square<s n="n"/></r></p><par n="NC_STD"/></e>
-    <e><p><l>seyður<s n="n"/><s n="m"/></l><r>sheep<s n="n"/></r></p><par n="NC_STD"/></e>
-    <e><p><l>likam<s n="n"/><s n="nt"/></l><r>body<s n="n"/></r></p><par n="NC_STD"/></e>
-    <e><p><l>svørð<s n="n"/><s n="nt"/></l><r>sword<s n="n"/></r></p><par n="NC_STD"/></e>
-    <e><p><l>sál<s n="n"/><s n="f"/></l><r>soul<s n="n"/></r></p><par n="NC_STD"/></e>
-    <e><p><l>knívur<s n="n"/><s n="m"/></l><r>knife<s n="n"/></r></p><par n="NC_STD"/></e>
-    <e><p><l>stavur<s n="n"/><s n="m"/></l><r>staff<s n="n"/></r></p><par n="NC_STD"/></e>
-    <e><p><l>skýggj<s n="n"/><s n="nt"/></l><r>cloud<s n="n"/></r></p><par n="NC_STD"/></e>
-    <e><p><l>hjarta<s n="n"/><s n="nt"/></l><r>heart<s n="n"/></r></p><par n="NC_STD"/></e>
-    <e><p><l>gras<s n="n"/><s n="nt"/></l><r>grass<s n="n"/></r></p><par n="NC_STD"/></e>
-    <e><p><l>fótur<s n="n"/><s n="m"/></l><r>foot<s n="n"/></r></p><par n="NC_STD"/></e>
-    <e><p><l>akur<s n="n"/><s n="m"/></l><r>field<s n="n"/></r></p><par n="NC_STD"/></e>
-    <e><p><l>esil<s n="n"/><s n="nt"/></l><r>ass<s n="n"/></r></p><par n="NC_STD"/></e>
-    <e><p><l>fingur<s n="n"/><s n="m"/></l><r>finger<s n="n"/></r></p><par n="NC_STD"/></e>
-    <e><p><l>veggur<s n="n"/><s n="m"/></l><r>wall<s n="n"/></r></p><par n="NC_STD"/></e>
-    <e><p><l>djevul<s n="n"/><s n="m"/></l><r>devil<s n="n"/></r></p><par n="NC_STD"/></e>
-    <e><p><l>vík<s n="n"/><s n="f"/></l><r>bay<s n="n"/></r></p><par n="NC_STD"/></e>
-    <e><p><l>úlvur<s n="n"/><s n="m"/></l><r>wolf<s n="n"/></r></p><par n="NC_STD"/></e>
-    <e><p><l>kurv<s n="n"/><s n="f"/></l><r>basket<s n="n"/></r></p><par n="NC_STD"/></e>
-    <e><p><l>revur<s n="n"/><s n="m"/></l><r>fox<s n="n"/></r></p><par n="NC_STD"/></e>
-    <e><p><l>hirði<s n="n"/><s n="m"/></l><r>shepherd<s n="n"/></r></p><par n="NC_STD"/></e>
-    <e><p><l>dómari<s n="n"/><s n="m"/></l><r>judge<s n="n"/></r></p><par n="NC_STD"/></e>
-    <e><p><l>ormur<s n="n"/><s n="m"/></l><r>worm<s n="n"/></r></p><par n="NC_STD"/></e>
-    <e><p><l>eik<s n="n"/><s n="f"/></l><r>oak<s n="n"/></r></p><par n="NC_STD"/></e>
-    <e><p><l>skamm<s n="n"/><s n="f"/></l><r>shame<s n="n"/></r></p><par n="NC_STD"/></e>
-    <e><p><l>tøgn<s n="n"/><s n="f"/></l><r>silence<s n="n"/></r></p><par n="NC_STD"/></e>
-    <e><p><l>veður<s n="n"/><s n="m"/></l><r>ram<s n="n"/></r></p><par n="NC_STD"/></e>
-    <e><p><l>veður<s n="n"/><s n="nt"/></l><r>weather<s n="n"/></r></p><par n="NC_STD"/></e>
-    <e><p><l>reiður<s n="n"/><s n="nt"/></l><r>nest<s n="n"/></r></p><par n="NC_STD"/></e>
-    <e><p><l>arbeiði<s n="n"/><s n="nt"/></l><r>job<s n="n"/></r></p><par n="NC_STD"/></e>
-    <e><p><l>januar<s n="n"/><s n="m"/></l><r>January<s n="n"/></r></p><par n="NC_STD"/></e>
-    <e><p><l>februar<s n="n"/><s n="m"/></l><r>February<s n="n"/></r></p><par n="NC_STD"/></e>
-    <e><p><l>mars<s n="n"/><s n="m"/></l><r>March<s n="n"/></r></p><par n="NC_STD"/></e>
-    <e><p><l>apríl<s n="n"/><s n="m"/></l><r>April<s n="n"/></r></p><par n="NC_STD"/></e>
-    <e><p><l>mai<s n="n"/><s n="m"/></l><r>May<s n="n"/></r></p><par n="NC_STD"/></e>
-    <e><p><l>juni<s n="n"/><s n="m"/></l><r>June<s n="n"/></r></p><par n="NC_STD"/></e>
-    <e><p><l>juli<s n="n"/><s n="m"/></l><r>July<s n="n"/></r></p><par n="NC_STD"/></e>
-    <e><p><l>august<s n="n"/><s n="m"/></l><r>August<s n="n"/></r></p><par n="NC_STD"/></e>
-    <e><p><l>september<s n="n"/><s n="m"/></l><r>September<s n="n"/></r></p><par n="NC_STD"/></e>
-    <e><p><l>oktober<s n="n"/><s n="m"/></l><r>October<s n="n"/></r></p><par n="NC_STD"/></e>
-    <e><p><l>november<s n="n"/><s n="m"/></l><r>November<s n="n"/></r></p><par n="NC_STD"/></e>
-    <e><p><l>desember<s n="n"/><s n="m"/></l><r>December<s n="n"/></r></p><par n="NC_STD"/></e>
-    <e><p><l>ægir<s n="n"/><s n="m"/></l><r>sea<s n="n"/></r></p><par n="NC_STD"/></e>
-    <e><p><l>evra<s n="n"/><s n="f"/></l><r>euro<s n="n"/></r></p><par n="NC_STD"/></e>
-    <e><p><l>forsíða<s n="n"/><s n="f"/></l><r>front<b/>page<s n="n"/></r></p><par n="NC_STD"/></e>
-    <e><p><l>hvalur<s n="n"/><s n="m"/></l><r>whale<s n="n"/></r></p><par n="NC_STD"/></e>
-    <e><p><l>jól<s n="n"/><s n="nt"/></l><r>Christmas<s n="n"/></r></p><par n="NC_STD"/></e>
-    <e><p><l>matur<s n="n"/><s n="m"/></l><r>food<s n="n"/></r></p><par n="NC_STD"/></e>
-    <e><p><l>rándýr<s n="n"/><s n="nt"/></l><r>carnivore<s n="n"/></r></p><par n="NC_STD"/></e>
-    <e><p><l>sagnorð<s n="n"/><s n="nt"/></l><r>verb<s n="n"/></r></p><par n="NC_STD"/></e>
-    <e><p><l>samheiti<s n="n"/><s n="nt"/></l><r>synonym<s n="n"/></r></p><par n="NC_STD"/></e>
-    <e><p><l>skordýr<s n="n"/><s n="nt"/></l><r>insect<s n="n"/></r></p><par n="NC_STD"/></e>
-    <e><p><l>skriðdýr<s n="n"/><s n="nt"/></l><r>reptile<s n="n"/></r></p><par n="NC_STD"/></e>
-    <e><p><l>sunnudagur<s n="n"/><s n="m"/></l><r>Sunday<s n="n"/></r></p><par n="NC_STD"/></e>
-    <e><p><l>tal<s n="n"/><s n="nt"/></l><r>talk<s n="n"/></r></p><par n="NC_STD"/></e>
-    <e><p><l>fartelefon<s n="n"/><s n="f"/></l><r>mobile<b/>phone<s n="n"/></r></p><par n="NC_STD"/></e>
-    <e><p><l>politistur<s n="n"/><s n="m"/></l><r>policeman<s n="n"/></r></p><par n="NC_STD"/></e>
-    <e><p><l>ætlan<s n="n"/><s n="f"/></l><r>plan<s n="n"/></r></p><par n="NC_STD"/></e>
-    <e><p><l>állur<s n="n"/><s n="m"/></l><r>eel<s n="n"/></r></p><par n="NC_STD"/></e>
-    <e><p><l>ont<s n="n"/><s n="f"/></l><r>duck<s n="n"/></r></p><par n="NC_STD"/></e>
-    <e><p><l>arr<s n="n"/><s n="nt"/></l><r>scar<s n="n"/></r></p><par n="NC_STD"/></e>
-    <e><p><l>bispur<s n="n"/><s n="m"/></l><r>bishop<s n="n"/></r></p><par n="NC_STD"/></e>
-    <e><p><l>diskil<s n="n"/><s n="m"/></l><r>plate<s n="n"/></r></p><par n="NC_STD"/></e>
-    <e><p><l>edikur<s n="n"/><s n="nt"/></l><r>vinegar<s n="n"/></r></p><par n="NC_STD"/></e>
-    <e><p><l>herur<s n="n"/><s n="m"/></l><r>army<s n="n"/></r></p><par n="NC_STD"/></e>
-    <e><p><l>heyst<s n="n"/><s n="nt"/></l><r>fall<s n="n"/></r></p><par n="NC_STD"/></e>
-    <e><p><l>høvundur<s n="n"/><s n="m"/></l><r>author<s n="n"/></r></p><par n="NC_STD"/></e>
-    <e><p><l>ítróttur<s n="n"/><s n="f"/></l><r>sport<s n="n"/></r></p><par n="NC_STD"/></e>
-    <e><p><l>knæ<s n="n"/><s n="nt"/></l><r>knee<s n="n"/></r></p><par n="NC_STD"/></e>
-    <e><p><l>sigla<s n="n"/><s n="f"/></l><r>mast<s n="n"/></r></p><par n="NC_STD"/></e>
-    <e><p><l>sigla<s n="n"/><s n="nt"/></l><r>sail<s n="n"/></r></p><par n="NC_STD"/></e>
-    <e><p><l>skjúrta<s n="n"/><s n="f"/></l><r>shirt<s n="n"/></r></p><par n="NC_STD"/></e>
-    <e><p><l>spurningur<s n="n"/><s n="f"/></l><r>question<s n="n"/></r></p><par n="NC_STD"/></e>
-    <e><p><l>stólur<s n="n"/><s n="m"/></l><r>chair<s n="n"/></r></p><par n="NC_STD"/></e>
-    <e><p><l>telda<s n="n"/><s n="f"/></l><r>computer<s n="n"/></r></p><par n="NC_STD"/></e>
-    <e><p><l>trúgv<s n="n"/><s n="f"/></l><r>faith<s n="n"/></r></p><par n="NC_STD"/></e>
-    <e><p><l>vreiði<s n="n"/><s n="f"/></l><r>anger<s n="n"/></r></p><par n="NC_STD"/></e>
-    <e><p><l>apa<s n="n"/><s n="f"/></l><r>monkey<s n="n"/></r></p><par n="NC_STD"/></e>
-    <e><p><l>bókasavn<s n="n"/><s n="nt"/></l><r>library<s n="n"/></r></p><par n="NC_STD"/></e>
-    <e><p><l>dømi<s n="n"/><s n="nt"/></l><r>example<s n="n"/></r></p><par n="NC_STD"/></e>
-    <e><p><l>evni<s n="n"/><s n="nt"/></l><r>material<s n="n"/></r></p><par n="NC_STD"/></e>
-    <e><p><l>fløska<s n="n"/><s n="f"/></l><r>bottle<s n="n"/></r></p><par n="NC_STD"/></e>
-    <e><p><l>mánadagur<s n="n"/><s n="m"/></l><r>Monday<s n="n"/></r></p><par n="NC_STD"/></e>
-    <e><p><l>olja<s n="n"/><s n="f"/></l><r>oil<s n="n"/></r></p><par n="NC_STD"/></e>
-    <e><p><l>omma<s n="n"/><s n="f"/></l><r>grandmother<s n="n"/></r></p><par n="NC_STD"/></e>
-    <e><p><l>roykur<s n="n"/><s n="m"/></l><r>smoke<s n="n"/></r></p><par n="NC_STD"/></e>
-    <e><p><l>sangur<s n="n"/><s n="m"/></l><r>song<s n="n"/></r></p><par n="NC_STD"/></e>
-    <e><p><l>skúli<s n="n"/><s n="m"/></l><r>school<s n="n"/></r></p><par n="NC_STD"/></e>
-    <e><p><l>søga<s n="n"/><s n="f"/></l><r>history<s n="n"/></r></p><par n="NC_STD"/></e>
-    <e><p><l>strond<s n="n"/><s n="f"/></l><r>beach<s n="n"/></r></p><par n="NC_STD"/></e>
-    <e><p><l>vár<s n="n"/><s n="nt"/></l><r>spring<s n="n"/></r></p><par n="NC_STD"/></e>
-    <e><p><l>veitsla<s n="n"/><s n="f"/></l><r>party<s n="n"/></r></p><par n="NC_STD"/></e>
-    <e><p><l>ær<s n="n"/><s n="f"/></l><r>ewe<s n="n"/></r></p><par n="NC_STD"/></e>
-    <e><p><l>ál<s n="n"/><s n="nt"/></l><r>aluminum<s n="n"/></r></p><par n="NC_STD"/></e>
-    <e><p><l>aldur<s n="n"/><s n="m"/></l><r>age<s n="n"/></r></p><par n="NC_STD"/></e>
-    <e><p><l>bjór<s n="n"/><s n="nt"/></l><r>beer<s n="n"/></r></p><par n="NC_STD"/></e>
-    <e><p><l>blettur<s n="n"/><s n="m"/></l><r>stain<s n="n"/></r></p><par n="NC_STD"/></e>
-    <e><p><l>dalur<s n="n"/><s n="m"/></l><r>valley<s n="n"/></r></p><par n="NC_STD"/></e>
-    <e><p><l>egg<s n="n"/><s n="nt"/></l><r>egg<s n="n"/></r></p><par n="NC_STD"/></e>
-    <e><p><l>eitur<s n="n"/><s n="nt"/></l><r>poison<s n="n"/></r></p><par n="NC_STD"/></e>
-    <e><p><l>fræ<s n="n"/><s n="nt"/></l><r>seed<s n="n"/></r></p><par n="NC_STD"/></e>
-    <e><p><l>kol<s n="n"/><s n="nt"/></l><r>coal<s n="n"/></r></p><par n="NC_STD"/></e>
-    <e><p><l>kráka<s n="n"/><s n="f"/></l><r>crow<s n="n"/></r></p><par n="NC_STD"/></e>
-    <e><p><l>mjólk<s n="n"/><s n="f"/></l><r>milk<s n="n"/></r></p><par n="NC_STD"/></e>
-    <e><p><l>mús<s n="n"/><s n="f"/></l><r>mouse<s n="n"/></r></p><par n="NC_STD"/></e>
-    <e><p><l>orðabók<s n="n"/><s n="f"/></l><r>dictionary<s n="n"/></r></p><par n="NC_STD"/></e>
-    <e><p><l>pappír<s n="n"/><s n="nt"/></l><r>paper<s n="n"/></r></p><par n="NC_STD"/></e>
-    <e><p><l>regn<s n="n"/><s n="nt"/></l><r>rain<s n="n"/></r></p><par n="NC_STD"/></e>
-    <e><p><l>salt<s n="n"/><s n="nt"/></l><r>salt<s n="n"/></r></p><par n="NC_STD"/></e>
-    <e><p><l>sápa<s n="n"/><s n="f"/></l><r>soap<s n="n"/></r></p><par n="NC_STD"/></e>
-    <e><p><l>sigur<s n="n"/><s n="m"/></l><r>victory<s n="n"/></r></p><par n="NC_STD"/></e>
-    <e><p><l>sjónvarp<s n="n"/><s n="nt"/></l><r>television<s n="n"/></r></p><par n="NC_STD"/></e>
-    <e><p><l>skegg<s n="n"/><s n="nt"/></l><r>beard<s n="n"/></r></p><par n="NC_STD"/></e>
-    <e><p><l>skógur<s n="n"/><s n="m"/></l><r>forest<s n="n"/></r></p><par n="NC_STD"/></e>
-    <e><p><l>storkur<s n="n"/><s n="m"/></l><r>stork<s n="n"/></r></p><par n="NC_STD"/></e>
-    <e><p><l>stormur<s n="n"/><s n="m"/></l><r>storm<s n="n"/></r></p><par n="NC_STD"/></e>
-    <e><p><l>sund<s n="n"/><s n="nt"/></l><r>swim<s n="n"/></r></p><par n="NC_STD"/></e>
-    <e><p><l>svanur<s n="n"/><s n="m"/></l><r>swan<s n="n"/></r></p><par n="NC_STD"/></e>
-    <e><p><l>svín<s n="n"/><s n="nt"/></l><r>pig<s n="n"/></r></p><par n="NC_STD"/></e>
-    <e><p><l>tyrla<s n="n"/><s n="f"/></l><r>helicopter<s n="n"/></r></p><par n="NC_STD"/></e>
-    <e><p><l>vetur<s n="n"/><s n="m"/></l><r>winter<s n="n"/></r></p><par n="NC_STD"/></e>
-    <e><p><l>viður<s n="n"/><s n="m"/></l><r>wood<s n="n"/></r></p><par n="NC_STD"/></e>
-    <e><p><l>vísindi<s n="n"/><s n="nt"/></l><r>science<s n="n"/></r></p><par n="NC_STD"/></e>
-    <e><p><l>frukt<s n="n"/><s n="f"/></l><r>fruit<s n="n"/></r></p><par n="NC_STD"/></e>
-    <e><p><l>slag<s n="n"/><s n="nt"/></l><r>kind<s n="n"/></r></p><par n="NC_STD"/></e>
-    <e><p><l>urt<s n="n"/><s n="f"/></l><r>herb<s n="n"/></r></p><par n="NC_STD"/></e>
-    <e><p><l>savn<s n="n"/><s n="nt"/></l><r>museum<s n="n"/></r></p><par n="NC_STD"/></e>
-    <e><p><l>uppruni<s n="n"/><s n="m"/></l><r>source<s n="n"/></r></p><par n="NC_STD"/></e>
-    <e><p><l>toka<s n="n"/><s n="f"/></l><r>fog<s n="n"/></r></p><par n="NC_STD"/></e>
-    <e><p><l>nøs<s n="n"/><s n="f"/></l><r>nostril<s n="n"/></r></p><par n="NC_STD"/></e>
-    <e><p><l>kona<s n="n"/><s n="f"/></l><r>woman<s n="n"/></r></p><par n="NC_STD"/></e>
-    <e><p><l>verð<s n="n"/><s n="nt"/></l><r>price<s n="n"/></r></p><par n="NC_STD"/></e>
-    <e><p><l>koma<s n="n"/><s n="f"/></l><r>arrival<s n="n"/></r></p><par n="NC_STD"/></e>
-    <e><p><l>hundrað<s n="n"/><s n="nt"/></l><r>hundred<s n="n"/></r></p><par n="NC_STD"/></e>
-    <e><p><l>fólk<s n="n"/><s n="nt"/></l><r>people<s n="n"/></r></p><par n="NC_STD"/></e>
-    <e><p><l>tóm<s n="n"/><s n="nt"/></l><r>void<s n="n"/></r></p><par n="NC_STD"/></e>
+    <e><p><l>fuglur<s n="parol"/>[n][m]</l><r>bird<s n="cat"/>[n]</r></p><par n="NC_STD"/></e>
+    <e><p><l>sjógvur<s n="parol"/>[n][m]</l><r>ocean<s n="cat"/>[n]</r></p><par n="NC_STD"/></e>
+    <e><p><l>fiskur<s n="parol"/>[n][m]</l><r>fish<s n="cat"/>[n]</r></p><par n="NC_STD"/></e>
+    <e><p><l>jørð<s n="parol"/>[n][f]</l><r>earth<s n="cat"/>[n]</r></p><par n="NC_STD"/></e>
+    <e><p><l>mynd<s n="parol"/>[n][f]</l><r>picture<s n="cat"/>[n]</r></p><par n="NC_STD"/></e>
+    <e><p><l>lík<s n="parol"/>[n][nt]</l><r>corpse<s n="cat"/>[n]</r></p><par n="NC_STD"/></e>
+    <e><p><l>orð<s n="parol"/>[n][nt]</l><r>word<s n="cat"/>[n]</r></p><par n="NC_STD"/></e>
+    <e><p><l>hús<s n="parol"/>[n][nt]</l><r>house<s n="cat"/>[n]</r></p><par n="NC_STD"/></e>
+    <e><p><l>blað<s n="parol"/>[n][nt]</l><r>paper<s n="cat"/>[n]</r></p><par n="NC_STD"/></e>
+    <e><p><l>gras<s n="parol"/>[n][nt]</l><r>grass<s n="cat"/>[n]</r></p><par n="NC_STD"/></e>
+    <e><p><l>skip<s n="parol"/>[n][nt]</l><r>ship<s n="cat"/>[n]</r></p><par n="NC_STD"/></e>
+    <e><p><l>svar<s n="parol"/>[n][nt]</l><r>reply<s n="cat"/>[n]</r></p><par n="NC_STD"/></e>
+    <e><p><l>ljós<s n="parol"/>[n][nt]</l><r>light<s n="cat"/>[n]</r></p><par n="NC_STD"/></e>
+    <e><p><l>breyð<s n="parol"/>[n][nt]</l><r>bread<s n="cat"/>[n]</r></p><par n="NC_STD"/></e>
+    <e><p><l>bók<s n="parol"/>[n][f]</l><r>book<s n="cat"/>[n]</r></p><par n="NC_STD"/></e>
+    <e><p><l>genta<s n="parol"/>[n][f]</l><r>girl<s n="cat"/>[n]</r></p><par n="NC_STD"/></e>
+    <e><p><l>dóttir<s n="parol"/>[n][f]</l><r>daughter<s n="cat"/>[n]</r></p><par n="NC_STD"/></e>
+    <e><p><l>vinna<s n="parol"/>[n][f]</l><r>work<s n="cat"/>[n]</r></p><par n="NC_STD"/></e>
+    <e><p><l>bilur<s n="parol"/>[n][m]</l><r>car<s n="cat"/>[n]</r></p><par n="NC_STD"/></e>
+    <e><p><l>gudur<s n="parol"/>[n][m]</l><r>God<s n="cat"/>[n]</r></p><par n="NC_STD"/></e>
+    <e><p><l>hundur<s n="parol"/>[n][m]</l><r>dog<s n="cat"/>[n]</r></p><par n="NC_STD"/></e>
+    <e><p><l>morgun<s n="parol"/>[n][m]</l><r>morning<s n="cat"/>[n]</r></p><par n="NC_STD"/></e>
+    <e><p><l>dagur<s n="parol"/>[n][m]</l><r>day<s n="cat"/>[n]</r></p><par n="NC_STD"/></e>
+    <e><p><l>bróðir<s n="parol"/>[n][m]</l><r>brother<s n="cat"/>[n]</r></p><par n="NC_STD"/></e>
+    <e><p><l>mamma<s n="parol"/>[n][f]</l><r>mum<s n="cat"/>[n]</r></p><par n="NC_STD"/></e>
+    <e><p><l>maður<s n="parol"/>[n][m]</l><r>man<s n="cat"/>[n]</r></p><par n="NC_STD"/></e>
+    <e><p><l>hattur<s n="parol"/>[n][m]</l><r>hat<s n="cat"/>[n]</r></p><par n="NC_STD"/></e>
+    <e><p><l>hestur<s n="parol"/>[n][m]</l><r>horse<s n="cat"/>[n]</r></p><par n="NC_STD"/></e>
+    <e><p><l>drongur<s n="parol"/>[n][m]</l><r>boy<s n="cat"/>[n]</r></p><par n="NC_STD"/></e>
+    <e><p><l>barnabarn<s n="parol"/>[n][nt]</l><r>grandchild<s n="cat"/>[n]</r></p><par n="NC_STD"/></e>
+    <e><p><l>myrkur<s n="parol"/>[n][nt]</l><r>darkness<s n="cat"/>[n]</r></p><par n="NC_STD"/></e>
+    <e><p><l>munnur<s n="parol"/>[n][m]</l><r>mouth<s n="cat"/>[n]</r></p><par n="NC_STD"/></e>
+    <e><p><l>ull<s n="parol"/>[n][f]</l><r>wool<s n="cat"/>[n]</r></p><par n="NC_STD"/></e>
+    <e><p><l>ótti<s n="parol"/>[n][m]</l><r>fear<s n="cat"/>[n]</r></p><par n="NC_STD"/></e>
+    <e><p><l>friður<s n="parol"/>[n][m]</l><r>peace<s n="cat"/>[n]</r></p><par n="NC_STD"/></e>
+    <e><p><l>løn<s n="parol"/>[n][f]</l><r>salary<s n="cat"/>[n]</r></p><par n="NC_STD"/></e>
+    <e><p><l>frælsi<s n="parol"/>[n][nt]</l><r>freedom<s n="cat"/>[n]</r></p><par n="NC_STD"/></e>
+    <e><p><l>landamark<s n="parol"/>[n][nt]</l><r>border<s n="cat"/>[n]</r></p><par n="NC_STD"/></e>
+    <e><p><l>kjøt<s n="parol"/>[n][nt]</l><r>meat<s n="cat"/>[n]</r></p><par n="NC_STD"/></e>
+    <e><p><l>føði<s n="parol"/>[n][f]</l><r>food<s n="cat"/>[n]</r></p><par n="NC_STD"/></e>
+    <e><p><l>vørr<s n="parol"/>[n][f]</l><r>lip<s n="cat"/>[n]</r></p><par n="NC_STD"/></e>
+    <e><p><l>ábyrgd<s n="parol"/>[n][f]</l><r>responsibility<s n="cat"/>[n]</r></p><par n="NC_STD"/></e>
+    <e><p><l>rættur<s n="parol"/>[n][m]</l><r>course<s n="cat"/>[n]</r></p><par n="NC_STD"/></e>
+    <e><p><l>munur<s n="parol"/>[n][m]</l><r>difference<s n="cat"/>[n]</r></p><par n="NC_STD"/></e>
+    <e><p><l>hár<s n="parol"/>[n][nt]</l><r>hair<s n="cat"/>[n]</r></p><par n="NC_STD"/></e>
+    <e><p><l>vera<s n="parol"/>[n][f]</l><r>creature<s n="cat"/>[n]</r></p><par n="NC_STD"/></e>
+    <e><p><l>vørrur<s n="parol"/>[n][m]</l><r>goods<s n="cat"/>[n]</r></p><par n="NC_STD"/></e>
+    <e><p><l>villa<s n="parol"/>[n][f]</l><r>error<s n="cat"/>[n]</r></p><par n="NC_STD"/></e>
+    <e><p><l>embæti<s n="parol"/>[n][nt]</l><r>office<s n="cat"/>[n]</r></p><par n="NC_STD"/></e>
+    <e><p><l>framsíða<s n="parol"/>[n][f]</l><r>front<s n="cat"/>[n]</r></p><par n="NC_STD"/></e>
+    <e><p><l>longd<s n="parol"/>[n][f]</l><r>length<s n="cat"/>[n]</r></p><par n="NC_STD"/></e>
+    <e><p><l>mynd<s n="parol"/>[n][f]</l><r>picture<s n="cat"/>[n]</r></p><par n="NC_STD"/></e>
+    <e><p><l>fyrimynd<s n="parol"/>[n][f]</l><r>example<s n="cat"/>[n]</r></p><par n="NC_STD"/></e>
+    <e><p><l>lík<s n="parol"/>[n][nt]</l><r>corpse<s n="cat"/>[n]</r></p><par n="NC_STD"/></e>
+    <e><p><l>stund<s n="parol"/>[n][f]</l><r>hour<s n="cat"/>[n]</r></p><par n="NC_STD"/></e>
+    <e><p><l>gudur<s n="parol"/>[n][m]</l><r>God<s n="cat"/>[n]</r></p><par n="NC_STD"/></e>
+    <e><p><l>summar<s n="parol"/>[n][nt]</l><r>summer<s n="cat"/>[n]</r></p><par n="NC_STD"/></e>
+    <e><p><l>talva<s n="parol"/>[n][f]</l><r>pill<s n="cat"/>[n]</r></p><par n="NC_STD"/></e>
+    <e><p><l>kraftur<s n="parol"/>[n][m]</l><r>power<s n="cat"/>[n]</r></p><par n="NC_STD"/></e>
+    <e><p><l>tænasta<s n="parol"/>[n][f]</l><r>service<s n="cat"/>[n]</r></p><par n="NC_STD"/></e>
+    <e><p><l>tonn<s n="parol"/>[n][f]</l><r>tooth<s n="cat"/>[n]</r></p><par n="NC_STD"/></e>
+    <e><p><l>vegur<s n="parol"/>[n][m]</l><r>road<s n="cat"/>[n]</r></p><par n="NC_STD"/></e>
+    <e><p><l>yvirvøld<s n="parol"/>[n][f]</l><r>authority<s n="cat"/>[n]</r></p><par n="NC_STD"/></e>
+    <e><p><l>málevni<s n="parol"/>[n][nt]</l><r>issue<s n="cat"/>[n]</r></p><par n="NC_STD"/></e>
+    <e><p><l>sangari<s n="parol"/>[n][m]</l><r>singer<s n="cat"/>[n]</r></p><par n="NC_STD"/></e>
+    <e><p><l>ætt<s n="parol"/>[n][f]</l><r>family<s n="cat"/>[n]</r></p><par n="NC_STD"/></e>
+    <e><p><l>træl<s n="parol"/>[n][nt]</l><r>slave<s n="cat"/>[n]</r></p><par n="NC_STD"/></e>
+    <e><p><l>verja<s n="parol"/>[n][f]</l><r>defence<s n="cat"/>[n]</r></p><par n="NC_STD"/></e>
+    <e><p><l>tjóð<s n="parol"/>[n][f]</l><r>nation<s n="cat"/>[n]</r></p><par n="NC_STD"/></e>
+    <e><p><l>vinur<s n="parol"/>[n][m]</l><r>male<b/>friend<s n="cat"/>[n]</r></p><par n="NC_STD"/></e>
+    <e><p><l>avkom<s n="parol"/>[n][nt]</l><r>offspring<s n="cat"/>[n]</r></p><par n="NC_STD"/></e>
+    <e><p><l>kyn<s n="parol"/>[n][nt]</l><r>gender<s n="cat"/>[n]</r></p><par n="NC_STD"/></e>
+    <e><p><l>vápn<s n="parol"/>[n][nt]</l><r>weapon<s n="cat"/>[n]</r></p><par n="NC_STD"/></e>
+    <e><p><l>vøkstur<s n="parol"/>[n][m]</l><r>growth<s n="cat"/>[n]</r></p><par n="NC_STD"/></e>
+    <e><p><l>vitni<s n="parol"/>[n][nt]</l><r>witness<s n="cat"/>[n]</r></p><par n="NC_STD"/></e>
+    <e><p><l>fiskur<s n="parol"/>[n][m]</l><r>fish<s n="cat"/>[n]</r></p><par n="NC_STD"/></e>
+    <e><p><l>fall<s n="parol"/>[n][nt]</l><r>fall<s n="cat"/>[n]</r></p><par n="NC_STD"/></e>
+    <e><p><l>bardagi<s n="parol"/>[n][m]</l><r>fight<s n="cat"/>[n]</r></p><par n="NC_STD"/></e>
+    <e><p><l>dómur<s n="parol"/>[n][m]</l><r>verdict<s n="cat"/>[n]</r></p><par n="NC_STD"/></e>
+    <e><p><l>grundvøllur<s n="parol"/>[n][m]</l><r>basis<s n="cat"/>[n]</r></p><par n="NC_STD"/></e>
+    <e><p><l>flokkur<s n="parol"/>[n][m]</l><r>group<s n="cat"/>[n]</r></p><par n="NC_STD"/></e>
+    <e><p><l>træl<s n="parol"/>[n][nt]</l><r>slave<s n="cat"/>[n]</r></p><par n="NC_STD"/></e>
+    <e><p><l>verja<s n="parol"/>[n][f]</l><r>defence<s n="cat"/>[n]</r></p><par n="NC_STD"/></e>
+    <e><p><l>tjóð<s n="parol"/>[n][f]</l><r>nation<s n="cat"/>[n]</r></p><par n="NC_STD"/></e>
+    <e><p><l>tænari<s n="parol"/>[n][m]</l><r>waiter<s n="cat"/>[n]</r></p><par n="NC_STD"/></e>
+    <e><p><l>boð<s n="parol"/>[n][nt]</l><r>invitation<s n="cat"/>[n]</r></p><par n="NC_STD"/></e>
+    <e><p><l>upphav<s n="parol"/>[n][nt]</l><r>beginning<s n="cat"/>[n]</r></p><par n="NC_STD"/></e>
+    <e><p><l>sjógvur<s n="parol"/>[n][m]</l><r>ocean<s n="cat"/>[n]</r></p><par n="NC_STD"/></e>
+    <e><p><l>ogn<s n="parol"/>[n][f]</l><r>property<s n="cat"/>[n]</r></p><par n="NC_STD"/></e>
+    <e><p><l>maður<s n="parol"/>[n][m]</l><r>man<s n="cat"/>[n]</r></p><par n="NC_STD"/></e>
+    <e><p><l>skrivari<s n="parol"/>[n][m]</l><r>secretary<s n="cat"/>[n]</r></p><par n="NC_STD"/></e>
+    <e><p><l>ísur<s n="parol"/>[n][m]</l><r>ice<b/>cream<s n="cat"/>[n]</r></p><par n="NC_STD"/></e>
+    <e><p><l>vongur<s n="parol"/>[n][m]</l><r>wing<s n="cat"/>[n]</r></p><par n="NC_STD"/></e>
+    <e><p><l>fiskur<s n="parol"/>[n][m]</l><r>fish<s n="cat"/>[n]</r></p><par n="NC_STD"/></e>
+    <e><p><l>fíggindi<s n="parol"/>[n][m]</l><r>enemy<s n="cat"/>[n]</r></p><par n="NC_STD"/></e>
+    <e><p><l>dreymur<s n="parol"/>[n][m]</l><r>dream<s n="cat"/>[n]</r></p><par n="NC_STD"/></e>
+    <e><p><l>svøvnur<s n="parol"/>[n][m]</l><r>sleep<s n="cat"/>[n]</r></p><par n="NC_STD"/></e>
+    <e><p><l>vegur<s n="parol"/>[n][m]</l><r>road<s n="cat"/>[n]</r></p><par n="NC_STD"/></e>
+    <e><p><l>køka<s n="parol"/>[n][f]</l><r>cake<s n="cat"/>[n]</r></p><par n="NC_STD"/></e>
+    <e><p><l>lið<s n="parol"/>[n][f]</l><r>side<s n="cat"/>[n]</r></p><par n="NC_STD"/></e>
+    <e><p><l>leið<s n="parol"/>[n][f]</l><r>way<s n="cat"/>[n]</r></p><par n="NC_STD"/></e>
+    <e><p><l>ljós<s n="parol"/>[n][nt]</l><r>light<s n="cat"/>[n]</r></p><par n="NC_STD"/></e>
+    <e><p><l>hond<s n="parol"/>[n][f]</l><r>hand<s n="cat"/>[n]</r></p><par n="NC_STD"/></e>
+    <e><p><l>alda<s n="parol"/>[n][f]</l><r>century<s n="cat"/>[n]</r></p><par n="NC_STD"/></e>
+    <e><p><l>rót<s n="parol"/>[n][f]</l><r>root<s n="cat"/>[n]</r></p><par n="NC_STD"/></e>
+    <e><p><l>maður<s n="parol"/>[n][m]</l><r>man<s n="cat"/>[n]</r></p><par n="NC_STD"/></e>
+    <e><p><l>háttur<s n="parol"/>[n][m]</l><r>manner<s n="cat"/>[n]</r></p><par n="NC_STD"/></e>
+    <e><p><l>dóttir<s n="parol"/>[n][f]</l><r>daughter<s n="cat"/>[n]</r></p><par n="NC_STD"/></e>
+    <e><p><l>summar<s n="parol"/>[n][nt]</l><r>summer<s n="cat"/>[n]</r></p><par n="NC_STD"/></e>
+    <e><p><l>hermaður<s n="parol"/>[n][m]</l><r>soldier<s n="cat"/>[n]</r></p><par n="NC_STD"/></e>
+    <e><p><l>eystur<s n="parol"/>[n][nt]</l><r>east<s n="cat"/>[n]</r></p><par n="NC_STD"/></e>
+    <e><p><l>norður<s n="parol"/>[n][nt]</l><r>north<s n="cat"/>[n]</r></p><par n="NC_STD"/></e>
+    <e><p><l>suður<s n="parol"/>[n][nt]</l><r>south<s n="cat"/>[n]</r></p><par n="NC_STD"/></e>
+    <e><p><l>vestur<s n="parol"/>[n][nt]</l><r>west<s n="cat"/>[n]</r></p><par n="NC_STD"/></e>
+    <e><p><l>silvur<s n="parol"/>[n][nt]</l><r>silver<s n="cat"/>[n]</r></p><par n="NC_STD"/></e>
+    <e><p><l>vegur<s n="parol"/>[n][m]</l><r>road<s n="cat"/>[n]</r></p><par n="NC_STD"/></e>
+    <e><p><l>vinur<s n="parol"/>[n][m]</l><r>male<b/>friend<s n="cat"/>[n]</r></p><par n="NC_STD"/></e>
+    <e><p><l>sonur<s n="parol"/>[n][m]</l><r>son<s n="cat"/>[n]</r></p><par n="NC_STD"/></e>
+    <e><p><l>flokkur<s n="parol"/>[n][m]</l><r>group<s n="cat"/>[n]</r></p><par n="NC_STD"/></e>
+    <e><p><l>norður<s n="parol"/>[n][nt]</l><r>north<s n="cat"/>[n]</r></p><par n="NC_STD"/></e>
+    <e><p><l>vestur<s n="parol"/>[n][nt]</l><r>west<s n="cat"/>[n]</r></p><par n="NC_STD"/></e>
+    <e><p><l>høvur<s n="parol"/>[n][nt]</l><r>head<s n="cat"/>[n]</r></p><par n="NC_STD"/></e>
+    <e><p><l>móðir<s n="parol"/>[n][f]</l><r>mother<s n="cat"/>[n]</r></p><par n="NC_STD"/></e>
+    <e><p><l>heimur<s n="parol"/>[n][m]</l><r>world<s n="cat"/>[n]</r></p><par n="NC_STD"/></e>
+    <e><p><l>býur<s n="parol"/>[n][m]</l><r>town<s n="cat"/>[n]</r></p><par n="NC_STD"/></e>
+    <e><p><l>tal<s n="parol"/>[n][nt]</l><r>number<s n="cat"/>[n]</r></p><par n="NC_STD"/></e>
+    <e><p><l>ríki<s n="parol"/>[n][nt]</l><r>state<s n="cat"/>[n]</r></p><par n="NC_STD"/></e>
+    <e><p><l>hædd<s n="parol"/>[n][f]</l><r>storey<s n="cat"/>[n]</r></p><par n="NC_STD"/></e>
+    <e><p><l>skip<s n="parol"/>[n][nt]</l><r>ship<s n="cat"/>[n]</r></p><par n="NC_STD"/></e>
+    <e><p><l>meistari<s n="parol"/>[n][m]</l><r>master<s n="cat"/>[n]</r></p><par n="NC_STD"/></e>
+    <e><p><l>grøv<s n="parol"/>[n][f]</l><r>grave<s n="cat"/>[n]</r></p><par n="NC_STD"/></e>
+    <e><p><l>staður<s n="parol"/>[n][m]</l><r>place<s n="cat"/>[n]</r></p><par n="NC_STD"/></e>
+    <e><p><l>fat<s n="parol"/>[n][nt]</l><r>platter<s n="cat"/>[n]</r></p><par n="NC_STD"/></e>
+    <e><p><l>verk<s n="parol"/>[n][nt]</l><r>work<s n="cat"/>[n]</r></p><par n="NC_STD"/></e>
+    <e><p><l>hálsur<s n="parol"/>[n][m]</l><r>neck<s n="cat"/>[n]</r></p><par n="NC_STD"/></e>
+    <e><p><l>tak<s n="parol"/>[n][nt]</l><r>roof<s n="cat"/>[n]</r></p><par n="NC_STD"/></e>
+    <e><p><l>rað<s n="parol"/>[n][nt]</l><r>row<s n="cat"/>[n]</r></p><par n="NC_STD"/></e>
+    <e><p><l>kongur<s n="parol"/>[n][m]</l><r>king<s n="cat"/>[n]</r></p><par n="NC_STD"/></e>
+    <e><p><l>vín<s n="parol"/>[n][nt]</l><r>alcohol<s n="cat"/>[n]</r></p><par n="NC_STD"/></e>
+    <e><p><l>sól<s n="parol"/>[n][f]</l><r>sun<s n="cat"/>[n]</r></p><par n="NC_STD"/></e>
+    <e><p><l>yvirmaður<s n="parol"/>[n][m]</l><r>boss<s n="cat"/>[n]</r></p><par n="NC_STD"/></e>
+    <e><p><l>borð<s n="parol"/>[n][nt]</l><r>table<s n="cat"/>[n]</r></p><par n="NC_STD"/></e>
+    <e><p><l>net<s n="parol"/>[n][nt]</l><r>net<s n="cat"/>[n]</r></p><par n="NC_STD"/></e>
+    <e><p><l>fuglur<s n="parol"/>[n][m]</l><r>bird<s n="cat"/>[n]</r></p><par n="NC_STD"/></e>
+    <e><p><l>vald<s n="parol"/>[n][nt]</l><r>authority<s n="cat"/>[n]</r></p><par n="NC_STD"/></e>
+    <e><p><l>navn<s n="parol"/>[n][nt]</l><r>name<s n="cat"/>[n]</r></p><par n="NC_STD"/></e>
+    <e><p><l>tekn<s n="parol"/>[n][nt]</l><r>symbol<s n="cat"/>[n]</r></p><par n="NC_STD"/></e>
+    <e><p><l>ráð<s n="parol"/>[n][nt]</l><r>advice<s n="cat"/>[n]</r></p><par n="NC_STD"/></e>
+    <e><p><l>hestur<s n="parol"/>[n][m]</l><r>horse<s n="cat"/>[n]</r></p><par n="NC_STD"/></e>
+    <e><p><l>samfelag<s n="parol"/>[n][nt]</l><r>community<s n="cat"/>[n]</r></p><par n="NC_STD"/></e>
+    <e><p><l>lamb<s n="parol"/>[n][nt]</l><r>lamb<s n="cat"/>[n]</r></p><par n="NC_STD"/></e>
+    <e><p><l>venjing<s n="parol"/>[n][f]</l><r>exercise<s n="cat"/>[n]</r></p><par n="NC_STD"/></e>
+    <e><p><l>nýra<s n="parol"/>[n][nt]</l><r>kidney<s n="cat"/>[n]</r></p><par n="NC_STD"/></e>
+    <e><p><l>gøta<s n="parol"/>[n][f]</l><r>road<s n="cat"/>[n]</r></p><par n="NC_STD"/></e>
+    <e><p><l>eingil<s n="parol"/>[n][m]</l><r>angel<s n="cat"/>[n]</r></p><par n="NC_STD"/></e>
+    <e><p><l>lóg<s n="parol"/>[n][f]</l><r>layer<s n="cat"/>[n]</r></p><par n="NC_STD"/></e>
+    <e><p><l>fluga<s n="parol"/>[n][f]</l><r>fly<s n="cat"/>[n]</r></p><par n="NC_STD"/></e>
+    <e><p><l>steinur<s n="parol"/>[n][m]</l><r>stone<s n="cat"/>[n]</r></p><par n="NC_STD"/></e>
+    <e><p><l>tal<s n="parol"/>[n][nt]</l><r>number<s n="cat"/>[n]</r></p><par n="NC_STD"/></e>
+    <e><p><l>vika<s n="parol"/>[n][f]</l><r>week<s n="cat"/>[n]</r></p><par n="NC_STD"/></e>
+    <e><p><l>kona<s n="parol"/>[n][f]</l><r>woman<s n="cat"/>[n]</r></p><par n="NC_STD"/></e>
+    <e><p><l>nátt<s n="parol"/>[n][f]</l><r>night<s n="cat"/>[n]</r></p><par n="NC_STD"/></e>
+    <e><p><l>orð<s n="parol"/>[n][nt]</l><r>word<s n="cat"/>[n]</r></p><par n="NC_STD"/></e>
+    <e><p><l>boð<s n="parol"/>[n][nt]</l><r>invitation<s n="cat"/>[n]</r></p><par n="NC_STD"/></e>
+    <e><p><l>oyra<s n="parol"/>[n][nt]</l><r>ear<s n="cat"/>[n]</r></p><par n="NC_STD"/></e>
+    <e><p><l>bann<s n="parol"/>[n][nt]</l><r>ban<s n="cat"/>[n]</r></p><par n="NC_STD"/></e>
+    <e><p><l>brúdleyp<s n="parol"/>[n][nt]</l><r>wedding<s n="cat"/>[n]</r></p><par n="NC_STD"/></e>
+    <e><p><l>mannkyn<s n="parol"/>[n][nt]</l><r>male<s n="cat"/>[n]</r></p><par n="NC_STD"/></e>
+    <e><p><l>hugsan<s n="parol"/>[n][f]</l><r>thought<s n="cat"/>[n]</r></p><par n="NC_STD"/></e>
+    <e><p><l>jørð<s n="parol"/>[n][f]</l><r>earth<s n="cat"/>[n]</r></p><par n="NC_STD"/></e>
+    <e><p><l>keisari<s n="parol"/>[n][m]</l><r>emperor<s n="cat"/>[n]</r></p><par n="NC_STD"/></e>
+    <e><p><l>leður<s n="parol"/>[n][nt]</l><r>skin<s n="cat"/>[n]</r></p><par n="NC_STD"/></e>
+    <e><p><l>svar<s n="parol"/>[n][nt]</l><r>reply<s n="cat"/>[n]</r></p><par n="NC_STD"/></e>
+    <e><p><l>grein<s n="parol"/>[n][f]</l><r>article<s n="cat"/>[n]</r></p><par n="NC_STD"/></e>
+    <e><p><l>snarljós<s n="parol"/>[n][nt]</l><r>lightning<s n="cat"/>[n]</r></p><par n="NC_STD"/></e>
+    <e><p><l>fjall<s n="parol"/>[n][nt]</l><r>mountain<s n="cat"/>[n]</r></p><par n="NC_STD"/></e>
+    <e><p><l>ár<s n="parol"/>[n][nt]</l><r>year<s n="cat"/>[n]</r></p><par n="NC_STD"/></e>
+    <e><p><l>helli<s n="parol"/>[n][nt]</l><r>cave<s n="cat"/>[n]</r></p><par n="NC_STD"/></e>
+    <e><p><l>dagur<s n="parol"/>[n][m]</l><r>day<s n="cat"/>[n]</r></p><par n="NC_STD"/></e>
+    <e><p><l>faðir<s n="parol"/>[n][m]</l><r>father<s n="cat"/>[n]</r></p><par n="NC_STD"/></e>
+    <e><p><l>fangahús<s n="parol"/>[n][nt]</l><r>prison<s n="cat"/>[n]</r></p><par n="NC_STD"/></e>
+    <e><p><l>vinkona<s n="parol"/>[n][f]</l><r>female<b/>friend<s n="cat"/>[n]</r></p><par n="NC_STD"/></e>
+    <e><p><l>eyga<s n="parol"/>[n][nt]</l><r>eye<s n="cat"/>[n]</r></p><par n="NC_STD"/></e>
+    <e><p><l>faðirbróðir<s n="parol"/>[n][m]</l><r>paternal<b/>uncle<s n="cat"/>[n]</r></p><par n="NC_STD"/></e>
+    <e><p><l>drotning<s n="parol"/>[n][f]</l><r>queen<s n="cat"/>[n]</r></p><par n="NC_STD"/></e>
+    <e><p><l>sólarljós<s n="parol"/>[n][nt]</l><r>sunlight<s n="cat"/>[n]</r></p><par n="NC_STD"/></e>
+    <e><p><l>tíð<s n="parol"/>[n][f]</l><r>time<s n="cat"/>[n]</r></p><par n="NC_STD"/></e>
+    <e><p><l>gull<s n="parol"/>[n][nt]</l><r>gold<s n="cat"/>[n]</r></p><par n="NC_STD"/></e>
+    <e><p><l>gestur<s n="parol"/>[n][m]</l><r>guest<s n="cat"/>[n]</r></p><par n="NC_STD"/></e>
+    <e><p><l>rættur<s n="parol"/>[n][m]</l><r>course<s n="cat"/>[n]</r></p><par n="NC_STD"/></e>
+    <e><p><l>bátur<s n="parol"/>[n][m]</l><r>boat<s n="cat"/>[n]</r></p><par n="NC_STD"/></e>
+    <e><p><l>morgun<s n="parol"/>[n][m]</l><r>morning<s n="cat"/>[n]</r></p><par n="NC_STD"/></e>
+    <e><p><l>sólsetur<s n="parol"/>[n][nt]</l><r>sunset<s n="cat"/>[n]</r></p><par n="NC_STD"/></e>
+    <e><p><l>hurð<s n="parol"/>[n][f]</l><r>door<s n="cat"/>[n]</r></p><par n="NC_STD"/></e>
+    <e><p><l>tíð<s n="parol"/>[n][f]</l><r>time<s n="cat"/>[n]</r></p><par n="NC_STD"/></e>
+    <e><p><l>songur<s n="parol"/>[n][m]</l><r>poem<s n="cat"/>[n]</r></p><par n="NC_STD"/></e>
+    <e><p><l>lutur<s n="parol"/>[n][m]</l><r>object<s n="cat"/>[n]</r></p><par n="NC_STD"/></e>
+    <e><p><l>dreki<s n="parol"/>[n][m]</l><r>dragon<s n="cat"/>[n]</r></p><par n="NC_STD"/></e>
+    <e><p><l>leyva<s n="parol"/>[n][f]</l><r>lion<s n="cat"/>[n]</r></p><par n="NC_STD"/></e>
+    <e><p><l>bak<s n="parol"/>[n][nt]</l><r>back<s n="cat"/>[n]</r></p><par n="NC_STD"/></e>
+    <e><p><l>bók<s n="parol"/>[n][f]</l><r>book<s n="cat"/>[n]</r></p><par n="NC_STD"/></e>
+    <e><p><l>hús<s n="parol"/>[n][nt]</l><r>house<s n="cat"/>[n]</r></p><par n="NC_STD"/></e>
+    <e><p><l>barn<s n="parol"/>[n][nt]</l><r>child<s n="cat"/>[n]</r></p><par n="NC_STD"/></e>
+    <e><p><l>ferð<s n="parol"/>[n][f]</l><r>trip<s n="cat"/>[n]</r></p><par n="NC_STD"/></e>
+    <e><p><l>træ<s n="parol"/>[n][nt]</l><r>tree<s n="cat"/>[n]</r></p><par n="NC_STD"/></e>
+    <e><p><l>víngarður<s n="parol"/>[n][m]</l><r>vineyard<s n="cat"/>[n]</r></p><par n="NC_STD"/></e>
+    <e><p><l>vindur<s n="parol"/>[n][m]</l><r>wind<s n="cat"/>[n]</r></p><par n="NC_STD"/></e>
+    <e><p><l>mánaður<s n="parol"/>[n][m]</l><r>month<s n="cat"/>[n]</r></p><par n="NC_STD"/></e>
+    <e><p><l>luft<s n="parol"/>[n][f]</l><r>air<s n="cat"/>[n]</r></p><par n="NC_STD"/></e>
+    <e><p><l>gáva<s n="parol"/>[n][f]</l><r>gift<s n="cat"/>[n]</r></p><par n="NC_STD"/></e>
+    <e><p><l>lív<s n="parol"/>[n][nt]</l><r>life<s n="cat"/>[n]</r></p><par n="NC_STD"/></e>
+    <e><p><l>kálvur<s n="parol"/>[n][m]</l><r>calf<s n="cat"/>[n]</r></p><par n="NC_STD"/></e>
+    <e><p><l>hundur<s n="parol"/>[n][m]</l><r>dog<s n="cat"/>[n]</r></p><par n="NC_STD"/></e>
+    <e><p><l>ljóðføri<s n="parol"/>[n][nt]</l><r>musical<b/>instrument<s n="cat"/>[n]</r></p><par n="NC_STD"/></e>
+    <e><p><l>bræv<s n="parol"/>[n][nt]</l><r>letter<s n="cat"/>[n]</r></p><par n="NC_STD"/></e>
+    <e><p><l>himmal<s n="parol"/>[n][m]</l><r>sky<s n="cat"/>[n]</r></p><par n="NC_STD"/></e>
+    <e><p><l>summar<s n="parol"/>[n][nt]</l><r>summer<s n="cat"/>[n]</r></p><par n="NC_STD"/></e>
+    <e><p><l>blóma<s n="parol"/>[n][f]</l><r>flower<s n="cat"/>[n]</r></p><par n="NC_STD"/></e>
+    <e><p><l>skuggi<s n="parol"/>[n][m]</l><r>shadow<s n="cat"/>[n]</r></p><par n="NC_STD"/></e>
+    <e><p><l>systir<s n="parol"/>[n][f]</l><r>sister<s n="cat"/>[n]</r></p><par n="NC_STD"/></e>
+    <e><p><l>hav<s n="parol"/>[n][nt]</l><r>sea<s n="cat"/>[n]</r></p><par n="NC_STD"/></e>
+    <e><p><l>garður<s n="parol"/>[n][m]</l><r>garden<s n="cat"/>[n]</r></p><par n="NC_STD"/></e>
+    <e><p><l>ørn<s n="parol"/>[n][f]</l><r>eagle<s n="cat"/>[n]</r></p><par n="NC_STD"/></e>
+    <e><p><l>býur<s n="parol"/>[n][m]</l><r>city<s n="cat"/>[n]</r></p><par n="NC_STD"/></e>
+    <e><p><l>mál<s n="parol"/>[n][nt]</l><r>language<s n="cat"/>[n]</r></p><par n="NC_STD"/></e>
+    <e><p><l>vatn<s n="parol"/>[n][nt]</l><r>water<s n="cat"/>[n]</r></p><par n="NC_STD"/></e>
+    <e><p><l>hjól<s n="parol"/>[n][nt]</l><r>bike<s n="cat"/>[n]</r></p><par n="NC_STD"/></e>
+    <e><p><l>hjálp<s n="parol"/>[n][f]</l><r>help<s n="cat"/>[n]</r></p><par n="NC_STD"/></e>
+    <e><p><l>prestur<s n="parol"/>[n][m]</l><r>priest<s n="cat"/>[n]</r></p><par n="NC_STD"/></e>
+    <e><p><l>líknilsi<s n="parol"/>[n][nt]</l><r>likeness<s n="cat"/>[n]</r></p><par n="NC_STD"/></e>
+    <e><p><l>vón<s n="parol"/>[n][f]</l><r>hope<s n="cat"/>[n]</r></p><par n="NC_STD"/></e>
+    <e><p><l>stjørna<s n="parol"/>[n][f]</l><r>star<s n="cat"/>[n]</r></p><par n="NC_STD"/></e>
+    <e><p><l>mynd<s n="parol"/>[n][f]</l><r>picture<s n="cat"/>[n]</r></p><par n="NC_STD"/></e>
+    <e><p><l>deyðaríki<s n="parol"/>[n][nt]</l><r>hell<s n="cat"/>[n]</r></p><par n="NC_STD"/></e>
+    <e><p><l>kvøld<s n="parol"/>[n][nt]</l><r>evening<s n="cat"/>[n]</r></p><par n="NC_STD"/></e>
+    <e><p><l>máni<s n="parol"/>[n][m]</l><r>moon<s n="cat"/>[n]</r></p><par n="NC_STD"/></e>
+    <e><p><l>maður<s n="parol"/>[n][m]</l><r>man<s n="cat"/>[n]</r></p><par n="NC_STD"/></e>
+    <e><p><l>jarn<s n="parol"/>[n][nt]</l><r>iron<s n="cat"/>[n]</r></p><par n="NC_STD"/></e>
+    <e><p><l>knæ<s n="parol"/>[n][nt]</l><r>knee<s n="cat"/>[n]</r></p><par n="NC_STD"/></e>
+    <e><p><l>rødd<s n="parol"/>[n][f]</l><r>voice<s n="cat"/>[n]</r></p><par n="NC_STD"/></e>
+    <e><p><l>eldur<s n="parol"/>[n][m]</l><r>fire<s n="cat"/>[n]</r></p><par n="NC_STD"/></e>
+    <e><p><l>land<s n="parol"/>[n][nt]</l><r>land<s n="cat"/>[n]</r></p><par n="NC_STD"/></e>
+    <e><p><l>tunga<s n="parol"/>[n][f]</l><r>tongue<s n="cat"/>[n]</r></p><par n="NC_STD"/></e>
+    <e><p><l>lækni<s n="parol"/>[n][m]</l><r>doctor<s n="cat"/>[n]</r></p><par n="NC_STD"/></e>
+    <e><p><l>smiður<s n="parol"/>[n][m]</l><r>carpenter<s n="cat"/>[n]</r></p><par n="NC_STD"/></e>
+    <e><p><l>strongur<s n="parol"/>[n][m]</l><r>string<s n="cat"/>[n]</r></p><par n="NC_STD"/></e>
+    <e><p><l>breyð<s n="parol"/>[n][nt]</l><r>bread<s n="cat"/>[n]</r></p><par n="NC_STD"/></e>
+    <e><p><l>bróst<s n="parol"/>[n][nt]</l><r>breast<s n="cat"/>[n]</r></p><par n="NC_STD"/></e>
+    <e><p><l>kraftargerð<s n="parol"/>[n][f]</l><r>miracle<s n="cat"/>[n]</r></p><par n="NC_STD"/></e>
+    <e><p><l>leyva<s n="parol"/>[n][f]</l><r>lion<s n="cat"/>[n]</r></p><par n="NC_STD"/></e>
+    <e><p><l>fangahús<s n="parol"/>[n][nt]</l><r>prison<s n="cat"/>[n]</r></p><par n="NC_STD"/></e>
+    <e><p><l>ljóðføri<s n="parol"/>[n][nt]</l><r>musical<b/>instrument<s n="cat"/>[n]</r></p><par n="NC_STD"/></e>
+    <e><p><l>belti<s n="parol"/>[n][nt]</l><r>belt<s n="cat"/>[n]</r></p><par n="NC_STD"/></e>
+    <e><p><l>gøta<s n="parol"/>[n][f]</l><r>street<s n="cat"/>[n]</r></p><par n="NC_STD"/></e>
+    <e><p><l>ørindi<s n="parol"/>[n][nt]</l><r>errand<s n="cat"/>[n]</r></p><par n="NC_STD"/></e>
+    <e><p><l>klæði<s n="parol"/>[n][nt]</l><r>clothing<s n="cat"/>[n]</r></p><par n="NC_STD"/></e>
+    <e><p><l>blóð<s n="parol"/>[n][nt]</l><r>blood<s n="cat"/>[n]</r></p><par n="NC_STD"/></e>
+    <e><p><l>rót<s n="parol"/>[n][f]</l><r>root<s n="cat"/>[n]</r></p><par n="NC_STD"/></e>
+    <e><p><l>fólk<s n="parol"/>[n][nt]</l><r>people<s n="cat"/>[n]</r></p><par n="NC_STD"/></e>
+    <e><p><l>ugla<s n="parol"/>[n][f]</l><r>owl<s n="cat"/>[n]</r></p><par n="NC_STD"/></e>
+    <e><p><l>súpan<s n="parol"/>[n][f]</l><r>soup<s n="cat"/>[n]</r></p><par n="NC_STD"/></e>
+    <e><p><l>perla<s n="parol"/>[n][f]</l><r>pearl<s n="cat"/>[n]</r></p><par n="NC_STD"/></e>
+    <e><p><l>tænasta<s n="parol"/>[n][f]</l><r>service<s n="cat"/>[n]</r></p><par n="NC_STD"/></e>
+    <e><p><l>ljós<s n="parol"/>[n][nt]</l><r>light<s n="cat"/>[n]</r></p><par n="NC_STD"/></e>
+    <e><p><l>hár<s n="parol"/>[n][nt]</l><r>hair<s n="cat"/>[n]</r></p><par n="NC_STD"/></e>
+    <e><p><l>andlit<s n="parol"/>[n][nt]</l><r>face<s n="cat"/>[n]</r></p><par n="NC_STD"/></e>
+    <e><p><l>horn<s n="parol"/>[n][nt]</l><r>corner<s n="cat"/>[n]</r></p><par n="NC_STD"/></e>
+    <e><p><l>djúp<s n="parol"/>[n][nt]</l><r>deep<s n="cat"/>[n]</r></p><par n="NC_STD"/></e>
+    <e><p><l>suður<s n="parol"/>[n][nt]</l><r>south<s n="cat"/>[n]</r></p><par n="NC_STD"/></e>
+    <e><p><l>ok<s n="parol"/>[n][nt]</l><r>yoke<s n="cat"/>[n]</r></p><par n="NC_STD"/></e>
+    <e><p><l>torg<s n="parol"/>[n][nt]</l><r>square<s n="cat"/>[n]</r></p><par n="NC_STD"/></e>
+    <e><p><l>seyður<s n="parol"/>[n][m]</l><r>sheep<s n="cat"/>[n]</r></p><par n="NC_STD"/></e>
+    <e><p><l>likam<s n="parol"/>[n][nt]</l><r>body<s n="cat"/>[n]</r></p><par n="NC_STD"/></e>
+    <e><p><l>svørð<s n="parol"/>[n][nt]</l><r>sword<s n="cat"/>[n]</r></p><par n="NC_STD"/></e>
+    <e><p><l>sál<s n="parol"/>[n][f]</l><r>soul<s n="cat"/>[n]</r></p><par n="NC_STD"/></e>
+    <e><p><l>knívur<s n="parol"/>[n][m]</l><r>knife<s n="cat"/>[n]</r></p><par n="NC_STD"/></e>
+    <e><p><l>stavur<s n="parol"/>[n][m]</l><r>staff<s n="cat"/>[n]</r></p><par n="NC_STD"/></e>
+    <e><p><l>skýggj<s n="parol"/>[n][nt]</l><r>cloud<s n="cat"/>[n]</r></p><par n="NC_STD"/></e>
+    <e><p><l>hjarta<s n="parol"/>[n][nt]</l><r>heart<s n="cat"/>[n]</r></p><par n="NC_STD"/></e>
+    <e><p><l>gras<s n="parol"/>[n][nt]</l><r>grass<s n="cat"/>[n]</r></p><par n="NC_STD"/></e>
+    <e><p><l>fótur<s n="parol"/>[n][m]</l><r>foot<s n="cat"/>[n]</r></p><par n="NC_STD"/></e>
+    <e><p><l>akur<s n="parol"/>[n][m]</l><r>field<s n="cat"/>[n]</r></p><par n="NC_STD"/></e>
+    <e><p><l>esil<s n="parol"/>[n][nt]</l><r>ass<s n="cat"/>[n]</r></p><par n="NC_STD"/></e>
+    <e><p><l>fingur<s n="parol"/>[n][m]</l><r>finger<s n="cat"/>[n]</r></p><par n="NC_STD"/></e>
+    <e><p><l>veggur<s n="parol"/>[n][m]</l><r>wall<s n="cat"/>[n]</r></p><par n="NC_STD"/></e>
+    <e><p><l>djevul<s n="parol"/>[n][m]</l><r>devil<s n="cat"/>[n]</r></p><par n="NC_STD"/></e>
+    <e><p><l>vík<s n="parol"/>[n][f]</l><r>bay<s n="cat"/>[n]</r></p><par n="NC_STD"/></e>
+    <e><p><l>úlvur<s n="parol"/>[n][m]</l><r>wolf<s n="cat"/>[n]</r></p><par n="NC_STD"/></e>
+    <e><p><l>kurv<s n="parol"/>[n][f]</l><r>basket<s n="cat"/>[n]</r></p><par n="NC_STD"/></e>
+    <e><p><l>revur<s n="parol"/>[n][m]</l><r>fox<s n="cat"/>[n]</r></p><par n="NC_STD"/></e>
+    <e><p><l>hirði<s n="parol"/>[n][m]</l><r>shepherd<s n="cat"/>[n]</r></p><par n="NC_STD"/></e>
+    <e><p><l>dómari<s n="parol"/>[n][m]</l><r>judge<s n="cat"/>[n]</r></p><par n="NC_STD"/></e>
+    <e><p><l>ormur<s n="parol"/>[n][m]</l><r>worm<s n="cat"/>[n]</r></p><par n="NC_STD"/></e>
+    <e><p><l>eik<s n="parol"/>[n][f]</l><r>oak<s n="cat"/>[n]</r></p><par n="NC_STD"/></e>
+    <e><p><l>skamm<s n="parol"/>[n][f]</l><r>shame<s n="cat"/>[n]</r></p><par n="NC_STD"/></e>
+    <e><p><l>tøgn<s n="parol"/>[n][f]</l><r>silence<s n="cat"/>[n]</r></p><par n="NC_STD"/></e>
+    <e><p><l>veður<s n="parol"/>[n][m]</l><r>ram<s n="cat"/>[n]</r></p><par n="NC_STD"/></e>
+    <e><p><l>veður<s n="parol"/>[n][nt]</l><r>weather<s n="cat"/>[n]</r></p><par n="NC_STD"/></e>
+    <e><p><l>reiður<s n="parol"/>[n][nt]</l><r>nest<s n="cat"/>[n]</r></p><par n="NC_STD"/></e>
+    <e><p><l>arbeiði<s n="parol"/>[n][nt]</l><r>job<s n="cat"/>[n]</r></p><par n="NC_STD"/></e>
+    <e><p><l>januar<s n="parol"/>[n][m]</l><r>January<s n="cat"/>[n]</r></p><par n="NC_STD"/></e>
+    <e><p><l>februar<s n="parol"/>[n][m]</l><r>February<s n="cat"/>[n]</r></p><par n="NC_STD"/></e>
+    <e><p><l>mars<s n="parol"/>[n][m]</l><r>March<s n="cat"/>[n]</r></p><par n="NC_STD"/></e>
+    <e><p><l>apríl<s n="parol"/>[n][m]</l><r>April<s n="cat"/>[n]</r></p><par n="NC_STD"/></e>
+    <e><p><l>mai<s n="parol"/>[n][m]</l><r>May<s n="cat"/>[n]</r></p><par n="NC_STD"/></e>
+    <e><p><l>juni<s n="parol"/>[n][m]</l><r>June<s n="cat"/>[n]</r></p><par n="NC_STD"/></e>
+    <e><p><l>juli<s n="parol"/>[n][m]</l><r>July<s n="cat"/>[n]</r></p><par n="NC_STD"/></e>
+    <e><p><l>august<s n="parol"/>[n][m]</l><r>August<s n="cat"/>[n]</r></p><par n="NC_STD"/></e>
+    <e><p><l>september<s n="parol"/>[n][m]</l><r>September<s n="cat"/>[n]</r></p><par n="NC_STD"/></e>
+    <e><p><l>oktober<s n="parol"/>[n][m]</l><r>October<s n="cat"/>[n]</r></p><par n="NC_STD"/></e>
+    <e><p><l>november<s n="parol"/>[n][m]</l><r>November<s n="cat"/>[n]</r></p><par n="NC_STD"/></e>
+    <e><p><l>desember<s n="parol"/>[n][m]</l><r>December<s n="cat"/>[n]</r></p><par n="NC_STD"/></e>
+    <e><p><l>ægir<s n="parol"/>[n][m]</l><r>sea<s n="cat"/>[n]</r></p><par n="NC_STD"/></e>
+    <e><p><l>evra<s n="parol"/>[n][f]</l><r>euro<s n="cat"/>[n]</r></p><par n="NC_STD"/></e>
+    <e><p><l>forsíða<s n="parol"/>[n][f]</l><r>front<b/>page<s n="cat"/>[n]</r></p><par n="NC_STD"/></e>
+    <e><p><l>hvalur<s n="parol"/>[n][m]</l><r>whale<s n="cat"/>[n]</r></p><par n="NC_STD"/></e>
+    <e><p><l>jól<s n="parol"/>[n][nt]</l><r>Christmas<s n="cat"/>[n]</r></p><par n="NC_STD"/></e>
+    <e><p><l>matur<s n="parol"/>[n][m]</l><r>food<s n="cat"/>[n]</r></p><par n="NC_STD"/></e>
+    <e><p><l>rándýr<s n="parol"/>[n][nt]</l><r>carnivore<s n="cat"/>[n]</r></p><par n="NC_STD"/></e>
+    <e><p><l>sagnorð<s n="parol"/>[n][nt]</l><r>verb<s n="cat"/>[n]</r></p><par n="NC_STD"/></e>
+    <e><p><l>samheiti<s n="parol"/>[n][nt]</l><r>synonym<s n="cat"/>[n]</r></p><par n="NC_STD"/></e>
+    <e><p><l>skordýr<s n="parol"/>[n][nt]</l><r>insect<s n="cat"/>[n]</r></p><par n="NC_STD"/></e>
+    <e><p><l>skriðdýr<s n="parol"/>[n][nt]</l><r>reptile<s n="cat"/>[n]</r></p><par n="NC_STD"/></e>
+    <e><p><l>sunnudagur<s n="parol"/>[n][m]</l><r>Sunday<s n="cat"/>[n]</r></p><par n="NC_STD"/></e>
+    <e><p><l>tal<s n="parol"/>[n][nt]</l><r>talk<s n="cat"/>[n]</r></p><par n="NC_STD"/></e>
+    <e><p><l>fartelefon<s n="parol"/>[n][f]</l><r>mobile<b/>phone<s n="cat"/>[n]</r></p><par n="NC_STD"/></e>
+    <e><p><l>politistur<s n="parol"/>[n][m]</l><r>policeman<s n="cat"/>[n]</r></p><par n="NC_STD"/></e>
+    <e><p><l>ætlan<s n="parol"/>[n][f]</l><r>plan<s n="cat"/>[n]</r></p><par n="NC_STD"/></e>
+    <e><p><l>állur<s n="parol"/>[n][m]</l><r>eel<s n="cat"/>[n]</r></p><par n="NC_STD"/></e>
+    <e><p><l>ont<s n="parol"/>[n][f]</l><r>duck<s n="cat"/>[n]</r></p><par n="NC_STD"/></e>
+    <e><p><l>arr<s n="parol"/>[n][nt]</l><r>scar<s n="cat"/>[n]</r></p><par n="NC_STD"/></e>
+    <e><p><l>bispur<s n="parol"/>[n][m]</l><r>bishop<s n="cat"/>[n]</r></p><par n="NC_STD"/></e>
+    <e><p><l>diskil<s n="parol"/>[n][m]</l><r>plate<s n="cat"/>[n]</r></p><par n="NC_STD"/></e>
+    <e><p><l>edikur<s n="parol"/>[n][nt]</l><r>vinegar<s n="cat"/>[n]</r></p><par n="NC_STD"/></e>
+    <e><p><l>herur<s n="parol"/>[n][m]</l><r>army<s n="cat"/>[n]</r></p><par n="NC_STD"/></e>
+    <e><p><l>heyst<s n="parol"/>[n][nt]</l><r>fall<s n="cat"/>[n]</r></p><par n="NC_STD"/></e>
+    <e><p><l>høvundur<s n="parol"/>[n][m]</l><r>author<s n="cat"/>[n]</r></p><par n="NC_STD"/></e>
+    <e><p><l>ítróttur<s n="parol"/>[n][f]</l><r>sport<s n="cat"/>[n]</r></p><par n="NC_STD"/></e>
+    <e><p><l>knæ<s n="parol"/>[n][nt]</l><r>knee<s n="cat"/>[n]</r></p><par n="NC_STD"/></e>
+    <e><p><l>sigla<s n="parol"/>[n][f]</l><r>mast<s n="cat"/>[n]</r></p><par n="NC_STD"/></e>
+    <e><p><l>sigla<s n="parol"/>[n][nt]</l><r>sail<s n="cat"/>[n]</r></p><par n="NC_STD"/></e>
+    <e><p><l>skjúrta<s n="parol"/>[n][f]</l><r>shirt<s n="cat"/>[n]</r></p><par n="NC_STD"/></e>
+    <e><p><l>spurningur<s n="parol"/>[n][f]</l><r>question<s n="cat"/>[n]</r></p><par n="NC_STD"/></e>
+    <e><p><l>stólur<s n="parol"/>[n][m]</l><r>chair<s n="cat"/>[n]</r></p><par n="NC_STD"/></e>
+    <e><p><l>telda<s n="parol"/>[n][f]</l><r>computer<s n="cat"/>[n]</r></p><par n="NC_STD"/></e>
+    <e><p><l>trúgv<s n="parol"/>[n][f]</l><r>faith<s n="cat"/>[n]</r></p><par n="NC_STD"/></e>
+    <e><p><l>vreiði<s n="parol"/>[n][f]</l><r>anger<s n="cat"/>[n]</r></p><par n="NC_STD"/></e>
+    <e><p><l>apa<s n="parol"/>[n][f]</l><r>monkey<s n="cat"/>[n]</r></p><par n="NC_STD"/></e>
+    <e><p><l>bókasavn<s n="parol"/>[n][nt]</l><r>library<s n="cat"/>[n]</r></p><par n="NC_STD"/></e>
+    <e><p><l>dømi<s n="parol"/>[n][nt]</l><r>example<s n="cat"/>[n]</r></p><par n="NC_STD"/></e>
+    <e><p><l>evni<s n="parol"/>[n][nt]</l><r>material<s n="cat"/>[n]</r></p><par n="NC_STD"/></e>
+    <e><p><l>fløska<s n="parol"/>[n][f]</l><r>bottle<s n="cat"/>[n]</r></p><par n="NC_STD"/></e>
+    <e><p><l>mánadagur<s n="parol"/>[n][m]</l><r>Monday<s n="cat"/>[n]</r></p><par n="NC_STD"/></e>
+    <e><p><l>olja<s n="parol"/>[n][f]</l><r>oil<s n="cat"/>[n]</r></p><par n="NC_STD"/></e>
+    <e><p><l>omma<s n="parol"/>[n][f]</l><r>grandmother<s n="cat"/>[n]</r></p><par n="NC_STD"/></e>
+    <e><p><l>roykur<s n="parol"/>[n][m]</l><r>smoke<s n="cat"/>[n]</r></p><par n="NC_STD"/></e>
+    <e><p><l>sangur<s n="parol"/>[n][m]</l><r>song<s n="cat"/>[n]</r></p><par n="NC_STD"/></e>
+    <e><p><l>skúli<s n="parol"/>[n][m]</l><r>school<s n="cat"/>[n]</r></p><par n="NC_STD"/></e>
+    <e><p><l>søga<s n="parol"/>[n][f]</l><r>history<s n="cat"/>[n]</r></p><par n="NC_STD"/></e>
+    <e><p><l>strond<s n="parol"/>[n][f]</l><r>beach<s n="cat"/>[n]</r></p><par n="NC_STD"/></e>
+    <e><p><l>vár<s n="parol"/>[n][nt]</l><r>spring<s n="cat"/>[n]</r></p><par n="NC_STD"/></e>
+    <e><p><l>veitsla<s n="parol"/>[n][f]</l><r>party<s n="cat"/>[n]</r></p><par n="NC_STD"/></e>
+    <e><p><l>ær<s n="parol"/>[n][f]</l><r>ewe<s n="cat"/>[n]</r></p><par n="NC_STD"/></e>
+    <e><p><l>ál<s n="parol"/>[n][nt]</l><r>aluminum<s n="cat"/>[n]</r></p><par n="NC_STD"/></e>
+    <e><p><l>aldur<s n="parol"/>[n][m]</l><r>age<s n="cat"/>[n]</r></p><par n="NC_STD"/></e>
+    <e><p><l>bjór<s n="parol"/>[n][nt]</l><r>beer<s n="cat"/>[n]</r></p><par n="NC_STD"/></e>
+    <e><p><l>blettur<s n="parol"/>[n][m]</l><r>stain<s n="cat"/>[n]</r></p><par n="NC_STD"/></e>
+    <e><p><l>dalur<s n="parol"/>[n][m]</l><r>valley<s n="cat"/>[n]</r></p><par n="NC_STD"/></e>
+    <e><p><l>egg<s n="parol"/>[n][nt]</l><r>egg<s n="cat"/>[n]</r></p><par n="NC_STD"/></e>
+    <e><p><l>eitur<s n="parol"/>[n][nt]</l><r>poison<s n="cat"/>[n]</r></p><par n="NC_STD"/></e>
+    <e><p><l>fræ<s n="parol"/>[n][nt]</l><r>seed<s n="cat"/>[n]</r></p><par n="NC_STD"/></e>
+    <e><p><l>kol<s n="parol"/>[n][nt]</l><r>coal<s n="cat"/>[n]</r></p><par n="NC_STD"/></e>
+    <e><p><l>kráka<s n="parol"/>[n][f]</l><r>crow<s n="cat"/>[n]</r></p><par n="NC_STD"/></e>
+    <e><p><l>mjólk<s n="parol"/>[n][f]</l><r>milk<s n="cat"/>[n]</r></p><par n="NC_STD"/></e>
+    <e><p><l>mús<s n="parol"/>[n][f]</l><r>mouse<s n="cat"/>[n]</r></p><par n="NC_STD"/></e>
+    <e><p><l>orðabók<s n="parol"/>[n][f]</l><r>dictionary<s n="cat"/>[n]</r></p><par n="NC_STD"/></e>
+    <e><p><l>pappír<s n="parol"/>[n][nt]</l><r>paper<s n="cat"/>[n]</r></p><par n="NC_STD"/></e>
+    <e><p><l>regn<s n="parol"/>[n][nt]</l><r>rain<s n="cat"/>[n]</r></p><par n="NC_STD"/></e>
+    <e><p><l>salt<s n="parol"/>[n][nt]</l><r>salt<s n="cat"/>[n]</r></p><par n="NC_STD"/></e>
+    <e><p><l>sápa<s n="parol"/>[n][f]</l><r>soap<s n="cat"/>[n]</r></p><par n="NC_STD"/></e>
+    <e><p><l>sigur<s n="parol"/>[n][m]</l><r>victory<s n="cat"/>[n]</r></p><par n="NC_STD"/></e>
+    <e><p><l>sjónvarp<s n="parol"/>[n][nt]</l><r>television<s n="cat"/>[n]</r></p><par n="NC_STD"/></e>
+    <e><p><l>skegg<s n="parol"/>[n][nt]</l><r>beard<s n="cat"/>[n]</r></p><par n="NC_STD"/></e>
+    <e><p><l>skógur<s n="parol"/>[n][m]</l><r>forest<s n="cat"/>[n]</r></p><par n="NC_STD"/></e>
+    <e><p><l>storkur<s n="parol"/>[n][m]</l><r>stork<s n="cat"/>[n]</r></p><par n="NC_STD"/></e>
+    <e><p><l>stormur<s n="parol"/>[n][m]</l><r>storm<s n="cat"/>[n]</r></p><par n="NC_STD"/></e>
+    <e><p><l>sund<s n="parol"/>[n][nt]</l><r>swim<s n="cat"/>[n]</r></p><par n="NC_STD"/></e>
+    <e><p><l>svanur<s n="parol"/>[n][m]</l><r>swan<s n="cat"/>[n]</r></p><par n="NC_STD"/></e>
+    <e><p><l>svín<s n="parol"/>[n][nt]</l><r>pig<s n="cat"/>[n]</r></p><par n="NC_STD"/></e>
+    <e><p><l>tyrla<s n="parol"/>[n][f]</l><r>helicopter<s n="cat"/>[n]</r></p><par n="NC_STD"/></e>
+    <e><p><l>vetur<s n="parol"/>[n][m]</l><r>winter<s n="cat"/>[n]</r></p><par n="NC_STD"/></e>
+    <e><p><l>viður<s n="parol"/>[n][m]</l><r>wood<s n="cat"/>[n]</r></p><par n="NC_STD"/></e>
+    <e><p><l>vísindi<s n="parol"/>[n][nt]</l><r>science<s n="cat"/>[n]</r></p><par n="NC_STD"/></e>
+    <e><p><l>frukt<s n="parol"/>[n][f]</l><r>fruit<s n="cat"/>[n]</r></p><par n="NC_STD"/></e>
+    <e><p><l>slag<s n="parol"/>[n][nt]</l><r>kind<s n="cat"/>[n]</r></p><par n="NC_STD"/></e>
+    <e><p><l>urt<s n="parol"/>[n][f]</l><r>herb<s n="cat"/>[n]</r></p><par n="NC_STD"/></e>
+    <e><p><l>savn<s n="parol"/>[n][nt]</l><r>museum<s n="cat"/>[n]</r></p><par n="NC_STD"/></e>
+    <e><p><l>uppruni<s n="parol"/>[n][m]</l><r>source<s n="cat"/>[n]</r></p><par n="NC_STD"/></e>
+    <e><p><l>toka<s n="parol"/>[n][f]</l><r>fog<s n="cat"/>[n]</r></p><par n="NC_STD"/></e>
+    <e><p><l>nøs<s n="parol"/>[n][f]</l><r>nostril<s n="cat"/>[n]</r></p><par n="NC_STD"/></e>
+    <e><p><l>kona<s n="parol"/>[n][f]</l><r>woman<s n="cat"/>[n]</r></p><par n="NC_STD"/></e>
+    <e><p><l>verð<s n="parol"/>[n][nt]</l><r>price<s n="cat"/>[n]</r></p><par n="NC_STD"/></e>
+    <e><p><l>koma<s n="parol"/>[n][f]</l><r>arrival<s n="cat"/>[n]</r></p><par n="NC_STD"/></e>
+    <e><p><l>hundrað<s n="parol"/>[n][nt]</l><r>hundred<s n="cat"/>[n]</r></p><par n="NC_STD"/></e>
+    <e><p><l>fólk<s n="parol"/>[n][nt]</l><r>people<s n="cat"/>[n]</r></p><par n="NC_STD"/></e>
+    <e><p><l>tóm<s n="parol"/>[n][nt]</l><r>void<s n="cat"/>[n]</r></p><par n="NC_STD"/></e>
 
     <!-- Verbs -->
-    <e><p><l>skapa<s n="vblex"/></l><r>create</r></p><par n="VBLEX_STD"/></e>
-    <e><p><l>sveima<s n="vblex"/></l><r>float</r></p><par n="VBLEX_STD"/></e>
-    <e><p><l>siga<s n="vblex"/></l><r>say</r></p><par n="VBLEX_STD"/></e>
-    <e><p><l>síggja<s n="vblex"/></l><r>see</r></p><par n="VBLEX_STD"/></e>
-    <e><p><l>klæða<s n="vblex"/></l><r>dress</r></p><par n="VBLEX_STD"/></e>
-    <e><p><l>vaska<s n="vblex"/></l><r>wash</r></p><par n="VBLEX_STD"/></e>
-    <e><p><l>koma<s n="vblex"/></l><r>come</r></p><par n="VBLEX_STD"/></e>
-    <e><p><l>vita<s n="vblex"/></l><r>know</r></p><par n="VBLEX_STD"/></e>
-    <e><p><l>vilja<s n="vblex"/></l><r>want</r></p><par n="VBLEX_STD"/></e>
-    <e><p><l>taka<s n="vblex"/></l><r>take</r></p><par n="VBLEX_STD"/></e>
-    <e><p><l>fara<s n="vblex"/></l><r>go</r></p><par n="VBLEX_STD"/></e>
-    <e><p><l>keypa<s n="vblex"/></l><r>buy</r></p><par n="VBLEX_STD"/></e>
-    <e><p><l>láta<s n="vblex"/></l><r>let</r></p><par n="VBLEX_STD"/></e>
-    <e><p><l>flúgva<s n="vblex"/></l><r>fly</r></p><par n="VBLEX_STD"/></e>
-    <e><p><l>gera<s n="vblex"/></l><r>do</r></p><par n="VBLEX_STD"/></e>
-    <e><p><l>lesa<s n="vblex"/></l><r>read</r></p><par n="VBLEX_STD"/></e>
-    <e><p><l>baka<s n="vblex"/></l><r>bake</r></p><par n="VBLEX_STD"/></e>
-    <e><p><l>tala<s n="vblex"/></l><r>talk</r></p><par n="VBLEX_STD"/></e>
-    <e><p><l>skriva<s n="vblex"/></l><r>write</r></p><par n="VBLEX_STD"/></e>
-    <e><p><l>sláa<s n="vblex"/></l><r>strike</r></p><par n="VBLEX_STD"/></e>
-    <e><p><l>velja<s n="vblex"/></l><r>choose</r></p><par n="VBLEX_STD"/></e>
-    <e><p><l>byggja<s n="vblex"/></l><r>build</r></p><par n="VBLEX_STD"/></e>
-    <e><p><l>eta<s n="vblex"/></l><r>eat</r></p><par n="VBLEX_STD"/></e>
-    <e><p><l>hoyra<s n="vblex"/></l><r>hear</r></p><par n="VBLEX_STD"/></e>
-    <e><p><l>ganga<s n="vblex"/></l><r>walk</r></p><par n="VBLEX_STD"/></e>
-    <e><p><l>hata<s n="vblex"/></l><r>hate</r></p><par n="VBLEX_STD"/></e>
-    <e><p><l>fylgja<s n="vblex"/></l><r>accompany</r></p><par n="VBLEX_STD"/></e>
-    <e><p><l>leita<s n="vblex"/></l><r>search</r></p><par n="VBLEX_STD"/></e>
-    <e><p><l>mála<s n="vblex"/></l><r>speak</r></p><par n="VBLEX_STD"/></e>
-    <e><p><l>toyggja<s n="vblex"/></l><r>stretch</r></p><par n="VBLEX_STD"/></e>
-    <e><p><l>bjóða<s n="vblex"/></l><r>offer</r></p><par n="VBLEX_STD"/></e>
-    <e><p><l>fáa<s n="vblex"/></l><r>get</r></p><par n="VBLEX_STD"/></e>
-    <e><p><l>kasta<s n="vblex"/></l><r>throw</r></p><par n="VBLEX_STD"/></e>
-    <e><p><l>royna<s n="vblex"/></l><r>try</r></p><par n="VBLEX_STD"/></e>
-    <e><p><l>seta<s n="vblex"/></l><r>put</r></p><par n="VBLEX_STD"/></e>
-    <e><p><l>stjala<s n="vblex"/></l><r>steal</r></p><par n="VBLEX_STD"/></e>
-    <e><p><l>sova<s n="vblex"/></l><r>sleep</r></p><par n="VBLEX_STD"/></e>
-    <e><p><l>biðja<s n="vblex"/></l><r>ask</r></p><par n="VBLEX_STD"/></e>
-    <e><p><l>sita<s n="vblex"/></l><r>sit</r></p><par n="VBLEX_STD"/></e>
-    <e><p><l>kalla<s n="vblex"/></l><r>call</r></p><par n="VBLEX_STD"/></e>
-    <e><p><l>breiða<s n="vblex"/></l><r>spread</r></p><par n="VBLEX_STD"/></e>
-    <e><p><l>sovna<s n="vblex"/></l><r>fall<g><b/>asleep</g></r></p><par n="VBLEX_STD"/></e>
-    <e><p><l>hitta<s n="vblex"/></l><r>meet</r></p><par n="VBLEX_STD"/></e>
-    <e><p><l>bróta<s n="vblex"/></l><r>break</r></p><par n="VBLEX_STD"/></e>
-    <e><p><l>heingja<s n="vblex"/></l><r>hang</r></p><par n="VBLEX_STD"/></e>
-    <e><p><l>flóta<s n="vblex"/></l><r>float</r></p><par n="VBLEX_STD"/></e>
-    <e><p><l>finna<s n="vblex"/></l><r>find</r></p><par n="VBLEX_STD"/></e>
-    <e><p><l>ljóða<s n="vblex"/></l><r>sound</r></p><par n="VBLEX_STD"/></e>
-    <e><p><l>ætla<s n="vblex"/></l><r>will</r></p><par n="VBLEX_STD"/></e>
-    <e><p><l>berja<s n="vblex"/></l><r>beat</r></p><par n="VBLEX_STD"/></e>
-    <e><p><l>standa<s n="vblex"/></l><r>stand</r></p><par n="VBLEX_STD"/></e>
-    <e><p><l>verja<s n="vblex"/></l><r>defend</r></p><par n="VBLEX_STD"/></e>
-    <e><p><l>skriva<s n="vblex"/></l><r>write</r></p><par n="VBLEX_STD"/></e>
-    <e><p><l>ríva<s n="vblex"/></l><r>rip</r></p><par n="VBLEX_STD"/></e>
-    <e><p><l>skera<s n="vblex"/></l><r>cut</r></p><par n="VBLEX_STD"/></e>
-    <e><p><l>døma<s n="vblex"/></l><r>judge</r></p><par n="VBLEX_STD"/></e>
-    <e><p><l>vistast<s n="vblex"/></l><r>may</r></p><par n="VBLEX_STD"/></e>
-    <e><p><l>geva<s n="vblex"/></l><r>give</r></p><par n="VBLEX_STD"/></e>
-    <e><p><l>gloyma<s n="vblex"/></l><r>forget</r></p><par n="VBLEX_STD"/></e>
-    <e><p><l>vakna<s n="vblex"/></l><r>wake<g><b/>up</g></r></p><par n="VBLEX_STD"/></e>
-    <e><p><l>spinna<s n="vblex"/></l><r>spin</r></p><par n="VBLEX_STD"/></e>
-    <e><p><l>doyða<s n="vblex"/></l><r>die</r></p><par n="VBLEX_STD"/></e>
-    <e><p><l>selja<s n="vblex"/></l><r>sell</r></p><par n="VBLEX_STD"/></e>
-    <e><p><l>regna<s n="vblex"/></l><r>rain</r></p><par n="VBLEX_STD"/></e>
-    <e><p><l>stinga<s n="vblex"/></l><r>stick</r></p><par n="VBLEX_STD"/></e>
-    <e><p><l>telja<s n="vblex"/></l><r>count</r></p><par n="VBLEX_STD"/></e>
-    <e><p><l>liggja<s n="vblex"/></l><r>lie</r></p><par n="VBLEX_STD"/></e>
-    <e><p><l>drekka<s n="vblex"/></l><r>drink</r></p><par n="VBLEX_STD"/></e>
-    <e><p><l>bíða<s n="vblex"/></l><r>wait</r></p><par n="VBLEX_STD"/></e>
-    <e><p><l>gera<s n="vblex"/></l><r>do</r></p><par n="VBLEX_STD"/></e>
-    <e><p><l>styrkja<s n="vblex"/></l><r>strengthen</r></p><par n="VBLEX_STD"/></e>
-    <e><p><l>leggja<s n="vblex"/></l><r>lay</r></p><par n="VBLEX_STD"/></e>
-    <e><p><l>opna<s n="vblex"/></l><r>open</r></p><par n="VBLEX_STD"/></e>
-    <e><p><l>leika<s n="vblex"/></l><r>play</r></p><par n="VBLEX_STD"/></e>
-    <e><p><l>spyrja<s n="vblex"/></l><r>ask</r></p><par n="VBLEX_STD"/></e>
-    <e><p><l>liva<s n="vblex"/></l><r>live</r></p><par n="VBLEX_STD"/></e>
-    <e><p><l>sakna<s n="vblex"/></l><r>miss</r></p><par n="VBLEX_STD"/></e>
-    <e><p><l>bera<s n="vblex"/></l><r>carry</r></p><par n="VBLEX_STD"/></e>
-    <e><p><l>halda<s n="vblex"/></l><r>hold</r></p><par n="VBLEX_STD"/></e>
-    <e><p><l>binda<s n="vblex"/></l><r>bind</r></p><par n="VBLEX_STD"/></e>
-    <e><p><l>draga<s n="vblex"/></l><r>pull</r></p><par n="VBLEX_STD"/></e>
-    <e><p><l>verða<s n="vblex"/></l><r>become</r></p><par n="VBLEX_STD"/></e>
-    <e><p><l>ríða<s n="vblex"/></l><r>ride</r></p><par n="VBLEX_STD"/></e>
-    <e><p><l>elska<s n="vblex"/></l><r>love</r></p><par n="VBLEX_STD"/></e>
-    <e><p><l>líða<s n="vblex"/></l><r>feel</r></p><par n="VBLEX_STD"/></e>
-    <e><p><l>vaka<s n="vblex"/></l><r>stay<g><b/>awake</g></r></p><par n="VBLEX_STD"/></e>
-    <e><p><l>skilja<s n="vblex"/></l><r>understand</r></p><par n="VBLEX_STD"/></e>
-    <e><p><l>skifta<s n="vblex"/></l><r>change</r></p><par n="VBLEX_STD"/></e>
-    <e><p><l>volda<s n="vblex"/></l><r>cause</r></p><par n="VBLEX_STD"/></e>
-    <e><p><l>rísa<s n="vblex"/></l><r>rise</r></p><par n="VBLEX_STD"/></e>
-    <e><p><l>njóta<s n="vblex"/></l><r>enjoy</r></p><par n="VBLEX_STD"/></e>
-    <e><p><l>hugsa<s n="vblex"/></l><r>think</r></p><par n="VBLEX_STD"/></e>
-    <e><p><l>droyma<s n="vblex"/></l><r>dream</r></p><par n="VBLEX_STD"/></e>
-    <e><p><l>fylla<s n="vblex"/></l><r>fill</r></p><par n="VBLEX_STD"/></e>
-    <e><p><l>svara<s n="vblex"/></l><r>answer</r></p><par n="VBLEX_STD"/></e>
-    <e><p><l>flyta<s n="vblex"/></l><r>move</r></p><par n="VBLEX_STD"/></e>
-    <e><p><l>súgva<s n="vblex"/></l><r>suck</r></p><par n="VBLEX_STD"/></e>
-    <e><p><l>búgva<s n="vblex"/></l><r>live</r></p><par n="VBLEX_STD"/></e>
-    <e><p><l>gloypa<s n="vblex"/></l><r>swallow</r></p><par n="VBLEX_STD"/></e>
-    <e><p><l>lova<s n="vblex"/></l><r>promise</r></p><par n="VBLEX_STD"/></e>
-    <e><p><l>læra<s n="vblex"/></l><r>learn</r></p><par n="VBLEX_STD"/></e>
-    <e><p><l>vóna<s n="vblex"/></l><r>hope</r></p><par n="VBLEX_STD"/></e>
-    <e><p><l>eiga<s n="vblex"/></l><r>own</r></p><par n="VBLEX_STD"/></e>
-    <e><p><l>røkka<s n="vblex"/></l><r>obtain</r></p><par n="VBLEX_STD"/></e>
-    <e><p><l>anda<s n="vblex"/></l><r>breathe</r></p><par n="VBLEX_STD"/></e>
-    <e><p><l>líta<s n="vblex"/></l><r>look</r></p><par n="VBLEX_STD"/></e>
-    <e><p><l>vaksa<s n="vblex"/></l><r>grow</r></p><par n="VBLEX_STD"/></e>
-    <e><p><l>láta<s n="vblex"/></l><r>finish</r></p><par n="VBLEX_STD"/></e>
-    <e><p><l>eita<s n="vblex"/></l><r>vow</r></p><par n="VBLEX_STD"/></e>
-    <e><p><l>spretta<s n="vblex"/></l><r>grow</r></p><par n="VBLEX_STD"/></e>
-    <e><p><l>leiða<s n="vblex"/></l><r>lead</r></p><par n="VBLEX_STD"/></e>
-    <e><p><l>uppfylla<s n="vblex"/></l><r>fulfil</r></p><par n="VBLEX_STD"/></e>
+    <e><p><l>skapa<s n="parol"/>[vblex]</l><r>create<s n="cat"/>[vblex]</r></p><par n="VBLEX_STD"/></e>
+    <e><p><l>sveima<s n="parol"/>[vblex]</l><r>float<s n="cat"/>[vblex]</r></p><par n="VBLEX_STD"/></e>
+    <e><p><l>siga<s n="parol"/>[vblex]</l><r>say<s n="cat"/>[vblex]</r></p><par n="VBLEX_STD"/></e>
+    <e><p><l>síggja<s n="parol"/>[vblex]</l><r>see<s n="cat"/>[vblex]</r></p><par n="VBLEX_STD"/></e>
+    <e><p><l>klæða<s n="parol"/>[vblex]</l><r>dress<s n="cat"/>[vblex]</r></p><par n="VBLEX_STD"/></e>
+    <e><p><l>vaska<s n="parol"/>[vblex]</l><r>wash<s n="cat"/>[vblex]</r></p><par n="VBLEX_STD"/></e>
+    <e><p><l>koma<s n="parol"/>[vblex]</l><r>come<s n="cat"/>[vblex]</r></p><par n="VBLEX_STD"/></e>
+    <e><p><l>vita<s n="parol"/>[vblex]</l><r>know<s n="cat"/>[vblex]</r></p><par n="VBLEX_STD"/></e>
+    <e><p><l>vilja<s n="parol"/>[vblex]</l><r>want<s n="cat"/>[vblex]</r></p><par n="VBLEX_STD"/></e>
+    <e><p><l>taka<s n="parol"/>[vblex]</l><r>take<s n="cat"/>[vblex]</r></p><par n="VBLEX_STD"/></e>
+    <e><p><l>fara<s n="parol"/>[vblex]</l><r>go<s n="cat"/>[vblex]</r></p><par n="VBLEX_STD"/></e>
+    <e><p><l>keypa<s n="parol"/>[vblex]</l><r>buy<s n="cat"/>[vblex]</r></p><par n="VBLEX_STD"/></e>
+    <e><p><l>láta<s n="parol"/>[vblex]</l><r>let<s n="cat"/>[vblex]</r></p><par n="VBLEX_STD"/></e>
+    <e><p><l>flúgva<s n="parol"/>[vblex]</l><r>fly<s n="cat"/>[vblex]</r></p><par n="VBLEX_STD"/></e>
+    <e><p><l>gera<s n="parol"/>[vblex]</l><r>do<s n="cat"/>[vblex]</r></p><par n="VBLEX_STD"/></e>
+    <e><p><l>lesa<s n="parol"/>[vblex]</l><r>read<s n="cat"/>[vblex]</r></p><par n="VBLEX_STD"/></e>
+    <e><p><l>baka<s n="parol"/>[vblex]</l><r>bake<s n="cat"/>[vblex]</r></p><par n="VBLEX_STD"/></e>
+    <e><p><l>tala<s n="parol"/>[vblex]</l><r>talk<s n="cat"/>[vblex]</r></p><par n="VBLEX_STD"/></e>
+    <e><p><l>skriva<s n="parol"/>[vblex]</l><r>write<s n="cat"/>[vblex]</r></p><par n="VBLEX_STD"/></e>
+    <e><p><l>sláa<s n="parol"/>[vblex]</l><r>strike<s n="cat"/>[vblex]</r></p><par n="VBLEX_STD"/></e>
+    <e><p><l>velja<s n="parol"/>[vblex]</l><r>choose<s n="cat"/>[vblex]</r></p><par n="VBLEX_STD"/></e>
+    <e><p><l>byggja<s n="parol"/>[vblex]</l><r>build<s n="cat"/>[vblex]</r></p><par n="VBLEX_STD"/></e>
+    <e><p><l>eta<s n="parol"/>[vblex]</l><r>eat<s n="cat"/>[vblex]</r></p><par n="VBLEX_STD"/></e>
+    <e><p><l>hoyra<s n="parol"/>[vblex]</l><r>hear<s n="cat"/>[vblex]</r></p><par n="VBLEX_STD"/></e>
+    <e><p><l>ganga<s n="parol"/>[vblex]</l><r>walk<s n="cat"/>[vblex]</r></p><par n="VBLEX_STD"/></e>
+    <e><p><l>hata<s n="parol"/>[vblex]</l><r>hate<s n="cat"/>[vblex]</r></p><par n="VBLEX_STD"/></e>
+    <e><p><l>fylgja<s n="parol"/>[vblex]</l><r>accompany<s n="cat"/>[vblex]</r></p><par n="VBLEX_STD"/></e>
+    <e><p><l>leita<s n="parol"/>[vblex]</l><r>search<s n="cat"/>[vblex]</r></p><par n="VBLEX_STD"/></e>
+    <e><p><l>mála<s n="parol"/>[vblex]</l><r>speak<s n="cat"/>[vblex]</r></p><par n="VBLEX_STD"/></e>
+    <e><p><l>toyggja<s n="parol"/>[vblex]</l><r>stretch<s n="cat"/>[vblex]</r></p><par n="VBLEX_STD"/></e>
+    <e><p><l>bjóða<s n="parol"/>[vblex]</l><r>offer<s n="cat"/>[vblex]</r></p><par n="VBLEX_STD"/></e>
+    <e><p><l>fáa<s n="parol"/>[vblex]</l><r>get<s n="cat"/>[vblex]</r></p><par n="VBLEX_STD"/></e>
+    <e><p><l>kasta<s n="parol"/>[vblex]</l><r>throw<s n="cat"/>[vblex]</r></p><par n="VBLEX_STD"/></e>
+    <e><p><l>royna<s n="parol"/>[vblex]</l><r>try<s n="cat"/>[vblex]</r></p><par n="VBLEX_STD"/></e>
+    <e><p><l>seta<s n="parol"/>[vblex]</l><r>put<s n="cat"/>[vblex]</r></p><par n="VBLEX_STD"/></e>
+    <e><p><l>stjala<s n="parol"/>[vblex]</l><r>steal<s n="cat"/>[vblex]</r></p><par n="VBLEX_STD"/></e>
+    <e><p><l>sova<s n="parol"/>[vblex]</l><r>sleep<s n="cat"/>[vblex]</r></p><par n="VBLEX_STD"/></e>
+    <e><p><l>biðja<s n="parol"/>[vblex]</l><r>ask<s n="cat"/>[vblex]</r></p><par n="VBLEX_STD"/></e>
+    <e><p><l>sita<s n="parol"/>[vblex]</l><r>sit<s n="cat"/>[vblex]</r></p><par n="VBLEX_STD"/></e>
+    <e><p><l>kalla<s n="parol"/>[vblex]</l><r>call<s n="cat"/>[vblex]</r></p><par n="VBLEX_STD"/></e>
+    <e><p><l>breiða<s n="parol"/>[vblex]</l><r>spread<s n="cat"/>[vblex]</r></p><par n="VBLEX_STD"/></e>
+    <e><p><l>sovna<s n="parol"/>[vblex]</l><r>fall<g><b/>asleep</g><s n="cat"/>[vblex]</r></p><par n="VBLEX_STD"/></e>
+    <e><p><l>hitta<s n="parol"/>[vblex]</l><r>meet<s n="cat"/>[vblex]</r></p><par n="VBLEX_STD"/></e>
+    <e><p><l>bróta<s n="parol"/>[vblex]</l><r>break<s n="cat"/>[vblex]</r></p><par n="VBLEX_STD"/></e>
+    <e><p><l>heingja<s n="parol"/>[vblex]</l><r>hang<s n="cat"/>[vblex]</r></p><par n="VBLEX_STD"/></e>
+    <e><p><l>flóta<s n="parol"/>[vblex]</l><r>float<s n="cat"/>[vblex]</r></p><par n="VBLEX_STD"/></e>
+    <e><p><l>finna<s n="parol"/>[vblex]</l><r>find<s n="cat"/>[vblex]</r></p><par n="VBLEX_STD"/></e>
+    <e><p><l>ljóða<s n="parol"/>[vblex]</l><r>sound<s n="cat"/>[vblex]</r></p><par n="VBLEX_STD"/></e>
+    <e><p><l>ætla<s n="parol"/>[vblex]</l><r>will<s n="cat"/>[vblex]</r></p><par n="VBLEX_STD"/></e>
+    <e><p><l>berja<s n="parol"/>[vblex]</l><r>beat<s n="cat"/>[vblex]</r></p><par n="VBLEX_STD"/></e>
+    <e><p><l>standa<s n="parol"/>[vblex]</l><r>stand<s n="cat"/>[vblex]</r></p><par n="VBLEX_STD"/></e>
+    <e><p><l>verja<s n="parol"/>[vblex]</l><r>defend<s n="cat"/>[vblex]</r></p><par n="VBLEX_STD"/></e>
+    <e><p><l>skriva<s n="parol"/>[vblex]</l><r>write<s n="cat"/>[vblex]</r></p><par n="VBLEX_STD"/></e>
+    <e><p><l>ríva<s n="parol"/>[vblex]</l><r>rip<s n="cat"/>[vblex]</r></p><par n="VBLEX_STD"/></e>
+    <e><p><l>skera<s n="parol"/>[vblex]</l><r>cut<s n="cat"/>[vblex]</r></p><par n="VBLEX_STD"/></e>
+    <e><p><l>døma<s n="parol"/>[vblex]</l><r>judge<s n="cat"/>[vblex]</r></p><par n="VBLEX_STD"/></e>
+    <e><p><l>vistast<s n="parol"/>[vblex]</l><r>may<s n="cat"/>[vblex]</r></p><par n="VBLEX_STD"/></e>
+    <e><p><l>geva<s n="parol"/>[vblex]</l><r>give<s n="cat"/>[vblex]</r></p><par n="VBLEX_STD"/></e>
+    <e><p><l>gloyma<s n="parol"/>[vblex]</l><r>forget<s n="cat"/>[vblex]</r></p><par n="VBLEX_STD"/></e>
+    <e><p><l>vakna<s n="parol"/>[vblex]</l><r>wake<g><b/>up</g><s n="cat"/>[vblex]</r></p><par n="VBLEX_STD"/></e>
+    <e><p><l>spinna<s n="parol"/>[vblex]</l><r>spin<s n="cat"/>[vblex]</r></p><par n="VBLEX_STD"/></e>
+    <e><p><l>doyða<s n="parol"/>[vblex]</l><r>die<s n="cat"/>[vblex]</r></p><par n="VBLEX_STD"/></e>
+    <e><p><l>selja<s n="parol"/>[vblex]</l><r>sell<s n="cat"/>[vblex]</r></p><par n="VBLEX_STD"/></e>
+    <e><p><l>regna<s n="parol"/>[vblex]</l><r>rain<s n="cat"/>[vblex]</r></p><par n="VBLEX_STD"/></e>
+    <e><p><l>stinga<s n="parol"/>[vblex]</l><r>stick<s n="cat"/>[vblex]</r></p><par n="VBLEX_STD"/></e>
+    <e><p><l>telja<s n="parol"/>[vblex]</l><r>count<s n="cat"/>[vblex]</r></p><par n="VBLEX_STD"/></e>
+    <e><p><l>liggja<s n="parol"/>[vblex]</l><r>lie<s n="cat"/>[vblex]</r></p><par n="VBLEX_STD"/></e>
+    <e><p><l>drekka<s n="parol"/>[vblex]</l><r>drink<s n="cat"/>[vblex]</r></p><par n="VBLEX_STD"/></e>
+    <e><p><l>bíða<s n="parol"/>[vblex]</l><r>wait<s n="cat"/>[vblex]</r></p><par n="VBLEX_STD"/></e>
+    <e><p><l>gera<s n="parol"/>[vblex]</l><r>do<s n="cat"/>[vblex]</r></p><par n="VBLEX_STD"/></e>
+    <e><p><l>styrkja<s n="parol"/>[vblex]</l><r>strengthen<s n="cat"/>[vblex]</r></p><par n="VBLEX_STD"/></e>
+    <e><p><l>leggja<s n="parol"/>[vblex]</l><r>lay<s n="cat"/>[vblex]</r></p><par n="VBLEX_STD"/></e>
+    <e><p><l>opna<s n="parol"/>[vblex]</l><r>open<s n="cat"/>[vblex]</r></p><par n="VBLEX_STD"/></e>
+    <e><p><l>leika<s n="parol"/>[vblex]</l><r>play<s n="cat"/>[vblex]</r></p><par n="VBLEX_STD"/></e>
+    <e><p><l>spyrja<s n="parol"/>[vblex]</l><r>ask<s n="cat"/>[vblex]</r></p><par n="VBLEX_STD"/></e>
+    <e><p><l>liva<s n="parol"/>[vblex]</l><r>live<s n="cat"/>[vblex]</r></p><par n="VBLEX_STD"/></e>
+    <e><p><l>sakna<s n="parol"/>[vblex]</l><r>miss<s n="cat"/>[vblex]</r></p><par n="VBLEX_STD"/></e>
+    <e><p><l>bera<s n="parol"/>[vblex]</l><r>carry<s n="cat"/>[vblex]</r></p><par n="VBLEX_STD"/></e>
+    <e><p><l>halda<s n="parol"/>[vblex]</l><r>hold<s n="cat"/>[vblex]</r></p><par n="VBLEX_STD"/></e>
+    <e><p><l>binda<s n="parol"/>[vblex]</l><r>bind<s n="cat"/>[vblex]</r></p><par n="VBLEX_STD"/></e>
+    <e><p><l>draga<s n="parol"/>[vblex]</l><r>pull<s n="cat"/>[vblex]</r></p><par n="VBLEX_STD"/></e>
+    <e><p><l>verða<s n="parol"/>[vblex]</l><r>become<s n="cat"/>[vblex]</r></p><par n="VBLEX_STD"/></e>
+    <e><p><l>ríða<s n="parol"/>[vblex]</l><r>ride<s n="cat"/>[vblex]</r></p><par n="VBLEX_STD"/></e>
+    <e><p><l>elska<s n="parol"/>[vblex]</l><r>love<s n="cat"/>[vblex]</r></p><par n="VBLEX_STD"/></e>
+    <e><p><l>líða<s n="parol"/>[vblex]</l><r>feel<s n="cat"/>[vblex]</r></p><par n="VBLEX_STD"/></e>
+    <e><p><l>vaka<s n="parol"/>[vblex]</l><r>stay<g><b/>awake</g><s n="cat"/>[vblex]</r></p><par n="VBLEX_STD"/></e>
+    <e><p><l>skilja<s n="parol"/>[vblex]</l><r>understand<s n="cat"/>[vblex]</r></p><par n="VBLEX_STD"/></e>
+    <e><p><l>skifta<s n="parol"/>[vblex]</l><r>change<s n="cat"/>[vblex]</r></p><par n="VBLEX_STD"/></e>
+    <e><p><l>volda<s n="parol"/>[vblex]</l><r>cause<s n="cat"/>[vblex]</r></p><par n="VBLEX_STD"/></e>
+    <e><p><l>rísa<s n="parol"/>[vblex]</l><r>rise<s n="cat"/>[vblex]</r></p><par n="VBLEX_STD"/></e>
+    <e><p><l>njóta<s n="parol"/>[vblex]</l><r>enjoy<s n="cat"/>[vblex]</r></p><par n="VBLEX_STD"/></e>
+    <e><p><l>hugsa<s n="parol"/>[vblex]</l><r>think<s n="cat"/>[vblex]</r></p><par n="VBLEX_STD"/></e>
+    <e><p><l>droyma<s n="parol"/>[vblex]</l><r>dream<s n="cat"/>[vblex]</r></p><par n="VBLEX_STD"/></e>
+    <e><p><l>fylla<s n="parol"/>[vblex]</l><r>fill<s n="cat"/>[vblex]</r></p><par n="VBLEX_STD"/></e>
+    <e><p><l>svara<s n="parol"/>[vblex]</l><r>answer<s n="cat"/>[vblex]</r></p><par n="VBLEX_STD"/></e>
+    <e><p><l>flyta<s n="parol"/>[vblex]</l><r>move<s n="cat"/>[vblex]</r></p><par n="VBLEX_STD"/></e>
+    <e><p><l>súgva<s n="parol"/>[vblex]</l><r>suck<s n="cat"/>[vblex]</r></p><par n="VBLEX_STD"/></e>
+    <e><p><l>búgva<s n="parol"/>[vblex]</l><r>live<s n="cat"/>[vblex]</r></p><par n="VBLEX_STD"/></e>
+    <e><p><l>gloypa<s n="parol"/>[vblex]</l><r>swallow<s n="cat"/>[vblex]</r></p><par n="VBLEX_STD"/></e>
+    <e><p><l>lova<s n="parol"/>[vblex]</l><r>promise<s n="cat"/>[vblex]</r></p><par n="VBLEX_STD"/></e>
+    <e><p><l>læra<s n="parol"/>[vblex]</l><r>learn<s n="cat"/>[vblex]</r></p><par n="VBLEX_STD"/></e>
+    <e><p><l>vóna<s n="parol"/>[vblex]</l><r>hope<s n="cat"/>[vblex]</r></p><par n="VBLEX_STD"/></e>
+    <e><p><l>eiga<s n="parol"/>[vblex]</l><r>own<s n="cat"/>[vblex]</r></p><par n="VBLEX_STD"/></e>
+    <e><p><l>røkka<s n="parol"/>[vblex]</l><r>obtain<s n="cat"/>[vblex]</r></p><par n="VBLEX_STD"/></e>
+    <e><p><l>anda<s n="parol"/>[vblex]</l><r>breathe<s n="cat"/>[vblex]</r></p><par n="VBLEX_STD"/></e>
+    <e><p><l>líta<s n="parol"/>[vblex]</l><r>look<s n="cat"/>[vblex]</r></p><par n="VBLEX_STD"/></e>
+    <e><p><l>vaksa<s n="parol"/>[vblex]</l><r>grow<s n="cat"/>[vblex]</r></p><par n="VBLEX_STD"/></e>
+    <e><p><l>láta<s n="parol"/>[vblex]</l><r>finish<s n="cat"/>[vblex]</r></p><par n="VBLEX_STD"/></e>
+    <e><p><l>eita<s n="parol"/>[vblex]</l><r>vow<s n="cat"/>[vblex]</r></p><par n="VBLEX_STD"/></e>
+    <e><p><l>spretta<s n="parol"/>[vblex]</l><r>grow<s n="cat"/>[vblex]</r></p><par n="VBLEX_STD"/></e>
+    <e><p><l>leiða<s n="parol"/>[vblex]</l><r>lead<s n="cat"/>[vblex]</r></p><par n="VBLEX_STD"/></e>
+    <e><p><l>uppfylla<s n="parol"/>[vblex]</l><r>fulfil<s n="cat"/>[vblex]</r></p><par n="VBLEX_STD"/></e>
 
     <!-- Adverbs -->
     <e><p><l>her<s n="adv"/></l><r>here<s n="adv"/></r></p><par n="ADV_STD"/></e>
