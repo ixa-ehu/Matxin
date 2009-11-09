@@ -52,6 +52,22 @@ TagOrderFile=/home/fran/local/share/matxin/matxin-es-eu/gram/es-eu/eu_morph_prep
     </pipeline>
   </mode>
 
+  <mode name="es-eu-lexfer" install="no">
+    <pipeline>
+<!--
+      <program name="Analyzer -f">
+        <file name="es-eu.cfg"/>
+      </program>
+-->
+      <program name="matxin-xfer-lex">
+        <file option="-s" name="eu_sem.txt"/>
+        <file option="-c" name="eseu_chunk_type.txt"/>
+        <file option="-l" name="eseu_lex.txt"/>
+        <file name="eseu.bin"/>
+      </program>
+    </pipeline>
+  </mode>
+
   <mode name="es-eu-transfer" install="no">
     <pipeline>
 <!--

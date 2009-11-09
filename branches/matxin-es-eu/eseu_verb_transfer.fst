@@ -919,33 +919,85 @@ define TransIrteera2 [
 echo 
 echo >> + Automatak gorde
 
-read regex [TransPatr.i];		save stack ../xtr01.fst;	clear stack;
-read regex [TransAspNEJ.i];		save stack ../xtr02.fst;	clear stack;		
-read regex [TransTrinkArr.i];		save stack ../xtr03.fst;	clear stack;		
-read regex [TransAspNArrPer3.i];	save stack ../xtr04.fst;	clear stack;		
-read regex [TransAspNPer1.i];		save stack ../xtr05.fst;	clear stack;
-read regex [TransAspNPer2.i];		save stack ../xtr06.fst;	clear stack;
-read regex [TransPer.i];		save stack ../xtr07.fst;	clear stack;
-read regex [TransTrinkPer.i];		save stack ../xtr08.fst;	clear stack;
-read regex [TransAspP.i];		save stack ../xtr09.fst;	clear stack;
-read regex [TransPrt.i];		save stack ../xtr10.fst;	clear stack;
-read regex [TransAdb.i];		save stack ../xtr11.fst;	clear stack;
-read regex [TransAdMAspMKendu1.i];	save stack ../xtr12.fst;	clear stack;
-read regex [TransAdMAspMKendu2.i];	save stack ../xtr13.fst;	clear stack;
-read regex [TransAdM.i];		save stack ../xtr14.fst;	clear stack;	
-read regex [TransAspM.i];		save stack ../xtr15.fst;	clear stack;
-read regex [TransAdLPer.i];		save stack ../xtr16.fst;	clear stack;
-read regex [TransAdL.i];		save stack ../xtr17.fst;	clear stack;
-read regex [TransDenMod.i];		save stack ../xtr18.fst;	clear stack;
-read regex [TransNrSub.i];		save stack ../xtr19.fst;	clear stack;
-read regex [TransNrObj.i];		save stack ../xtr20.fst;	clear stack;
-read regex [TransNi.i];		save stack ../xtr21.fst;	clear stack;
-read regex [TransNkPas.i];		save stack ../xtr22.fst;	clear stack;
-read regex [TransNk.i];		save stack ../xtr22.fst;	clear stack;
+read regex [TransPatr.i];		
+save stack ../xtr01.fst
+clear stack
+read regex [TransAspNEJ.i];
+save stack ../xtr02.fst
+clear stack		
+read regex [TransTrinkArr.i];
+save stack ../xtr03.fst
+clear stack
+read regex [TransAspNArrPer3.i];	
+save stack ../xtr04.fst
+clear stack
+read regex [TransAspNPer1.i];
+save stack ../xtr05.fst
+clear stack
+read regex [TransAspNPer2.i];
+save stack ../xtr06.fst
+clear stack
+read regex [TransPer.i];		
+save stack ../xtr07.fst
+clear stack
+read regex [TransTrinkPer.i];
+save stack ../xtr08.fst
+clear stack
+read regex [TransAspP.i];
+save stack ../xtr09.fst
+clear stack
+read regex [TransPrt.i];
+save stack ../xtr10.fst
+clear stack
+read regex [TransAdb.i];
+save stack ../xtr11.fst
+clear stack
+read regex [TransAdMAspMKendu1.i];
+save stack ../xtr12.fst
+clear stack
+read regex [TransAdMAspMKendu2.i];
+save stack ../xtr13.fst
+clear stack
+read regex [TransAdM.i];
+save stack ../xtr14.fst
+clear stack
+read regex [TransAspM.i];
+save stack ../xtr15.fst
+clear stack
+read regex [TransAdLPer.i];
+save stack ../xtr16.fst
+clear stack
+read regex [TransAdL.i];
+save stack ../xtr17.fst
+clear stack
+read regex [TransDenMod.i];
+save stack ../xtr18.fst
+clear stack
+read regex [TransNrSub.i];
+save stack ../xtr19.fst
+clear stack
+read regex [TransNrObj.i];
+save stack ../xtr20.fst
+clear stack
+read regex [TransNi.i];
+save stack ../xtr21.fst
+clear stack
+read regex [TransNkPas.i];
+save stack ../xtr22.fst
+clear stack
+read regex [TransNk.i];
+save stack ../xtr22.fst
+clear stack
 !read regex [TransErlMor.i];		save stack ../xtr23.fst;	clear stack;
-read regex [TransAspOsatu.i];		save stack ../xtr24.fst;	clear stack;
-read regex [TransIrteera1.i];		save stack ../xtr25.fst;	clear stack;
-read regex [TransIrteera2.i];		save stack ../xtr26.fst;	clear stack;
+read regex [TransAspOsatu.i];
+save stack ../xtr24.fst
+clear stack
+read regex [TransIrteera1.i];
+save stack ../xtr25.fst
+clear stack
+read regex [TransIrteera2.i];
+save stack ../xtr26.fst
+clear stack
 
 
 echo  >> Bukatu du
