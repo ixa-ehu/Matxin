@@ -6,13 +6,13 @@
         <file name="fo-en.automorf.bin"/>
       </program>
       <program name="cg-proc -w">
-	<file name="fo-en.rlx.bin"/>
+	<file name="fo-en.dis.rlx.bin"/>
       </program>
       <program name="apertium-tagger -pg">
         <file name="fo-en.prob"/>
       </program>
       <program name="cg-proc -wf2">
-	<file name="fo-en.rlx-dep.bin"/>
+	<file name="fo-en.dis.rlx.bin"/>
       </program>
       <!-- will pretransfer be needed? -->
       <program name="matxin-xfer-lex">
@@ -39,7 +39,7 @@
         <file name="fo-en.automorf.bin"/>
       </program>
       <program name="cg-proc -w">
-	<file name="fo-en.rlx.bin"/>
+	<file name="fo-en.dis.rlx.bin"/>
       </program>
       <program name="apertium-tagger -pg">
         <file name="fo-en.prob"/>
@@ -56,7 +56,7 @@
         <file name="fo-en.automorf.bin"/>
       </program>
       <program name="cg-proc -w">
-	<file name="fo-en.rlx.bin"/>
+	<file name="fo-en.dis.rlx.bin"/>
       </program>
       <program name="apertium-tagger -pg">
         <file name="fo-en.prob"/>
