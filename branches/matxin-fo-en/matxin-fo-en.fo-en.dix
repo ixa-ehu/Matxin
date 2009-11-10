@@ -30,6 +30,17 @@
     <sdef n="parol"  c="PAROLE style tag"/>
   </sdefs>
   <pardefs>
+    <pardef n="NP_AL_STD">
+      <e><p><l>[al][m][sg][nom]</l><r><s n="mi"/>[sg]</r></p></e>
+      <e><p><l>[al][m][sg][acc]</l><r><s n="mi"/>[sg]</r></p></e>
+      <e><p><l>[al][m][sg][dat]</l><r><s n="mi"/>[sg]</r></p></e>
+      <e><p><l>[al][m][sg][gen]</l><r><s n="mi"/>[sg]</r></p></e>
+      <e><p><l>[al][m][pl][nom]</l><r><s n="mi"/>[pl]</r></p></e>
+      <e><p><l>[al][m][pl][acc]</l><r><s n="mi"/>[pl]</r></p></e>
+      <e><p><l>[al][m][pl][dat]</l><r><s n="mi"/>[pl]</r></p></e>
+      <e><p><l>[al][m][pl][gen]</l><r><s n="mi"/>[pl]</r></p></e>
+    </pardef>
+
     <pardef n="NC_STD">
       <e><p><l>[sg][nom][ind]</l><r><s n="mi"/>[sg]</r></p></e>
       <e><p><l>[sg][acc][ind]</l><r><s n="mi"/>[sg]</r></p></e>
@@ -842,6 +853,9 @@
     <e><p><l>beinur<s n="parol"/>[adj]</l><r>straight<s n="pos"/>[adj]</r></p><par n="ADJ_STD"/></e>
     <e><p><l>eitur<s n="parol"/>[adj]</l><r>hot<s n="pos"/>[adj][sint]</r></p><par n="ADJ_SINT_STD"/></e>
     <e><p><l>livandi<s n="parol"/>[adj]</l><r>alive<s n="pos"/>[adj]</r></p><par n="ADJ_STD"/></e>
+
+    <!-- Proper nouns -->
+    <e><p><l>Gud<s n="parol"/>[np]</l><r>God<s n="pos"/>[np]</r></p><par n="NP_AL_STD"/></e>
 
 
     <e><re>.</re><par n="PUNT"/></e>
