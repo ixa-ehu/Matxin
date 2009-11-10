@@ -350,9 +350,6 @@ std::pair<wstring,wstring> procNODE_notAS(xmlTextReaderPtr reader, bool head,
         subnodes = multiNodes(reader, select[0], attributes);
       }
       attributes += L" " + select[0];
-      size_t pos_start = attributes.find(L" pos='");
-      size_t pos_end = attributes.find(L"'", pos_start+6);
-      pos = attributes.substr(pos_start+6, pos_end-pos_start-6);
       
       // Hitz horren semantika begiratzen da
 
@@ -360,7 +357,8 @@ std::pair<wstring,wstring> procNODE_notAS(xmlTextReaderPtr reader, bool head,
       // transducer. 
       //   In format: ^euskara[IZE][ARR]$ 
       //   Out format: ^<BIZ->$
-      wstring pos = text_attrib(select[0], L"pos");
+      pos = text_attrib(select[0], L"pos");
+      
       if (head) {
         wstring lem = text_attrib(select[0], L"lem");
         wstring sem_search = L'^' + lem + pos + L'$';
@@ -426,7 +424,7 @@ std::pair<wstring,wstring> procNODE_notAS(xmlTextReaderPtr reader, bool head,
     std::pair<wstring,wstring> pr = procNODE_notAS(reader, head_child, attribs,
                                    child_attributes);
     wstring NODOA = pr.first;
-    wstring pos = pr.second;
+    
     nodes += NODOA;
 
     ret = nextTag(reader);
@@ -582,6 +580,9 @@ wstring procCHUNK(xmlTextReaderPtr reader, wstring parent_attribs)
     if (chunkType == L"") {
       chunkType = attrib(reader, "type");
     }
+    tree = L"<CHUNK ref='" + write_xml(attrib(reader, "ord")) + L"'" +
+	    write_xml(text_allAttrib_except(allAttrib_except(reader, L"ord"), L"type"));
+    // we output chunktype below, after getting pos from procNODE_foo
  }
   else
   {
@@ -600,21 +601,18 @@ wstring procCHUNK(xmlTextReaderPtr reader, wstring parent_attribs)
   if (chunkType.substr(0, 4) == L"adi-")
   {
     // NODEa irakurri eta prozesatzen du, CHUNKaren burua izango da (head=true)
+    tree += L" type='" + write_xml(chunkType) + L"'" + L">\n";
     tree += procNODE_AS(reader, true, head_attribs);
   }
   else
   {
     // NODEa irakurri eta prozesatzen du
     std::pair<wstring,wstring> pr = procNODE_notAS(reader, true, parent_attribs, head_attribs);
-    wstring NODOA = pr.first;
+
     wstring pos = pr.second;
+    tree += L" type='" + write_xml(chunkType + pos) + L"'" + L">\n";
     
-
-    tree = L"<CHUNK ref='" + write_xml(attrib(reader, "ord")) +
-           L"' type='" + write_xml(chunkType+pos) + L"'" +
-           write_xml(text_allAttrib_except(allAttrib_except(reader, L"ord"),
-                                           L"type")) + L">\n";
-
+    wstring NODOA = pr.first;
     tree += NODOA;
   }
 
@@ -725,9 +723,9 @@ int main(int argc, char *argv[])
 
   // This sets the C++ locale and affects to C and C++ locales.
   // wcout.imbue doesn't have any effect but the in/out streams use the proper encoding.
-  locale::global(locale(""));
+  //locale::global(locale(""));
   // ^^^ doesn't work on mac, except with C/POSIX
-  //setlocale(LC_ALL, "");
+  setlocale(LC_ALL, "");
   
   // Hiztegi elebidunaren hasieraketa.
   // Parametro moduan jasotzen den fitxagia erabiltzen da hasieraketarako.
