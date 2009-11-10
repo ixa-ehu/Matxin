@@ -812,27 +812,27 @@
     <e><p><l>uppfylla<s n="parol"/>[vblex]</l><r>fulfil<s n="pos"/>[vblex]</r></p><par n="VBLEX_STD"/></e>
 
     <!-- Adverbs -->
-    <e><p><l>her<s n="adv"/></l><r>here<s n="adv"/></r></p><par n="ADV_STD"/></e>
-    <e><p><l>ikki<s n="adv"/></l><r>not<s n="adv"/></r></p><par n="ADV_STD"/></e>
-    <e><p><l>í<b/>gjár<s n="adv"/></l><r>yesterday<s n="adv"/></r></p><par n="ADV_STD"/></e>
-    <e><p><l>í<b/>morgin<s n="adv"/></l><r>tomorrow<s n="adv"/></r></p><par n="ADV_STD"/></e>
-    <e><p><l>ofta<s n="adv"/></l><r>often<s n="adv"/></r></p><par n="ADV_STD"/></e>
-    <e><p><l>mikið<s n="adv"/></l><r>much<s n="adv"/></r></p><par n="ADV_STD"/></e>
-    <e><p><l>upp<s n="adv"/></l><r>up<s n="adv"/></r></p><par n="ADV_STD"/></e>
-    <e><p><l>út<s n="adv"/></l><r>out<s n="adv"/></r></p><par n="ADV_STD"/></e>
-    <e><p><l>fram<s n="adv"/></l><r>forth<s n="adv"/></r></p><par n="ADV_STD"/></e>
-    <e><p><l>framman<s n="adv"/></l><r>front<s n="adv"/></r></p><par n="ADV_STD"/></e>
-    <e><p><l>aftur<s n="adv"/></l><r>back<s n="adv"/></r></p><par n="ADV_STD"/></e>
-    <e><p><l>her<s n="adv"/></l><r>there<s n="adv"/></r></p><par n="ADV_STD"/></e>
-    <e><p><l>inn<s n="adv"/></l><r>in<s n="adv"/></r></p><par n="ADV_STD"/></e>
-    <e><p><l>niður<s n="adv"/></l><r>down<s n="adv"/></r></p><par n="ADV_STD"/></e>
-    <e><p><l>saman<s n="adv"/></l><r>together<s n="adv"/></r></p><par n="ADV_STD"/></e>
-    <e><p><l>nú<s n="adv"/></l><r>now<s n="adv"/></r></p><par n="ADV_STD"/></e>
-    <e><p><l>longu<s n="adv"/></l><r>already<s n="adv"/></r></p><par n="ADV_STD"/></e>
-    <e><p><l>vissuliga<s n="adv"/></l><r>surely<s n="adv"/></r></p><par n="ADV_STD"/></e>
-    <e><p><l>burt<s n="adv"/></l><r>away<s n="adv"/></r></p><par n="ADV_STD"/></e>
-    <e><p><l>eisini<s n="adv"/></l><r>moreover<s n="adv"/></r></p><par n="ADV_STD"/></e>
-    <e><p><l>hví<s n="adv"/></l><r>af<b/>hverju<s n="adv"/></r></p><par n="ADV_STD"/></e>
+    <e><p><l>her<s n="parol"/>[adv]</l><r>here<s n="pos"/>[adv]</r></p><par n="ADV_STD"/></e>
+    <e><p><l>ikki<s n="parol"/>[adv]</l><r>not<s n="pos"/>[adv]</r></p><par n="ADV_STD"/></e>
+    <e><p><l>í<b/>gjár<s n="parol"/>[adv]</l><r>yesterday<s n="pos"/>[adv]</r></p><par n="ADV_STD"/></e>
+    <e><p><l>í<b/>morgin<s n="parol"/>[adv]</l><r>tomorrow<s n="pos"/>[adv]</r></p><par n="ADV_STD"/></e>
+    <e><p><l>ofta<s n="parol"/>[adv]</l><r>often<s n="pos"/>[adv]</r></p><par n="ADV_STD"/></e>
+    <e><p><l>mikið<s n="parol"/>[adv]</l><r>much<s n="pos"/>[adv]</r></p><par n="ADV_STD"/></e>
+    <e><p><l>upp<s n="parol"/>[adv]</l><r>up<s n="pos"/>[adv]</r></p><par n="ADV_STD"/></e>
+    <e><p><l>út<s n="parol"/>[adv]</l><r>out<s n="pos"/>[adv]</r></p><par n="ADV_STD"/></e>
+    <e><p><l>fram<s n="parol"/>[adv]</l><r>forth<s n="pos"/>[adv]</r></p><par n="ADV_STD"/></e>
+    <e><p><l>framman<s n="parol"/>[adv]</l><r>front<s n="pos"/>[adv]</r></p><par n="ADV_STD"/></e>
+    <e><p><l>aftur<s n="parol"/>[adv]</l><r>back<s n="pos"/>[adv]</r></p><par n="ADV_STD"/></e>
+    <e><p><l>her<s n="parol"/>[adv]</l><r>there<s n="pos"/>[adv]</r></p><par n="ADV_STD"/></e>
+    <e><p><l>inn<s n="parol"/>[adv]</l><r>in<s n="pos"/>[adv]</r></p><par n="ADV_STD"/></e>
+    <e><p><l>niður<s n="parol"/>[adv]</l><r>down<s n="pos"/>[adv]</r></p><par n="ADV_STD"/></e>
+    <e><p><l>saman<s n="parol"/>[adv]</l><r>together<s n="pos"/>[adv]</r></p><par n="ADV_STD"/></e>
+    <e><p><l>nú<s n="parol"/>[adv]</l><r>now<s n="pos"/>[adv]</r></p><par n="ADV_STD"/></e>
+    <e><p><l>longu<s n="parol"/>[adv]</l><r>already<s n="pos"/>[adv]</r></p><par n="ADV_STD"/></e>
+    <e><p><l>vissuliga<s n="parol"/>[adv]</l><r>surely<s n="pos"/>[adv]</r></p><par n="ADV_STD"/></e>
+    <e><p><l>burt<s n="parol"/>[adv]</l><r>away<s n="pos"/>[adv]</r></p><par n="ADV_STD"/></e>
+    <e><p><l>eisini<s n="parol"/>[adv]</l><r>moreover<s n="pos"/>[adv]</r></p><par n="ADV_STD"/></e>
+    <e><p><l>hví<s n="parol"/>[adv]</l><r>af<b/>hverju<s n="pos"/>[adv]</r></p><par n="ADV_STD"/></e>
 
     <!-- Adjectives -->
     <e><p><l>fræls<s n="parol"/>[adj]</l><r>free<s n="pos"/>[adj][sint]</r></p><par n="ADJ_SINT_STD"/></e>
