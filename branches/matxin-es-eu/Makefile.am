@@ -10,7 +10,7 @@ BASENAME=matxin-$(PREFIX1)
 
 TARGETS_COMMON = $(PREFIX).bin $(LANG2)_changes_morph.bin $(LANG2)_measures_gen.bin \
 		 $(LANG2)_morph_gen.bin $(LANG2)_morph_nolex.bin $(PREFIX)_verb_transfer.dat \
-		 $(PREFIX1).cfg $(PREFIX1).mode
+		 $(LANG2)_sem.bin $(PREFIX1).cfg $(PREFIX1).mode
 
 TARGETS = $(TARGETS_COMMON)
 
@@ -37,6 +37,9 @@ $(LANG2)_morph_nolex.bin: $(LANG2)_morph_nolex.xml
 #VerbTransferFile=@MATXINDATADIR@/gram/es-eu/eseu_verb_transfer.dat
 $(PREFIX)_verb_transfer.dat: $(PREFIX)_verb_transfer.fst
 	perl $(bindir)/fst2regex.pl < $(PREFIX)_verb_transfer.fst > $@
+
+$(LANG2)_sem.bin: $(LANG2)_sem.xml
+	lt-comp lr $(LANG2)_sem.xml $@
 
 $(PREFIX1).mode: modes.xml
 	matxin-gen-modes modes.xml
