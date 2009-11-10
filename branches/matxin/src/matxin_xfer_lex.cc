@@ -488,15 +488,16 @@ wstring procNODE_AS(xmlTextReaderPtr reader, bool head, wstring& attributes)
                                              attrib(reader, "mi"),
                                              unknown);
 
-      if (trad.size() > 1)
+      if (trad.size() > 1) {
         synonyms = getsyn(trad);
-
+      }
       attributes += L" " + text_allAttrib_except(text_allAttrib_except(trad[0], L"mi"), L"lem");
       attributes += L" lem='_" + text_attrib(trad[0], L"lem") + L"_'";
       attributes += L" mi='" + attrib(reader, "mi") + L"'";
 
-      if (unknown)
+      if (unknown) {
         attributes += L" unknown='transfer'";
+      }
     }
     else
     {
@@ -568,19 +569,24 @@ wstring procCHUNK(xmlTextReaderPtr reader, wstring parent_attribs)
   int tagType = xmlTextReaderNodeType(reader);
   wstring tree, chunkType, head_attribs;
   bool addpos = false;
+  wstring type;
   
   if (tagName == L"CHUNK" and tagType == XML_READER_TYPE_ELEMENT)
   {
     // ord -> ref : ord atributuan dagoen balioa, ref atributuan idazten du
     // type : CHUNKaren type atributua itzultzen da
     // si atributua mantentzen da
-    chunkType = get_lexInfo(L"chunkType", attrib(reader, "type"));
-    if (chunkType == L"") {
+    type = attrib(reader, "type");
+    if (type == L"") {
       addpos = true;
       chunkType = get_lexInfo(L"chunkType", attrib(reader, "si"));
-    }
-    if (chunkType == L"") {
-      chunkType = attrib(reader, "type");
+      wcerr << L"[procCHUNK][si  ] t:" << type << L" c: " << chunkType << endl;
+    } else { 
+      chunkType = get_lexInfo(L"chunkType", type);
+      wcerr << L"[procCHUNK][type] t:" << type << L" c: " << chunkType << endl;
+      if (chunkType == L"") {
+        chunkType = attrib(reader, "type");
+      }
     }
     tree = L"<CHUNK ref='" + write_xml(attrib(reader, "ord")) + L"'" +
 	    write_xml(text_allAttrib_except(allAttrib_except(reader, L"ord"), L"type"));
@@ -600,9 +606,14 @@ wstring procCHUNK(xmlTextReaderPtr reader, wstring parent_attribs)
   // CHUNK motaren arabera tratamendu desberdina egiten da
   // (procNODE_AS edo procNODE_notAS)
   // TODO: LANGUAGE INDEPENDENCE
-  if (chunkType.substr(0, 4) == L"adi-")
+  if (chunkType.substr(0, 4) == L"adi-" || chunkType.substr(0, 7) == L"grup-ve") // This is broken
   {
     // NODEa irakurri eta prozesatzen du, CHUNKaren burua izango da (head=true)
+    chunkType = get_lexInfo(L"chunkType", type);
+      wcerr << L"[procCHUNK][adi-] t:" << type << L" c: " << chunkType << endl;
+      if (chunkType == L"") {
+        chunkType = attrib(reader, "type");
+      }
     tree += L" type='" + write_xml(chunkType) + L"'" + L">\n";
     tree += procNODE_AS(reader, true, head_attribs);
   }
