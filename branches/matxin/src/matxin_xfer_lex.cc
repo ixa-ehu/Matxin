@@ -567,7 +567,8 @@ wstring procCHUNK(xmlTextReaderPtr reader, wstring parent_attribs)
   wstring tagName = getTagName(reader);
   int tagType = xmlTextReaderNodeType(reader);
   wstring tree, chunkType, head_attribs;
-
+  bool addpos = false;
+  
   if (tagName == L"CHUNK" and tagType == XML_READER_TYPE_ELEMENT)
   {
     // ord -> ref : ord atributuan dagoen balioa, ref atributuan idazten du
@@ -575,6 +576,7 @@ wstring procCHUNK(xmlTextReaderPtr reader, wstring parent_attribs)
     // si atributua mantentzen da
     chunkType = get_lexInfo(L"chunkType", attrib(reader, "type"));
     if (chunkType == L"") {
+      addpos = true;
       chunkType = get_lexInfo(L"chunkType", attrib(reader, "si"));
     }
     if (chunkType == L"") {
@@ -609,7 +611,10 @@ wstring procCHUNK(xmlTextReaderPtr reader, wstring parent_attribs)
     // NODEa irakurri eta prozesatzen du
     std::pair<wstring,wstring> pr = procNODE_notAS(reader, true, parent_attribs, head_attribs);
 
-    wstring pos = pr.second;
+    wstring pos = L"";
+    if (addpos) {
+	    pos = pr.second;
+    }
     tree += L" type='" + write_xml(chunkType + pos) + L"'" + L">\n";
     
     wstring NODOA = pr.first;
