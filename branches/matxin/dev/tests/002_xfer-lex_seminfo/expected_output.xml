@@ -1,38 +1,14 @@
 <?xml version='1.0' encoding='UTF-8'?>
 <corpus >
 <SENTENCE ref='1' alloc='0'>
-<CHUNK ref='2' type='adi-kat' alloc='11' si='top'>
-<NODE ref='3' alloc='11' UpCase='none' slem='ser' smi='VSIP3S0'  pos='[ADI][SIN]' lem='_izan_' mi='VSIP3S0'>
-</NODE>
-<CHUNK ref='1' type='is' alloc='0' si='subj'>
+<CHUNK ref='1' type='is' alloc='0' si='top'>
 <NODE ref='2' alloc='3' slem='euskera' smi='NCMS000' UpCase='none' lem='euskara' pos='[IZE][ARR]' mi='[NUMS]' sem='[BIZ-]'>
 <NODE ref='1' alloc='0' slem='el' smi='DA0MS0' UpCase='none' lem='' mi='[NUMS]'>
 </NODE>
 </NODE>
-</CHUNK>
-<CHUNK ref='3' type='is' alloc='14' si='att'>
-<NODE ref='5' alloc='18' slem='lengua' smi='NCFS000' UpCase='none' lem='mihi' pos='[IZE][ARR]' mi='[NUMS]' sem='[BIZ-]'>
-<NODE ref='4' alloc='14' slem='uno' smi='DI0FS0' UpCase='none' lem='bat' pos='[DET][DZH]' mi='[NUMS]'>
+<CHUNK ref='2' type='p-buka' alloc='10' si='term'>
+<NODE ref='3' alloc='10' slem='.' smi='Fp' UpCase='none' lem='.' parol='Fp' unknown='transfer'>
 </NODE>
-<NODE ref='6' alloc='25' slem='aislado' smi='AQ0FSP' UpCase='none' lem='bakartu' pos='[ADJ][IZO]' mi='[NUMS]'>
-</NODE>
-</NODE>
-<CHUNK ref='4' type='subord-rel' alloc='33' si='rel-mod'>
-<NODE ref='7' alloc='33' slem='que' smi='PR0CN000' UpCase='none' lem='' vpost='+n[ERL][MEN][ERLT]'>
-</NODE>
-<CHUNK ref='5' type='adi-kat' alloc='37' si='vsubord'>
-<NODE ref='9' alloc='40' UpCase='none' slem='hablar' smi='VMIP3S0'  pos='[ADI][SIN]' lem='_mintzatu_' mi='VMIP3S0'>
-<NODE ref='8' alloc='37' UpCase='none' slem='se' smi='P0000000' lem='.se.' mi='P0000000'>
-</NODE>
-</NODE>
-<CHUNK ref='6' type='post-sint' alloc='46' si='sp-obj'>
-<NODE ref='10' alloc='46' slem='en' smi='SPS00' UpCase='none' lem='' prep='en'>
-<NODE ref='11' alloc='49' slem='euskal_herria' smi='NP00000' UpCase='title' lem='euskal_herria' pos='[IZE][LIB]' mi='[NUMS]' unknown='transfer'>
-</NODE>
-</NODE>
-</CHUNK>
-</CHUNK>
-</CHUNK>
 </CHUNK>
 </CHUNK>
 </SENTENCE>
