@@ -352,15 +352,27 @@ void procNODE(xmlTextReaderPtr reader, map<int, map<int,word> > &sentence,
       max_alloc = alloc;
     }
 
-    sentence[chunkOrd][watoi(attrib(reader, "ord").c_str())].form = attrib(reader, "form");
-    sentence[chunkOrd][watoi(attrib(reader, "ord").c_str())].alloc = attrib(reader, "alloc");
-    if (attrib(reader, "unknown") != L"")
-      sentence[chunkOrd][watoi(attrib(reader, "ord").c_str())].is_unknow = true;
-    else
-      sentence[chunkOrd][watoi(attrib(reader, "ord").c_str())].is_unknow = false;
+    int ord = watoi(attrib(reader, "ord").c_str());
+    wstring form = attrib(reader, "form");
+    wstring _alloc = attrib(reader, "alloc");
+    bool is_unknow = false;
 
-    if (xmlTextReaderIsEmptyElement(reader) == 1)
+    sentence[chunkOrd][ord].form = form;
+    sentence[chunkOrd][ord].alloc = _alloc;
+
+    if (attrib(reader, "unknown") != L"") {
+      is_unknow = true;
+    } else {
+      is_unknow = false;
+    }
+
+    sentence[chunkOrd][ord].is_unknow = is_unknow;
+
+    //wcerr << L"[reformat][procNODE] o: " << ord << " f: " << form << L" a: " << alloc << L" u: " << is_unknow << endl;
+
+    if (xmlTextReaderIsEmptyElement(reader) == 1) {
       return;
+    }
   }
   else
   {
@@ -686,8 +698,9 @@ int main(int argc, char *argv[])
     min_alloc = max_alloc = -1;
     procSENTENCE(reader, sentence, min_alloc, max_alloc);
 
-    if (argc > 1)
+    if (argc > 1) {
       wcout << clear_tags(file_format, min_alloc, false);
+    }
 
     map<int, map<int,word> >::iterator curSentence = sentence.begin();
     while (curSentence != sentence.end())
@@ -695,11 +708,13 @@ int main(int argc, char *argv[])
       map<int,word> chunk = (*curSentence).second;
 
       map<int,word>::iterator curChunk = chunk.begin();
-      while (curChunk != chunk.end())
+      while (curChunk != chunk.end()) // For each of the chunks in a SENTENCE
       {
         wstring form = (*curChunk).second.form;
         wstring alloc = (*curChunk).second.alloc;
         bool is_unknow = (*curChunk).second.is_unknow;
+
+        //wcerr << L"[reformat][main    ] f: " << form << L" a: " << alloc << L" u: " << is_unknow << endl;
 
         vector<int> allocs;
         while (alloc.size() != 0)
@@ -721,25 +736,36 @@ int main(int argc, char *argv[])
           wcout << get_tags(file_format, allocs);
           if (upperCase)
           {
-            if (argc <= 1)
+            if (argc <= 1) {
               wcout << endl;
+            }
+            // If the word is marked as upper case, upper case it
             form[0] = toupper(form[0]);
           }
           
-          if (form != L"." && form != L"," && form != L":" && form != L";" &&
-              form != L"?" && form != L"!" && form != L")")
+          // if form != isPunct(form) ?
+          if (form != L"." && form != L"," && form != L":" && form != L";" && 
+              form != L"?" && form != L"!" && form != L")") {
             wcout << L" ";
+          }
 
-          if (mark_unknow && is_unknow)
+          // If the word is marked as unknown and we're supposed
+          // to mark unknown words
+          if (mark_unknow && is_unknow) {
             wcout << L"*";
+          }
 
+          // Output the surface form
           wcout << form;
 
         }
-        if (form == L"." || form == L"?" || form == L"!")
+        // If the word is an EOS marker, next word should be
+        // upper case 
+        if (form == L"." || form == L"?" || form == L"!") {
           upperCase = true;
-        else
+        } else {
           upperCase = false;
+        }
 
         curChunk++;
       }
@@ -756,10 +782,11 @@ int main(int argc, char *argv[])
   xmlFreeTextReader(reader);
   xmlCleanupParser();
 
-  if (argc > 1)
+  if (argc > 1) {
     wcout << clear_tags(file_format, max_alloc, true);
-  else
+  } else {
     cout << endl;
+  }
 
   if (ret != 1 or tagName != L"corpus" or tagType != XML_READER_TYPE_END_ELEMENT)
   {
@@ -767,6 +794,4 @@ int main(int argc, char *argv[])
           << L"> when </corpus> was expected..." << endl;
     exit(-1);
   }
-
 }
-

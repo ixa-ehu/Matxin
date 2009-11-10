@@ -80,6 +80,7 @@ FORMATADOR=$FORMAT;
 DATOS=$DIRECTORY;
 FICHERO=$INPUT_FILE;
 SALIDA=$OUTPUT_FILE;
+FORMAT_FILE=$(mktemp /tmp/matxin_format.XXXXXXXX)
 
 if [ ! -d $DATOS/modes ];
 then echo "Error: Directory '$DATOS/modes' does not exist."
@@ -127,9 +128,10 @@ then
 fi
 
 if [ "$FORMATADOR" = "none" ]; then 
-	cat $FICHERO;
+	$MATXIN_PATH/matxin-destxt $FORMAT_FILE $FICHERO; 
+	#cat $FICHERO;
 else 
-	$MATXIN_PATH/matxin-des$FORMATADOR $FICHERO; fi| \
+	$MATXIN_PATH/matxin-des$FORMATADOR $FORMAT_FILE $FICHERO; fi| \
 if [ "$TRANSLATION_MEMORY_FILE" = "" ]; 
 then cat;  
 else $MATXIN_PATH/lt-tmxproc $TMCOMPFILE;
@@ -138,8 +140,8 @@ then sh $DATOS/modes/$PREFIJO.mode $OPTION $OPTION_TAGGER
 else $DATOS/modes/$PREFIJO.mode $OPTION $OPTION_TAGGER
 fi | if [ "$FORMATADOR" = "none" ]
 then cat >$SALIDA;
-else $MATXIN_PATH/matxin-re$FORMATADOR >$SALIDA;
+else $MATXIN_PATH/matxin-reformat $FORMAT_FILE >$SALIDA;
 fi
 
-rm -Rf $TMCOMPFILE
+#rm -f $FORMAT_FILE
 
