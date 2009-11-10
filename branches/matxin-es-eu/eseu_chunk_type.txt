@@ -6,8 +6,6 @@ grup-sp	post-sint	#sintagma preposicional (todas las preposiciones excepto "de")
 Fc	p-koma	#signo de puntuación "koma"	puntuazioa: koma
 F-no-c	p-ez-koma	#todos los signos de puntuación que no sean "coma"	koma es diren puntuazio-ikurrak
 F-term	p-buka		#puntuación que significa término de sentencia ('.!?)	esaldi amaiera adierazten duten ikurrak
-			
-número	zki	#cualquier número cardinal	edozein zenbaki kardinal
 grup-verb	adi-kat	#grupo verbal	aditz-katea
 sadv	adbs	#sintagma adverbial	adberbio-sintagma
 neg	ez	#negación	ezeztapena
@@ -30,3 +28,4 @@ paton	obj-ior	#pronombres átonos	objektua markatzen duen izenordaina
 morf-pron	morf-pron	#"se" pronominal	aditzaren "se" pronominala
 grup-verb-inf	adi-inf	#infinitibo	infinitiboa/aditz-transferentziara doan guztia
 grup-sp-inf	post-sint-inf	#infinitibo	infinitiboa/aditz-transferentziara doan guztia
+número	zki	#cualquier número cardinal	edozein zenbaki kardinal
