@@ -129,16 +129,16 @@ fi
 if [ "$FORMATADOR" = "none" ]; then 
 	cat $FICHERO;
 else 
-	$APERTIUM_PATH/matxin-des$FORMATADOR $FICHERO; fi| \
+	$MATXIN_PATH/matxin-des$FORMATADOR $FICHERO; fi| \
 if [ "$TRANSLATION_MEMORY_FILE" = "" ]; 
 then cat;  
-else $APERTIUM_PATH/lt-tmxproc $TMCOMPFILE;
+else $MATXIN_PATH/lt-tmxproc $TMCOMPFILE;
 fi | if [ ! -x $DATOS/modes/$PREFIJO.mode ]
 then sh $DATOS/modes/$PREFIJO.mode $OPTION $OPTION_TAGGER
 else $DATOS/modes/$PREFIJO.mode $OPTION $OPTION_TAGGER
 fi | if [ "$FORMATADOR" = "none" ]
 then cat >$SALIDA;
-else $APERTIUM_PATH/matxin-re$FORMATADOR >$SALIDA;
+else $MATXIN_PATH/matxin-re$FORMATADOR >$SALIDA;
 fi
 
 rm -Rf $TMCOMPFILE
