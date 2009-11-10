@@ -44,11 +44,11 @@
       </program>
 -->
       <program name="matxin-gen-inter">
-        <file name="en_order_interchunk.dat"/>
+        <file name="matxin-fo-en.en.order_interchunk.dat"/>
       </program>
       <program name="matxin-gen-intra">
-        <file name="en_order_intrachunk.dat"/>
-        <file name="en_changes_sint.dat"/>
+        <file name="matxin-fo-en.en.order_intrachunk.dat"/>
+        <file name="matxin-fo-en.en.changes_sint.dat"/>
       </program>
       <program name="matxin-gen-morph">
         <file name="fo-en.autogen.bin"/>
