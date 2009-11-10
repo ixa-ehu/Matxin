@@ -1,73 +1,73 @@
 <dictionary>
   <alphabet/>
   <sdefs>
-    <sdef n="BIZ-"   c="?, Inanimate"/>
-    <sdef n="BIZ?"   c="?, Indeterminate animacy"/>
-    <sdef n="BIZ+"   c="?, Animate"/>
-    <sdef n="DEN+"   c=""/>
-    <sdef n="GAI+"   c=""/>
-    <sdef n="GLU+"   c=""/>
+    <sdef n="BIZ-"   c="Ez biziduntasuna, Inanimate"/>
+    <sdef n="BIZ+"   c="Biziduntasuna, Animate"/>
+    <sdef n="BIZ?"   c="Biziduntasuna, Indeterminate animacy"/>
+    <sdef n="DEN+"   c="Denbora, Time"/>
+    <sdef n="GAI+"   c="Gaiak, Materials"/>
+    <sdef n="GLU+"   c="Ibilgailuak, Vehicles"/>
     <sdef n="HZK+"   c="Hizkuntzak, Languages"/>
-    <sdef n="KOM+"   c=""/>
+    <sdef n="KOM+"   c="Komunikazio-tresnak, Instrument of communication"/>
     <sdef n="NEU+"   c=""/>
   </sdefs>
   <pardefs>
-  <pardef n="[BIZ-],[DEN+]">
-    <e><p><l/><r><s n="BIZ-"/><s n="DEN+"/></r></p></e>
-  </pardef>
-  
-  <pardef n="[BIZ?],[DEN+]">
-    <e><p><l/><r><s n="BIZ?"/><s n="DEN+"/></r></p></e>
-  </pardef>
-  
-  <pardef n="[BIZ+],[DEN+]">
-    <e><p><l/><r><s n="BIZ+"/><s n="DEN+"/></r></p></e>
-  </pardef>
-  
-  <pardef n="[BIZ-]">
-    <e><p><l/><r><s n="BIZ-"/></r></p></e>
-  </pardef>
-  
-  <pardef n="[BIZ?]">
-    <e><p><l/><r><s n="BIZ?"/></r></p></e>
-  </pardef>
-  
-  <pardef n="[BIZ+]">
-    <e><p><l/><r><s n="BIZ+"/></r></p></e>
-  </pardef>
-  
-  <pardef n="[BIZ-],[GLU+]">
-    <e><p><l/><r><s n="BIZ-"/><s n="GLU+"/></r></p></e>
-  </pardef>
-  
-  <pardef n="[BIZ-],[KOM+]">
-    <e><p><l/><r><s n="BIZ-"/><s n="KOM+"/></r></p></e>
-  </pardef>
-  
-  <pardef n="[DEN+]">
-    <e><p><l/><r><s n="DEN+"/></r></p></e>
-  </pardef>
-  
-  <pardef n="[GAI+],[BIZ-]">
-    <e><p><l/><r><s n="GAI+"/><s n="BIZ-"/></r></p></e>
-  </pardef>
-  
-  <pardef n="[GAI+],[BIZ?]">
-    <e><p><l/><r><s n="GAI+"/><s n="BIZ?"/></r></p></e>
-  </pardef>
-  
-  <pardef n="[GAI+]">
-    <e><p><l/><r><s n="GAI+"/></r></p></e>
-  </pardef>
-  
-  <pardef n="[HZK+]">
-    <e><p><l/><r><s n="HZK+"/></r></p></e>
-  </pardef>
-  
-  <pardef n="[NEU+]">
-    <e><p><l/><r><s n="NEU+"/></r></p></e>
-  </pardef>
-  
+    <pardef n="[BIZ-],[DEN+]">
+      <e><p><l>[IZE][ARR]</l><r><s n="BIZ-"/><s n="DEN+"/></r></p></e>
+    </pardef>
+    
+    <pardef n="[BIZ?],[DEN+]">
+      <e><p><l>[IZE][ARR]</l><r><s n="BIZ?"/><s n="DEN+"/></r></p></e>
+    </pardef>
+    
+    <pardef n="[BIZ+],[DEN+]">
+      <e><p><l>[IZE][ARR]</l><r><s n="BIZ+"/><s n="DEN+"/></r></p></e>
+    </pardef>
+    
+    <pardef n="[BIZ-]">
+      <e><p><l>[IZE][ARR]</l><r><s n="BIZ-"/></r></p></e>
+    </pardef>
+    
+    <pardef n="[BIZ?]">
+      <e><p><l>[IZE][ARR]</l><r><s n="BIZ?"/></r></p></e>
+    </pardef>
+    
+    <pardef n="[BIZ+]">
+      <e><p><l>[IZE][ARR]</l><r><s n="BIZ+"/></r></p></e>
+    </pardef>
+    
+    <pardef n="[BIZ-],[GLU+]">
+      <e><p><l>[IZE][ARR]</l><r><s n="BIZ-"/><s n="GLU+"/></r></p></e>
+    </pardef>
+    
+    <pardef n="[BIZ-],[KOM+]">
+      <e><p><l>[IZE][ARR]</l><r><s n="BIZ-"/><s n="KOM+"/></r></p></e>
+    </pardef>
+    
+    <pardef n="[DEN+]">
+      <e><p><l>[IZE][ARR]</l><r><s n="DEN+"/></r></p></e>
+    </pardef>
+    
+    <pardef n="[GAI+],[BIZ-]">
+      <e><p><l>[IZE][ARR]</l><r><s n="GAI+"/><s n="BIZ-"/></r></p></e>
+    </pardef>
+    
+    <pardef n="[GAI+],[BIZ?]">
+      <e><p><l>[IZE][ARR]</l><r><s n="GAI+"/><s n="BIZ?"/></r></p></e>
+    </pardef>
+    
+    <pardef n="[GAI+]">
+      <e><p><l>[IZE][ARR]</l><r><s n="GAI+"/></r></p></e>
+    </pardef>
+    
+    <pardef n="[HZK+]">
+      <e><p><l>[IZE][ARR]</l><r><s n="HZK+"/></r></p></e>
+    </pardef>
+    
+    <pardef n="[NEU+]">
+      <e><p><l>[IZE][ARR]</l><r><s n="NEU+"/></r></p></e>
+    </pardef>
+    
   </pardefs>
   <section id="main" type="standard">
     <e><p><l>2_baia</l><r/></p><par n="[BIZ-]"/></e>
