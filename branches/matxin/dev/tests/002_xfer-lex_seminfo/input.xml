@@ -1,0 +1,39 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+<corpus>
+<SENTENCE ord='1' alloc='0'>
+<CHUNK ord='2' alloc='11' type='grup-verb' si='top'>
+  <NODE ord='3' alloc='11' form='es' lem='ser' mi='VSIP3S0'>
+  </NODE>
+  <CHUNK ord='1' alloc='0' type='sn' si='subj'>
+    <NODE ord='2' alloc='3' form='euskera' lem='euskera' mi='NCMS000'>
+      <NODE ord='1' alloc='0' form='El' lem='el' mi='DA0MS0'>
+      </NODE>
+    </NODE>
+  </CHUNK>
+  <CHUNK ord='3' alloc='14' type='sn' si='att'>
+    <NODE ord='5' alloc='18' form='lengua' lem='lengua' mi='NCFS000'>
+      <NODE ord='4' alloc='14' form='una' lem='uno' mi='DI0FS0'>
+      </NODE>
+      <NODE ord='6' alloc='25' form='aislada' lem='aislado' mi='AQ0FSP'>
+      </NODE>
+    </NODE>
+    <CHUNK ord='4' alloc='33' type='subord-rel' si='rel-mod'>
+      <NODE ord='7' alloc='33' form='que' lem='que' mi='PR0CN000'>
+      </NODE>
+      <CHUNK ord='5' alloc='37' type='grup-verb' si='vsubord'>
+        <NODE ord='9' alloc='40' form='habla' lem='hablar' mi='VMIP3S0'>
+          <NODE ord='8' alloc='37' form='se' lem='se' mi='P0000000'>
+          </NODE>
+        </NODE>
+        <CHUNK ord='6' alloc='46' type='grup-sp' si='sp-obj'>
+          <NODE ord='10' alloc='46' form='en' lem='en' mi='SPS00'>
+            <NODE ord='11' alloc='49' form='Euskal_Herria' lem='euskal_herria' mi='NP00000'>
+            </NODE>
+          </NODE>
+        </CHUNK>
+      </CHUNK>
+    </CHUNK>
+  </CHUNK>
+</CHUNK>
+</SENTENCE>
+</corpus>
