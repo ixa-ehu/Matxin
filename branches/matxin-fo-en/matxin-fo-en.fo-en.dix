@@ -55,9 +55,9 @@
       <e><p><l>[pres][p1][pl]</l><r><s n="mi"/>[pres][p1][pl]</r></p></e>
       <e><p><l>[pres][p2][pl]</l><r><s n="mi"/>[pres][p2][pl]</r></p></e>
       <e><p><l>[pres][p3][pl]</l><r><s n="mi"/>[pres][p3][pl]</r></p></e>
-      <e><p><l>[past][p1][sg]</l><r><s n="mi"/>[past]</r></p></e>
+      <e><p><l>[past][p1][sg]</l><r><s n="mi"/>[past][p1][sg]</r></p></e>
       <e><p><l>[past][p2][sg]</l><r><s n="mi"/>[past]</r></p></e>
-      <e><p><l>[past][p3][sg]</l><r><s n="mi"/>[past][p3][sg]</r></p></e>
+      <e><p><l>[past][p3][sg]</l><r><s n="mi"/>[past]</r></p></e>
       <e><p><l>[past][p1][pl]</l><r><s n="mi"/>[past]</r></p></e>
       <e><p><l>[past][p2][pl]</l><r><s n="mi"/>[past]</r></p></e>
       <e><p><l>[past][p3][pl]</l><r><s n="mi"/>[past]</r></p></e>
@@ -73,7 +73,7 @@
       <e><p><l>[pri][p3][pl]</l><r><s n="mi"/>[pres]</r></p></e>
       <e><p><l>[past][p1][sg]</l><r><s n="mi"/>[past]</r></p></e>
       <e><p><l>[past][p2][sg]</l><r><s n="mi"/>[past]</r></p></e>
-      <e><p><l>[past][p3][sg]</l><r><s n="mi"/>[past][p3][sg]</r></p></e>
+      <e><p><l>[past][p3][sg]</l><r><s n="mi"/>[past]</r></p></e>
       <e><p><l>[past][p1][pl]</l><r><s n="mi"/>[past]</r></p></e>
       <e><p><l>[past][p2][pl]</l><r><s n="mi"/>[past]</r></p></e>
       <e><p><l>[past][p3][pl]</l><r><s n="mi"/>[past]</r></p></e>
