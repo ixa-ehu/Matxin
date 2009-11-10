@@ -362,7 +362,7 @@ wstring procNODE_notAS(xmlTextReaderPtr reader, bool head,
         wstring lem = text_attrib(select[0], L"lem");
         wstring sem_search = L'^' + lem + pos + L'$';
         wstring sem_info = fstp_sem_info.biltrans(sem_search);
-        if(sem_info[1] != L'@' && sem_info != L"") {	
+        if(sem_info[1] != L'@' && sem_info != L"" && sem_info != L"$") {	
           wstring sem = StringUtils::substitute(sem_info, L"<", L"["); 
           sem = StringUtils::substitute(sem, L">", L"]"); 
           attributes += L" sem='" + write_xml(sem.substr(1, sem.size() - 2)) + L"'";
