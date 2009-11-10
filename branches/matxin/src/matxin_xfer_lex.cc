@@ -371,7 +371,7 @@ wstring procNODE_notAS(xmlTextReaderPtr reader, bool head,
   }
   else
   {
-    wcerr << L"ERROR: invalid tag: <" << tagName
+    wcerr << L"ERROR: invalid tag: <" << tagName << allAttrib(reader)
           << L"> when <NODE> was expected..." << endl;
     exit(-1);
   }
@@ -410,7 +410,7 @@ wstring procNODE_notAS(xmlTextReaderPtr reader, bool head,
   }
   else
   {
-    wcerr << L"ERROR: invalid document: found <" << tagName
+    wcerr << L"ERROR: invalid document: found <" << tagName << allAttrib(reader)
           << L"> when </NODE> was expected..." << endl;
     exit(-1);
   }
@@ -488,7 +488,7 @@ wstring procNODE_AS(xmlTextReaderPtr reader, bool head, wstring& attributes)
   }
   else
   {
-    wcerr << L"ERROR: invalid tag: <" << tagName
+    wcerr << L"ERROR: invalid tag: <" << tagName << allAttrib(reader)
           << L"> when <NODE> was expected..." << endl;
     exit(-1);
   }
@@ -516,7 +516,7 @@ wstring procNODE_AS(xmlTextReaderPtr reader, bool head, wstring& attributes)
   }
   else
   {
-    wcerr << L"ERROR: invalid document: found <" << tagName
+    wcerr << L"ERROR: invalid document: found <" << tagName << allAttrib(reader)
           << L"> when </NODE> was expected..." << endl;
     exit(-1);
   }
@@ -553,7 +553,7 @@ wstring procCHUNK(xmlTextReaderPtr reader, wstring parent_attribs)
  }
   else
   {
-    wcerr << L"ERROR: invalid tag: <" << tagName
+    wcerr << L"ERROR: invalid tag: <" << tagName << allAttrib(reader)
           << L"> when <CHUNK> was expected..." << endl;
     exit(-1);
   }
@@ -597,8 +597,7 @@ wstring procCHUNK(xmlTextReaderPtr reader, wstring parent_attribs)
   }
   else
   {
-    wcerr << L"ERROR: invalid document: found <" << tagName
-	  << L" lem=\"" << attrib(reader, "lem") << "\"..."
+    wcerr << L"ERROR: invalid document: found <" << tagName << allAttrib(reader)
           << L"> when </CHUNK> was expected..." << endl;
     exit(-1);
   }
@@ -625,7 +624,7 @@ wstring procSENTENCE (xmlTextReaderPtr reader)
   }
   else
   {
-    wcerr << L"ERROR: invalid document: found <" << tagName
+    wcerr << L"ERROR: invalid document: found <" << tagName << allAttrib(reader)
           << L"> when <SENTENCE> was expected..." << endl;
     exit(-1);
   }
@@ -652,7 +651,7 @@ wstring procSENTENCE (xmlTextReaderPtr reader)
   }
   else
   {
-    wcerr << L"ERROR: invalid document: found <" << tagName
+    wcerr << L"ERROR: invalid document: found <" << tagName << allAttrib(reader)
           << L"> when </SENTENCE> was expected..." << endl;
     exit(-1);
   }
@@ -765,7 +764,7 @@ int main(int argc, char *argv[])
   }
   else
   {
-    wcerr << L"ERROR: invalid document: found <" << tagName
+    wcerr << L"ERROR: invalid document: found <" << tagName << allAttrib(reader)
           << L"> when <corpus> was expected..." << endl;
     exit(-1);
   }
@@ -797,7 +796,7 @@ int main(int argc, char *argv[])
   }
   else
   {
-    wcerr << L"ERROR: invalid document: found <" << tagName
+    wcerr << L"ERROR: invalid document: found <" << tagName << allAttrib(reader)
           << L"> when </corpus> was expected..." << endl;
     exit(-1);
   }
