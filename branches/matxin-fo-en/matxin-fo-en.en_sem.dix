@@ -1,0 +1,19 @@
+<dictionary>
+  <alphabet/>
+  <sdefs>
+    <sdef n="MASS"    c="Mass noun"/>
+    <sdef n="HUMAN"   c="Human"/>
+    <sdef n="ANIM"    c="Animate"/>
+    <sdef n="ANIM-"   c="Inanimate"/>
+  </sdefs>
+  <pardefs>
+    <pardef n="MASS">
+      <e><p><l>[n]</l><r><s n="MASS"/></r></p></e>
+    </pardef>
+  </pardefs>
+  <section id="main" type="standard">
+    <e><p><l>water</l><r/></p><par n="MASS"/></e>
+    <e><p><l>soap</l><r/></p><par n="MASS"/></e>
+    <e><p><l>beer</l><r/></p><par n="MASS"/></e>
+  </section>
+</dictionary>
