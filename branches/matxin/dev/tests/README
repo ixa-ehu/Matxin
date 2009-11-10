@@ -1,0 +1,4 @@
+Here are some regression tests for the branch working on Matxin, to add to them, 
+just create a directory, in the style [number]_[module]_[subject of test] and 
+then add your test, ideally it should have an input, an output and a script to 
+reproduce it.
