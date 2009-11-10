@@ -15,5 +15,40 @@
     <e><p><l>water</l><r/></p><par n="MASS"/></e>
     <e><p><l>soap</l><r/></p><par n="MASS"/></e>
     <e><p><l>beer</l><r/></p><par n="MASS"/></e>
+    <e><p><l>advice</l><r/></p><par n="MASS"/></e>
+    <e><p><l>air</l><r/></p><par n="MASS"/></e>
+    <e><p><l>alcohol</l><r/></p><par n="MASS"/></e>
+    <e><p><l>blood</l><r/></p><par n="MASS"/></e>
+    <e><p><l>bread</l><r/></p><par n="MASS"/></e>
+    <e><p><l>clothing</l><r/></p><par n="MASS"/></e>
+    <e><p><l>coal</l><r/></p><par n="MASS"/></e>
+    <e><p><l>darkness</l><r/></p><par n="MASS"/></e>
+    <e><p><l>down</l><r/></p><par n="MASS"/></e>
+    <e><p><l>fear</l><r/></p><par n="MASS"/></e>
+    <e><p><l>finish</l><r/></p><par n="MASS"/></e>
+    <e><p><l>food</l><r/></p><par n="MASS"/></e>
+    <e><p><l>fruit</l><r/></p><par n="MASS"/></e>
+    <e><p><l>gold</l><r/></p><par n="MASS"/></e>
+    <e><p><l>hate</l><r/></p><par n="MASS"/></e>
+    <e><p><l>ice</l><r/></p><par n="MASS"/></e>
+    <e><p><l>meat</l><r/></p><par n="MASS"/></e>
+    <e><p><l>milk</l><r/></p><par n="MASS"/></e>
+    <e><p><l>oil</l><r/></p><par n="MASS"/></e>
+    <e><p><l>paper</l><r/></p><par n="MASS"/></e>
+    <e><p><l>peace</l><r/></p><par n="MASS"/></e>
+    <e><p><l>property</l><r/></p><par n="MASS"/></e>
+    <e><p><l>salt</l><r/></p><par n="MASS"/></e>
+    <e><p><l>sleep</l><r/></p><par n="MASS"/></e>
+    <e><p><l>smoke</l><r/></p><par n="MASS"/></e>
+    <e><p><l>south</l><r/></p><par n="MASS"/></e>
+    <e><p><l>talk</l><r/></p><par n="MASS"/></e>
+    <e><p><l>victory</l><r/></p><par n="MASS"/></e>
+    <e><p><l>weather</l><r/></p><par n="MASS"/></e>
+    <e><p><l>west</l><r/></p><par n="MASS"/></e>
+    <e><p><l>wind</l><r/></p><par n="MASS"/></e>
+    <e><p><l>wood</l><r/></p><par n="MASS"/></e>
+    <e><p><l>wool</l><r/></p><par n="MASS"/></e>
+    <e><p><l>work</l><r/></p><par n="MASS"/></e>
+
   </section>
 </dictionary>
