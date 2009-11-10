@@ -17,6 +17,7 @@
       </program>
       <program name="matxin-xfer-lex">
 	<file name="fo-en.autobil.bin"/>
+	<file option="-s" name="fo-en.en_sem.bin"/>
       </program>
     </pipeline>
   </mode>
@@ -37,6 +38,7 @@
       </program>
       <program name="matxin-xfer-lex">
         <file name="fo-en.autobil.bin"/>
+	<file option="-s" name="fo-en.en_sem.bin"/>
       </program>
 <!--
       <program name="matxin-xfer-intra">

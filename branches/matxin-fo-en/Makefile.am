@@ -49,11 +49,11 @@ matxin_fo_endir=$(prefix)/share/matxin/matxin-$(PREFIX1)/
 matxin_fo_modesdir=$(prefix)/share/matxin/modes/
 
 modes/$(PREFIX1).mode: modes.xml
-	apertium-gen-modes modes.xml
+	matxin-gen-modes modes.xml
 	cp *.mode modes/
 
 modes/$(PREFIX2).mode: modes.xml 
-	apertium-gen-modes modes.xml
+	matxin-gen-modes modes.xml
 	cp *.mode modes/
 
 matxin_fo_en_DATA=$(PREFIX1).automorf.bin  \
@@ -66,7 +66,7 @@ matxin_fo_en_DATA=$(PREFIX1).automorf.bin  \
 
 install-data-local:
 	mv modes modes.bak
-	apertium-gen-modes modes.xml matxin-$(PREFIX1)
+	matxin-gen-modes modes.xml matxin-$(PREFIX1)
 	rm -rf modes
 	mv modes.bak modes
 	test -d $(matxin_fo_modesdir) || mkdir $(matxin_fo_modesdir)
