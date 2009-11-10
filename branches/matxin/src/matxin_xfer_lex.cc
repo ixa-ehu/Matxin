@@ -45,7 +45,7 @@ void order_ordainak(vector<wstring> &ordainak);
 vector<wstring> disambiguate(wstring &full);
 vector<wstring> get_translation(wstring lem, wstring mi, bool &unknown);
 wstring multiNodes (xmlTextReaderPtr reader, wstring &full, wstring attributes);
-wstring procNODE_notAS(xmlTextReaderPtr reader, bool head, wstring parent_attribs, wstring& attributes);
+std::pair<wstring,wstring> procNODE_notAS(xmlTextReaderPtr reader, bool head, wstring parent_attribs, wstring& attributes);
 wstring procNODE_AS(xmlTextReaderPtr reader, bool head, wstring& attributes);
 wstring procCHUNK(xmlTextReaderPtr reader, wstring parent_attribs);
 wstring procSENTENCE (xmlTextReaderPtr reader);
@@ -292,10 +292,10 @@ wstring multiNodes (xmlTextReaderPtr reader, wstring &full, wstring attributes)
 //    - Transferentzia lexikoa egiten da, lem, pos, mi, cas eta sub attributuak sortuz.
 //    - Hitz horren semantika begiratzen da
 // - NODEaren azpian dauden NODEak irakurri eta prozesatzen ditu.
-wstring procNODE_notAS(xmlTextReaderPtr reader, bool head,
+std::pair<wstring,wstring> procNODE_notAS(xmlTextReaderPtr reader, bool head,
                        wstring parent_attribs, wstring& attributes)
 {
-  wstring nodes;
+  wstring nodes, pos;
   wstring subnodes;
   wstring synonyms;
   wstring child_attributes;
@@ -320,7 +320,7 @@ wstring procNODE_notAS(xmlTextReaderPtr reader, bool head,
                                                      attrib(reader, "ord"))) +
                  L"'";
 
-    // TODO: LANGUAGE INDEPEDENCE
+    // TODO: LANGUAGE INDEPENDENCE
     if (attrib(reader, "mi").substr(0,1) == L"W" or
         attrib(reader, "mi").substr(0,1) == L"Z")
     {
@@ -346,11 +346,14 @@ wstring procNODE_notAS(xmlTextReaderPtr reader, bool head,
         synonyms = getsyn(trad);
       }
 
-     if (select[0].find(L"\\") != wstring::npos) {
+      if (select[0].find(L"\\") != wstring::npos) {
         subnodes = multiNodes(reader, select[0], attributes);
       }
       attributes += L" " + select[0];
-
+      size_t pos_start = attributes.find(L" pos='");
+      size_t pos_end = attributes.find(L"'", pos_start+6);
+      pos = attributes.substr(pos_start+6, pos_end-pos_start-6);
+      
       // Hitz horren semantika begiratzen da
 
       // Look up a lemma and its POS in the semantic information 
@@ -362,7 +365,7 @@ wstring procNODE_notAS(xmlTextReaderPtr reader, bool head,
         wstring lem = text_attrib(select[0], L"lem");
         wstring sem_search = L'^' + lem + pos + L'$';
         wstring sem_info = fstp_sem_info.biltrans(sem_search);
-        if(sem_info[1] != L'@' && sem_info != L"" && sem_info != L"$") {	
+        if(sem_info[1] != L'@' && sem_info != L"" && sem_info != L"$") {
           wstring sem = StringUtils::substitute(sem_info, L"<", L"["); 
           sem = StringUtils::substitute(sem, L">", L"]"); 
           attributes += L" sem='" + write_xml(sem.substr(1, sem.size() - 2)) + L"'";
@@ -382,14 +385,14 @@ wstring procNODE_notAS(xmlTextReaderPtr reader, bool head,
       // NODE hutsa bada (<NODE .../>), NODE hutsa sortzen da eta
       // momentuko NODEarekin bukatzen dugu.
       nodes += attributes + L"/>\n";
-      return nodes;
+      return std::make_pair(nodes,pos);
     }
     else if (xmlTextReaderIsEmptyElement(reader) == 1)
     {
       // NODE hutsa bada (<NODE .../>), NODE hutsa sortzen da eta
       // momentuko NODEarekin bukatzen dugu.
       nodes += attributes + L">\n" + synonyms + subnodes + L"</NODE>\n";
-      return nodes;
+      return std::make_pair(nodes,pos);
     }
     else
     {
@@ -420,8 +423,10 @@ wstring procNODE_notAS(xmlTextReaderPtr reader, bool head,
     // NODEa irakurri eta prozesatzen du.
     //nodes += procNODE_notAS(reader, head_child, attributes, cfg);
 
-    wstring NODOA = procNODE_notAS(reader, head_child, attribs,
+    std::pair<wstring,wstring> pr = procNODE_notAS(reader, head_child, attribs,
                                    child_attributes);
+    wstring NODOA = pr.first;
+    wstring pos = pr.second;
     nodes += NODOA;
 
     ret = nextTag(reader);
@@ -444,7 +449,7 @@ wstring procNODE_notAS(xmlTextReaderPtr reader, bool head,
     exit(-1);
   }
 
-  return nodes;
+  return std::make_pair(nodes,pos);
 }
 
 
@@ -571,14 +576,12 @@ wstring procCHUNK(xmlTextReaderPtr reader, wstring parent_attribs)
     // type : CHUNKaren type atributua itzultzen da
     // si atributua mantentzen da
     chunkType = get_lexInfo(L"chunkType", attrib(reader, "type"));
-
-    if (chunkType == L"")
+    if (chunkType == L"") {
+      chunkType = get_lexInfo(L"chunkType", attrib(reader, "si"));
+    }
+    if (chunkType == L"") {
       chunkType = attrib(reader, "type");
-
-    tree = L"<CHUNK ref='" + write_xml(attrib(reader, "ord")) +
-           L"' type='" + write_xml(chunkType) + L"'" +
-           write_xml(text_allAttrib_except(allAttrib_except(reader, L"ord"),
-                                           L"type")) + L">\n";
+    }
  }
   else
   {
@@ -593,6 +596,7 @@ wstring procCHUNK(xmlTextReaderPtr reader, wstring parent_attribs)
 
   // CHUNK motaren arabera tratamendu desberdina egiten da
   // (procNODE_AS edo procNODE_notAS)
+  // TODO: LANGUAGE INDEPENDENCE
   if (chunkType.substr(0, 4) == L"adi-")
   {
     // NODEa irakurri eta prozesatzen du, CHUNKaren burua izango da (head=true)
@@ -601,7 +605,16 @@ wstring procCHUNK(xmlTextReaderPtr reader, wstring parent_attribs)
   else
   {
     // NODEa irakurri eta prozesatzen du
-    wstring NODOA = procNODE_notAS(reader, true, parent_attribs, head_attribs);
+    std::pair<wstring,wstring> pr = procNODE_notAS(reader, true, parent_attribs, head_attribs);
+    wstring NODOA = pr.first;
+    wstring pos = pr.second;
+    
+
+    tree = L"<CHUNK ref='" + write_xml(attrib(reader, "ord")) +
+           L"' type='" + write_xml(chunkType+pos) + L"'" +
+           write_xml(text_allAttrib_except(allAttrib_except(reader, L"ord"),
+                                           L"type")) + L">\n";
+
     tree += NODOA;
   }
 
