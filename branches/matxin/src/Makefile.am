@@ -9,7 +9,7 @@ EXTRA_DIST = config.h data_manager.h matxin_string_utils.h simpleregex.h string_
 
 bin_PROGRAMS = matxin-xfer-lex matxin-xfer-intra matxin-xfer-inter matxin-xfer-prep matxin-gen-inter matxin-gen-intra \
 	       matxin-gen-morph matxin-xfer-verb \
-               matxin-reformat matxin-destxt
+               matxin-reformat matxin-destxt matxin-deshtml
 #txt-deformat html-deformat rtf-deformat
 
 bin_SCRIPTS = matxin-gen-modes fst2regex.pl matxin
@@ -41,14 +41,14 @@ matxin_gen_morph_LDADD =      -lboost_filesystem
 matxin_reformat_SOURCES = matxin_reformat.cc utf_converter.cc data_manager.cc XML_reader.cc simpleregex.cc matxin_string_utils.cc matxin_string_utils.h
 
 matxin_destxt_SOURCES = txt-deformat.cc
-#html_deformat_SOURCES = html-deformat.cc
+matxin_deshtml_SOURCES = html-deformat.cc
 #rtf_deformat_SOURCES = rtf-deformat.cc
 
 txt-deformat.cc: txt-format.xml Makefile.am deformat.xsl
 	$(XSLTPROC) --stringparam mode matxin deformat.xsl txt-format.xml | $(FLEX) -Cfer -t >$@
 
-# html-deformat.cc: html-format.xml Makefile.am deformat.xsl
-# 	$(XSLTPROC) --stringparam mode matxin deformat.xsl html-format.xml | $(FLEX) -Cfer -t >$@
+html-deformat.cc: html-format.xml Makefile.am deformat.xsl
+	$(XSLTPROC) --stringparam mode matxin deformat.xsl html-format.xml | $(FLEX) -Cfer -t >$@
 
 #rtf-deformat.cc: rtf-format.xml Makefile.am deformat.xsl
 #	$(XSLTPROC) --stringparam mode matxin deformat.xsl rtf-format.xml | $(FLEX) -Cfer -t >$@
