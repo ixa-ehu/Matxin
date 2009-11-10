@@ -240,7 +240,7 @@
       <e><p><l>[sup][nt][pl][gen]</l><r></r></p></e>
     </pardef>
     <pardef n="ADV_STD">
-      <e><p><l></l><r></r></p></e>
+      <e><p><l><s n="parol"/>[adv]</l><r><s n="pos"/>[adv]</r></p></e>
     </pardef>
     <pardef n="PRN_PERSONAL">
       <e><p><l>[p1][mf][sg][nom]</l><r><s n="mi"/>[subj][p1][mf][sg]</r></p></e>
@@ -812,27 +812,28 @@
     <e><p><l>uppfylla<s n="parol"/>[vblex]</l><r>fulfil<s n="pos"/>[vblex]</r></p><par n="VBLEX_STD"/></e>
 
     <!-- Adverbs -->
-    <e><p><l>her<s n="parol"/>[adv]</l><r>here<s n="pos"/>[adv]</r></p><par n="ADV_STD"/></e>
-    <e><p><l>ikki<s n="parol"/>[adv]</l><r>not<s n="pos"/>[adv]</r></p><par n="ADV_STD"/></e>
-    <e><p><l>í<b/>gjár<s n="parol"/>[adv]</l><r>yesterday<s n="pos"/>[adv]</r></p><par n="ADV_STD"/></e>
-    <e><p><l>í<b/>morgin<s n="parol"/>[adv]</l><r>tomorrow<s n="pos"/>[adv]</r></p><par n="ADV_STD"/></e>
-    <e><p><l>ofta<s n="parol"/>[adv]</l><r>often<s n="pos"/>[adv]</r></p><par n="ADV_STD"/></e>
-    <e><p><l>mikið<s n="parol"/>[adv]</l><r>much<s n="pos"/>[adv]</r></p><par n="ADV_STD"/></e>
-    <e><p><l>upp<s n="parol"/>[adv]</l><r>up<s n="pos"/>[adv]</r></p><par n="ADV_STD"/></e>
-    <e><p><l>út<s n="parol"/>[adv]</l><r>out<s n="pos"/>[adv]</r></p><par n="ADV_STD"/></e>
-    <e><p><l>fram<s n="parol"/>[adv]</l><r>forth<s n="pos"/>[adv]</r></p><par n="ADV_STD"/></e>
-    <e><p><l>framman<s n="parol"/>[adv]</l><r>front<s n="pos"/>[adv]</r></p><par n="ADV_STD"/></e>
-    <e><p><l>aftur<s n="parol"/>[adv]</l><r>back<s n="pos"/>[adv]</r></p><par n="ADV_STD"/></e>
-    <e><p><l>her<s n="parol"/>[adv]</l><r>there<s n="pos"/>[adv]</r></p><par n="ADV_STD"/></e>
-    <e><p><l>inn<s n="parol"/>[adv]</l><r>in<s n="pos"/>[adv]</r></p><par n="ADV_STD"/></e>
-    <e><p><l>niður<s n="parol"/>[adv]</l><r>down<s n="pos"/>[adv]</r></p><par n="ADV_STD"/></e>
-    <e><p><l>saman<s n="parol"/>[adv]</l><r>together<s n="pos"/>[adv]</r></p><par n="ADV_STD"/></e>
-    <e><p><l>nú<s n="parol"/>[adv]</l><r>now<s n="pos"/>[adv]</r></p><par n="ADV_STD"/></e>
-    <e><p><l>longu<s n="parol"/>[adv]</l><r>already<s n="pos"/>[adv]</r></p><par n="ADV_STD"/></e>
-    <e><p><l>vissuliga<s n="parol"/>[adv]</l><r>surely<s n="pos"/>[adv]</r></p><par n="ADV_STD"/></e>
-    <e><p><l>burt<s n="parol"/>[adv]</l><r>away<s n="pos"/>[adv]</r></p><par n="ADV_STD"/></e>
-    <e><p><l>eisini<s n="parol"/>[adv]</l><r>moreover<s n="pos"/>[adv]</r></p><par n="ADV_STD"/></e>
-    <e><p><l>hví<s n="parol"/>[adv]</l><r>af<b/>hverju<s n="pos"/>[adv]</r></p><par n="ADV_STD"/></e>
+    <e><p><l>her</l><r>here</r></p><par n="ADV_STD"/></e>
+    <e><p><l>ikki</l><r>not</r></p><par n="ADV_STD"/></e>
+    <e><p><l>í<b/>gjár</l><r>yesterday</r></p><par n="ADV_STD"/></e>
+    <e><p><l>í<b/>morgin</l><r>tomorrow</r></p><par n="ADV_STD"/></e>
+    <e><p><l>ofta</l><r>often</r></p><par n="ADV_STD"/></e>
+    <e><p><l>mikið</l><r>much</r></p><par n="ADV_STD"/></e>
+    <e><p><l>upp</l><r>up</r></p><par n="ADV_STD"/></e>
+    <e><p><l>út</l><r>out</r></p><par n="ADV_STD"/></e>
+    <e><p><l>fram</l><r>forth</r></p><par n="ADV_STD"/></e>
+    <e><p><l>framman</l><r>front</r></p><par n="ADV_STD"/></e>
+    <e><p><l>aftur</l><r>back</r></p><par n="ADV_STD"/></e>
+    <!-- der? -->
+    <e><p><l>der</l><r>there</r></p><par n="ADV_STD"/></e>
+    <e><p><l>inn</l><r>in</r></p><par n="ADV_STD"/></e>
+    <e><p><l>niður</l><r>down</r></p><par n="ADV_STD"/></e>
+    <e><p><l>saman</l><r>together</r></p><par n="ADV_STD"/></e>
+    <e><p><l>nú</l><r>now</r></p><par n="ADV_STD"/></e>
+    <e><p><l>longu</l><r>already</r></p><par n="ADV_STD"/></e>
+    <e><p><l>vissuliga</l><r>surely</r></p><par n="ADV_STD"/></e>
+    <e><p><l>burt</l><r>away</r></p><par n="ADV_STD"/></e>
+    <e><p><l>eisini</l><r>moreover</r></p><par n="ADV_STD"/></e>
+    <e><p><l>hví</l><r>which</r></p><par n="ADV_STD"/></e>
 
     <!-- Adjectives -->
     <e><p><l>fræls<s n="parol"/>[adj]</l><r>free<s n="pos"/>[adj][sint]</r></p><par n="ADJ_SINT_STD"/></e>
