@@ -639,8 +639,7 @@ vector<movement> get_node_movements_byto(wstring attributes)
 }
 
 
-struct lexInfo
-{
+struct lexInfo {
   wstring name;
   map<wstring,wstring> info;
 };
@@ -652,13 +651,16 @@ static vector<lexInfo> lexical_information;
 void init_lexInfo(wstring name, string fitxName)
 {
   wifstream fitx;
-  fitx.open(fitxName.c_str());
 
   lexInfo lex;
   lex.name = name;
+
+  fitx.open(fitxName.c_str());
+
   wstring lerro;
   while (getline(fitx, lerro))
   {
+    //wcerr << L"[init_lexInfo] lerro:" << lerro << endl;
     // Remove comments
     if (lerro.find(L'#') != wstring::npos)
       lerro = lerro.substr(0, lerro.find(L'#'));
@@ -690,6 +692,8 @@ void init_lexInfo(wstring name, string fitxName)
 
   fitx.close();
   lexical_information.push_back(lex);
+
+  //wcerr << L"[init_lexInfo] s: " << lex.info.size() << endl;
 }
 
 
@@ -697,8 +701,9 @@ wstring get_lexInfo(wstring name, wstring key)
 {
   for (size_t i = 0; i < lexical_information.size(); i++)
   {
-    if (lexical_information[i].name == name)
-      return lexical_information[i].info[key];
+    if (lexical_information[i].name == name) {
+        return lexical_information[i].info[key];
+    }
   }
   return L"";
 }

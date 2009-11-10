@@ -28,7 +28,6 @@
 #include <getopt.h>
 #include <libgen.h>
 
-//#include "config.h"
 #include "matxin_string_utils.h"
 #include "string_utils.h"
 
@@ -37,7 +36,23 @@
 
 using namespace std;
 
-FSTProcessor fstp;
+// Method prototypes
+wstring upper_type(wstring form, wstring mi, wstring ord);
+wstring lema(wstring const &full);
+wstring get_dict_attributes(const wstring full);
+wstring getsyn(vector<wstring> translations);
+void order_ordainak(vector<wstring> &ordainak);
+vector<wstring> disambiguate(wstring &full);
+vector<wstring> get_translation(wstring lem, wstring mi, bool &unknown);
+wstring multiNodes (xmlTextReaderPtr reader, wstring &full, wstring attributes);
+wstring procNODE_notAS(xmlTextReaderPtr reader, bool head, wstring parent_attribs, wstring& attributes);
+wstring procNODE_AS(xmlTextReaderPtr reader, bool head, wstring& attributes);
+wstring procCHUNK(xmlTextReaderPtr reader, wstring parent_attribs);
+wstring procSENTENCE (xmlTextReaderPtr reader);
+void endProgram(char *name);
+
+FSTProcessor fstp; // Transducer with bilingual dictionary
+FSTProcessor fstp_sem_info; // Transducer with semantic dictionary
 
 wstring upper_type(wstring form, wstring mi, wstring ord)
 {
@@ -87,7 +102,6 @@ wstring upper_type(wstring form, wstring mi, wstring ord)
 
   return case_type;
 }
-
 
 // Hiztegi elebidunaren euskarazko ordainetik lema lortzen du.
 // IN:  Euskarazko ordain bat ( lema<key1>VALUE1<key2>VALUE2 )
@@ -186,7 +200,7 @@ void order_ordainak(vector<wstring> &ordainak)
 // Hiztegi elebidunaren euskarazko ordainetik lehenengoa lortzen du.
 // IN:  Euskarazko ordainak ( ordain1[/ordain2]* )
 // OUT: lehenengoa          ( oradin1            )
-vector<wstring> disanbiguate(wstring &full)
+vector<wstring> disambiguate(wstring &full)
 {
   wstring output = full;
   vector<wstring> ordainak;
@@ -243,7 +257,7 @@ vector<wstring> get_translation(wstring lem, wstring mi,
     unknown = true;
   }
 
-  translation = disanbiguate(trad);
+  translation = disambiguate(trad); 
 
   return translation;
 }
@@ -306,6 +320,7 @@ wstring procNODE_notAS(xmlTextReaderPtr reader, bool head,
                                                      attrib(reader, "ord"))) +
                  L"'";
 
+    // TODO: LANGUAGE INDEPEDENCE
     if (attrib(reader, "mi").substr(0,1) == L"W" or
         attrib(reader, "mi").substr(0,1) == L"Z")
     {
@@ -321,28 +336,42 @@ wstring procNODE_notAS(xmlTextReaderPtr reader, bool head,
       trad = get_translation(attrib(reader, "lem"),
                              attrib(reader, "mi"), unknown);
 
-      if (trad.size() > 1)
-        select = lexical_selection(parent_attribs, attributes, trad);
-      else
+      if (trad.size() > 1) {
+        select = lexical_selection(parent_attribs, attributes, trad); 
+      } else {
         select = trad;
+      }
 
-      if (trad.size() > 1)
+      if (trad.size() > 1) {
         synonyms = getsyn(trad);
+      }
 
-     if (select[0].find(L"\\") != wstring::npos)
+     if (select[0].find(L"\\") != wstring::npos) {
         subnodes = multiNodes(reader, select[0], attributes);
+      }
       attributes += L" " + select[0];
 
       // Hitz horren semantika begiratzen da
-      if (head && text_attrib(select[0], L"pos") == L"[IZE][ARR]" and
-          get_lexInfo(L"nounSem", text_attrib(select[0], L"lem")) != L"" )
-        attributes += L" sem='" + write_xml(get_lexInfo(L"nounSem",
-                                                        text_attrib(select[0],
-                                                                    L"lem"))) +
-                      L"'";
 
-      if (unknown)
+      // Look up a lemma and its POS in the semantic information 
+      // transducer. 
+      //   In format: ^euskara[IZE][ARR]$ 
+      //   Out format: ^<BIZ->$
+      wstring pos = text_attrib(select[0], L"pos");
+      if (head) {
+        wstring lem = text_attrib(select[0], L"lem");
+        wstring sem_search = L'^' + lem + pos + L'$';
+        wstring sem_info = fstp_sem_info.biltrans(sem_search);
+        if(sem_info[1] != L'@' && sem_info != L"") {	
+          wstring sem = StringUtils::substitute(sem_info, L"<", L"["); 
+          sem = StringUtils::substitute(sem, L">", L"]"); 
+          attributes += L" sem='" + write_xml(sem.substr(1, sem.size() - 2)) + L"'";
+        }
+      }
+
+      if (unknown) {
         attributes += L" unknown='transfer'";
+      }
 
       head_child = head && (text_attrib(select[0], L"lem") == L"");
     }
@@ -372,7 +401,7 @@ wstring procNODE_notAS(xmlTextReaderPtr reader, bool head,
   else
   {
     wcerr << L"ERROR: invalid tag: <" << tagName << allAttrib(reader)
-          << L"> when <NODE> was expected..." << endl;
+          << L"> when <NODE> was expected..." << endl; 
     exit(-1);
   }
 
@@ -661,7 +690,7 @@ wstring procSENTENCE (xmlTextReaderPtr reader)
 
 void endProgram(char *name)
 {
-  cout << basename(name) << ": run lexical transfer" << endl;
+  cout << basename(name) << ": run lexical transfer on a Matxin input stream" << endl;
   cout << "USAGE: " << basename(name) << " [-s sem_file] [-c chunktype_file] [-l lex_file] fst_file" << endl;
   cout << "Options:" << endl;
 #if HAVE_GETOPT_LONG
@@ -676,16 +705,16 @@ void endProgram(char *name)
   exit(EXIT_FAILURE);
 }
 
-
 int main(int argc, char *argv[])
 {
+  string sem_info_file = "";
 //  config cfg(argv);
 
   // This sets the C++ locale and affects to C and C++ locales.
   // wcout.imbue doesn't have any effect but the in/out streams use the proper encoding.
-  //locale::global(locale(""));
+  locale::global(locale(""));
   // ^^^ doesn't work on mac, except with C/POSIX
-  setlocale(LC_ALL, "");
+  //setlocale(LC_ALL, "");
   
   // Hiztegi elebidunaren hasieraketa.
   // Parametro moduan jasotzen den fitxagia erabiltzen da hasieraketarako.
@@ -720,8 +749,9 @@ int main(int argc, char *argv[])
     switch(c)
     {
     case 's':
-      init_lexInfo(L"nounSem", optarg);
+      sem_info_file = string(optarg);  
       break;
+
     case 'c':
       init_lexInfo(L"chunkType", optarg);
       break;
@@ -735,7 +765,14 @@ int main(int argc, char *argv[])
     }
   }
 
-
+  if(sem_info_file != "") {
+      FILE *in = fopen(sem_info_file.c_str(), "rb");
+      if(in) {
+        fstp_sem_info.load(in);
+        fstp_sem_info.initBiltrans();
+        fclose(in);
+      }
+  }
   
   FILE *transducer = 0;
   transducer = fopen(argv[optind], "r");
