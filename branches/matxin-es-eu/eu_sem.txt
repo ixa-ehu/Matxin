@@ -4,6 +4,7 @@
 ##[GAI]: gaiak, materialak
 ##[GLU]: gailuak, ibilgailuak
 ##[KOM]: komunikazio-tresnak
+euskara	[BIZ-]
 2_baia	[BIZ-]
 Abazera	[HZK+]
 Abkhaz-adyghtar hizkuntza 	[HZK+]
@@ -6202,7 +6203,6 @@ euskalgintza	[BIZ-]
 euskaltasun	[BIZ-]
 euskaltzainburu	[BIZ?]
 euskaltzaletasun	[BIZ-]
-euskara	[BIZ-]
 euskara_garbi	[BIZ?]
 euskarakada	[BIZ-]
 euskaritxo	[BIZ-]

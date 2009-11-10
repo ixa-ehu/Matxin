@@ -9,6 +9,9 @@
 -->
       <program name="matxin-xfer-lex">
         <file name="eseu.bin"/>
+        <file option="-s" name="eu_sem.txt"/>
+        <file option="-c" name="eseu_chunk_type.txt"/>
+        <file option="-l" name="eseu_lex.txt"/>
       </program>
       <program name="matxin-xfer-intra">
         <file name="intrachunk_move.dat"/>
