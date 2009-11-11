@@ -150,19 +150,19 @@ define AdTrIntr	     [ {izan} | {egon}  | {etorri}  | {joan}            ] ;
 define AdTrinkoa     [ AdTrTran | AdTrIntr ];
 
 
-define PaSe	     [ [ {.se.} "[" {P0000000} "]" ] | [ {.él.} "[" {P0300000} "]" ] | [ {.se.} "[" {PP3CN000} "]" ] ];
-define PaMe	     [ [ {.yo.} "[" {PP1CS000} "]" ] | [ {.yo.} "[" {P010S000} "]" ] ];
-define PaTe	     [ [ {.tú.} "[" {PP2CS000} "]" ] | [ {.tú.} "[" {P020S000} "]" ] ];
-define PaLo	     [ {.él.} "[" {PP3MSA00} "]" ];
-define PaLa	     [ {.él.} "[" {PP3FSA00} "]" ];
-define PaLe	     [ {.él.} "[" {PP3CSD00} "]" ];
-define PaOs	     [ [ {.tú.} "[" {PP2CP000} "]" ] | [ {.tú.} "[" {P020P000} "]" ] ];
-define PaNos	     [ [ {.yo.} "[" {PP1CP000} "]" ] | [ {.yo.} "[" {P010P000} "]" ] ];
-define PaLos	     [ {.él.} "[" {PP3MPA00} "]" ];
-define PaLas	     [ {.él.} "[" {PP3FPA00} "]" ];
-define PaLes	     [ {.él.} "[" {PP3CPD00} "]" ];
-define PaSePost	     [ {.él.} "[" {PP3CN000} "]" ];
-define PaLoPost	     [ {.él.} "[" {PP3CNA00} "]" ];
+define PaSe	     [ [ {.se.} "[" {P0000000} "]" ] | [ {.él.} "[" {P0300000} "]" ] ];
+define PaMe	     [ [ {.yo.} "[" {PP1CS000} "]" ] | [ {.yo.} "[" {P010S000} "]" ] | [ {.me.} "[" {PP1CS000} "]" ] | [ {.me.} "[" {P010S000} "]" ] ];
+define PaTe	     [ [ {.tú.} "[" {PP2CS000} "]" ] | [ {.tú.} "[" {P020S000} "]" ] | [ {.te.} "[" {PP2CS000} "]" ] | [ {.te.} "[" {P020S000} "]" ] ];
+define PaLo	     [ [ {.él.} "[" {PP3MSA00} "]" ] | [ {.lo.} "[" {PP3MSA00} "]" ] ];
+define PaLa	     [ [ {.él.} "[" {PP3FSA00} "]" ] | [ {.la.} "[" {PP3FSA00} "]" ] ];
+define PaLe	     [ [ {.él.} "[" {PP3CSD00} "]" ] | [ {.le.} "[" {PP3CSD00} "]" ] ];
+define PaOs	     [ [ {.tú.} "[" {PP2CP000} "]" ] | [ {.tú.} "[" {P020P000} "]" ] | [ {.os.} "[" {PP2CP000} "]" ] | [ {.os.} "[" {P020P000} "]" ] ];
+define PaNos	     [ [ {.yo.} "[" {PP1CP000} "]" ] | [ {.yo.} "[" {P010P000} "]" ] | [ {.nos.} "[" {PP1CP000} "]" ] | [ {.nos.} "[" {P010P000} "]" ] ];
+define PaLos	     [ [ {.él.} "[" {PP3MPA00} "]" ] | [ {.los.} "[" {PP3MPA00} "]" ] ];
+define PaLas	     [ [ {.él.} "[" {PP3FPA00} "]" ] | [ {.las.} "[" {PP3FPA00} "]" ] ];
+define PaLes	     [ [ {.él.} "[" {PP3CPD00} "]" ] | [ {.les.} "[" {PP3CPD00} "]" ] ];
+define PaSePost	     [ [ {.él.} "[" {PP3CN000} "]" ] | [ {.se.} "[" {PP3CN000} "]" ] ];
+define PaLoPost	     [ [ {.él.} "[" {PP3CNA00} "]" ] | [ {.lo.} "[" {PP3CNA00} "]" ] ];
 
 define Pr	     [ PaSe | PaSePost | PaMe | PaTe | PaLo | PaLoPost | PaLa | PaLe | PaNos | PaOs | PaLos | PaLas | PaLes ];
 
