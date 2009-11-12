@@ -43,6 +43,7 @@ contra		[GEN]++kontra		-	    +
 desde		[ABL]			-	    +			
 dirección	[ABZ]			-	    +
 entre		[GEN]++artean/INE	-	      +	   ## Colocala entre las dos mesas, argia bi mahaien artean ipin ezazu
+según		[GEN]++arabera          -       +
 
 # sinple ambiguous
 
@@ -92,9 +93,9 @@ sin		[PAR]++gabe		-	    +
 sobre		[ABS]++inguru		my.headpos='[W]' -	   ## sobre las diez, hamarrak inguru	##denbora
 sobre		[GEN]++gainetik/ABL	-	      +	   ## pasó sobre el puente, zubi gainetik pasa zen	##
 sobre		[GEN]++gainean/INE	-	      +	   ## está sobre la mesa, mahai gainean dago	##
-tras		[GEN]++ondoren		my.type='data' || my.headsem=~'[DEN+]'	+	   ## tras el invierno, neguaren ondoren	##denbora adierazten duten hitzak
-tras		[GEN]++atzera/ALA	-	      +	   ## llévalo tras la casa, etxe atzera eraman ezazu	##
+tras		[GEN]++ondoren		my.type='data' || my.headsem=~'[DEN+]'	-	   ## tras el invierno, neguaren ondoren	##denbora adierazten duten hitzak
 tras		[GEN]++atzean/INE	-	      +	   ## está tras la casa, etxe atzean dago	##
+tras		[GEN]++atzera/ALA	-	      +	   ## llévalo tras la casa, etxe atzera eraman ezazu	##
 
 
 # Multiword prepositions
@@ -154,6 +155,7 @@ a_orillas_de	[GEN]++ertzean	-	+
 a_partir_de     [ABL]++aurrera          -       +
 a_petición_de   [ERG]++eskatuta         -       +
 a_presencia_de	[GEN]++aurrera		-	+
+a_primeros_de	[ZERO]++hasieran	-	+
 a_principios_de		[GEN]++hasieran         -       +
 a_propósito_de  [GEN]++ildotik          -       +
 a_prueba_de     [GEN]++kontra_babestua          -       +
@@ -175,6 +177,7 @@ a_vueltas_con	[SOZ]++bueltaka		-	+
 acerca_de       [DAT]++buruz            -       +
 además_de       [INS]++gain             -       +
 acompañado_de	[SOZ]			-	+
+acorde_con	[SOZ]++bat_datorren	-	+
 al_abrigo_de    [GEN]++babesean         -       +
 al_acceso_de	[GEN]++eskura		    -	    +
 al_alcance_de	[GEN]++eskueran		    -	    +
@@ -337,6 +340,8 @@ impropio_de	[DAT]++ez_dagokion	-	+
 inmediatamente_después_de       [ABL]++lekora           -       +
 junto_con       [SOZ]           -       +
 la_mayor_parte_de	[PAR]++gehien	-	+
+más_de		[ZERO]++baino_gehiago		-	+
+menos_de	[ZERO]++baino_gutxiago		-	+
 merced_a	[DAT]++esker		-	+
 natural_de	[INE]++jaioa		-	+
 no_sin		[INS]			-	+
@@ -502,3 +507,4 @@ pese_a  [GEN]++gogoz_bestera     my.headpos='[IZE][ARR]'       +       ## Pese a
 pese_a  nahiz_eta       my.headpos='[ADI][SIN]'       +       ## pese a comer mucho no engorda: asko jaten badu ere, ez da gizentzen  ##aditzaren aurretik  #???!!!!!!???????
 sin_necesidad_de    [ZERO]++beharrik_gabe   my.headpos='[IZE][ARR]'  +   ## sin necesidad de dinero, diru beharrik gabe  ##izenaren aurretik
 sin_necesidad_de    +[AMM][PART]+[ASP][BURU]++beharrik_gabe  my.headpos='[ADI][SIN]'  +   ## sin necesidad de ir, joan beharrik gabe      ##aditzaren aurretik
+
