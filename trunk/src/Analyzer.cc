@@ -190,6 +190,7 @@ void ProcessPlain(const config &cfg, tokenizer *tk, splitter *sp, maco *morfo,
       
       av.clear(); // clear list of words for next use
       ls.clear(); // clear list of sentences for next use
+      text.clear(); // necessary for the case when the input file does not end in '\n'
     }
 
     // process last sentence in buffer (if any)
