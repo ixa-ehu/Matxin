@@ -19,3 +19,4 @@ capital	hiriburu	my.smi=~'NCF'	-
 corte		gorte	my.smi=~'NCF'	-
 corte		mozketa	my.smi=~'NCM'	+
 padre		guraso	my.smi=~'NCMP'	-
+un			my.smi=~'Zp'	-
