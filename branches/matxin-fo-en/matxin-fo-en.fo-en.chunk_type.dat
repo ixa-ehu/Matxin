@@ -1,6 +1,13 @@
 #Categoría	#Kategoria	#Descripción	#Azalpena
-@FMV	fmv	# finite verb group
-@SUBJ→	subj
-@←SUBJ	subj
-@←OBJ	obj
-@OBJ→	obj
+@FMV[vblex]	fmv	# finite verb group
+@FMV[vbser]	fmv	# finite verb group
+@FMV[vbhaver]	fmv	# finite verb group
+@FMV[vbmod]	fmv	# finite verb group
+@SUBJ→[n]	subj
+@SUBJ→[np]	subj
+@←SUBJ[n]	subj
+@←SUBJ[np]	subj
+@←OBJ[n]	obj
+@←OBJ[np]	obj
+@OBJ→[n]	obj
+@OBJ→[np]	obj
