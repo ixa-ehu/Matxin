@@ -551,8 +551,23 @@ int main(int argc, char *argv[])
   }
   if(argc > 2) {
     DoVerbTrace = true;
+    ifstream fin;
+    fin.open (argv[2]);
+    if (fin.fail()) {
+      wcerr << "File unreadable `" << argv[2] << "'" << endl;
+      exit(-1);
+    } 
+    fin.close();
     init_verbTrasference(argv[2], DoVerbTrace);
   } else {
+    ifstream fin;
+    fin.open (argv[1]);
+    if (fin.fail()) {
+      wcerr << "File unreadable `" << argv[1] << "'" << endl;
+      exit(-1);
+    } 
+    fin.close();
+
     init_verbTrasference(argv[1], DoVerbTrace);
   }
 
