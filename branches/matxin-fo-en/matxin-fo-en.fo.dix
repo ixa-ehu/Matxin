@@ -34,7 +34,7 @@
     <sdef n="pprs"      c="Present participle"/>
     <sdef n="supn"    c="Supine"/>
     <sdef n="past"    c="Past tense"/>
-    <sdef n="pri"     c="Present tense"/>
+    <sdef n="pri"     c="Present tense (indicative)"/>
     <sdef n="p1"      c="First person"/>
     <sdef n="p2"      c="Second person"/>
     <sdef n="p3"      c="Third person"/>
@@ -11106,6 +11106,8 @@
       </e>
     </pardef>
 
+
+    <!-- Verb pardefs -->
     <pardef n="skap/a__vblex">
       <e>
         <p>
@@ -28399,6 +28401,8 @@
     <e lm="bláur"><i>blá</i><par n="blá/ur__adj"/></e>
     <e lm="ríkur"><i>rík</i><par n="rík/ur__adj"/></e>
     <e lm="sterkur"><i>sterk</i><par n="rík/ur__adj"/></e>
+    <!-- todo: took a wild guess at heilur -->
+    <e lm="heilur"><i>heil</i><par n="rík/ur__adj"/></e>
     <e lm="stórur"><i>st</i><par n="st/órur__adj"/></e>
     <e lm="lítil"><i>lít</i><par n="lít/il__adj"/></e>
     <e lm="góður"><i>g</i><par n="g/óður__adj"/></e>
