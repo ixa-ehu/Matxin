@@ -74,6 +74,21 @@
       <e><p><l>[past][p3][pl]</l><r><s n="mi"/>[past]</r></p></e>
       <e><p><l></l><r></r></p></e>
     </pardef>
+    <pardef n="VBHAVER_STD">
+      <e><p><l>[pres][p1][sg]</l><r><s n="mi"/>[pres][p1][sg]</r></p></e>
+      <e><p><l>[pres][p2][sg]</l><r><s n="mi"/>[pres][p2][sg]</r></p></e>
+      <e><p><l>[pres][p3][sg]</l><r><s n="mi"/>[pres][p3][sg]</r></p></e>
+      <e><p><l>[pres][p1][pl]</l><r><s n="mi"/>[pres][p1][pl]</r></p></e>
+      <e><p><l>[pres][p2][pl]</l><r><s n="mi"/>[pres][p2][pl]</r></p></e>
+      <e><p><l>[pres][p3][pl]</l><r><s n="mi"/>[pres][p3][pl]</r></p></e>
+      <e><p><l>[past][p1][sg]</l><r><s n="mi"/>[past][p1][sg]</r></p></e>
+      <e><p><l>[past][p2][sg]</l><r><s n="mi"/>[past]</r></p></e>
+      <e><p><l>[past][p3][sg]</l><r><s n="mi"/>[past]</r></p></e>
+      <e><p><l>[past][p1][pl]</l><r><s n="mi"/>[past]</r></p></e>
+      <e><p><l>[past][p2][pl]</l><r><s n="mi"/>[past]</r></p></e>
+      <e><p><l>[past][p3][pl]</l><r><s n="mi"/>[past]</r></p></e>
+      <e><p><l></l><r></r></p></e>
+    </pardef>
 
     <pardef n="VBLEX_STD">
       <e><p><l>[pri][p1][sg]</l><r><s n="mi"/>[pres]</r></p></e>
@@ -694,9 +709,11 @@
     <e><p><l>hundrað<s n="parol"/>[n][nt]</l><r>hundred<s n="pos"/>[n]</r></p><par n="NC_STD"/></e>
     <e><p><l>fólk<s n="parol"/>[n][nt]</l><r>people<s n="pos"/>[n]</r></p><par n="NC_STD"/></e>
     <e><p><l>tóm<s n="parol"/>[n][nt]</l><r>void<s n="pos"/>[n]</r></p><par n="NC_STD"/></e>
+    <e><p><l>teldupost<s n="parol"/>[n][m]</l><r>e-mail<s n="pos"/>[n]</r></p><par n="NC_STD"/></e>
 
     <!-- Verbs -->
     <e><p><l>vera<s n="parol"/>[vbser]</l><r>be<s n="pos"/>[vbser]</r></p><par n="VBSER_STD"/></e>
+    <e><p><l>hava<s n="parol"/>[vbhaver]</l><r>have<s n="pos"/>[vbhaver]</r></p><par n="VBHAVER_STD"/></e>
 
     <e><p><l>skapa<s n="parol"/>[vblex]</l><r>create<s n="pos"/>[vblex]</r></p><par n="VBLEX_STD"/></e>
     <e><p><l>sveima<s n="parol"/>[vblex]</l><r>float<s n="pos"/>[vblex]</r></p><par n="VBLEX_STD"/></e>

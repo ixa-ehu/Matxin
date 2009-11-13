@@ -26587,8 +26587,9 @@
     <e lm="blíva"><i>bl</i><par n="bl/íva__vblex"/></e>
     <e lm="vilja"><i>vil</i><par n="vil/ja__vblex"/></e>
 
-    <e lm="hava"><i>h</i><par n="h/ava__vblex"/></e>
-    <e lm="vera"><i/><par n="/vera__vblex"/></e>
+    <!-- are there really non-vbser/vbhaver "vera" and "hava"? -->
+<!--     <e lm="hava"><i>h</i><par n="h/ava__vblex"/></e> -->
+<!--     <e lm="vera"><i/><par n="/vera__vblex"/></e> -->
 
     <!-- Modal verbs -->
     <e lm="kunna"><i>k</i><par n="k/unna__vbmod"/></e>
