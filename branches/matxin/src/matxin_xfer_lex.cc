@@ -736,10 +736,13 @@ int main(int argc, char *argv[])
 
   // This sets the C++ locale and affects to C and C++ locales.
   // wcout.imbue doesn't have any effect but the in/out streams use the proper encoding.
-  //locale::global(locale(""));
-  // ^^^ doesn't work on mac, except with C/POSIX
+#ifndef NeXTBSD
+  // Darwin/Mac OS X barfs on locale(""):
   setlocale(LC_ALL, "");
-  
+#else
+  locale::global(locale(""));
+#endif
+
   // Hiztegi elebidunaren hasieraketa.
   // Parametro moduan jasotzen den fitxagia erabiltzen da hasieraketarako.
 
