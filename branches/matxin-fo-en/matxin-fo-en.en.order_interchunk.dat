@@ -1,1 +1,6 @@
+type=~'fmv[vbser]'	type=~'subj[n]'	.*?	x2.x1
+type=~'fmv[vbser]'	type=~'subj[np]'	.*?	x2.x1
+type=~'fmv[vbser]'	type=~'obj[n]'	.*?	x1.x2
+type=~'fmv[vbser]'	type=~'obj[np]'	.*?	x1.x2
+
 true	true	.*?	x1.x2

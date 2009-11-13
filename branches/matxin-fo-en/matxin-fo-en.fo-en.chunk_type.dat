@@ -1,2 +1,6 @@
 #Categoría	#Kategoria	#Descripción	#Azalpena
 @FMV	fmv	# finite verb group
+@SUBJ→	subj
+@←SUBJ	subj
+@←OBJ	obj
+@OBJ→	obj
