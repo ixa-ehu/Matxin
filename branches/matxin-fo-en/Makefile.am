@@ -52,9 +52,9 @@ modes/$(PREFIX1).mode: modes.xml
 	matxin-gen-modes modes.xml
 	cp *.mode modes/
 
-modes/$(PREFIX2).mode: modes.xml 
-	matxin-gen-modes modes.xml
-	cp *.mode modes/
+# modes/$(PREFIX2).mode: modes.xml 
+# 	matxin-gen-modes modes.xml
+# 	cp *.mode modes/
 
 matxin_fo_en_DATA=$(PREFIX1).automorf.bin  \
                     $(PREFIX1).autobil.bin  \
@@ -71,8 +71,10 @@ install-data-local:
 	mv modes.bak modes
 	test -d $(matxin_fo_modesdir) || mkdir $(matxin_fo_modesdir)
 	$(INSTALL_DATA) $(PREFIX1).mode $(matxin_fo_modesdir)
-	$(INSTALL_DATA) $(PREFIX2).mode $(matxin_fo_modesdir)
-	rm $(PREFIX1).mode $(PREFIX2).mode
+	rm $(PREFIX1).mode
+
+#	$(INSTALL_DATA) $(PREFIX2).mode $(matxin_fo_modesdir)
+#	rm $(PREFIX2).mode
 
 
 CLEANFILES = -rf $(TARGETS_COMMON) modes
