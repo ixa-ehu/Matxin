@@ -1,0 +1,79 @@
+<dictionary>  
+  <alphabet/>
+  <sdefs>
+    <sdef n="BAN"      c=""/>
+    <sdef n="DET"      c=""/>
+    <sdef n="DZG"      c=""/>
+    <sdef n="DZH"      c=""/>
+    <sdef n="ERKARR"   c=""/>
+    <sdef n="ERKIND"   c=""/>
+    <sdef n="IZL"      c=""/>
+    <sdef n="IZO"      c=""/>
+    <sdef n="NOLARR"   c=""/>
+    <sdef n="NOLGAL"   c=""/>
+    <sdef n="ORO"      c=""/>
+  </sdefs>
+  <pardefs>    
+    <pardef n="asko[DET][DZG]__det">      
+      <e><p><l><s n="DZG"/></l><r><s n="IZO"/></r></p></e>
+    </pardef>    
+    <pardef n="beste[DET][DZG]__det">      
+      <e><p><l><s n="DZG"/></l><r><s n="IZL"/></r></p></e>
+    </pardef>    
+    <pardef n="edozein[DET][NOLARR]__det">      
+      <e><p><l><s n="NOLARR"/></l><r><s n="IZL"/></r></p></e>
+    </pardef>    
+    <pardef n="bera[DET][ERKIND]__det">      
+      <e><p><l><s n="ERKIND"/></l><r><s n="IZO"/></r></p></e>
+    </pardef>    
+    <pardef n="bat[DET][DZH]__det">      
+      <e><p><l><s n="DZH"/></l><r><s n="IZO"/></r></p></e>
+    </pardef>    
+    <pardef n="bana[DET][BAN]__det">      
+      <e><p><l><s n="BAN"/></l><r><s n="IZO"/></r></p></e>
+    </pardef>    
+    <pardef n="hau[DET][ERKARR]__det">      
+      <e><p><l><s n="ERKARR"/></l><r><s n="IZO"/></r></p></e>
+    </pardef>    
+    <pardef n="zer[DET][NOLGAL]__det">      
+      <e><p><l><s n="NOLGAL"/></l><r><s n="IZL"/></r></p></e>
+    </pardef>    
+    <pardef n="oro[DET][ORO]__det">      
+      <e><p><l><s n="ORO"/></l><r><s n="IZO"/></r></p></e>
+    </pardef>  
+  </pardefs>  
+  <section id="main" type="standard">    
+    <e><i>zer<s n="DET"/></i><par n="zer[DET][NOLGAL]__det"/></e>
+    <e><i>zein<s n="DET"/></i><par n="zer[DET][NOLGAL]__det"/></e>
+    <e><i>zenbat<s n="DET"/></i><par n="zer[DET][NOLGAL]__det"/></e>
+
+    <e><i>hura<s n="DET"/></i><par n="hau[DET][ERKARR]__det"/></e>
+    <e><i>hau<s n="DET"/></i><par n="hau[DET][ERKARR]__det"/></e>
+    <e><i>horiek<s n="DET"/></i><par n="hau[DET][ERKARR]__det"/></e>
+    <e><i>haiek<s n="DET"/></i><par n="hau[DET][ERKARR]__det"/></e>
+    <e><i>hori<s n="DET"/></i><par n="hau[DET][ERKARR]__det"/></e>
+    <e><i>hauek<s n="DET"/></i><par n="hau[DET][ERKARR]__det"/></e>
+
+    <e><i>zenbait<s n="DET"/></i><par n="beste[DET][DZG]__det"/></e>
+    <e><i>beste<s n="DET"/></i><par n="beste[DET][DZG]__det"/></e>
+    <e><i>horrenbeste<s n="DET"/></i><par n="beste[DET][DZG]__det"/></e>
+
+    <e><i>gehiegi<s n="DET"/></i><par n="asko[DET][DZG]__det"/></e>
+    <e><i>gutxi<s n="DET"/></i><par n="asko[DET][DZG]__det"/></e>
+    <e><i>dezente<s n="DET"/></i><par n="asko[DET][DZG]__det"/></e>
+    <e><i>asko<s n="DET"/></i><par n="asko[DET][DZG]__det"/></e>
+    <e><i>batzuk<s n="DET"/></i><par n="asko[DET][DZG]__det"/></e>
+
+    <e><i>bana<s n="DET"/></i><par n="bana[DET][BAN]__det"/></e>
+
+    <e><i>oro<s n="DET"/></i><par n="oro[DET][ORO]__det"/></e>
+    <e><i>guzti<s n="DET"/></i><par n="oro[DET][ORO]__det"/></e>
+
+    <e><i>berak<s n="DET"/></i><par n="bera[DET][ERKIND]__det"/></e>
+    <e><i>bera<s n="DET"/></i><par n="bera[DET][ERKIND]__det"/></e>
+
+    <e><i>edozein<s n="DET"/></i><par n="edozein[DET][NOLARR]__det"/></e>
+
+    <e><i>bat<s n="DET"/></i><par n="bat[DET][DZH]__det"/></e>
+  </section>
+</dictionary>

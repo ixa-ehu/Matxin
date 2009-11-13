@@ -10,7 +10,7 @@ BASENAME=matxin-$(PREFIX1)
 
 TARGETS_COMMON = $(PREFIX).bin $(LANG2)_changes_morph.bin $(LANG2)_measures_gen.bin \
 		 $(LANG2)_morph_gen.bin $(LANG2)_morph_nolex.bin $(PREFIX)_verb_transfer.dat \
-		 $(LANG2)_sem.bin $(PREFIX1).cfg $(PREFIX1).mode
+		 $(LANG2)_sem.bin $(LANG2)_changes_sint.bin $(PREFIX1).cfg $(PREFIX1).mode
 
 TARGETS = $(TARGETS_COMMON)
 
@@ -41,6 +41,10 @@ $(PREFIX)_verb_transfer.dat: $(PREFIX)_verb_transfer.fst
 $(LANG2)_sem.bin: $(LANG2)_sem.xml
 	lt-comp lr $(LANG2)_sem.xml $@
 
+$(LANG2)_changes_sint.bin: $(LANG2)_changes_sint.xml
+	apertium-validate-dictionary $(LANG2)_changes_sint.xml
+	lt-comp lr $(LANG2)_changes_sint.xml $@
+
 $(PREFIX1).mode: modes.xml
 	matxin-gen-modes modes.xml
 
@@ -58,7 +62,6 @@ matxin_es_eu_DATA=$(TARGETS) \
 		  eu_measures_gen.xml \
 		  eu_morph_gen_mur.xml \
 		  eu_morph_nolex.xml \
-		  eu_sem.txt \
 		  eu_verb_noun_subcat.txt \
 		  eu_verb_subcat.txt
 

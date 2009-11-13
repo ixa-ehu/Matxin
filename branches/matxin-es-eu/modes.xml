@@ -8,10 +8,10 @@
       </program>
 -->
       <program name="matxin-xfer-lex">
-        <file name="eseu.bin"/>
-        <file option="-s" name="eu_sem.txt"/>
+        <file option="-s" name="eu_sem.bin"/>
         <file option="-c" name="eseu_chunk_type.txt"/>
         <file option="-l" name="eseu_lex.txt"/>
+        <file name="eseu.bin"/>
       </program>
       <program name="matxin-xfer-intra">
         <file name="intrachunk_move.dat"/>
@@ -26,7 +26,7 @@
         <file name="interchunk_move2.dat"/>
       </program>
       <program name="matxin-xfer-verb">
-        <file name="eu_verb_transfer.dat"/>
+        <file name="eseu_verb_transfer.dat"/>
       </program>
       <program name="matxin-xfer-inter"> 
         <file name="interchunk_move3.dat"/>
@@ -63,7 +63,7 @@ TagOrderFile=/home/fran/local/share/matxin/matxin-es-eu/gram/es-eu/eu_morph_prep
       </program>
 -->
       <program name="matxin-xfer-lex">
-        <file option="-s" name="eu_sem.txt"/>
+        <file option="-s" name="eu_sem.bin"/>
         <file option="-c" name="eseu_chunk_type.txt"/>
         <file option="-l" name="eseu_lex.txt"/>
         <file name="eseu.bin"/>
@@ -79,6 +79,9 @@ TagOrderFile=/home/fran/local/share/matxin/matxin-es-eu/gram/es-eu/eu_morph_prep
       </program>
 -->
       <program name="matxin-xfer-lex">
+        <file option="-s" name="eu_sem.bin"/>
+        <file option="-c" name="eseu_chunk_type.txt"/>
+        <file option="-l" name="eseu_lex.txt"/>
         <file name="eseu.bin"/>
       </program>
       <program name="matxin-xfer-intra">
@@ -94,7 +97,7 @@ TagOrderFile=/home/fran/local/share/matxin/matxin-es-eu/gram/es-eu/eu_morph_prep
         <file name="interchunk_move2.dat"/>
       </program>
       <program name="matxin-xfer-verb">
-        <file name="eu_verb_transfer.dat"/>
+        <file name="eseu_verb_transfer.dat"/>
       </program>
       <program name="matxin-xfer-inter"> 
         <file name="interchunk_move3.dat"/>
