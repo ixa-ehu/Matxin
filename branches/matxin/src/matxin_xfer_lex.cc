@@ -568,7 +568,7 @@ wstring procCHUNK(xmlTextReaderPtr reader, wstring parent_attribs)
   wstring tagName = getTagName(reader);
   int tagType = xmlTextReaderNodeType(reader);
   wstring tree, chunk_type, head_attribs;
-  wstring old_type, si;
+  wstring old_type, si, ref, other_attribs, nodes;
   
   if (tagName == L"CHUNK" and tagType == XML_READER_TYPE_ELEMENT)
   {
@@ -579,10 +579,11 @@ wstring procCHUNK(xmlTextReaderPtr reader, wstring parent_attribs)
     chunk_type = get_lexInfo(L"chunkType", old_type); // might change below
     //wcerr << "[procCHUNK][    ] o: " << old_type << " n: " << chunk_type << endl;
     si = attrib(reader, "si");
-    // We output type below, after getting pos from procNODE_foo,
-    // but we have to get si and old_type before calling nextTag(reader)
-    tree = L"<CHUNK ref='" + write_xml(attrib(reader, "ord")) + L"'" +
-	    write_xml(text_allAttrib_except(allAttrib_except(reader, L"ord"), L"type"));
+    ref = attrib(reader, "ord");
+    other_attribs = text_allAttrib_except(allAttrib_except(reader, L"ord"), L"type");
+    // Store CHUNK attribs before call to nextTag(reader). These are
+    // written to the tree after the call to procNODE_notAS in case
+    // chunk_type has to be based on the pos attrib of the first NODE
   }
   else
   {
@@ -602,20 +603,20 @@ wstring procCHUNK(xmlTextReaderPtr reader, wstring parent_attribs)
   {
     // NODEa irakurri eta prozesatzen du, CHUNKaren burua izango da (head=true)
     //wcerr << L"[procCHUNK][adi-] t:" << old_type << L" c: " << chunk_type << endl;
-    tree += L" type='" + write_xml(chunk_type) + L"'" + L">\n";
-    tree += procNODE_AS(reader, true, head_attribs);
+    nodes = procNODE_AS(reader, true, head_attribs);
   }
   else
   {
     // NODEa irakurri eta prozesatzen du
     std::pair<wstring,wstring> pr = procNODE_notAS(reader, true, parent_attribs, head_attribs);
+    nodes = pr.first;
 
     if (old_type == L"") {
       wstring pos = pr.second;
-      chunk_type = get_lexInfo(L"chunkType", si+pos);
+      chunk_type = get_lexInfo(L"chunkType", si + pos);
       if (chunk_type == L"") {
 	      // if syntactic function wasn't in chunktype_file, or no chunktype_file given:
-	      chunk_type = si+pos;
+	      chunk_type = si + pos;
       }
       //wcerr << L"[procCHUNK][si  ] t:" << old_type << L" c: " << chunk_type << endl;
     }
@@ -626,9 +627,11 @@ wstring procCHUNK(xmlTextReaderPtr reader, wstring parent_attribs)
       }
       //wcerr << L"[procCHUNK][type] t:" << old_type << L" c: " << chunk_type << endl;
     }
-    tree += L" type='" + write_xml(chunk_type) + L"'" + L">\n";
-    tree += pr.first;
   }
+  tree = L"<CHUNK ref='" + write_xml(ref) +
+	  L"' type='" + write_xml(chunk_type) + L"'" +
+	  write_xml(other_attribs) + L">\n" +
+	  nodes;
 
   ret = nextTag(reader);
   tagName = getTagName(reader);
