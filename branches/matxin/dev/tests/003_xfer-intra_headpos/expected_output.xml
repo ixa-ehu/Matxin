@@ -1,14 +1,14 @@
 <?xml version='1.0' encoding='UTF-8' ?>
 <corpus >
 <SENTENCE ref='1' alloc='0'>
-<CHUNK ref='2' type='adi-kat' alloc='5' si='top'>
+<CHUNK ref='2' type='adi-kat' alloc='5' si='top' mi='VSIP3S0'  headpos='[ADI][SIN]'  headlem='_izan_' >
 <NODE ref='2' alloc='5' UpCase='none' slem='ser' smi='VSIP3S0' pos='[ADI][SIN]' lem='_izan_' mi='VSIP3S0'>
 </NODE>
-<CHUNK ref='1' type='is' alloc='0' si='subj'>
+<CHUNK ref='1' type='is' alloc='0' si='subj' mi='[NUMS]'  headpos='[DET][ERKARR]'  headlem='hau' >
 <NODE ref='1' alloc='0' slem='este' smi='PD0NS000' UpCase='none' lem='hau' pos='[DET][ERKARR]' mi='[NUMS]'>
 </NODE>
 </CHUNK>
-<CHUNK ref='3' type='is' alloc='8' si='att'>
+<CHUNK ref='3' type='is' alloc='8' si='att' mi='[NUMS]'  headpos='[IZE][ARR]'  headlem='proba'  headsem='[BIZ-]' >
 <NODE ref='4' alloc='12' slem='prueba' smi='NCFS000' UpCase='none' lem='proba' pos='[IZE][ARR]' mi='[NUMS]' sem='[BIZ-]'>
 <NODE ref='3' alloc='8' slem='uno' smi='DI0FS0' UpCase='none' lem='bat' pos='[DET][DZH]' mi='[NUMS]'>
 </NODE>
