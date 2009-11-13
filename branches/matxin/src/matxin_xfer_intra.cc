@@ -336,6 +336,14 @@ int main(int argc, char *argv[])
   }
 
   //init_nodeMovement(cfg.Intra_MovementsFile);
+  ifstream fin;
+  fin.open (argv[1]);
+  if (fin.fail()) {
+    wcerr << "File unreadable `" << argv[1] << "'" << endl;
+    exit(-1);
+  } 
+  fin.close();
+
   init_nodeMovement(argv[1]);
 
   // libXml liburutegiko reader hasieratzen da, sarrera estandarreko fitxategia irakurtzeko.
