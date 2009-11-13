@@ -358,7 +358,7 @@ std::pair<wstring,wstring> procNODE_notAS(xmlTextReaderPtr reader, bool head,
       //   In format: ^euskara[IZE][ARR]$ 
       //   Out format: ^<BIZ->$
       pos = text_attrib(select[0], L"pos");
-      
+
       if (head) {
         wstring lem = text_attrib(select[0], L"lem");
         wstring sem_search = L'^' + lem + pos + L'$';
@@ -580,7 +580,11 @@ wstring procCHUNK(xmlTextReaderPtr reader, wstring parent_attribs)
     if (type == L"") {
       addpos = true;
       chunkType = get_lexInfo(L"chunkType", attrib(reader, "si"));
-      wcerr << L"[procCHUNK][si  ] t:" << type << L" c: " << chunkType << endl;
+      if (chunkType == L"") {
+        // if syntactic function wasn't in chunktype_file, or no chunktype_file given:
+        chunkType = attrib(reader, "si");
+      }
+      wcerr << L"[procCHUNK][si  ] t:" << type << L" c: " << chunkType << L" si: " << attrib(reader, "si") << endl;
     } else { 
       chunkType = get_lexInfo(L"chunkType", type);
       wcerr << L"[procCHUNK][type] t:" << type << L" c: " << chunkType << endl;
