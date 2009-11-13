@@ -577,6 +577,7 @@ wstring procCHUNK(xmlTextReaderPtr reader, wstring parent_attribs)
     // si atributua mantentzen da
     old_type = attrib(reader, "type");
     chunk_type = get_lexInfo(L"chunkType", old_type); // might change below
+    //wcerr << "[procCHUNK][    ] o: " << old_type << " n: " << chunk_type << endl;
     si = attrib(reader, "si");
     // We output type below, after getting pos from procNODE_foo,
     // but we have to get si and old_type before calling nextTag(reader)
@@ -600,7 +601,7 @@ wstring procCHUNK(xmlTextReaderPtr reader, wstring parent_attribs)
   if (chunk_type.substr(0, 4) == L"adi-" || chunk_type.substr(0, 7) == L"grup-ve") // This was broken, should work now? TODO
   {
     // NODEa irakurri eta prozesatzen du, CHUNKaren burua izango da (head=true)
-    wcerr << L"[procCHUNK][adi-] t:" << old_type << L" c: " << chunk_type << endl;
+    //wcerr << L"[procCHUNK][adi-] t:" << old_type << L" c: " << chunk_type << endl;
     tree += L" type='" + write_xml(chunk_type) + L"'" + L">\n";
     tree += procNODE_AS(reader, true, head_attribs);
   }
@@ -616,14 +617,14 @@ wstring procCHUNK(xmlTextReaderPtr reader, wstring parent_attribs)
 	      // if syntactic function wasn't in chunktype_file, or no chunktype_file given:
 	      chunk_type = si+pos;
       }
-      wcerr << L"[procCHUNK][si  ] t:" << old_type << L" c: " << chunk_type << endl;
+      //wcerr << L"[procCHUNK][si  ] t:" << old_type << L" c: " << chunk_type << endl;
     }
     else { 
       chunk_type = get_lexInfo(L"chunkType", old_type);
       if (chunk_type == L"") {
         chunk_type = old_type;
       }
-      wcerr << L"[procCHUNK][type] t:" << old_type << L" c: " << chunk_type << endl;
+      //wcerr << L"[procCHUNK][type] t:" << old_type << L" c: " << chunk_type << endl;
     }
     tree += L" type='" + write_xml(chunk_type) + L"'" + L">\n";
     tree += pr.first;
@@ -737,12 +738,12 @@ int main(int argc, char *argv[])
   // This sets the C++ locale and affects to C and C++ locales.
   // wcout.imbue doesn't have any effect but the in/out streams use the proper encoding.
 #ifndef NeXTBSD
-  // Darwin/Mac OS X barfs on locale(""):
-  setlocale(LC_ALL, "");
-#else
   locale::global(locale(""));
+#else
+  // ^^^ doesn't work on mac, except with C/POSIX
+  setlocale(LC_ALL, "");
 #endif
-
+  
   // Hiztegi elebidunaren hasieraketa.
   // Parametro moduan jasotzen den fitxagia erabiltzen da hasieraketarako.
 
@@ -780,9 +781,11 @@ int main(int argc, char *argv[])
       break;
 
     case 'c':
+      //check if the file exists and is readable
       init_lexInfo(L"chunkType", optarg);
       break;
     case 'l':
+      //check if the file exists and is readable
       init_lexical_selection(optarg);
       break;
 
@@ -798,6 +801,9 @@ int main(int argc, char *argv[])
         fstp_sem_info.load(in);
         fstp_sem_info.initBiltrans();
         fclose(in);
+      } else {
+        wcerr << "Semantic information file `" << sem_info_file.c_str() << "' cannot be loaded." << endl;
+	exit(-1);
       }
   }
   
