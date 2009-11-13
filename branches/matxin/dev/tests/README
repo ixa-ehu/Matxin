@@ -2,3 +2,9 @@ Here are some regression tests for the branch working on Matxin, to add to them,
 just create a directory, in the style [number]_[module]_[subject of test] and 
 then add your test, ideally it should have an input, an output and a script to 
 reproduce it.
+
+Copy the 'environment.sh.in' file to 'environment.sh' and then replace the variables,
+e.g. an 'environment.sh' might look like:
+
+ DATAROOT=/home/fran/source/matxin/branches/matxin-es-eu/
+ BINROOT=/home/fran/local/bin/
