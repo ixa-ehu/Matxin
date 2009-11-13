@@ -577,7 +577,6 @@ wstring procCHUNK(xmlTextReaderPtr reader, wstring parent_attribs)
     // si atributua mantentzen da
     old_type = attrib(reader, "type");
     chunk_type = get_lexInfo(L"chunkType", old_type); // might change below
-    //wcerr << "[procCHUNK][    ] o: " << old_type << " n: " << chunk_type << endl;
     si = attrib(reader, "si");
     ref = attrib(reader, "ord");
     other_attribs = text_allAttrib_except(allAttrib_except(reader, L"ord"), L"type");
@@ -602,7 +601,6 @@ wstring procCHUNK(xmlTextReaderPtr reader, wstring parent_attribs)
   if (chunk_type.substr(0, 4) == L"adi-" || chunk_type.substr(0, 7) == L"grup-ve") // This was broken, should work now? TODO
   {
     // NODEa irakurri eta prozesatzen du, CHUNKaren burua izango da (head=true)
-    //wcerr << L"[procCHUNK][adi-] t:" << old_type << L" c: " << chunk_type << endl;
     nodes = procNODE_AS(reader, true, head_attribs);
   }
   else
@@ -618,14 +616,12 @@ wstring procCHUNK(xmlTextReaderPtr reader, wstring parent_attribs)
 	      // if syntactic function wasn't in chunktype_file, or no chunktype_file given:
 	      chunk_type = si + pos;
       }
-      //wcerr << L"[procCHUNK][si  ] t:" << old_type << L" c: " << chunk_type << endl;
     }
     else { 
       chunk_type = get_lexInfo(L"chunkType", old_type);
       if (chunk_type == L"") {
         chunk_type = old_type;
       }
-      //wcerr << L"[procCHUNK][type] t:" << old_type << L" c: " << chunk_type << endl;
     }
   }
   tree = L"<CHUNK ref='" + write_xml(ref) +
@@ -741,9 +737,13 @@ int main(int argc, char *argv[])
   // This sets the C++ locale and affects to C and C++ locales.
   // wcout.imbue doesn't have any effect but the in/out streams use the proper encoding.
 #ifndef NeXTBSD
-  locale::global(locale(""));
+#ifdef __APPLE__
+  setlocale(LC_ALL, "");
+  // locale("") doesn't work on mac, except with C/POSIX
 #else
-  // ^^^ doesn't work on mac, except with C/POSIX
+  locale::global(locale(""));
+#endif
+#else
   setlocale(LC_ALL, "");
 #endif
   
