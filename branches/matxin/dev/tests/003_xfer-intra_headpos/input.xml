@@ -1,15 +1,20 @@
-<?xml version='1.0' encoding='UTF-8' ?>
-<corpus>
-<SENTENCE ord='1' alloc='0'>
-<CHUNK ord='1' alloc='0' type='sn' si='top'>
-  <NODE ord='2' alloc='3' form='euskera' lem='euskera' mi='NCMS000'>
-    <NODE ord='1' alloc='0' form='El' lem='el' mi='DA0MS0'>
-    </NODE>
-  </NODE>
-  <CHUNK ord='2' alloc='10' type='F-term' si='term'>
-    <NODE ord='3' alloc='10' form='.' lem='.' mi='Fp'>
-    </NODE>
-  </CHUNK>
+<?xml version='1.0' encoding='UTF-8'?>
+<corpus >
+<SENTENCE ref='1' alloc='0'>
+<CHUNK ref='2' type='adi-kat' alloc='5' si='top'>
+<NODE ref='2' alloc='5' UpCase='none' slem='ser' smi='VSIP3S0'  pos='[ADI][SIN]' lem='_izan_' mi='VSIP3S0'>
+</NODE>
+<CHUNK ref='1' type='is' alloc='0' si='subj'>
+<NODE ref='1' alloc='0' slem='este' smi='PD0NS000' UpCase='none' lem='hau' pos='[DET][ERKARR]' mi='[NUMS]'>
+</NODE>
+</CHUNK>
+<CHUNK ref='3' type='is' alloc='8' si='att'>
+<NODE ref='4' alloc='12' slem='prueba' smi='NCFS000' UpCase='none' lem='proba' pos='[IZE][ARR]' mi='[NUMS]' sem='[BIZ-]'>
+<NODE ref='3' alloc='8' slem='uno' smi='DI0FS0' UpCase='none' lem='bat' pos='[DET][DZH]' mi='[NUMS]'>
+</NODE>
+</NODE>
+</CHUNK>
 </CHUNK>
 </SENTENCE>
+
 </corpus>
