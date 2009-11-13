@@ -16,8 +16,9 @@
 	<file name="fo-en.dep.rlx.bin"/>
       </program>
       <program name="matxin-xfer-lex">
-	<file name="fo-en.autobil.bin"/>
 	<file option="-s" name="fo-en.en_sem.bin"/>
+	<file option="-c" name="matxin-fo-en.fo-en.chunk_type.dat"/>
+	<file name="fo-en.autobil.bin"/>
       </program>
     </pipeline>
   </mode>
@@ -37,8 +38,9 @@
 	<file name="fo-en.dep.rlx.bin"/>
       </program>
       <program name="matxin-xfer-lex">
-        <file name="fo-en.autobil.bin"/>
 	<file option="-s" name="fo-en.en_sem.bin"/>
+	<file option="-c" name="matxin-fo-en.fo-en.chunk_type.dat"/>
+        <file name="fo-en.autobil.bin"/>
       </program>
 <!--
       <program name="matxin-xfer-intra">
