@@ -26,7 +26,7 @@ LIST BOS = (>>>) (<s>);
 LIST EOS = (<<<) (</s>); # vislcg and CG-2 together.
 
 LIST N = n np ;
-LIST V = vblex vbser ;
+LIST V = vblex vbser vbhaver vbmod ;
 LIST A = adj ;
 LIST Prop = np ;
 LIST Adv = adv ;
@@ -81,7 +81,7 @@ LIST Guess = Guess ;#TODO
 
 
 
-LIST TAG = n np vblex vbser adj adv cnjcoo cnjsub ij pr prn p1 p2 p3 det pos nom acc gen
+LIST TAG = n np vblex vbser vbhaver vbmod adj adv cnjcoo cnjsub ij pr prn p1 p2 p3 det pos nom acc gen
 dat m f nt sg pl def ind comp sup pri past inf pp
 ppres supn imp ; #TODO the rest
 
@@ -373,7 +373,7 @@ SELECT ("bara" adv) IF (*1 N OR A BARRIER NPNH);
        ## Bara eygað sá roykin fara uppeftir sum óljóð.
 
 # eg
-SELECT:eg ("prnpers" prn p1 pl nom) IF (*1 (vblex pl) OR (vbser pl) BARRIER NOT-ADV); #(*1 V + Pl BARRIER NOT-ADV);
+SELECT:eg ("prnpers" prn p1 pl nom) IF (*1 (vblex pl) OR (vbser pl) OR (vbhaver pl) OR (vbmod pl) BARRIER NOT-ADV); #(*1 V + Pl BARRIER NOT-ADV);
 	  ## Vit mugu sleppa.
 # ein
 REMOVE ("eini") IF (0 Dat + Dat )(1 A + Dat OR N + Dat) ;
@@ -576,7 +576,7 @@ REMOVE Indef IF (0 N + Def)  (1 CC)(2C N + Def);
 
 # Inversion
 
-REMOVE:r34 Acc IF (-2 CS)(-1 (vblex pl) OR (vbser pl))(0 (pl nom)) ;
+REMOVE:r34 Acc IF (-2 CS)(-1 (vblex pl) OR (vbser pl) OR (vbhaver pl) OR (vbmod pl))(0 (pl nom)) ;
 	## Tað var, sum váru tey sett út úr luftini.
 
 
@@ -623,7 +623,7 @@ REMOVE:r48 A IF (0 ("vera"))(1 (n sg) OR (np sg));
 SELECT:r49 ("vera" p3 sg) IF (-1 ("prnpers" prn p3 nt p3 sg nom));#TODO does it work even if the <r> says prnpers<prn><p3> etc instead of tað<prn><p3> etc. ?
 	## Tað var, sum váru tey sett av tilvild av einum fóti út úr luftini.
 
-REMOVE:PrtNotAdj A IF (-1 NOMINALHEAD + Sg + Nom)(0 (vblex past sg) OR (vbser past sg) OR (vblex past p3 sg) OR (vbser past p3 sg) OR (vblex past p1 sg) OR (vbser past p1 sg)) ;
+REMOVE:PrtNotAdj A IF (-1 NOMINALHEAD + Sg + Nom)(0 (vblex past sg) OR (vbser past sg) OR (vbhaver past sg) OR (vbmod past sg) OR (vblex past p3 sg) OR (vbser past p3 sg) OR (vbhaver past p3 sg) OR (vbmod past p3 sg) OR (vblex past p1 sg) OR (vbser past p1 sg) OR (vbhaver past p1 sg) OR (vbmod past p1 sg)) ;
 
 #REMOVE 
  
@@ -631,8 +631,8 @@ REMOVE:PrtNotAdj A IF (-1 NOMINALHEAD + Sg + Nom)(0 (vblex past sg) OR (vbser pa
 
 SELECT:r51 Inf IF (*-1 MODV BARRIER V);
 
-REMOVE (vblex pl) OR (vbser pl) IF (-2 VFIN + Sg)(-1 (prn sg))(0 Inf);
-REMOVE (vblex pl) OR (vbser pl) IF (-1 N + Sg LINK *-1 VFIN + Sg BARRIER NPNH)(0 Inf);
+REMOVE (vblex pl) OR (vbser pl) OR (vbhaver pl) OR (vbmod pl) IF (-2 VFIN + Sg)(-1 (prn sg))(0 Inf);
+REMOVE (vblex pl) OR (vbser pl) OR (vbhaver pl) OR (vbmod pl) IF (-1 N + Sg LINK *-1 VFIN + Sg BARRIER NPNH)(0 Inf);
 
 # Imperative
 
@@ -670,30 +670,30 @@ REMOVE:SFregel N IF (0 Sup)(1 VFIN);
 
 # Present singular
 
-SELECT:r57 (vblex pri p3 sg) OR (vbser pri p3 sg) IF (-1 (np nom) OR (n sg nom) OR (prn p3 sg nom) LINK NOT *-1 CC BARRIER NPNHA)(1 (prn refl acc)) ;#TODO refl
+SELECT:r57 (vblex pri p3 sg) OR (vbser pri p3 sg) OR (vbhaver pri p3 sg) OR (vbmod pri p3 sg) IF (-1 (np nom) OR (n sg nom) OR (prn p3 sg nom) LINK NOT *-1 CC BARRIER NPNHA)(1 (prn refl acc)) ;#TODO refl
 
 
-REMOVE:test1 (vblex pri p1 sg) OR (vbser pri p1 sg) IF (NEGATE 0* ("prnpers" prn p1 sg nom)); 
-REMOVE:test2 (vblex pri p2 sg) OR (vbser pri p2 sg) IF (NEGATE 0* ("prnpers" p2 nt + prn + p2 + sg + nom)); # Tino! TODO what? +?
+REMOVE:test1 (vblex pri p1 sg) OR (vbser pri p1 sg) OR (vbhaver pri p1 sg) OR (vbmod pri p1 sg) IF (NEGATE 0* ("prnpers" prn p1 sg nom)); 
+REMOVE:test2 (vblex pri p2 sg) OR (vbser pri p2 sg) OR (vbhaver pri p2 sg) OR (vbmod pri p2 sg) IF (NEGATE 0* ("prnpers" p2 nt + prn + p2 + sg + nom)); # Tino! TODO what? +?
 
 SELECT 1Sg IF (-1 ("prnpers" p1 pron p1 sg nom));
 
-REMOVE:r58b (vblex pri p1 sg) OR (vbser pri p1 sg) IF (*-1 (n sg nom) OR (np sg nom) BARRIER NOT-ADV LINK NOT *1 Pron + 1Sg BARRIER CLB) ;
-SELECT:r59 (vblex pri p3 sg) OR (vbser pri p3 sg) IF (-1 (np nom) OR (n sg nom) LINK NOT *-1 CC BARRIER NPNHA OR S-BOUNDARY) ;
+REMOVE:r58b (vblex pri p1 sg) OR (vbser pri p1 sg) OR (vbhaver pri p1 sg) OR (vbmod pri p1 sg) IF (*-1 (n sg nom) OR (np sg nom) BARRIER NOT-ADV LINK NOT *1 Pron + 1Sg BARRIER CLB) ;
+SELECT:r59 (vblex pri p3 sg) OR (vbser pri p3 sg) OR (vbhaver pri p3 sg) OR (vbmod pri p3 sg) IF (-1 (np nom) OR (n sg nom) LINK NOT *-1 CC BARRIER NPNHA OR S-BOUNDARY) ;
 
 REMOVE 1Sg IF (-1 V)(0 Acc);
 	"at fáa høvi at..."
 
 
-REMOVE:CoordVerb (vblex pri p1 sg) OR (vbser pri p1 sg) IF (-1 CS OR CC LINK *-1C (vblex pri sg) OR (vbser pri sg) OR (vblex pri p3 sg) OR (vbser pri p3 sg) BARRIER 1Sg);
+REMOVE:CoordVerb (vblex pri p1 sg) OR (vbser pri p1 sg) OR (vbhaver pri p1 sg) OR (vbmod pri p1 sg) IF (-1 CS OR CC LINK *-1C (vblex pri sg) OR (vbser pri sg) OR (vbhaver pri sg) OR (vbmod pri sg) OR (vblex pri p3 sg) OR (vbser pri p3 sg) OR (vbhaver pri p3 sg) OR (vbmod pri p3 sg) BARRIER 1Sg);
 		 ## Hann legði høkuna á knappin og læt eygað hvíla.
 
 
-SELECT:r60 (vblex p2 sg) OR (vbser p2 sg) IF (*-1 ("prnpers" prn p2 nt p2 sg nom) BARRIER NOT-ADV);
+SELECT:r60 (vblex p2 sg) OR (vbser p2 sg) OR (vbhaver p2 sg) OR (vbmod p2 sg) IF (*-1 ("prnpers" prn p2 nt p2 sg nom) BARRIER NOT-ADV);
 
 # Present plural
 
-SELECT:r61 (vblex pl) OR (vbser pl) IF (-1 (n pl nom) OR (np pl nom) OR ("prnpers" prn p1 pl nom));
+SELECT:r61 (vblex pl) OR (vbser pl) OR (vbhaver pl) OR (vbmod pl) IF (-1 (n pl nom) OR (np pl nom) OR ("prnpers" prn p1 pl nom));
 
 
 # V + Refl
@@ -740,12 +740,12 @@ REMOVE Det IF (0 Pron)(NOT 1 A OR N);
 REMOVE ("prnpers" p3 f) IF (*-1 (imp sg) BARRIER ("prnpers" p2 nt));
    ## Tak við tær barnið og flýggja til Egyptalands.      
 
-REMOVE:r66 ("hannur") IF (0 ("prnpers" p3 m nom))(1 (vblex p3 sg) OR (vbser p3 sg));
+REMOVE:r66 ("hannur") IF (0 ("prnpers" p3 m nom))(1 (vblex p3 sg) OR (vbser p3 sg) OR (vbhaver p3 sg) OR (vbmod p3 sg));
        ## Han var her.
 
 SELECT (prn p1 pl nom) OR (prn p2 pl nom) OR (prn p3 pl nom) IF (1 ("sum"))(2 Pl);
 
-REMOVE:r66b (pl nom ind) IF (1 (n sg) OR (np sg) OR (vblex sg) OR (vbser sg) OR (v p3 sg));
+REMOVE:r66b (pl nom ind) IF (1 (n sg) OR (np sg) OR (vblex sg) OR (vbser sg) OR (vbhaver sg) OR (vbmod sg) OR (v p3 sg));
 
 REMOVE ("vit") IF (*-1 V + Pl BARRIER V)(0 (prn p1 pl nom));
 	## Eru vit helst...
@@ -833,7 +833,7 @@ SUBSTITUTE:sumPr (cnjsub) (pr) TARGET ("sum") (NOT -1 BOS OR COMMA);
 
 # CC Coordinate NPs
 
-SELECT (vblex pl) OR (vbser pl) IF (-1 N + Nom + Sg LINK *-1 CC BARRIER NPNH LINK -1 N + Nom);
+SELECT (vblex pl) OR (vbser pl) OR (vbhaver pl) OR (vbmod pl) IF (-1 N + Nom + Sg LINK *-1 CC BARRIER NPNH LINK -1 N + Nom);
 
 
 
@@ -931,22 +931,22 @@ MAP:PostPoss (@N←) TARGET Det + Poss + $$GENDER IF (-1 N + $$GENDER)(NEGATE 1 
 MAP (@→N) TARGET Num + $$NAGD IF (1 N + $$NAGD);
 MAP (@→N) TARGET Num + $$NAGD IF (1 A + $$NAGD)(2 N + $$NAGD);
 
-MAP:r72 (@SUBJ→) TARGET ("prnpers" prn p2 nt p2 sg nom) IF (*1 (vblex p2 sg) OR (vbser p2 sg) BARRIER VFIN);
-MAP:r73 (@←SUBJ) TARGET ("prnpers" prn p2 nt p2 sg nom) IF (*-1 (vblex p2 sg) OR (vbser p2 sg) BARRIER VFIN);
+MAP:r72 (@SUBJ→) TARGET ("prnpers" prn p2 nt p2 sg nom) IF (*1 (vblex p2 sg) OR (vbser p2 sg) OR (vbhaver p2 sg) OR (vbmod p2 sg) BARRIER VFIN);
+MAP:r73 (@←SUBJ) TARGET ("prnpers" prn p2 nt p2 sg nom) IF (*-1 (vblex p2 sg) OR (vbser p2 sg) OR (vbhaver p2 sg) OR (vbmod p2 sg) BARRIER VFIN);
 
-MAP:r72b (@SUBJ→) TARGET ("prnpers" prn p1 sg nom) IF (*1 (vblex p1 sg) OR (vbser p1 sg) BARRIER VFIN);
-MAP:r73b (@←SUBJ) TARGET ("prnpers" prn p1 sg nom) IF (*-1 (vblex p1 sg) OR (vbser p1 sg) BARRIER VFIN);
+MAP:r72b (@SUBJ→) TARGET ("prnpers" prn p1 sg nom) IF (*1 (vblex p1 sg) OR (vbser p1 sg) OR (vbhaver p1 sg) OR (vbmod p1 sg) BARRIER VFIN);
+MAP:r73b (@←SUBJ) TARGET ("prnpers" prn p1 sg nom) IF (*-1 (vblex p1 sg) OR (vbser p1 sg) OR (vbhaver p1 sg) OR (vbmod p1 sg) BARRIER VFIN);
 
-MAP:r75 (@←SUBJ) TARGET NOMINALHEAD + Sg + Nom IF (*-1 (vblex p3 sg) OR (vbser p3 sg) OR (vblex sg) OR (vbser sg) BARRIER NPNH LINK NOT -1 Nom);
-MAP:r75b (@←SUBJ) TARGET NOMINALHEAD + Sg + Nom IF (*-1 (vblex p3 sg) OR (vbser p3 sg) OR (vblex sg) OR (vbser sg) BARRIER NPNH) (0C Nom);
-MAP:r74 (@SUBJ→) TARGET NOMINALHEAD + Sg + Nom IF (*1 (vblex p3 sg) OR (vbser p3 sg) OR (vblex sg) OR (vbser sg));
+MAP:r75 (@←SUBJ) TARGET NOMINALHEAD + Sg + Nom IF (*-1 (vblex p3 sg) OR (vbser p3 sg) OR (vbhaver p3 sg) OR (vbmod p3 sg) OR (vblex sg) OR (vbser sg) OR (vbhaver sg) OR (vbmod sg) BARRIER NPNH LINK NOT -1 Nom);
+MAP:r75b (@←SUBJ) TARGET NOMINALHEAD + Sg + Nom IF (*-1 (vblex p3 sg) OR (vbser p3 sg) OR (vbhaver p3 sg) OR (vbmod p3 sg) OR (vblex sg) OR (vbser sg) OR (vbhaver sg) OR (vbmod sg) BARRIER NPNH) (0C Nom);
+MAP:r74 (@SUBJ→) TARGET NOMINALHEAD + Sg + Nom IF (*1 (vblex p3 sg) OR (vbser p3 sg) OR (vbhaver p3 sg) OR (vbmod p3 sg) OR (vblex sg) OR (vbser sg) OR (vbhaver sg) OR (vbmod sg));
 
 MAP:mapcoordsubj2 (@SUBJ→) TARGET N + Nom IF (*-1 CC BARRIER NPNH LINK -1 N + Nom)(1 VFIN + Pl);
 MAP:mapcoordsubj1 (@SUBJ→) TARGET N + Nom IF (1 CC LINK *1 N + Nom BARRIER NPNH LINK 1 VFIN + Pl);
 
 
-MAP:r76 (@SUBJ→) TARGET NOMINALHEAD + Pl + Nom IF (*1 (vblex pl) OR (vbser pl) BARRIER CLB);#(":" CLB) OR (";" CLB));
-MAP:r77 (@←SUBJ) TARGET NOMINALHEAD + Pl + Nom IF (*-1 (vblex pl) OR (vbser pl));
+MAP:r76 (@SUBJ→) TARGET NOMINALHEAD + Pl + Nom IF (*1 (vblex pl) OR (vbser pl) OR (vbhaver pl) OR (vbmod pl) BARRIER CLB);#(":" CLB) OR (";" CLB));
+MAP:r77 (@←SUBJ) TARGET NOMINALHEAD + Pl + Nom IF (*-1 (vblex pl) OR (vbser pl) OR (vbhaver pl) OR (vbmod pl));
 
 ADD:rOPR1 (@←OBJ) TARGET (n acc) OR (np acc) OR (prn acc) IF (*-1 OBJPREDVERB BARRIER Pr OR S-BOUNDARY)(*1 N + Acc BARRIER NPNHA);
 MAP:rOPR2 (@←OPRED) TARGET (n acc) OR (np acc) OR (prn acc) OR (adj acc) IF (*-1 NOMINALHEAD + Acc BARRIER NPNHA LINK *-1 OBJPREDVERB BARRIER S-BOUNDARY);
@@ -987,7 +987,7 @@ MAP:r87 (@→N) TARGET (det) IF (*1 N BARRIER V OR Adv);
 MAP:r88 (@→N) TARGET A + $$NAGD OR Det + $$NAGD IF (*1 N + $$NAGD OR Num + $$NAGD BARRIER NPNHA);
 MAP (@→N) TARGET Num IF (*1 N BARRIER NPNHA);
 
-MAP:r89 (@VFIN) TARGET (vblex pri) OR (vbser pri) OR (vblex past) OR (vbser past) OR (vblex imp) OR (vbser imp);
+MAP:r89 (@VFIN) TARGET (vblex pri) OR (vbser pri) OR (vbhaver pri) OR (vbmod pri) OR (vblex past) OR (vbser past) OR (vbhaver past) OR (vbmod past) OR (vblex imp) OR (vbser imp) OR (vbhaver imp) OR (vbmod imp);
 
 
 
@@ -1056,7 +1056,7 @@ REMOVE:r98 (@SPRED) IF (NOT *0 (@SUBJ));#(NOT *1 (@SUBJ));
 REMOVE:r99 (@OBJ) IF (*-1 Pr BARRIER NPNHA);
 REMOVE:r100 (@IOBJ) IF (*-1 Pr BARRIER NPNHA);
 
-REMOVE Acc IF (0 (sg @←SUBJ) LINK *-1 (vblex sg) OR (vbser sg) OR (vblex p3 sg) OR (vbser p3 sg) BARRIER (@←SUBJ))(*-1 S-BOUNDARY BARRIER (@SUBJ→)); 
+REMOVE Acc IF (0 (sg @←SUBJ) LINK *-1 (vblex sg) OR (vbser sg) OR (vbhaver sg) OR (vbmod sg) OR (vblex p3 sg) OR (vbser p3 sg) OR (vbhaver p3 sg) OR (vbmod p3 sg) BARRIER (@←SUBJ))(*-1 S-BOUNDARY BARRIER (@SUBJ→)); 
 
 REMOVE:r101 (@P←) IF (*-1 BOS OR (n acc) OR (np acc) OR (n dat) OR (np dat) OR (n nom) OR (np nom) OR V OR CLB OR CS BARRIER Pr OR CC LINK NOT 0 Pr);
 

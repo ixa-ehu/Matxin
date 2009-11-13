@@ -28,7 +28,8 @@
     ("Indef" . "ind")
     ("Cmp" . "comp")
     ("Superl" . "sup")
-    ("Prs" . "pres")
+    ("Prs" . "pri")			; we have no "pres"!
+    ("Ind" . "pri")
     ("Prt" . "past")
     ("1Sg" . "p1 sg")
     ("2Sg" . "p2 sg")
@@ -36,7 +37,6 @@
     ("Sg" . "sg")
     ("Pl" . "pl")
     ("Inf" . "inf")
-    ("Ind" . "pri")
     ("Imp" . "imp")
     ("Pr" . "pr")
     ("Sup" . "supn")
@@ -108,6 +108,37 @@
     (while (re-search-forward "(n\\( [^);]*)\\)" nil t)
       (replace-match "\\& OR (np\\1" 'fixedcase nil))))
 
+(defun fo-cg-replace-prnpers ()
+  "Check your diff after using this! (Eg. LIST 3PERS = \"eg\" ... ; becomes wrong)"
+  (save-excursion
+    (goto-char (point-min))
+    (while (re-search-forward "\"eg\"\\(  *prn\\)?" nil t)
+      (replace-match "\"prnpers\"\\1 p1" 'fixedcase nil))
+    (goto-char (point-min))
+    (while (re-search-forward "\"tú\"\\(  *prn\\)?" nil t)
+      (replace-match "\"prnpers\"\\1 p2 nt" 'fixedcase nil))
+    (goto-char (point-min))
+    (while (re-search-forward "\"tað\"\\(  *prn\\)?" nil t)
+      (replace-match "\"prnpers\"\\1 p3 nt" 'fixedcase nil))
+    (goto-char (point-min))
+    (while (re-search-forward "\"hon\"\\(  *prn\\)?" nil t)
+      (replace-match "\"prnpers\"\\1 p3 f" 'fixedcase nil))
+    (goto-char (point-min))
+    (while (re-search-forward "\"hann\"\\(  *prn\\)?" nil t)
+      (replace-match "\"prnpers\"\\1 p3 m" 'fixedcase nil))))
+
+(defun fo-cg-replace-vblex-vbser ()
+  (save-excursion
+    (goto-char (point-min))
+    (while (re-search-forward "(vblex\\( [^);]*)\\) OR (vbser\\1" nil t)
+      (replace-match "\\& OR (vbhaver\\1 OR (vbmod\\1" 'fixedcase nil))))
+
+(defun fo-cg-replace-vblex-vbser ()
+  (save-excursion
+    (goto-char (point-min))
+    (while (re-search-forward "(vblex\\( [^);]*)\\)" nil t)
+      (replace-match "\\& OR (vbser\\1 OR (vbhaver\\1 OR (vbmod\\1" 'fixedcase nil))))
+
 
 (defun fo-cg-replace-all ()
   "Replaces tags between SELECT/REMOVE/TARGET and
@@ -144,6 +175,7 @@ Maybe I should just write a parser instead."
     (fo-cg-replace-helper fo-cg-repls)
     (fo-cg-replace-arrows)
     (fo-cg-replace-n-np)
+    (fo-cg-replace-vblex-vbser)
     (setq case-fold-search old-case-fold-search))
 ;;   (occur "IF[^;]*\\()[^();]*OR\\|OR[^();]*(\\)")
   )
@@ -174,6 +206,7 @@ Maybe I should just write a parser instead."
       (fo-cg-replace-rules)
       (fo-cg-replace-arrows)
       (fo-cg-replace-n-np)
+      (fo-cg-replace-vblex-vbser)
       (setq case-fold-search old-case-fold-search)))
 ;;   (occur "IF[^;]*\\()[^();]*OR\\|OR[^();]*(\\)")
   )

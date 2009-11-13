@@ -27,7 +27,7 @@ LIST EOS = (<<<) (</s>); # vislcg and CG-2 together.
 # ========
 
 LIST N = n np ;
-LIST V = vblex ;
+LIST V = vblex vbser vbhaver vbmod ;
 LIST A = adj ;
 LIST Prop = np ;
 LIST Adv = adv ;
@@ -61,7 +61,7 @@ LIST Def = def ;
 LIST Indef = ind ;
 LIST Cmp = comp ;
 LIST Superl = sup ;
-LIST Prs = pres ;
+LIST Prs = pri ;
 LIST Prt = past ;
 LIST 1Sg = p1 sg ;
 LIST 2Sg = p2 sg ;
@@ -69,6 +69,7 @@ LIST 3Sg = p3 sg ;
 LIST Inf = inf ;
 LIST PrfPrc = pp ;#TODO is PrfPrc past participle?
 LIST PrsPrc = ppres ;#TODO is PrsPrC present participle?
+LIST Ind = pri past ; # (Prs Ind) = (pri), (Prt Ind) = (past)
 LIST Imp = imp ;
 LIST Sup = supn ;
 LIST Cmpnd = Cmpnd ;#we don't have compound handling yet
@@ -82,15 +83,15 @@ LIST V* = V* ;
 SET WORD = N | V | A | Pr | Pron | Adv | CC | CS | Interj | Num | ("\?") ;
 
 
-LIST TAG = n np vblex adj adv cnjcoo cnjsub ij pr prn p1 p2 p3 det pos nom acc gen
-dat m f nt sg pl def ind comp sup pres past inf pp
+LIST TAG = n np vblex vbser vbhaver vbmod adj adv cnjcoo cnjsub ij pr prn p1 p2 p3 det pos nom acc gen
+dat m f nt sg pl def ind comp sup pri past inf pp
 ppres supn imp ; #TODO the rest
 
 
 LIST NAGD = nom acc gen dat ;
 LIST GENDER = m f nt ;
 LIST NUMBER = sg pl ;
-LIST POS = n vblex adj adv pr prn ;
+LIST POS = n vblex vbser vbhaver vbmod adj adv pr prn ;
 
 # Sets
 # ====
@@ -145,8 +146,8 @@ LIST COPULA = "vera" "verða" ;
 
 LIST AUX = "kunna" "skula" "vera" "verða" "hava" ;
 
-LIST VFIN = pres past imp Sbj ; #TODO
-LIST Ind = pres past ; #TODO pri? (pri=present indicative)
+LIST VFIN = pri past imp Sbj ;#TODO
+LIST INDSBJ = pri past Sbj ;#TODO
 
 LIST NONTHIRDV = p1 p2 ;
 
@@ -294,11 +295,23 @@ SUBSTITUTE:SubNfaux=V (@-FAUXV) (@IAUX) TARGET V ;
 # --------------
 SUBSTITUTE:SubV=mv (vblex) (@←mv→ vblex) TARGET @MV ;
 SUBSTITUTE:SubV=aux (vblex) (@←aux→ vblex) TARGET @AUX ;
+SUBSTITUTE:SubV=mv (vbser) (@←mv→ vbser) TARGET @MV ;
+SUBSTITUTE:SubV=aux (vbser) (@←aux→ vbser) TARGET @AUX ;
+SUBSTITUTE:SubV=mv (vbhaver) (@←mv→ vbhaver) TARGET @MV ;
+SUBSTITUTE:SubV=aux (vbhaver) (@←aux→ vbhaver) TARGET @AUX ;
+SUBSTITUTE:SubV=mv (vbmod) (@←mv→ vbmod) TARGET @MV ;
+SUBSTITUTE:SubV=aux (vbmod) (@←aux→ vbmod) TARGET @AUX ;
 
 # infinite clauses:
 
 SUBSTITUTE:SubV=mvICL (vblex) (@←mv→ vblex) TARGET NONVFIN (0 @←OBJ LINK NEGATE *1 (@IMV) BARRIER S-BOUNDARY2 OR V) ;
 SUBSTITUTE:SubV=auxICL (vblex) (@←aux→ vblex) TARGET NONVFIN (0 AUX LINK 0 @←OBJ LINK *1 (@IMV) BARRIER S-BOUNDARY2 OR V) ;
+SUBSTITUTE:SubV=mvICL (vbser) (@←mv→ vbser) TARGET NONVFIN (0 @←OBJ LINK NEGATE *1 (@IMV) BARRIER S-BOUNDARY2 OR V) ;
+SUBSTITUTE:SubV=auxICL (vbser) (@←aux→ vbser) TARGET NONVFIN (0 AUX LINK 0 @←OBJ LINK *1 (@IMV) BARRIER S-BOUNDARY2 OR V) ;
+SUBSTITUTE:SubV=mvICL (vbhaver) (@←mv→ vbhaver) TARGET NONVFIN (0 @←OBJ LINK NEGATE *1 (@IMV) BARRIER S-BOUNDARY2 OR V) ;
+SUBSTITUTE:SubV=auxICL (vbhaver) (@←aux→ vbhaver) TARGET NONVFIN (0 AUX LINK 0 @←OBJ LINK *1 (@IMV) BARRIER S-BOUNDARY2 OR V) ;
+SUBSTITUTE:SubV=mvICL (vbmod) (@←mv→ vbmod) TARGET NONVFIN (0 @←OBJ LINK NEGATE *1 (@IMV) BARRIER S-BOUNDARY2 OR V) ;
+SUBSTITUTE:SubV=auxICL (vbmod) (@←aux→ vbmod) TARGET NONVFIN (0 AUX LINK 0 @←OBJ LINK *1 (@IMV) BARRIER S-BOUNDARY2 OR V) ;
 
 # the finite verb
 # ------------------
@@ -438,7 +451,7 @@ SETPARENT:r8d PrfPrc TO (*-1 VFIN BARRIER CS);
 
 ### CS
 
-#SETPARENT:TaId ("IÐ" @CVP) TO (-1 ("tá"));
+#SETPARENT:TaId ("IÐ" @CVP) TO (-1 ("tá"));
 #SETPARENT:TaId2 ("tá" Adv)(-1 COMMA) TO (-2 N);
 SETPARENT:RelCL (@CVP)(-1 COMMA) TO (-2 N);
 
