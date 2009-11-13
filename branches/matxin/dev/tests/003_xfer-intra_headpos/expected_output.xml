@@ -1,0 +1,16 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<corpus >
+<SENTENCE ref='1' alloc='0'>
+<CHUNK ref='1' type='is' alloc='0' si='top'>
+<NODE ref='2' alloc='3' slem='euskera' smi='NCMS000' UpCase='none' lem='euskara' pos='[IZE][ARR]' mi='[NUMS]' sem='[BIZ-]'>
+<NODE ref='1' alloc='0' slem='el' smi='DA0MS0' UpCase='none' lem='' mi='[NUMS]'>
+</NODE>
+</NODE>
+<CHUNK ref='2' type='p-buka' alloc='10' si='term'>
+<NODE ref='3' alloc='10' slem='.' smi='Fp' UpCase='none' lem='.' parol='Fp' unknown='transfer'>
+</NODE>
+</CHUNK>
+</CHUNK>
+</SENTENCE>
+
+</corpus>

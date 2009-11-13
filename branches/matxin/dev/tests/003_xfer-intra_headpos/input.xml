@@ -1,0 +1,15 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+<corpus>
+<SENTENCE ord='1' alloc='0'>
+<CHUNK ord='1' alloc='0' type='sn' si='top'>
+  <NODE ord='2' alloc='3' form='euskera' lem='euskera' mi='NCMS000'>
+    <NODE ord='1' alloc='0' form='El' lem='el' mi='DA0MS0'>
+    </NODE>
+  </NODE>
+  <CHUNK ord='2' alloc='10' type='F-term' si='term'>
+    <NODE ord='3' alloc='10' form='.' lem='.' mi='Fp'>
+    </NODE>
+  </CHUNK>
+</CHUNK>
+</SENTENCE>
+</corpus>
