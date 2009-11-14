@@ -104,4 +104,49 @@ TagOrderFile=/home/fran/local/share/matxin/matxin-es-eu/gram/es-eu/eu_morph_prep
       </program>
     </pipeline>
   </mode>
+
+  <mode name="es-eu-generation" install="no">
+    <pipeline>
+<!--
+      <program name="Analyzer -f">
+        <file name="es-eu.cfg"/>
+      </program>
+-->
+      <program name="matxin-xfer-lex">
+        <file option="-s" name="eu_sem.bin"/>
+        <file option="-c" name="eseu_chunk_type.txt"/>
+        <file option="-l" name="eseu_lex.txt"/>
+        <file name="eseu.bin"/>
+      </program>
+      <program name="matxin-xfer-intra">
+        <file name="intrachunk_move.dat"/>
+      </program>
+      <program name="matxin-xfer-inter"> <!-- 1 -->
+        <file name="interchunk_move1.dat"/>
+      </program>
+      <program name="matxin-xfer-prep">
+        <file name="eseu_prep.txt"/>
+      </program>
+      <program name="matxin-xfer-inter"> <!-- 2 -->
+        <file name="interchunk_move2.dat"/>
+      </program>
+      <program name="matxin-xfer-verb">
+        <file name="eseu_verb_transfer.dat"/>
+      </program>
+      <program name="matxin-xfer-inter"> 
+        <file name="interchunk_move3.dat"/>
+      </program>
+      <program name="matxin-gen-inter"> 
+        <file name="eu_interchunk_order.dat"/>
+      </program>
+      <program name="matxin-gen-intra"> 
+        <file name="eu_changes_sint.txt"/>
+        <file name="eu_intrachunk_order.dat"/>
+      </program>
+      <program name="matxin-gen-morph"> 
+        <file name="eu_morph_gen.bin"/>
+        <file name="eu_changes_morph.bin"/>
+      </program>
+    </pipeline>
+  </mode>
 </modes>

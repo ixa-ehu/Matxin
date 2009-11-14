@@ -33,6 +33,18 @@ bool DoVerbTrace = false;
 
 using namespace std;
 
+// Function prototypes 
+wstring lem(wstring nodo);
+wstring pos(wstring nodo);
+wstring mi(wstring nodo);
+wstring translate_si(wstring sub, wstring obj, wstring zobj);
+wstring get_AS_source(vector<wstring> patterns, wstring sub, wstring obj, wstring zobj, wstring trans, wstring pos_eus);
+wstring writeNODE_AS(wstring ref, wstring alloc, wstring &length, wstring rel, wstring AS_target, wstring synonyms);
+wstring procSYN (xmlTextReaderPtr reader);
+wstring procNODE_AS(xmlTextReaderPtr reader, wstring &ref, wstring &alloc, vector<wstring> &patterns, wstring &synonyms);
+wstring procNODE_notAS(xmlTextReaderPtr reader);
+wstring procCHUNK(xmlTextReaderPtr reader);
+wstring procSENTENCE (xmlTextReaderPtr reader);
 
 wstring lem(wstring nodo)
 {
@@ -67,6 +79,7 @@ wstring mi(wstring nodo)
 }
 
 
+// TODO: LANGUAGE INDEPENDENCE
 wstring translate_si(wstring sub, wstring obj, wstring zobj)
 {
   wstring si;
@@ -439,6 +452,7 @@ wstring procCHUNK(xmlTextReaderPtr reader)
   tagName = getTagName(reader);
   tagType = xmlTextReaderNodeType(reader);
 
+  // TODO: LANGUAGE INDEPENDENCE
   if (chunkType.substr(0, 4) == L"adi-")
   {
     vector<wstring> patterns;
@@ -489,7 +503,6 @@ wstring procCHUNK(xmlTextReaderPtr reader)
 
   return tree;
 }
-
 
 wstring procSENTENCE (xmlTextReaderPtr reader)
 {

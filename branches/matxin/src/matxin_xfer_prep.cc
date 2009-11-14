@@ -544,12 +544,18 @@ void endProgram(char *name)
 
 int main(int argc, char *argv[])
 {
-//  config cfg(argv);
 
   // Output in the locale's encoding
-  //locale::global(locale(""));
+
+  // This sets the C++ locale and affects to C and C++ locales.
+  // wcout.imbue doesn't have any effect but the in/out streams use the proper encoding.
+#ifndef NeXTBSD
+  locale::global(locale(""));
+#else
   // ^^^ doesn't work on mac, except with C/POSIX
   setlocale(LC_ALL, "");
+#endif
+
 
   if(argc < 2) {
      endProgram(argv[0]);

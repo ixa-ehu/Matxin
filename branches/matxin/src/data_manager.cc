@@ -950,8 +950,9 @@ vector<wstring>
   wstring prep = text_attrib(child_attributes, L"prep");
   int alloc = watoi(text_attrib(child_attributes, L"alloc").c_str()) - sentencealloc;
 
-  if (prep == L"")
+  if (prep == L"") {
     prep = L"-";
+  }
 
   if (prepositions[prep].size() == 0)
   {

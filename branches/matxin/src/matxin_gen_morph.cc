@@ -18,8 +18,7 @@ FSTProcessor fstp_measures;
 FSTProcessor fstp_pre_generation;
 FSTProcessor fstp_nolex_generation;
 
-bool DoGenTrace = false;
-
+bool DoGenTrace = true;
 
 // Hiztegi elebidunaren euskarazko ordainetik lehenengoa lortzen du.
 // IN:  Euskarazko ordainak ( ordain1[/ordain2]* )
@@ -68,9 +67,9 @@ wstring verb_generation(wstring lemma, wstring pos, wstring suf, wstring cas,
   wstring analysis, form, prefix, postposizio, pre_lemma, lemma_osoa;
   lemma_osoa = lemma;
 
-
-  if (DoGenTrace)
+  if (DoGenTrace) {
     wcerr << lemma << L" " << pos << L" " << mi << L" " << cas << endl;
+  }
 
   for (size_t i = 0; i < lemma.size(); i++)
   {
@@ -131,18 +130,21 @@ wstring verb_generation(wstring lemma, wstring pos, wstring suf, wstring cas,
 
   wstring pre_gen = L"^" + lemma_osoa + pos + L"$";
 
-  if (DoGenTrace)
+  if (DoGenTrace) {
     wcerr << pre_gen << endl;
+  }
 
   wstring lemmaMorf = fstp_pre_generation.biltrans(pre_gen);
 
-  if (DoGenTrace)
+  if (DoGenTrace) {
     wcerr << lemmaMorf << endl;
+  }
 
-  if (lemmaMorf[0] == L'^' and lemmaMorf[1] == L'@')
+  if (lemmaMorf[0] == L'^' and lemmaMorf[1] == L'@') {
     lemmaMorf = lemma + pos + mi;
-  else
+  } else {
     lemmaMorf = lemmaMorf.substr(1, lemmaMorf.size() - 2) + mi;
+  }
 
   for (size_t i = 0; i < int(lemmaMorf.size()); i++)
   {
@@ -153,20 +155,21 @@ wstring verb_generation(wstring lemma, wstring pos, wstring suf, wstring cas,
     }
   }
 
-  if (is_last)
+  // TODO: LANGUAGE INDEPENDENCE
+  if (is_last) {
     lemmaMorf = prefix + lemmaMorf;
+  }
 
-
-  if (DoGenTrace)
+  if (DoGenTrace) {
     wcerr << lemmaMorf << endl;
-
+  }
 
   analysis = L"^" + get_generation_order(prefix, lemmaMorf, chunk_mi, cas, head_sem) + L"$";
 
 
-  if (DoGenTrace)
+  if (DoGenTrace) {
     wcerr << analysis << endl;
-
+  }
 
   if (analysis.find(L"LemaMorf") != wstring::npos)
     analysis.replace(analysis.find(L"LemaMorf"), 8, lemmaMorf);
@@ -533,9 +536,9 @@ wstring generation(wstring lemma, wstring pos, wstring suf, wstring cas,
   lemma_osoa = lemma;
 
 
-  if (DoGenTrace)
-    wcerr << L"lem: " << lemma << L" pos: " << pos << L" suf: " << suf << L" mi: " << mi << L" cas: "
-          << cas << L" head_sem: " << head_sem << endl;
+  if (DoGenTrace) {
+    wcerr << L"lem: " << lemma << L" pos: " << pos << L" suf: " << suf << L" mi: " << mi << L" cas: " << cas << L" head_sem: " << head_sem << endl;
+  }
 
   for (size_t i = 0; i < lemma.size(); i++) 
   {
@@ -583,6 +586,7 @@ wstring generation(wstring lemma, wstring pos, wstring suf, wstring cas,
 
   size_t position1 = lemma.rfind(L' ');
   size_t position2 = lemma.rfind(L'-');
+
   if (position1 != wstring::npos or position2 != wstring::npos)
   {
     if (position1 == wstring::npos or (position2 != wstring::npos
@@ -604,20 +608,22 @@ wstring generation(wstring lemma, wstring pos, wstring suf, wstring cas,
 
   wstring pre_gen = L"^" + lemma_osoa + newpos + newmi + L"$";
 
-  if (DoGenTrace)
+  if (DoGenTrace) {
     wcerr << L"pre_gen: " << pre_gen << endl;
+  }
 
   //wstring lemmaMorf = fstp_pre_generation.biltrans(pre_gen);
   wstring lemmaMorf = fstp_generation.biltrans(pre_gen);
 
-  if (DoGenTrace)
+  if (DoGenTrace) {
     wcerr << L"lemmaMorf: " << lemmaMorf << endl;
+  }
 
   if (lemmaMorf[0] == L'^' and lemmaMorf[1] == L'@') {
     lemmaMorf = lemma + pos;
   } else {
     lemmaMorf = lemmaMorf.substr(1, lemmaMorf.size() - 2);
-    return lemmaMorf;
+//    return lemmaMorf;
   }
 
   if (suf != L"") {
@@ -636,16 +642,17 @@ wstring generation(wstring lemma, wstring pos, wstring suf, wstring cas,
   }
 
 
-  if (DoGenTrace)
+  if (DoGenTrace) {
     wcerr << lemmaMorf << L" " << mi << L" " << cas << L" " << head_sem << endl;
+  }
 
   // Get the generation order for the prefix, lemma+POS, morphological information,
   // case and 'head_sem' (this uses the 'eu_morph_preproc.dat' file)
   analysis = L"^" + get_generation_order(prefix, lemmaMorf, mi, cas, head_sem) + L"$";
 
-
-  if (DoGenTrace)
+  if (DoGenTrace) {
     wcerr << analysis << endl;
+  }
 
 
   // Here we re-order the parts of a lexical unit depending on the information
@@ -661,6 +668,11 @@ wstring generation(wstring lemma, wstring pos, wstring suf, wstring cas,
 
   // Replace Matxin-style '[' and ']' tags with
   // Apertium-style '<' and '>' tags for lttoolbox
+
+  wstring newanalysis = StringUtils::substitute(analysis, L"[", L"<");
+  analysis = StringUtils::substitute(newanalysis, L"]", L">");
+
+/*
   for (int i = 0; i < int(analysis.size()); i++)
   {
     if (analysis[i] == L'[')
@@ -673,16 +685,18 @@ wstring generation(wstring lemma, wstring pos, wstring suf, wstring cas,
       i--;
     }
   }
+*/
 
-
-  if (DoGenTrace)
+  if (DoGenTrace) {
     wcerr << L"GEN:" << analysis << endl;
+  }
 
   // Look up the analysis in the morphological generator
   form = fstp_generation.biltrans(analysis);
 
-  if (DoGenTrace)
+  if (DoGenTrace) {
     wcerr << L"GEN:" << form << endl;
+  }
 
   // Remove the '^' and '$' from the beginning and end
   // of the lexical unit
@@ -693,17 +707,18 @@ wstring generation(wstring lemma, wstring pos, wstring suf, wstring cas,
       form.find(L"<") != wstring::npos or form.find(L">") != wstring::npos)
   {
 
-    if (DoGenTrace)
+    if (DoGenTrace) { 
       wcerr << L"GEN nolex:" << analysis << endl;
+    }
 
     // Do non-lexical generation (guessing), using the 
     // file 'eu_morph_nolex.xml'
     form = fstp_nolex_generation.biltrans(analysis);
     form = form.substr(1, form.size() - 2);
 
-    if (DoGenTrace)
+    if (DoGenTrace) {
       wcerr << L"GEN nolex:" << form << endl;
-
+    }
 
     // If the word is still unknown, set the surface
     // form to be the same as the lemma
@@ -720,6 +735,12 @@ wstring generation(wstring lemma, wstring pos, wstring suf, wstring cas,
   // The final form is the pre_lemma, the inflected word form and
   // any postposition
   form = pre_lemma + form + postposizio;
+
+  if (form.size() == 0 or form[0] == L'@' or
+       form.find(L"<") != wstring::npos or form.find(L">") != wstring::npos)
+  {
+     form = lemma;
+  }
 
 /*
   if (DoGenTrace)
@@ -1023,20 +1044,35 @@ wstring procSENTENCE (xmlTextReaderPtr reader)
 
 int main(int argc, char *argv[])
 {
-//  config cfg(argv);
 
   // Set locale information
-  //locale::global(locale(""));
+
+  // This sets the C++ locale and affects to C and C++ locales.
+  // wcout.imbue doesn't have any effect but the in/out streams use the proper encoding.
+#ifndef NeXTBSD
+  locale::global(locale(""));
+#else
   // ^^^ doesn't work on mac, except with C/POSIX
   setlocale(LC_ALL, "");
+#endif
+
 
   if(argc < 2) {
     cout << "matxin-gen-morph fst_file [tag order file]" << endl;
     exit(-1);
   }
 
+  ifstream fin;
+  fin.open (argv[1]);
+  if (fin.fail()) {
+    wcerr << "File unreadable `" << argv[1] << "'" << endl;
+    exit(-1);
+  }
+  fin.close();
+
   // Initialisation of the transducer for morphological generation.
 //  FILE *transducer = fopen(cfg.Morpho_GenFile, "r");
+   
   FILE *transducer = fopen(argv[1], "r");
   fstp_generation.load(transducer);
   fclose(transducer);

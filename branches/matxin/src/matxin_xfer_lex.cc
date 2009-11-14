@@ -205,6 +205,8 @@ vector<wstring> disambiguate(wstring &full)
   wstring output = full;
   vector<wstring> ordainak;
 
+  // Això no és precisament disambiguació, és més aviat dit 
+  // 'selecció de la primera opció'
   for (size_t i = 0; i < output.size(); i++)
   {
     if (output[i] == L'/')
