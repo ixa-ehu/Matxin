@@ -18,7 +18,7 @@ FSTProcessor fstp_measures;
 FSTProcessor fstp_pre_generation;
 FSTProcessor fstp_nolex_generation;
 
-bool DoGenTrace = true;
+bool DoGenTrace = false;
 
 // Hiztegi elebidunaren euskarazko ordainetik lehenengoa lortzen du.
 // IN:  Euskarazko ordainak ( ordain1[/ordain2]* )
