@@ -759,6 +759,8 @@
     <e><p><l>sovna<s n="parol"/>[vblex]</l><r>fall<g><b/>asleep</g><s n="pos"/>[vblex]</r></p><par n="VBLEX_STD"/></e>
     <e><p><l>hitta<s n="parol"/>[vblex]</l><r>meet<s n="pos"/>[vblex]</r></p><par n="VBLEX_STD"/></e>
     <e><p><l>bróta<s n="parol"/>[vblex]</l><r>break<s n="pos"/>[vblex]</r></p><par n="VBLEX_STD"/></e>
+    <e><p><l>lýsa<s n="parol"/>[vblex]</l><r>shine<s n="pos"/>[vblex]</r></p><par n="VBLEX_STD"/></e>
+    <e><p><l>vísa<s n="parol"/>[vblex]</l><r>show<s n="pos"/>[vblex]</r></p><par n="VBLEX_STD"/></e>
     <e><p><l>heingja<s n="parol"/>[vblex]</l><r>hang<s n="pos"/>[vblex]</r></p><par n="VBLEX_STD"/></e>
     <e><p><l>flóta<s n="parol"/>[vblex]</l><r>float<s n="pos"/>[vblex]</r></p><par n="VBLEX_STD"/></e>
     <e><p><l>finna<s n="parol"/>[vblex]</l><r>find<s n="pos"/>[vblex]</r></p><par n="VBLEX_STD"/></e>

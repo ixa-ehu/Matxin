@@ -11184,7 +11184,13 @@
           <r>áa<s n="vblex"/><s n="inf"/></r>
         </p>
       </e>
-      <e>
+      <e c="fingið according to www.obg.fo TODO">
+        <p>
+          <l>ingið</l>
+          <r>áa<s n="vblex"/><s n="pp"/></r>
+        </p>
+      </e>
+      <e r="LR">
         <p>
           <l>ingin</l>
           <r>áa<s n="vblex"/><s n="pp"/></r>
@@ -28441,6 +28447,7 @@
     <e lm="tala"><i>tal</i><par n="bak/a__vblex"/></e>
     <e lm="eta"><i/><par n="/eta__vblex"/></e>
     <e lm="lýsa"><i>lýs</i><par n="lýs/a__vblex"/></e>
+    <e lm="vísa"><i>vís</i><par n="lýs/a__vblex"/></e>
     <e lm="láta"><i>l</i><par n="l/áta__vblex"/></e>
     <e lm="spretta"><i>sprett</i><par n="sprett/a__vblex"/></e>
     <e lm="geva"><i>g</i><par n="g/eva__vblex"/></e>
