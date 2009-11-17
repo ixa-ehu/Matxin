@@ -46,7 +46,7 @@ LIST Refl = Refl ;#TODO
 LIST Recipr = Recipr ;#TODO
 LIST Poss = pos ;
 LIST Interr = itg ;
-LIST IM = IM ;#TODO
+LIST IM = part ;
 
 LIST Nom = nom ;
 LIST Acc = acc ;
@@ -63,14 +63,15 @@ LIST Cmp = comp ;
 LIST Superl = sup ;
 LIST Prs = pri ;
 LIST Prt = past ;
-LIST 1Sg = p1 sg ;
-LIST 2Sg = p2 sg ;
-LIST 3Sg = p3 sg ;
+LIST 1Sg = (p1 sg) ;
+LIST 2Sg = (p2 sg) ;
+LIST 3Sg = (p3 sg) ;
 LIST Inf = inf ;
-LIST PrfPrc = pp ;#TODO is PrfPrc past participle?
-LIST PrsPrc = ppres ;#TODO is PrsPrC present participle?
+LIST PrfPrc = pp ;# past participle, at hava vorðin
+LIST PrsPrc = pprs ;# present participle, at vera verðandi
 LIST Ind = pri past ; # (Prs Ind) = (pri), (Prt Ind) = (past)
 LIST Imp = imp ;
+LIST Sbj = prs ;
 LIST Sup = supn ;
 LIST Cmpnd = Cmpnd ;#we don't have compound handling yet
 LIST CLB = clb sent cm ;
@@ -85,7 +86,7 @@ SET WORD = N | V | A | Pr | Pron | Adv | CC | CS | Interj | Num | ("\?") ;
 
 LIST TAG = n np vblex vbser vbhaver vbmod adj adv cnjcoo cnjsub ij pr prn p1 p2 p3 det pos nom acc gen
 dat m f nt sg pl def ind comp sup pri past inf pp
-ppres supn imp ; #TODO the rest
+pprs supn imp ; #TODO the rest
 
 
 LIST NAGD = nom acc gen dat ;
@@ -146,8 +147,8 @@ LIST COPULA = "vera" "verða" ;
 
 LIST AUX = "kunna" "skula" "vera" "verða" "hava" ;
 
-LIST VFIN = pri past imp Sbj ;#TODO
-LIST INDSBJ = pri past Sbj ;#TODO
+LIST VFIN = pri past imp prs ;
+LIST INDSBJ = pri past prs ;
 
 LIST NONTHIRDV = p1 p2 ;
 

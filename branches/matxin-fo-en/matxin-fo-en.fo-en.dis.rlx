@@ -45,7 +45,7 @@ LIST Refl = Refl ;#TODO
 LIST Recipr = Recipr ;#TODO
 LIST Poss = pos ;
 LIST Interr = itg ;
-LIST IM = IM ;#TODO
+LIST IM = part ;
 
 LIST Nom = nom ;
 LIST Acc = acc ;
@@ -62,15 +62,15 @@ LIST Cmp = comp ;
 LIST Superl = sup ;
 LIST Prs = pri ;
 LIST Prt = past ;
-LIST 1Sg = p1 sg ;
-LIST 2Sg = p2 sg ;
-LIST 3Sg = p3 sg ;
+LIST 1Sg = (p1 sg) ;
+LIST 2Sg = (p2 sg) ;
+LIST 3Sg = (p3 sg) ;
 LIST Inf = inf ;
-LIST PrfPrc = pp ;#TODO is PrfPrc past participle?
-LIST PrsPrc = ppres ;#TODO is PrsPrC present participle?
+LIST PrfPrc = pp ;# past participle, at hava vorðin
+LIST PrsPrc = pprs ;# present participle, at vera verðandi
 LIST Ind = pri past ; # (Prs Ind) = (pri), (Prt Ind) = (past)
 LIST Imp = imp ;
-LIST Sbj = Sbj ;#TODO
+LIST Sbj = prs ;
 LIST Sup = supn ;
 LIST Cmpnd = Cmpnd ;#we don't have compound handling yet
 LIST CLB = clb sent cm ;
@@ -83,7 +83,7 @@ LIST Guess = Guess ;#TODO
 
 LIST TAG = n np vblex vbser vbhaver vbmod adj adv cnjcoo cnjsub ij pr prn p1 p2 p3 det pos nom acc gen
 dat m f nt sg pl def ind comp sup pri past inf pp
-ppres supn imp ; #TODO the rest
+pprs supn imp ; #TODO the rest
 
 
 LIST NAGD = nom acc gen dat ;
@@ -129,8 +129,8 @@ LIST COPULA = "vera" "verða" ;
 LIST AUX = "kunna" "skula" "vera" "verða" "hava" "munna" ;
 
 # what we call pri, is in fao-dis.rle called Ind Prs, what we call past, is in fao-dis Ind Prt
-LIST VFIN = pri past imp Sbj ;#TODO
-LIST INDSBJ = pri past Sbj ;#TODO
+LIST VFIN = pri past imp prs ;
+LIST INDSBJ = pri past prs ;
 #LIST Ind = Prs Prt ;
 
 LIST NONTHIRDV = p1 p2 ;
@@ -153,7 +153,7 @@ LIST MOVEMENTVERB = "koma" "koyra" ;
 
 LIST THIRDSG = sg (p3 sg) ;
 LIST THIRDPL = sg (p3 pl) ;
-LIST THIRD = sg p3 pl ;
+LIST THIRD = p3 ;
 
 # Number sets
 
@@ -238,7 +238,7 @@ REMOVE Guess ; # If any other reading is possible.
 
 
 SELECT:r50 Inf IF (-1 ("at"));
-SELECT:r4 CS IF (0 ("at"))(1C Inf);
+SELECT:r4 IM IF (0 ("at"))(1C Inf);# TODO: was SELECT CS... should it be? -KBU
 SELECT:r2 Pr IF (0 ("á"))(1 Dat OR Acc);
 
 # at
@@ -903,6 +903,7 @@ MAP:r69 (@+FAUXV) TARGET AUX + VFIN IF (0*C VINFIN BARRIER CS OR CC);
 MAP (@-FAUXV) TARGET VINFIN IF (0 AUX)(*-1 AUX BARRIER V) ;
 MAP (@-FMAINV) TARGET VINFIN IF (*-1 AUX BARRIER V) ;
 MAP (@-FMAINV) TARGET VINFIN IF (-1 ("at") LINK -1* VFIN) ;
+# Tað fær tíðin at vísa<@-FMAINV>
 # BARRIER NOT-ADV-NOUN? or might be a bit strict? -KBU
 
 MAP:r70 (@+FAUXV) TARGET AUX + VFIN IF (*0 V BARRIER S-BOUNDARY2) ;

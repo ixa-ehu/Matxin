@@ -30,11 +30,13 @@
     <sdef n="vbhaver" c="Verb 'to have'"/>
     <sdef n="vbmod"   c="Modal verb"/>
     <sdef n="inf"     c="Infinitive"/>
+    <sdef n="imp"     c="Imperative"/>
     <sdef n="pp"      c="Past participle"/>
-    <sdef n="pprs"      c="Present participle"/>
+    <sdef n="pprs"    c="Present participle"/>
     <sdef n="supn"    c="Supine"/>
     <sdef n="past"    c="Past tense"/>
     <sdef n="pri"     c="Present tense (indicative)"/>
+    <sdef n="prs"     c="Present subjunctive"/>
     <sdef n="p1"      c="First person"/>
     <sdef n="p2"      c="Second person"/>
     <sdef n="p3"      c="Third person"/>
@@ -44,6 +46,7 @@
     <sdef n="itg"     c="Interrogative"/>
 
     <sdef n="pr"      c="Preposition"/>
+    <sdef n="part"    c="Infinitive marker ('particle')"/>
     <sdef n="cnjcoo"  c="Co-ordinate conjunction"/>
     <sdef n="cnjsub"  c="Sub-ordinate conjunction"/>
     <sdef n="cnjadv"  c="Adverbial conjunction"/>
@@ -11398,7 +11401,7 @@
       </e>
       <e>
         <p>
-          <l>arðst</l>
+          <l>arð</l>
           <r>erða<s n="vblex"/><s n="past"/><s n="p1"/><s n="sg"/></r>
         </p>
       </e>
@@ -11410,7 +11413,7 @@
       </e>
       <e>
         <p>
-          <l>arðst</l>
+          <l>arð</l>
           <r>erða<s n="vblex"/><s n="past"/><s n="p3"/><s n="sg"/></r>
         </p>
       </e>
@@ -11430,6 +11433,36 @@
         <p>
           <l>órðu</l>
           <r>erða<s n="vblex"/><s n="past"/><s n="p3"/><s n="pl"/></r>
+        </p>
+      </e>
+      <e>
+        <p>
+          <l>erð</l>
+          <r>erða<s n="vblex"/><s n="imp"/><s n="sg"/></r>
+        </p>
+      </e>
+      <e>
+        <p>
+          <l>erðið</l>
+          <r>erða<s n="vblex"/><s n="imp"/><s n="pl"/></r>
+        </p>
+      </e>
+      <e>
+        <p>
+          <l>erði</l>
+          <r>erða<s n="vblex"/><s n="prs"/></r>
+        </p>
+      </e>
+      <e>
+        <p>
+          <l>erðandi</l>
+          <r>erða<s n="vblex"/><s n="pprs"/></r>
+        </p>
+      </e>
+      <e>
+        <p>
+          <l>orðin</l>
+          <r>erða<s n="vblex"/><s n="pp"/></r>                 <!--kbu todo: pp is also adj-->
         </p>
       </e>
     </pardef>
@@ -26358,6 +26391,9 @@
     </pardef>
   </pardefs>
   <section id="main" type="standard">
+
+    <!-- Infinitive marker -->
+    <e lm="at"><p><l>at</l><r>at<s n="part"/></r></p></e>
 
     <!-- Prepositions -->
 
