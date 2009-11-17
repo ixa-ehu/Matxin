@@ -57,7 +57,7 @@
 
     <sdef n="det"     c="Determiner"/>
     <sdef n="pst"     c="Positive degree"/>
-    <sdef n="comp"     c="Comparative degree"/>
+    <sdef n="comp"    c="Comparative degree"/>
     <sdef n="sup"     c="Superlative degree"/>
 
     <sdef n="num"     c="Numeral"/>
@@ -11169,13 +11169,7 @@
       <e>
         <p>
           <l>ðu</l>
-          <r>a<s n="vblex"/><s n="past"/><s n="p1"/><s n="pl"/></r>
-        </p>
-      </e>
-      <e>
-        <p>
-          <l>ðu</l>
-          <r>a<s n="vblex"/><s n="past"/><s n="p2"/><s n="pl"/></r>
+          <r>a<s n="vblex"/><s n="past"/><s n="pl"/></r>
         </p>
       </e>
     </pardef>
@@ -11220,19 +11214,7 @@
       <e>
         <p>
           <l>áa</l>
-          <r>áa<s n="vblex"/><s n="pri"/><s n="p1"/><s n="pl"/></r>
-        </p>
-      </e>
-      <e>
-        <p>
-          <l>áa</l>
-          <r>áa<s n="vblex"/><s n="pri"/><s n="p2"/><s n="pl"/></r>
-        </p>
-      </e>
-      <e>
-        <p>
-          <l>áa</l>
-          <r>áa<s n="vblex"/><s n="pri"/><s n="p3"/><s n="pl"/></r>
+          <r>áa<s n="vblex"/><s n="pri"/><s n="pl"/></r>
         </p>
       </e>
       <e>
@@ -11256,19 +11238,7 @@
       <e>
         <p>
           <l>ingu</l>
-          <r>áa<s n="vblex"/><s n="past"/><s n="p1"/><s n="pl"/></r>
-        </p>
-      </e>
-      <e>
-        <p>
-          <l>ingu</l>
-          <r>áa<s n="vblex"/><s n="past"/><s n="p2"/><s n="pl"/></r>
-        </p>
-      </e>
-      <e>
-        <p>
-          <l>ingu</l>
-          <r>áa<s n="vblex"/><s n="past"/><s n="p3"/><s n="pl"/></r>
+          <r>áa<s n="vblex"/><s n="past"/><s n="pl"/></r>
         </p>
       </e>
     </pardef>
@@ -11302,19 +11272,7 @@
       <e>
         <p>
           <l>ulu</l>
-          <r>ula<s n="vblex"/><s n="pri"/><s n="p1"/><s n="pl"/></r>
-        </p>
-      </e>
-      <e>
-        <p>
-          <l>ulu</l>
-          <r>ula<s n="vblex"/><s n="pri"/><s n="p2"/><s n="pl"/></r>
-        </p>
-      </e>
-      <e>
-        <p>
-          <l>ulu</l>
-          <r>ula<s n="vblex"/><s n="pri"/><s n="p3"/><s n="pl"/></r>
+          <r>ula<s n="vblex"/><s n="pri"/><s n="pl"/></r>
         </p>
       </e>
       <e>
@@ -11338,19 +11296,7 @@
       <e>
         <p>
           <l>uldu</l>
-          <r>ula<s n="vblex"/><s n="past"/><s n="p1"/><s n="pl"/></r>
-        </p>
-      </e>
-      <e>
-        <p>
-          <l>uldu</l>
-          <r>ula<s n="vblex"/><s n="past"/><s n="p2"/><s n="pl"/></r>
-        </p>
-      </e>
-      <e>
-        <p>
-          <l>uldu</l>
-          <r>ula<s n="vblex"/><s n="past"/><s n="p3"/><s n="pl"/></r>
+          <r>ula<s n="vblex"/><s n="past"/><s n="pl"/></r>
         </p>
       </e>
     </pardef>
@@ -11384,19 +11330,7 @@
       <e>
         <p>
           <l>erða</l>
-          <r>erða<s n="vblex"/><s n="pri"/><s n="p1"/><s n="pl"/></r>
-        </p>
-      </e>
-      <e>
-        <p>
-          <l>erða</l>
-          <r>erða<s n="vblex"/><s n="pri"/><s n="p2"/><s n="pl"/></r>
-        </p>
-      </e>
-      <e>
-        <p>
-          <l>erða</l>
-          <r>erða<s n="vblex"/><s n="pri"/><s n="p3"/><s n="pl"/></r>
+          <r>erða<s n="vblex"/><s n="pri"/><s n="pl"/></r>
         </p>
       </e>
       <e>
@@ -11420,19 +11354,7 @@
       <e>
         <p>
           <l>órðu</l>
-          <r>erða<s n="vblex"/><s n="past"/><s n="p1"/><s n="pl"/></r>
-        </p>
-      </e>
-      <e>
-        <p>
-          <l>órðu</l>
-          <r>erða<s n="vblex"/><s n="past"/><s n="p2"/><s n="pl"/></r>
-        </p>
-      </e>
-      <e>
-        <p>
-          <l>órðu</l>
-          <r>erða<s n="vblex"/><s n="past"/><s n="p3"/><s n="pl"/></r>
+          <r>erða<s n="vblex"/><s n="past"/><s n="pl"/></r>
         </p>
       </e>
       <e>
@@ -11502,19 +11424,7 @@
       <e>
         <p>
           <l>íta</l>
-          <r>íta<s n="vblex"/><s n="pri"/><s n="p1"/><s n="pl"/></r>
-        </p>
-      </e>
-      <e>
-        <p>
-          <l>íta</l>
-          <r>íta<s n="vblex"/><s n="pri"/><s n="p2"/><s n="pl"/></r>
-        </p>
-      </e>
-      <e>
-        <p>
-          <l>íta</l>
-          <r>íta<s n="vblex"/><s n="pri"/><s n="p3"/><s n="pl"/></r>
+          <r>íta<s n="vblex"/><s n="pri"/><s n="pl"/></r>
         </p>
       </e>
       <e r="LR">
@@ -11556,19 +11466,7 @@
       <e>
         <p>
           <l>itu</l>
-          <r>íta<s n="vblex"/><s n="past"/><s n="p1"/><s n="pl"/></r>
-        </p>
-      </e>
-      <e>
-        <p>
-          <l>itu</l>
-          <r>íta<s n="vblex"/><s n="past"/><s n="p2"/><s n="pl"/></r>
-        </p>
-      </e>
-      <e>
-        <p>
-          <l>itu</l>
-          <r>íta<s n="vblex"/><s n="past"/><s n="p3"/><s n="pl"/></r>
+          <r>íta<s n="vblex"/><s n="past"/><s n="pl"/></r>
         </p>
       </e>
     </pardef>
@@ -11609,19 +11507,7 @@
       <e>
         <p>
           <l>esa</l>
-          <r>esa<s n="vblex"/><s n="pri"/><s n="p1"/><s n="pl"/></r>
-        </p>
-      </e>
-      <e>
-        <p>
-          <l>esa</l>
-          <r>esa<s n="vblex"/><s n="pri"/><s n="p2"/><s n="pl"/></r>
-        </p>
-      </e>
-      <e>
-        <p>
-          <l>esa</l>
-          <r>esa<s n="vblex"/><s n="pri"/><s n="p3"/><s n="pl"/></r>
+          <r>esa<s n="vblex"/><s n="pri"/><s n="pl"/></r>
         </p>
       </e>
       <e>
@@ -11645,19 +11531,7 @@
       <e>
         <p>
           <l>ósu</l>
-          <r>esa<s n="vblex"/><s n="past"/><s n="p1"/><s n="pl"/></r>
-        </p>
-      </e>
-      <e>
-        <p>
-          <l>ósu</l>
-          <r>esa<s n="vblex"/><s n="past"/><s n="p2"/><s n="pl"/></r>
-        </p>
-      </e>
-      <e>
-        <p>
-          <l>ósu</l>
-          <r>esa<s n="vblex"/><s n="past"/><s n="p3"/><s n="pl"/></r>
+          <r>esa<s n="vblex"/><s n="past"/><s n="pl"/></r>
         </p>
       </e>
     </pardef>
@@ -11692,19 +11566,7 @@
       <e>
         <p>
           <l>úgva</l>
-          <r>úgva<s n="vblex"/><s n="pri"/><s n="p1"/><s n="pl"/></r>
-        </p>
-      </e>
-      <e>
-        <p>
-          <l>úgva</l>
-          <r>úgva<s n="vblex"/><s n="pri"/><s n="p2"/><s n="pl"/></r>
-        </p>
-      </e>
-      <e>
-        <p>
-          <l>úgva</l>
-          <r>úgva<s n="vblex"/><s n="pri"/><s n="p3"/><s n="pl"/></r>
+          <r>úgva<s n="vblex"/><s n="pri"/><s n="pl"/></r>
         </p>
       </e>
       <e>
@@ -11746,19 +11608,7 @@
       <e>
         <p>
           <l>ugu</l>
-          <r>úgva<s n="vblex"/><s n="past"/><s n="p1"/><s n="pl"/></r>
-        </p>
-      </e>
-      <e>
-        <p>
-          <l>ugu</l>
-          <r>úgva<s n="vblex"/><s n="past"/><s n="p2"/><s n="pl"/></r>
-        </p>
-      </e>
-      <e>
-        <p>
-          <l>ugu</l>
-          <r>úgva<s n="vblex"/><s n="past"/><s n="p3"/><s n="pl"/></r>
+          <r>úgva<s n="vblex"/><s n="past"/><s n="pl"/></r>
         </p>
       </e>
     </pardef>
@@ -11792,19 +11642,7 @@
       <e>
         <p>
           <l>eva</l>
-          <r>eva<s n="vblex"/><s n="pri"/><s n="p1"/><s n="pl"/></r>
-        </p>
-      </e>
-      <e>
-        <p>
-          <l>eva</l>
-          <r>eva<s n="vblex"/><s n="pri"/><s n="p2"/><s n="pl"/></r>
-        </p>
-      </e>
-      <e>
-        <p>
-          <l>eva</l>
-          <r>eva<s n="vblex"/><s n="pri"/><s n="p3"/><s n="pl"/></r>
+          <r>eva<s n="vblex"/><s n="pri"/><s n="pl"/></r>
         </p>
       </e>
       <e>
@@ -11828,19 +11666,7 @@
       <e>
         <p>
           <l>óvu</l>
-          <r>eva<s n="vblex"/><s n="past"/><s n="p1"/><s n="pl"/></r>
-        </p>
-      </e>
-      <e>
-        <p>
-          <l>óvu</l>
-          <r>eva<s n="vblex"/><s n="past"/><s n="p2"/><s n="pl"/></r>
-        </p>
-      </e>
-      <e>
-        <p>
-          <l>óvu</l>
-          <r>eva<s n="vblex"/><s n="past"/><s n="p3"/><s n="pl"/></r>
+          <r>eva<s n="vblex"/><s n="past"/><s n="pl"/></r>
         </p>
       </e>
     </pardef>
@@ -11880,19 +11706,7 @@
       <e>
         <p>
           <l>ða</l>
-          <r>ða<s n="vblex"/><s n="pri"/><s n="p1"/><s n="pl"/></r>
-        </p>
-      </e>
-      <e>
-        <p>
-          <l>ða</l>
-          <r>ða<s n="vblex"/><s n="pri"/><s n="p2"/><s n="pl"/></r>
-        </p>
-      </e>
-      <e>
-        <p>
-          <l>ða</l>
-          <r>ða<s n="vblex"/><s n="pri"/><s n="p3"/><s n="pl"/></r>
+          <r>ða<s n="vblex"/><s n="pri"/><s n="pl"/></r>
         </p>
       </e>
       <e>
@@ -11916,19 +11730,7 @@
       <e>
         <p>
           <l>ddu</l>
-          <r>ða<s n="vblex"/><s n="past"/><s n="p1"/><s n="pl"/></r>
-        </p>
-      </e>
-      <e>
-        <p>
-          <l>ddu</l>
-          <r>ða<s n="vblex"/><s n="past"/><s n="p2"/><s n="pl"/></r>
-        </p>
-      </e>
-      <e>
-        <p>
-          <l>ddu</l>
-          <r>ða<s n="vblex"/><s n="past"/><s n="p3"/><s n="pl"/></r>
+          <r>ða<s n="vblex"/><s n="past"/><s n="pl"/></r>
         </p>
       </e>
     </pardef>
@@ -11968,19 +11770,7 @@
       <e>
         <p>
           <l>a</l>
-          <r>a<s n="vblex"/><s n="pri"/><s n="p1"/><s n="pl"/></r>
-        </p>
-      </e>
-      <e>
-        <p>
-          <l>a</l>
-          <r>a<s n="vblex"/><s n="pri"/><s n="p2"/><s n="pl"/></r>
-        </p>
-      </e>
-      <e>
-        <p>
-          <l>a</l>
-          <r>a<s n="vblex"/><s n="pri"/><s n="p3"/><s n="pl"/></r>
+          <r>a<s n="vblex"/><s n="pri"/><s n="pl"/></r>
         </p>
       </e>
       <e>
@@ -12004,19 +11794,7 @@
       <e>
         <p>
           <l>u</l>
-          <r>a<s n="vblex"/><s n="past"/><s n="p1"/><s n="pl"/></r>
-        </p>
-      </e>
-      <e>
-        <p>
-          <l>u</l>
-          <r>a<s n="vblex"/><s n="past"/><s n="p2"/><s n="pl"/></r>
-        </p>
-      </e>
-      <e>
-        <p>
-          <l>u</l>
-          <r>a<s n="vblex"/><s n="past"/><s n="p3"/><s n="pl"/></r>
+          <r>a<s n="vblex"/><s n="past"/><s n="pl"/></r>
         </p>
       </e>
     </pardef>
@@ -12056,19 +11834,7 @@
       <e>
         <p>
           <l>a</l>
-          <r>a<s n="vblex"/><s n="pri"/><s n="p1"/><s n="pl"/></r>
-        </p>
-      </e>
-      <e>
-        <p>
-          <l>a</l>
-          <r>a<s n="vblex"/><s n="pri"/><s n="p2"/><s n="pl"/></r>
-        </p>
-      </e>
-      <e>
-        <p>
-          <l>a</l>
-          <r>a<s n="vblex"/><s n="pri"/><s n="p3"/><s n="pl"/></r>
+          <r>a<s n="vblex"/><s n="pri"/><s n="pl"/></r>
         </p>
       </e>
       <e>
@@ -12092,19 +11858,7 @@
       <e>
         <p>
           <l>tu</l>
-          <r>a<s n="vblex"/><s n="past"/><s n="p1"/><s n="pl"/></r>
-        </p>
-      </e>
-      <e>
-        <p>
-          <l>tu</l>
-          <r>a<s n="vblex"/><s n="past"/><s n="p2"/><s n="pl"/></r>
-        </p>
-      </e>
-      <e>
-        <p>
-          <l>tu</l>
-          <r>a<s n="vblex"/><s n="past"/><s n="p3"/><s n="pl"/></r>
+          <r>a<s n="vblex"/><s n="past"/><s n="pl"/></r>
         </p>
       </e>
     </pardef>
@@ -12144,19 +11898,7 @@
       <e>
         <p>
           <l>ti</l>
-          <r>a<s n="vblex"/><s n="pri"/><s n="p1"/><s n="pl"/></r>
-        </p>
-      </e>
-      <e>
-        <p>
-          <l>ti</l>
-          <r>a<s n="vblex"/><s n="pri"/><s n="p2"/><s n="pl"/></r>
-        </p>
-      </e>
-      <e>
-        <p>
-          <l>ti</l>
-          <r>a<s n="vblex"/><s n="pri"/><s n="p3"/><s n="pl"/></r>
+          <r>a<s n="vblex"/><s n="pri"/><s n="pl"/></r>
         </p>
       </e>
       <e>
@@ -12180,19 +11922,7 @@
       <e>
         <p>
           <l>tu</l>
-          <r>a<s n="vblex"/><s n="past"/><s n="p1"/><s n="pl"/></r>
-        </p>
-      </e>
-      <e>
-        <p>
-          <l>tu</l>
-          <r>a<s n="vblex"/><s n="past"/><s n="p2"/><s n="pl"/></r>
-        </p>
-      </e>
-      <e>
-        <p>
-          <l>tu</l>
-          <r>a<s n="vblex"/><s n="past"/><s n="p3"/><s n="pl"/></r>
+          <r>a<s n="vblex"/><s n="past"/><s n="pl"/></r>
         </p>
       </e>
     </pardef>
@@ -12231,19 +11961,7 @@
       <e>
         <p>
           <l>a</l>
-          <r>a<s n="vblex"/><s n="pri"/><s n="p1"/><s n="pl"/></r>
-        </p>
-      </e>
-      <e>
-        <p>
-          <l>a</l>
-          <r>a<s n="vblex"/><s n="pri"/><s n="p2"/><s n="pl"/></r>
-        </p>
-      </e>
-      <e>
-        <p>
-          <l>a</l>
-          <r>a<s n="vblex"/><s n="pri"/><s n="p3"/><s n="pl"/></r>
+          <r>a<s n="vblex"/><s n="pri"/><s n="pl"/></r>
         </p>
       </e>
       <e>
@@ -12267,19 +11985,7 @@
       <e>
         <p>
           <l>aðu</l>
-          <r>a<s n="vblex"/><s n="past"/><s n="p1"/><s n="pl"/></r>
-        </p>
-      </e>
-      <e>
-        <p>
-          <l>aðu</l>
-          <r>a<s n="vblex"/><s n="past"/><s n="p2"/><s n="pl"/></r>
-        </p>
-      </e>
-      <e>
-        <p>
-          <l>aðu</l>
-          <r>a<s n="vblex"/><s n="past"/><s n="p3"/><s n="pl"/></r>
+          <r>a<s n="vblex"/><s n="past"/><s n="pl"/></r>
         </p>
       </e>
       <e>
@@ -12325,19 +12031,7 @@
       <e>
         <p>
           <l>era</l>
-          <r>era<s n="vblex"/><s n="pri"/><s n="p1"/><s n="pl"/></r>
-        </p>
-      </e>
-      <e>
-        <p>
-          <l>era</l>
-          <r>era<s n="vblex"/><s n="pri"/><s n="p2"/><s n="pl"/></r>
-        </p>
-      </e>
-      <e>
-        <p>
-          <l>era</l>
-          <r>era<s n="vblex"/><s n="pri"/><s n="p3"/><s n="pl"/></r>
+          <r>era<s n="vblex"/><s n="pri"/><s n="pl"/></r>
         </p>
       </e>
       <e>
@@ -12361,19 +12055,7 @@
       <e>
         <p>
           <l>óru</l>
-          <r>era<s n="vblex"/><s n="past"/><s n="p1"/><s n="pl"/></r>
-        </p>
-      </e>
-      <e>
-        <p>
-          <l>óru</l>
-          <r>era<s n="vblex"/><s n="past"/><s n="p2"/><s n="pl"/></r>
-        </p>
-      </e>
-      <e>
-        <p>
-          <l>óru</l>
-          <r>era<s n="vblex"/><s n="past"/><s n="p3"/><s n="pl"/></r>
+          <r>era<s n="vblex"/><s n="past"/><s n="pl"/></r>
         </p>
       </e>
       <e>
@@ -12419,19 +12101,7 @@
       <e>
         <p>
           <l>era</l>
-          <r>era<s n="vblex"/><s n="pri"/><s n="p1"/><s n="pl"/></r>
-        </p>
-      </e>
-      <e>
-        <p>
-          <l>era</l>
-          <r>era<s n="vblex"/><s n="pri"/><s n="p2"/><s n="pl"/></r>
-        </p>
-      </e>
-      <e>
-        <p>
-          <l>era</l>
-          <r>era<s n="vblex"/><s n="pri"/><s n="p3"/><s n="pl"/></r>
+          <r>era<s n="vblex"/><s n="pri"/><s n="pl"/></r>
         </p>
       </e>
       <e>
@@ -12455,19 +12125,7 @@
       <e>
         <p>
           <l>jørdu</l>
-          <r>era<s n="vblex"/><s n="past"/><s n="p1"/><s n="pl"/></r>
-        </p>
-      </e>
-      <e>
-        <p>
-          <l>jørdu</l>
-          <r>era<s n="vblex"/><s n="past"/><s n="p2"/><s n="pl"/></r>
-        </p>
-      </e>
-      <e>
-        <p>
-          <l>jørdu</l>
-          <r>era<s n="vblex"/><s n="past"/><s n="p3"/><s n="pl"/></r>
+          <r>era<s n="vblex"/><s n="past"/><s n="pl"/></r>
         </p>
       </e>
       <e>
@@ -12513,19 +12171,7 @@
       <e>
         <p>
           <l>a</l>
-          <r>a<s n="vblex"/><s n="pri"/><s n="p1"/><s n="pl"/></r>
-        </p>
-      </e>
-      <e>
-        <p>
-          <l>a</l>
-          <r>a<s n="vblex"/><s n="pri"/><s n="p2"/><s n="pl"/></r>
-        </p>
-      </e>
-      <e>
-        <p>
-          <l>a</l>
-          <r>a<s n="vblex"/><s n="pri"/><s n="p3"/><s n="pl"/></r>
+          <r>a<s n="vblex"/><s n="pri"/><s n="pl"/></r>
         </p>
       </e>
       <e>
@@ -12549,19 +12195,7 @@
       <e>
         <p>
           <l>ðu</l>
-          <r>a<s n="vblex"/><s n="past"/><s n="p1"/><s n="pl"/></r>
-        </p>
-      </e>
-      <e>
-        <p>
-          <l>ðu</l>
-          <r>a<s n="vblex"/><s n="past"/><s n="p2"/><s n="pl"/></r>
-        </p>
-      </e>
-      <e>
-        <p>
-          <l>ðu</l>
-          <r>a<s n="vblex"/><s n="past"/><s n="p3"/><s n="pl"/></r>
+          <r>a<s n="vblex"/><s n="past"/><s n="pl"/></r>
         </p>
       </e>
       <e>
@@ -12619,19 +12253,7 @@
       <e>
         <p>
           <l>a</l>
-          <r>a<s n="vblex"/><s n="pri"/><s n="p1"/><s n="pl"/></r>
-        </p>
-      </e>
-      <e>
-        <p>
-          <l>a</l>
-          <r>a<s n="vblex"/><s n="pri"/><s n="p2"/><s n="pl"/></r>
-        </p>
-      </e>
-      <e>
-        <p>
-          <l>a</l>
-          <r>a<s n="vblex"/><s n="pri"/><s n="p3"/><s n="pl"/></r>
+          <r>a<s n="vblex"/><s n="pri"/><s n="pl"/></r>
         </p>
       </e>
       <e>
@@ -12655,19 +12277,7 @@
       <e>
         <p>
           <l>tu</l>
-          <r>a<s n="vblex"/><s n="past"/><s n="p1"/><s n="pl"/></r>
-        </p>
-      </e>
-      <e>
-        <p>
-          <l>tu</l>
-          <r>a<s n="vblex"/><s n="past"/><s n="p2"/><s n="pl"/></r>
-        </p>
-      </e>
-      <e>
-        <p>
-          <l>tu</l>
-          <r>a<s n="vblex"/><s n="past"/><s n="p3"/><s n="pl"/></r>
+          <r>a<s n="vblex"/><s n="past"/><s n="pl"/></r>
         </p>
       </e>
     </pardef>
@@ -12707,19 +12317,7 @@
       <e>
         <p>
           <l>a</l>
-          <r>a<s n="vblex"/><s n="pri"/><s n="p1"/><s n="pl"/></r>
-        </p>
-      </e>
-      <e>
-        <p>
-          <l>a</l>
-          <r>a<s n="vblex"/><s n="pri"/><s n="p2"/><s n="pl"/></r>
-        </p>
-      </e>
-      <e>
-        <p>
-          <l>a</l>
-          <r>a<s n="vblex"/><s n="pri"/><s n="p3"/><s n="pl"/></r>
+          <r>a<s n="vblex"/><s n="pri"/><s n="pl"/></r>
         </p>
       </e>
       <e>
@@ -12743,19 +12341,7 @@
       <e>
         <p>
           <l>du</l>
-          <r>a<s n="vblex"/><s n="past"/><s n="p1"/><s n="pl"/></r>
-        </p>
-      </e>
-      <e>
-        <p>
-          <l>du</l>
-          <r>a<s n="vblex"/><s n="past"/><s n="p2"/><s n="pl"/></r>
-        </p>
-      </e>
-      <e>
-        <p>
-          <l>du</l>
-          <r>a<s n="vblex"/><s n="past"/><s n="p3"/><s n="pl"/></r>
+          <r>a<s n="vblex"/><s n="past"/><s n="pl"/></r>
         </p>
       </e>
       <e>
@@ -12794,19 +12380,7 @@
       <e>
         <p>
           <l>a</l>
-          <r>a<s n="vblex"/><s n="pri"/><s n="p1"/><s n="pl"/></r>
-        </p>
-      </e>
-      <e>
-        <p>
-          <l>a</l>
-          <r>a<s n="vblex"/><s n="pri"/><s n="p2"/><s n="pl"/></r>
-        </p>
-      </e>
-      <e>
-        <p>
-          <l>a</l>
-          <r>a<s n="vblex"/><s n="pri"/><s n="p3"/><s n="pl"/></r>
+          <r>a<s n="vblex"/><s n="pri"/><s n="pl"/></r>
         </p>
       </e>
       <e>
@@ -12830,19 +12404,7 @@
       <e>
         <p>
           <l>aðu</l>
-          <r>a<s n="vblex"/><s n="past"/><s n="p1"/><s n="pl"/></r>
-        </p>
-      </e>
-      <e>
-        <p>
-          <l>aðu</l>
-          <r>a<s n="vblex"/><s n="past"/><s n="p2"/><s n="pl"/></r>
-        </p>
-      </e>
-      <e>
-        <p>
-          <l>aðu</l>
-          <r>a<s n="vblex"/><s n="past"/><s n="p3"/><s n="pl"/></r>
+          <r>a<s n="vblex"/><s n="past"/><s n="pl"/></r>
         </p>
       </e>
     </pardef>
@@ -12877,19 +12439,7 @@
       <e>
         <p>
           <l>a</l>
-          <r>a<s n="vblex"/><s n="pri"/><s n="p1"/><s n="pl"/></r>
-        </p>
-      </e>
-      <e>
-        <p>
-          <l>a</l>
-          <r>a<s n="vblex"/><s n="pri"/><s n="p2"/><s n="pl"/></r>
-        </p>
-      </e>
-      <e>
-        <p>
-          <l>a</l>
-          <r>a<s n="vblex"/><s n="pri"/><s n="p3"/><s n="pl"/></r>
+          <r>a<s n="vblex"/><s n="pri"/><s n="pl"/></r>
         </p>
       </e>
       <e>
@@ -12913,19 +12463,7 @@
       <e>
         <p>
           <l>óu</l>
-          <r>a<s n="vblex"/><s n="past"/><s n="p1"/><s n="pl"/></r>
-        </p>
-      </e>
-      <e>
-        <p>
-          <l>óu</l>
-          <r>a<s n="vblex"/><s n="past"/><s n="p2"/><s n="pl"/></r>
-        </p>
-      </e>
-      <e>
-        <p>
-          <l>óu</l>
-          <r>a<s n="vblex"/><s n="past"/><s n="p3"/><s n="pl"/></r>
+          <r>a<s n="vblex"/><s n="past"/><s n="pl"/></r>
         </p>
       </e>
     </pardef>
@@ -12960,19 +12498,7 @@
       <e>
         <p>
           <l>aka</l>
-          <r>aka<s n="vblex"/><s n="pri"/><s n="p1"/><s n="pl"/></r>
-        </p>
-      </e>
-      <e>
-        <p>
-          <l>aka</l>
-          <r>aka<s n="vblex"/><s n="pri"/><s n="p2"/><s n="pl"/></r>
-        </p>
-      </e>
-      <e>
-        <p>
-          <l>aka</l>
-          <r>aka<s n="vblex"/><s n="pri"/><s n="p3"/><s n="pl"/></r>
+          <r>aka<s n="vblex"/><s n="pri"/><s n="pl"/></r>
         </p>
       </e>
       <e>
@@ -12996,19 +12522,7 @@
       <e>
         <p>
           <l>óku</l>
-          <r>aka<s n="vblex"/><s n="past"/><s n="p1"/><s n="pl"/></r>
-        </p>
-      </e>
-      <e>
-        <p>
-          <l>óku</l>
-          <r>aka<s n="vblex"/><s n="past"/><s n="p2"/><s n="pl"/></r>
-        </p>
-      </e>
-      <e>
-        <p>
-          <l>óku</l>
-          <r>aka<s n="vblex"/><s n="past"/><s n="p3"/><s n="pl"/></r>
+          <r>aka<s n="vblex"/><s n="past"/><s n="pl"/></r>
         </p>
       </e>
     </pardef>
@@ -13042,19 +12556,7 @@
       <e>
         <p>
           <l>áta</l>
-          <r>áta<s n="vblex"/><s n="pri"/><s n="p1"/><s n="pl"/></r>
-        </p>
-      </e>
-      <e>
-        <p>
-          <l>áta</l>
-          <r>áta<s n="vblex"/><s n="pri"/><s n="p2"/><s n="pl"/></r>
-        </p>
-      </e>
-      <e>
-        <p>
-          <l>áta</l>
-          <r>áta<s n="vblex"/><s n="pri"/><s n="p3"/><s n="pl"/></r>
+          <r>áta<s n="vblex"/><s n="pri"/><s n="pl"/></r>
         </p>
       </e>
       <e>
@@ -13078,19 +12580,7 @@
       <e>
         <p>
           <l>ótu</l>
-          <r>áta<s n="vblex"/><s n="past"/><s n="p1"/><s n="pl"/></r>
-        </p>
-      </e>
-      <e>
-        <p>
-          <l>ótu</l>
-          <r>áta<s n="vblex"/><s n="past"/><s n="p2"/><s n="pl"/></r>
-        </p>
-      </e>
-      <e>
-        <p>
-          <l>ótu</l>
-          <r>áta<s n="vblex"/><s n="past"/><s n="p3"/><s n="pl"/></r>
+          <r>áta<s n="vblex"/><s n="past"/><s n="pl"/></r>
         </p>
       </e>
     </pardef>
@@ -13131,19 +12621,7 @@
       <e>
         <p>
           <l>ara</l>
-          <r>ara<s n="vblex"/><s n="pri"/><s n="p1"/><s n="pl"/></r>
-        </p>
-      </e>
-      <e>
-        <p>
-          <l>ara</l>
-          <r>ara<s n="vblex"/><s n="pri"/><s n="p2"/><s n="pl"/></r>
-        </p>
-      </e>
-      <e>
-        <p>
-          <l>ara</l>
-          <r>ara<s n="vblex"/><s n="pri"/><s n="p3"/><s n="pl"/></r>
+          <r>ara<s n="vblex"/><s n="pri"/><s n="pl"/></r>
         </p>
       </e>
       <e>
@@ -13167,19 +12645,7 @@
       <e>
         <p>
           <l>óru</l>
-          <r>ara<s n="vblex"/><s n="past"/><s n="p1"/><s n="pl"/></r>
-        </p>
-      </e>
-      <e>
-        <p>
-          <l>óru</l>
-          <r>ara<s n="vblex"/><s n="past"/><s n="p2"/><s n="pl"/></r>
-        </p>
-      </e>
-      <e>
-        <p>
-          <l>óru</l>
-          <r>ara<s n="vblex"/><s n="past"/><s n="p3"/><s n="pl"/></r>
+          <r>ara<s n="vblex"/><s n="past"/><s n="pl"/></r>
         </p>
       </e>
     </pardef>
@@ -13213,19 +12679,7 @@
       <e>
         <p>
           <l>oma</l>
-          <r>oma<s n="vblex"/><s n="pri"/><s n="p1"/><s n="pl"/></r>
-        </p>
-      </e>
-      <e>
-        <p>
-          <l>oma</l>
-          <r>oma<s n="vblex"/><s n="pri"/><s n="p2"/><s n="pl"/></r>
-        </p>
-      </e>
-      <e>
-        <p>
-          <l>oma</l>
-          <r>oma<s n="vblex"/><s n="pri"/><s n="p3"/><s n="pl"/></r>
+          <r>oma<s n="vblex"/><s n="pri"/><s n="pl"/></r>
         </p>
       </e>
       <e>
@@ -13249,19 +12703,7 @@
       <e>
         <p>
           <l>omu</l>
-          <r>oma<s n="vblex"/><s n="past"/><s n="p1"/><s n="pl"/></r>
-        </p>
-      </e>
-      <e>
-        <p>
-          <l>omu</l>
-          <r>oma<s n="vblex"/><s n="past"/><s n="p2"/><s n="pl"/></r>
-        </p>
-      </e>
-      <e>
-        <p>
-          <l>omu</l>
-          <r>oma<s n="vblex"/><s n="past"/><s n="p3"/><s n="pl"/></r>
+          <r>oma<s n="vblex"/><s n="past"/><s n="pl"/></r>
         </p>
       </e>
     </pardef>
@@ -13295,7 +12737,7 @@
       <e>
         <p>
           <l>iga</l>
-          <r>iga<s n="vblex"/><s n="pri"/><s n="p1"/><s n="pl"/></r>
+          <r>iga<s n="vblex"/><s n="pri"/><s n="pl"/></r>
         </p>
       </e>
       <e>
@@ -13319,19 +12761,7 @@
       <e>
         <p>
           <l>øgðu</l>
-          <r>iga<s n="vblex"/><s n="past"/><s n="p1"/><s n="pl"/></r>
-        </p>
-      </e>
-      <e>
-        <p>
-          <l>øgðu</l>
-          <r>iga<s n="vblex"/><s n="past"/><s n="p2"/><s n="pl"/></r>
-        </p>
-      </e>
-      <e>
-        <p>
-          <l>øgðu</l>
-          <r>iga<s n="vblex"/><s n="past"/><s n="p3"/><s n="pl"/></r>
+          <r>iga<s n="vblex"/><s n="past"/><s n="pl"/></r>
         </p>
       </e>
     </pardef>
@@ -13383,19 +12813,7 @@
       <e>
         <p>
           <l>ja</l>
-          <r>ja<s n="vblex"/><s n="pri"/><s n="p1"/><s n="pl"/></r>
-        </p>
-      </e>
-      <e>
-        <p>
-          <l>ja</l>
-          <r>ja<s n="vblex"/><s n="pri"/><s n="p2"/><s n="pl"/></r>
-        </p>
-      </e>
-      <e>
-        <p>
-          <l>ja</l>
-          <r>ja<s n="vblex"/><s n="pri"/><s n="p3"/><s n="pl"/></r>
+          <r>ja<s n="vblex"/><s n="pri"/><s n="pl"/></r>
         </p>
       </e>
       <e>
@@ -13419,19 +12837,7 @@
       <e>
         <p>
           <l>du</l>
-          <r>ja<s n="vblex"/><s n="past"/><s n="p1"/><s n="pl"/></r>
-        </p>
-      </e>
-      <e>
-        <p>
-          <l>du</l>
-          <r>ja<s n="vblex"/><s n="past"/><s n="p2"/><s n="pl"/></r>
-        </p>
-      </e>
-      <e>
-        <p>
-          <l>du</l>
-          <r>ja<s n="vblex"/><s n="past"/><s n="p3"/><s n="pl"/></r>
+          <r>ja<s n="vblex"/><s n="past"/><s n="pl"/></r>
         </p>
       </e>
     </pardef>
@@ -13465,19 +12871,7 @@
       <e>
         <p>
           <l>ja</l>
-          <r>ja<s n="vblex"/><s n="pri"/><s n="p1"/><s n="pl"/></r>
-        </p>
-      </e>
-      <e>
-        <p>
-          <l>ja</l>
-          <r>ja<s n="vblex"/><s n="pri"/><s n="p2"/><s n="pl"/></r>
-        </p>
-      </e>
-      <e>
-        <p>
-          <l>ja</l>
-          <r>ja<s n="vblex"/><s n="pri"/><s n="p3"/><s n="pl"/></r>
+          <r>ja<s n="vblex"/><s n="pri"/><s n="pl"/></r>
         </p>
       </e>
       <e>
@@ -13501,19 +12895,7 @@
       <e>
         <p>
           <l>du</l>
-          <r>ja<s n="vblex"/><s n="past"/><s n="p1"/><s n="pl"/></r>
-        </p>
-      </e>
-      <e>
-        <p>
-          <l>du</l>
-          <r>ja<s n="vblex"/><s n="past"/><s n="p2"/><s n="pl"/></r>
-        </p>
-      </e>
-      <e>
-        <p>
-          <l>du</l>
-          <r>ja<s n="vblex"/><s n="past"/><s n="p3"/><s n="pl"/></r>
+          <r>ja<s n="vblex"/><s n="past"/><s n="pl"/></r>
         </p>
       </e>
     </pardef>
@@ -13547,19 +12929,7 @@
       <e>
         <p>
           <l>a</l>
-          <r>ja<s n="vblex"/><s n="pri"/><s n="p1"/><s n="pl"/></r>
-        </p>
-      </e>
-      <e>
-        <p>
-          <l>a</l>
-          <r>ja<s n="vblex"/><s n="pri"/><s n="p2"/><s n="pl"/></r>
-        </p>
-      </e>
-      <e>
-        <p>
-          <l>a</l>
-          <r>ja<s n="vblex"/><s n="pri"/><s n="p3"/><s n="pl"/></r>
+          <r>ja<s n="vblex"/><s n="pri"/><s n="pl"/></r>
         </p>
       </e>
       <e>
@@ -13583,19 +12953,7 @@
       <e>
         <p>
           <l>du</l>
-          <r>ja<s n="vblex"/><s n="past"/><s n="p1"/><s n="pl"/></r>
-        </p>
-      </e>
-      <e>
-        <p>
-          <l>du</l>
-          <r>ja<s n="vblex"/><s n="past"/><s n="p2"/><s n="pl"/></r>
-        </p>
-      </e>
-      <e>
-        <p>
-          <l>du</l>
-          <r>ja<s n="vblex"/><s n="past"/><s n="p3"/><s n="pl"/></r>
+          <r>ja<s n="vblex"/><s n="past"/><s n="pl"/></r>
         </p>
       </e>
     </pardef>
@@ -13629,19 +12987,7 @@
       <e>
         <p>
           <l>íggja</l>
-          <r>íggja<s n="vblex"/><s n="pri"/><s n="p1"/><s n="pl"/></r>
-        </p>
-      </e>
-      <e>
-        <p>
-          <l>íggja</l>
-          <r>íggja<s n="vblex"/><s n="pri"/><s n="p2"/><s n="pl"/></r>
-        </p>
-      </e>
-      <e>
-        <p>
-          <l>íggja</l>
-          <r>íggja<s n="vblex"/><s n="pri"/><s n="p3"/><s n="pl"/></r>
+          <r>íggja<s n="vblex"/><s n="pri"/><s n="pl"/></r>
         </p>
       </e>
       <e>
@@ -13665,19 +13011,7 @@
       <e>
         <p>
           <l>óu</l>
-          <r>íggja<s n="vblex"/><s n="past"/><s n="p1"/><s n="pl"/></r>
-        </p>
-      </e>
-      <e>
-        <p>
-          <l>óu</l>
-          <r>íggja<s n="vblex"/><s n="past"/><s n="p2"/><s n="pl"/></r>
-        </p>
-      </e>
-      <e>
-        <p>
-          <l>óu</l>
-          <r>íggja<s n="vblex"/><s n="past"/><s n="p3"/><s n="pl"/></r>
+          <r>íggja<s n="vblex"/><s n="past"/><s n="pl"/></r>
         </p>
       </e>
       <e>
@@ -13794,19 +13128,7 @@
       <e>
         <p>
           <l>eta</l>
-          <r>eta<s n="vblex"/><s n="pri"/><s n="p1"/><s n="pl"/></r>
-        </p>
-      </e>
-      <e>
-        <p>
-          <l>eta</l>
-          <r>eta<s n="vblex"/><s n="pri"/><s n="p2"/><s n="pl"/></r>
-        </p>
-      </e>
-      <e>
-        <p>
-          <l>eta</l>
-          <r>eta<s n="vblex"/><s n="pri"/><s n="p3"/><s n="pl"/></r>
+          <r>eta<s n="vblex"/><s n="pri"/><s n="pl"/></r>
         </p>
       </e>
       <e>
@@ -13830,19 +13152,7 @@
       <e>
         <p>
           <l>ótu</l>
-          <r>eta<s n="vblex"/><s n="past"/><s n="p1"/><s n="pl"/></r>
-        </p>
-      </e>
-      <e>
-        <p>
-          <l>ótu</l>
-          <r>eta<s n="vblex"/><s n="past"/><s n="p2"/><s n="pl"/></r>
-        </p>
-      </e>
-      <e>
-        <p>
-          <l>ótu</l>
-          <r>eta<s n="vblex"/><s n="past"/><s n="p3"/><s n="pl"/></r>
+          <r>eta<s n="vblex"/><s n="past"/><s n="pl"/></r>
         </p>
       </e>
       <!-- Supine ? -->
@@ -13878,19 +13188,7 @@
       <e>
         <p>
           <l>eru</l>
-          <r>vera<s n="vbser"/><s n="pri"/><s n="p1"/><s n="pl"/></r>
-        </p>
-      </e>
-      <e>
-        <p>
-          <l>eru</l>
-          <r>vera<s n="vbser"/><s n="pri"/><s n="p2"/><s n="pl"/></r>
-        </p>
-      </e>
-      <e>
-        <p>
-          <l>eru</l>
-          <r>vera<s n="vbser"/><s n="pri"/><s n="p3"/><s n="pl"/></r>
+          <r>vera<s n="vbser"/><s n="pri"/><s n="pl"/></r>
         </p>
       </e>
       <e>
@@ -13914,19 +13212,7 @@
       <e>
         <p>
           <l>vóru</l>
-          <r>vera<s n="vbser"/><s n="past"/><s n="p1"/><s n="pl"/></r>
-        </p>
-      </e>
-      <e>
-        <p>
-          <l>vóru</l>
-          <r>vera<s n="vbser"/><s n="past"/><s n="p2"/><s n="pl"/></r>
-        </p>
-      </e>
-      <e>
-        <p>
-          <l>vóru</l>
-          <r>vera<s n="vbser"/><s n="past"/><s n="p3"/><s n="pl"/></r>
+          <r>vera<s n="vbser"/><s n="past"/><s n="pl"/></r>
         </p>
       </e>
       <!-- Supine ? -->
@@ -13967,19 +13253,7 @@
       <e>
         <p>
           <l>eru</l>
-          <r>vera<s n="vblex"/><s n="pri"/><s n="p1"/><s n="pl"/></r>
-        </p>
-      </e>
-      <e>
-        <p>
-          <l>eru</l>
-          <r>vera<s n="vblex"/><s n="pri"/><s n="p2"/><s n="pl"/></r>
-        </p>
-      </e>
-      <e>
-        <p>
-          <l>eru</l>
-          <r>vera<s n="vblex"/><s n="pri"/><s n="p3"/><s n="pl"/></r>
+          <r>vera<s n="vblex"/><s n="pri"/><s n="pl"/></r>
         </p>
       </e>
       <e>
@@ -14003,19 +13277,7 @@
       <e>
         <p>
           <l>vóru</l>
-          <r>vera<s n="vblex"/><s n="past"/><s n="p1"/><s n="pl"/></r>
-        </p>
-      </e>
-      <e>
-        <p>
-          <l>vóru</l>
-          <r>vera<s n="vblex"/><s n="past"/><s n="p2"/><s n="pl"/></r>
-        </p>
-      </e>
-      <e>
-        <p>
-          <l>vóru</l>
-          <r>vera<s n="vblex"/><s n="past"/><s n="p3"/><s n="pl"/></r>
+          <r>vera<s n="vblex"/><s n="past"/><s n="pl"/></r>
         </p>
       </e>
       <!-- Supine ? -->
@@ -14061,37 +13323,13 @@
       <e r="LR">
         <p>
           <l>unnu</l>
-          <r>unna<s n="vbmod"/><s n="pri"/><s n="p1"/><s n="pl"/></r>
+          <r>unna<s n="vbmod"/><s n="pri"/><s n="pl"/></r>
         </p>
       </e>
       <e>
         <p>
           <l>anna</l>
-          <r>unna<s n="vbmod"/><s n="pri"/><s n="p1"/><s n="pl"/></r>
-        </p>
-      </e>
-      <e r="LR">
-        <p>
-          <l>unnu</l>
-          <r>unna<s n="vbmod"/><s n="pri"/><s n="p2"/><s n="pl"/></r>
-        </p>
-      </e>
-      <e>
-        <p>
-          <l>anna</l>
-          <r>unna<s n="vbmod"/><s n="pri"/><s n="p2"/><s n="pl"/></r>
-        </p>
-      </e>
-      <e r="LR">
-        <p>
-          <l>unnu</l>
-          <r>unna<s n="vbmod"/><s n="pri"/><s n="p3"/><s n="pl"/></r>
-        </p>
-      </e>
-      <e>
-        <p>
-          <l>anna</l>
-          <r>unna<s n="vbmod"/><s n="pri"/><s n="p3"/><s n="pl"/></r>
+          <r>unna<s n="vbmod"/><s n="pri"/><s n="pl"/></r>
         </p>
       </e>
       <e>
@@ -14115,19 +13353,7 @@
       <e>
         <p>
           <l>undu</l>
-          <r>unna<s n="vbmod"/><s n="past"/><s n="p1"/><s n="pl"/></r>
-        </p>
-      </e>
-      <e>
-        <p>
-          <l>undu</l>
-          <r>unna<s n="vbmod"/><s n="past"/><s n="p2"/><s n="pl"/></r>
-        </p>
-      </e>
-      <e>
-        <p>
-          <l>undu</l>
-          <r>unna<s n="vbmod"/><s n="past"/><s n="p3"/><s n="pl"/></r>
+          <r>unna<s n="vbmod"/><s n="past"/><s n="pl"/></r>
         </p>
       </e>
       <e>
@@ -14167,37 +13393,13 @@
       <e r="LR">
         <p>
           <l>unnu</l>
-          <r>unna<s n="vbmod"/><s n="pri"/><s n="p1"/><s n="pl"/></r>
+          <r>unna<s n="vbmod"/><s n="pri"/><s n="pl"/></r>
         </p>
       </e>
       <e>
         <p>
           <l>anna</l>
-          <r>unna<s n="vbmod"/><s n="pri"/><s n="p1"/><s n="pl"/></r>
-        </p>
-      </e>
-      <e r="LR">
-        <p>
-          <l>unnu</l>
-          <r>unna<s n="vbmod"/><s n="pri"/><s n="p2"/><s n="pl"/></r>
-        </p>
-      </e>
-      <e>
-        <p>
-          <l>anna</l>
-          <r>unna<s n="vbmod"/><s n="pri"/><s n="p2"/><s n="pl"/></r>
-        </p>
-      </e>
-      <e r="LR">
-        <p>
-          <l>unnu</l>
-          <r>unna<s n="vbmod"/><s n="pri"/><s n="p3"/><s n="pl"/></r>
-        </p>
-      </e>
-      <e>
-        <p>
-          <l>anna</l>
-          <r>unna<s n="vbmod"/><s n="pri"/><s n="p3"/><s n="pl"/></r>
+          <r>unna<s n="vbmod"/><s n="pri"/><s n="pl"/></r>
         </p>
       </e>
       <e>
@@ -14221,19 +13423,7 @@
       <e>
         <p>
           <l>undu</l>
-          <r>unna<s n="vbmod"/><s n="past"/><s n="p1"/><s n="pl"/></r>
-        </p>
-      </e>
-      <e>
-        <p>
-          <l>undu</l>
-          <r>unna<s n="vbmod"/><s n="past"/><s n="p2"/><s n="pl"/></r>
-        </p>
-      </e>
-      <e>
-        <p>
-          <l>undu</l>
-          <r>unna<s n="vbmod"/><s n="past"/><s n="p3"/><s n="pl"/></r>
+          <r>unna<s n="vbmod"/><s n="past"/><s n="pl"/></r>
         </p>
       </e>
       <e>
@@ -14324,19 +13514,7 @@
       <e>
         <p>
           <l>ava</l>
-          <r>ava<s n="vbhaver"/><s n="pri"/><s n="p1"/><s n="pl"/></r>
-        </p>
-      </e>
-      <e>
-        <p>
-          <l>ava</l>
-          <r>ava<s n="vbhaver"/><s n="pri"/><s n="p2"/><s n="pl"/></r>
-        </p>
-      </e>
-      <e>
-        <p>
-          <l>ava</l>
-          <r>ava<s n="vbhaver"/><s n="pri"/><s n="p3"/><s n="pl"/></r>
+          <r>ava<s n="vbhaver"/><s n="pri"/><s n="pl"/></r>
         </p>
       </e>
       <e>
@@ -14360,19 +13538,7 @@
       <e>
         <p>
           <l>øvdu</l>
-          <r>ava<s n="vbhaver"/><s n="past"/><s n="p1"/><s n="pl"/></r>
-        </p>
-      </e>
-      <e>
-        <p>
-          <l>øvdu</l>
-          <r>ava<s n="vbhaver"/><s n="past"/><s n="p2"/><s n="pl"/></r>
-        </p>
-      </e>
-      <e>
-        <p>
-          <l>øvdu</l>
-          <r>ava<s n="vbhaver"/><s n="past"/><s n="p3"/><s n="pl"/></r>
+          <r>ava<s n="vbhaver"/><s n="past"/><s n="pl"/></r>
         </p>
       </e>
       <e>
@@ -14484,19 +13650,7 @@
       <e>
         <p>
           <l>ðu</l>
-          <r><s n="vblex"/><s n="past"/><s n="p1"/><s n="pl"/></r>
-        </p>
-      </e>
-      <e>
-        <p>
-          <l>ðu</l>
-          <r><s n="vblex"/><s n="past"/><s n="p2"/><s n="pl"/></r>
-        </p>
-      </e>
-      <e>
-        <p>
-          <l>ðu</l>
-          <r><s n="vblex"/><s n="past"/><s n="p3"/><s n="pl"/></r>
+          <r><s n="vblex"/><s n="past"/><s n="pl"/></r>
         </p>
       </e>
       <e>
