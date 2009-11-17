@@ -66,6 +66,11 @@ VerbCompl = <acentuar> <aceptar> <aconsejar> <acordar> <admitir> <advertir>
 
 CONSTRAINTS
 
+%% VMSren pisua jaitsi esaldi hasieran, hitza hiztegian agertzen bada. (Garbiñe)
+-5.0 VMS*
+     (0 NC* or AQ*)
+     (-1 OUT_OF_BOUNDS);
+
 %% NPren pisua jaitsi esaldi hasieran, hitza hiztegian agertzen bada. (Garbiñe)
 -50.0 NP*
      (0 NC*)
@@ -104,11 +109,11 @@ CONSTRAINTS
       (-1 OUT_OF_BOUNDS);
 
 
-%% NP-ren pisua jaitsi hitzak NC edo AQ baditu etiketa alternatibo bezala: Cadetes y juveniles juegan en Artaleku.(Garbiñe)
+%% NP-ren pisua jaitsi hitzak NC edo AQ baditu etiketa alternatibo bezala: Cadet%es y juveniles juegan en Artaleku.(Garbiñe)
 %-1.0 NP*
 %      (0 NC* or AQ*)
-%      (-1 OUT_OF_BOUNDS)
-%      (1 SP*);
+%     (-1 OUT_OF_BOUNDS)
+%     (1 SP*);
 
 
 
@@ -131,8 +136,7 @@ CONSTRAINTS
       (-1 D*);
 
 %% bajar el peso de NP al principio de frase y seguido de coma, si la palabra tiene NC o AQ como etiquetas alternativas: Charlas, audiovisuales, marchas, ... en un completo programa. (Padrók, Garbiñek eskatuta)
-
-    -7.0  NP*
+-7.0  NP*
          (0 NC* or AQ*)
          (-1 OUT_OF_BOUNDS)
          (1 Fc);

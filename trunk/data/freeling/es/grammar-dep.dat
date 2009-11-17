@@ -754,7 +754,8 @@ parti-aux ==> VAP00SM.  	%habido
 parti-ser ==> VSP00SM.  	%sido
 
 %participi de temps compostos no passius: participi "principal"
-parti ==> VMP00SM. 	%comido  amado%
+%parti ==> VMP00SM. 	%comido  amado%
+parti ==> parti-ms | parti-mp | parti-fs | parti-fp.
 
 %participis flexius: per una banda es poden reescriure com a adjectius;
 %i per l'altra entren als temps passius
