@@ -535,11 +535,11 @@ wstring generation(wstring lemma, wstring pos, wstring suf, wstring cas,
   wstring analysis, form, prefix, postposizio, pre_lemma, lemma_osoa;
   lemma_osoa = lemma;
 
-
   if (DoGenTrace) {
     wcerr << L"lem: " << lemma << L" pos: " << pos << L" suf: " << suf << L" mi: " << mi << L" cas: " << cas << L" head_sem: " << head_sem << endl;
   }
 
+  // TODO: this also happen to form, in procNODE...why? -KBU
   for (size_t i = 0; i < lemma.size(); i++) 
   {
     // Replace all '_' with ' '
@@ -623,7 +623,7 @@ wstring generation(wstring lemma, wstring pos, wstring suf, wstring cas,
     lemmaMorf = lemma + pos;
   } else {
     lemmaMorf = lemmaMorf.substr(1, lemmaMorf.size() - 2);
-//    return lemmaMorf;
+    return lemmaMorf;
   }
 
   if (suf != L"") {
@@ -742,10 +742,12 @@ wstring generation(wstring lemma, wstring pos, wstring suf, wstring cas,
      form = lemma;
   }
 
-/*
+
   if (DoGenTrace)
-    wcerr << form << endl << endl;
-*/
+  {
+    wcerr << L"form: " << form << endl << endl;
+  }
+  
   return form;
 }
 
@@ -807,6 +809,7 @@ wstring procNODE(xmlTextReaderPtr reader, wstring chunk_type, wstring cas,
     bool is_last = (watoi(attrib(reader, "ord").c_str()) == (chunk_len - 1));
     bool flexioned = false;
 
+    // TODO: LANGUAGE INDEPENDENCE
     if (chunk_type.substr(0, 4) == L"adi-")
     {
       form = verb_generation(attrib(reader, "lem"), attrib(reader, "pos"),
@@ -829,20 +832,19 @@ wstring procNODE(xmlTextReaderPtr reader, wstring chunk_type, wstring cas,
     }
     else
     {
-//      form = generation(attrib(reader, "lem"), attrib(reader, "pos"),
-//                        attrib(reader, "suf"), cas, mi, head_sem, is_last,
-//                        flexioned);
+//	    wcerr << L"mi:" << mi << L" reader-mi:" << attrib(reader, "mi") << endl;
       form = generation(attrib(reader, "lem"), attrib(reader, "pos"),
                         attrib(reader, "suf"), cas, attrib(reader, "mi"), head_sem, is_last,
                         flexioned);
     }
 
+    // TODO: do we really want this? -KBU
     for (size_t i = 0; i<form.size(); i++) {
       if (form[i] == L'_') {
         form[i] = L' ';
       }
     } 
-
+    
     form = keep_case(form, attrib(reader, "UpCase"));
 
     nodes += L"<NODE " + write_xml(L"form='" + form + L"'");
@@ -1050,9 +1052,13 @@ int main(int argc, char *argv[])
   // This sets the C++ locale and affects to C and C++ locales.
   // wcout.imbue doesn't have any effect but the in/out streams use the proper encoding.
 #ifndef NeXTBSD
-  locale::global(locale(""));
+#ifdef __APPLE__
+  setlocale(LC_ALL, "");
+  // locale("") doesn't work on mac, except with C/POSIX
 #else
-  // ^^^ doesn't work on mac, except with C/POSIX
+  locale::global(locale(""));
+#endif
+#else
   setlocale(LC_ALL, "");
 #endif
 
