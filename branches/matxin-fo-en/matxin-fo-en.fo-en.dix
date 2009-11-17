@@ -63,9 +63,7 @@
       <e><p><l>[pri][p1][sg]</l><r><s n="mi"/>[pri][p1][sg]</r></p></e>
       <e><p><l>[pri][p2][sg]</l><r><s n="mi"/>[pri][p2][sg]</r></p></e>
       <e><p><l>[pri][p3][sg]</l><r><s n="mi"/>[pri][p3][sg]</r></p></e>
-      <e><p><l>[pri][p1][pl]</l><r><s n="mi"/>[pri][p1][pl]</r></p></e>
-      <e><p><l>[pri][p2][pl]</l><r><s n="mi"/>[pri][p2][pl]</r></p></e>
-      <e><p><l>[pri][p3][pl]</l><r><s n="mi"/>[pri][p3][pl]</r></p></e>
+      <e><p><l>[pri][pl]</l><r><s n="mi"/>[pri][pl]</r></p></e>
       <e><p><l>[past][p1][sg]</l><r><s n="mi"/>[past][p1][sg]</r></p></e>
       <e><p><l>[past][p2][sg]</l><r><s n="mi"/>[past]</r></p></e>
       <e><p><l>[past][p3][sg]</l><r><s n="mi"/>[past]</r></p></e>
@@ -78,9 +76,7 @@
       <e><p><l>[pri][p1][sg]</l><r><s n="mi"/>[pri][p1][sg]</r></p></e>
       <e><p><l>[pri][p2][sg]</l><r><s n="mi"/>[pri][p2][sg]</r></p></e>
       <e><p><l>[pri][p3][sg]</l><r><s n="mi"/>[pri][p3][sg]</r></p></e>
-      <e><p><l>[pri][p1][pl]</l><r><s n="mi"/>[pri][p1][pl]</r></p></e>
-      <e><p><l>[pri][p2][pl]</l><r><s n="mi"/>[pri][p2][pl]</r></p></e>
-      <e><p><l>[pri][p3][pl]</l><r><s n="mi"/>[pri][p3][pl]</r></p></e>
+      <e><p><l>[pri][pl]</l><r><s n="mi"/>[pri][pl]</r></p></e>
       <e><p><l>[past][p1][sg]</l><r><s n="mi"/>[past][p1][sg]</r></p></e>
       <e><p><l>[past][p2][sg]</l><r><s n="mi"/>[past]</r></p></e>
       <e><p><l>[past][p3][sg]</l><r><s n="mi"/>[past]</r></p></e>
@@ -94,9 +90,7 @@
       <e><p><l>[pri][p1][sg]</l><r><s n="mi"/>[pri]</r></p></e>
       <e><p><l>[pri][p2][sg]</l><r><s n="mi"/>[pri]</r></p></e>
       <e><p><l>[pri][p3][sg]</l><r><s n="mi"/>[pri][p3][sg]</r></p></e>
-      <e><p><l>[pri][p1][pl]</l><r><s n="mi"/>[pri]</r></p></e>
-      <e><p><l>[pri][p2][pl]</l><r><s n="mi"/>[pri]</r></p></e>
-      <e><p><l>[pri][p3][pl]</l><r><s n="mi"/>[pri]</r></p></e>
+      <e><p><l>[pri][pl]</l><r><s n="mi"/>[pri]</r></p></e>
       <e><p><l>[past][p1][sg]</l><r><s n="mi"/>[past]</r></p></e>
       <e><p><l>[past][p2][sg]</l><r><s n="mi"/>[past]</r></p></e>
       <e><p><l>[past][p3][sg]</l><r><s n="mi"/>[past]</r></p></e>
@@ -716,6 +710,7 @@
     <e><p><l>hava<s n="parol"/>[vbhaver]</l><r>have<s n="pos"/>[vbhaver]</r></p><par n="VBHAVER_STD"/></e>
 
     <e><p><l>skapa<s n="parol"/>[vblex]</l><r>create<s n="pos"/>[vblex]</r></p><par n="VBLEX_STD"/></e>
+    <e><p><l>fáa<s n="parol"/>[vblex]</l><r>get<s n="pos"/>[vblex]</r></p><par n="VBLEX_STD"/></e>
     <e><p><l>sveima<s n="parol"/>[vblex]</l><r>float<s n="pos"/>[vblex]</r></p><par n="VBLEX_STD"/></e>
     <e><p><l>siga<s n="parol"/>[vblex]</l><r>say<s n="pos"/>[vblex]</r></p><par n="VBLEX_STD"/></e>
     <e><p><l>síggja<s n="parol"/>[vblex]</l><r>see<s n="pos"/>[vblex]</r></p><par n="VBLEX_STD"/></e>
@@ -835,6 +830,7 @@
     <e><p><l>ikki</l><r>not</r></p><par n="ADV_STD"/></e>
     <e><p><l>í<b/>gjár</l><r>yesterday</r></p><par n="ADV_STD"/></e>
     <e><p><l>í<b/>morgin</l><r>tomorrow</r></p><par n="ADV_STD"/></e>
+    <e><p><l>í<b/>dag</l><r>today</r></p><par n="ADV_STD"/></e>
     <e><p><l>ofta</l><r>often</r></p><par n="ADV_STD"/></e>
     <e><p><l>mikið</l><r>much</r></p><par n="ADV_STD"/></e>
     <e><p><l>upp</l><r>up</r></p><par n="ADV_STD"/></e>

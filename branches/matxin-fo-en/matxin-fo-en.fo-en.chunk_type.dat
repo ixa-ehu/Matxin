@@ -1,13 +1,25 @@
 #Categoría	#Kategoria	#Descripción	#Azalpena
-@FMV[vblex]	fmv	# finite verb group
-@FMV[vbser]	fmv	# finite verb group
-@FMV[vbhaver]	fmv	# finite verb group
-@FMV[vbmod]	fmv	# finite verb group
+
+# Finite verb group:
+@←mv→[vblex]	fmv
+@←mv→[vbser]	fmv
+@←mv→[vbhaver]	fmv
+@←mv→[vbmod]	fmv
+@FMV[vblex]	fmv
+@FMV[vbser]	fmv
+@FMV[vbhaver]	fmv
+@FMV[vbmod]	fmv
+
+# Argument functions:
 @SUBJ→[n]	subj
 @SUBJ→[np]	subj
+@SUBJ→[prn]	subj
 @←SUBJ[n]	subj
 @←SUBJ[np]	subj
+@←SUBJ[prn]	subj
 @←OBJ[n]	obj
 @←OBJ[np]	obj
+@←OBJ[prn]	obj
 @OBJ→[n]	obj
 @OBJ→[np]	obj
+@OBJ→[prn]	obj

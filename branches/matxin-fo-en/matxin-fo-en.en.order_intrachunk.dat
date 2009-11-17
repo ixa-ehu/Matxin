@@ -1,2 +1,2 @@
-@FMV	([prn])([vblex])([BURUA])([n])
-@FMV	([prn])([BURUA])([n])([n])
+fmv	([prn])([vblex])([BURUA])([n])
+fmv	([prn])([BURUA])([n])([n])

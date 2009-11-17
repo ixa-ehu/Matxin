@@ -47,12 +47,12 @@
         <file name="matxin-fo-en.fo-en.intra_move.dat"/>
       </program>
 -->
-      <program name="matxin-gen-inter">
-        <file name="matxin-fo-en.en.order_interchunk.dat"/>
-      </program>
       <program name="matxin-gen-intra">
         <file name="matxin-fo-en.en.order_intrachunk.dat"/>
         <file name="matxin-fo-en.en.changes_sint.dat"/>
+      </program>
+      <program name="matxin-gen-inter">
+        <file name="matxin-fo-en.en.order_interchunk.dat"/>
       </program>
       <program name="matxin-gen-morph">
         <file name="fo-en.autogen.bin"/>
