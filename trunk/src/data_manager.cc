@@ -1051,10 +1051,13 @@ void init_lexical_selection(string filename)
 
     disambiguation_rule current;
     wstring src_lemma = lerro.substr(0, sep1);
+    if (src_lemma[0] == L'\'' && src_lemma[src_lemma.size()-1] == L'\'') src_lemma = src_lemma.substr(1,src_lemma.size()-2);
 
     trgt_lemma = lerro.substr(sep1 + 1, sep2 - sep1 - 1);
     current.condition = lerro.substr(sep2 + 1, sep3 - sep2 - 1);
     current.default_value = lerro.substr(sep3 + 1, lerro.size() - sep3 - 1);
+
+    if (trgt_lemma[0] == L'\'' && trgt_lemma[trgt_lemma.size()-1] == L'\'') trgt_lemma = trgt_lemma.substr(1,trgt_lemma.size()-2);
 
     disambiguation_rules[src_lemma][trgt_lemma] = current;
   }
