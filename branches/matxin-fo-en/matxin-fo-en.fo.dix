@@ -11381,10 +11381,10 @@
           <r>erða<s n="vblex"/><s n="pprs"/></r>
         </p>
       </e>
-      <e>
+      <e c="kbu todo: pp is also adj">
         <p>
           <l>orðin</l>
-          <r>erða<s n="vblex"/><s n="pp"/></r>                 <!--kbu todo: pp is also adj-->
+          <r>erða<s n="vblex"/><s n="pp"/></r>      
         </p>
       </e>
     </pardef>

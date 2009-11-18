@@ -23,3 +23,10 @@
 @OBJ→[n]	obj
 @OBJ→[np]	obj
 @OBJ→[prn]	obj
+
+# Adverbials:
+@←ADVL[adv]	adv
+@ADVL→[adv]	adv
+@ADVL[adv]	adv
+
+[sent]	sent

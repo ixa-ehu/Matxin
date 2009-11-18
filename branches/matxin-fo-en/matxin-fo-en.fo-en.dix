@@ -60,44 +60,47 @@
       <e><p><l>[pl][gen][def]</l><r><s n="mi"/>[pl]</r></p></e>
     </pardef>
     <pardef n="VBSER_STD">
-      <e><p><l>[pri][p1][sg]</l><r><s n="mi"/>[pri][p1][sg]</r></p></e>
-      <e><p><l>[pri][p2][sg]</l><r><s n="mi"/>[pri][p2][sg]</r></p></e>
-      <e><p><l>[pri][p3][sg]</l><r><s n="mi"/>[pri][p3][sg]</r></p></e>
-      <e><p><l>[pri][pl]</l><r><s n="mi"/>[pri][pl]</r></p></e>
+      <e><p><l>[pri][p1][sg]</l><r><s n="mi"/>[pres]</r></p></e>
+      <e><p><l>[pri][p2][sg]</l><r><s n="mi"/>[pres]</r></p></e>
+      <e><p><l>[pri][p3][sg]</l><r><s n="mi"/>[pres][p3][sg]</r></p></e>
+      <e><p><l>[pri][pl]</l><r><s n="mi"/>[pres][pl]</r></p></e>
       <e><p><l>[past][p1][sg]</l><r><s n="mi"/>[past][p1][sg]</r></p></e>
       <e><p><l>[past][p2][sg]</l><r><s n="mi"/>[past]</r></p></e>
       <e><p><l>[past][p3][sg]</l><r><s n="mi"/>[past]</r></p></e>
       <e><p><l>[past][p1][pl]</l><r><s n="mi"/>[past]</r></p></e>
       <e><p><l>[past][p2][pl]</l><r><s n="mi"/>[past]</r></p></e>
       <e><p><l>[past][p3][pl]</l><r><s n="mi"/>[past]</r></p></e>
-      <e><p><l></l><r></r></p></e>
+      <e><p><l>[pp]</l><r><s n="mi"/>[pp]</r></p></e>
+      <e><p><l>[pprs]</l><r><s n="mi"/>[pprs]</r></p></e>
     </pardef>
     <pardef n="VBHAVER_STD">
-      <e><p><l>[pri][p1][sg]</l><r><s n="mi"/>[pri][p1][sg]</r></p></e>
-      <e><p><l>[pri][p2][sg]</l><r><s n="mi"/>[pri][p2][sg]</r></p></e>
-      <e><p><l>[pri][p3][sg]</l><r><s n="mi"/>[pri][p3][sg]</r></p></e>
-      <e><p><l>[pri][pl]</l><r><s n="mi"/>[pri][pl]</r></p></e>
-      <e><p><l>[past][p1][sg]</l><r><s n="mi"/>[past][p1][sg]</r></p></e>
-      <e><p><l>[past][p2][sg]</l><r><s n="mi"/>[past]</r></p></e>
-      <e><p><l>[past][p3][sg]</l><r><s n="mi"/>[past]</r></p></e>
-      <e><p><l>[past][p1][pl]</l><r><s n="mi"/>[past]</r></p></e>
-      <e><p><l>[past][p2][pl]</l><r><s n="mi"/>[past]</r></p></e>
-      <e><p><l>[past][p3][pl]</l><r><s n="mi"/>[past]</r></p></e>
-      <e><p><l></l><r></r></p></e>
-    </pardef>
-
-    <pardef n="VBLEX_STD">
-      <e><p><l>[pri][p1][sg]</l><r><s n="mi"/>[pri]</r></p></e>
-      <e><p><l>[pri][p2][sg]</l><r><s n="mi"/>[pri]</r></p></e>
-      <e><p><l>[pri][p3][sg]</l><r><s n="mi"/>[pri][p3][sg]</r></p></e>
-      <e><p><l>[pri][pl]</l><r><s n="mi"/>[pri]</r></p></e>
+      <e><p><l>[pri][p1][sg]</l><r><s n="mi"/>[pres]</r></p></e>
+      <e><p><l>[pri][p2][sg]</l><r><s n="mi"/>[pres]</r></p></e>
+      <e><p><l>[pri][p3][sg]</l><r><s n="mi"/>[pres][p3][sg]</r></p></e>
+      <e><p><l>[pri][pl]</l><r><s n="mi"/>[pres][pl]</r></p></e>
       <e><p><l>[past][p1][sg]</l><r><s n="mi"/>[past]</r></p></e>
       <e><p><l>[past][p2][sg]</l><r><s n="mi"/>[past]</r></p></e>
       <e><p><l>[past][p3][sg]</l><r><s n="mi"/>[past]</r></p></e>
       <e><p><l>[past][p1][pl]</l><r><s n="mi"/>[past]</r></p></e>
       <e><p><l>[past][p2][pl]</l><r><s n="mi"/>[past]</r></p></e>
       <e><p><l>[past][p3][pl]</l><r><s n="mi"/>[past]</r></p></e>
-      <e><p><l></l><r></r></p></e>
+      <e><p><l>[pp]</l><r><s n="mi"/>[pp]</r></p></e>
+      <e><p><l>[pprs]</l><r><s n="mi"/>[pprs]</r></p></e>
+    </pardef>
+
+    <pardef n="VBLEX_STD">
+      <e><p><l>[pri][p1][sg]</l><r><s n="mi"/>[pres]</r></p></e>
+      <e><p><l>[pri][p2][sg]</l><r><s n="mi"/>[pres]</r></p></e>
+      <e><p><l>[pri][p3][sg]</l><r><s n="mi"/>[pres][p3][sg]</r></p></e>
+      <e><p><l>[pri][pl]</l><r><s n="mi"/>[pres]</r></p></e>
+      <e><p><l>[past][p1][sg]</l><r><s n="mi"/>[past]</r></p></e>
+      <e><p><l>[past][p2][sg]</l><r><s n="mi"/>[past]</r></p></e>
+      <e><p><l>[past][p3][sg]</l><r><s n="mi"/>[past]</r></p></e>
+      <e><p><l>[past][p1][pl]</l><r><s n="mi"/>[past]</r></p></e>
+      <e><p><l>[past][p2][pl]</l><r><s n="mi"/>[past]</r></p></e>
+      <e><p><l>[past][p3][pl]</l><r><s n="mi"/>[past]</r></p></e>
+      <e><p><l>[pp]</l><r><s n="mi"/>[pp]</r></p></e>
+      <e><p><l>[pprs]</l><r><s n="mi"/>[pprs]</r></p></e>
     </pardef>
     <pardef n="ADJ_SINT_STD">
       <e><p><l>[pst][m][sg][nom]</l><r></r></p></e>
