@@ -530,10 +530,11 @@ wstring date_generation(wstring lemma, wstring pos, wstring suf, wstring cas,
    the lemma, the part of speech and any morphological information. This should
    then be looked up in the transducer.  */ 
 wstring generation(wstring lemma, wstring pos, wstring suf, wstring cas,
-                   wstring mi, wstring head_sem, bool is_last, bool &flexioned)
+                   wstring mi, wstring head_sem, bool is_last, bool &flexioned, bool &unknown)
 {
   wstring analysis, form, prefix, postposizio, pre_lemma, lemma_osoa;
   lemma_osoa = lemma;
+  unknown=false;
 
   if (DoGenTrace) {
     wcerr << L"lem: " << lemma << L" pos: " << pos << L" suf: " << suf << L" mi: " << mi << L" cas: " << cas << L" head_sem: " << head_sem << endl;
@@ -725,6 +726,7 @@ wstring generation(wstring lemma, wstring pos, wstring suf, wstring cas,
     if (form.size() == 0 or form[0] == L'@' or
         form.find(L"<") != wstring::npos or form.find(L">") != wstring::npos)
     {
+      unknown = true;		// TODO: where else can it become unknown?
       form = lemma;
     }
   }
@@ -801,7 +803,8 @@ wstring procNODE(xmlTextReaderPtr reader, wstring chunk_type, wstring cas,
   wstring nodes;
   wstring tagName = getTagName(reader);
   int tagType = xmlTextReaderNodeType(reader);
-
+  bool unknown;
+  
   if (tagName == L"NODE" and tagType != XML_READER_TYPE_END_ELEMENT)
   {
     wstring lem = attrib(reader, "lem");
@@ -835,7 +838,7 @@ wstring procNODE(xmlTextReaderPtr reader, wstring chunk_type, wstring cas,
 //	    wcerr << L"mi:" << mi << L" reader-mi:" << attrib(reader, "mi") << endl;
       form = generation(attrib(reader, "lem"), attrib(reader, "pos"),
                         attrib(reader, "suf"), cas, attrib(reader, "mi"), head_sem, is_last,
-                        flexioned);
+                        flexioned, unknown);
     }
 
     // TODO: do we really want this? -KBU
@@ -848,12 +851,20 @@ wstring procNODE(xmlTextReaderPtr reader, wstring chunk_type, wstring cas,
     form = keep_case(form, attrib(reader, "UpCase"));
 
     nodes += L"<NODE " + write_xml(L"form='" + form + L"'");
-    nodes += L" ref ='" + write_xml(attrib(reader, "ref"));
+    if (unknown) 
+    {
+      nodes += L" unknown='generation'";
+    }    
+    nodes += L" ref='" + write_xml(attrib(reader, "ref"));
     if (flexioned && cas_ref != L"")
+    {
       nodes += L"," + write_xml(cas_ref);
+    }
     nodes += L"' alloc ='" + write_xml(attrib(reader, "alloc"));
     if (flexioned && cas_alloc != L"")
+    {
       nodes += L"," + write_xml(cas_alloc);
+    }
     nodes += L"'" + write_xml(text_allAttrib_except(allAttrib_except(reader, L"alloc"), L"ref"));
 
     if (xmlTextReaderIsEmptyElement(reader) == 1)
@@ -920,7 +931,8 @@ wstring procCHUNK(xmlTextReaderPtr reader)
   int tagType = xmlTextReaderNodeType(reader);
   wstring tree, det_cas, cas, cas_alloc, cas_ref, mi, type, head_sem;
   int chunk_len;
-
+  bool unknown;			// TODO: output if unknown
+  
   if (tagName == L"CHUNK" and tagType == XML_READER_TYPE_ELEMENT)
   {
     type = attrib(reader, "type");
@@ -943,7 +955,7 @@ wstring procCHUNK(xmlTextReaderPtr reader)
         wcerr << postposizio << L" " << cas << endl;
 
       postposizio = generation(postposizio, L"", cas, L"", mi, head_sem, true,
-                               flexioned);
+                               flexioned, unknown);
 
       if (DoGenTrace)
         wcerr << postposizio << endl;
