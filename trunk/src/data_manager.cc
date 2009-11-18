@@ -1129,20 +1129,20 @@ void init_verb_subcategorisation(string fitxName)
   while (getline(fitx, lerro))
   {
     // Remove whitespace and so...
-      for (int i = 0; i < int(lerro.size()); i++)
+    for (int i = 0; i < int(lerro.size()); i++)
       {
-      if (lerro[i] == L' ' and (lerro[i+1] == L' ' or lerro[i+1] == L'\t'))
-        lerro[i] = L'\t';
-      if ((lerro[i] == L' ' or lerro[i-1] == L'\t') and
-          (i == 0 or lerro[i] == L'\t'))
-      {
-        lerro.erase(i,1);
-        i--;
+	if (lerro[i] == L' ' and (lerro[i+1] == L' ' or lerro[i+1] == L'\t'))
+	  lerro[i] = L'\t';
+	if ((lerro[i] == L' ' or lerro[i] == L'\t') and
+	    (i == 0 or lerro[i-1] == L'\t'))
+	  {
+	    lerro.erase(i,1);
+	    i--;
+	  }
       }
-    }
-      if (0 < lerro.size() and (lerro[lerro.size()-1] == L' ' or
-          lerro[lerro.size()-1] == L'\t'))
-        lerro.erase(lerro.size() - 1, 1);
+    if (0 < lerro.size() and (lerro[lerro.size()-1] == L' ' or
+			      lerro[lerro.size()-1] == L'\t'))
+      lerro.erase(lerro.size() - 1, 1);
 
     size_t sep1 = lerro.find(L"\t");
     if (sep1 == wstring::npos)
@@ -1150,6 +1150,7 @@ void init_verb_subcategorisation(string fitxName)
 
     wstring verb_lem = lerro.substr(0, sep1);
     lerro = lerro.substr(sep1 + 1);
+
     while (lerro.find(L"#") != wstring::npos)
     {
       wstring subcat = lerro.substr(0, lerro.find(L"#"));
@@ -1271,7 +1272,7 @@ wstring
 
   if (cfg.DoPrepTrace)
   {
-    wcerr << L"AZPIKATEGORIZAZIOA APLIKATZEN: " << verb_lemma << endl;
+    wcerr << L"AZPIKATEGORIZAZIOA APLIKATZEN: " << verb_lemma << L" (" << subcat.size() << L" azpikategorizazio desberdin aurkitu dira)" << endl;
     wstring prep = text_attrib(subj_attributes, L"prep");
     if (prep == L"")
       prep = L"-";
@@ -1299,7 +1300,7 @@ wstring
   int best_fixed = -1;
   int best_length = 0;
   int cases_size = 0;;
-  wstring best_trans = L"DU";
+  wstring best_trans = L"DU"; if (subcat.size() > 0) best_trans = subcat[0].trans;
   wstring best_subj_case;
   vector<vector<wstring> > best_cases = cases;
   matches_subj = best_matches_subj = false;
