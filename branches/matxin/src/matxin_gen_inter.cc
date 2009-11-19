@@ -123,7 +123,7 @@ vector<wstring> merge(vector<wstring> order, int &head_index,
 
     return output_order;
   }
-  else
+  else if (relative_order == L"x2.x1")
   {
     vector<wstring> output_order;
     int output_head;
@@ -147,6 +147,11 @@ vector<wstring> merge(vector<wstring> order, int &head_index,
     head_index = output_head;
 
     return output_order;
+  }
+  else 
+  {
+    wcerr << L"ERROR: undefined ordering relation: " << relative_order << endl;
+    exit(-1);
   }
 }
 
