@@ -487,10 +487,14 @@ SETPARENT:SetCNPToWord @CVP + CC TO (*-1 WORD) ;
 #SETPARENT:
 
 ### Root
+# Matxin can't reorder flat structures, only between parents and
+# children, so even if we don't have a finite verb, we have to set it
+# as the top node; also, to put punctuation at the end, we have to put
+# it above the root.
 # If we have a sentence end:
-SETPARENT VFIN (NONE p (*)) TO (1* (sent));
+SETPARENT SYNTAG OR V (NONE p (*)) TO (1* (sent)); 
 SETPARENT (sent) (NONE p (*)) TO (@0 (*));
-# If there is no sentence end marker:
+# If there is no sentence end marker: (maybe this also should be SYNTAG OR V?)
 SETPARENT VFIN (NONE p (*)) TO (@0 (*));
 
 AFTER-SECTIONS 
