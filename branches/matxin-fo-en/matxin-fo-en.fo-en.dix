@@ -60,13 +60,13 @@
       <e><p><l>[pl][gen][def]</l><r><s n="mi"/>[pl]</r></p></e>
     </pardef>
     <pardef n="VBSER_STD">
-      <e><p><l>[pri][p1][sg]</l><r><s n="mi"/>[pres]</r></p></e>
+      <e><p><l>[pri][p1][sg]</l><r><s n="mi"/>[pres][p1][sg]</r></p></e>
       <e><p><l>[pri][p2][sg]</l><r><s n="mi"/>[pres]</r></p></e>
       <e><p><l>[pri][p3][sg]</l><r><s n="mi"/>[pres][p3][sg]</r></p></e>
-      <e><p><l>[pri][pl]</l><r><s n="mi"/>[pres][pl]</r></p></e>
+      <e><p><l>[pri][pl]</l><r><s n="mi"/>[pres]</r></p></e>
       <e><p><l>[past][p1][sg]</l><r><s n="mi"/>[past][p1][sg]</r></p></e>
-      <e><p><l>[past][p2][sg]</l><r><s n="mi"/>[past]</r></p></e>
-      <e><p><l>[past][p3][sg]</l><r><s n="mi"/>[past]</r></p></e>
+      <e><p><l>[past][p2][sg]</l><r><s n="mi"/>[past][p2][sg]</r></p></e>
+      <e><p><l>[past][p3][sg]</l><r><s n="mi"/>[past][p3][sg]</r></p></e>
       <e><p><l>[past][p1][pl]</l><r><s n="mi"/>[past]</r></p></e>
       <e><p><l>[past][p2][pl]</l><r><s n="mi"/>[past]</r></p></e>
       <e><p><l>[past][p3][pl]</l><r><s n="mi"/>[past]</r></p></e>
@@ -254,6 +254,9 @@
     <pardef n="ADV_STD">
       <e><p><l><s n="parol"/>[adv]</l><r><s n="pos"/>[adv]</r></p></e>
     </pardef>
+    <pardef n="ADV_ITG">
+      <e><p><l><s n="parol"/>[adv][itg]</l><r><s n="pos"/>[adv]<s n="mi"/>[itg]</r></p></e>
+    </pardef>
     <pardef n="PRN_PERSONAL">
       <e><p><l>[p1][mf][sg][nom]</l><r><s n="mi"/>[subj][p1][mf][sg]</r></p></e>
       <e><p><l>[p2][mf][sg][nom]</l><r><s n="mi"/>[subj][p2][mf][sg]</r></p></e>
@@ -262,7 +265,8 @@
 
       <e><p><l>[p1][mf][pl][nom]</l><r><s n="mi"/>[subj][p1][mf][pl]</r></p></e>
       <e><p><l>[p2][mf][pl][nom]</l><r><s n="mi"/>[subj][p2][mf][pl]</r></p></e>
-      <e><p><l>[p3][mf][pl][nom]</l><r><s n="mi"/>[subj][p3][mf][pl]</r></p></e>
+      <e><p><l>[p3][f][pl][nom]</l><r><s n="mi"/>[subj][p3][mf][pl]</r></p></e>
+      <e><p><l>[p3][m][pl][nom]</l><r><s n="mi"/>[subj][p3][mf][pl]</r></p></e>
 
       <e><p><l>[p1][mf][sg][acc]</l><r><s n="mi"/>[obj][p1][mf][sg]</r></p></e>
       <e><p><l>[p2][mf][sg][acc]</l><r><s n="mi"/>[obj][p2][mf][sg]</r></p></e>
@@ -271,8 +275,20 @@
 
       <e><p><l>[p1][mf][pl][acc]</l><r><s n="mi"/>[obj][p1][mf][pl]</r></p></e>
       <e><p><l>[p2][mf][pl][acc]</l><r><s n="mi"/>[obj][p2][mf][pl]</r></p></e>
-      <e><p><l>[p3][mf][pl][acc]</l><r><s n="mi"/>[obj][p3][mf][pl]</r></p></e>
-
+      <e><p><l>[p3][f][pl][acc]</l><r><s n="mi"/>[obj][p3][mf][pl]</r></p></e>
+      <e><p><l>[p3][m][pl][acc]</l><r><s n="mi"/>[obj][p3][mf][pl]</r></p></e>
+    </pardef>
+    <pardef n="PRN_REF">
+      <!-- todo: transfer has to fix number & gender -->
+      <e><p><l>[p1][mf][sp][acc]</l><r><s n="mi"/>[ref][p1][f][sg]</r></p></e>
+      <e><p><l>[p1][mf][sp][dat]</l><r><s n="mi"/>[ref][p1][f][sg]</r></p></e>
+      <e><p><l>[p1][mf][sp][gen]</l><r><s n="mi"/>[ref][p1][f][sg]</r></p></e>
+      <e><p><l>[p2][mf][sp][acc]</l><r><s n="mi"/>[ref][p2][f][sg]</r></p></e>
+      <e><p><l>[p2][mf][sp][dat]</l><r><s n="mi"/>[ref][p2][f][sg]</r></p></e>
+      <e><p><l>[p2][mf][sp][gen]</l><r><s n="mi"/>[ref][p2][f][sg]</r></p></e>
+      <e><p><l>[p3][mf][sp][acc]</l><r><s n="mi"/>[ref][p3][f][sg]</r></p></e>
+      <e><p><l>[p3][mf][sp][dat]</l><r><s n="mi"/>[ref][p3][f][sg]</r></p></e>
+      <e><p><l>[p3][mf][sp][gen]</l><r><s n="mi"/>[ref][p3][f][sg]</r></p></e>
     </pardef>
     <pardef n="PUNT">
       <e><p><l><s n="parol"/>[sent]</l><r><s n="pos"/>[sent]</r></p></e>
@@ -291,6 +307,35 @@
     <!-- Pronouns -->
 
     <e><p><l>prnpers<s n="parol"/>[prn]</l><r>prpers<s n="pos"/>[prn]</r></p><par n="PRN_PERSONAL"/></e>
+    <e><p><l>seg<s n="parol"/>[prn][ref]</l><r>self<s n="pos"/>[prn]</r></p><par n="PRN_REF"/></e>
+
+    <!-- Determiners -->
+    <e><p><l>ein<s n="parol"/>[det][ind][nt][sg][nom]</l><r>a<s n="pos"/>[det]<s n="mi"/>[ind][sg]</r></p></e>
+    <e><p><l>ein<s n="parol"/>[det][ind][f][sg][nom]</l><r>a<s n="pos"/>[det]<s n="mi"/>[ind][sg]</r></p></e>
+    <e><p><l>ein<s n="parol"/>[det][ind][m][sg][nom]</l><r>a<s n="pos"/>[det]<s n="mi"/>[ind][sg]</r></p></e>
+    <e><p><l>ein<s n="parol"/>[det][ind][nt][sg][acc]</l><r>a<s n="pos"/>[det]<s n="mi"/>[ind][sg]</r></p></e>
+    <e><p><l>ein<s n="parol"/>[det][ind][f][sg][acc]</l><r>a<s n="pos"/>[det]<s n="mi"/>[ind][sg]</r></p></e>
+    <e><p><l>ein<s n="parol"/>[det][ind][m][sg][acc]</l><r>a<s n="pos"/>[det]<s n="mi"/>[ind][sg]</r></p></e>
+    <e><p><l>ein<s n="parol"/>[det][ind][nt][sg][dat]</l><r>a<s n="pos"/>[det]<s n="mi"/>[ind][sg]</r></p></e>
+    <e><p><l>ein<s n="parol"/>[det][ind][f][sg][dat]</l><r>a<s n="pos"/>[det]<s n="mi"/>[ind][sg]</r></p></e>
+    <e><p><l>ein<s n="parol"/>[det][ind][m][sg][dat]</l><r>a<s n="pos"/>[det]<s n="mi"/>[ind][sg]</r></p></e>
+    <e><p><l>ein<s n="parol"/>[det][ind][nt][sg][gen]</l><r>a<s n="pos"/>[det]<s n="mi"/>[ind][sg]</r></p></e>
+    <e><p><l>ein<s n="parol"/>[det][ind][f][sg][gen]</l><r>a<s n="pos"/>[det]<s n="mi"/>[ind][sg]</r></p></e>
+    <e><p><l>ein<s n="parol"/>[det][ind][m][sg][gen]</l><r>a<s n="pos"/>[det]<s n="mi"/>[ind][sg]</r></p></e>
+    <e><p><l>ein<s n="parol"/>[det][ind][nt][pl][nom]</l><r>some<s n="pos"/>[det]<s n="mi"/>[ind][pl]</r></p></e>
+    <e><p><l>ein<s n="parol"/>[det][ind][f][pl][nom]</l><r>some<s n="pos"/>[det]<s n="mi"/>[ind][pl]</r></p></e>
+    <e><p><l>ein<s n="parol"/>[det][ind][m][pl][nom]</l><r>some<s n="pos"/>[det]<s n="mi"/>[ind][pl]</r></p></e>
+    <e><p><l>ein<s n="parol"/>[det][ind][nt][pl][acc]</l><r>some<s n="pos"/>[det]<s n="mi"/>[ind][pl]</r></p></e>
+    <e><p><l>ein<s n="parol"/>[det][ind][f][pl][acc]</l><r>some<s n="pos"/>[det]<s n="mi"/>[ind][pl]</r></p></e>
+    <e><p><l>ein<s n="parol"/>[det][ind][m][pl][acc]</l><r>some<s n="pos"/>[det]<s n="mi"/>[ind][pl]</r></p></e>
+    <e><p><l>ein<s n="parol"/>[det][ind][nt][pl][dat]</l><r>some<s n="pos"/>[det]<s n="mi"/>[ind][pl]</r></p></e>
+    <e><p><l>ein<s n="parol"/>[det][ind][f][pl][dat]</l><r>some<s n="pos"/>[det]<s n="mi"/>[ind][pl]</r></p></e>
+    <e><p><l>ein<s n="parol"/>[det][ind][m][pl][dat]</l><r>some<s n="pos"/>[det]<s n="mi"/>[ind][pl]</r></p></e>
+    <e><p><l>ein<s n="parol"/>[det][ind][nt][pl][gen]</l><r>some<s n="pos"/>[det]<s n="mi"/>[ind][pl]</r></p></e>
+    <e><p><l>ein<s n="parol"/>[det][ind][f][pl][gen]</l><r>some<s n="pos"/>[det]<s n="mi"/>[ind][pl]</r></p></e>
+    <e><p><l>ein<s n="parol"/>[det][ind][m][pl][gen]</l><r>some<s n="pos"/>[det]<s n="mi"/>[ind][pl]</r></p></e>
+
+
 
     <!-- Nouns -->
     <e><p><l>vatn<s n="parol"/>[n][nt]</l><r>water<s n="pos"/>[n]</r></p><par n="NC_STD"/></e>
@@ -852,6 +897,8 @@
     <e><p><l>burt</l><r>away</r></p><par n="ADV_STD"/></e>
     <e><p><l>eisini</l><r>moreover</r></p><par n="ADV_STD"/></e>
     <e><p><l>hví</l><r>which</r></p><par n="ADV_STD"/></e>
+    <!-- interrogatives -->
+    <e><p><l>hví</l><r>why</r></p><par n="ADV_ITG"/></e>
 
     <!-- Adjectives -->
     <e><p><l>fræls<s n="parol"/>[adj]</l><r>free<s n="pos"/>[adj][sint]</r></p><par n="ADJ_SINT_STD"/></e>
@@ -877,6 +924,7 @@
     <e><p><l>Gud<s n="parol"/>[np]</l><r>God<s n="pos"/>[np]</r></p><par n="NP_AL_STD"/></e>
 
 
+    <e><i>?</i><par n="PUNT"/></e>
     <e><re>.</re><par n="PUNT"/></e>
   </section>
 </dictionary>

@@ -858,23 +858,59 @@
 
     <!-- Pronouns -->
 
-    <pardef n="s/eg__prn">
+    <pardef n="/seg__prn">
       <e>
         <p>
-          <l>eg</l>
-          <r>eg<s n="prn"/><s n="ref"/><s n="p3"/><s n="mf"/><s n="sp"/><s n="acc"/></r>
+          <l>meg</l>
+          <r>seg<s n="prn"/><s n="ref"/><s n="p1"/><s n="mf"/><s n="sp"/><s n="acc"/></r>
         </p>
       </e>
       <e>
         <p>
-          <l>ær</l>
-          <r>eg<s n="prn"/><s n="ref"/><s n="p3"/><s n="mf"/><s n="sp"/><s n="dat"/></r>
+          <l>mær</l>
+          <r>seg<s n="prn"/><s n="ref"/><s n="p1"/><s n="mf"/><s n="sp"/><s n="dat"/></r>
         </p>
       </e>
       <e>
         <p>
-          <l>ín</l>
-          <r>eg<s n="prn"/><s n="ref"/><s n="p3"/><s n="mf"/><s n="sp"/><s n="gen"/></r>
+          <l>mín</l>
+          <r>seg<s n="prn"/><s n="ref"/><s n="p1"/><s n="mf"/><s n="sp"/><s n="gen"/></r>
+        </p>
+      </e>
+      <e>
+        <p>
+          <l>teg</l>
+          <r>seg<s n="prn"/><s n="ref"/><s n="p2"/><s n="mf"/><s n="sp"/><s n="acc"/></r>
+        </p>
+      </e>
+      <e>
+        <p>
+          <l>tær</l>
+          <r>seg<s n="prn"/><s n="ref"/><s n="p2"/><s n="mf"/><s n="sp"/><s n="dat"/></r>
+        </p>
+      </e>
+      <e>
+        <p>
+          <l>sín</l>
+          <r>seg<s n="prn"/><s n="ref"/><s n="p2"/><s n="mf"/><s n="sp"/><s n="gen"/></r>
+        </p>
+      </e>
+      <e>
+        <p>
+          <l>seg</l>
+          <r>seg<s n="prn"/><s n="ref"/><s n="p3"/><s n="mf"/><s n="sp"/><s n="acc"/></r>
+        </p>
+      </e>
+      <e>
+        <p>
+          <l>sær</l>
+          <r>seg<s n="prn"/><s n="ref"/><s n="p3"/><s n="mf"/><s n="sp"/><s n="dat"/></r>
+        </p>
+      </e>
+      <e>
+        <p>
+          <l>sín</l>
+          <r>seg<s n="prn"/><s n="ref"/><s n="p3"/><s n="mf"/><s n="sp"/><s n="gen"/></r>
         </p>
       </e>
     </pardef>
@@ -25687,12 +25723,15 @@
     <e lm="hesin"><i>he</i><par n="he/sin__prn"/></e>
     <e lm="hin"><i>hi</i><par n="hi/n__prn"/></e>
     <e lm="hasin"><i>ha</i><par n="he/sin__prn"/></e>
-    <e lm="seg"><i>s</i><par n="s/eg__prn"/></e>
     <e lm="hvør"><i>hv</i><par n="hv/ør__prn"/></e>
 
+    <!-- regular personal: -->
     <e lm="mín"><i>mí</i><par n="mí/n__prn"/></e>
     <e lm="tín"><i>tí</i><par n="tí/n__prn"/></e>
     <e lm="sín"><i>sí</i><par n="sí/n__prn"/></e>
+
+    <!-- reflexive: -->
+    <e lm="seg"><i></i><par n="/seg__prn"/></e>
 
     <e lm="nakar"><i>n</i><par n="n/akar__prn"/></e>
     <e lm="onkur"><i>o</i><par n="o/nkur__prn"/></e>

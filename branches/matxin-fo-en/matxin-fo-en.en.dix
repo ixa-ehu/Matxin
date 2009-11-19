@@ -9396,49 +9396,49 @@
       <e>
         <p>
           <l>myself</l>
-          <r>myself<s n="prn"/><s n="ref"/><s n="p1"/><s n="mf"/><s n="sg"/></r>
+          <r>self<s n="prn"/><s n="ref"/><s n="p1"/><s n="mf"/><s n="sg"/></r>
         </p>
       </e>
       <e>
         <p>
           <l>yourself</l>
-          <r>yourself<s n="prn"/><s n="ref"/><s n="p2"/><s n="mf"/><s n="sg"/></r>
+          <r>self<s n="prn"/><s n="ref"/><s n="p2"/><s n="mf"/><s n="sg"/></r>
         </p>
       </e>
       <e>
         <p>
           <l>herself</l>
-          <r>herself<s n="prn"/><s n="ref"/><s n="p3"/><s n="f"/><s n="sg"/></r>
+          <r>self<s n="prn"/><s n="ref"/><s n="p3"/><s n="f"/><s n="sg"/></r>
         </p>
       </e>
       <e>
         <p>
           <l>himself</l>
-          <r>himself<s n="prn"/><s n="ref"/><s n="p3"/><s n="m"/><s n="sg"/></r>
+          <r>self<s n="prn"/><s n="ref"/><s n="p3"/><s n="m"/><s n="sg"/></r>
         </p>
       </e>
       <e>
         <p>
           <l>itself</l>
-          <r>itself<s n="prn"/><s n="ref"/><s n="p3"/><s n="nt"/><s n="sg"/></r>
+          <r>self<s n="prn"/><s n="ref"/><s n="p3"/><s n="nt"/><s n="sg"/></r>
         </p>
       </e>
       <e>
         <p>
           <l>ourselves</l>
-          <r>ourselves<s n="prn"/><s n="ref"/><s n="p1"/><s n="mf"/><s n="pl"/></r>
+          <r>self<s n="prn"/><s n="ref"/><s n="p1"/><s n="mf"/><s n="pl"/></r>
         </p>
       </e>
       <e>
         <p>
           <l>yourselves</l>
-          <r>yourselves<s n="prn"/><s n="ref"/><s n="p2"/><s n="mf"/><s n="pl"/></r>
+          <r>self<s n="prn"/><s n="ref"/><s n="p2"/><s n="mf"/><s n="pl"/></r>
         </p>
       </e>
       <e>
         <p>
           <l>themselves</l>
-          <r>themselves<s n="prn"/><s n="ref"/><s n="p3"/><s n="mf"/><s n="pl"/></r>
+          <r>self<s n="prn"/><s n="ref"/><s n="p3"/><s n="mf"/><s n="pl"/></r>
         </p>
       </e>
     </pardef>
