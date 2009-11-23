@@ -1617,6 +1617,8 @@ void init_node_order(string fitxName)
     current.chunk_type = lerro.substr(0, sep1);
     current.order = lerro.substr(sep1 + 1, lerro.size() - sep1);
 
+    //cerr << "init_node_order: " << current.chunk_type << " = " << current.order << endl;
+
     order_intra.push_back(current);
   }
 
@@ -1636,6 +1638,8 @@ wstring get_node_order(wstring chunk_type, wstring nodes)
       node_order = order_intra[i].order;
     }
   }
+
+  //wcerr << L"get_node_order: " << chunk_type << L" @ " << nodes << endl;
 
   wstring current_pos;
   int current_order = 0;
@@ -1688,6 +1692,8 @@ wstring get_node_order(wstring chunk_type, wstring nodes)
     else
       order << L"-" << final_order[i];
   }
+
+  //wcerr << L"get_node_order: " << order.str() << endl;
 
   return order.str();
 }

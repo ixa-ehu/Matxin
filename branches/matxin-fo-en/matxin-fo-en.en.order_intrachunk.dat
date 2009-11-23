@@ -1,2 +1,3 @@
-fmv	([prn])([vblex])([BURUA])([n])
-fmv	([prn])([BURUA])([n])([n])
+fmv	([adv])([BURUA])
+obj	([det][def])([adj])([adj])([adj])([BURUA])
+opred	([det][def])([adj])([adj])([adj])([BURUA])

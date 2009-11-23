@@ -314,19 +314,28 @@ int main(int argc, char *argv[])
 //  config cfg(argv);
 
   // Output in the locale's encoding
-  //locale::global(locale(""));
-  // ^^^ doesn't work on mac, except with C/POSIX
+  // wcout.imbue doesn't have any effect but the in/out streams use the proper encoding.
+#ifndef NeXTBSD
+#ifdef __APPLE__
   setlocale(LC_ALL, "");
+  // locale("") doesn't work on mac, except with C/POSIX
+#else
+  locale::global(locale(""));
+#endif
+#else
+  setlocale(LC_ALL, "");
+#endif
+
   if(argc < 3) {
-    cout << "matxin-gen-inter [order pos file] [order file]" << endl;
+    cout << "matxin-gen-inter [order pos file] [node order file]" << endl;
     exit(-1);
   }
 
   //ordena definitu ahal izateko kategoria (DET-en azpikategoria) aldaketen biltegia hasieratu...
 //  init_lexInfo(L"orderPos", cfg.POS_ToOrderFile);
 //  init_node_order(cfg.Node_OrderFile);
-  init_lexInfo(L"orderPos", argv[1]);
-  init_node_order(argv[2]);
+  init_lexInfo(L"orderPos", argv[2]);
+  init_node_order(argv[1]);
 
   xmlTextReaderPtr reader;
   reader = xmlReaderForFd(0, "", NULL, 0);

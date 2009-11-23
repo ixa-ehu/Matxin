@@ -1,4 +1,5 @@
 type=~'fmv'	type=~'subj'	.*?	x2+x1
 type=~'fmv'	type=~'obj'	.*?	x1.x2
+type=~'obj'	type=~'opred'	.*?	x1.x2
 
 true	true	.*?	x2.x1

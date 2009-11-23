@@ -29,4 +29,7 @@
 @ADVL→[adv]	adv
 @ADVL[adv]	adv
 
+# Predicates: 
+@←OPRED[n]	opred
+
 [sent]	sent

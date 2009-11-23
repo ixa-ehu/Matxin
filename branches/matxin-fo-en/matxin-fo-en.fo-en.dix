@@ -26,6 +26,7 @@
 
     <sdef n="pos"    c="Category"/> 
     <sdef n="case"   c="Case"/> 
+    <sdef n="defnes" c="Definiteness"/> 
     <sdef n="mi"     c="Morphological information"/> 
     <sdef n="parol"  c="PAROLE style tag"/>
   </sdefs>
@@ -46,18 +47,18 @@
       <e><p><l>[sg][acc][ind]</l><r><s n="mi"/>[sg]</r></p></e>
       <e><p><l>[sg][dat][ind]</l><r><s n="mi"/>[sg]</r></p></e>
       <e><p><l>[sg][gen][ind]</l><r><s n="mi"/>[sg]</r></p></e>
-      <e><p><l>[sg][nom][def]</l><r><s n="mi"/>[sg]</r></p></e>
-      <e><p><l>[sg][acc][def]</l><r><s n="mi"/>[sg]</r></p></e>
-      <e><p><l>[sg][dat][def]</l><r><s n="mi"/>[sg]</r></p></e>
-      <e><p><l>[sg][gen][def]</l><r><s n="mi"/>[sg]</r></p></e>
+      <e><p><l>[sg][nom][def]</l><r><s n="mi"/>[sg]<s n="defnes"/>[def]</r></p></e>
+      <e><p><l>[sg][acc][def]</l><r><s n="mi"/>[sg]<s n="defnes"/>[def]</r></p></e>
+      <e><p><l>[sg][dat][def]</l><r><s n="mi"/>[sg]<s n="defnes"/>[def]</r></p></e>
+      <e><p><l>[sg][gen][def]</l><r><s n="mi"/>[sg]<s n="defnes"/>[def]</r></p></e>
       <e><p><l>[pl][nom][ind]</l><r><s n="mi"/>[pl]</r></p></e>
       <e><p><l>[pl][acc][ind]</l><r><s n="mi"/>[pl]</r></p></e>
       <e><p><l>[pl][dat][ind]</l><r><s n="mi"/>[pl]</r></p></e>
       <e><p><l>[pl][gen][ind]</l><r><s n="mi"/>[pl]</r></p></e>
-      <e><p><l>[pl][nom][def]</l><r><s n="mi"/>[pl]</r></p></e>
-      <e><p><l>[pl][acc][def]</l><r><s n="mi"/>[pl]</r></p></e>
-      <e><p><l>[pl][dat][def]</l><r><s n="mi"/>[pl]</r></p></e>
-      <e><p><l>[pl][gen][def]</l><r><s n="mi"/>[pl]</r></p></e>
+      <e><p><l>[pl][nom][def]</l><r><s n="mi"/>[pl]<s n="defnes"/>[def]</r></p></e>
+      <e><p><l>[pl][acc][def]</l><r><s n="mi"/>[pl]<s n="defnes"/>[def]</r></p></e>
+      <e><p><l>[pl][dat][def]</l><r><s n="mi"/>[pl]<s n="defnes"/>[def]</r></p></e>
+      <e><p><l>[pl][gen][def]</l><r><s n="mi"/>[pl]<s n="defnes"/>[def]</r></p></e>
     </pardef>
     <pardef n="VBSER_STD">
       <e><p><l>[pri][p1][sg]</l><r><s n="mi"/>[pres][p1][sg]</r></p></e>
@@ -371,6 +372,7 @@
     <e><p><l>bróðir<s n="parol"/>[n][m]</l><r>brother<s n="pos"/>[n]</r></p><par n="NC_STD"/></e>
     <e><p><l>mamma<s n="parol"/>[n][f]</l><r>mum<s n="pos"/>[n]</r></p><par n="NC_STD"/></e>
     <e><p><l>maður<s n="parol"/>[n][m]</l><r>man<s n="pos"/>[n]</r></p><par n="NC_STD"/></e>
+    <e><p><l>kvinna<s n="parol"/>[n][f]</l><r>woman<s n="pos"/>[n]</r></p><par n="NC_STD"/></e>
     <e><p><l>hattur<s n="parol"/>[n][m]</l><r>hat<s n="pos"/>[n]</r></p><par n="NC_STD"/></e>
     <e><p><l>hestur<s n="parol"/>[n][m]</l><r>horse<s n="pos"/>[n]</r></p><par n="NC_STD"/></e>
     <e><p><l>drongur<s n="parol"/>[n][m]</l><r>boy<s n="pos"/>[n]</r></p><par n="NC_STD"/></e>
@@ -517,7 +519,6 @@
     <e><p><l>jørð<s n="parol"/>[n][f]</l><r>earth<s n="pos"/>[n]</r></p><par n="NC_STD"/></e>
     <e><p><l>keisari<s n="parol"/>[n][m]</l><r>emperor<s n="pos"/>[n]</r></p><par n="NC_STD"/></e>
     <e><p><l>leður<s n="parol"/>[n][nt]</l><r>skin<s n="pos"/>[n]</r></p><par n="NC_STD"/></e>
-    <e><p><l>svar<s n="parol"/>[n][nt]</l><r>reply<s n="pos"/>[n]</r></p><par n="NC_STD"/></e>
     <e><p><l>grein<s n="parol"/>[n][f]</l><r>article<s n="pos"/>[n]</r></p><par n="NC_STD"/></e>
     <e><p><l>snarljós<s n="parol"/>[n][nt]</l><r>lightning<s n="pos"/>[n]</r></p><par n="NC_STD"/></e>
     <e><p><l>fjall<s n="parol"/>[n][nt]</l><r>mountain<s n="pos"/>[n]</r></p><par n="NC_STD"/></e>
