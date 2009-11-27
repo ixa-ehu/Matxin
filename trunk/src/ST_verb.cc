@@ -185,7 +185,7 @@ wstring writeNODE_AS(wstring ref, wstring alloc, wstring &length, wstring rel,
     AS_target = AS_target.substr(0, pos_erl);
   }
 
-  if (rel[0] == L'+' && AS_target.find(L"+") != wstring::npos)
+  if (rel[0] == L'+' && AS_target.find(L"<") != wstring::npos)
     AS_target += rel;
 
 
