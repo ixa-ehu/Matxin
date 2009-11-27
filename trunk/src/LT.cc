@@ -221,9 +221,11 @@ vector<wstring> get_translation(wstring lem, wstring mi,
   unknown = false;
   if (trad[0] == L'@' || trad.find(L">") < trad.find(L"<"))
   {
-    input = L"^" + lem + L"<parol>noKAT$";
-    trad = fstp.biltrans(input);
-    trad = trad.substr(1, trad.size() - 2);
+    //if (mi.substr(0,2) != L"NP") {
+      input = L"^" + lem + L"<parol>noKAT_" + mi.substr(0,2) + L"$";
+      trad = fstp.biltrans(input);
+      trad = trad.substr(1, trad.size() - 2);
+    //}
 
     if (trad[0] == L'@' || trad.find(L">") < trad.find(L"<"))
     {
