@@ -44,11 +44,12 @@ matxin_destxt_SOURCES = txt-deformat.cc
 matxin_deshtml_SOURCES = html-deformat.cc
 #rtf_deformat_SOURCES = rtf-deformat.cc
 
-txt-deformat.cc: txt-format.xml Makefile.am deformat.xsl
-	$(XSLTPROC) --stringparam mode matxin deformat.xsl txt-format.xml | $(FLEX) -Cfer -t >$@
+# I'm Using the files from fran instead -KBU
+# txt-deformat.cc: txt-format.xml Makefile.am deformat.xsl
+# 	$(XSLTPROC) --stringparam mode matxin deformat.xsl txt-format.xml | $(FLEX) -Cfer -t >$@
 
-html-deformat.cc: html-format.xml Makefile.am deformat.xsl
-	$(XSLTPROC) --stringparam mode matxin deformat.xsl html-format.xml | $(FLEX) -Cfer -t >$@
+# html-deformat.cc: html-format.xml Makefile.am deformat.xsl
+# 	$(XSLTPROC) --stringparam mode matxin deformat.xsl html-format.xml | $(FLEX) -Cfer -t >$@
 
 #rtf-deformat.cc: rtf-format.xml Makefile.am deformat.xsl
 #	$(XSLTPROC) --stringparam mode matxin deformat.xsl rtf-format.xml | $(FLEX) -Cfer -t >$@
