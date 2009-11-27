@@ -83,27 +83,30 @@ def make_transfer_engine(configfile=CONFIGFILE, pipedir='.'):
 class XMLTreeToOrderedForms:
     """Parser transfer engine output and build resulting sentence. The translated sentence is accesible through result()"""
     def __init__(self):
-        self._result = {}
+        self._result = []
         self.p = expat.ParserCreate()
         self.p.StartElementHandler = self.start_element
         self.chunk_ord = -1
     def parse(self, uxml):
-        self._result = {}
+        self._result = []
         self.p.Parse(uxml, 1)
     def start_element(self, name, attrs):
+        if name == 'SENTENCE':
+            self._result.append({})
         if name == 'CHUNK':
             self.chunk_ord = int(attrs['ord'])
-            if ord not in self._result:
-                self._result[self.chunk_ord] = {}
+            if ord not in self._result[-1]:
+                self._result[-1][self.chunk_ord] = {}
         elif name == 'NODE':
             node_ord = int(attrs['ord'])
             form = attrs['form']
-            self._result[self.chunk_ord][node_ord] = form
+            self._result[-1][self.chunk_ord][node_ord] = form
     def result(self):
         result = []
-        for chunk_ord, formdict in self._result.iteritems():
-            for form in formdict.itervalues():
-                result.append(form)
+        for sentence in self._result:
+            for chunk_ord, formdict in sentence.iteritems():
+                for form in formdict.itervalues():
+                    result.append(form)
         txt = ' '.join(result)
         txt = re.sub(' ([.,!?])', r'\1', txt)
         return txt
