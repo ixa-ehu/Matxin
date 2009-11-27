@@ -52,6 +52,7 @@ wstring keep_case(wstring form, wstring UpCase)
 
   for (size_t i = 1; i<form.size(); i++)
   {
+//    if (UpCase == L"title" && form[i - 1] == L' ')
     if (UpCase == L"all" || UpCase == L"title" && form[i - 1] == L' ')
       out_form[i] = toupper(out_form[i]);
   }
@@ -685,42 +686,41 @@ wstring procNODE(xmlTextReaderPtr reader, wstring chunk_type, wstring cas,
   if (tagName == L"NODE" and tagType != XML_READER_TYPE_END_ELEMENT)
   {
     wstring lem = attrib(reader, "lem");
+    wstring pos = attrib(reader, "pos");
+    wstring suf = attrib(reader, "suf");
     wstring form;
     bool is_last = (watoi(attrib(reader, "ord").c_str()) == (chunk_len - 1));
     bool flexioned = false;
 
+    lem = keep_case(lem, attrib(reader, "UpCase"));
+
     if (chunk_type.substr(0, 4) == L"adi-")
     {
-      form = verb_generation(attrib(reader, "lem"), attrib(reader, "pos"),
-                             attrib(reader, "suf"), cas, attrib(reader, "mi"),
+      form = verb_generation(lem, pos, suf, cas, attrib(reader, "mi"),
                              mi, head_sem, is_last, flexioned, cfg);
     }
-    else if (attrib(reader, "pos") == L"[W]")
+    else if (pos == L"[W]")
     {
-      form = date_generation(attrib(reader, "lem"), attrib(reader, "pos"),
-                             attrib(reader, "suf"), cas, mi, head_sem, is_last,
-                             flexioned, cfg);
+      form = date_generation(lem, pos, suf, cas, mi, head_sem, 
+			     is_last, flexioned, cfg);
     }
-    else if (attrib(reader, "pos") == L"[Z]" || attrib(reader, "pos") == L"[Zu]"
-             || attrib(reader, "pos") == L"[Zm]" || attrib(reader, "pos") == L"[Zp]"
-             || attrib(reader, "pos") == L"[Zd]")
+    else if (pos == L"[Z]" || pos == L"[Zu]" || pos == L"[Zm]" 
+	     || pos == L"[Zp]" || pos == L"[Zd]")
     {
-      form = number_generation(attrib(reader, "lem"), attrib(reader, "pos"),
-                               attrib(reader, "suf"), cas, mi, head_sem, is_last,
-                               flexioned, cfg);
+      form = number_generation(lem, pos, suf, cas, mi, head_sem, 
+			       is_last, flexioned, cfg);
     }
     else
     {
-      form = generation(attrib(reader, "lem"), attrib(reader, "pos"),
-                        attrib(reader, "suf"), cas, mi, head_sem, is_last,
-                        flexioned, cfg);
+      form = generation(lem, pos, suf, cas, mi, head_sem, 
+			is_last, flexioned, cfg);
     }
 
     for (size_t i = 0; i<form.size(); i++)
       if (form[i] == L'_')
         form[i] = L' ';
 
-    form = keep_case(form, attrib(reader, "UpCase"));
+//    form = keep_case(form, attrib(reader, "UpCase"));
 
     nodes += L"<NODE " + write_xml(L"form='" + form + L"'");
     nodes += L" ref ='" + write_xml(attrib(reader, "ref"));
@@ -931,15 +931,15 @@ int main(int argc, char *argv[])
   fclose(transducer);
   fstp_measures.initBiltrans();
 
-  transducer = fopen(cfg.Tag_ToGenFile, "r");
-  fstp_pre_generation.load(transducer);
-  fclose(transducer);
-  fstp_pre_generation.initBiltrans();
-
   transducer = fopen(cfg.NoLex_GenFile, "r");
   fstp_nolex_generation.load(transducer);
   fclose(transducer);
   fstp_nolex_generation.initBiltrans();
+
+  transducer = fopen(cfg.Tag_ToGenFile, "r");
+  fstp_pre_generation.load(transducer);
+  fclose(transducer);
+  fstp_pre_generation.initBiltrans();
 
   //ordena definituko duen zerbitzaria hasieratu...
   init_generation_order(cfg.Tag_OrderFile);
