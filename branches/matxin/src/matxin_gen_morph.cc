@@ -851,7 +851,7 @@ wstring procNODE(xmlTextReaderPtr reader, wstring chunk_type, wstring cas,
     form = keep_case(form, attrib(reader, "UpCase"));
 
     nodes += L"<NODE " + write_xml(L"form='" + form + L"'");
-    if (unknown) 
+    if (unknown && attrib(reader, "unknown") == L"")
     {
       nodes += L" unknown='generation'";
     }    

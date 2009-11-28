@@ -64,34 +64,36 @@ wstring write_CHUNK(vector<wstring> tree, vector<wstring> order)
 vector<wstring> merge(vector<wstring> order, int &head_index,
                       vector<wstring> child_order, wstring relative_order)
 {
+  // &head_index is the current ord value of the CHUNK we're processing
+  
   if (relative_order == L"x1.x2")
   {
-    for (size_t i = 0; i < child_order.size(); i++)
+    for (size_t i = 0; i < child_order.size(); i++) // add child and its chunk children
     {
       order.push_back(child_order[i]);
     }
-
+    // head_index is unchanged
     return order;
   }
   else if (relative_order == L"x2.x1.x2")
   {
     vector<wstring> output_order;
     int output_head;
-    for (size_t i = 0; i < head_index; i++)
+    for (size_t i = 0; i < head_index; i++) // add those that were before head
     {
       output_order.push_back(order[i]);
     }
 
-    for (size_t i = 0; i < child_order.size() - 1; i++)
+    for (size_t i = 0; i < child_order.size() - 1; i++) // add child and its chunk children except for the last one
     {
       output_order.push_back(child_order[i]);
     }
 
-    output_order.push_back(order[head_index]);
-    output_head = output_order.size() - 1;
+    output_order.push_back(order[head_index]); // add head
+    output_head = output_order.size() - 1; 
     output_order.push_back(child_order[child_order.size() - 1]);
 
-    for (size_t i = head_index + 1; i < order.size(); i++)
+    for (size_t i = head_index + 1; i < order.size(); i++) // add those that were after head
     {
       output_order.push_back(order[i]);
     }
@@ -103,23 +105,45 @@ vector<wstring> merge(vector<wstring> order, int &head_index,
   {
     vector<wstring> output_order;
     int output_head;
-    for (size_t i = 0; i < head_index; i++)
+    
+    for (size_t i = 0; i < head_index; i++) // add those that were before head
     {
       output_order.push_back(order[i]);
     }
 
-    output_head = output_order.size();
-
-    for (size_t i = 0; i < child_order.size(); i++)
+    output_head = output_order.size(); 
+    
+    for (size_t i = 0; i < child_order.size(); i++) // add child and its chunk children
     {
       output_order.push_back(child_order[i]);
     }
 
-    for (size_t i = head_index; i < order.size(); i++)
+    for (size_t i = head_index; i < order.size(); i++) // add head and those that were after
     {
       output_order.push_back(order[i]);
     }
     head_index = output_head;
+    return output_order;
+  }
+  else if (relative_order == L"x1+x2")
+  {
+    vector<wstring> output_order;
+    int output_head;    
+    for (size_t i = 0; i <= head_index; i++) // add everything up until and including head
+    {
+      output_order.push_back(order[i]);
+    }
+    // head_index (everything up until head) is unchanged
+    
+    for (size_t i = 0; i < child_order.size(); i++) // add child and its chunk children
+    {
+      output_order.push_back(child_order[i]);
+    }
+
+    for (size_t i = head_index + 1; i < order.size(); i++) // add those that were after head
+    {
+      output_order.push_back(order[i]);
+    }
 
     return output_order;
   }
@@ -138,7 +162,7 @@ vector<wstring> merge(vector<wstring> order, int &head_index,
     }
 
     output_order.push_back(order[head_index]);
-    output_head = output_order.size() - 1;
+    output_head = output_order.size() - 1; 
 
     for (size_t i = head_index + 1; i < order.size(); i++)
     {
@@ -305,7 +329,7 @@ vector<wstring> procCHUNK(xmlTextReaderPtr reader, vector<wstring> &tree,
     wstring child_attribs;
     int child_ref;
     vector<wstring> suborder = procCHUNK(reader, tree, child_attribs, child_ref);
-
+            
     wstring relative_order = get_chunk_order(attribs, child_attribs, child_ref - ref);
     order = merge(order, head_index, suborder, relative_order);
 

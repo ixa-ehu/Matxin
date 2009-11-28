@@ -864,16 +864,16 @@ void init_chunk_order(string fitxName)
 wstring get_chunk_order(wstring parent_attribs, wstring child_attribs,
                         int relative_order)
 {
+  // Loop through all order rules written in the order_inter input file
   for (size_t i = 0; i < order_inter.size(); i++)
   {
-
     if (apply_condition(parent_attribs, order_inter[i].parent_condition) and apply_condition(child_attribs, order_inter[i].child_condition) and
 	(order_inter[i].relative_order == L".*?" or 
 	 order_inter[i].relative_order[0] == L'=' and relative_order == watoi(order_inter[i].relative_order.substr(1, order_inter[i].relative_order.size()).c_str()) or
 	 order_inter[i].relative_order[0] == L'>' and relative_order > watoi(order_inter[i].relative_order.substr(1, order_inter[i].relative_order.size()).c_str()) or
 	 order_inter[i].relative_order[0] == L'<' and relative_order < watoi(order_inter[i].relative_order.substr(1, order_inter[i].relative_order.size()).c_str())
-	 )) 
-    {
+	 ))
+    {      
       return order_inter[i].order;
     }
   }

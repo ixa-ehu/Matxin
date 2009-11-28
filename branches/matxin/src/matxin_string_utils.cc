@@ -2,7 +2,7 @@
 #include <wctype.h>
 #include <assert.h>
 
-
+// convert wide character string to long integer, base 10, NULL-terminated
 int watoi(const wchar_t *buffer)
 {
     return wcstol(buffer, NULL, 10);
