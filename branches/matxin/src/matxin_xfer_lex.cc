@@ -199,6 +199,7 @@ void order_ordainak(vector<wstring> &ordainak)
 
 // Hiztegi elebidunaren euskarazko ordainetik lehenengoa lortzen du.
 // IN:  Euskarazko ordainak ( ordain1[/ordain2]* )
+// note: segfaults if full has no mi
 // OUT: lehenengoa          ( oradin1            )
 vector<wstring> disambiguate(wstring &full)
 {
@@ -219,7 +220,6 @@ vector<wstring> disambiguate(wstring &full)
     if (output[i] == L'\\')
       output.erase(i, 1);
   }
-
   ordainak.push_back(get_dict_attributes(output));
   order_ordainak(ordainak);
 
@@ -241,26 +241,30 @@ vector<wstring> get_translation(wstring lem, wstring mi,
   unknown = false;
   if (trad[0] == L'@' || trad.find(L">") < trad.find(L"<"))
   {
-    input = L"^" + lem + L"<parol>noKAT$";
-    trad = fstp.biltrans(input);
-    trad = trad.substr(1, trad.size() - 2);
-
-    if (trad[0] == L'@' || trad.find(L">") < trad.find(L"<"))
-    {
-      input = L"^@" + lem + L"<parol>" + mi + L"$";
-      trad = fstp.biltrans(input);
-      trad = trad.substr(3, trad.size() - 4);
-      if (trad[0] == L'@')
-        trad.erase(0, 1);
-
-      if (trad[0] == L'@' || trad.find(L">") < trad.find(L"<"))
-        trad = lem + L"<pos>" +  mi.substr(0, 2);
-    }
     unknown = true;
+    return translation;
+    // Used to be that unknown words would still get tried in the
+    // bidix, using different tags, but still marked as unknown:
+//     input = L"^" + lem + L"<parol>noKAT$";
+//     trad = fstp.biltrans(input);
+//     trad = trad.substr(1, trad.size() - 2);
+
+//     if (mi != L"" && (trad[0] == L'@' || trad.find(L">") < trad.find(L"<")))
+//     {
+//       input = L"^@" + lem + L"<parol>" + mi + L"$";
+//       trad = fstp.biltrans(input);
+//       trad = trad.substr(3, trad.size() - 4);
+//       if (trad[0] == L'@')
+//         trad.erase(0, 1);
+
+//       if (trad[0] == L'@' || trad.find(L">") < trad.find(L"<"))
+//       {
+//         trad = lem + L"<pos>" + mi.substr(0, 2);
+//       }
+//     }
   }
 
   translation = disambiguate(trad); 
-
   return translation;
 }
 
@@ -322,9 +326,14 @@ std::pair<wstring,wstring> procNODE_notAS(xmlTextReaderPtr reader, bool head,
                                                      attrib(reader, "ord"))) +
                  L"'";
 
+    if (attrib(reader, "unknown") != L"")
+    {
+      attributes += L" unknown='" + write_xml(attrib(reader, "unknown")) + L"'";
+    }
     // TODO: LANGUAGE INDEPENDENCE
-    if (attrib(reader, "mi").substr(0,1) == L"W" or
-        attrib(reader, "mi").substr(0,1) == L"Z")
+    else if (attrib(reader,"mi") != L"" &&
+	     attrib(reader, "mi").substr(0,1) == L"W" or
+	     attrib(reader, "mi").substr(0,1) == L"Z")
     {
       // Daten (W) eta zenbakien (Z) kasuan ez da transferentzia egiten.
       // lem eta mi mantentzen dira
@@ -338,45 +347,48 @@ std::pair<wstring,wstring> procNODE_notAS(xmlTextReaderPtr reader, bool head,
       trad = get_translation(attrib(reader, "lem"),
                              attrib(reader, "mi"), unknown);
 
-      if (trad.size() > 1) {
-        select = lexical_selection(parent_attribs, attributes, trad); 
-      } else {
-        select = trad;
-      }
-
-      if (trad.size() > 1) {
-        synonyms = getsyn(trad);
-      }
-
-      if (select[0].find(L"\\") != wstring::npos) {
-        subnodes = multiNodes(reader, select[0], attributes);
-      }
-      attributes += L" " + select[0];
       
-      // Hitz horren semantika begiratzen da
-
-      // Look up a lemma and its POS in the semantic information 
-      // transducer. 
-      //   In format: ^euskara[IZE][ARR]$ 
-      //   Out format: ^<BIZ->$
-      pos = text_attrib(select[0], L"pos");
-
-      if (head) {
-        wstring lem = text_attrib(select[0], L"lem");
-        wstring sem_search = L'^' + lem + pos + L'$';
-        wstring sem_info = fstp_sem_info.biltrans(sem_search);
-        if(sem_info[1] != L'@' && sem_info != L"" && sem_info != L"$") {
-          wstring sem = StringUtils::substitute(sem_info, L"<", L"["); 
-          sem = StringUtils::substitute(sem, L">", L"]"); 
-          attributes += L" sem='" + write_xml(sem.substr(1, sem.size() - 2)) + L"'";
-        }
-      }
-
       if (unknown) {
         attributes += L" unknown='transfer'";
       }
+      else 
+      {
+	if (trad.size() > 1) {
+	  select = lexical_selection(parent_attribs, attributes, trad); 
+	} else {
+	  select = trad;
+	}
 
-      head_child = head && (text_attrib(select[0], L"lem") == L"");
+	if (trad.size() > 1) {
+	  synonyms = getsyn(trad);
+	}
+
+	if (select[0].find(L"\\") != wstring::npos) {
+	  subnodes = multiNodes(reader, select[0], attributes);
+	}
+	attributes += L" " + select[0];
+      
+	// Hitz horren semantika begiratzen da
+
+	// Look up a lemma and its POS in the semantic information 
+	// transducer. 
+	//   In format: ^euskara[IZE][ARR]$ 
+	//   Out format: ^<BIZ->$
+	pos = text_attrib(select[0], L"pos");
+
+	if (head) {
+	  wstring lem = text_attrib(select[0], L"lem");
+	  wstring sem_search = L'^' + lem + pos + L'$';
+	  wstring sem_info = fstp_sem_info.biltrans(sem_search);
+	  if(sem_info[1] != L'@' && sem_info != L"" && sem_info != L"$") {
+	    wstring sem = StringUtils::substitute(sem_info, L"<", L"["); 
+	    sem = StringUtils::substitute(sem, L">", L"]"); 
+	    attributes += L" sem='" + write_xml(sem.substr(1, sem.size() - 2)) + L"'";
+	  }
+	}
+      
+	head_child = head && (text_attrib(select[0], L"lem") == L"");
+      }
     }
 
     if (xmlTextReaderIsEmptyElement(reader) == 1 and
@@ -467,7 +479,6 @@ wstring procNODE_AS(xmlTextReaderPtr reader, bool head, wstring& attributes)
   int tagType = xmlTextReaderNodeType(reader);
   bool unknown = false;
 
-
   if (tagName == L"NODE" and tagType != XML_READER_TYPE_END_ELEMENT)
   {
     // ord -> ref : ord atributuan dagoen balioa, ref atributuan idazten du
@@ -481,8 +492,12 @@ wstring procNODE_AS(xmlTextReaderPtr reader, bool head, wstring& attributes)
                  L" slem='" + attrib(reader, "lem") + L"'" +
                  L" smi='" + attrib(reader, "mi") + L"'";
 
+    if (attrib(reader, "unknown") != L"")
+    {
+      attributes += L" unknown='" + write_xml(attrib(reader, "unknown")) + L"'";
+    }
     // CHUNKaren burua bada:
-    if (head)
+    else if (head)
     {
       // Transferentzia lexikoa egiten da,
       // lem eta pos atributuen balio berriak sortuz

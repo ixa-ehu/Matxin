@@ -41,7 +41,7 @@ bool apply_condition(wstring attributes, wstring condition)
   {
     return true;
   }
-  else if (condition.find(L"(") != string::npos)
+  else if (condition.find(L"(") != string::npos) // not wstring?
   {
     size_t open_position = condition.find(L"(");
     size_t close_position = condition.find(L")", open_position + 1);
@@ -217,7 +217,7 @@ bool apply_condition(wstring attributes, wstring condition)
         return watoi(text_attrib(attributes, attribute).c_str()) > watoi(value.c_str());
       }
     }
-    else if (condition.find(L"<") != string::npos)
+    else if (condition.find(L"<") != string::npos) // not wstring?
     {
       int operator_position = condition.find(L"<");
       int blank_position = condition.rfind(L" ", operator_position);
