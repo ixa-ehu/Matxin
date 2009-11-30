@@ -807,7 +807,6 @@ wstring procNODE(xmlTextReaderPtr reader, wstring chunk_type, wstring cas,
   
   if (tagName == L"NODE" and tagType != XML_READER_TYPE_END_ELEMENT)
   {
-    wstring lem = attrib(reader, "lem");
     wstring form;
     bool is_last = (watoi(attrib(reader, "ord").c_str()) == (chunk_len - 1));
     bool flexioned = false;
@@ -840,7 +839,11 @@ wstring procNODE(xmlTextReaderPtr reader, wstring chunk_type, wstring cas,
                         attrib(reader, "suf"), cas, attrib(reader, "mi"), head_sem, is_last,
                         flexioned, unknown);
     }
-
+    if (form==L"" && attrib(reader, "unknown") != L"") 
+    {
+      form = attrib(reader, "slem");
+    }
+    
     // TODO: do we really want this? -KBU
     for (size_t i = 0; i<form.size(); i++) {
       if (form[i] == L'_') {
