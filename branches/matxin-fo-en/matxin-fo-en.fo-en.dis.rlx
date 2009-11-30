@@ -285,8 +285,9 @@ REMOVE Dat IF (*-1 V LINK NOT 0 DATV BARRIER NPNH)(0 Acc)(1 EOS OR CS);
 REMOVE Pr IF (0 Adv)(NOT *1 OBL BARRIER NPNH);
 # This rule does not handle stranded prepositions, it must be relaxed.
 
-REMOVE:PrAdv Adv IF (*-1 N OR V)(0 Pr + SOMEACCPREP)(*1 Acc BARRIER NPNH);
+REMOVE:PrAdv Adv IF (*-1 N OR V)(0 Pr + SOMEACCPREP)(*1 Acc BARRIER NPNH)(NOT 2 CLB LINK -3 VFIN);
 	## Altjóða samstarv innan gransking og útbúgving.
+	## (NOT 2 CLB LINK -3 VFIN) since "Hon lás síðan<adv> bókina."
 
 # á
 REMOVE:AArule N IF (0 ("á" ind))(-1C NOMINALHEAD OR V);

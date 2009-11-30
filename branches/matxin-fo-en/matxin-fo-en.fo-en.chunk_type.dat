@@ -32,4 +32,7 @@
 # Predicates: 
 @←OPRED[n]	opred
 
+# Not sure what this is:
+HNOUN[n]	hnoun
+
 [sent]	sent

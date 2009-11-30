@@ -25640,7 +25640,6 @@
     <e lm="nærindis"><i>nærindis</i><par n="við__pr"/></e>
     <e lm="sambært"><i>sambært</i><par n="við__pr"/></e>
     <e lm="viðvíkjandi"><i>viðvíkjandi</i><par n="við__pr"/></e>
-    <e lm="síðan"><i>síðan</i><par n="við__pr"/></e>
     <e lm="áðrenn"><i>áðrenn</i><par n="við__pr"/></e> 
     <e lm="uttan"><i>uttan</i><par n="við__pr"/></e> 
     <e lm="undan"><i>undan</i><par n="við__pr"/></e> 
@@ -25809,7 +25808,7 @@
     <e lm="svo"><i>svo</i><par n="ikki__adv"/></e> 
     <e lm="tá"><i>tá</i><par n="ikki__adv"/></e> 
     <e lm="tó"><i>tó</i><par n="ikki__adv"/></e> 
-    <e lm="nú"><i>nú</i><par n="ikki__adv"/></e> 
+    <e lm="nú"><i>nú</i><par n="ikki__adv"/></e>
     <e lm="upp"><i>upp</i><par n="ikki__adv"/></e> 
     <e lm="út"><i>út</i><par n="ikki__adv"/></e> 
     <e lm="úr"><i>úr</i><par n="ikki__adv"/></e> 

@@ -1,5 +1,14 @@
-type=~'fmv'	type=~'subj'	.*?	x2+x1
+type=~'fmv'	type=~'subj'	.*?	x2.x1
+type=~'fmv'	type=~'adv'	=1	x2+x1
 type=~'fmv'	type=~'obj'	.*?	x1.x2
 type=~'obj'	type=~'opred'	.*?	x1.x2
+type=~'subj'	type=~'spred'	.*?	x1.x2
 
+# child is after head:
+#true	true	>1	x1.x2
+# child is before head:
+#true	true	<1	x2.x1
+# child is immediately after head:
+#true	true	=1	x2.x1
+# we should've exhausted the possibilities by now:
 true	true	.*?	x2.x1

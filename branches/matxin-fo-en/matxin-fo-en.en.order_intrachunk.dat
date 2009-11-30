@@ -1,3 +1,6 @@
 fmv	([adv])([BURUA])
-obj	([det][def])([adj])([adj])([adj])([BURUA])
-opred	([det][def])([adj])([adj])([adj])([BURUA])
+subj	([det][def])([adj][sint])([adj][sint])([adj][sint])([BURUA])
+obj	([det][def])([adj][sint])([adj][sint])([adj][sint])([BURUA])
+opred	([det][def])([adj][sint])([adj][sint])([adj][sint])([BURUA])
+spred	([det][def])([adj][sint])([adj][sint])([adj][sint])([BURUA])
+@HNOUN[n]	([det][def])([adj][sint])([adj][sint])([adj][sint])([BURUA])
