@@ -1207,32 +1207,32 @@ int match_subcategorisation(vector<vector<wstring> > &cases,
 
   for (size_t i = 0; i<current_component.size(); i++)
   {
-    if ((current_case = get_case(current_component[i])) == L"")
-      continue;
-
     vector<vector<wstring> > extra_components = cases;
     extra_components.erase(extra_components.begin());
-
-    size_t position = subcat_pattern.find(current_case);
     int fixed_cases = 0;
-    current_fixed = false;
 
-    if (position != wstring::npos &&
-        (position == 0 || subcat_pattern[position-1] == L'-') and
-        (position+current_case.size() == subcat_pattern.size() or
-         subcat_pattern[position+current_case.size()] == L'-'))
-    {
-      current_fixed = true;
-      fixed_cases++;
-      subcat_pattern.erase(position, current_case.size());
-
-      if (subcat_pattern.find(L"--") != string::npos)
-        subcat_pattern.erase(subcat_pattern.find(L"--"), 1);
-      if (subcat_pattern[0] == L'-')
-        subcat_pattern.erase(0, 1);
-      if (subcat_pattern[subcat_pattern.size() - 1] == L'-')
-        subcat_pattern.erase(subcat_pattern.size() - 1, 1);
-    }
+    if ((current_case = get_case(current_component[i])) != L"")
+      {
+	size_t position = subcat_pattern.find(current_case);
+	current_fixed = false;
+	
+	if (position != wstring::npos &&
+	    (position == 0 || subcat_pattern[position-1] == L'-') and
+	    (position+current_case.size() == subcat_pattern.size() or
+	     subcat_pattern[position+current_case.size()] == L'-'))
+	  {
+	    current_fixed = true;
+	    fixed_cases++;
+	    subcat_pattern.erase(position, current_case.size());
+	    
+	    if (subcat_pattern.find(L"--") != string::npos)
+	      subcat_pattern.erase(subcat_pattern.find(L"--"), 1);
+	    if (subcat_pattern[0] == L'-')
+	      subcat_pattern.erase(0, 1);
+	    if (subcat_pattern[subcat_pattern.size() - 1] == L'-')
+	      subcat_pattern.erase(subcat_pattern.size() - 1, 1);
+	  }
+      }
 
     if (subcat_pattern.size() > 0)
       fixed_cases += match_subcategorisation(extra_components, subcat_pattern);
@@ -1243,9 +1243,9 @@ int match_subcategorisation(vector<vector<wstring> > &cases,
       best_cases.clear();
       if (current_fixed)
       {
-        vector<wstring> current_case;
-        current_case.push_back(current_component[i]);
-        best_cases.push_back(current_case);
+        vector<wstring> current_case_array;
+        current_case_array.push_back(current_component[i]);
+        best_cases.push_back(current_case_array);
       }
       else
       {
