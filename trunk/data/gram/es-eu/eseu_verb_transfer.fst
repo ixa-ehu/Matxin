@@ -161,7 +161,7 @@ define PaNos	     [ [ {.yo.} "[" {PP1CP000} "]" ] | [ {.yo.} "[" {P010P000} "]" 
 define PaLos	     [ [ {.él.} "[" {PP3MPA00} "]" ] | [ {.los.} "[" {PP3MPA00} "]" ] ];
 define PaLas	     [ [ {.él.} "[" {PP3FPA00} "]" ] | [ {.los.} "[" {PP3FPA00} "]" ] ];
 define PaLes	     [ [ {.él.} "[" {PP3CPD00} "]" ] | [ {.les.} "[" {PP3CPD00} "]" ] ];
-define PaSePost	     [ [ {.él.} "[" {PP3CN000} "]" ] | [ {.se.} "[" {PP3CN000} "]" ] ];
+define PaSePost	     [ [ {.él.} "[" {PP3CN000} "]" ] | [ {.se.} "[" {PP3CN000} "]" ] | [ {.se.} "[" {P03CN000} "]" ] ];
 define PaLoPost	     [ [ {.él.} "[" {PP3CNA00} "]" ] | [ {.lo.} "[" {PP3CNA00} "]" ] ];
 
 define Pr	     [ PaSe | PaSePost | PaMe | PaTe | PaLo | PaLoPost | PaLa | PaLe | PaNos | PaOs | PaLos | PaLas | PaLes ];
