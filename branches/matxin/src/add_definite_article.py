@@ -1,4 +1,4 @@
-#!/usr/bin/python
+#!/opt/local/bin/python
 
 ## 
 ##  Suggestion: we have two new programs, called "matxin-gen-chunks" and 
@@ -25,14 +25,41 @@ while c: #{
 
 doc = NonvalidatingReader.parseString(input);
 
+for node in doc.xpath('.//NODE[@defnes="[ind]"]'): #{
+	hasdet = False;
+	for child in node.xpath('.//NODE[@pos="[det]"]'): #{
+		hasdet = True;
+		break;
+	#}
+	if hasdet: #{
+		continue;
+	#}
+	article = Ft.Xml.cDomlette.Element(doc, None, 'NODE'); # New node
+	article.setAttributeNS(None, 'pos', '[det]');     # Set attributes
+	article.setAttributeNS(None, 'lem', 'a');
+	article.setAttributeNS(None, 'UpCase', 'none');
+	article.setAttributeNS(None, 'mi', '[ind][sg]');
+	node.appendChild(article);                           # Add as a child node
+	node.removeAttributeNS(None, 'defnes');              # Remove defnes attribute
+#}
+
 for node in doc.xpath('.//NODE[@defnes="[def]"]'): #{
-	article = Ft.Xml.cDomlette.Element(doc, '', 'NODE'); # New node
-	article.setAttributeNS('', 'pos', '[det][def]');     # Set attributes
-	article.setAttributeNS('', 'lem', 'the');
-	article.setAttributeNS('', 'UpCase', 'none');
-	article.setAttributeNS('', 'mi', '[sg]');
+	hasdet = False;
+	for child in node.xpath('.//NODE[@pos="[det]"]'): #{
+		hasdet = True;
+		break;
+	#}
+	if hasdet: #{
+		continue;
+	#}
+	article = Ft.Xml.cDomlette.Element(doc, None, 'NODE'); # New node
+	article.setAttributeNS(None, 'pos', '[det]');     # Set attributes
+	article.setAttributeNS(None, 'lem', 'the');
+	article.setAttributeNS(None, 'UpCase', 'none');
+	article.setAttributeNS(None, 'mi', '[def][sg]');
 	node.appendChild(article);                           # Add as a child node
 	node.removeAttributeNS(None, 'defnes');              # Remove defnes attribute
 #}
 
 Ft.Xml.Domlette.PrettyPrint(doc);
+

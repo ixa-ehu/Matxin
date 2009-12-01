@@ -12,7 +12,7 @@ bin_PROGRAMS = matxin-xfer-lex matxin-xfer-intra matxin-xfer-inter matxin-xfer-p
                matxin-reformat matxin-destxt matxin-deshtml
 #txt-deformat html-deformat rtf-deformat
 
-bin_SCRIPTS = matxin-gen-modes fst2regex.pl matxin
+bin_SCRIPTS = matxin-gen-modes fst2regex.pl matxin add_definite_article.py
 
 matxin_xfer_lex_SOURCES = matxin_xfer_lex.cc utf_converter.cc data_manager.cc XML_reader.cc simpleregex.cc matxin_string_utils.cc matxin_string_utils.h string_utils.cc string_utils.h
 matxin_xfer_lex_LDADD =  -lboost_filesystem
