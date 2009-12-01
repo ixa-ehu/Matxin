@@ -28,6 +28,9 @@
 @←ADVL[adv]	adv
 @ADVL→[adv]	adv
 @ADVL[adv]	adv
+@←ADVL[pr]	padv
+@ADVL→[pr]	padv
+@ADVL[pr]	padv
 
 # Predicates: 
 @←OPRED[n]	opred

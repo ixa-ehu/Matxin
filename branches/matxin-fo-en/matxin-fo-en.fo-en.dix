@@ -43,18 +43,18 @@
     </pardef>
 
     <pardef n="NC_STD">
-      <e><p><l>[sg][nom][ind]</l><r><s n="mi"/>[sg]</r></p></e>
-      <e><p><l>[sg][acc][ind]</l><r><s n="mi"/>[sg]</r></p></e>
-      <e><p><l>[sg][dat][ind]</l><r><s n="mi"/>[sg]</r></p></e>
-      <e><p><l>[sg][gen][ind]</l><r><s n="mi"/>[sg]</r></p></e>
+      <e><p><l>[sg][nom][ind]</l><r><s n="mi"/>[sg]<s n="defnes"/>[ind]</r></p></e>
+      <e><p><l>[sg][acc][ind]</l><r><s n="mi"/>[sg]<s n="defnes"/>[ind]</r></p></e>
+      <e><p><l>[sg][dat][ind]</l><r><s n="mi"/>[sg]<s n="defnes"/>[ind]</r></p></e>
+      <e><p><l>[sg][gen][ind]</l><r><s n="mi"/>[sg]<s n="defnes"/>[ind]</r></p></e>
       <e><p><l>[sg][nom][def]</l><r><s n="mi"/>[sg]<s n="defnes"/>[def]</r></p></e>
       <e><p><l>[sg][acc][def]</l><r><s n="mi"/>[sg]<s n="defnes"/>[def]</r></p></e>
       <e><p><l>[sg][dat][def]</l><r><s n="mi"/>[sg]<s n="defnes"/>[def]</r></p></e>
       <e><p><l>[sg][gen][def]</l><r><s n="mi"/>[sg]<s n="defnes"/>[def]</r></p></e>
-      <e><p><l>[pl][nom][ind]</l><r><s n="mi"/>[pl]</r></p></e>
-      <e><p><l>[pl][acc][ind]</l><r><s n="mi"/>[pl]</r></p></e>
-      <e><p><l>[pl][dat][ind]</l><r><s n="mi"/>[pl]</r></p></e>
-      <e><p><l>[pl][gen][ind]</l><r><s n="mi"/>[pl]</r></p></e>
+      <e><p><l>[pl][nom][ind]</l><r><s n="mi"/>[pl]<s n="defnes"/>[ind]</r></p></e>
+      <e><p><l>[pl][acc][ind]</l><r><s n="mi"/>[pl]<s n="defnes"/>[ind]</r></p></e>
+      <e><p><l>[pl][dat][ind]</l><r><s n="mi"/>[pl]<s n="defnes"/>[ind]</r></p></e>
+      <e><p><l>[pl][gen][ind]</l><r><s n="mi"/>[pl]<s n="defnes"/>[ind]</r></p></e>
       <e><p><l>[pl][nom][def]</l><r><s n="mi"/>[pl]<s n="defnes"/>[def]</r></p></e>
       <e><p><l>[pl][acc][def]</l><r><s n="mi"/>[pl]<s n="defnes"/>[def]</r></p></e>
       <e><p><l>[pl][dat][def]</l><r><s n="mi"/>[pl]<s n="defnes"/>[def]</r></p></e>
@@ -299,6 +299,7 @@
     <!-- Prepositions -->
 
     <e><p><l>í<s n="parol"/>[pr]</l><r>in<s n="pos"/>[pr]<s n="case"/>[acc][dat]</r></p></e>
+    <e><p><l>av<s n="parol"/>[pr]</l><r>off<s n="pos"/>[pr]<s n="case"/>[acc][dat]</r></p></e>
     <e><p><l>síðan<s n="parol"/>[pr]</l><r>since<s n="pos"/>[pr]<s n="case"/>[acc][dat]</r></p></e>
 
     <!-- Conjunctions -->
@@ -347,6 +348,7 @@
     <e><p><l>djúp<s n="parol"/>[n][nt]</l><r>deep<s n="pos"/>[n]</r></p><par n="NC_STD"/></e>
 
     <e><p><l>himmal<s n="parol"/>[n][m]</l><r>sky<s n="pos"/>[n]</r></p><par n="NC_STD"/></e>
+    <e><p><l>veg<s n="parol"/>[n][m]</l><r>road<s n="pos"/>[n]</r></p><par n="NC_STD"/></e>
 
     <e><p><l>fuglur<s n="parol"/>[n][m]</l><r>bird<s n="pos"/>[n]</r></p><par n="NC_STD"/></e>
     <e><p><l>sjógvur<s n="parol"/>[n][m]</l><r>ocean<s n="pos"/>[n]</r></p><par n="NC_STD"/></e>

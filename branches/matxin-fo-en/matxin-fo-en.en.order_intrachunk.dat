@@ -1,6 +1,9 @@
 fmv	([adv])([BURUA])
-subj	([det][def])([adj][sint])([adj][sint])([adj][sint])([BURUA])
-obj	([det][def])([adj][sint])([adj][sint])([adj][sint])([BURUA])
-opred	([det][def])([adj][sint])([adj][sint])([adj][sint])([BURUA])
-spred	([det][def])([adj][sint])([adj][sint])([adj][sint])([BURUA])
-@HNOUN[n]	([det][def])([adj][sint])([adj][sint])([adj][sint])([BURUA])
+# removed def from pos for now... 
+# later we can add it to ensure we get "the many" and not "many the"
+subj	([det])([adj][sint])([adj][sint])([adj][sint])([BURUA])
+obj	([det])([adj][sint])([adj][sint])([adj][sint])([BURUA])
+opred	([det])([adj][sint])([adj][sint])([adj][sint])([BURUA])
+spred	([det])([adj][sint])([adj][sint])([adj][sint])([BURUA])
+padv	([BURUA])([det])([adj][sint])([adj][sint])([adj][sint])([n])
+@HNOUN[n]	([det])([adj][sint])([adj][sint])([adj][sint])([BURUA])

@@ -9885,6 +9885,117 @@
         </p>
       </e>
     </pardef>
+    <pardef n="veg/ur__n_m">
+      <e>
+        <p>
+          <l>ur</l>
+          <r><s n="n"/><s n="m"/><s n="sg"/><s n="nom"/><s n="ind"/></r>
+        </p>
+      </e>
+      <e>
+        <p>
+          <l>urin</l>
+          <r><s n="n"/><s n="m"/><s n="sg"/><s n="nom"/><s n="def"/></r>
+        </p>
+      </e>
+      <e>
+        <p>
+          <l></l>
+          <r><s n="n"/><s n="m"/><s n="sg"/><s n="dat"/><s n="ind"/></r>
+        </p>
+      </e>
+      <e>
+        <p>
+          <l>num</l>
+          <r><s n="n"/><s n="m"/><s n="sg"/><s n="dat"/><s n="def"/></r>
+        </p>
+      </e>
+      <e r="LR">
+            <p>
+          <l>i</l>
+          <r><s n="n"/><s n="m"/><s n="sg"/><s n="dat"/><s n="ind"/></r>
+        </p>
+      </e>
+      <e r="LR">
+            <p>
+          <l>inum</l>
+          <r><s n="n"/><s n="m"/><s n="sg"/><s n="dat"/><s n="def"/></r>
+        </p>
+      </e>
+      <e>
+        <p>
+          <l></l>
+          <r><s n="n"/><s n="m"/><s n="sg"/><s n="acc"/><s n="ind"/></r>
+        </p>
+      </e>
+      <e>
+        <p>
+          <l>in</l>
+          <r><s n="n"/><s n="m"/><s n="sg"/><s n="acc"/><s n="def"/></r>
+        </p>
+      </e>
+      <e>
+        <p>
+          <l>ar</l>
+          <r><s n="n"/><s n="m"/><s n="sg"/><s n="gen"/><s n="ind"/></r>
+        </p>
+      </e>
+      <e>
+        <p>
+          <l>arins</l>
+          <r><s n="n"/><s n="m"/><s n="sg"/><s n="gen"/><s n="def"/></r>
+        </p>
+      </e>
+
+      <e>
+        <p>
+          <l>ir</l>
+          <r><s n="n"/><s n="m"/><s n="pl"/><s n="nom"/><s n="ind"/></r>
+        </p>
+      </e>
+      <e>
+        <p>
+          <l>irnir</l>
+          <r><s n="n"/><s n="m"/><s n="pl"/><s n="nom"/><s n="def"/></r>
+        </p>
+      </e>
+      <e>
+        <p>
+          <l>ir</l>
+          <r><s n="n"/><s n="m"/><s n="pl"/><s n="acc"/><s n="ind"/></r>
+        </p>
+      </e>
+      <e>
+        <p>
+          <l>irnar</l>
+          <r><s n="n"/><s n="m"/><s n="pl"/><s n="acc"/><s n="def"/></r>
+        </p>
+      </e>
+      <e>
+        <p>
+          <l>um</l>
+          <r><s n="n"/><s n="m"/><s n="pl"/><s n="dat"/><s n="ind"/></r>
+        </p>
+      </e>
+      <e>
+        <p>
+          <l>unum</l>
+          <r><s n="n"/><s n="m"/><s n="pl"/><s n="dat"/><s n="def"/></r>
+        </p>
+      </e>
+      <e>
+        <p>
+          <l>a</l>
+          <r><s n="n"/><s n="m"/><s n="pl"/><s n="gen"/><s n="ind"/></r>
+        </p>
+      </e>
+      <e>
+        <p>
+          <l>anna</l>
+          <r><s n="n"/><s n="m"/><s n="pl"/><s n="gen"/><s n="def"/></r>
+        </p>
+      </e>
+    </pardef>
     <pardef n="land__n_m">
       <e>
         <p>
@@ -22173,13 +22284,13 @@
           <r><s n="n"/><s n="nt"/><s n="sg"/><s n="gen"/><s n="ind"/></r>
         </p>
       </e>
-      <e>
+      <e c="i, says giellatekno">
         <p>
           <l>ið</l>
           <r><s n="n"/><s n="nt"/><s n="sg"/><s n="nom"/><s n="def"/></r>
         </p>
       </e>
-      <e>
+      <e c="i, says giellatekno">
         <p>
           <l>ið</l>
           <r><s n="n"/><s n="nt"/><s n="sg"/><s n="acc"/><s n="def"/></r>
@@ -22191,7 +22302,7 @@
           <r><s n="n"/><s n="nt"/><s n="sg"/><s n="dat"/><s n="def"/></r>
         </p>
       </e>
-      <e>
+      <e c="snum, says giellatekno">
         <p>
           <l>sins</l>
           <r><s n="n"/><s n="nt"/><s n="sg"/><s n="gen"/><s n="def"/></r>
@@ -26147,6 +26258,7 @@
     <e lm="roykur"><i>royk</i><par n="royk/ur__n"/></e>
     <e lm="høvur"><i>høvur</i><par n="ok__n_nt"/></e>
     <e lm="land"><i>land</i><par n="land__n_m"/></e>
+    <e lm="vegur"><i>veg</i><par n="veg/ur__n_m"/></e>
     <e lm="land"><i>l</i><par n="l/and__n_nt"/></e>
     <e lm="bjór"><i>bjór</i><par n="kol__n_nt"/></e>
     <e lm="salt"><i>s</i><par n="s/alt__n_nt"/></e>

@@ -261,8 +261,8 @@ SELECT A IF (-1 COPULA)(1 CC)(2C A)(1 CLB);
 
 
 # Case disambiguation
-SELECT:r21 $$NAGD IF (0C A)(*1C $$NAGD BARRIER NPNHA)(NOT 0 V); #XXX C?
-SELECT:r21b $$NAGD IF (0C A)(-*1C $$NAGD BARRIER NPNHA)(NOT 0 V); #XXX C?
+SELECT:r21 $$NAGD IF (0C A)(*1C $$NAGD BARRIER NPNHA LINK NOT 0 NPNHA)(NOT 0 V); #XXX C? TODO upstream
+SELECT:r21b $$NAGD IF (0C A)(-*1C $$NAGD BARRIER NPNHA LINK NOT 0 NPNHA)(NOT 0 V); #XXX C? TODO upstream
 REMOVE:r22 $$NAGD IF (0 A)(*1C N BARRIER NPNHA LINK NOT 0 $$NAGD);
 
 REMOVE:AVS OBL IF (*-1 VFIN BARRIER NPNH LINK *-1 BOS OR CLB BARRIER NOT-ADV)(0 (n nom) OR (np nom));
@@ -959,7 +959,7 @@ MAP:r78 (@←OBJ) TARGET (n acc) OR (np acc) OR (num acc) OR (prn acc) IF (*-1 V
 MAP:r78 (@←OBJ) TARGET (det acc) (*-1 V BARRIER Pr OR S-BOUNDARY)(NOT *1 N BARRIER NPNHA);
 MAP:r79 (@←IOBJ) TARGET (n dat) OR (np dat) OR (num dat) OR (prn dat) IF (*1 (@←OBJ) BARRIER NPNHA);
 MAP:r80 (@←OBJ) TARGET Dat IF (*-1 DATV);
-MAP:topic (@OBJ→) TARGET OBL IF (-1* S-BOUNDARY)(1* VFIN LINK 1* Nom) ;#TODO
+MAP:topic (@OBJ→) TARGET OBL IF (-1* S-BOUNDARY BARRIER Pr)(1* VFIN LINK 1* Nom) ;#TODO upstream
 
 # PP
 
@@ -1208,9 +1208,11 @@ REMOVE (@←ADVL) IF (0 (@←OPRED));
 SELECT (p3 sg) IF (-1C (sg @SUBJ→));
 
 
+# Conjunctions
 SELECT:r117 CC IF (-1 BOS)(1C (@SUBJ));
 	## Men tað var hált.
  	## Tað var, sum vóru tey sett.
+REMOVE:coord CS IF (0 CC)(NOT 1* VFIN);#TODO upstream
 
 REMOVE:TEST 1Sg IF (-1 (@SUBJ→))(0 3Sg);
 REMOVE:TEST 1Sg IF (*1 (@←SUBJ) BARRIER NPNH)(0 3Sg);
