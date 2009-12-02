@@ -12,6 +12,7 @@ import re
 from optparse import OptionParser
 import os
 import os.path as path
+import signal
 
 def write_read_fifos(txt, fifo1, fifo2):
     """Write in fifo1 and read from fifo2 avoiding risk of blocking."""
@@ -120,14 +121,19 @@ def translate_unicode(utxt, analyzer, translator):
     try:
         # mutex needed for the case of both servers running
         translate_unicode_mutex.acquire()
+        signal.alarm(10)
         """Helper function to translating unicode string to unicode string"""
         # analyze
         axml = analyzer.process(utxt.encode('latin1', 'ignore')).decode('latin1', 'ignore')
         # translate
         txml = translator.process(axml.encode('utf-8')).decode('utf-8', 'ignore')
+        signal.alarm(0)
         # remove xml marks
         result = xmltotxt(txml)
         return result
+    except Exception, e:
+        print 'Exception:', e
+        return utxt
     finally:
         translate_unicode_mutex.release()
     
@@ -144,10 +150,40 @@ def run_fifo_server(inpipename, outpipename):
         inpipe = open(inpipename)
         outpipe = open(outpipename, 'w')
         utxt = inpipe.read().decode('utf-8')
+        print utxt.encode('utf-8')
         result = translate_unicode(utxt, analyzer, transfer_engine)
         outpipe.write(result.encode('utf-8'))
         inpipe.close()
         outpipe.close()
+
+import asyncore
+import socket
+from matxinasynbase import MatxinChannelBase
+class MatxinServer(asyncore.dispatcher):
+    def __init__(self, host, port):
+        asyncore.dispatcher.__init__(self)
+        self.host = host
+        self.port = port
+        self.create_socket(socket.AF_INET, socket.SOCK_STREAM)
+        self.bind((host, port))
+        self.listen(10)
+    def handle_accept(self):
+        channel, addr = self.accept()
+        MatxinChannel(channel, addr)
+class MatxinChannel(MatxinChannelBase):
+    def __init__(self, channel, addr):
+        print MatxinChannel.__init__
+        MatxinChannelBase.__init__(self, channel)
+    def handle_sentence(self):
+        # print >>sys.stderr, self.handle_sentence
+        usentence = self.sentence
+        translated = translate_unicode(usentence, analyzer, transfer_engine).encode('utf-8')
+        self.write_buffer += '%d\n%s\n'%(len(translated), translated)
+
+def run_async_server(host, port):
+    print 'Asyncserver'
+    server = MatxinServer(host, port)
+    asyncore.loop()
 
 def main():
     global analyzer, transfer_engine
@@ -158,12 +194,18 @@ def main():
     parser.add_option('-d', '--pipedir', dest='pipedir', default='/var/run/matxinserver', help='Where to find the FIFOs')
     parser.add_option('-s', '--serverhost', dest='serverhost', default='0.0.0.0')
     parser.add_option('-p', '--port', dest='port', default=8001, type='int', help='Port for the XMLRPC server to listen.')
+    parser.add_option('-a', '--aport', dest='aport', default=8002, type='int', help='Port for the async socket server to listen.')
     parser.add_option('--runxmlrpcserver', dest='runxmlrpcserver', action='store_true', default=False, help='Run XMLRPC server.')
     parser.add_option('--runfifoserver', dest='runfifoserver', action='store_true', default=False, help='Run FIFO server.')
+    parser.add_option('--runasyncserver', dest='runasyncserver', action='store_true', default=False, help='Run Async socket server.')
     parser.add_option('-c', '--config', dest='config', default='/usr/local/matxin/config/es-eu.cfg', help='Matxin configuration file')
     options, args = parser.parse_args()
 
-    if options.runfifoserver or options.runxmlrpcserver:
+    if options.runfifoserver or options.runxmlrpcserver or options.runasyncserver:
+        # set alarm handler
+        def alarm_handler(signum, frame):
+            print 'alarm'
+        signal.signal(signal.SIGALRM, alarm_handler)
         # init engine
         analyzer = make_analyzer(options.config, options.pipedir)
         transfer_engine = make_transfer_engine(options.config, options.pipedir)
@@ -176,6 +218,11 @@ def main():
             servers.append(thread)
         if options.runxmlrpcserver:
             thread = threading.Thread(target=run_xmlrpc_server, args=(options.serverhost, options.port))
+            thread.setDaemon(True)
+            thread.start()
+            servers.append(thread)
+        if options.runasyncserver:
+            thread = threading.Thread(target=run_async_server, args=(options.serverhost, options.aport))
             thread.setDaemon(True)
             thread.start()
             servers.append(thread)
