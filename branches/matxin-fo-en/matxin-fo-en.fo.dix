@@ -7822,7 +7822,7 @@
         </p>
       </e>
     </pardef>
-    <pardef n="yvirv/øld__n_f">
+    <pardef n="øld__n_f">
       <e>
         <p>
           <l>øld</l>
@@ -25894,20 +25894,24 @@
     <e lm="væl"><i/><par n="/væl__adv"/></e> 
 
     <e lm="í morgin"><i>í<b/>morgin</i><par n="ikki__adv"/></e> 
-    <e lm="í gjár"><i>í<b/>gjár</i><par n="ikki__adv"/></e> 
+    <e lm="í gjár"><i>í<b/>gjár</i><par n="ikki__adv"/></e>
+    <e lm="í gjárkvøldið"><i>í<b/>gjárkvøldið</i><par n="ikki__adv"/></e> 
     <e lm="í dag"><i>í<b/>dag</i><par n="ikki__adv"/></e>
     <e lm="ofta"><i>ofta</i><par n="ikki__adv"/></e> 
     <e lm="ið"><i>ið</i><par n="ikki__adv"/></e> 
     <e lm="fram"><i>fram</i><par n="ikki__adv"/></e> 
+    <e lm="framman"><i>framman</i><par n="ikki__adv"/></e> 
     <e lm="mikið"><i>mikið</i><par n="ikki__adv"/></e> 
     <e lm="uttan"><i>uttan</i><par n="ikki__adv"/></e> 
     <e lm="áðrenn"><i>áðrenn</i><par n="ikki__adv"/></e> 
-    <e lm="ikki"><i>ikki</i><par n="ikki__adv"/></e> 
+    <e lm="ikki"><i>ikki</i><par n="ikki__adv"/></e>
+    <e lm="akkurát"><i>akkurát</i><par n="ikki__adv"/></e>
     <e lm="inn"><i>inn</i><par n="ikki__adv"/></e> 
     <e lm="aldri"><i>aldri</i><par n="ikki__adv"/></e> 
     <e lm="altíð"><i>altíð</i><par n="ikki__adv"/></e> 
     <e lm="aftur"><i>aftur</i><par n="ikki__adv"/></e> 
-    <e lm="bara"><i>bara</i><par n="ikki__adv"/></e> 
+    <e lm="bara"><i>bara</i><par n="ikki__adv"/></e>
+    <e lm="eisini"><i>eisini</i><par n="ikki__adv"/></e> 
     <e lm="bert"><i>bert</i><par n="ikki__adv"/></e> 
     <e lm="burt"><i>burt</i><par n="ikki__adv"/></e> 
     <e lm="burtur"><i>burtur</i><par n="ikki__adv"/></e> 
@@ -25924,9 +25928,13 @@
     <e lm="út"><i>út</i><par n="ikki__adv"/></e> 
     <e lm="úr"><i>úr</i><par n="ikki__adv"/></e> 
     <e lm="har"><i>har</i><par n="ikki__adv"/></e> 
-    <e lm="her"><i>her</i><par n="ikki__adv"/></e> 
+    <e lm="her"><i>her</i><par n="ikki__adv"/></e>
+    <e lm="hagar"><i>hagar</i><par n="ikki__adv"/></e> 
     <e lm="síðan"><i>síðan</i><par n="ikki__adv"/></e> 
     <e lm="soleiðis"><i>soleiðis</i><par n="ikki__adv"/></e> 
+    <e lm="sovorði"><i>sovorði</i><par n="ikki__adv"/></e>
+    <e lm="saman"><i>saman</i><par n="ikki__adv"/></e>
+    <e lm="fyrst"><i>fyrst</i><par n="ikki__adv"/></e> 
 
     <!-- Special verbs -->
     <e lm="vera"><i/><par n="/vera__vbser"/></e>
@@ -26168,7 +26176,23 @@
     <e lm="súpan"><i>súpan</i><par n="luft__n_f"/></e>
     <e lm="ørn"><i></i><par n="/ørn__n_f"/></e>
     <e lm="tænasta"><i>tænast</i><par n="ap/a__n_f"/></e>
-    <e lm="yvirvøld"><i>yvirv</i><par n="yvirv/øld__n_f"/></e>
+    <e lm="yvirvøld"><i>yvirv</i><par n="øld__n_f"/></e>
+    <e lm="øld"><i></i><par n="øld__n_f"/></e>
+    <e lm="atomøld"><i>atom</i><par n="øld__n_f"/></e>
+    <e lm="bronsuøld"><i>bronsu</i><par n="øld__n_f"/></e>
+    <e lm="fornøld"><i>forn</i><par n="øld__n_f"/></e>
+    <e lm="gulløld"><i>gull</i><par n="øld__n_f"/></e>
+    <e lm="ísøld"><i>ís</i><par n="øld__n_f"/></e>
+    <e lm="jarnøld"><i>jarn</i><par n="øld__n_f"/></e>
+    <e lm="koløld"><i>kol</i><par n="øld__n_f"/></e>
+    <e lm="kritøld"><i>krit</i><par n="øld__n_f"/></e>
+    <e lm="miðøld"><i>mið</i><par n="øld__n_f"/></e>
+    <e lm="nýøld"><i>ný</i><par n="øld__n_f"/></e>
+    <e lm="rúmdarøld"><i>rúmdar</i><par n="øld__n_f"/></e>
+    <e lm="steinøld"><i>stein</i><par n="øld__n_f"/></e>
+    <e lm="søguøld"><i>søgu</i><par n="øld__n_f"/></e>
+    <e lm="víkingaøld"><i>víkinga</i><par n="øld__n_f"/></e>
+    <e lm="hálvøld"><i>hálv</i><par n="øld__n_f"/></e>
     <e lm="ísur"><i>ís</i><par n="ís/ur__n_m"/></e>
     <e lm="koma"><i>kom</i><par n="ap/a__n_f"/></e>
     <e lm="ormur"><i>orm</i><par n="eld/ur__n_m"/></e>
@@ -26417,6 +26441,7 @@
     <e lm="rættur"><i>rættur</i><par n="býur__n"/></e>
     <e lm="sambandslisti"><i>sambandslist</i><par n="and/i__n"/></e>
     <e lm="ár"><i>ár</i><par n="ár__n"/></e>
+    <e lm="seksti-ár"><i>seksti-ár</i><par n="ár__n"/></e>
     <e lm="felagslimur"><i>felagslimur</i><par n="býur__n"/></e>
     <e lm="fiskimálaráð"><i>fiskimálaráð</i><par n="ráð__n"/></e>
     <e lm="granskingarsáttmáli"><i>granskingarsáttmál</i><par n="leiðar/i__n"/></e>

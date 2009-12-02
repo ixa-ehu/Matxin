@@ -263,21 +263,25 @@
       <e><p><l>[p2][mf][sg][nom]</l><r><s n="mi"/>[subj][p2][mf][sg]</r></p></e>
       <e><p><l>[p3][m][sg][nom]</l><r><s n="mi"/>[subj][p3][m][sg]</r></p></e>
       <e><p><l>[p3][f][sg][nom]</l><r><s n="mi"/>[subj][p3][f][sg]</r></p></e>
+      <e><p><l>[p3][nt][sg][nom]</l><r><s n="mi"/>[subj][p3][mf][sg]</r></p></e>
 
       <e><p><l>[p1][mf][pl][nom]</l><r><s n="mi"/>[subj][p1][mf][pl]</r></p></e>
       <e><p><l>[p2][mf][pl][nom]</l><r><s n="mi"/>[subj][p2][mf][pl]</r></p></e>
       <e><p><l>[p3][f][pl][nom]</l><r><s n="mi"/>[subj][p3][mf][pl]</r></p></e>
       <e><p><l>[p3][m][pl][nom]</l><r><s n="mi"/>[subj][p3][mf][pl]</r></p></e>
+      <e><p><l>[p3][nt][pl][nom]</l><r><s n="mi"/>[subj][p3][mf][pl]</r></p></e>
 
       <e><p><l>[p1][mf][sg][acc]</l><r><s n="mi"/>[obj][p1][mf][sg]</r></p></e>
       <e><p><l>[p2][mf][sg][acc]</l><r><s n="mi"/>[obj][p2][mf][sg]</r></p></e>
       <e><p><l>[p3][m][sg][acc]</l><r><s n="mi"/>[obj][p3][m][sg]</r></p></e>
       <e><p><l>[p3][f][sg][acc]</l><r><s n="mi"/>[obj][p3][f][sg]</r></p></e>
+      <e><p><l>[p3][nt][sg][acc]</l><r><s n="mi"/>[obj][p3][mf][sg]</r></p></e>
 
       <e><p><l>[p1][mf][pl][acc]</l><r><s n="mi"/>[obj][p1][mf][pl]</r></p></e>
       <e><p><l>[p2][mf][pl][acc]</l><r><s n="mi"/>[obj][p2][mf][pl]</r></p></e>
       <e><p><l>[p3][f][pl][acc]</l><r><s n="mi"/>[obj][p3][mf][pl]</r></p></e>
       <e><p><l>[p3][m][pl][acc]</l><r><s n="mi"/>[obj][p3][mf][pl]</r></p></e>
+      <e><p><l>[p3][nt][pl][acc]</l><r><s n="mi"/>[obj][p3][mf][pl]</r></p></e>
     </pardef>
     <pardef n="PRN_REF">
       <!-- todo: transfer has to fix number & gender -->
@@ -414,6 +418,22 @@
     <e><p><l>tonn<s n="parol"/>[n][f]</l><r>tooth<s n="pos"/>[n]</r></p><par n="NC_STD"/></e>
     <e><p><l>vegur<s n="parol"/>[n][m]</l><r>road<s n="pos"/>[n]</r></p><par n="NC_STD"/></e>
     <e><p><l>yvirvøld<s n="parol"/>[n][f]</l><r>authority<s n="pos"/>[n]</r></p><par n="NC_STD"/></e>
+    <e><p><l>atomøld<s n="parol"/>[n][f]</l><r>atomic age<s n="pos"/>[n]</r></p><par n="NC_STD"/></e>
+<e><p><l>bronsuøld<s n="parol"/>[n][f]</l><r>Bronze<b/>Age<s n="pos"/>[n]</r></p><par n="NC_STD"/></e>
+<e><p><l>fornøld<s n="parol"/>[n][f]</l><r>aeon<s n="pos"/>[n]</r></p><par n="NC_STD"/></e>
+<e><p><l>gulløld<s n="parol"/>[n][f]</l><r>prime-age<s n="pos"/>[n]</r></p><par n="NC_STD"/></e>
+<e><p><l>ísøld<s n="parol"/>[n][f]</l><r>Ice<b/>Age<s n="pos"/>[n]</r></p><par n="NC_STD"/></e>
+<e><p><l>jarnøld<s n="parol"/>[n][f]</l><r>Iron<b/>Age<s n="pos"/>[n]</r></p><par n="NC_STD"/></e>
+<e><p><l>koløld<s n="parol"/>[n][f]</l><r>Carboniferous<s n="pos"/>[n]</r></p><par n="NC_STD"/></e>
+<e><p><l>kritøld<s n="parol"/>[n][f]</l><r>Cretaceous<s n="pos"/>[n]</r></p><par n="NC_STD"/></e>
+<e><p><l>miðøld<s n="parol"/>[n][f]</l><r>Middle<b/>Ages<s n="pos"/>[n]</r></p><par n="NC_STD"/></e>
+<e><p><l>nýøld<s n="parol"/>[n][f]</l><r>Neogene<s n="pos"/>[n]</r></p><par n="NC_STD"/></e>
+<e><p><l>rúmdarøld<s n="parol"/>[n][f]</l><r>Space<b/>Age<s n="pos"/>[n]</r></p><par n="NC_STD"/></e>
+<e><p><l>steinøld<s n="parol"/>[n][f]</l><r>Stone<b/>Age<s n="pos"/>[n]</r></p><par n="NC_STD"/></e>
+<e><p><l>søguøld<s n="parol"/>[n][f]</l><r>Age<b/>of<b/>the<b/>Sagas<s n="pos"/>[n]</r></p><par n="NC_STD"/></e>
+<e><p><l>víkingaøld<s n="parol"/>[n][f]</l><r>Viking<b/>Age<s n="pos"/>[n]</r></p><par n="NC_STD"/></e>
+<e><p><l>hálvøld<s n="parol"/>[n][f]</l><r>half<b/>century<s n="pos"/>[n]</r></p><par n="NC_STD"/></e>
+<e><p><l>øld<s n="parol"/>[n][f]</l><r>century<s n="pos"/>[n]</r></p><par n="NC_STD"/></e>
     <e><p><l>málevni<s n="parol"/>[n][nt]</l><r>issue<s n="pos"/>[n]</r></p><par n="NC_STD"/></e>
     <e><p><l>sangari<s n="parol"/>[n][m]</l><r>singer<s n="pos"/>[n]</r></p><par n="NC_STD"/></e>
     <e><p><l>ætt<s n="parol"/>[n][f]</l><r>family<s n="pos"/>[n]</r></p><par n="NC_STD"/></e>
@@ -527,6 +547,7 @@
     <e><p><l>snarljós<s n="parol"/>[n][nt]</l><r>lightning<s n="pos"/>[n]</r></p><par n="NC_STD"/></e>
     <e><p><l>fjall<s n="parol"/>[n][nt]</l><r>mountain<s n="pos"/>[n]</r></p><par n="NC_STD"/></e>
     <e><p><l>ár<s n="parol"/>[n][nt]</l><r>year<s n="pos"/>[n]</r></p><par n="NC_STD"/></e>
+    <e><p><l>seksti-ár<s n="parol"/>[n][nt]</l><r>sixties<s n="pos"/>[n]</r></p><par n="NC_STD"/></e>
     <e><p><l>helli<s n="parol"/>[n][nt]</l><r>cave<s n="pos"/>[n]</r></p><par n="NC_STD"/></e>
     <e><p><l>dagur<s n="parol"/>[n][m]</l><r>day<s n="pos"/>[n]</r></p><par n="NC_STD"/></e>
     <e><p><l>faðir<s n="parol"/>[n][m]</l><r>father<s n="pos"/>[n]</r></p><par n="NC_STD"/></e>
@@ -883,6 +904,7 @@
     <e><p><l>ikki</l><r>not</r></p><par n="ADV_STD"/></e>
     <e><p><l>aldri</l><r>never</r></p><par n="ADV_STD"/></e>
     <e><p><l>í<b/>gjár</l><r>yesterday</r></p><par n="ADV_STD"/></e>
+    <e><p><l>í<b/>gjárkvøldið</l><r>last<b/>night</r></p><par n="ADV_STD"/></e>
     <e><p><l>í<b/>morgin</l><r>tomorrow</r></p><par n="ADV_STD"/></e>
     <e><p><l>í<b/>dag</l><r>today</r></p><par n="ADV_STD"/></e>
     <e><p><l>ofta</l><r>often</r></p><par n="ADV_STD"/></e>
@@ -892,8 +914,7 @@
     <e><p><l>fram</l><r>forth</r></p><par n="ADV_STD"/></e>
     <e><p><l>framman</l><r>front</r></p><par n="ADV_STD"/></e>
     <e><p><l>aftur</l><r>back</r></p><par n="ADV_STD"/></e>
-    <!-- der? -->
-    <e><p><l>der</l><r>there</r></p><par n="ADV_STD"/></e>
+    <e><p><l>hagar</l><r>there</r></p><par n="ADV_STD"/></e>
     <e><p><l>inn</l><r>in</r></p><par n="ADV_STD"/></e>
     <e><p><l>niður</l><r>down</r></p><par n="ADV_STD"/></e>
     <e><p><l>saman</l><r>together</r></p><par n="ADV_STD"/></e>
@@ -902,6 +923,7 @@
     <e><p><l>longu</l><r>already</r></p><par n="ADV_STD"/></e>
     <e><p><l>vissuliga</l><r>surely</r></p><par n="ADV_STD"/></e>
     <e><p><l>burt</l><r>away</r></p><par n="ADV_STD"/></e>
+    <!-- or also, too: -->
     <e><p><l>eisini</l><r>moreover</r></p><par n="ADV_STD"/></e>
     <e><p><l>hví</l><r>which</r></p><par n="ADV_STD"/></e>
     <!-- interrogatives -->
