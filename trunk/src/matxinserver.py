@@ -1,7 +1,8 @@
 #!/usr/bin/python
 # -*- coding: utf-8 -*-
 
-from subprocess import Popen
+import os
+import os.path as path
 import time
 import pdb
 import threading
@@ -10,9 +11,21 @@ from SimpleXMLRPCServer import SimpleXMLRPCServer
 from xml.parsers import expat
 import re
 from optparse import OptionParser
-import os
-import os.path as path
 import signal
+import subprocess
+# hack to have terminaten in python 2.4
+if 'terminate' in dir(subprocess.Popen):
+    from subprocess import Popen
+else:
+    class Popen(subprocess.Popen):
+        def terminate(self):
+            """Terminate the process with SIGTERM
+            """
+            self.send_signal(signal.SIGTERM)
+        def send_signal(self, sig):
+            """Send a signal to the process
+            """
+            os.kill(self.pid, sig)        
 
 tracelevel = 0
 def log_message(txt):
@@ -199,6 +212,7 @@ class MatxinServer(asyncore.dispatcher):
         MatxinChannel(channel, addr)
 class MatxinChannel(MatxinChannelBase):
     def __init__(self, channel, addr):
+        self.addr = addr
         log_warning('CONNECTION: %s'%str(addr))
         MatxinChannelBase.__init__(self, channel)
     def handle_sentence(self):
@@ -207,7 +221,10 @@ class MatxinChannel(MatxinChannelBase):
         translated = translate_unicode(usentence, analyzer, transfer_engine).encode('utf-8')
         log_message(u'TRANSLATED : ' + self.sentence[:60])
         self.write_buffer += '%d\n%s\n'%(len(translated), translated)
-
+    def handle_close(self):
+        log_warning('CLOSE: %s'%str(self.addr))
+        self.close()
+        
 def run_async_server(host, port):
     server = MatxinServer(host, port)
     asyncore.loop()
