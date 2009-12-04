@@ -14,6 +14,16 @@ import os
 import os.path as path
 import signal
 
+tracelevel = 0
+def log_message(txt):
+    if tracelevel > 0:
+        sys.stderr.write((u'MSG: %s\n'%txt).encode('utf-8'))
+def log_warning(txt):
+    sys.stderr.write((u'WRN: %s\n'%txt).encode('utf-8'))
+def log_error(txt):
+    sys.stderr.write((u'ERR: %s\n'%txt).encode('utf-8'))
+                 
+
 def write_read_fifos(txt, fifo1, fifo2):
     """Write in fifo1 and read from fifo2 avoiding risk of blocking."""
     inpipe = open(fifo1, 'w')
@@ -27,19 +37,30 @@ def write_read_fifos(txt, fifo1, fifo2):
     thread.join()
     outpipe.close()
     return result
-    
+
 class FifoCommand:
     """Instantiate a matxin process with inpipe/outpipe as stdin/stdout. Ensure this process keeps running in the face of errors"""
-    def __init__(self, commandstr, inpipe, outpipe):
+    def __init__(self, commandstr, inpipe, outpipe, count=1000):
         self.inpipe, self.outpipe = inpipe, outpipe
         self.commandstr = commandstr
         self.fifo_command = Popen(self.commandstr.split(' '))
+        self.calls_max = count
+        self.call_count = 0
+        self.ensure_running()
+    def reboot(self):
+        log_warning(u'REBOOT: ' + self.commandstr)
+        self.fifo_command.terminate()
+        self.fifo_command.wait()
         self.ensure_running()
     def __del__(self):
         if self.fifo_command.poll() == None:
             self.fifo_command.terminate()
         self.fifo_command.wait()
     def ensure_running(self):
+        if self.call_count >= self.calls_max:
+            self.call_count = 0
+            self.reboot()
+        self.call_count += 1
         if self.fifo_command.poll() != None:
             self.fifo_command.wait()
             self.fifo_command = Popen(self.commandstr.split(' '))
@@ -51,9 +72,14 @@ class FifoCommand:
 class FifoCommandList:
     def __init__(self, fifo_commands):
         self.commands = fifo_commands
-    def process(self, txt):
+    def reboot(self):
+        for command in self.commands:
+            command.reboot()
+    def ensure_running(self):
         for p in self.commands:
-            p.ensure_running()
+            p.ensure_running()        
+    def process(self, txt):
+        self.ensure_running()
         return write_read_fifos(txt, self.commands[0].inpipe, self.commands[-1].outpipe)        
 
 def make_fifos(*fifos):
@@ -132,7 +158,7 @@ def translate_unicode(utxt, analyzer, translator):
         result = xmltotxt(txml)
         return result
     except Exception, e:
-        print 'Exception:', e
+        log_error('EXCEPTION:' + e)
         return utxt
     finally:
         translate_unicode_mutex.release()
@@ -167,18 +193,19 @@ class MatxinServer(asyncore.dispatcher):
         self.create_socket(socket.AF_INET, socket.SOCK_STREAM)
         self.bind((host, port))
         self.listen(10)
-        print >>sys.stderr, 'MatxinServer ready (port %s)'%port
+        log_warning('MatxinServer ready (port %s)'%port)
     def handle_accept(self):
         channel, addr = self.accept()
         MatxinChannel(channel, addr)
 class MatxinChannel(MatxinChannelBase):
     def __init__(self, channel, addr):
-        print MatxinChannel.__init__
+        log_warning('CONNECTION: %s'%str(addr))
         MatxinChannelBase.__init__(self, channel)
     def handle_sentence(self):
-        print >>sys.stderr, 'SENTENCE:', self.sentence
+        log_message(u'SENTENCE   : ' + self.sentence[:60])
         usentence = self.sentence
         translated = translate_unicode(usentence, analyzer, transfer_engine).encode('utf-8')
+        log_message(u'TRANSLATED : ' + self.sentence[:60])
         self.write_buffer += '%d\n%s\n'%(len(translated), translated)
 
 def run_async_server(host, port):
@@ -186,7 +213,7 @@ def run_async_server(host, port):
     asyncore.loop()
 
 def main():
-    global analyzer, transfer_engine
+    global analyzer, transfer_engine, tracelevel
     # parse options
     inpipe = 'in.fifo'
     outpipe = 'out.fifo'
@@ -198,15 +225,17 @@ def main():
     parser.add_option('--runxmlrpcserver', dest='runxmlrpcserver', action='store_true', default=False, help='Run XMLRPC server.')
     parser.add_option('--runfifoserver', dest='runfifoserver', action='store_true', default=False, help='Run FIFO server.')
     parser.add_option('--runasyncserver', dest='runasyncserver', action='store_true', default=False, help='Run Async socket server.')
+    parser.add_option('-v', '--verbose', dest='verbose', action='store_true', default=False, help='Spit out traces.')
     parser.add_option('-c', '--config', dest='config', default='/usr/local/matxin/config/es-eu.cfg', help='Matxin configuration file')
     options, args = parser.parse_args()
 
     if options.runfifoserver or options.runxmlrpcserver or options.runasyncserver:
         # set alarm handler
-        def alarm_handler(signum, frame):
-            print 'alarm'
-        signal.signal(signal.SIGALRM, alarm_handler)
-        # init engine
+        # def alarm_handler(signum, frame):
+        #     print 'alarm'
+        # signal.signal(signal.SIGALRM, alarm_handler)
+        # init engine and global state
+        tracelevel = options.verbose and 1 or 0
         analyzer = make_analyzer(options.config, options.pipedir)
         transfer_engine = make_transfer_engine(options.config, options.pipedir)
         servers = []
