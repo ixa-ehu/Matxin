@@ -176,7 +176,6 @@ class MatxinChannel(MatxinChannelBase):
         MatxinChannelBase.__init__(self, channel)
     def handle_sentence(self):
         print >>sys.stderr, 'SENTENCE:', self.sentence
-        print >>sys.stderr
         usentence = self.sentence
         translated = translate_unicode(usentence, analyzer, transfer_engine).encode('utf-8')
         self.write_buffer += '%d\n%s\n'%(len(translated), translated)
