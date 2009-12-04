@@ -2318,6 +2318,434 @@
       <e><p><l><s n='parol'/>noKAT_VM</l>
       <r><s n='pos'/>[IZE][LIB]</r></p></e>
     </pardef>
+    <pardef n='NC_ADB_ADOARR'>
+      <e><p><l><s n='parol'/>NC00000</l>
+      <r><s n='pos'/>[ADB][ADOARR]<s n='mi'/>[NUMS]</r></p></e>
+      <e><p><l><s n='parol'/>NC00SP0</l>
+      <r><s n='pos'/>[ADB][ADOARR]<s n='mi'/>[NUMS]</r></p></e>
+      <e><p><l><s n='parol'/>NC00G00</l>
+      <r><s n='pos'/>[ADB][ADOARR]<s n='mi'/>[NUMS]</r></p></e>
+      <e><p><l><s n='parol'/>NC00O00</l>
+      <r><s n='pos'/>[ADB][ADOARR]<s n='mi'/>[NUMS]</r></p></e>
+      <e><p><l><s n='parol'/>NC00V00</l>
+      <r><s n='pos'/>[ADB][ADOARR]<s n='mi'/>[NUMS]</r></p></e>
+      <e><p><l><s n='parol'/>NCCN000</l>
+      <r><s n='pos'/>[ADB][ADOARR]</r></p></e>
+      <e><p><l><s n='parol'/>NCCP000</l>
+      <r><s n='pos'/>[ADB][ADOARR]<s n='mi'/>[NUMP]</r></p></e>
+      <e><p><l><s n='parol'/>NCCS000</l>
+      <r><s n='pos'/>[ADB][ADOARR]<s n='mi'/>[NUMS]</r></p></e>
+      <e><p><l><s n='parol'/>NCFN000</l>
+      <r><s n='pos'/>[ADB][ADOARR]</r></p></e>
+      <e><p><l><s n='parol'/>NCFP000</l>
+      <r><s n='pos'/>[ADB][ADOARR]<s n='mi'/>[NUMP]</r></p></e>
+      <e><p><l><s n='parol'/>NCFS000</l>
+      <r><s n='pos'/>[ADB][ADOARR]<s n='mi'/>[NUMS]</r></p></e>
+      <e><p><l><s n='parol'/>NCMN000</l>
+      <r><s n='pos'/>[ADB][ADOARR]</r></p></e>
+      <e><p><l><s n='parol'/>NCMP000</l>
+      <r><s n='pos'/>[ADB][ADOARR]<s n='mi'/>[NUMP]</r></p></e>
+      <e><p><l><s n='parol'/>NCMS000</l>
+      <r><s n='pos'/>[ADB][ADOARR]<s n='mi'/>[NUMS]</r></p></e>
+      <e><p><l><s n='parol'/>NC0000D</l>
+      <r><s n='pos'/>[ADB][ADOARR]<s n='mi'/>[NUMS]<s n='suf'/>txo[ATZ][IZE][ARR]</r></p></e>
+      <e><p><l><s n='parol'/>NCCN00D</l>
+      <r><s n='pos'/>[ADB][ADOARR]<s n='suf'/>txo[ATZ][IZE][ARR]</r></p></e>
+      <e><p><l><s n='parol'/>NCCP00D</l>
+      <r><s n='pos'/>[ADB][ADOARR]<s n='mi'/>[NUMP]<s n='suf'/>txo[ATZ][IZE][ARR]</r></p></e>
+      <e><p><l><s n='parol'/>NCCS00D</l>
+      <r><s n='pos'/>[ADB][ADOARR]<s n='mi'/>[NUMS]<s n='suf'/>txo[ATZ][IZE][ARR]</r></p></e>
+      <e><p><l><s n='parol'/>NCFN00D</l>
+      <r><s n='pos'/>[ADB][ADOARR]<s n='suf'/>txo[ATZ][IZE][ARR]</r></p></e>
+      <e><p><l><s n='parol'/>NCFP00D</l>
+      <r><s n='pos'/>[ADB][ADOARR]<s n='mi'/>[NUMP]<s n='suf'/>txo[ATZ][IZE][ARR]</r></p></e>
+      <e><p><l><s n='parol'/>NCFS00D</l>
+      <r><s n='pos'/>[ADB][ADOARR]<s n='mi'/>[NUMS]<s n='suf'/>txo[ATZ][IZE][ARR]</r></p></e>
+      <e><p><l><s n='parol'/>NCMN00D</l>
+      <r><s n='pos'/>[ADB][ADOARR]<s n='suf'/>txo[ATZ][IZE][ARR]</r></p></e>
+      <e><p><l><s n='parol'/>NCMP00D</l>
+      <r><s n='pos'/>[ADB][ADOARR]<s n='mi'/>[NUMP]<s n='suf'/>txo[ATZ][IZE][ARR]</r></p></e>
+      <e><p><l><s n='parol'/>NCMS00D</l>
+      <r><s n='pos'/>[ADB][ADOARR]<s n='mi'/>[NUMS]<s n='suf'/>txo[ATZ][IZE][ARR]</r></p></e>
+      <e><p><l><s n='parol'/>NC0000A</l>
+      <r><s n='pos'/>[ADB][ADOARR]<s n='mi'/>[NUMS]<s n='suf'/>tzar[ATZ][IZE][ARR]</r></p></e>
+      <e><p><l><s n='parol'/>NCCN00A</l>
+      <r><s n='pos'/>[ADB][ADOARR]<s n='suf'/>tzar[ATZ][IZE][ARR]</r></p></e>
+      <e><p><l><s n='parol'/>NCCP00A</l>
+      <r><s n='pos'/>[ADB][ADOARR]<s n='mi'/>[NUMP]<s n='suf'/>tzar[ATZ][IZE][ARR]</r></p></e>
+      <e><p><l><s n='parol'/>NCCS00A</l>
+      <r><s n='pos'/>[ADB][ADOARR]<s n='mi'/>[NUMS]<s n='suf'/>tzar[ATZ][IZE][ARR]</r></p></e>
+      <e><p><l><s n='parol'/>NCFN00A</l>
+      <r><s n='pos'/>[ADB][ADOARR]<s n='suf'/>tzar[ATZ][IZE][ARR]</r></p></e>
+      <e><p><l><s n='parol'/>NCFP00A</l>
+      <r><s n='pos'/>[ADB][ADOARR]<s n='mi'/>[NUMP]<s n='suf'/>tzar[ATZ][IZE][ARR]</r></p></e>
+      <e><p><l><s n='parol'/>NCFS00A</l>
+      <r><s n='pos'/>[ADB][ADOARR]<s n='mi'/>[NUMS]<s n='suf'/>tzar[ATZ][IZE][ARR]</r></p></e>
+      <e><p><l><s n='parol'/>NCMN00A</l>
+      <r><s n='pos'/>[ADB][ADOARR]<s n='suf'/>tzar[ATZ][IZE][ARR]</r></p></e>
+      <e><p><l><s n='parol'/>NCMP00A</l>
+      <r><s n='pos'/>[ADB][ADOARR]<s n='mi'/>[NUMP]<s n='suf'/>tzar[ATZ][IZE][ARR]</r></p></e>
+      <e><p><l><s n='parol'/>NCMS00A</l>
+      <r><s n='pos'/>[ADB][ADOARR]<s n='mi'/>[NUMS]<s n='suf'/>tzar[ATZ][IZE][ARR]</r></p></e>
+      <e><p><l><s n='parol'/>NC0000X</l>
+      <r><s n='pos'/>[ADB][ADOARR]<s n='mi'/>[NUMS]</r></p></e>
+      <e><p><l><s n='parol'/>NCCN00X</l>
+      <r><s n='pos'/>[ADB][ADOARR]</r></p></e>
+      <e><p><l><s n='parol'/>NCCP00X</l>
+      <r><s n='pos'/>[ADB][ADOARR]<s n='mi'/>[NUMP]</r></p></e>
+      <e><p><l><s n='parol'/>NCCS00X</l>
+      <r><s n='pos'/>[ADB][ADOARR]<s n='mi'/>[NUMS]</r></p></e>
+      <e><p><l><s n='parol'/>NCFN00X</l>
+      <r><s n='pos'/>[ADB][ADOARR]</r></p></e>
+      <e><p><l><s n='parol'/>NCFP00X</l>
+      <r><s n='pos'/>[ADB][ADOARR]<s n='mi'/>[NUMP]</r></p></e>
+      <e><p><l><s n='parol'/>NCFS00X</l>
+      <r><s n='pos'/>[ADB][ADOARR]<s n='mi'/>[NUMS]</r></p></e>
+      <e><p><l><s n='parol'/>NCMN00X</l>
+      <r><s n='pos'/>[ADB][ADOARR]</r></p></e>
+      <e><p><l><s n='parol'/>NCMP00X</l>
+      <r><s n='pos'/>[ADB][ADOARR]<s n='mi'/>[NUMP]</r></p></e>
+      <e><p><l><s n='parol'/>NCMS00X</l>
+      <r><s n='pos'/>[ADB][ADOARR]<s n='mi'/>[NUMS]</r></p></e>
+      <!-- Analizatzaileak beste kategoria bat ematen dion kasutarako... -->
+      <e><p><l><s n='parol'/>noKAT_NC</l>
+      <r><s n='pos'/>[ADB][ADOARR]</r></p></e>
+      <e><p><l><s n='parol'/>noKAT_AQ</l>
+      <r><s n='pos'/>[ADB][ADOARR]</r></p></e>
+      <e><p><l><s n='parol'/>noKAT_AO</l>
+      <r><s n='pos'/>[ADB][ADOARR]</r></p></e>
+      <e><p><l><s n='parol'/>noKAT_VM</l>
+      <r><s n='pos'/>[ADB][ADOARR]</r></p></e>
+    </pardef>
+    <pardef n='AQ_ADB_ALGARR'>
+      <e><p><l><s n='parol'/>AQ0CN0</l>
+      <r><s n='pos'/>[ADB][ALGARR]</r></p></e>
+      <e><p><l><s n='parol'/>AQ0CP0</l>
+      <r><s n='pos'/>[ADB][ALGARR]<s n='mi'/>[NUMP]</r></p></e>
+      <e><p><l><s n='parol'/>AQ0CS0</l>
+      <r><s n='pos'/>[ADB][ALGARR]<s n='mi'/>[NUMS]</r></p></e>
+      <e><p><l><s n='parol'/>AQ0FN0</l>
+      <r><s n='pos'/>[ADB][ALGARR]</r></p></e>
+      <e><p><l><s n='parol'/>AQ0FP0</l>
+      <r><s n='pos'/>[ADB][ALGARR]<s n='mi'/>[NUMP]</r></p></e>
+      <e><p><l><s n='parol'/>AQ0FPP</l>
+      <r><s n='pos'/>[ADB][ALGARR]<s n='mi'/>[NUMP]</r></p></e>
+      <e><p><l><s n='parol'/>AQ0FS0</l>
+      <r><s n='pos'/>[ADB][ALGARR]<s n='mi'/>[NUMS]</r></p></e>
+      <e><p><l><s n='parol'/>AQ0FSP</l>
+      <r><s n='pos'/>[ADB][ALGARR]<s n='mi'/>[NUMS]</r></p></e>
+      <e><p><l><s n='parol'/>AQ0MN0</l>
+      <r><s n='pos'/>[ADB][ALGARR]</r></p></e>
+      <e><p><l><s n='parol'/>AQ0MP0</l>
+      <r><s n='pos'/>[ADB][ALGARR]<s n='mi'/>[NUMP]</r></p></e>
+      <e><p><l><s n='parol'/>AQ0MPP</l>
+      <r><s n='pos'/>[ADB][ALGARR]<s n='mi'/>[NUMP]</r></p></e>
+      <e><p><l><s n='parol'/>AQ0MS0</l>
+      <r><s n='pos'/>[ADB][ALGARR]<s n='mi'/>[NUMS]</r></p></e>
+      <e><p><l><s n='parol'/>AQ0MSP</l>
+      <r><s n='pos'/>[ADB][ALGARR]<s n='mi'/>[NUMS]</r></p></e>
+      <e><p><l><s n='parol'/>AQDCN0</l>
+      <r><s n='pos'/>[ADB][ALGARR]<s n='suf'/>txo[ATZ][IZE][ARR]</r></p></e>
+      <e><p><l><s n='parol'/>AQDCP0</l>
+      <r><s n='pos'/>[ADB][ALGARR]<s n='mi'/>[NUMP]<s n='suf'/>txo[ATZ][IZE][ARR]</r></p></e>
+      <e><p><l><s n='parol'/>AQDCS0</l>
+      <r><s n='pos'/>[ADB][ALGARR]<s n='mi'/>[NUMS]<s n='suf'/>txo[ATZ][IZE][ARR]</r></p></e>
+      <e><p><l><s n='parol'/>AQDFN0</l>
+      <r><s n='pos'/>[ADB][ALGARR]<s n='suf'/>txo[ATZ][IZE][ARR]</r></p></e>
+      <e><p><l><s n='parol'/>AQDFP0</l>
+      <r><s n='pos'/>[ADB][ALGARR]<s n='mi'/>[NUMP]<s n='suf'/>txo[ATZ][IZE][ARR]</r></p></e>
+      <e><p><l><s n='parol'/>AQDFPP</l>
+      <r><s n='pos'/>[ADB][ALGARR]<s n='mi'/>[NUMP]<s n='suf'/>txo[ATZ][IZE][ARR]</r></p></e>
+      <e><p><l><s n='parol'/>AQDFS0</l>
+      <r><s n='pos'/>[ADB][ALGARR]<s n='mi'/>[NUMS]<s n='suf'/>txo[ATZ][IZE][ARR]</r></p></e>
+      <e><p><l><s n='parol'/>AQDFSP</l>
+      <r><s n='pos'/>[ADB][ALGARR]<s n='mi'/>[NUMS]<s n='suf'/>txo[ATZ][IZE][ARR]</r></p></e>
+      <e><p><l><s n='parol'/>AQDMN0</l>
+      <r><s n='pos'/>[ADB][ALGARR]<s n='suf'/>txo[ATZ][IZE][ARR]</r></p></e>
+      <e><p><l><s n='parol'/>AQDMP0</l>
+      <r><s n='pos'/>[ADB][ALGARR]<s n='mi'/>[NUMP]<s n='suf'/>txo[ATZ][IZE][ARR]</r></p></e>
+      <e><p><l><s n='parol'/>AQDMPP</l>
+      <r><s n='pos'/>[ADB][ALGARR]<s n='mi'/>[NUMP]<s n='suf'/>txo[ATZ][IZE][ARR]</r></p></e>
+      <e><p><l><s n='parol'/>AQDMS0</l>
+      <r><s n='pos'/>[ADB][ALGARR]<s n='mi'/>[NUMS]<s n='suf'/>txo[ATZ][IZE][ARR]</r></p></e>
+      <e><p><l><s n='parol'/>AQDMSP</l>
+      <r><s n='pos'/>[ADB][ALGARR]<s n='mi'/>[NUMS]<s n='suf'/>txo[ATZ][IZE][ARR]</r></p></e>
+      <e><p><l><s n='parol'/>AQACN0</l>
+      <r><s n='pos'/>[ADB][ALGARR]<s n='suf'/>tzar[ATZ][IZE][ARR]</r></p></e>
+      <e><p><l><s n='parol'/>AQACP0</l>
+      <r><s n='pos'/>[ADB][ALGARR]<s n='mi'/>[NUMP]<s n='suf'/>tzar[ATZ][IZE][ARR]</r></p></e>
+      <e><p><l><s n='parol'/>AQACS0</l>
+      <r><s n='pos'/>[ADB][ALGARR]<s n='mi'/>[NUMS]<s n='suf'/>tzar[ATZ][IZE][ARR]</r></p></e>
+      <e><p><l><s n='parol'/>AQAFN0</l>
+      <r><s n='pos'/>[ADB][ALGARR]<s n='suf'/>tzar[ATZ][IZE][ARR]</r></p></e>
+      <e><p><l><s n='parol'/>AQAFP0</l>
+      <r><s n='pos'/>[ADB][ALGARR]<s n='mi'/>[NUMP]<s n='suf'/>tzar[ATZ][IZE][ARR]</r></p></e>
+      <e><p><l><s n='parol'/>AQAFPP</l>
+      <r><s n='pos'/>[ADB][ALGARR]<s n='mi'/>[NUMP]<s n='suf'/>tzar[ATZ][IZE][ARR]</r></p></e>
+      <e><p><l><s n='parol'/>AQAFS0</l>
+      <r><s n='pos'/>[ADB][ALGARR]<s n='mi'/>[NUMS]<s n='suf'/>tzar[ATZ][IZE][ARR]</r></p></e>
+      <e><p><l><s n='parol'/>AQAFSP</l>
+      <r><s n='pos'/>[ADB][ALGARR]<s n='mi'/>[NUMS]<s n='suf'/>tzar[ATZ][IZE][ARR]</r></p></e>
+      <e><p><l><s n='parol'/>AQAMN0</l>
+      <r><s n='pos'/>[ADB][ALGARR]<s n='suf'/>tzar[ATZ][IZE][ARR]</r></p></e>
+      <e><p><l><s n='parol'/>AQAMP0</l>
+      <r><s n='pos'/>[ADB][ALGARR]<s n='mi'/>[NUMP]<s n='suf'/>tzar[ATZ][IZE][ARR]</r></p></e>
+      <e><p><l><s n='parol'/>AQAMPP</l>
+      <r><s n='pos'/>[ADB][ALGARR]<s n='mi'/>[NUMP]<s n='suf'/>tzar[ATZ][IZE][ARR]</r></p></e>
+      <e><p><l><s n='parol'/>AQAMS0</l>
+      <r><s n='pos'/>[ADB][ALGARR]<s n='mi'/>[NUMS]<s n='suf'/>tzar[ATZ][IZE][ARR]</r></p></e>
+      <e><p><l><s n='parol'/>AQAMSP</l>
+      <r><s n='pos'/>[ADB][ALGARR]<s n='mi'/>[NUMS]<s n='suf'/>tzar[ATZ][IZE][ARR]</r></p></e>
+      <e><p><l><s n='parol'/>AQXCN0</l>
+      <r><s n='pos'/>[ADB][ALGARR]</r></p></e>
+      <e><p><l><s n='parol'/>AQXCP0</l>
+      <r><s n='pos'/>[ADB][ALGARR]<s n='mi'/>[NUMP]</r></p></e>
+      <e><p><l><s n='parol'/>AQXCS0</l>
+      <r><s n='pos'/>[ADB][ALGARR]<s n='mi'/>[NUMS]</r></p></e>
+      <e><p><l><s n='parol'/>AQXFN0</l>
+      <r><s n='pos'/>[ADB][ALGARR]</r></p></e>
+      <e><p><l><s n='parol'/>AQXFP0</l>
+      <r><s n='pos'/>[ADB][ALGARR]<s n='mi'/>[NUMP]</r></p></e>
+      <e><p><l><s n='parol'/>AQXFPP</l>
+      <r><s n='pos'/>[ADB][ALGARR]<s n='mi'/>[NUMP]</r></p></e>
+      <e><p><l><s n='parol'/>AQXFS0</l>
+      <r><s n='pos'/>[ADB][ALGARR]<s n='mi'/>[NUMS]</r></p></e>
+      <e><p><l><s n='parol'/>AQXFSP</l>
+      <r><s n='pos'/>[ADB][ALGARR]<s n='mi'/>[NUMS]</r></p></e>
+      <e><p><l><s n='parol'/>AQXMN0</l>
+      <r><s n='pos'/>[ADB][ALGARR]</r></p></e>
+      <e><p><l><s n='parol'/>AQXMP0</l>
+      <r><s n='pos'/>[ADB][ALGARR]<s n='mi'/>[NUMP]</r></p></e>
+      <e><p><l><s n='parol'/>AQXMPP</l>
+      <r><s n='pos'/>[ADB][ALGARR]<s n='mi'/>[NUMP]</r></p></e>
+      <e><p><l><s n='parol'/>AQXMS0</l>
+      <r><s n='pos'/>[ADB][ALGARR]<s n='mi'/>[NUMS]</r></p></e>
+      <e><p><l><s n='parol'/>AQXMSP</l>
+      <r><s n='pos'/>[ADB][ALGARR]<s n='mi'/>[NUMS]</r></p></e>
+      <!-- Analizatzaileak beste kategoria bat ematen dion kasutarako... -->
+      <e><p><l><s n='parol'/>noKAT_NC</l>
+      <r><s n='pos'/>[ADB][ALGARR]</r></p></e>
+      <e><p><l><s n='parol'/>noKAT_AQ</l>
+      <r><s n='pos'/>[ADB][ALGARR]</r></p></e>
+      <e><p><l><s n='parol'/>noKAT_AO</l>
+      <r><s n='pos'/>[ADB][ALGARR]</r></p></e>
+      <e><p><l><s n='parol'/>noKAT_VM</l>
+      <r><s n='pos'/>[ADB][ALGARR]</r></p></e>
+    </pardef>
+    <pardef n='AQ_ADB_ADOARR'>
+      <e><p><l><s n='parol'/>AQ0CN0</l>
+      <r><s n='pos'/>[ADB][ADOARR]</r></p></e>
+      <e><p><l><s n='parol'/>AQ0CP0</l>
+      <r><s n='pos'/>[ADB][ADOARR]<s n='mi'/>[NUMP]</r></p></e>
+      <e><p><l><s n='parol'/>AQ0CS0</l>
+      <r><s n='pos'/>[ADB][ADOARR]<s n='mi'/>[NUMS]</r></p></e>
+      <e><p><l><s n='parol'/>AQ0FN0</l>
+      <r><s n='pos'/>[ADB][ADOARR]</r></p></e>
+      <e><p><l><s n='parol'/>AQ0FP0</l>
+      <r><s n='pos'/>[ADB][ADOARR]<s n='mi'/>[NUMP]</r></p></e>
+      <e><p><l><s n='parol'/>AQ0FPP</l>
+      <r><s n='pos'/>[ADB][ADOARR]<s n='mi'/>[NUMP]</r></p></e>
+      <e><p><l><s n='parol'/>AQ0FS0</l>
+      <r><s n='pos'/>[ADB][ADOARR]<s n='mi'/>[NUMS]</r></p></e>
+      <e><p><l><s n='parol'/>AQ0FSP</l>
+      <r><s n='pos'/>[ADB][ADOARR]<s n='mi'/>[NUMS]</r></p></e>
+      <e><p><l><s n='parol'/>AQ0MN0</l>
+      <r><s n='pos'/>[ADB][ADOARR]</r></p></e>
+      <e><p><l><s n='parol'/>AQ0MP0</l>
+      <r><s n='pos'/>[ADB][ADOARR]<s n='mi'/>[NUMP]</r></p></e>
+      <e><p><l><s n='parol'/>AQ0MPP</l>
+      <r><s n='pos'/>[ADB][ADOARR]<s n='mi'/>[NUMP]</r></p></e>
+      <e><p><l><s n='parol'/>AQ0MS0</l>
+      <r><s n='pos'/>[ADB][ADOARR]<s n='mi'/>[NUMS]</r></p></e>
+      <e><p><l><s n='parol'/>AQ0MSP</l>
+      <r><s n='pos'/>[ADB][ADOARR]<s n='mi'/>[NUMS]</r></p></e>
+      <e><p><l><s n='parol'/>AQDCN0</l>
+      <r><s n='pos'/>[ADB][ADOARR]<s n='suf'/>txo[ATZ][IZE][ARR]</r></p></e>
+      <e><p><l><s n='parol'/>AQDCP0</l>
+      <r><s n='pos'/>[ADB][ADOARR]<s n='mi'/>[NUMP]<s n='suf'/>txo[ATZ][IZE][ARR]</r></p></e>
+      <e><p><l><s n='parol'/>AQDCS0</l>
+      <r><s n='pos'/>[ADB][ADOARR]<s n='mi'/>[NUMS]<s n='suf'/>txo[ATZ][IZE][ARR]</r></p></e>
+      <e><p><l><s n='parol'/>AQDFN0</l>
+      <r><s n='pos'/>[ADB][ADOARR]<s n='suf'/>txo[ATZ][IZE][ARR]</r></p></e>
+      <e><p><l><s n='parol'/>AQDFP0</l>
+      <r><s n='pos'/>[ADB][ADOARR]<s n='mi'/>[NUMP]<s n='suf'/>txo[ATZ][IZE][ARR]</r></p></e>
+      <e><p><l><s n='parol'/>AQDFPP</l>
+      <r><s n='pos'/>[ADB][ADOARR]<s n='mi'/>[NUMP]<s n='suf'/>txo[ATZ][IZE][ARR]</r></p></e>
+      <e><p><l><s n='parol'/>AQDFS0</l>
+      <r><s n='pos'/>[ADB][ADOARR]<s n='mi'/>[NUMS]<s n='suf'/>txo[ATZ][IZE][ARR]</r></p></e>
+      <e><p><l><s n='parol'/>AQDFSP</l>
+      <r><s n='pos'/>[ADB][ADOARR]<s n='mi'/>[NUMS]<s n='suf'/>txo[ATZ][IZE][ARR]</r></p></e>
+      <e><p><l><s n='parol'/>AQDMN0</l>
+      <r><s n='pos'/>[ADB][ADOARR]<s n='suf'/>txo[ATZ][IZE][ARR]</r></p></e>
+      <e><p><l><s n='parol'/>AQDMP0</l>
+      <r><s n='pos'/>[ADB][ADOARR]<s n='mi'/>[NUMP]<s n='suf'/>txo[ATZ][IZE][ARR]</r></p></e>
+      <e><p><l><s n='parol'/>AQDMPP</l>
+      <r><s n='pos'/>[ADB][ADOARR]<s n='mi'/>[NUMP]<s n='suf'/>txo[ATZ][IZE][ARR]</r></p></e>
+      <e><p><l><s n='parol'/>AQDMS0</l>
+      <r><s n='pos'/>[ADB][ADOARR]<s n='mi'/>[NUMS]<s n='suf'/>txo[ATZ][IZE][ARR]</r></p></e>
+      <e><p><l><s n='parol'/>AQDMSP</l>
+      <r><s n='pos'/>[ADB][ADOARR]<s n='mi'/>[NUMS]<s n='suf'/>txo[ATZ][IZE][ARR]</r></p></e>
+      <e><p><l><s n='parol'/>AQACN0</l>
+      <r><s n='pos'/>[ADB][ADOARR]<s n='suf'/>tzar[ATZ][IZE][ARR]</r></p></e>
+      <e><p><l><s n='parol'/>AQACP0</l>
+      <r><s n='pos'/>[ADB][ADOARR]<s n='mi'/>[NUMP]<s n='suf'/>tzar[ATZ][IZE][ARR]</r></p></e>
+      <e><p><l><s n='parol'/>AQACS0</l>
+      <r><s n='pos'/>[ADB][ADOARR]<s n='mi'/>[NUMS]<s n='suf'/>tzar[ATZ][IZE][ARR]</r></p></e>
+      <e><p><l><s n='parol'/>AQAFN0</l>
+      <r><s n='pos'/>[ADB][ADOARR]<s n='suf'/>tzar[ATZ][IZE][ARR]</r></p></e>
+      <e><p><l><s n='parol'/>AQAFP0</l>
+      <r><s n='pos'/>[ADB][ADOARR]<s n='mi'/>[NUMP]<s n='suf'/>tzar[ATZ][IZE][ARR]</r></p></e>
+      <e><p><l><s n='parol'/>AQAFPP</l>
+      <r><s n='pos'/>[ADB][ADOARR]<s n='mi'/>[NUMP]<s n='suf'/>tzar[ATZ][IZE][ARR]</r></p></e>
+      <e><p><l><s n='parol'/>AQAFS0</l>
+      <r><s n='pos'/>[ADB][ADOARR]<s n='mi'/>[NUMS]<s n='suf'/>tzar[ATZ][IZE][ARR]</r></p></e>
+      <e><p><l><s n='parol'/>AQAFSP</l>
+      <r><s n='pos'/>[ADB][ADOARR]<s n='mi'/>[NUMS]<s n='suf'/>tzar[ATZ][IZE][ARR]</r></p></e>
+      <e><p><l><s n='parol'/>AQAMN0</l>
+      <r><s n='pos'/>[ADB][ADOARR]<s n='suf'/>tzar[ATZ][IZE][ARR]</r></p></e>
+      <e><p><l><s n='parol'/>AQAMP0</l>
+      <r><s n='pos'/>[ADB][ADOARR]<s n='mi'/>[NUMP]<s n='suf'/>tzar[ATZ][IZE][ARR]</r></p></e>
+      <e><p><l><s n='parol'/>AQAMPP</l>
+      <r><s n='pos'/>[ADB][ADOARR]<s n='mi'/>[NUMP]<s n='suf'/>tzar[ATZ][IZE][ARR]</r></p></e>
+      <e><p><l><s n='parol'/>AQAMS0</l>
+      <r><s n='pos'/>[ADB][ADOARR]<s n='mi'/>[NUMS]<s n='suf'/>tzar[ATZ][IZE][ARR]</r></p></e>
+      <e><p><l><s n='parol'/>AQAMSP</l>
+      <r><s n='pos'/>[ADB][ADOARR]<s n='mi'/>[NUMS]<s n='suf'/>tzar[ATZ][IZE][ARR]</r></p></e>
+      <e><p><l><s n='parol'/>AQXCN0</l>
+      <r><s n='pos'/>[ADB][ADOARR]</r></p></e>
+      <e><p><l><s n='parol'/>AQXCP0</l>
+      <r><s n='pos'/>[ADB][ADOARR]<s n='mi'/>[NUMP]</r></p></e>
+      <e><p><l><s n='parol'/>AQXCS0</l>
+      <r><s n='pos'/>[ADB][ADOARR]<s n='mi'/>[NUMS]</r></p></e>
+      <e><p><l><s n='parol'/>AQXFN0</l>
+      <r><s n='pos'/>[ADB][ADOARR]</r></p></e>
+      <e><p><l><s n='parol'/>AQXFP0</l>
+      <r><s n='pos'/>[ADB][ADOARR]<s n='mi'/>[NUMP]</r></p></e>
+      <e><p><l><s n='parol'/>AQXFPP</l>
+      <r><s n='pos'/>[ADB][ADOARR]<s n='mi'/>[NUMP]</r></p></e>
+      <e><p><l><s n='parol'/>AQXFS0</l>
+      <r><s n='pos'/>[ADB][ADOARR]<s n='mi'/>[NUMS]</r></p></e>
+      <e><p><l><s n='parol'/>AQXFSP</l>
+      <r><s n='pos'/>[ADB][ADOARR]<s n='mi'/>[NUMS]</r></p></e>
+      <e><p><l><s n='parol'/>AQXMN0</l>
+      <r><s n='pos'/>[ADB][ADOARR]</r></p></e>
+      <e><p><l><s n='parol'/>AQXMP0</l>
+      <r><s n='pos'/>[ADB][ADOARR]<s n='mi'/>[NUMP]</r></p></e>
+      <e><p><l><s n='parol'/>AQXMPP</l>
+      <r><s n='pos'/>[ADB][ADOARR]<s n='mi'/>[NUMP]</r></p></e>
+      <e><p><l><s n='parol'/>AQXMS0</l>
+      <r><s n='pos'/>[ADB][ADOARR]<s n='mi'/>[NUMS]</r></p></e>
+      <e><p><l><s n='parol'/>AQXMSP</l>
+      <r><s n='pos'/>[ADB][ADOARR]<s n='mi'/>[NUMS]</r></p></e>
+      <!-- Analizatzaileak beste kategoria bat ematen dion kasutarako... -->
+      <e><p><l><s n='parol'/>noKAT_NC</l>
+      <r><s n='pos'/>[ADB][ADOARR]</r></p></e>
+      <e><p><l><s n='parol'/>noKAT_AQ</l>
+      <r><s n='pos'/>[ADB][ADOARR]</r></p></e>
+      <e><p><l><s n='parol'/>noKAT_AO</l>
+      <r><s n='pos'/>[ADB][ADOARR]</r></p></e>
+      <e><p><l><s n='parol'/>noKAT_VM</l>
+      <r><s n='pos'/>[ADB][ADOARR]</r></p></e>
+    </pardef>
+    <pardef n='NP_ADJ_IZO'>
+      <e><p><l><s n='parol'/>NP00000</l>
+      <r><s n='pos'/>[ADJ][IZO]<s n='mi'/>[NUMS]</r></p></e>
+      <e><p><l><s n='parol'/>NP00SP0</l>
+      <r><s n='pos'/>[ADJ][IZO]<s n='mi'/>[NUMS]</r></p></e>
+      <e><p><l><s n='parol'/>NP00G00</l>
+      <r><s n='pos'/>[ADJ][IZO]<s n='mi'/>[NUMS]</r></p></e>
+      <e><p><l><s n='parol'/>NP00O00</l>
+      <r><s n='pos'/>[ADJ][IZO]<s n='mi'/>[NUMS]</r></p></e>
+      <e><p><l><s n='parol'/>NP00V00</l>
+      <r><s n='pos'/>[ADJ][IZO]<s n='mi'/>[NUMS]</r></p></e>
+      <e><p><l><s n='parol'/>NPCN000</l>
+      <r><s n='pos'/>[ADJ][IZO]</r></p></e>
+      <e><p><l><s n='parol'/>NPCP000</l>
+      <r><s n='pos'/>[ADJ][IZO]<s n='mi'/>[NUMP]</r></p></e>
+      <e><p><l><s n='parol'/>NPCS000</l>
+      <r><s n='pos'/>[ADJ][IZO]<s n='mi'/>[NUMS]</r></p></e>
+      <e><p><l><s n='parol'/>NPFN000</l>
+      <r><s n='pos'/>[ADJ][IZO]</r></p></e>
+      <e><p><l><s n='parol'/>NPFP000</l>
+      <r><s n='pos'/>[ADJ][IZO]<s n='mi'/>[NUMP]</r></p></e>
+      <e><p><l><s n='parol'/>NPFS000</l>
+      <r><s n='pos'/>[ADJ][IZO]<s n='mi'/>[NUMS]</r></p></e>
+      <e><p><l><s n='parol'/>NPMN000</l>
+      <r><s n='pos'/>[ADJ][IZO]</r></p></e>
+      <e><p><l><s n='parol'/>NPMP000</l>
+      <r><s n='pos'/>[ADJ][IZO]<s n='mi'/>[NUMP]</r></p></e>
+      <e><p><l><s n='parol'/>NPMS000</l>
+      <r><s n='pos'/>[ADJ][IZO]<s n='mi'/>[NUMS]</r></p></e>
+      <e><p><l><s n='parol'/>NP0000D</l>
+      <r><s n='pos'/>[ADJ][IZO]<s n='mi'/>[NUMS]<s n='suf'/>txo[ATZ][IZE][ARR]</r></p></e>
+      <e><p><l><s n='parol'/>NPCN00D</l>
+      <r><s n='pos'/>[ADJ][IZO]<s n='suf'/>txo[ATZ][IZE][ARR]</r></p></e>
+      <e><p><l><s n='parol'/>NPCP00D</l>
+      <r><s n='pos'/>[ADJ][IZO]<s n='mi'/>[NUMP]<s n='suf'/>txo[ATZ][IZE][ARR]</r></p></e>
+      <e><p><l><s n='parol'/>NPCS00D</l>
+      <r><s n='pos'/>[ADJ][IZO]<s n='mi'/>[NUMS]<s n='suf'/>txo[ATZ][IZE][ARR]</r></p></e>
+      <e><p><l><s n='parol'/>NPFN00D</l>
+      <r><s n='pos'/>[ADJ][IZO]<s n='suf'/>txo[ATZ][IZE][ARR]</r></p></e>
+      <e><p><l><s n='parol'/>NPFP00D</l>
+      <r><s n='pos'/>[ADJ][IZO]<s n='mi'/>[NUMP]<s n='suf'/>txo[ATZ][IZE][ARR]</r></p></e>
+      <e><p><l><s n='parol'/>NPFS00D</l>
+      <r><s n='pos'/>[ADJ][IZO]<s n='mi'/>[NUMS]<s n='suf'/>txo[ATZ][IZE][ARR]</r></p></e>
+      <e><p><l><s n='parol'/>NPMN00D</l>
+      <r><s n='pos'/>[ADJ][IZO]<s n='suf'/>txo[ATZ][IZE][ARR]</r></p></e>
+      <e><p><l><s n='parol'/>NPMP00D</l>
+      <r><s n='pos'/>[ADJ][IZO]<s n='mi'/>[NUMP]<s n='suf'/>txo[ATZ][IZE][ARR]</r></p></e>
+      <e><p><l><s n='parol'/>NPMS00D</l>
+      <r><s n='pos'/>[ADJ][IZO]<s n='mi'/>[NUMS]<s n='suf'/>txo[ATZ][IZE][ARR]</r></p></e>
+      <e><p><l><s n='parol'/>NP0000A</l>
+      <r><s n='pos'/>[ADJ][IZO]<s n='mi'/>[NUMS]<s n='suf'/>tzar[ATZ][IZE][ARR]</r></p></e>
+      <e><p><l><s n='parol'/>NPCN00A</l>
+      <r><s n='pos'/>[ADJ][IZO]<s n='suf'/>tzar[ATZ][IZE][ARR]</r></p></e>
+      <e><p><l><s n='parol'/>NPCP00A</l>
+      <r><s n='pos'/>[ADJ][IZO]<s n='mi'/>[NUMP]<s n='suf'/>tzar[ATZ][IZE][ARR]</r></p></e>
+      <e><p><l><s n='parol'/>NPCS00A</l>
+      <r><s n='pos'/>[ADJ][IZO]<s n='mi'/>[NUMS]<s n='suf'/>tzar[ATZ][IZE][ARR]</r></p></e>
+      <e><p><l><s n='parol'/>NPFN00A</l>
+      <r><s n='pos'/>[ADJ][IZO]<s n='suf'/>tzar[ATZ][IZE][ARR]</r></p></e>
+      <e><p><l><s n='parol'/>NPFP00A</l>
+      <r><s n='pos'/>[ADJ][IZO]<s n='mi'/>[NUMP]<s n='suf'/>tzar[ATZ][IZE][ARR]</r></p></e>
+      <e><p><l><s n='parol'/>NPFS00A</l>
+      <r><s n='pos'/>[ADJ][IZO]<s n='mi'/>[NUMS]<s n='suf'/>tzar[ATZ][IZE][ARR]</r></p></e>
+      <e><p><l><s n='parol'/>NPMN00A</l>
+      <r><s n='pos'/>[ADJ][IZO]<s n='suf'/>tzar[ATZ][IZE][ARR]</r></p></e>
+      <e><p><l><s n='parol'/>NPMP00A</l>
+      <r><s n='pos'/>[ADJ][IZO]<s n='mi'/>[NUMP]<s n='suf'/>tzar[ATZ][IZE][ARR]</r></p></e>
+      <e><p><l><s n='parol'/>NPMS00A</l>
+      <r><s n='pos'/>[ADJ][IZO]<s n='mi'/>[NUMS]<s n='suf'/>tzar[ATZ][IZE][ARR]</r></p></e>
+      <e><p><l><s n='parol'/>NP0000X</l>
+      <r><s n='pos'/>[ADJ][IZO]<s n='mi'/>[NUMS]</r></p></e>
+      <e><p><l><s n='parol'/>NPCN00X</l>
+      <r><s n='pos'/>[ADJ][IZO]</r></p></e>
+      <e><p><l><s n='parol'/>NPCP00X</l>
+      <r><s n='pos'/>[ADJ][IZO]<s n='mi'/>[NUMP]</r></p></e>
+      <e><p><l><s n='parol'/>NPCS00X</l>
+      <r><s n='pos'/>[ADJ][IZO]<s n='mi'/>[NUMS]</r></p></e>
+      <e><p><l><s n='parol'/>NPFN00X</l>
+      <r><s n='pos'/>[ADJ][IZO]</r></p></e>
+      <e><p><l><s n='parol'/>NPFP00X</l>
+      <r><s n='pos'/>[ADJ][IZO]<s n='mi'/>[NUMP]</r></p></e>
+      <e><p><l><s n='parol'/>NPFS00X</l>
+      <r><s n='pos'/>[ADJ][IZO]<s n='mi'/>[NUMS]</r></p></e>
+      <e><p><l><s n='parol'/>NPMN00X</l>
+      <r><s n='pos'/>[ADJ][IZO]</r></p></e>
+      <e><p><l><s n='parol'/>NPMP00X</l>
+      <r><s n='pos'/>[ADJ][IZO]<s n='mi'/>[NUMP]</r></p></e>
+      <e><p><l><s n='parol'/>NPMS00X</l>
+      <r><s n='pos'/>[ADJ][IZO]<s n='mi'/>[NUMS]</r></p></e>
+      <!-- Analizatzaileak beste kategoria bat ematen dion kasutarako... -->
+      <e><p><l><s n='parol'/>noKAT_NC</l>
+      <r><s n='pos'/>[ADJ][IZO]</r></p></e>
+      <e><p><l><s n='parol'/>noKAT_AQ</l>
+      <r><s n='pos'/>[ADJ][IZO]</r></p></e>
+      <e><p><l><s n='parol'/>noKAT_AO</l>
+      <r><s n='pos'/>[ADJ][IZO]</r></p></e>
+      <e><p><l><s n='parol'/>noKAT_VM</l>
+      <r><s n='pos'/>[ADJ][IZO]</r></p></e>
+    </pardef>
     <pardef n='VM_ADJ_IZL'>
       <e><p><l><s n='parol'/>VMG0000</l>
       <r><s n='pos'/>[ADJ][IZL]<s n='mi'/>[NUMS]</r></p></e>
@@ -2461,121 +2889,6 @@
       <r><s n='pos'/>[IZE][ARR]</r></p></e>
       <e><p><l><s n='parol'/>noKAT_VM</l>
       <r><s n='pos'/>[IZE][ARR]</r></p></e>
-    </pardef>
-    <pardef n='AQ_ADB_ADOARR'>
-      <e><p><l><s n='parol'/>AQ0CN0</l>
-      <r><s n='pos'/>[ADB][ADOARR]</r></p></e>
-      <e><p><l><s n='parol'/>AQ0CP0</l>
-      <r><s n='pos'/>[ADB][ADOARR]<s n='mi'/>[NUMP]</r></p></e>
-      <e><p><l><s n='parol'/>AQ0CS0</l>
-      <r><s n='pos'/>[ADB][ADOARR]<s n='mi'/>[NUMS]</r></p></e>
-      <e><p><l><s n='parol'/>AQ0FN0</l>
-      <r><s n='pos'/>[ADB][ADOARR]</r></p></e>
-      <e><p><l><s n='parol'/>AQ0FP0</l>
-      <r><s n='pos'/>[ADB][ADOARR]<s n='mi'/>[NUMP]</r></p></e>
-      <e><p><l><s n='parol'/>AQ0FPP</l>
-      <r><s n='pos'/>[ADB][ADOARR]<s n='mi'/>[NUMP]</r></p></e>
-      <e><p><l><s n='parol'/>AQ0FS0</l>
-      <r><s n='pos'/>[ADB][ADOARR]<s n='mi'/>[NUMS]</r></p></e>
-      <e><p><l><s n='parol'/>AQ0FSP</l>
-      <r><s n='pos'/>[ADB][ADOARR]<s n='mi'/>[NUMS]</r></p></e>
-      <e><p><l><s n='parol'/>AQ0MN0</l>
-      <r><s n='pos'/>[ADB][ADOARR]</r></p></e>
-      <e><p><l><s n='parol'/>AQ0MP0</l>
-      <r><s n='pos'/>[ADB][ADOARR]<s n='mi'/>[NUMP]</r></p></e>
-      <e><p><l><s n='parol'/>AQ0MPP</l>
-      <r><s n='pos'/>[ADB][ADOARR]<s n='mi'/>[NUMP]</r></p></e>
-      <e><p><l><s n='parol'/>AQ0MS0</l>
-      <r><s n='pos'/>[ADB][ADOARR]<s n='mi'/>[NUMS]</r></p></e>
-      <e><p><l><s n='parol'/>AQ0MSP</l>
-      <r><s n='pos'/>[ADB][ADOARR]<s n='mi'/>[NUMS]</r></p></e>
-      <e><p><l><s n='parol'/>AQDCN0</l>
-      <r><s n='pos'/>[ADB][ADOARR]<s n='suf'/>txo[ATZ][IZE][ARR]</r></p></e>
-      <e><p><l><s n='parol'/>AQDCP0</l>
-      <r><s n='pos'/>[ADB][ADOARR]<s n='mi'/>[NUMP]<s n='suf'/>txo[ATZ][IZE][ARR]</r></p></e>
-      <e><p><l><s n='parol'/>AQDCS0</l>
-      <r><s n='pos'/>[ADB][ADOARR]<s n='mi'/>[NUMS]<s n='suf'/>txo[ATZ][IZE][ARR]</r></p></e>
-      <e><p><l><s n='parol'/>AQDFN0</l>
-      <r><s n='pos'/>[ADB][ADOARR]<s n='suf'/>txo[ATZ][IZE][ARR]</r></p></e>
-      <e><p><l><s n='parol'/>AQDFP0</l>
-      <r><s n='pos'/>[ADB][ADOARR]<s n='mi'/>[NUMP]<s n='suf'/>txo[ATZ][IZE][ARR]</r></p></e>
-      <e><p><l><s n='parol'/>AQDFPP</l>
-      <r><s n='pos'/>[ADB][ADOARR]<s n='mi'/>[NUMP]<s n='suf'/>txo[ATZ][IZE][ARR]</r></p></e>
-      <e><p><l><s n='parol'/>AQDFS0</l>
-      <r><s n='pos'/>[ADB][ADOARR]<s n='mi'/>[NUMS]<s n='suf'/>txo[ATZ][IZE][ARR]</r></p></e>
-      <e><p><l><s n='parol'/>AQDFSP</l>
-      <r><s n='pos'/>[ADB][ADOARR]<s n='mi'/>[NUMS]<s n='suf'/>txo[ATZ][IZE][ARR]</r></p></e>
-      <e><p><l><s n='parol'/>AQDMN0</l>
-      <r><s n='pos'/>[ADB][ADOARR]<s n='suf'/>txo[ATZ][IZE][ARR]</r></p></e>
-      <e><p><l><s n='parol'/>AQDMP0</l>
-      <r><s n='pos'/>[ADB][ADOARR]<s n='mi'/>[NUMP]<s n='suf'/>txo[ATZ][IZE][ARR]</r></p></e>
-      <e><p><l><s n='parol'/>AQDMPP</l>
-      <r><s n='pos'/>[ADB][ADOARR]<s n='mi'/>[NUMP]<s n='suf'/>txo[ATZ][IZE][ARR]</r></p></e>
-      <e><p><l><s n='parol'/>AQDMS0</l>
-      <r><s n='pos'/>[ADB][ADOARR]<s n='mi'/>[NUMS]<s n='suf'/>txo[ATZ][IZE][ARR]</r></p></e>
-      <e><p><l><s n='parol'/>AQDMSP</l>
-      <r><s n='pos'/>[ADB][ADOARR]<s n='mi'/>[NUMS]<s n='suf'/>txo[ATZ][IZE][ARR]</r></p></e>
-      <e><p><l><s n='parol'/>AQACN0</l>
-      <r><s n='pos'/>[ADB][ADOARR]<s n='suf'/>tzar[ATZ][IZE][ARR]</r></p></e>
-      <e><p><l><s n='parol'/>AQACP0</l>
-      <r><s n='pos'/>[ADB][ADOARR]<s n='mi'/>[NUMP]<s n='suf'/>tzar[ATZ][IZE][ARR]</r></p></e>
-      <e><p><l><s n='parol'/>AQACS0</l>
-      <r><s n='pos'/>[ADB][ADOARR]<s n='mi'/>[NUMS]<s n='suf'/>tzar[ATZ][IZE][ARR]</r></p></e>
-      <e><p><l><s n='parol'/>AQAFN0</l>
-      <r><s n='pos'/>[ADB][ADOARR]<s n='suf'/>tzar[ATZ][IZE][ARR]</r></p></e>
-      <e><p><l><s n='parol'/>AQAFP0</l>
-      <r><s n='pos'/>[ADB][ADOARR]<s n='mi'/>[NUMP]<s n='suf'/>tzar[ATZ][IZE][ARR]</r></p></e>
-      <e><p><l><s n='parol'/>AQAFPP</l>
-      <r><s n='pos'/>[ADB][ADOARR]<s n='mi'/>[NUMP]<s n='suf'/>tzar[ATZ][IZE][ARR]</r></p></e>
-      <e><p><l><s n='parol'/>AQAFS0</l>
-      <r><s n='pos'/>[ADB][ADOARR]<s n='mi'/>[NUMS]<s n='suf'/>tzar[ATZ][IZE][ARR]</r></p></e>
-      <e><p><l><s n='parol'/>AQAFSP</l>
-      <r><s n='pos'/>[ADB][ADOARR]<s n='mi'/>[NUMS]<s n='suf'/>tzar[ATZ][IZE][ARR]</r></p></e>
-      <e><p><l><s n='parol'/>AQAMN0</l>
-      <r><s n='pos'/>[ADB][ADOARR]<s n='suf'/>tzar[ATZ][IZE][ARR]</r></p></e>
-      <e><p><l><s n='parol'/>AQAMP0</l>
-      <r><s n='pos'/>[ADB][ADOARR]<s n='mi'/>[NUMP]<s n='suf'/>tzar[ATZ][IZE][ARR]</r></p></e>
-      <e><p><l><s n='parol'/>AQAMPP</l>
-      <r><s n='pos'/>[ADB][ADOARR]<s n='mi'/>[NUMP]<s n='suf'/>tzar[ATZ][IZE][ARR]</r></p></e>
-      <e><p><l><s n='parol'/>AQAMS0</l>
-      <r><s n='pos'/>[ADB][ADOARR]<s n='mi'/>[NUMS]<s n='suf'/>tzar[ATZ][IZE][ARR]</r></p></e>
-      <e><p><l><s n='parol'/>AQAMSP</l>
-      <r><s n='pos'/>[ADB][ADOARR]<s n='mi'/>[NUMS]<s n='suf'/>tzar[ATZ][IZE][ARR]</r></p></e>
-      <e><p><l><s n='parol'/>AQXCN0</l>
-      <r><s n='pos'/>[ADB][ADOARR]</r></p></e>
-      <e><p><l><s n='parol'/>AQXCP0</l>
-      <r><s n='pos'/>[ADB][ADOARR]<s n='mi'/>[NUMP]</r></p></e>
-      <e><p><l><s n='parol'/>AQXCS0</l>
-      <r><s n='pos'/>[ADB][ADOARR]<s n='mi'/>[NUMS]</r></p></e>
-      <e><p><l><s n='parol'/>AQXFN0</l>
-      <r><s n='pos'/>[ADB][ADOARR]</r></p></e>
-      <e><p><l><s n='parol'/>AQXFP0</l>
-      <r><s n='pos'/>[ADB][ADOARR]<s n='mi'/>[NUMP]</r></p></e>
-      <e><p><l><s n='parol'/>AQXFPP</l>
-      <r><s n='pos'/>[ADB][ADOARR]<s n='mi'/>[NUMP]</r></p></e>
-      <e><p><l><s n='parol'/>AQXFS0</l>
-      <r><s n='pos'/>[ADB][ADOARR]<s n='mi'/>[NUMS]</r></p></e>
-      <e><p><l><s n='parol'/>AQXFSP</l>
-      <r><s n='pos'/>[ADB][ADOARR]<s n='mi'/>[NUMS]</r></p></e>
-      <e><p><l><s n='parol'/>AQXMN0</l>
-      <r><s n='pos'/>[ADB][ADOARR]</r></p></e>
-      <e><p><l><s n='parol'/>AQXMP0</l>
-      <r><s n='pos'/>[ADB][ADOARR]<s n='mi'/>[NUMP]</r></p></e>
-      <e><p><l><s n='parol'/>AQXMPP</l>
-      <r><s n='pos'/>[ADB][ADOARR]<s n='mi'/>[NUMP]</r></p></e>
-      <e><p><l><s n='parol'/>AQXMS0</l>
-      <r><s n='pos'/>[ADB][ADOARR]<s n='mi'/>[NUMS]</r></p></e>
-      <e><p><l><s n='parol'/>AQXMSP</l>
-      <r><s n='pos'/>[ADB][ADOARR]<s n='mi'/>[NUMS]</r></p></e>
-      <!-- Analizatzaileak beste kategoria bat ematen dion kasutarako... -->
-      <e><p><l><s n='parol'/>noKAT_NC</l>
-      <r><s n='pos'/>[ADB][ADOARR]</r></p></e>
-      <e><p><l><s n='parol'/>noKAT_AQ</l>
-      <r><s n='pos'/>[ADB][ADOARR]</r></p></e>
-      <e><p><l><s n='parol'/>noKAT_AO</l>
-      <r><s n='pos'/>[ADB][ADOARR]</r></p></e>
-      <e><p><l><s n='parol'/>noKAT_VM</l>
-      <r><s n='pos'/>[ADB][ADOARR]</r></p></e>
     </pardef>
     <pardef n='VM_ADB_ADOARR'>
       <e><p><l><s n='parol'/>VMG0000</l>
@@ -2970,105 +3283,6 @@
       <e><p><l><s n='parol'/>noKAT_VM</l>
       <r><s n='pos'/>[ADB][ALGARR]</r></p></e>
     </pardef>
-    <pardef n='NP_ADJ_IZO'>
-      <e><p><l><s n='parol'/>NP00000</l>
-      <r><s n='pos'/>[ADJ][IZO]<s n='mi'/>[NUMS]</r></p></e>
-      <e><p><l><s n='parol'/>NP00SP0</l>
-      <r><s n='pos'/>[ADJ][IZO]<s n='mi'/>[NUMS]</r></p></e>
-      <e><p><l><s n='parol'/>NP00G00</l>
-      <r><s n='pos'/>[ADJ][IZO]<s n='mi'/>[NUMS]</r></p></e>
-      <e><p><l><s n='parol'/>NP00O00</l>
-      <r><s n='pos'/>[ADJ][IZO]<s n='mi'/>[NUMS]</r></p></e>
-      <e><p><l><s n='parol'/>NP00V00</l>
-      <r><s n='pos'/>[ADJ][IZO]<s n='mi'/>[NUMS]</r></p></e>
-      <e><p><l><s n='parol'/>NPCN000</l>
-      <r><s n='pos'/>[ADJ][IZO]</r></p></e>
-      <e><p><l><s n='parol'/>NPCP000</l>
-      <r><s n='pos'/>[ADJ][IZO]<s n='mi'/>[NUMP]</r></p></e>
-      <e><p><l><s n='parol'/>NPCS000</l>
-      <r><s n='pos'/>[ADJ][IZO]<s n='mi'/>[NUMS]</r></p></e>
-      <e><p><l><s n='parol'/>NPFN000</l>
-      <r><s n='pos'/>[ADJ][IZO]</r></p></e>
-      <e><p><l><s n='parol'/>NPFP000</l>
-      <r><s n='pos'/>[ADJ][IZO]<s n='mi'/>[NUMP]</r></p></e>
-      <e><p><l><s n='parol'/>NPFS000</l>
-      <r><s n='pos'/>[ADJ][IZO]<s n='mi'/>[NUMS]</r></p></e>
-      <e><p><l><s n='parol'/>NPMN000</l>
-      <r><s n='pos'/>[ADJ][IZO]</r></p></e>
-      <e><p><l><s n='parol'/>NPMP000</l>
-      <r><s n='pos'/>[ADJ][IZO]<s n='mi'/>[NUMP]</r></p></e>
-      <e><p><l><s n='parol'/>NPMS000</l>
-      <r><s n='pos'/>[ADJ][IZO]<s n='mi'/>[NUMS]</r></p></e>
-      <e><p><l><s n='parol'/>NP0000D</l>
-      <r><s n='pos'/>[ADJ][IZO]<s n='mi'/>[NUMS]<s n='suf'/>txo[ATZ][IZE][ARR]</r></p></e>
-      <e><p><l><s n='parol'/>NPCN00D</l>
-      <r><s n='pos'/>[ADJ][IZO]<s n='suf'/>txo[ATZ][IZE][ARR]</r></p></e>
-      <e><p><l><s n='parol'/>NPCP00D</l>
-      <r><s n='pos'/>[ADJ][IZO]<s n='mi'/>[NUMP]<s n='suf'/>txo[ATZ][IZE][ARR]</r></p></e>
-      <e><p><l><s n='parol'/>NPCS00D</l>
-      <r><s n='pos'/>[ADJ][IZO]<s n='mi'/>[NUMS]<s n='suf'/>txo[ATZ][IZE][ARR]</r></p></e>
-      <e><p><l><s n='parol'/>NPFN00D</l>
-      <r><s n='pos'/>[ADJ][IZO]<s n='suf'/>txo[ATZ][IZE][ARR]</r></p></e>
-      <e><p><l><s n='parol'/>NPFP00D</l>
-      <r><s n='pos'/>[ADJ][IZO]<s n='mi'/>[NUMP]<s n='suf'/>txo[ATZ][IZE][ARR]</r></p></e>
-      <e><p><l><s n='parol'/>NPFS00D</l>
-      <r><s n='pos'/>[ADJ][IZO]<s n='mi'/>[NUMS]<s n='suf'/>txo[ATZ][IZE][ARR]</r></p></e>
-      <e><p><l><s n='parol'/>NPMN00D</l>
-      <r><s n='pos'/>[ADJ][IZO]<s n='suf'/>txo[ATZ][IZE][ARR]</r></p></e>
-      <e><p><l><s n='parol'/>NPMP00D</l>
-      <r><s n='pos'/>[ADJ][IZO]<s n='mi'/>[NUMP]<s n='suf'/>txo[ATZ][IZE][ARR]</r></p></e>
-      <e><p><l><s n='parol'/>NPMS00D</l>
-      <r><s n='pos'/>[ADJ][IZO]<s n='mi'/>[NUMS]<s n='suf'/>txo[ATZ][IZE][ARR]</r></p></e>
-      <e><p><l><s n='parol'/>NP0000A</l>
-      <r><s n='pos'/>[ADJ][IZO]<s n='mi'/>[NUMS]<s n='suf'/>tzar[ATZ][IZE][ARR]</r></p></e>
-      <e><p><l><s n='parol'/>NPCN00A</l>
-      <r><s n='pos'/>[ADJ][IZO]<s n='suf'/>tzar[ATZ][IZE][ARR]</r></p></e>
-      <e><p><l><s n='parol'/>NPCP00A</l>
-      <r><s n='pos'/>[ADJ][IZO]<s n='mi'/>[NUMP]<s n='suf'/>tzar[ATZ][IZE][ARR]</r></p></e>
-      <e><p><l><s n='parol'/>NPCS00A</l>
-      <r><s n='pos'/>[ADJ][IZO]<s n='mi'/>[NUMS]<s n='suf'/>tzar[ATZ][IZE][ARR]</r></p></e>
-      <e><p><l><s n='parol'/>NPFN00A</l>
-      <r><s n='pos'/>[ADJ][IZO]<s n='suf'/>tzar[ATZ][IZE][ARR]</r></p></e>
-      <e><p><l><s n='parol'/>NPFP00A</l>
-      <r><s n='pos'/>[ADJ][IZO]<s n='mi'/>[NUMP]<s n='suf'/>tzar[ATZ][IZE][ARR]</r></p></e>
-      <e><p><l><s n='parol'/>NPFS00A</l>
-      <r><s n='pos'/>[ADJ][IZO]<s n='mi'/>[NUMS]<s n='suf'/>tzar[ATZ][IZE][ARR]</r></p></e>
-      <e><p><l><s n='parol'/>NPMN00A</l>
-      <r><s n='pos'/>[ADJ][IZO]<s n='suf'/>tzar[ATZ][IZE][ARR]</r></p></e>
-      <e><p><l><s n='parol'/>NPMP00A</l>
-      <r><s n='pos'/>[ADJ][IZO]<s n='mi'/>[NUMP]<s n='suf'/>tzar[ATZ][IZE][ARR]</r></p></e>
-      <e><p><l><s n='parol'/>NPMS00A</l>
-      <r><s n='pos'/>[ADJ][IZO]<s n='mi'/>[NUMS]<s n='suf'/>tzar[ATZ][IZE][ARR]</r></p></e>
-      <e><p><l><s n='parol'/>NP0000X</l>
-      <r><s n='pos'/>[ADJ][IZO]<s n='mi'/>[NUMS]</r></p></e>
-      <e><p><l><s n='parol'/>NPCN00X</l>
-      <r><s n='pos'/>[ADJ][IZO]</r></p></e>
-      <e><p><l><s n='parol'/>NPCP00X</l>
-      <r><s n='pos'/>[ADJ][IZO]<s n='mi'/>[NUMP]</r></p></e>
-      <e><p><l><s n='parol'/>NPCS00X</l>
-      <r><s n='pos'/>[ADJ][IZO]<s n='mi'/>[NUMS]</r></p></e>
-      <e><p><l><s n='parol'/>NPFN00X</l>
-      <r><s n='pos'/>[ADJ][IZO]</r></p></e>
-      <e><p><l><s n='parol'/>NPFP00X</l>
-      <r><s n='pos'/>[ADJ][IZO]<s n='mi'/>[NUMP]</r></p></e>
-      <e><p><l><s n='parol'/>NPFS00X</l>
-      <r><s n='pos'/>[ADJ][IZO]<s n='mi'/>[NUMS]</r></p></e>
-      <e><p><l><s n='parol'/>NPMN00X</l>
-      <r><s n='pos'/>[ADJ][IZO]</r></p></e>
-      <e><p><l><s n='parol'/>NPMP00X</l>
-      <r><s n='pos'/>[ADJ][IZO]<s n='mi'/>[NUMP]</r></p></e>
-      <e><p><l><s n='parol'/>NPMS00X</l>
-      <r><s n='pos'/>[ADJ][IZO]<s n='mi'/>[NUMS]</r></p></e>
-      <!-- Analizatzaileak beste kategoria bat ematen dion kasutarako... -->
-      <e><p><l><s n='parol'/>noKAT_NC</l>
-      <r><s n='pos'/>[ADJ][IZO]</r></p></e>
-      <e><p><l><s n='parol'/>noKAT_AQ</l>
-      <r><s n='pos'/>[ADJ][IZO]</r></p></e>
-      <e><p><l><s n='parol'/>noKAT_AO</l>
-      <r><s n='pos'/>[ADJ][IZO]</r></p></e>
-      <e><p><l><s n='parol'/>noKAT_VM</l>
-      <r><s n='pos'/>[ADJ][IZO]</r></p></e>
-    </pardef>
     <pardef n='AQ_ADI_SIN'>
       <e><p><l><s n='parol'/>AQ0CN0</l>
       <r><s n='pos'/>[ADI][SIN]</r></p></e>
@@ -3283,121 +3497,6 @@
       <e><p><l><s n='parol'/>noKAT_VM</l>
       <r><s n='pos'/>[ADJ][IZL]</r></p></e>
     </pardef>
-    <pardef n='AQ_ADB_ALGARR'>
-      <e><p><l><s n='parol'/>AQ0CN0</l>
-      <r><s n='pos'/>[ADB][ALGARR]</r></p></e>
-      <e><p><l><s n='parol'/>AQ0CP0</l>
-      <r><s n='pos'/>[ADB][ALGARR]<s n='mi'/>[NUMP]</r></p></e>
-      <e><p><l><s n='parol'/>AQ0CS0</l>
-      <r><s n='pos'/>[ADB][ALGARR]<s n='mi'/>[NUMS]</r></p></e>
-      <e><p><l><s n='parol'/>AQ0FN0</l>
-      <r><s n='pos'/>[ADB][ALGARR]</r></p></e>
-      <e><p><l><s n='parol'/>AQ0FP0</l>
-      <r><s n='pos'/>[ADB][ALGARR]<s n='mi'/>[NUMP]</r></p></e>
-      <e><p><l><s n='parol'/>AQ0FPP</l>
-      <r><s n='pos'/>[ADB][ALGARR]<s n='mi'/>[NUMP]</r></p></e>
-      <e><p><l><s n='parol'/>AQ0FS0</l>
-      <r><s n='pos'/>[ADB][ALGARR]<s n='mi'/>[NUMS]</r></p></e>
-      <e><p><l><s n='parol'/>AQ0FSP</l>
-      <r><s n='pos'/>[ADB][ALGARR]<s n='mi'/>[NUMS]</r></p></e>
-      <e><p><l><s n='parol'/>AQ0MN0</l>
-      <r><s n='pos'/>[ADB][ALGARR]</r></p></e>
-      <e><p><l><s n='parol'/>AQ0MP0</l>
-      <r><s n='pos'/>[ADB][ALGARR]<s n='mi'/>[NUMP]</r></p></e>
-      <e><p><l><s n='parol'/>AQ0MPP</l>
-      <r><s n='pos'/>[ADB][ALGARR]<s n='mi'/>[NUMP]</r></p></e>
-      <e><p><l><s n='parol'/>AQ0MS0</l>
-      <r><s n='pos'/>[ADB][ALGARR]<s n='mi'/>[NUMS]</r></p></e>
-      <e><p><l><s n='parol'/>AQ0MSP</l>
-      <r><s n='pos'/>[ADB][ALGARR]<s n='mi'/>[NUMS]</r></p></e>
-      <e><p><l><s n='parol'/>AQDCN0</l>
-      <r><s n='pos'/>[ADB][ALGARR]<s n='suf'/>txo[ATZ][IZE][ARR]</r></p></e>
-      <e><p><l><s n='parol'/>AQDCP0</l>
-      <r><s n='pos'/>[ADB][ALGARR]<s n='mi'/>[NUMP]<s n='suf'/>txo[ATZ][IZE][ARR]</r></p></e>
-      <e><p><l><s n='parol'/>AQDCS0</l>
-      <r><s n='pos'/>[ADB][ALGARR]<s n='mi'/>[NUMS]<s n='suf'/>txo[ATZ][IZE][ARR]</r></p></e>
-      <e><p><l><s n='parol'/>AQDFN0</l>
-      <r><s n='pos'/>[ADB][ALGARR]<s n='suf'/>txo[ATZ][IZE][ARR]</r></p></e>
-      <e><p><l><s n='parol'/>AQDFP0</l>
-      <r><s n='pos'/>[ADB][ALGARR]<s n='mi'/>[NUMP]<s n='suf'/>txo[ATZ][IZE][ARR]</r></p></e>
-      <e><p><l><s n='parol'/>AQDFPP</l>
-      <r><s n='pos'/>[ADB][ALGARR]<s n='mi'/>[NUMP]<s n='suf'/>txo[ATZ][IZE][ARR]</r></p></e>
-      <e><p><l><s n='parol'/>AQDFS0</l>
-      <r><s n='pos'/>[ADB][ALGARR]<s n='mi'/>[NUMS]<s n='suf'/>txo[ATZ][IZE][ARR]</r></p></e>
-      <e><p><l><s n='parol'/>AQDFSP</l>
-      <r><s n='pos'/>[ADB][ALGARR]<s n='mi'/>[NUMS]<s n='suf'/>txo[ATZ][IZE][ARR]</r></p></e>
-      <e><p><l><s n='parol'/>AQDMN0</l>
-      <r><s n='pos'/>[ADB][ALGARR]<s n='suf'/>txo[ATZ][IZE][ARR]</r></p></e>
-      <e><p><l><s n='parol'/>AQDMP0</l>
-      <r><s n='pos'/>[ADB][ALGARR]<s n='mi'/>[NUMP]<s n='suf'/>txo[ATZ][IZE][ARR]</r></p></e>
-      <e><p><l><s n='parol'/>AQDMPP</l>
-      <r><s n='pos'/>[ADB][ALGARR]<s n='mi'/>[NUMP]<s n='suf'/>txo[ATZ][IZE][ARR]</r></p></e>
-      <e><p><l><s n='parol'/>AQDMS0</l>
-      <r><s n='pos'/>[ADB][ALGARR]<s n='mi'/>[NUMS]<s n='suf'/>txo[ATZ][IZE][ARR]</r></p></e>
-      <e><p><l><s n='parol'/>AQDMSP</l>
-      <r><s n='pos'/>[ADB][ALGARR]<s n='mi'/>[NUMS]<s n='suf'/>txo[ATZ][IZE][ARR]</r></p></e>
-      <e><p><l><s n='parol'/>AQACN0</l>
-      <r><s n='pos'/>[ADB][ALGARR]<s n='suf'/>tzar[ATZ][IZE][ARR]</r></p></e>
-      <e><p><l><s n='parol'/>AQACP0</l>
-      <r><s n='pos'/>[ADB][ALGARR]<s n='mi'/>[NUMP]<s n='suf'/>tzar[ATZ][IZE][ARR]</r></p></e>
-      <e><p><l><s n='parol'/>AQACS0</l>
-      <r><s n='pos'/>[ADB][ALGARR]<s n='mi'/>[NUMS]<s n='suf'/>tzar[ATZ][IZE][ARR]</r></p></e>
-      <e><p><l><s n='parol'/>AQAFN0</l>
-      <r><s n='pos'/>[ADB][ALGARR]<s n='suf'/>tzar[ATZ][IZE][ARR]</r></p></e>
-      <e><p><l><s n='parol'/>AQAFP0</l>
-      <r><s n='pos'/>[ADB][ALGARR]<s n='mi'/>[NUMP]<s n='suf'/>tzar[ATZ][IZE][ARR]</r></p></e>
-      <e><p><l><s n='parol'/>AQAFPP</l>
-      <r><s n='pos'/>[ADB][ALGARR]<s n='mi'/>[NUMP]<s n='suf'/>tzar[ATZ][IZE][ARR]</r></p></e>
-      <e><p><l><s n='parol'/>AQAFS0</l>
-      <r><s n='pos'/>[ADB][ALGARR]<s n='mi'/>[NUMS]<s n='suf'/>tzar[ATZ][IZE][ARR]</r></p></e>
-      <e><p><l><s n='parol'/>AQAFSP</l>
-      <r><s n='pos'/>[ADB][ALGARR]<s n='mi'/>[NUMS]<s n='suf'/>tzar[ATZ][IZE][ARR]</r></p></e>
-      <e><p><l><s n='parol'/>AQAMN0</l>
-      <r><s n='pos'/>[ADB][ALGARR]<s n='suf'/>tzar[ATZ][IZE][ARR]</r></p></e>
-      <e><p><l><s n='parol'/>AQAMP0</l>
-      <r><s n='pos'/>[ADB][ALGARR]<s n='mi'/>[NUMP]<s n='suf'/>tzar[ATZ][IZE][ARR]</r></p></e>
-      <e><p><l><s n='parol'/>AQAMPP</l>
-      <r><s n='pos'/>[ADB][ALGARR]<s n='mi'/>[NUMP]<s n='suf'/>tzar[ATZ][IZE][ARR]</r></p></e>
-      <e><p><l><s n='parol'/>AQAMS0</l>
-      <r><s n='pos'/>[ADB][ALGARR]<s n='mi'/>[NUMS]<s n='suf'/>tzar[ATZ][IZE][ARR]</r></p></e>
-      <e><p><l><s n='parol'/>AQAMSP</l>
-      <r><s n='pos'/>[ADB][ALGARR]<s n='mi'/>[NUMS]<s n='suf'/>tzar[ATZ][IZE][ARR]</r></p></e>
-      <e><p><l><s n='parol'/>AQXCN0</l>
-      <r><s n='pos'/>[ADB][ALGARR]</r></p></e>
-      <e><p><l><s n='parol'/>AQXCP0</l>
-      <r><s n='pos'/>[ADB][ALGARR]<s n='mi'/>[NUMP]</r></p></e>
-      <e><p><l><s n='parol'/>AQXCS0</l>
-      <r><s n='pos'/>[ADB][ALGARR]<s n='mi'/>[NUMS]</r></p></e>
-      <e><p><l><s n='parol'/>AQXFN0</l>
-      <r><s n='pos'/>[ADB][ALGARR]</r></p></e>
-      <e><p><l><s n='parol'/>AQXFP0</l>
-      <r><s n='pos'/>[ADB][ALGARR]<s n='mi'/>[NUMP]</r></p></e>
-      <e><p><l><s n='parol'/>AQXFPP</l>
-      <r><s n='pos'/>[ADB][ALGARR]<s n='mi'/>[NUMP]</r></p></e>
-      <e><p><l><s n='parol'/>AQXFS0</l>
-      <r><s n='pos'/>[ADB][ALGARR]<s n='mi'/>[NUMS]</r></p></e>
-      <e><p><l><s n='parol'/>AQXFSP</l>
-      <r><s n='pos'/>[ADB][ALGARR]<s n='mi'/>[NUMS]</r></p></e>
-      <e><p><l><s n='parol'/>AQXMN0</l>
-      <r><s n='pos'/>[ADB][ALGARR]</r></p></e>
-      <e><p><l><s n='parol'/>AQXMP0</l>
-      <r><s n='pos'/>[ADB][ALGARR]<s n='mi'/>[NUMP]</r></p></e>
-      <e><p><l><s n='parol'/>AQXMPP</l>
-      <r><s n='pos'/>[ADB][ALGARR]<s n='mi'/>[NUMP]</r></p></e>
-      <e><p><l><s n='parol'/>AQXMS0</l>
-      <r><s n='pos'/>[ADB][ALGARR]<s n='mi'/>[NUMS]</r></p></e>
-      <e><p><l><s n='parol'/>AQXMSP</l>
-      <r><s n='pos'/>[ADB][ALGARR]<s n='mi'/>[NUMS]</r></p></e>
-      <!-- Analizatzaileak beste kategoria bat ematen dion kasutarako... -->
-      <e><p><l><s n='parol'/>noKAT_NC</l>
-      <r><s n='pos'/>[ADB][ALGARR]</r></p></e>
-      <e><p><l><s n='parol'/>noKAT_AQ</l>
-      <r><s n='pos'/>[ADB][ALGARR]</r></p></e>
-      <e><p><l><s n='parol'/>noKAT_AO</l>
-      <r><s n='pos'/>[ADB][ALGARR]</r></p></e>
-      <e><p><l><s n='parol'/>noKAT_VM</l>
-      <r><s n='pos'/>[ADB][ALGARR]</r></p></e>
-    </pardef>
     <pardef n='Z_IZE_ARR'>
       <e><p><l><s n='parol'/>Z</l>
       <r><s n='pos'/>[IZE][ARR]</r></p></e>
@@ -3538,105 +3637,6 @@
       <r><s n='pos'/>[DET][DZH]</r></p></e>
       <e><p><l><s n='parol'/>noKAT_VM</l>
       <r><s n='pos'/>[DET][DZH]</r></p></e>
-    </pardef>
-    <pardef n='NC_ADB_ADOARR'>
-      <e><p><l><s n='parol'/>NC00000</l>
-      <r><s n='pos'/>[ADB][ADOARR]<s n='mi'/>[NUMS]</r></p></e>
-      <e><p><l><s n='parol'/>NC00SP0</l>
-      <r><s n='pos'/>[ADB][ADOARR]<s n='mi'/>[NUMS]</r></p></e>
-      <e><p><l><s n='parol'/>NC00G00</l>
-      <r><s n='pos'/>[ADB][ADOARR]<s n='mi'/>[NUMS]</r></p></e>
-      <e><p><l><s n='parol'/>NC00O00</l>
-      <r><s n='pos'/>[ADB][ADOARR]<s n='mi'/>[NUMS]</r></p></e>
-      <e><p><l><s n='parol'/>NC00V00</l>
-      <r><s n='pos'/>[ADB][ADOARR]<s n='mi'/>[NUMS]</r></p></e>
-      <e><p><l><s n='parol'/>NCCN000</l>
-      <r><s n='pos'/>[ADB][ADOARR]</r></p></e>
-      <e><p><l><s n='parol'/>NCCP000</l>
-      <r><s n='pos'/>[ADB][ADOARR]<s n='mi'/>[NUMP]</r></p></e>
-      <e><p><l><s n='parol'/>NCCS000</l>
-      <r><s n='pos'/>[ADB][ADOARR]<s n='mi'/>[NUMS]</r></p></e>
-      <e><p><l><s n='parol'/>NCFN000</l>
-      <r><s n='pos'/>[ADB][ADOARR]</r></p></e>
-      <e><p><l><s n='parol'/>NCFP000</l>
-      <r><s n='pos'/>[ADB][ADOARR]<s n='mi'/>[NUMP]</r></p></e>
-      <e><p><l><s n='parol'/>NCFS000</l>
-      <r><s n='pos'/>[ADB][ADOARR]<s n='mi'/>[NUMS]</r></p></e>
-      <e><p><l><s n='parol'/>NCMN000</l>
-      <r><s n='pos'/>[ADB][ADOARR]</r></p></e>
-      <e><p><l><s n='parol'/>NCMP000</l>
-      <r><s n='pos'/>[ADB][ADOARR]<s n='mi'/>[NUMP]</r></p></e>
-      <e><p><l><s n='parol'/>NCMS000</l>
-      <r><s n='pos'/>[ADB][ADOARR]<s n='mi'/>[NUMS]</r></p></e>
-      <e><p><l><s n='parol'/>NC0000D</l>
-      <r><s n='pos'/>[ADB][ADOARR]<s n='mi'/>[NUMS]<s n='suf'/>txo[ATZ][IZE][ARR]</r></p></e>
-      <e><p><l><s n='parol'/>NCCN00D</l>
-      <r><s n='pos'/>[ADB][ADOARR]<s n='suf'/>txo[ATZ][IZE][ARR]</r></p></e>
-      <e><p><l><s n='parol'/>NCCP00D</l>
-      <r><s n='pos'/>[ADB][ADOARR]<s n='mi'/>[NUMP]<s n='suf'/>txo[ATZ][IZE][ARR]</r></p></e>
-      <e><p><l><s n='parol'/>NCCS00D</l>
-      <r><s n='pos'/>[ADB][ADOARR]<s n='mi'/>[NUMS]<s n='suf'/>txo[ATZ][IZE][ARR]</r></p></e>
-      <e><p><l><s n='parol'/>NCFN00D</l>
-      <r><s n='pos'/>[ADB][ADOARR]<s n='suf'/>txo[ATZ][IZE][ARR]</r></p></e>
-      <e><p><l><s n='parol'/>NCFP00D</l>
-      <r><s n='pos'/>[ADB][ADOARR]<s n='mi'/>[NUMP]<s n='suf'/>txo[ATZ][IZE][ARR]</r></p></e>
-      <e><p><l><s n='parol'/>NCFS00D</l>
-      <r><s n='pos'/>[ADB][ADOARR]<s n='mi'/>[NUMS]<s n='suf'/>txo[ATZ][IZE][ARR]</r></p></e>
-      <e><p><l><s n='parol'/>NCMN00D</l>
-      <r><s n='pos'/>[ADB][ADOARR]<s n='suf'/>txo[ATZ][IZE][ARR]</r></p></e>
-      <e><p><l><s n='parol'/>NCMP00D</l>
-      <r><s n='pos'/>[ADB][ADOARR]<s n='mi'/>[NUMP]<s n='suf'/>txo[ATZ][IZE][ARR]</r></p></e>
-      <e><p><l><s n='parol'/>NCMS00D</l>
-      <r><s n='pos'/>[ADB][ADOARR]<s n='mi'/>[NUMS]<s n='suf'/>txo[ATZ][IZE][ARR]</r></p></e>
-      <e><p><l><s n='parol'/>NC0000A</l>
-      <r><s n='pos'/>[ADB][ADOARR]<s n='mi'/>[NUMS]<s n='suf'/>tzar[ATZ][IZE][ARR]</r></p></e>
-      <e><p><l><s n='parol'/>NCCN00A</l>
-      <r><s n='pos'/>[ADB][ADOARR]<s n='suf'/>tzar[ATZ][IZE][ARR]</r></p></e>
-      <e><p><l><s n='parol'/>NCCP00A</l>
-      <r><s n='pos'/>[ADB][ADOARR]<s n='mi'/>[NUMP]<s n='suf'/>tzar[ATZ][IZE][ARR]</r></p></e>
-      <e><p><l><s n='parol'/>NCCS00A</l>
-      <r><s n='pos'/>[ADB][ADOARR]<s n='mi'/>[NUMS]<s n='suf'/>tzar[ATZ][IZE][ARR]</r></p></e>
-      <e><p><l><s n='parol'/>NCFN00A</l>
-      <r><s n='pos'/>[ADB][ADOARR]<s n='suf'/>tzar[ATZ][IZE][ARR]</r></p></e>
-      <e><p><l><s n='parol'/>NCFP00A</l>
-      <r><s n='pos'/>[ADB][ADOARR]<s n='mi'/>[NUMP]<s n='suf'/>tzar[ATZ][IZE][ARR]</r></p></e>
-      <e><p><l><s n='parol'/>NCFS00A</l>
-      <r><s n='pos'/>[ADB][ADOARR]<s n='mi'/>[NUMS]<s n='suf'/>tzar[ATZ][IZE][ARR]</r></p></e>
-      <e><p><l><s n='parol'/>NCMN00A</l>
-      <r><s n='pos'/>[ADB][ADOARR]<s n='suf'/>tzar[ATZ][IZE][ARR]</r></p></e>
-      <e><p><l><s n='parol'/>NCMP00A</l>
-      <r><s n='pos'/>[ADB][ADOARR]<s n='mi'/>[NUMP]<s n='suf'/>tzar[ATZ][IZE][ARR]</r></p></e>
-      <e><p><l><s n='parol'/>NCMS00A</l>
-      <r><s n='pos'/>[ADB][ADOARR]<s n='mi'/>[NUMS]<s n='suf'/>tzar[ATZ][IZE][ARR]</r></p></e>
-      <e><p><l><s n='parol'/>NC0000X</l>
-      <r><s n='pos'/>[ADB][ADOARR]<s n='mi'/>[NUMS]</r></p></e>
-      <e><p><l><s n='parol'/>NCCN00X</l>
-      <r><s n='pos'/>[ADB][ADOARR]</r></p></e>
-      <e><p><l><s n='parol'/>NCCP00X</l>
-      <r><s n='pos'/>[ADB][ADOARR]<s n='mi'/>[NUMP]</r></p></e>
-      <e><p><l><s n='parol'/>NCCS00X</l>
-      <r><s n='pos'/>[ADB][ADOARR]<s n='mi'/>[NUMS]</r></p></e>
-      <e><p><l><s n='parol'/>NCFN00X</l>
-      <r><s n='pos'/>[ADB][ADOARR]</r></p></e>
-      <e><p><l><s n='parol'/>NCFP00X</l>
-      <r><s n='pos'/>[ADB][ADOARR]<s n='mi'/>[NUMP]</r></p></e>
-      <e><p><l><s n='parol'/>NCFS00X</l>
-      <r><s n='pos'/>[ADB][ADOARR]<s n='mi'/>[NUMS]</r></p></e>
-      <e><p><l><s n='parol'/>NCMN00X</l>
-      <r><s n='pos'/>[ADB][ADOARR]</r></p></e>
-      <e><p><l><s n='parol'/>NCMP00X</l>
-      <r><s n='pos'/>[ADB][ADOARR]<s n='mi'/>[NUMP]</r></p></e>
-      <e><p><l><s n='parol'/>NCMS00X</l>
-      <r><s n='pos'/>[ADB][ADOARR]<s n='mi'/>[NUMS]</r></p></e>
-      <!-- Analizatzaileak beste kategoria bat ematen dion kasutarako... -->
-      <e><p><l><s n='parol'/>noKAT_NC</l>
-      <r><s n='pos'/>[ADB][ADOARR]</r></p></e>
-      <e><p><l><s n='parol'/>noKAT_AQ</l>
-      <r><s n='pos'/>[ADB][ADOARR]</r></p></e>
-      <e><p><l><s n='parol'/>noKAT_AO</l>
-      <r><s n='pos'/>[ADB][ADOARR]</r></p></e>
-      <e><p><l><s n='parol'/>noKAT_VM</l>
-      <r><s n='pos'/>[ADB][ADOARR]</r></p></e>
     </pardef>
     <pardef n='VM_IZE_IZB'>
       <e><p><l><s n='parol'/>VMG0000</l>
@@ -6214,29 +6214,29 @@
 	<e><p><l>9</l><r>bederatzi</r></p><par n='Z_DET_DZH'/></e>
 	<e><p><l>10</l><r>hamar</r></p><par n='Z_DET_DZH'/></e>
 	<e><p><l>pilar</l><r>Pilar</r></p><par n='NP_IZE_IZB'/></e>
-	<e><p><l>mancomunidad</l><r>mankomunitate<s n='sense'/>0</r></p><par n='NC_IZE_ARR'/><p><l/><r></r></p></e>
-	<e><p><l>1</l><r>lehen<s n='sense'/>1</r></p><par n='AO_DET_ORD'/><p><l/><r></r></p></e>
-	<e><p><l>2</l><r>bigarren<s n='sense'/>1</r></p><par n='AO_DET_ORD'/><p><l/><r></r></p></e>
-	<e><p><l>3</l><r>hirugarren<s n='sense'/>1</r></p><par n='AO_DET_ORD'/><p><l/><r></r></p></e>
-	<e><p><l>4</l><r>laugarren<s n='sense'/>1</r></p><par n='AO_DET_ORD'/><p><l/><r></r></p></e>
-	<e><p><l>5</l><r>bosgarren<s n='sense'/>1</r></p><par n='AO_DET_ORD'/><p><l/><r></r></p></e>
-	<e><p><l>6</l><r>seigarren<s n='sense'/>1</r></p><par n='AO_DET_ORD'/><p><l/><r></r></p></e>
-	<e><p><l>7</l><r>zazpigarren<s n='sense'/>1</r></p><par n='AO_DET_ORD'/><p><l/><r></r></p></e>
-	<e><p><l>8</l><r>zortzigarren<s n='sense'/>1</r></p><par n='AO_DET_ORD'/><p><l/><r></r></p></e>
-	<e><p><l>9</l><r>bederatzigarren<s n='sense'/>1</r></p><par n='AO_DET_ORD'/><p><l/><r></r></p></e>
-	<e><p><l>10</l><r>hamargarren<s n='sense'/>1</r></p><par n='AO_DET_ORD'/><p><l/><r></r></p></e>
-	<e><p><l>15</l><r>hamabosgarren<s n='sense'/>1</r></p><par n='AO_DET_ORD'/><p><l/><r></r></p></e>
-	<e><p><l>20</l><r>hogeigarren<s n='sense'/>1</r></p><par n='AO_DET_ORD'/><p><l/><r></r></p></e>
-	<e><p><l>25</l><r>hogeita_bosgarren<s n='sense'/>1</r></p><par n='AO_DET_ORD'/><p><l/><r></r></p></e>
-	<e><p><l>30</l><r>hogeita_hamargarren<s n='sense'/>1</r></p><par n='AO_DET_ORD'/><p><l/><r></r></p></e>
-	<e><p><l>35</l><r>hogeita_hamabosgarren<s n='sense'/>1</r></p><par n='AO_DET_ORD'/><p><l/><r></r></p></e>
-	<e><p><l>40</l><r>berrogeigarren<s n='sense'/>1</r></p><par n='AO_DET_ORD'/><p><l/><r></r></p></e>
-	<e><p><l>45</l><r>berrogeita_bosgarren<s n='sense'/>1</r></p><par n='AO_DET_ORD'/><p><l/><r></r></p></e>
-	<e><p><l>50</l><r>berrogeita_hamargarren<s n='sense'/>1</r></p><par n='AO_DET_ORD'/><p><l/><r></r></p></e>
-	<e><p><l>75</l><r>hirurogeita_hamabosgarren<s n='sense'/>1</r></p><par n='AO_DET_ORD'/><p><l/><r></r></p></e>
-	<e><p><l>100</l><r>ehungarren<s n='sense'/>1</r></p><par n='AO_DET_ORD'/><p><l/><r></r></p></e>
-	<e><p><l>mismo</l><r>bera<s n='sense'/>1</r></p><par n='AO_DET_ERKIND'/><p><l/><r></r></p></e>
-	<e><p><l>ambos</l><r>bi<s n='sense'/>1</r></p><par n='DI_DET_DZH'/><p><l/><r></r></p></e>
+	<e><p><l>mancomunidad</l><r>mankomunitate</r></p><par n='NC_IZE_ARR'/><p><l/><r></r></p></e>
+	<e><p><l>1</l><r>lehen</r></p><par n='AO_DET_ORD'/><p><l/><r></r></p></e>
+	<e><p><l>2</l><r>bigarren</r></p><par n='AO_DET_ORD'/><p><l/><r></r></p></e>
+	<e><p><l>3</l><r>hirugarren</r></p><par n='AO_DET_ORD'/><p><l/><r></r></p></e>
+	<e><p><l>4</l><r>laugarren</r></p><par n='AO_DET_ORD'/><p><l/><r></r></p></e>
+	<e><p><l>5</l><r>bosgarren</r></p><par n='AO_DET_ORD'/><p><l/><r></r></p></e>
+	<e><p><l>6</l><r>seigarren</r></p><par n='AO_DET_ORD'/><p><l/><r></r></p></e>
+	<e><p><l>7</l><r>zazpigarren</r></p><par n='AO_DET_ORD'/><p><l/><r></r></p></e>
+	<e><p><l>8</l><r>zortzigarren</r></p><par n='AO_DET_ORD'/><p><l/><r></r></p></e>
+	<e><p><l>9</l><r>bederatzigarren</r></p><par n='AO_DET_ORD'/><p><l/><r></r></p></e>
+	<e><p><l>10</l><r>hamargarren</r></p><par n='AO_DET_ORD'/><p><l/><r></r></p></e>
+	<e><p><l>15</l><r>hamabosgarren</r></p><par n='AO_DET_ORD'/><p><l/><r></r></p></e>
+	<e><p><l>20</l><r>hogeigarren</r></p><par n='AO_DET_ORD'/><p><l/><r></r></p></e>
+	<e><p><l>25</l><r>hogeita_bosgarren</r></p><par n='AO_DET_ORD'/><p><l/><r></r></p></e>
+	<e><p><l>30</l><r>hogeita_hamargarren</r></p><par n='AO_DET_ORD'/><p><l/><r></r></p></e>
+	<e><p><l>35</l><r>hogeita_hamabosgarren</r></p><par n='AO_DET_ORD'/><p><l/><r></r></p></e>
+	<e><p><l>40</l><r>berrogeigarren</r></p><par n='AO_DET_ORD'/><p><l/><r></r></p></e>
+	<e><p><l>45</l><r>berrogeita_bosgarren</r></p><par n='AO_DET_ORD'/><p><l/><r></r></p></e>
+	<e><p><l>50</l><r>berrogeita_hamargarren</r></p><par n='AO_DET_ORD'/><p><l/><r></r></p></e>
+	<e><p><l>75</l><r>hirurogeita_hamabosgarren</r></p><par n='AO_DET_ORD'/><p><l/><r></r></p></e>
+	<e><p><l>100</l><r>ehungarren</r></p><par n='AO_DET_ORD'/><p><l/><r></r></p></e>
+	<e><p><l>mismo</l><r>bera</r></p><par n='AO_DET_ERKIND'/><p><l/><r></r></p></e>
+	<e><p><l>ambos</l><r>bi</r></p><par n='DI_DET_DZH'/><p><l/><r></r></p></e>
   <!-- Hasi Elekak bidalitakoak -->
   <e><p><l>recreativo</l><r>Recreativo</r></p><par n='NP_IZE_IZB'/></e>
   <e><p><l>tercio</l><r>heren</r></p><par n='AO_DET_ORD'/></e>
@@ -9015,6 +9015,11 @@
 	<e><p><l>ni_remotamente</l><r>inola_ere_ez</r></p><par n='RG_ADB_ADOARR'/><p><l/><r></r></p></e>
 	<e><p><l>primeramente</l><r>lehengo_eta_behin</r></p><par n='RG_ADB_ADOARR'/><p><l/><r></r></p></e>
 	<e><p><l>inclemente</l><r>bihozgabe</r></p><par n='AQ_ADJ_IZO'/><p><l/><r></r></p></e>
+	<e><p><l>primer_ministro</l><r>lehen_ministro</r></p><par n='NC_IZE_ARR'/><p><l/><r></r></p></e>
+	<e><p><l>derecho_humano</l><r>giza_eskubide</r></p><par n='AQ_ADJ_IZL'/><p><l/><r></r></p></e>
+	<e><p><l>derecho_fundamental</l><r>funtsezko_eskubide</r></p><par n='AQ_ADJ_IZL'/><p><l/><r></r></p></e>
+	<e><p><l>extrema_derecha</l><r>eskuin_mutur</r></p><par n='NC_IZE_ARR'/><p><l/><r></r></p></e>
+	<e><p><l>cámara_de_representantes</l><r>ordezkarien_ganbera</r></p><par n='NC_IZE_ARR'/><p><l/><r></r></p></e>
 	<e><p><l>ababol</l><r>mitxoleta</r></p><par n='NC_IZE_ARR'/><p><l/><r></r></p></e>
 	<e><p><l>abacería</l><r>janari-denda</r></p><par n='NC_IZE_ARR'/><p><l/><r></r></p></e>
 	<e><p><l>abacero</l><r>janari-saltzaile</r></p><par n='NC_IZE_ARR'/><p><l/><r></r></p></e>
@@ -43811,7 +43816,6 @@
 	<e><p><l>comité_ejecutivo</l><r>exekuzio-batzorde</r></p><par n='NC_IZE_ARR'/><p><l/><r></r></p></e>
 	<e><p><l>cámara_web</l><r>web_kamera</r></p><par n='NC_IZE_ARR'/><p><l/><r></r></p></e>
 	<e><p><l>cámara_baja</l><r>beheko_ganbera</r></p><par n='NC_IZE_ARR'/><p><l/><r></r></p></e>
-	<e><p><l>cámara_de_representantes</l><r>ordezkarien_ganbera</r></p><par n='NC_IZE_ARR'/><p><l/><r></r></p></e>
 	<e><p><l>música_de_cámara</l><r>ganbera-musika</r></p><par n='NC_IZE_ARR'/><p><l/><r></r></p></e>
 	<e><p><l>dirección_del_viento</l><r>haizearen_direkzio</r></p><par n='NC_IZE_ARR'/><p><l/><r></r></p></e>
 	<e><p><l>dirección_general</l><r>zuzendaritza_nagusi</r></p><par n='NC_IZE_ARR'/><p><l/><r></r></p></e>
@@ -43893,8 +43897,8 @@
 	<e><p><l>ministerio_de_asuntos_exteriores</l><r>kanpo_arazoetako_ministerio</r></p><par n='NC_IZE_ARR'/><p><l/><r></r></p></e>
 	<e><p><l>ministerio_de_justicia</l><r>justizia_ministerio</r></p><par n='NC_IZE_ARR'/><p><l/><r></r></p></e>
 	<e><p><l>ministro_de_asuntos_exteriores</l><r>kanpo_arazoetako_ministro</r></p><par n='NC_IZE_ARR'/><p><l/><r></r></p></e>
-	<e><p><l>estar_en_contacto</l><r>harremanetan_egon</r></p><par n='VM_ADI_SIN'/><p><l/><r></r></p></e>
-	<e><p><l>estar_en_funcionamiento</l><r>funtzionatzen_ibili</r></p><par n='VM_ADI_SIN'/><p><l/><r></r></p></e>
+	<e><p><l>estar_en_contacto</l><r>harremanetan_egon</r></p><par n='VA_ADI_SIN'/><p><l/><r></r></p></e>
+	<e><p><l>estar_en_funcionamiento</l><r>funtzionatzen_ibili</r></p><par n='VA_ADI_SIN'/><p><l/><r></r></p></e>
 	<e><p><l>página_web</l><r>web-orri</r></p><par n='NC_IZE_ARR'/><p><l/><r></r></p></e>
 	<e><p><l>hacer_frente</l><r>aurre_egin</r></p><par n='VM_ADI_SIN'/><p><l/><r></r></p></e>
 	<e><p><l>impuesto_sobre_la_renta</l><r>errentaren_gaineko_zerga</r></p><par n='NC_IZE_ARR'/><p><l/><r></r></p></e>
@@ -44866,7 +44870,6 @@
 	<e><p><l>presupuesto_nacional</l><r>aurrekontu_nazional</r></p><par n='NC_IZE_ARR'/><p><l/><r></r></p></e>
 	<e><p><l>prevención_de_riesgos</l><r>arriskuen_prebentzio</r></p><par n='NC_IZE_ARR'/><p><l/><r></r></p></e>
 	<e><p><l>prevención_de_riesgos_laborales</l><r>lan-arriskuen_prebentzio</r></p><par n='NC_IZE_ARR'/><p><l/><r></r></p></e>
-	<e><p><l>primer_ministro</l><r>lehen_ministro</r></p><par n='NC_IZE_ARR'/><p><l/><r></r></p></e>
 	<e><p><l>primera_comunión</l><r>lehen_jaunartze</r></p><par n='NC_IZE_ARR'/><p><l/><r></r></p></e>
 	<e><p><l>primeros_auxilios</l><r>lehen_sorospenak</r></p><par n='NC_IZE_ARR_mi'/><p><l/><r><s n='mi'/>[NUMP]</r></p></e>
 	<e><p><l>principio_de_igualdad</l><r>berdintasun-printzipio</r></p><par n='NC_IZE_ARR'/><p><l/><r></r></p></e>
