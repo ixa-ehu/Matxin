@@ -167,6 +167,7 @@ class MatxinServer(asyncore.dispatcher):
         self.create_socket(socket.AF_INET, socket.SOCK_STREAM)
         self.bind((host, port))
         self.listen(10)
+        print >>sys.stderr, 'MatxinServer ready (port %s)'%port
     def handle_accept(self):
         channel, addr = self.accept()
         MatxinChannel(channel, addr)
@@ -181,7 +182,6 @@ class MatxinChannel(MatxinChannelBase):
         self.write_buffer += '%d\n%s\n'%(len(translated), translated)
 
 def run_async_server(host, port):
-    print 'Asyncserver'
     server = MatxinServer(host, port)
     asyncore.loop()
 
