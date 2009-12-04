@@ -912,7 +912,7 @@ void init_preposition_transference(string fitxName)
         i--;
       }
     }
-    if (lerro[lerro.size() - 1] == L' ' or lerro[lerro.size() - 1] == L'\t')
+    if (!lerro.empty() and (lerro[lerro.size() - 1] == L' ' or lerro[lerro.size() - 1] == L'\t'))
       lerro.erase(lerro.size() - 1, 1);
 
     size_t sep1 = lerro.find(L"\t");
