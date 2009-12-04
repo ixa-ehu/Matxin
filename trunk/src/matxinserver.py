@@ -121,13 +121,13 @@ def translate_unicode(utxt, analyzer, translator):
     try:
         # mutex needed for the case of both servers running
         translate_unicode_mutex.acquire()
-        signal.alarm(10)
+        # signal.alarm(1)
         """Helper function to translating unicode string to unicode string"""
         # analyze
         axml = analyzer.process(utxt.encode('latin1', 'ignore')).decode('latin1', 'ignore')
         # translate
         txml = translator.process(axml.encode('utf-8')).decode('utf-8', 'ignore')
-        signal.alarm(0)
+        # signal.alarm(0)
         # remove xml marks
         result = xmltotxt(txml)
         return result
@@ -175,7 +175,8 @@ class MatxinChannel(MatxinChannelBase):
         print MatxinChannel.__init__
         MatxinChannelBase.__init__(self, channel)
     def handle_sentence(self):
-        # print >>sys.stderr, self.handle_sentence
+        print >>sys.stderr, 'SERVER PORT:', self.port, 'SENTENCE:', self.sentence
+        print >>sys.stderr
         usentence = self.sentence
         translated = translate_unicode(usentence, analyzer, transfer_engine).encode('utf-8')
         self.write_buffer += '%d\n%s\n'%(len(translated), translated)
