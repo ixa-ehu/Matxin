@@ -53,7 +53,7 @@ wstring keep_case(wstring form, wstring UpCase)
   for (size_t i = 1; i<form.size(); i++)
   {
 //    if (UpCase == L"title" && form[i - 1] == L' ')
-    if (UpCase == L"all" || UpCase == L"title" && form[i - 1] == L' ')
+    if (UpCase == L"all" || UpCase == L"title" && form[i - 1] == L'_')
       out_form[i] = toupper(out_form[i]);
   }
 

@@ -28,7 +28,7 @@ AC_SUBST(GENERIC_LIBRARY_NAME, $PACKAGE)
 #
 # Required library versions
 #
-m4_define([required_lttoolbox_version], [3.1.1])
+m4_define([required_lttoolbox_version], [3.2.0])
 m4_define([required_libxml_version], [2.6.17])
 m4_define([required_libpcre_version], [6.4])
 
@@ -43,14 +43,14 @@ AM_CONFIG_HEADER([config.h])
 #
 test "x$prefix" = "xNONE" && prefix="$ac_default_prefix"
 
-CPPFLAGS="$CPPFLAGS -I$prefix/include -I$prefix/include/lttoolbox-3.1"
+CPPFLAGS="$CPPFLAGS -I$prefix/include -I$prefix/include/lttoolbox-3.2"
 LDFLAGS="$LDFLAGS -L$prefix/lib"
 if test "x$prefix" != "x/usr/local"; then
-  CPPFLAGS="$CPPFLAGS -I/usr/local/include -I/usr/local/include/lttoolbox-3.1"
+  CPPFLAGS="$CPPFLAGS -I/usr/local/include -I/usr/local/include/lttoolbox-3.2"
   LDFLAGS="$LDFLAGS -L/usr/local/lib"
 fi
 if test "x$prefix" != "x/usr"; then
-  CPPFLAGS="$CPPFLAGS -I/usr/include -I/usr/include/lttoolbox-3.1"
+  CPPFLAGS="$CPPFLAGS -I/usr/include -I/usr/include/lttoolbox-3.2"
   LDFLAGS="$LDFLAGS -L/usr/lib"
 fi
 
@@ -125,7 +125,7 @@ AC_ARG_WITH(lttoolbox,
                no)
                  ;;
                *)
-                 CPPFLAGS="-I$withval/include/lttoolbox-3.1 $CPPFLAGS"
+                 CPPFLAGS="-I$withval/include/lttoolbox-3.2 $CPPFLAGS"
                  LDFLAGS="-L$withval/lib $LDFLAGS"
                  ;;
               esac ])
@@ -335,7 +335,7 @@ fi
 AC_CHECK_LIB(boost_filesystem, main, [true],AC_MSG_ERROR([boost_filesystem found]))
 
 PKG_CHECK_MODULES(MATXIN, [dnl
- lttoolbox-3.1 >= required_lttoolbox_version dnl
+ lttoolbox-3.2 >= required_lttoolbox_version dnl
  libxml-2.0 >= required_libxml_version dnl
  libpcre >= required_libpcre_version], CPPFLAGS="$CPPFLAGS $MATXIN_CPPFLAGS $MATXIN_CFLAGS"; LIBS="$LIBS $MATXIN_LIBS")
 
