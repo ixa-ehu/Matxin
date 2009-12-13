@@ -1,0 +1,26 @@
+The CG .rlx files for this pair are converted from
+
+  URL: https://victorio.uit.no/langtech/trunk/st/fao
+  Revision: 28720
+
+In case there are changes made upstream, it's nice to be able to
+quickly diff the new ones with these.
+
+The conversion is quite simple though, since the originals use CG the
+SET/LIST thing extensively, we can keep rules like
+
+  REMOVE Imp IF (0 ("um")) ;
+
+since Imp here is a SET (by just changing the LIST/SET definition).
+
+
+However, rules like:
+
+  REMOVE ("hera" imp) IF (0 ("her"));
+
+need to be converted to:
+
+  REMOVE ("hera" Imp) IF (0 ("her"));
+
+
+
