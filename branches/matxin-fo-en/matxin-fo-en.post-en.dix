@@ -1,0 +1,275 @@
+<?xml version="1.0" encoding="UTF-8"?> <!-- -*- nxml -*- -->
+<dictionary>
+  <alphabet/>
+  <sdefs>
+    <sdef n="test"/>
+  </sdefs>
+
+  <pardefs>
+    <pardef n="caracter_general">
+      <e>
+        <i>;</i>
+      </e>
+      <e>
+        <i>#</i>
+      </e>
+      <e>
+        <i>)</i>
+      </e>
+      <e>
+        <i>:</i>
+      </e>
+      <e>
+        <i>(</i>
+      </e>
+      <e>
+        <i>[</i>
+      </e>
+      <e>
+        <i>]</i>
+      </e>
+      <e>
+        <i>"</i>
+      </e>
+      <e>
+        <i>'</i>
+      </e>
+      <e>
+        <i>*</i>
+      </e>
+      <e>
+        <i>@</i>
+      </e>
+      <e>
+        <i>«</i>
+      </e>
+      <e>
+        <i>-</i>
+      </e>
+      <e>
+        <i>,</i>
+      </e>
+      <e>
+        <i>?</i>
+      </e>
+      <e>
+        <i>/</i>
+      </e>
+      <e>
+        <i>`</i>
+      </e>
+      <e>
+        <i>±</i>
+      </e>
+      <e>
+        <i>­</i>
+      </e>
+      <e>
+        <i>$</i>
+      </e>
+      <e>
+        <p>
+          <l>)</l>
+          <r>:</r>
+        </p>
+      </e>
+      <e>
+        <i>.</i>
+      </e>
+    </pardef>
+    <pardef n="alphabet_upper">
+      <e><i>A</i></e>
+      <e><i>B</i></e>
+      <e><i>C</i></e>
+      <e><i>D</i></e>
+      <e><i>E</i></e>
+      <e><i>F</i></e>
+      <e><i>G</i></e>
+      <e><i>H</i></e>
+      <e><i>I</i></e>
+      <e><i>J</i></e>
+      <e><i>K</i></e>
+      <e><i>L</i></e>
+      <e><i>M</i></e>
+      <e><i>N</i></e>
+      <e><i>O</i></e>
+      <e><i>P</i></e>
+      <e><i>Q</i></e>
+      <e><i>R</i></e>
+      <e><i>S</i></e>
+      <e><i>T</i></e>
+      <e><i>U</i></e>
+      <e><i>V</i></e>
+      <e><i>W</i></e>
+      <e><i>Z</i></e>
+      <e><i>Y</i></e>
+      <e><i>X</i></e>
+
+    </pardef>
+    <pardef n="alphabet_lower">
+           <e><i>a</i></e>
+      <e><i>b</i></e>
+      <e><i>c</i></e>
+      <e><i>d</i></e>
+      <e><i>e</i></e>
+      <e><i>f</i></e>
+      <e><i>g</i></e>
+      <e><i>h</i></e>
+      <e><i>i</i></e>
+      <e><i>j</i></e>
+      <e><i>k</i></e>
+      <e><i>l</i></e>
+      <e><i>m</i></e>
+      <e><i>n</i></e>
+      <e><i>o</i></e>
+      <e><i>p</i></e>
+      <e><i>q</i></e>
+      <e><i>r</i></e>
+      <e><i>s</i></e>
+      <e><i>t</i></e>
+      <e><i>u</i></e>
+      <e><i>v</i></e>
+      <e><i>w</i></e>
+      <e><i>z</i></e>
+      <e><i>y</i></e>
+      <e><i>x</i></e>
+
+    </pardef>
+  
+	 <pardef n="vocals">
+		 <e>
+			 <i>a</i>
+		 </e>
+		 <e>
+			 <i>e</i>
+		 </e>
+		 <e>
+			 <i>i</i>
+		 </e>
+		 <e>
+			 <i>o</i>
+		 </e>
+		 <e>
+			 <i>u</i>
+		 </e>
+	 </pardef>
+	 
+	 <pardef n="porten_a">
+		 <e>
+			 <i>uni</i>
+		 </e>
+		 <e>
+			 <i>eu</i>
+		 </e>
+		 <e>
+			 <i>u<b/></i>
+		 </e>
+		 <e>
+			 <i>one<b/></i>
+		 </e>
+		 <e>
+			 <i>once<b/></i>
+		 </e>
+		 <e>
+			 <i>u-</i>
+		 </e>
+		 <e>
+			 <i>one-</i>
+		 </e>
+		 <e>
+			 <i>once-</i>
+		 </e>
+	 </pardef>
+	 
+	 <pardef n="porten_an">
+		 <e>
+			 <i>heir</i>
+		 </e>
+		 <e>
+			 <i>honest</i>
+		 </e>
+		 <e>
+			 <i>hono</i>
+		 </e>
+		 <e>
+			 <i>hour</i>
+		 </e>
+		 <e>
+			 <i>unim</i>
+		 </e>
+		 <e>
+			 <i>unin</i>
+		 </e>
+		 <e>
+			 <i>unidentif</i>
+		 </e>
+	 </pardef>
+	 
+
+  </pardefs>
+
+  <section id="main" type="standard">
+	  <e>
+		  <p>
+			  <l><a/>a<b/>other</l>
+			  <r>another</r>
+		  </p>
+	  </e>
+	  <e>
+		  <p>
+			  <l><a/>a<b/></l>
+			  <r>an<b/></r>
+		  </p>
+		  <par n="vocals"/>
+	  </e>
+	  <e>
+		  <p>
+			  <l><a/>a<b/></l>
+			  <r>an<b/></r>
+		  </p>
+		  <par n="porten_an"/>
+	  </e>
+	  <e>
+		  <p>
+			  <l><a/>a<b/></l>
+			  <r>a<b/></r>
+		  </p>
+		  <par n="porten_a"/>
+	  </e>
+	  <e>
+            <p>
+	      <l><a/>did<b/>not</l>
+	      <r>didn't</r>
+	    </p>
+	  </e>
+	  <e>
+            <p>
+	      <l><a/>do<b/>not</l>
+	      <r>don't</r>
+	    </p>
+	  </e>
+	  <e>
+            <p>
+	      <l><a/>does<b/>not</l>
+	      <r>doesn't</r>
+	    </p>
+	  </e>
+	  <e>
+            <p>
+	      <l><a/>THE<b/></l>
+	      <r>The<b/></r>
+	    </p>
+            <par n="alphabet_upper"/>
+            <par n="alphabet_lower"/>
+	  </e>
+	  <e>
+            <p>
+	      <l><a/>THE<b/></l>
+	      <r>The<b/></r>
+	    </p>
+            <par n="alphabet_lower"/>
+	  </e>
+	
+  </section>
+
+</dictionary>

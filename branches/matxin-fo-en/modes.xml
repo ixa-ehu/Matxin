@@ -38,6 +38,10 @@
       <program name="matxin-gen-morph">
         <file name="fo-en.autogen.bin"/>
       </program>
+      <!-- todo: this has to happen _after_ reformat (or we need a new module) -->
+<!--       <program name="lt-proc -p"> -->
+<!--         <file name="fo-en.autopgen.bin"/> -->
+<!--       </program> -->
     </pipeline>
   </mode>
 

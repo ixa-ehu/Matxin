@@ -7,6 +7,7 @@ PREFIX2=$(LANG2)-$(LANG1)
 BASENAME=matxin-$(PREFIX1)
 
 TARGETS_COMMON = $(PREFIX1).automorf.bin $(PREFIX1).autobil.bin $(PREFIX1).autogen.bin \
+     $(PREFIX1).autopgen.bin \
      $(PREFIX1).dis.rlx.bin $(PREFIX1).dep.rlx.bin $(PREFIX1).$(LANG2)_sem.bin \
      $(BASENAME).$(PREFIX1).chunk_type.dat \
      $(BASENAME).$(LANG2).order_interchunk.dat \
@@ -25,6 +26,10 @@ $(PREFIX1).autogen.bin: $(BASENAME).$(LANG2).dix
 	apertium-validate-dictionary $(BASENAME).$(LANG2).dix
 	lt-comp rl $(BASENAME).$(LANG2).dix $@
 
+$(PREFIX1).autopgen.bin: $(BASENAME).post-$(LANG2).dix
+	apertium-validate-dictionary $(BASENAME).post-$(LANG2).dix
+	lt-comp lr $(BASENAME).post-$(LANG2).dix $@
+
 $(PREFIX1).dis.rlx.bin: $(BASENAME).$(PREFIX1).dis.rlx
 	cg-comp $(BASENAME).$(PREFIX1).dis.rlx $@
 
@@ -36,6 +41,7 @@ $(PREFIX1).$(LANG2)_sem.bin: $(BASENAME).en_sem.dix
 	lt-comp lr $(BASENAME).$(LANG2)_sem.dix $@
 
 EXTRA_DIST=$(BASENAME).$(LANG1).dix $(BASENAME).$(PREFIX1).dix \
+           $(BASENAME).post-$(LANG2).dix \
 	   $(BASENAME).$(LANG2).dix \
            $(BASENAME).$(PREFIX1).dis.rlx \
            $(BASENAME).$(PREFIX1).dep.rlx \
@@ -67,6 +73,7 @@ modes/$(PREFIX1).mode: modes.xml
 matxin_fo_en_DATA=$(PREFIX1).automorf.bin  \
                     $(PREFIX1).autobil.bin  \
                     $(PREFIX1).autogen.bin  \
+                    $(PREFIX1).autopgen.bin \
                     $(PREFIX1).prob \
                     $(PREFIX1).$(LANG2)_sem.bin \
 		    $(PREFIX1).dis.rlx.bin $(PREFIX1).dep.rlx.bin \
