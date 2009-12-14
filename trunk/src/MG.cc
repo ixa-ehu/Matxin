@@ -77,6 +77,14 @@ wstring verb_generation(wstring lemma, wstring pos, wstring suf, wstring cas,
       lemma[i] = L' ';
   }
 
+  if (mi.find(L"++") != wstring::npos)
+  {
+    postposizio = L" " + mi.substr(mi.find(L"++") + 2, mi.size());
+    mi = mi.substr(0, mi.find(L"++"));
+    cas = L"";
+    flexioned = true;
+  }
+
   if (cas.find(L"++") != wstring::npos)
   {
     postposizio = L" " + cas.substr(cas.find(L"++") + 2, cas.size());
