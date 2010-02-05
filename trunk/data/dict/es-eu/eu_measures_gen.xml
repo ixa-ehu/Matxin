@@ -50733,6 +50733,5810 @@
         </p>
       </e>
     </pardef>
+    <pardef n="I_7">
+      <e>
+        <p>
+          <l>tz</l>
+          <r/>
+        </p>
+      </e>
+      <e>
+        <p>
+          <l>tz</l>
+          <r><j/><s n="DEK"/><s n="ABS"/><s n="MG"/></r>
+        </p>
+      </e>
+      <e>
+        <p>
+          <l>tza</l>
+          <r><j/><s n="DEK"/><s n="ABS"/><s n="NUMS"/></r>
+        </p>
+      </e>
+      <e>
+        <p>
+          <l>tzago</l>
+          <r><j/><s n="GRA"/><s n="KONP"/></r>
+        </p>
+      </e>
+      <e>
+        <p>
+          <l>tzago</l>
+          <r><j/><s n="GRA"/><s n="KONP"/><j/><s n="DEK"/><s n="ABS"/><s n="MG"/></r>
+        </p>
+      </e>
+      <e>
+        <p>
+          <l>tzagoa</l>
+          <r><j/><s n="GRA"/><s n="KONP"/><j/><s n="DEK"/><s n="ABS"/><s n="NUMS"/></r>
+        </p>
+      </e>
+      <e>
+        <p>
+          <l>tzagoak</l>
+          <r><j/><s n="GRA"/><s n="KONP"/><j/><s n="DEK"/><s n="ABS"/><s n="NUMP"/></r>
+        </p>
+      </e>
+      <e>
+        <p>
+          <l>tzagoak</l>
+          <r><j/><s n="GRA"/><s n="KONP"/><j/><s n="DEK"/><s n="ERG"/><s n="NUMS"/></r>
+        </p>
+      </e>
+      <e>
+        <p>
+          <l>tzagoarekin</l>
+          <r><j/><s n="GRA"/><s n="KONP"/><j/><s n="DEK"/><s n="SOZ"/><s n="NUMS"/></r>
+        </p>
+      </e>
+      <e>
+        <p>
+          <l>tzagoarentzat</l>
+          <r><j/><s n="GRA"/><s n="KONP"/><j/><s n="DEK"/><s n="DES"/><s n="NUMS"/></r>
+        </p>
+      </e>
+      <e>
+        <p>
+          <l>tzagoarentzat</l>
+          <r><j/><s n="GRA"/><s n="KONP"/><j/><s n="DEK"/><s n="GEN"/><s n="NUMS"/><j/><s n="DEK"/><s n="PRO"/><s n="MG"/></r>
+        </p>
+      </e>
+      <e>
+        <p>
+          <l>tzagoaren</l>
+          <r><j/><s n="GRA"/><s n="KONP"/><j/><s n="DEK"/><s n="GEN"/><s n="NUMS"/></r>
+        </p>
+      </e>
+      <e>
+        <p>
+          <l>tzagoaren</l>
+          <r><j/><s n="GRA"/><s n="KONP"/><j/><s n="DEK"/><s n="GEN"/><s n="NUMS"/><j/><s n="DEK"/><s n="ABS"/><s n="MG"/></r>
+        </p>
+      </e>
+      <e>
+        <p>
+          <l>tzagoari</l>
+          <r><j/><s n="GRA"/><s n="KONP"/><j/><s n="DEK"/><s n="DAT"/><s n="NUMS"/></r>
+        </p>
+      </e>
+      <e>
+        <p>
+          <l>tzagoaz</l>
+          <r><j/><s n="GRA"/><s n="KONP"/><j/><s n="DEK"/><s n="INS"/><s n="NUMS"/></r>
+        </p>
+      </e>
+      <e>
+        <p>
+          <l>tzagoei</l>
+          <r><j/><s n="GRA"/><s n="KONP"/><j/><s n="DEK"/><s n="DAT"/><s n="NUMP"/></r>
+        </p>
+      </e>
+      <e>
+        <p>
+          <l>tzagoek</l>
+          <r><j/><s n="GRA"/><s n="KONP"/><j/><s n="DEK"/><s n="ERG"/><s n="NUMP"/></r>
+        </p>
+      </e>
+      <e>
+        <p>
+          <l>tzagoekin</l>
+          <r><j/><s n="GRA"/><s n="KONP"/><j/><s n="DEK"/><s n="SOZ"/><s n="NUMP"/></r>
+        </p>
+      </e>
+      <e>
+        <p>
+          <l>tzagoentzat</l>
+          <r><j/><s n="GRA"/><s n="KONP"/><j/><s n="DEK"/><s n="DES"/><s n="NUMP"/></r>
+        </p>
+      </e>
+      <e>
+        <p>
+          <l>tzagoentzat</l>
+          <r><j/><s n="GRA"/><s n="KONP"/><j/><s n="DEK"/><s n="GEN"/><s n="NUMP"/><j/><s n="DEK"/><s n="PRO"/><s n="MG"/></r>
+        </p>
+      </e>
+      <e>
+        <p>
+          <l>tzagoetaz</l>
+          <r><j/><s n="GRA"/><s n="KONP"/><j/><s n="DEK"/><s n="INS"/><s n="NUMP"/></r>
+        </p>
+      </e>
+      <e>
+        <p>
+          <l>tzagoez</l>
+          <r><j/><s n="GRA"/><s n="KONP"/><j/><s n="DEK"/><s n="INS"/><s n="NUMP"/></r>
+        </p>
+      </e>
+      <e>
+        <p>
+          <l>tzagoen</l>
+          <r><j/><s n="GRA"/><s n="KONP"/><j/><s n="DEK"/><s n="GEN"/><s n="NUMP"/></r>
+        </p>
+      </e>
+      <e>
+        <p>
+          <l>tzagoen</l>
+          <r><j/><s n="GRA"/><s n="KONP"/><j/><s n="DEK"/><s n="GEN"/><s n="NUMP"/><j/><s n="DEK"/><s n="ABS"/><s n="MG"/></r>
+        </p>
+      </e>
+      <e>
+        <p>
+          <l>tzagogatik</l>
+          <r><j/><s n="GRA"/><s n="KONP"/><j/><s n="DEK"/><s n="MOT"/></r>
+        </p>
+      </e>
+      <e>
+        <p>
+          <l>tzagooi</l>
+          <r><j/><s n="GRA"/><s n="KONP"/><j/><s n="DEK"/><s n="DAT"/><s n="PH"/></r>
+        </p>
+      </e>
+      <e>
+        <p>
+          <l>tzagook</l>
+          <r><j/><s n="GRA"/><s n="KONP"/><j/><s n="DEK"/><s n="ABS"/><s n="PH"/></r>
+        </p>
+      </e>
+      <e>
+        <p>
+          <l>tzagook</l>
+          <r><j/><s n="GRA"/><s n="KONP"/><j/><s n="DEK"/><s n="ERG"/><s n="PH"/></r>
+        </p>
+      </e>
+      <e>
+        <p>
+          <l>tzagookin</l>
+          <r><j/><s n="GRA"/><s n="KONP"/><j/><s n="DEK"/><s n="SOZ"/><s n="PH"/></r>
+        </p>
+      </e>
+      <e>
+        <p>
+          <l>tzagoontzat</l>
+          <r><j/><s n="GRA"/><s n="KONP"/><j/><s n="DEK"/><s n="DES"/><s n="PH"/></r>
+        </p>
+      </e>
+      <e>
+        <p>
+          <l>tzagootaz</l>
+          <r><j/><s n="GRA"/><s n="KONP"/><j/><s n="DEK"/><s n="INS"/><s n="PH"/></r>
+        </p>
+      </e>
+      <e>
+        <p>
+          <l>tzagotzat</l>
+          <r><j/><s n="GRA"/><s n="KONP"/><j/><s n="DEK"/><s n="PRO"/><s n="MG"/></r>
+        </p>
+      </e>
+      <e>
+        <p>
+          <l>tzagok</l>
+          <r><j/><s n="GRA"/><s n="KONP"/><j/><s n="DEK"/><s n="ERG"/><s n="MG"/></r>
+        </p>
+      </e>
+      <e>
+        <p>
+          <l>tzagoz</l>
+          <r><j/><s n="GRA"/><s n="KONP"/><j/><s n="DEK"/><s n="INS"/><s n="MG"/></r>
+        </p>
+      </e>
+      <e>
+        <p>
+          <l>tzagorekin</l>
+          <r><j/><s n="GRA"/><s n="KONP"/><j/><s n="DEK"/><s n="SOZ"/><s n="MG"/></r>
+        </p>
+      </e>
+      <e>
+        <p>
+          <l>tzagorentzat</l>
+          <r><j/><s n="GRA"/><s n="KONP"/><j/><s n="DEK"/><s n="DES"/><s n="MG"/></r>
+        </p>
+      </e>
+      <e>
+        <p>
+          <l>tzagorentzat</l>
+          <r><j/><s n="GRA"/><s n="KONP"/><j/><s n="DEK"/><s n="GEN"/><s n="MG"/><j/><s n="DEK"/><s n="PRO"/><s n="MG"/></r>
+        </p>
+      </e>
+      <e>
+        <p>
+          <l>tzagoren</l>
+          <r><j/><s n="GRA"/><s n="KONP"/><j/><s n="DEK"/><s n="GEN"/><s n="MG"/></r>
+        </p>
+      </e>
+      <e>
+        <p>
+          <l>tzagoren</l>
+          <r><j/><s n="GRA"/><s n="KONP"/><j/><s n="DEK"/><s n="GEN"/><s n="MG"/><j/><s n="DEK"/><s n="ABS"/><s n="MG"/></r>
+        </p>
+      </e>
+      <e>
+        <p>
+          <l>tzagori</l>
+          <r><j/><s n="GRA"/><s n="KONP"/><j/><s n="DEK"/><s n="DAT"/><s n="MG"/></r>
+        </p>
+      </e>
+      <e>
+        <p>
+          <l>tzagorik</l>
+          <r><j/><s n="GRA"/><s n="KONP"/><j/><s n="DEK"/><s n="PAR"/><s n="MG"/></r>
+        </p>
+      </e>
+      <e>
+        <p>
+          <l>tzagoan</l>
+          <r><j/><s n="GRA"/><s n="KONP"/><j/><s n="DEK"/><s n="NUMS"/><j/><s n="DEK"/><s n="INE"/></r>
+        </p>
+      </e>
+      <e>
+        <p>
+          <l>tzagoko</l>
+          <r><j/><s n="GRA"/><s n="KONP"/><j/><s n="DEK"/><s n="NUMS"/><j/><s n="DEK"/><s n="GEL"/></r>
+        </p>
+      </e>
+      <e>
+        <p>
+          <l>tzagoko</l>
+          <r><j/><s n="GRA"/><s n="KONP"/><j/><s n="DEK"/><s n="NUMS"/><j/><s n="DEK"/><s n="GEL"/><j/><s n="DEK"/><s n="ABS"/><s n="MG"/></r>
+        </p>
+      </e>
+      <e>
+        <p>
+          <l>tzagoraino</l>
+          <r><j/><s n="GRA"/><s n="KONP"/><j/><s n="DEK"/><s n="NUMS"/><j/><s n="DEK"/><s n="ABU"/></r>
+        </p>
+      </e>
+      <e>
+        <p>
+          <l>tzagorantz</l>
+          <r><j/><s n="GRA"/><s n="KONP"/><j/><s n="DEK"/><s n="NUMS"/><j/><s n="DEK"/><s n="ABZ"/></r>
+        </p>
+      </e>
+      <e>
+        <p>
+          <l>tzagora</l>
+          <r><j/><s n="GRA"/><s n="KONP"/><j/><s n="DEK"/><s n="NUMS"/><j/><s n="DEK"/><s n="ALA"/></r>
+        </p>
+      </e>
+      <e>
+        <p>
+          <l>tzagotik</l>
+          <r><j/><s n="GRA"/><s n="KONP"/><j/><s n="DEK"/><s n="NUMS"/><j/><s n="DEK"/><s n="ABL"/></r>
+        </p>
+      </e>
+      <e>
+        <p>
+          <l>tzak</l>
+          <r><j/><s n="DEK"/><s n="ABS"/><s n="NUMP"/></r>
+        </p>
+      </e>
+      <e>
+        <p>
+          <l>tzak</l>
+          <r><j/><s n="DEK"/><s n="ERG"/><s n="NUMS"/></r>
+        </p>
+      </e>
+      <e>
+        <p>
+          <l>tzarekin</l>
+          <r><j/><s n="DEK"/><s n="SOZ"/><s n="NUMS"/></r>
+        </p>
+      </e>
+      <e>
+        <p>
+          <l>tzarekiko</l>
+          <r><j/><s n="DEK"/><s n="SOZ"/><s n="NUMS"/><j/><s n="DEK"/><s n="GEL"/></r>
+        </p>
+      </e>
+      <e>
+        <p>
+          <l>tzarekiko</l>
+          <r><j/><s n="DEK"/><s n="SOZ"/><s n="NUMS"/><j/><s n="DEK"/><s n="GEL"/><j/><s n="DEK"/><s n="ABS"/><s n="MG"/></r>
+        </p>
+      </e>
+      <e>
+        <p>
+          <l>tzarentzat</l>
+          <r><j/><s n="DEK"/><s n="DES"/><s n="NUMS"/></r>
+        </p>
+      </e>
+      <e>
+        <p>
+          <l>tzarentzat</l>
+          <r><j/><s n="DEK"/><s n="GEN"/><s n="NUMS"/><j/><s n="DEK"/><s n="PRO"/><s n="MG"/></r>
+        </p>
+      </e>
+      <e>
+        <p>
+          <l>tzarentzako</l>
+          <r><j/><s n="DEK"/><s n="DES"/><s n="NUMS"/><j/><s n="DEK"/><s n="GEL"/></r>
+        </p>
+      </e>
+      <e>
+        <p>
+          <l>tzarentzako</l>
+          <r><j/><s n="DEK"/><s n="DES"/><s n="NUMS"/><j/><s n="DEK"/><s n="GEL"/><j/><s n="DEK"/><s n="ABS"/><s n="MG"/></r>
+        </p>
+      </e>
+      <e>
+        <p>
+          <l>tzarentzako</l>
+          <r><j/><s n="DEK"/><s n="GEN"/><s n="NUMS"/><j/><s n="DEK"/><s n="PRO"/><s n="MG"/><j/><s n="DEK"/><s n="GEL"/></r>
+        </p>
+      </e>
+      <e>
+        <p>
+          <l>tzarentzako</l>
+          <r><j/><s n="DEK"/><s n="GEN"/><s n="NUMS"/><j/><s n="DEK"/><s n="PRO"/><s n="MG"/><j/><s n="DEK"/><s n="GEL"/><j/><s n="DEK"/><s n="ABS"/><s n="MG"/></r>
+        </p>
+      </e>
+      <e>
+        <p>
+          <l>tzaren</l>
+          <r><j/><s n="DEK"/><s n="GEN"/><s n="NUMS"/></r>
+        </p>
+      </e>
+      <e>
+        <p>
+          <l>tzaren</l>
+          <r><j/><s n="DEK"/><s n="GEN"/><s n="NUMS"/><j/><s n="DEK"/><s n="ABS"/><s n="MG"/></r>
+        </p>
+      </e>
+      <e>
+        <p>
+          <l>tzarena</l>
+          <r><j/><s n="DEK"/><s n="GEN"/><s n="NUMS"/><j/><s n="DEK"/><s n="ABS"/><s n="NUMS"/></r>
+        </p>
+      </e>
+      <e>
+        <p>
+          <l>tzarena</l>
+          <r><j/><s n="DEK"/><s n="GEN"/><s n="NUMS"/><s n="ELI"/><j/><s n="DEK"/><s n="ABS"/><s n="NUMS"/></r>
+        </p>
+      </e>
+      <e>
+        <p>
+          <l>tzarenak</l>
+          <r><j/><s n="DEK"/><s n="GEN"/><s n="NUMS"/><j/><s n="DEK"/><s n="ABS"/><s n="NUMP"/></r>
+        </p>
+      </e>
+      <e>
+        <p>
+          <l>tzarenak</l>
+          <r><j/><s n="DEK"/><s n="GEN"/><s n="NUMS"/><j/><s n="DEK"/><s n="ERG"/><s n="NUMS"/></r>
+        </p>
+      </e>
+      <e>
+        <p>
+          <l>tzarenak</l>
+          <r><j/><s n="DEK"/><s n="GEN"/><s n="NUMS"/><s n="ELI"/><j/><s n="DEK"/><s n="ABS"/><s n="NUMP"/></r>
+        </p>
+      </e>
+      <e>
+        <p>
+          <l>tzarenak</l>
+          <r><j/><s n="DEK"/><s n="GEN"/><s n="NUMS"/><s n="ELI"/><j/><s n="DEK"/><s n="ERG"/><s n="NUMS"/></r>
+        </p>
+      </e>
+      <e>
+        <p>
+          <l>tzarenarekin</l>
+          <r><j/><s n="DEK"/><s n="GEN"/><s n="NUMS"/><j/><s n="DEK"/><s n="SOZ"/><s n="NUMS"/></r>
+        </p>
+      </e>
+      <e>
+        <p>
+          <l>tzarenarekin</l>
+          <r><j/><s n="DEK"/><s n="GEN"/><s n="NUMS"/><s n="ELI"/><j/><s n="DEK"/><s n="SOZ"/><s n="NUMS"/></r>
+        </p>
+      </e>
+      <e>
+        <p>
+          <l>tzarenarentzat</l>
+          <r><j/><s n="DEK"/><s n="GEN"/><s n="NUMS"/><j/><s n="DEK"/><s n="DES"/><s n="NUMS"/></r>
+        </p>
+      </e>
+      <e>
+        <p>
+          <l>tzarenarentzat</l>
+          <r><j/><s n="DEK"/><s n="GEN"/><s n="NUMS"/><j/><s n="DEK"/><s n="GEN"/><s n="NUMS"/><j/><s n="DEK"/><s n="PRO"/><s n="MG"/></r>
+        </p>
+      </e>
+      <e>
+        <p>
+          <l>tzarenarentzat</l>
+          <r><j/><s n="DEK"/><s n="GEN"/><s n="NUMS"/><s n="ELI"/><j/><s n="DEK"/><s n="DES"/><s n="NUMS"/></r>
+        </p>
+      </e>
+      <e>
+        <p>
+          <l>tzarenarentzat</l>
+          <r><j/><s n="DEK"/><s n="GEN"/><s n="NUMS"/><s n="ELI"/><j/><s n="DEK"/><s n="GEN"/><s n="NUMS"/><j/><s n="DEK"/><s n="PRO"/><s n="MG"/></r>
+        </p>
+      </e>
+      <e>
+        <p>
+          <l>tzarenari</l>
+          <r><j/><s n="DEK"/><s n="GEN"/><s n="NUMS"/><j/><s n="DEK"/><s n="DAT"/><s n="NUMS"/></r>
+        </p>
+      </e>
+      <e>
+        <p>
+          <l>tzarenari</l>
+          <r><j/><s n="DEK"/><s n="GEN"/><s n="NUMS"/><s n="ELI"/><j/><s n="DEK"/><s n="DAT"/><s n="NUMS"/></r>
+        </p>
+      </e>
+      <e>
+        <p>
+          <l>tzarenaz</l>
+          <r><j/><s n="DEK"/><s n="GEN"/><s n="NUMS"/><j/><s n="DEK"/><s n="INS"/><s n="NUMS"/></r>
+        </p>
+      </e>
+      <e>
+        <p>
+          <l>tzarenaz</l>
+          <r><j/><s n="DEK"/><s n="GEN"/><s n="NUMS"/><s n="ELI"/><j/><s n="DEK"/><s n="INS"/><s n="NUMS"/></r>
+        </p>
+      </e>
+      <e>
+        <p>
+          <l>tzarenei</l>
+          <r><j/><s n="DEK"/><s n="GEN"/><s n="NUMS"/><j/><s n="DEK"/><s n="DAT"/><s n="NUMP"/></r>
+        </p>
+      </e>
+      <e>
+        <p>
+          <l>tzarenei</l>
+          <r><j/><s n="DEK"/><s n="GEN"/><s n="NUMS"/><s n="ELI"/><j/><s n="DEK"/><s n="DAT"/><s n="NUMP"/></r>
+        </p>
+      </e>
+      <e>
+        <p>
+          <l>tzarenek</l>
+          <r><j/><s n="DEK"/><s n="GEN"/><s n="NUMS"/><j/><s n="DEK"/><s n="ERG"/><s n="MG"/></r>
+        </p>
+      </e>
+      <e>
+        <p>
+          <l>tzarenek</l>
+          <r><j/><s n="DEK"/><s n="GEN"/><s n="NUMS"/><j/><s n="DEK"/><s n="ERG"/><s n="NUMP"/></r>
+        </p>
+      </e>
+      <e>
+        <p>
+          <l>tzarenek</l>
+          <r><j/><s n="DEK"/><s n="GEN"/><s n="NUMS"/><s n="ELI"/><j/><s n="DEK"/><s n="ERG"/><s n="NUMP"/></r>
+        </p>
+      </e>
+      <e>
+        <p>
+          <l>tzarenekin</l>
+          <r><j/><s n="DEK"/><s n="GEN"/><s n="NUMS"/><j/><s n="DEK"/><s n="SOZ"/><s n="NUMP"/></r>
+        </p>
+      </e>
+      <e>
+        <p>
+          <l>tzarenekin</l>
+          <r><j/><s n="DEK"/><s n="GEN"/><s n="NUMS"/><j/><s n="DEK"/><s n="SOZ"/><s n="MG"/></r>
+        </p>
+      </e>
+      <e>
+        <p>
+          <l>tzarenekin</l>
+          <r><j/><s n="DEK"/><s n="GEN"/><s n="NUMS"/><s n="ELI"/><j/><s n="DEK"/><s n="SOZ"/><s n="NUMP"/></r>
+        </p>
+      </e>
+      <e>
+        <p>
+          <l>tzarenentzat</l>
+          <r><j/><s n="DEK"/><s n="GEN"/><s n="NUMS"/><j/><s n="DEK"/><s n="DES"/><s n="NUMP"/></r>
+        </p>
+      </e>
+      <e>
+        <p>
+          <l>tzarenentzat</l>
+          <r><j/><s n="DEK"/><s n="GEN"/><s n="NUMS"/><j/><s n="DEK"/><s n="GEN"/><s n="NUMP"/><j/><s n="DEK"/><s n="PRO"/><s n="MG"/></r>
+        </p>
+      </e>
+      <e>
+        <p>
+          <l>tzarenentzat</l>
+          <r><j/><s n="DEK"/><s n="GEN"/><s n="NUMS"/><j/><s n="DEK"/><s n="DES"/><s n="MG"/></r>
+        </p>
+      </e>
+      <e>
+        <p>
+          <l>tzarenentzat</l>
+          <r><j/><s n="DEK"/><s n="GEN"/><s n="NUMS"/><j/><s n="DEK"/><s n="GEN"/><s n="MG"/><j/><s n="DEK"/><s n="PRO"/><s n="MG"/></r>
+        </p>
+      </e>
+      <e>
+        <p>
+          <l>tzarenentzat</l>
+          <r><j/><s n="DEK"/><s n="GEN"/><s n="NUMS"/><s n="ELI"/><j/><s n="DEK"/><s n="DES"/><s n="NUMP"/></r>
+        </p>
+      </e>
+      <e>
+        <p>
+          <l>tzarenentzat</l>
+          <r><j/><s n="DEK"/><s n="GEN"/><s n="NUMS"/><s n="ELI"/><j/><s n="DEK"/><s n="GEN"/><s n="NUMP"/><j/><s n="DEK"/><s n="PRO"/><s n="MG"/></r>
+        </p>
+      </e>
+      <e>
+        <p>
+          <l>tzarenetaz</l>
+          <r><j/><s n="DEK"/><s n="GEN"/><s n="NUMS"/><j/><s n="DEK"/><s n="INS"/><s n="NUMP"/></r>
+        </p>
+      </e>
+      <e>
+        <p>
+          <l>tzarenetaz</l>
+          <r><j/><s n="DEK"/><s n="GEN"/><s n="NUMS"/><s n="ELI"/><j/><s n="DEK"/><s n="INS"/><s n="NUMP"/></r>
+        </p>
+      </e>
+      <e>
+        <p>
+          <l>tzarenetaraino</l>
+          <r><j/><s n="DEK"/><s n="GEN"/><s n="NUMS"/><j/><s n="DEK"/><s n="MG"/><j/><s n="DEK"/><s n="ABU"/></r>
+        </p>
+      </e>
+      <e>
+        <p>
+          <l>tzarenetaraino</l>
+          <r><j/><s n="DEK"/><s n="GEN"/><s n="NUMS"/><j/><s n="DEK"/><s n="NUMP"/><j/><s n="DEK"/><s n="ABU"/></r>
+        </p>
+      </e>
+      <e>
+        <p>
+          <l>tzarenetaraino</l>
+          <r><j/><s n="DEK"/><s n="GEN"/><s n="NUMS"/><s n="ELI"/><j/><s n="DEK"/><s n="NUMP"/><j/><s n="DEK"/><s n="ABU"/></r>
+        </p>
+      </e>
+      <e>
+        <p>
+          <l>tzarenetarantz</l>
+          <r><j/><s n="DEK"/><s n="GEN"/><s n="NUMS"/><j/><s n="DEK"/><s n="MG"/><j/><s n="DEK"/><s n="ABZ"/></r>
+        </p>
+      </e>
+      <e>
+        <p>
+          <l>tzarenetarantz</l>
+          <r><j/><s n="DEK"/><s n="GEN"/><s n="NUMS"/><j/><s n="DEK"/><s n="NUMP"/><j/><s n="DEK"/><s n="ABZ"/></r>
+        </p>
+      </e>
+      <e>
+        <p>
+          <l>tzarenetarantz</l>
+          <r><j/><s n="DEK"/><s n="GEN"/><s n="NUMS"/><s n="ELI"/><j/><s n="DEK"/><s n="NUMP"/><j/><s n="DEK"/><s n="ABZ"/></r>
+        </p>
+      </e>
+      <e>
+        <p>
+          <l>tzarenetara</l>
+          <r><j/><s n="DEK"/><s n="GEN"/><s n="NUMS"/><j/><s n="DEK"/><s n="MG"/><j/><s n="DEK"/><s n="ALA"/></r>
+        </p>
+      </e>
+      <e>
+        <p>
+          <l>tzarenetara</l>
+          <r><j/><s n="DEK"/><s n="GEN"/><s n="NUMS"/><j/><s n="DEK"/><s n="NUMP"/><j/><s n="DEK"/><s n="ALA"/></r>
+        </p>
+      </e>
+      <e>
+        <p>
+          <l>tzarenetara</l>
+          <r><j/><s n="DEK"/><s n="GEN"/><s n="NUMS"/><s n="ELI"/><j/><s n="DEK"/><s n="NUMP"/><j/><s n="DEK"/><s n="ALA"/></r>
+        </p>
+      </e>
+      <e>
+        <p>
+          <l>tzarenetatik</l>
+          <r><j/><s n="DEK"/><s n="GEN"/><s n="NUMS"/><j/><s n="DEK"/><s n="MG"/><j/><s n="DEK"/><s n="ABL"/></r>
+        </p>
+      </e>
+      <e>
+        <p>
+          <l>tzarenetatik</l>
+          <r><j/><s n="DEK"/><s n="GEN"/><s n="NUMS"/><j/><s n="DEK"/><s n="NUMP"/><j/><s n="DEK"/><s n="ABL"/></r>
+        </p>
+      </e>
+      <e>
+        <p>
+          <l>tzarenetatik</l>
+          <r><j/><s n="DEK"/><s n="GEN"/><s n="NUMS"/><s n="ELI"/><j/><s n="DEK"/><s n="NUMP"/><j/><s n="DEK"/><s n="ABL"/></r>
+        </p>
+      </e>
+      <e>
+        <p>
+          <l>tzarenetan</l>
+          <r><j/><s n="DEK"/><s n="GEN"/><s n="NUMS"/><j/><s n="DEK"/><s n="MG"/><j/><s n="DEK"/><s n="INE"/></r>
+        </p>
+      </e>
+      <e>
+        <p>
+          <l>tzarenetan</l>
+          <r><j/><s n="DEK"/><s n="GEN"/><s n="NUMS"/><j/><s n="DEK"/><s n="NUMP"/><j/><s n="DEK"/><s n="INE"/></r>
+        </p>
+      </e>
+      <e>
+        <p>
+          <l>tzarenetan</l>
+          <r><j/><s n="DEK"/><s n="GEN"/><s n="NUMS"/><s n="ELI"/><j/><s n="DEK"/><s n="NUMP"/><j/><s n="DEK"/><s n="INE"/></r>
+        </p>
+      </e>
+      <e>
+        <p>
+          <l>tzarenez</l>
+          <r><j/><s n="DEK"/><s n="GEN"/><s n="NUMS"/><j/><s n="DEK"/><s n="INS"/><s n="MG"/></r>
+        </p>
+      </e>
+      <e>
+        <p>
+          <l>tzarenez</l>
+          <r><j/><s n="DEK"/><s n="GEN"/><s n="NUMS"/><j/><s n="DEK"/><s n="INS"/><s n="NUMP"/></r>
+        </p>
+      </e>
+      <e>
+        <p>
+          <l>tzarenez</l>
+          <r><j/><s n="DEK"/><s n="GEN"/><s n="NUMS"/><s n="ELI"/><j/><s n="DEK"/><s n="INS"/><s n="NUMP"/></r>
+        </p>
+      </e>
+      <e>
+        <p>
+          <l>tzarengan</l>
+          <r><j/><s n="DEK"/><s n="GEN"/><s n="NUMS"/><j/><s n="DEK"/><s n="INE"/><s n="GAN"/></r>
+        </p>
+      </e>
+      <e>
+        <p>
+          <l>tzarengana</l>
+          <r><j/><s n="DEK"/><s n="GEN"/><s n="NUMS"/><j/><s n="DEK"/><s n="ALA"/><s n="GAN"/></r>
+        </p>
+      </e>
+      <e>
+        <p>
+          <l>tzarenganaino</l>
+          <r><j/><s n="DEK"/><s n="GEN"/><s n="NUMS"/><j/><s n="DEK"/><s n="ABU"/><s n="GAN"/></r>
+        </p>
+      </e>
+      <e>
+        <p>
+          <l>tzarenganantz</l>
+          <r><j/><s n="DEK"/><s n="GEN"/><s n="NUMS"/><j/><s n="DEK"/><s n="ABZ"/><s n="GAN"/></r>
+        </p>
+      </e>
+      <e>
+        <p>
+          <l>tzarengandik</l>
+          <r><j/><s n="DEK"/><s n="GEN"/><s n="NUMS"/><j/><s n="DEK"/><s n="ABL"/><s n="GAN"/></r>
+        </p>
+      </e>
+      <e>
+        <p>
+          <l>tzarengatik</l>
+          <r><j/><s n="DEK"/><s n="GEN"/><s n="NUMS"/><j/><s n="DEK"/><s n="MOT"/></r>
+        </p>
+      </e>
+      <e>
+        <p>
+          <l>tzarenoi</l>
+          <r><j/><s n="DEK"/><s n="GEN"/><s n="NUMS"/><j/><s n="DEK"/><s n="DAT"/><s n="PH"/></r>
+        </p>
+      </e>
+      <e>
+        <p>
+          <l>tzarenoi</l>
+          <r><j/><s n="DEK"/><s n="GEN"/><s n="NUMS"/><s n="ELI"/><j/><s n="DEK"/><s n="DAT"/><s n="PH"/></r>
+        </p>
+      </e>
+      <e>
+        <p>
+          <l>tzarenok</l>
+          <r><j/><s n="DEK"/><s n="GEN"/><s n="NUMS"/><j/><s n="DEK"/><s n="ABS"/><s n="PH"/></r>
+        </p>
+      </e>
+      <e>
+        <p>
+          <l>tzarenok</l>
+          <r><j/><s n="DEK"/><s n="GEN"/><s n="NUMS"/><j/><s n="DEK"/><s n="ERG"/><s n="PH"/></r>
+        </p>
+      </e>
+      <e>
+        <p>
+          <l>tzarenok</l>
+          <r><j/><s n="DEK"/><s n="GEN"/><s n="NUMS"/><s n="ELI"/><j/><s n="DEK"/><s n="ABS"/><s n="PH"/></r>
+        </p>
+      </e>
+      <e>
+        <p>
+          <l>tzarenok</l>
+          <r><j/><s n="DEK"/><s n="GEN"/><s n="NUMS"/><s n="ELI"/><j/><s n="DEK"/><s n="ERG"/><s n="PH"/></r>
+        </p>
+      </e>
+      <e>
+        <p>
+          <l>tzarenokin</l>
+          <r><j/><s n="DEK"/><s n="GEN"/><s n="NUMS"/><j/><s n="DEK"/><s n="SOZ"/><s n="PH"/></r>
+        </p>
+      </e>
+      <e>
+        <p>
+          <l>tzarenokin</l>
+          <r><j/><s n="DEK"/><s n="GEN"/><s n="NUMS"/><s n="ELI"/><j/><s n="DEK"/><s n="SOZ"/><s n="PH"/></r>
+        </p>
+      </e>
+      <e>
+        <p>
+          <l>tzarenontzat</l>
+          <r><j/><s n="DEK"/><s n="GEN"/><s n="NUMS"/><j/><s n="DEK"/><s n="DES"/><s n="PH"/></r>
+        </p>
+      </e>
+      <e>
+        <p>
+          <l>tzarenontzat</l>
+          <r><j/><s n="DEK"/><s n="GEN"/><s n="NUMS"/><s n="ELI"/><j/><s n="DEK"/><s n="DES"/><s n="PH"/></r>
+        </p>
+      </e>
+      <e>
+        <p>
+          <l>tzarenotaz</l>
+          <r><j/><s n="DEK"/><s n="GEN"/><s n="NUMS"/><j/><s n="DEK"/><s n="INS"/><s n="PH"/></r>
+        </p>
+      </e>
+      <e>
+        <p>
+          <l>tzarenotaz</l>
+          <r><j/><s n="DEK"/><s n="GEN"/><s n="NUMS"/><s n="ELI"/><j/><s n="DEK"/><s n="INS"/><s n="PH"/></r>
+        </p>
+      </e>
+      <e>
+        <p>
+          <l>tzareni</l>
+          <r><j/><s n="DEK"/><s n="GEN"/><s n="NUMS"/><j/><s n="DEK"/><s n="DAT"/><s n="MG"/></r>
+        </p>
+      </e>
+      <e>
+        <p>
+          <l>tzarenik</l>
+          <r><j/><s n="DEK"/><s n="GEN"/><s n="NUMS"/><j/><s n="DEK"/><s n="PAR"/><s n="MG"/></r>
+        </p>
+      </e>
+      <e>
+        <p>
+          <l>tzarenean</l>
+          <r><j/><s n="DEK"/><s n="GEN"/><s n="NUMS"/><j/><s n="DEK"/><s n="NUMS"/><j/><s n="DEK"/><s n="INE"/></r>
+        </p>
+      </e>
+      <e>
+        <p>
+          <l>tzarenean</l>
+          <r><j/><s n="DEK"/><s n="GEN"/><s n="NUMS"/><s n="ELI"/><j/><s n="DEK"/><s n="NUMS"/><j/><s n="DEK"/><s n="INE"/></r>
+        </p>
+      </e>
+      <e>
+        <p>
+          <l>tzareneraino</l>
+          <r><j/><s n="DEK"/><s n="GEN"/><s n="NUMS"/><j/><s n="DEK"/><s n="NUMS"/><j/><s n="DEK"/><s n="ABU"/></r>
+        </p>
+      </e>
+      <e>
+        <p>
+          <l>tzareneraino</l>
+          <r><j/><s n="DEK"/><s n="GEN"/><s n="NUMS"/><s n="ELI"/><j/><s n="DEK"/><s n="NUMS"/><j/><s n="DEK"/><s n="ABU"/></r>
+        </p>
+      </e>
+      <e>
+        <p>
+          <l>tzarenerantz</l>
+          <r><j/><s n="DEK"/><s n="GEN"/><s n="NUMS"/><j/><s n="DEK"/><s n="NUMS"/><j/><s n="DEK"/><s n="ABZ"/></r>
+        </p>
+      </e>
+      <e>
+        <p>
+          <l>tzarenerantz</l>
+          <r><j/><s n="DEK"/><s n="GEN"/><s n="NUMS"/><s n="ELI"/><j/><s n="DEK"/><s n="NUMS"/><j/><s n="DEK"/><s n="ABZ"/></r>
+        </p>
+      </e>
+      <e>
+        <p>
+          <l>tzarenera</l>
+          <r><j/><s n="DEK"/><s n="GEN"/><s n="NUMS"/><j/><s n="DEK"/><s n="NUMS"/><j/><s n="DEK"/><s n="ALA"/></r>
+        </p>
+      </e>
+      <e>
+        <p>
+          <l>tzarenera</l>
+          <r><j/><s n="DEK"/><s n="GEN"/><s n="NUMS"/><s n="ELI"/><j/><s n="DEK"/><s n="NUMS"/><j/><s n="DEK"/><s n="ALA"/></r>
+        </p>
+      </e>
+      <e>
+        <p>
+          <l>tzarenetik</l>
+          <r><j/><s n="DEK"/><s n="GEN"/><s n="NUMS"/><j/><s n="DEK"/><s n="NUMS"/><j/><s n="DEK"/><s n="ABL"/></r>
+        </p>
+      </e>
+      <e>
+        <p>
+          <l>tzarenetik</l>
+          <r><j/><s n="DEK"/><s n="GEN"/><s n="NUMS"/><s n="ELI"/><j/><s n="DEK"/><s n="NUMS"/><j/><s n="DEK"/><s n="ABL"/></r>
+        </p>
+      </e>
+      <e>
+        <p>
+          <l>tzari</l>
+          <r><j/><s n="DEK"/><s n="DAT"/><s n="NUMS"/></r>
+        </p>
+      </e>
+      <e>
+        <p>
+          <l>tzaz</l>
+          <r><j/><s n="DEK"/><s n="INS"/><s n="NUMS"/></r>
+        </p>
+      </e>
+      <e>
+        <p>
+          <l>tzagan</l>
+          <r><j/><s n="DEK"/><s n="NUMS"/><j/><s n="DEK"/><s n="INE"/><s n="GAN"/></r>
+        </p>
+      </e>
+      <e>
+        <p>
+          <l>tzagana</l>
+          <r><j/><s n="DEK"/><s n="NUMS"/><j/><s n="DEK"/><s n="ALA"/><s n="GAN"/></r>
+        </p>
+      </e>
+      <e>
+        <p>
+          <l>tzaganaino</l>
+          <r><j/><s n="DEK"/><s n="NUMS"/><j/><s n="DEK"/><s n="ABU"/><s n="GAN"/></r>
+        </p>
+      </e>
+      <e>
+        <p>
+          <l>tzaganantz</l>
+          <r><j/><s n="DEK"/><s n="NUMS"/><j/><s n="DEK"/><s n="ABZ"/><s n="GAN"/></r>
+        </p>
+      </e>
+      <e>
+        <p>
+          <l>tzagandik</l>
+          <r><j/><s n="DEK"/><s n="NUMS"/><j/><s n="DEK"/><s n="ABL"/><s n="GAN"/></r>
+        </p>
+      </e>
+      <e>
+        <p>
+          <l>tzagatik</l>
+          <r><j/><s n="DEK"/><s n="NUMS"/><j/><s n="DEK"/><s n="MOT"/></r>
+        </p>
+      </e>
+      <e>
+        <p>
+          <l>tzei</l>
+          <r><j/><s n="DEK"/><s n="DAT"/><s n="NUMP"/></r>
+        </p>
+      </e>
+      <e>
+        <p>
+          <l>tzek</l>
+          <r><j/><s n="DEK"/><s n="ERG"/><s n="MG"/></r>
+        </p>
+      </e>
+      <e>
+        <p>
+          <l>tzek</l>
+          <r><j/><s n="DEK"/><s n="ERG"/><s n="NUMP"/></r>
+        </p>
+      </e>
+      <e>
+        <p>
+          <l>tzekin</l>
+          <r><j/><s n="DEK"/><s n="SOZ"/><s n="NUMP"/></r>
+        </p>
+      </e>
+      <e>
+        <p>
+          <l>tzekin</l>
+          <r><j/><s n="DEK"/><s n="SOZ"/><s n="MG"/></r>
+        </p>
+      </e>
+      <e>
+        <p>
+          <l>tzekiko</l>
+          <r><j/><s n="DEK"/><s n="SOZ"/><s n="NUMP"/><j/><s n="DEK"/><s n="GEL"/></r>
+        </p>
+      </e>
+      <e>
+        <p>
+          <l>tzekiko</l>
+          <r><j/><s n="DEK"/><s n="SOZ"/><s n="NUMP"/><j/><s n="DEK"/><s n="GEL"/><j/><s n="DEK"/><s n="ABS"/><s n="MG"/></r>
+        </p>
+      </e>
+      <e>
+        <p>
+          <l>tzekiko</l>
+          <r><j/><s n="DEK"/><s n="SOZ"/><s n="MG"/><j/><s n="DEK"/><s n="GEL"/></r>
+        </p>
+      </e>
+      <e>
+        <p>
+          <l>tzekiko</l>
+          <r><j/><s n="DEK"/><s n="SOZ"/><s n="MG"/><j/><s n="DEK"/><s n="GEL"/><j/><s n="DEK"/><s n="ABS"/><s n="MG"/></r>
+        </p>
+      </e>
+      <e>
+        <p>
+          <l>tzentzat</l>
+          <r><j/><s n="DEK"/><s n="DES"/><s n="NUMP"/></r>
+        </p>
+      </e>
+      <e>
+        <p>
+          <l>tzentzat</l>
+          <r><j/><s n="DEK"/><s n="GEN"/><s n="NUMP"/><j/><s n="DEK"/><s n="PRO"/><s n="MG"/></r>
+        </p>
+      </e>
+      <e>
+        <p>
+          <l>tzentzat</l>
+          <r><j/><s n="DEK"/><s n="DES"/><s n="MG"/></r>
+        </p>
+      </e>
+      <e>
+        <p>
+          <l>tzentzat</l>
+          <r><j/><s n="DEK"/><s n="GEN"/><s n="MG"/><j/><s n="DEK"/><s n="PRO"/><s n="MG"/></r>
+        </p>
+      </e>
+      <e>
+        <p>
+          <l>tzentzako</l>
+          <r><j/><s n="DEK"/><s n="DES"/><s n="NUMP"/><j/><s n="DEK"/><s n="GEL"/></r>
+        </p>
+      </e>
+      <e>
+        <p>
+          <l>tzentzako</l>
+          <r><j/><s n="DEK"/><s n="DES"/><s n="NUMP"/><j/><s n="DEK"/><s n="GEL"/><j/><s n="DEK"/><s n="ABS"/><s n="MG"/></r>
+        </p>
+      </e>
+      <e>
+        <p>
+          <l>tzentzako</l>
+          <r><j/><s n="DEK"/><s n="GEN"/><s n="NUMP"/><j/><s n="DEK"/><s n="PRO"/><s n="MG"/><j/><s n="DEK"/><s n="GEL"/></r>
+        </p>
+      </e>
+      <e>
+        <p>
+          <l>tzentzako</l>
+          <r><j/><s n="DEK"/><s n="GEN"/><s n="NUMP"/><j/><s n="DEK"/><s n="PRO"/><s n="MG"/><j/><s n="DEK"/><s n="GEL"/><j/><s n="DEK"/><s n="ABS"/><s n="MG"/></r>
+        </p>
+      </e>
+      <e>
+        <p>
+          <l>tzentzako</l>
+          <r><j/><s n="DEK"/><s n="DES"/><s n="MG"/><j/><s n="DEK"/><s n="GEL"/></r>
+        </p>
+      </e>
+      <e>
+        <p>
+          <l>tzentzako</l>
+          <r><j/><s n="DEK"/><s n="DES"/><s n="MG"/><j/><s n="DEK"/><s n="GEL"/><j/><s n="DEK"/><s n="ABS"/><s n="MG"/></r>
+        </p>
+      </e>
+      <e>
+        <p>
+          <l>tzentzako</l>
+          <r><j/><s n="DEK"/><s n="GEN"/><s n="MG"/><j/><s n="DEK"/><s n="PRO"/><s n="MG"/><j/><s n="DEK"/><s n="GEL"/></r>
+        </p>
+      </e>
+      <e>
+        <p>
+          <l>tzentzako</l>
+          <r><j/><s n="DEK"/><s n="GEN"/><s n="MG"/><j/><s n="DEK"/><s n="PRO"/><s n="MG"/><j/><s n="DEK"/><s n="GEL"/><j/><s n="DEK"/><s n="ABS"/><s n="MG"/></r>
+        </p>
+      </e>
+      <e>
+        <p>
+          <l>tzetaz</l>
+          <r><j/><s n="DEK"/><s n="INS"/><s n="NUMP"/></r>
+        </p>
+      </e>
+      <e>
+        <p>
+          <l>tzetako</l>
+          <r><j/><s n="DEK"/><s n="MG"/><j/><s n="DEK"/><s n="GEL"/></r>
+        </p>
+      </e>
+      <e>
+        <p>
+          <l>tzetako</l>
+          <r><j/><s n="DEK"/><s n="MG"/><j/><s n="DEK"/><s n="GEL"/><j/><s n="DEK"/><s n="ABS"/><s n="MG"/></r>
+        </p>
+      </e>
+      <e>
+        <p>
+          <l>tzetako</l>
+          <r><j/><s n="DEK"/><s n="NUMP"/><j/><s n="DEK"/><s n="GEL"/></r>
+        </p>
+      </e>
+      <e>
+        <p>
+          <l>tzetako</l>
+          <r><j/><s n="DEK"/><s n="NUMP"/><j/><s n="DEK"/><s n="GEL"/><j/><s n="DEK"/><s n="ABS"/><s n="MG"/></r>
+        </p>
+      </e>
+      <e>
+        <p>
+          <l>tzetakoa</l>
+          <r><j/><s n="DEK"/><s n="MG"/><j/><s n="DEK"/><s n="GEL"/><j/><s n="DEK"/><s n="ABS"/><s n="NUMS"/></r>
+        </p>
+      </e>
+      <e>
+        <p>
+          <l>tzetakoa</l>
+          <r><j/><s n="DEK"/><s n="MG"/><j/><s n="DEK"/><s n="GEL"/><s n="ELI"/><j/><s n="DEK"/><s n="ABS"/><s n="NUMS"/></r>
+        </p>
+      </e>
+      <e>
+        <p>
+          <l>tzetakoa</l>
+          <r><j/><s n="DEK"/><s n="NUMP"/><j/><s n="DEK"/><s n="GEL"/><j/><s n="DEK"/><s n="ABS"/><s n="NUMS"/></r>
+        </p>
+      </e>
+      <e>
+        <p>
+          <l>tzetakoa</l>
+          <r><j/><s n="DEK"/><s n="NUMP"/><j/><s n="DEK"/><s n="GEL"/><s n="ELI"/><j/><s n="DEK"/><s n="ABS"/><s n="NUMS"/></r>
+        </p>
+      </e>
+      <e>
+        <p>
+          <l>tzetakoago</l>
+          <r><j/><s n="DEK"/><s n="MG"/><j/><s n="DEK"/><s n="GEL"/><j/><s n="GRA"/><s n="KONP"/></r>
+        </p>
+      </e>
+      <e>
+        <p>
+          <l>tzetakoago</l>
+          <r><j/><s n="DEK"/><s n="MG"/><j/><s n="DEK"/><s n="GEL"/><j/><s n="GRA"/><s n="KONP"/><j/><s n="DEK"/><s n="ABS"/><s n="MG"/></r>
+        </p>
+      </e>
+      <e>
+        <p>
+          <l>tzetakoago</l>
+          <r><j/><s n="DEK"/><s n="NUMP"/><j/><s n="DEK"/><s n="GEL"/><j/><s n="GRA"/><s n="KONP"/></r>
+        </p>
+      </e>
+      <e>
+        <p>
+          <l>tzetakoago</l>
+          <r><j/><s n="DEK"/><s n="NUMP"/><j/><s n="DEK"/><s n="GEL"/><j/><s n="GRA"/><s n="KONP"/><j/><s n="DEK"/><s n="ABS"/><s n="MG"/></r>
+        </p>
+      </e>
+      <e>
+        <p>
+          <l>tzetakoak</l>
+          <r><j/><s n="DEK"/><s n="MG"/><j/><s n="DEK"/><s n="GEL"/><j/><s n="DEK"/><s n="ABS"/><s n="NUMP"/></r>
+        </p>
+      </e>
+      <e>
+        <p>
+          <l>tzetakoak</l>
+          <r><j/><s n="DEK"/><s n="MG"/><j/><s n="DEK"/><s n="GEL"/><j/><s n="DEK"/><s n="ERG"/><s n="NUMS"/></r>
+        </p>
+      </e>
+      <e>
+        <p>
+          <l>tzetakoak</l>
+          <r><j/><s n="DEK"/><s n="MG"/><j/><s n="DEK"/><s n="GEL"/><s n="ELI"/><j/><s n="DEK"/><s n="ABS"/><s n="NUMP"/></r>
+        </p>
+      </e>
+      <e>
+        <p>
+          <l>tzetakoak</l>
+          <r><j/><s n="DEK"/><s n="MG"/><j/><s n="DEK"/><s n="GEL"/><s n="ELI"/><j/><s n="DEK"/><s n="ERG"/><s n="NUMS"/></r>
+        </p>
+      </e>
+      <e>
+        <p>
+          <l>tzetakoak</l>
+          <r><j/><s n="DEK"/><s n="NUMP"/><j/><s n="DEK"/><s n="GEL"/><j/><s n="DEK"/><s n="ABS"/><s n="NUMP"/></r>
+        </p>
+      </e>
+      <e>
+        <p>
+          <l>tzetakoak</l>
+          <r><j/><s n="DEK"/><s n="NUMP"/><j/><s n="DEK"/><s n="GEL"/><j/><s n="DEK"/><s n="ERG"/><s n="NUMS"/></r>
+        </p>
+      </e>
+      <e>
+        <p>
+          <l>tzetakoak</l>
+          <r><j/><s n="DEK"/><s n="NUMP"/><j/><s n="DEK"/><s n="GEL"/><s n="ELI"/><j/><s n="DEK"/><s n="ABS"/><s n="NUMP"/></r>
+        </p>
+      </e>
+      <e>
+        <p>
+          <l>tzetakoak</l>
+          <r><j/><s n="DEK"/><s n="NUMP"/><j/><s n="DEK"/><s n="GEL"/><s n="ELI"/><j/><s n="DEK"/><s n="ERG"/><s n="NUMS"/></r>
+        </p>
+      </e>
+      <e>
+        <p>
+          <l>tzetakoarekin</l>
+          <r><j/><s n="DEK"/><s n="MG"/><j/><s n="DEK"/><s n="GEL"/><j/><s n="DEK"/><s n="SOZ"/><s n="NUMS"/></r>
+        </p>
+      </e>
+      <e>
+        <p>
+          <l>tzetakoarekin</l>
+          <r><j/><s n="DEK"/><s n="MG"/><j/><s n="DEK"/><s n="GEL"/><s n="ELI"/><j/><s n="DEK"/><s n="SOZ"/><s n="NUMS"/></r>
+        </p>
+      </e>
+      <e>
+        <p>
+          <l>tzetakoarekin</l>
+          <r><j/><s n="DEK"/><s n="NUMP"/><j/><s n="DEK"/><s n="GEL"/><j/><s n="DEK"/><s n="SOZ"/><s n="NUMS"/></r>
+        </p>
+      </e>
+      <e>
+        <p>
+          <l>tzetakoarekin</l>
+          <r><j/><s n="DEK"/><s n="NUMP"/><j/><s n="DEK"/><s n="GEL"/><s n="ELI"/><j/><s n="DEK"/><s n="SOZ"/><s n="NUMS"/></r>
+        </p>
+      </e>
+      <e>
+        <p>
+          <l>tzetakoarentzat</l>
+          <r><j/><s n="DEK"/><s n="MG"/><j/><s n="DEK"/><s n="GEL"/><j/><s n="DEK"/><s n="DES"/><s n="NUMS"/></r>
+        </p>
+      </e>
+      <e>
+        <p>
+          <l>tzetakoarentzat</l>
+          <r><j/><s n="DEK"/><s n="MG"/><j/><s n="DEK"/><s n="GEL"/><j/><s n="DEK"/><s n="GEN"/><s n="NUMS"/><j/><s n="DEK"/><s n="PRO"/><s n="MG"/></r>
+        </p>
+      </e>
+      <e>
+        <p>
+          <l>tzetakoarentzat</l>
+          <r><j/><s n="DEK"/><s n="MG"/><j/><s n="DEK"/><s n="GEL"/><s n="ELI"/><j/><s n="DEK"/><s n="DES"/><s n="NUMS"/></r>
+        </p>
+      </e>
+      <e>
+        <p>
+          <l>tzetakoarentzat</l>
+          <r><j/><s n="DEK"/><s n="MG"/><j/><s n="DEK"/><s n="GEL"/><s n="ELI"/><j/><s n="DEK"/><s n="GEN"/><s n="NUMS"/><j/><s n="DEK"/><s n="PRO"/><s n="MG"/></r>
+        </p>
+      </e>
+      <e>
+        <p>
+          <l>tzetakoarentzat</l>
+          <r><j/><s n="DEK"/><s n="NUMP"/><j/><s n="DEK"/><s n="GEL"/><j/><s n="DEK"/><s n="DES"/><s n="NUMS"/></r>
+        </p>
+      </e>
+      <e>
+        <p>
+          <l>tzetakoarentzat</l>
+          <r><j/><s n="DEK"/><s n="NUMP"/><j/><s n="DEK"/><s n="GEL"/><j/><s n="DEK"/><s n="GEN"/><s n="NUMS"/><j/><s n="DEK"/><s n="PRO"/><s n="MG"/></r>
+        </p>
+      </e>
+      <e>
+        <p>
+          <l>tzetakoarentzat</l>
+          <r><j/><s n="DEK"/><s n="NUMP"/><j/><s n="DEK"/><s n="GEL"/><s n="ELI"/><j/><s n="DEK"/><s n="DES"/><s n="NUMS"/></r>
+        </p>
+      </e>
+      <e>
+        <p>
+          <l>tzetakoarentzat</l>
+          <r><j/><s n="DEK"/><s n="NUMP"/><j/><s n="DEK"/><s n="GEL"/><s n="ELI"/><j/><s n="DEK"/><s n="GEN"/><s n="NUMS"/><j/><s n="DEK"/><s n="PRO"/><s n="MG"/></r>
+        </p>
+      </e>
+      <e>
+        <p>
+          <l>tzetakoari</l>
+          <r><j/><s n="DEK"/><s n="MG"/><j/><s n="DEK"/><s n="GEL"/><j/><s n="DEK"/><s n="DAT"/><s n="NUMS"/></r>
+        </p>
+      </e>
+      <e>
+        <p>
+          <l>tzetakoari</l>
+          <r><j/><s n="DEK"/><s n="MG"/><j/><s n="DEK"/><s n="GEL"/><s n="ELI"/><j/><s n="DEK"/><s n="DAT"/><s n="NUMS"/></r>
+        </p>
+      </e>
+      <e>
+        <p>
+          <l>tzetakoari</l>
+          <r><j/><s n="DEK"/><s n="NUMP"/><j/><s n="DEK"/><s n="GEL"/><j/><s n="DEK"/><s n="DAT"/><s n="NUMS"/></r>
+        </p>
+      </e>
+      <e>
+        <p>
+          <l>tzetakoari</l>
+          <r><j/><s n="DEK"/><s n="NUMP"/><j/><s n="DEK"/><s n="GEL"/><s n="ELI"/><j/><s n="DEK"/><s n="DAT"/><s n="NUMS"/></r>
+        </p>
+      </e>
+      <e>
+        <p>
+          <l>tzetakoaz</l>
+          <r><j/><s n="DEK"/><s n="MG"/><j/><s n="DEK"/><s n="GEL"/><j/><s n="DEK"/><s n="INS"/><s n="NUMS"/></r>
+        </p>
+      </e>
+      <e>
+        <p>
+          <l>tzetakoaz</l>
+          <r><j/><s n="DEK"/><s n="MG"/><j/><s n="DEK"/><s n="GEL"/><s n="ELI"/><j/><s n="DEK"/><s n="INS"/><s n="NUMS"/></r>
+        </p>
+      </e>
+      <e>
+        <p>
+          <l>tzetakoaz</l>
+          <r><j/><s n="DEK"/><s n="NUMP"/><j/><s n="DEK"/><s n="GEL"/><j/><s n="DEK"/><s n="INS"/><s n="NUMS"/></r>
+        </p>
+      </e>
+      <e>
+        <p>
+          <l>tzetakoaz</l>
+          <r><j/><s n="DEK"/><s n="NUMP"/><j/><s n="DEK"/><s n="GEL"/><s n="ELI"/><j/><s n="DEK"/><s n="INS"/><s n="NUMS"/></r>
+        </p>
+      </e>
+      <e>
+        <p>
+          <l>tzetakoegi</l>
+          <r><j/><s n="DEK"/><s n="MG"/><j/><s n="DEK"/><s n="GEL"/><j/><s n="GRA"/><s n="GEHI"/></r>
+        </p>
+      </e>
+      <e>
+        <p>
+          <l>tzetakoegi</l>
+          <r><j/><s n="DEK"/><s n="MG"/><j/><s n="DEK"/><s n="GEL"/><j/><s n="GRA"/><s n="GEHI"/><j/><s n="DEK"/><s n="ABS"/><s n="MG"/></r>
+        </p>
+      </e>
+      <e>
+        <p>
+          <l>tzetakoegi</l>
+          <r><j/><s n="DEK"/><s n="NUMP"/><j/><s n="DEK"/><s n="GEL"/><j/><s n="GRA"/><s n="GEHI"/></r>
+        </p>
+      </e>
+      <e>
+        <p>
+          <l>tzetakoegi</l>
+          <r><j/><s n="DEK"/><s n="NUMP"/><j/><s n="DEK"/><s n="GEL"/><j/><s n="GRA"/><s n="GEHI"/><j/><s n="DEK"/><s n="ABS"/><s n="MG"/></r>
+        </p>
+      </e>
+      <e>
+        <p>
+          <l>tzetakoei</l>
+          <r><j/><s n="DEK"/><s n="MG"/><j/><s n="DEK"/><s n="GEL"/><j/><s n="DEK"/><s n="DAT"/><s n="NUMP"/></r>
+        </p>
+      </e>
+      <e>
+        <p>
+          <l>tzetakoei</l>
+          <r><j/><s n="DEK"/><s n="MG"/><j/><s n="DEK"/><s n="GEL"/><s n="ELI"/><j/><s n="DEK"/><s n="DAT"/><s n="NUMP"/></r>
+        </p>
+      </e>
+      <e>
+        <p>
+          <l>tzetakoei</l>
+          <r><j/><s n="DEK"/><s n="NUMP"/><j/><s n="DEK"/><s n="GEL"/><j/><s n="DEK"/><s n="DAT"/><s n="NUMP"/></r>
+        </p>
+      </e>
+      <e>
+        <p>
+          <l>tzetakoei</l>
+          <r><j/><s n="DEK"/><s n="NUMP"/><j/><s n="DEK"/><s n="GEL"/><s n="ELI"/><j/><s n="DEK"/><s n="DAT"/><s n="NUMP"/></r>
+        </p>
+      </e>
+      <e>
+        <p>
+          <l>tzetakoek</l>
+          <r><j/><s n="DEK"/><s n="MG"/><j/><s n="DEK"/><s n="GEL"/><j/><s n="DEK"/><s n="ERG"/><s n="NUMP"/></r>
+        </p>
+      </e>
+      <e>
+        <p>
+          <l>tzetakoek</l>
+          <r><j/><s n="DEK"/><s n="MG"/><j/><s n="DEK"/><s n="GEL"/><s n="ELI"/><j/><s n="DEK"/><s n="ERG"/><s n="NUMP"/></r>
+        </p>
+      </e>
+      <e>
+        <p>
+          <l>tzetakoek</l>
+          <r><j/><s n="DEK"/><s n="NUMP"/><j/><s n="DEK"/><s n="GEL"/><j/><s n="DEK"/><s n="ERG"/><s n="NUMP"/></r>
+        </p>
+      </e>
+      <e>
+        <p>
+          <l>tzetakoek</l>
+          <r><j/><s n="DEK"/><s n="NUMP"/><j/><s n="DEK"/><s n="GEL"/><s n="ELI"/><j/><s n="DEK"/><s n="ERG"/><s n="NUMP"/></r>
+        </p>
+      </e>
+      <e>
+        <p>
+          <l>tzetakoekin</l>
+          <r><j/><s n="DEK"/><s n="MG"/><j/><s n="DEK"/><s n="GEL"/><j/><s n="DEK"/><s n="SOZ"/><s n="NUMP"/></r>
+        </p>
+      </e>
+      <e>
+        <p>
+          <l>tzetakoekin</l>
+          <r><j/><s n="DEK"/><s n="MG"/><j/><s n="DEK"/><s n="GEL"/><s n="ELI"/><j/><s n="DEK"/><s n="SOZ"/><s n="NUMP"/></r>
+        </p>
+      </e>
+      <e>
+        <p>
+          <l>tzetakoekin</l>
+          <r><j/><s n="DEK"/><s n="NUMP"/><j/><s n="DEK"/><s n="GEL"/><j/><s n="DEK"/><s n="SOZ"/><s n="NUMP"/></r>
+        </p>
+      </e>
+      <e>
+        <p>
+          <l>tzetakoekin</l>
+          <r><j/><s n="DEK"/><s n="NUMP"/><j/><s n="DEK"/><s n="GEL"/><s n="ELI"/><j/><s n="DEK"/><s n="SOZ"/><s n="NUMP"/></r>
+        </p>
+      </e>
+      <e>
+        <p>
+          <l>tzetakoentzat</l>
+          <r><j/><s n="DEK"/><s n="MG"/><j/><s n="DEK"/><s n="GEL"/><j/><s n="DEK"/><s n="DES"/><s n="NUMP"/></r>
+        </p>
+      </e>
+      <e>
+        <p>
+          <l>tzetakoentzat</l>
+          <r><j/><s n="DEK"/><s n="MG"/><j/><s n="DEK"/><s n="GEL"/><j/><s n="DEK"/><s n="GEN"/><s n="NUMP"/><j/><s n="DEK"/><s n="PRO"/><s n="MG"/></r>
+        </p>
+      </e>
+      <e>
+        <p>
+          <l>tzetakoentzat</l>
+          <r><j/><s n="DEK"/><s n="MG"/><j/><s n="DEK"/><s n="GEL"/><s n="ELI"/><j/><s n="DEK"/><s n="DES"/><s n="NUMP"/></r>
+        </p>
+      </e>
+      <e>
+        <p>
+          <l>tzetakoentzat</l>
+          <r><j/><s n="DEK"/><s n="MG"/><j/><s n="DEK"/><s n="GEL"/><s n="ELI"/><j/><s n="DEK"/><s n="GEN"/><s n="NUMP"/><j/><s n="DEK"/><s n="PRO"/><s n="MG"/></r>
+        </p>
+      </e>
+      <e>
+        <p>
+          <l>tzetakoentzat</l>
+          <r><j/><s n="DEK"/><s n="NUMP"/><j/><s n="DEK"/><s n="GEL"/><j/><s n="DEK"/><s n="DES"/><s n="NUMP"/></r>
+        </p>
+      </e>
+      <e>
+        <p>
+          <l>tzetakoentzat</l>
+          <r><j/><s n="DEK"/><s n="NUMP"/><j/><s n="DEK"/><s n="GEL"/><j/><s n="DEK"/><s n="GEN"/><s n="NUMP"/><j/><s n="DEK"/><s n="PRO"/><s n="MG"/></r>
+        </p>
+      </e>
+      <e>
+        <p>
+          <l>tzetakoentzat</l>
+          <r><j/><s n="DEK"/><s n="NUMP"/><j/><s n="DEK"/><s n="GEL"/><s n="ELI"/><j/><s n="DEK"/><s n="DES"/><s n="NUMP"/></r>
+        </p>
+      </e>
+      <e>
+        <p>
+          <l>tzetakoentzat</l>
+          <r><j/><s n="DEK"/><s n="NUMP"/><j/><s n="DEK"/><s n="GEL"/><s n="ELI"/><j/><s n="DEK"/><s n="GEN"/><s n="NUMP"/><j/><s n="DEK"/><s n="PRO"/><s n="MG"/></r>
+        </p>
+      </e>
+      <e>
+        <p>
+          <l>tzetakoetaz</l>
+          <r><j/><s n="DEK"/><s n="MG"/><j/><s n="DEK"/><s n="GEL"/><j/><s n="DEK"/><s n="INS"/><s n="NUMP"/></r>
+        </p>
+      </e>
+      <e>
+        <p>
+          <l>tzetakoetaz</l>
+          <r><j/><s n="DEK"/><s n="MG"/><j/><s n="DEK"/><s n="GEL"/><s n="ELI"/><j/><s n="DEK"/><s n="INS"/><s n="NUMP"/></r>
+        </p>
+      </e>
+      <e>
+        <p>
+          <l>tzetakoetaz</l>
+          <r><j/><s n="DEK"/><s n="NUMP"/><j/><s n="DEK"/><s n="GEL"/><j/><s n="DEK"/><s n="INS"/><s n="NUMP"/></r>
+        </p>
+      </e>
+      <e>
+        <p>
+          <l>tzetakoetaz</l>
+          <r><j/><s n="DEK"/><s n="NUMP"/><j/><s n="DEK"/><s n="GEL"/><s n="ELI"/><j/><s n="DEK"/><s n="INS"/><s n="NUMP"/></r>
+        </p>
+      </e>
+      <e>
+        <p>
+          <l>tzetakoetaraino</l>
+          <r><j/><s n="DEK"/><s n="MG"/><j/><s n="DEK"/><s n="GEL"/><j/><s n="DEK"/><s n="NUMP"/><j/><s n="DEK"/><s n="ABU"/></r>
+        </p>
+      </e>
+      <e>
+        <p>
+          <l>tzetakoetaraino</l>
+          <r><j/><s n="DEK"/><s n="MG"/><j/><s n="DEK"/><s n="GEL"/><s n="ELI"/><j/><s n="DEK"/><s n="NUMP"/><j/><s n="DEK"/><s n="ABU"/></r>
+        </p>
+      </e>
+      <e>
+        <p>
+          <l>tzetakoetaraino</l>
+          <r><j/><s n="DEK"/><s n="NUMP"/><j/><s n="DEK"/><s n="GEL"/><j/><s n="DEK"/><s n="NUMP"/><j/><s n="DEK"/><s n="ABU"/></r>
+        </p>
+      </e>
+      <e>
+        <p>
+          <l>tzetakoetaraino</l>
+          <r><j/><s n="DEK"/><s n="NUMP"/><j/><s n="DEK"/><s n="GEL"/><s n="ELI"/><j/><s n="DEK"/><s n="NUMP"/><j/><s n="DEK"/><s n="ABU"/></r>
+        </p>
+      </e>
+      <e>
+        <p>
+          <l>tzetakoetarantz</l>
+          <r><j/><s n="DEK"/><s n="MG"/><j/><s n="DEK"/><s n="GEL"/><j/><s n="DEK"/><s n="NUMP"/><j/><s n="DEK"/><s n="ABZ"/></r>
+        </p>
+      </e>
+      <e>
+        <p>
+          <l>tzetakoetarantz</l>
+          <r><j/><s n="DEK"/><s n="MG"/><j/><s n="DEK"/><s n="GEL"/><s n="ELI"/><j/><s n="DEK"/><s n="NUMP"/><j/><s n="DEK"/><s n="ABZ"/></r>
+        </p>
+      </e>
+      <e>
+        <p>
+          <l>tzetakoetarantz</l>
+          <r><j/><s n="DEK"/><s n="NUMP"/><j/><s n="DEK"/><s n="GEL"/><j/><s n="DEK"/><s n="NUMP"/><j/><s n="DEK"/><s n="ABZ"/></r>
+        </p>
+      </e>
+      <e>
+        <p>
+          <l>tzetakoetarantz</l>
+          <r><j/><s n="DEK"/><s n="NUMP"/><j/><s n="DEK"/><s n="GEL"/><s n="ELI"/><j/><s n="DEK"/><s n="NUMP"/><j/><s n="DEK"/><s n="ABZ"/></r>
+        </p>
+      </e>
+      <e>
+        <p>
+          <l>tzetakoetara</l>
+          <r><j/><s n="DEK"/><s n="MG"/><j/><s n="DEK"/><s n="GEL"/><j/><s n="DEK"/><s n="NUMP"/><j/><s n="DEK"/><s n="ALA"/></r>
+        </p>
+      </e>
+      <e>
+        <p>
+          <l>tzetakoetara</l>
+          <r><j/><s n="DEK"/><s n="MG"/><j/><s n="DEK"/><s n="GEL"/><s n="ELI"/><j/><s n="DEK"/><s n="NUMP"/><j/><s n="DEK"/><s n="ALA"/></r>
+        </p>
+      </e>
+      <e>
+        <p>
+          <l>tzetakoetara</l>
+          <r><j/><s n="DEK"/><s n="NUMP"/><j/><s n="DEK"/><s n="GEL"/><j/><s n="DEK"/><s n="NUMP"/><j/><s n="DEK"/><s n="ALA"/></r>
+        </p>
+      </e>
+      <e>
+        <p>
+          <l>tzetakoetara</l>
+          <r><j/><s n="DEK"/><s n="NUMP"/><j/><s n="DEK"/><s n="GEL"/><s n="ELI"/><j/><s n="DEK"/><s n="NUMP"/><j/><s n="DEK"/><s n="ALA"/></r>
+        </p>
+      </e>
+      <e>
+        <p>
+          <l>tzetakoetatik</l>
+          <r><j/><s n="DEK"/><s n="MG"/><j/><s n="DEK"/><s n="GEL"/><j/><s n="DEK"/><s n="NUMP"/><j/><s n="DEK"/><s n="ABL"/></r>
+        </p>
+      </e>
+      <e>
+        <p>
+          <l>tzetakoetatik</l>
+          <r><j/><s n="DEK"/><s n="MG"/><j/><s n="DEK"/><s n="GEL"/><s n="ELI"/><j/><s n="DEK"/><s n="NUMP"/><j/><s n="DEK"/><s n="ABL"/></r>
+        </p>
+      </e>
+      <e>
+        <p>
+          <l>tzetakoetatik</l>
+          <r><j/><s n="DEK"/><s n="NUMP"/><j/><s n="DEK"/><s n="GEL"/><j/><s n="DEK"/><s n="NUMP"/><j/><s n="DEK"/><s n="ABL"/></r>
+        </p>
+      </e>
+      <e>
+        <p>
+          <l>tzetakoetatik</l>
+          <r><j/><s n="DEK"/><s n="NUMP"/><j/><s n="DEK"/><s n="GEL"/><s n="ELI"/><j/><s n="DEK"/><s n="NUMP"/><j/><s n="DEK"/><s n="ABL"/></r>
+        </p>
+      </e>
+      <e>
+        <p>
+          <l>tzetakoetan</l>
+          <r><j/><s n="DEK"/><s n="MG"/><j/><s n="DEK"/><s n="GEL"/><j/><s n="DEK"/><s n="NUMP"/><j/><s n="DEK"/><s n="INE"/></r>
+        </p>
+      </e>
+      <e>
+        <p>
+          <l>tzetakoetan</l>
+          <r><j/><s n="DEK"/><s n="MG"/><j/><s n="DEK"/><s n="GEL"/><s n="ELI"/><j/><s n="DEK"/><s n="NUMP"/><j/><s n="DEK"/><s n="INE"/></r>
+        </p>
+      </e>
+      <e>
+        <p>
+          <l>tzetakoetan</l>
+          <r><j/><s n="DEK"/><s n="NUMP"/><j/><s n="DEK"/><s n="GEL"/><j/><s n="DEK"/><s n="NUMP"/><j/><s n="DEK"/><s n="INE"/></r>
+        </p>
+      </e>
+      <e>
+        <p>
+          <l>tzetakoetan</l>
+          <r><j/><s n="DEK"/><s n="NUMP"/><j/><s n="DEK"/><s n="GEL"/><s n="ELI"/><j/><s n="DEK"/><s n="NUMP"/><j/><s n="DEK"/><s n="INE"/></r>
+        </p>
+      </e>
+      <e>
+        <p>
+          <l>tzetakoez</l>
+          <r><j/><s n="DEK"/><s n="MG"/><j/><s n="DEK"/><s n="GEL"/><j/><s n="DEK"/><s n="INS"/><s n="NUMP"/></r>
+        </p>
+      </e>
+      <e>
+        <p>
+          <l>tzetakoez</l>
+          <r><j/><s n="DEK"/><s n="MG"/><j/><s n="DEK"/><s n="GEL"/><s n="ELI"/><j/><s n="DEK"/><s n="INS"/><s n="NUMP"/></r>
+        </p>
+      </e>
+      <e>
+        <p>
+          <l>tzetakoez</l>
+          <r><j/><s n="DEK"/><s n="NUMP"/><j/><s n="DEK"/><s n="GEL"/><j/><s n="DEK"/><s n="INS"/><s n="NUMP"/></r>
+        </p>
+      </e>
+      <e>
+        <p>
+          <l>tzetakoez</l>
+          <r><j/><s n="DEK"/><s n="NUMP"/><j/><s n="DEK"/><s n="GEL"/><s n="ELI"/><j/><s n="DEK"/><s n="INS"/><s n="NUMP"/></r>
+        </p>
+      </e>
+      <e>
+        <p>
+          <l>tzetakogatik</l>
+          <r><j/><s n="DEK"/><s n="MG"/><j/><s n="DEK"/><s n="GEL"/><j/><s n="DEK"/><s n="MOT"/></r>
+        </p>
+      </e>
+      <e>
+        <p>
+          <l>tzetakogatik</l>
+          <r><j/><s n="DEK"/><s n="NUMP"/><j/><s n="DEK"/><s n="GEL"/><j/><s n="DEK"/><s n="MOT"/></r>
+        </p>
+      </e>
+      <e>
+        <p>
+          <l>tzetakooi</l>
+          <r><j/><s n="DEK"/><s n="MG"/><j/><s n="DEK"/><s n="GEL"/><j/><s n="DEK"/><s n="DAT"/><s n="PH"/></r>
+        </p>
+      </e>
+      <e>
+        <p>
+          <l>tzetakooi</l>
+          <r><j/><s n="DEK"/><s n="MG"/><j/><s n="DEK"/><s n="GEL"/><s n="ELI"/><j/><s n="DEK"/><s n="DAT"/><s n="PH"/></r>
+        </p>
+      </e>
+      <e>
+        <p>
+          <l>tzetakooi</l>
+          <r><j/><s n="DEK"/><s n="NUMP"/><j/><s n="DEK"/><s n="GEL"/><j/><s n="DEK"/><s n="DAT"/><s n="PH"/></r>
+        </p>
+      </e>
+      <e>
+        <p>
+          <l>tzetakooi</l>
+          <r><j/><s n="DEK"/><s n="NUMP"/><j/><s n="DEK"/><s n="GEL"/><s n="ELI"/><j/><s n="DEK"/><s n="DAT"/><s n="PH"/></r>
+        </p>
+      </e>
+      <e>
+        <p>
+          <l>tzetakook</l>
+          <r><j/><s n="DEK"/><s n="MG"/><j/><s n="DEK"/><s n="GEL"/><j/><s n="DEK"/><s n="ABS"/><s n="PH"/></r>
+        </p>
+      </e>
+      <e>
+        <p>
+          <l>tzetakook</l>
+          <r><j/><s n="DEK"/><s n="MG"/><j/><s n="DEK"/><s n="GEL"/><j/><s n="DEK"/><s n="ERG"/><s n="PH"/></r>
+        </p>
+      </e>
+      <e>
+        <p>
+          <l>tzetakook</l>
+          <r><j/><s n="DEK"/><s n="MG"/><j/><s n="DEK"/><s n="GEL"/><s n="ELI"/><j/><s n="DEK"/><s n="ABS"/><s n="PH"/></r>
+        </p>
+      </e>
+      <e>
+        <p>
+          <l>tzetakook</l>
+          <r><j/><s n="DEK"/><s n="MG"/><j/><s n="DEK"/><s n="GEL"/><s n="ELI"/><j/><s n="DEK"/><s n="ERG"/><s n="PH"/></r>
+        </p>
+      </e>
+      <e>
+        <p>
+          <l>tzetakook</l>
+          <r><j/><s n="DEK"/><s n="NUMP"/><j/><s n="DEK"/><s n="GEL"/><j/><s n="DEK"/><s n="ABS"/><s n="PH"/></r>
+        </p>
+      </e>
+      <e>
+        <p>
+          <l>tzetakook</l>
+          <r><j/><s n="DEK"/><s n="NUMP"/><j/><s n="DEK"/><s n="GEL"/><j/><s n="DEK"/><s n="ERG"/><s n="PH"/></r>
+        </p>
+      </e>
+      <e>
+        <p>
+          <l>tzetakook</l>
+          <r><j/><s n="DEK"/><s n="NUMP"/><j/><s n="DEK"/><s n="GEL"/><s n="ELI"/><j/><s n="DEK"/><s n="ABS"/><s n="PH"/></r>
+        </p>
+      </e>
+      <e>
+        <p>
+          <l>tzetakook</l>
+          <r><j/><s n="DEK"/><s n="NUMP"/><j/><s n="DEK"/><s n="GEL"/><s n="ELI"/><j/><s n="DEK"/><s n="ERG"/><s n="PH"/></r>
+        </p>
+      </e>
+      <e>
+        <p>
+          <l>tzetakookin</l>
+          <r><j/><s n="DEK"/><s n="MG"/><j/><s n="DEK"/><s n="GEL"/><j/><s n="DEK"/><s n="SOZ"/><s n="PH"/></r>
+        </p>
+      </e>
+      <e>
+        <p>
+          <l>tzetakookin</l>
+          <r><j/><s n="DEK"/><s n="MG"/><j/><s n="DEK"/><s n="GEL"/><s n="ELI"/><j/><s n="DEK"/><s n="SOZ"/><s n="PH"/></r>
+        </p>
+      </e>
+      <e>
+        <p>
+          <l>tzetakookin</l>
+          <r><j/><s n="DEK"/><s n="NUMP"/><j/><s n="DEK"/><s n="GEL"/><j/><s n="DEK"/><s n="SOZ"/><s n="PH"/></r>
+        </p>
+      </e>
+      <e>
+        <p>
+          <l>tzetakookin</l>
+          <r><j/><s n="DEK"/><s n="NUMP"/><j/><s n="DEK"/><s n="GEL"/><s n="ELI"/><j/><s n="DEK"/><s n="SOZ"/><s n="PH"/></r>
+        </p>
+      </e>
+      <e>
+        <p>
+          <l>tzetakoontzat</l>
+          <r><j/><s n="DEK"/><s n="MG"/><j/><s n="DEK"/><s n="GEL"/><j/><s n="DEK"/><s n="DES"/><s n="PH"/></r>
+        </p>
+      </e>
+      <e>
+        <p>
+          <l>tzetakoontzat</l>
+          <r><j/><s n="DEK"/><s n="MG"/><j/><s n="DEK"/><s n="GEL"/><s n="ELI"/><j/><s n="DEK"/><s n="DES"/><s n="PH"/></r>
+        </p>
+      </e>
+      <e>
+        <p>
+          <l>tzetakoontzat</l>
+          <r><j/><s n="DEK"/><s n="NUMP"/><j/><s n="DEK"/><s n="GEL"/><j/><s n="DEK"/><s n="DES"/><s n="PH"/></r>
+        </p>
+      </e>
+      <e>
+        <p>
+          <l>tzetakoontzat</l>
+          <r><j/><s n="DEK"/><s n="NUMP"/><j/><s n="DEK"/><s n="GEL"/><s n="ELI"/><j/><s n="DEK"/><s n="DES"/><s n="PH"/></r>
+        </p>
+      </e>
+      <e>
+        <p>
+          <l>tzetakootaz</l>
+          <r><j/><s n="DEK"/><s n="MG"/><j/><s n="DEK"/><s n="GEL"/><j/><s n="DEK"/><s n="INS"/><s n="PH"/></r>
+        </p>
+      </e>
+      <e>
+        <p>
+          <l>tzetakootaz</l>
+          <r><j/><s n="DEK"/><s n="MG"/><j/><s n="DEK"/><s n="GEL"/><s n="ELI"/><j/><s n="DEK"/><s n="INS"/><s n="PH"/></r>
+        </p>
+      </e>
+      <e>
+        <p>
+          <l>tzetakootaz</l>
+          <r><j/><s n="DEK"/><s n="NUMP"/><j/><s n="DEK"/><s n="GEL"/><j/><s n="DEK"/><s n="INS"/><s n="PH"/></r>
+        </p>
+      </e>
+      <e>
+        <p>
+          <l>tzetakootaz</l>
+          <r><j/><s n="DEK"/><s n="NUMP"/><j/><s n="DEK"/><s n="GEL"/><s n="ELI"/><j/><s n="DEK"/><s n="INS"/><s n="PH"/></r>
+        </p>
+      </e>
+      <e>
+        <p>
+          <l>tzetakotzat</l>
+          <r><j/><s n="DEK"/><s n="MG"/><j/><s n="DEK"/><s n="GEL"/><j/><s n="DEK"/><s n="PRO"/><s n="MG"/></r>
+        </p>
+      </e>
+      <e>
+        <p>
+          <l>tzetakotzat</l>
+          <r><j/><s n="DEK"/><s n="NUMP"/><j/><s n="DEK"/><s n="GEL"/><j/><s n="DEK"/><s n="PRO"/><s n="MG"/></r>
+        </p>
+      </e>
+      <e>
+        <p>
+          <l>tzetakok</l>
+          <r><j/><s n="DEK"/><s n="MG"/><j/><s n="DEK"/><s n="GEL"/><j/><s n="DEK"/><s n="ERG"/><s n="MG"/></r>
+        </p>
+      </e>
+      <e>
+        <p>
+          <l>tzetakok</l>
+          <r><j/><s n="DEK"/><s n="NUMP"/><j/><s n="DEK"/><s n="GEL"/><j/><s n="DEK"/><s n="ERG"/><s n="MG"/></r>
+        </p>
+      </e>
+      <e>
+        <p>
+          <l>tzetakotaraino</l>
+          <r><j/><s n="DEK"/><s n="MG"/><j/><s n="DEK"/><s n="GEL"/><j/><s n="DEK"/><s n="MG"/><j/><s n="DEK"/><s n="ABU"/></r>
+        </p>
+      </e>
+      <e>
+        <p>
+          <l>tzetakotaraino</l>
+          <r><j/><s n="DEK"/><s n="NUMP"/><j/><s n="DEK"/><s n="GEL"/><j/><s n="DEK"/><s n="MG"/><j/><s n="DEK"/><s n="ABU"/></r>
+        </p>
+      </e>
+      <e>
+        <p>
+          <l>tzetakotarantz</l>
+          <r><j/><s n="DEK"/><s n="MG"/><j/><s n="DEK"/><s n="GEL"/><j/><s n="DEK"/><s n="MG"/><j/><s n="DEK"/><s n="ABZ"/></r>
+        </p>
+      </e>
+      <e>
+        <p>
+          <l>tzetakotarantz</l>
+          <r><j/><s n="DEK"/><s n="NUMP"/><j/><s n="DEK"/><s n="GEL"/><j/><s n="DEK"/><s n="MG"/><j/><s n="DEK"/><s n="ABZ"/></r>
+        </p>
+      </e>
+      <e>
+        <p>
+          <l>tzetakotara</l>
+          <r><j/><s n="DEK"/><s n="MG"/><j/><s n="DEK"/><s n="GEL"/><j/><s n="DEK"/><s n="MG"/><j/><s n="DEK"/><s n="ALA"/></r>
+        </p>
+      </e>
+      <e>
+        <p>
+          <l>tzetakotara</l>
+          <r><j/><s n="DEK"/><s n="NUMP"/><j/><s n="DEK"/><s n="GEL"/><j/><s n="DEK"/><s n="MG"/><j/><s n="DEK"/><s n="ALA"/></r>
+        </p>
+      </e>
+      <e>
+        <p>
+          <l>tzetakotatik</l>
+          <r><j/><s n="DEK"/><s n="MG"/><j/><s n="DEK"/><s n="GEL"/><j/><s n="DEK"/><s n="MG"/><j/><s n="DEK"/><s n="ABL"/></r>
+        </p>
+      </e>
+      <e>
+        <p>
+          <l>tzetakotatik</l>
+          <r><j/><s n="DEK"/><s n="NUMP"/><j/><s n="DEK"/><s n="GEL"/><j/><s n="DEK"/><s n="MG"/><j/><s n="DEK"/><s n="ABL"/></r>
+        </p>
+      </e>
+      <e>
+        <p>
+          <l>tzetakotan</l>
+          <r><j/><s n="DEK"/><s n="MG"/><j/><s n="DEK"/><s n="GEL"/><j/><s n="DEK"/><s n="MG"/><j/><s n="DEK"/><s n="INE"/></r>
+        </p>
+      </e>
+      <e>
+        <p>
+          <l>tzetakotan</l>
+          <r><j/><s n="DEK"/><s n="NUMP"/><j/><s n="DEK"/><s n="GEL"/><j/><s n="DEK"/><s n="MG"/><j/><s n="DEK"/><s n="INE"/></r>
+        </p>
+      </e>
+      <e>
+        <p>
+          <l>tzetakoz</l>
+          <r><j/><s n="DEK"/><s n="MG"/><j/><s n="DEK"/><s n="GEL"/><j/><s n="DEK"/><s n="INS"/><s n="MG"/></r>
+        </p>
+      </e>
+      <e>
+        <p>
+          <l>tzetakoz</l>
+          <r><j/><s n="DEK"/><s n="NUMP"/><j/><s n="DEK"/><s n="GEL"/><j/><s n="DEK"/><s n="INS"/><s n="MG"/></r>
+        </p>
+      </e>
+      <e>
+        <p>
+          <l>tzetakorekin</l>
+          <r><j/><s n="DEK"/><s n="MG"/><j/><s n="DEK"/><s n="GEL"/><j/><s n="DEK"/><s n="SOZ"/><s n="MG"/></r>
+        </p>
+      </e>
+      <e>
+        <p>
+          <l>tzetakorekin</l>
+          <r><j/><s n="DEK"/><s n="NUMP"/><j/><s n="DEK"/><s n="GEL"/><j/><s n="DEK"/><s n="SOZ"/><s n="MG"/></r>
+        </p>
+      </e>
+      <e>
+        <p>
+          <l>tzetakorentzat</l>
+          <r><j/><s n="DEK"/><s n="MG"/><j/><s n="DEK"/><s n="GEL"/><j/><s n="DEK"/><s n="DES"/><s n="MG"/></r>
+        </p>
+      </e>
+      <e>
+        <p>
+          <l>tzetakorentzat</l>
+          <r><j/><s n="DEK"/><s n="MG"/><j/><s n="DEK"/><s n="GEL"/><j/><s n="DEK"/><s n="GEN"/><s n="MG"/><j/><s n="DEK"/><s n="PRO"/><s n="MG"/></r>
+        </p>
+      </e>
+      <e>
+        <p>
+          <l>tzetakorentzat</l>
+          <r><j/><s n="DEK"/><s n="NUMP"/><j/><s n="DEK"/><s n="GEL"/><j/><s n="DEK"/><s n="DES"/><s n="MG"/></r>
+        </p>
+      </e>
+      <e>
+        <p>
+          <l>tzetakorentzat</l>
+          <r><j/><s n="DEK"/><s n="NUMP"/><j/><s n="DEK"/><s n="GEL"/><j/><s n="DEK"/><s n="GEN"/><s n="MG"/><j/><s n="DEK"/><s n="PRO"/><s n="MG"/></r>
+        </p>
+      </e>
+      <e>
+        <p>
+          <l>tzetakori</l>
+          <r><j/><s n="DEK"/><s n="MG"/><j/><s n="DEK"/><s n="GEL"/><j/><s n="DEK"/><s n="DAT"/><s n="MG"/></r>
+        </p>
+      </e>
+      <e>
+        <p>
+          <l>tzetakori</l>
+          <r><j/><s n="DEK"/><s n="NUMP"/><j/><s n="DEK"/><s n="GEL"/><j/><s n="DEK"/><s n="DAT"/><s n="MG"/></r>
+        </p>
+      </e>
+      <e>
+        <p>
+          <l>tzetakorik</l>
+          <r><j/><s n="DEK"/><s n="MG"/><j/><s n="DEK"/><s n="GEL"/><j/><s n="DEK"/><s n="PAR"/><s n="MG"/></r>
+        </p>
+      </e>
+      <e>
+        <p>
+          <l>tzetakorik</l>
+          <r><j/><s n="DEK"/><s n="NUMP"/><j/><s n="DEK"/><s n="GEL"/><j/><s n="DEK"/><s n="PAR"/><s n="MG"/></r>
+        </p>
+      </e>
+      <e>
+        <p>
+          <l>tzetakoan</l>
+          <r><j/><s n="DEK"/><s n="MG"/><j/><s n="DEK"/><s n="GEL"/><j/><s n="DEK"/><s n="NUMS"/><j/><s n="DEK"/><s n="INE"/></r>
+        </p>
+      </e>
+      <e>
+        <p>
+          <l>tzetakoan</l>
+          <r><j/><s n="DEK"/><s n="MG"/><j/><s n="DEK"/><s n="GEL"/><s n="ELI"/><j/><s n="DEK"/><s n="NUMS"/><j/><s n="DEK"/><s n="INE"/></r>
+        </p>
+      </e>
+      <e>
+        <p>
+          <l>tzetakoan</l>
+          <r><j/><s n="DEK"/><s n="NUMP"/><j/><s n="DEK"/><s n="GEL"/><j/><s n="DEK"/><s n="NUMS"/><j/><s n="DEK"/><s n="INE"/></r>
+        </p>
+      </e>
+      <e>
+        <p>
+          <l>tzetakoan</l>
+          <r><j/><s n="DEK"/><s n="NUMP"/><j/><s n="DEK"/><s n="GEL"/><s n="ELI"/><j/><s n="DEK"/><s n="NUMS"/><j/><s n="DEK"/><s n="INE"/></r>
+        </p>
+      </e>
+      <e>
+        <p>
+          <l>tzetakoraino</l>
+          <r><j/><s n="DEK"/><s n="MG"/><j/><s n="DEK"/><s n="GEL"/><j/><s n="DEK"/><s n="NUMS"/><j/><s n="DEK"/><s n="ABU"/></r>
+        </p>
+      </e>
+      <e>
+        <p>
+          <l>tzetakoraino</l>
+          <r><j/><s n="DEK"/><s n="MG"/><j/><s n="DEK"/><s n="GEL"/><s n="ELI"/><j/><s n="DEK"/><s n="NUMS"/><j/><s n="DEK"/><s n="ABU"/></r>
+        </p>
+      </e>
+      <e>
+        <p>
+          <l>tzetakoraino</l>
+          <r><j/><s n="DEK"/><s n="NUMP"/><j/><s n="DEK"/><s n="GEL"/><j/><s n="DEK"/><s n="NUMS"/><j/><s n="DEK"/><s n="ABU"/></r>
+        </p>
+      </e>
+      <e>
+        <p>
+          <l>tzetakoraino</l>
+          <r><j/><s n="DEK"/><s n="NUMP"/><j/><s n="DEK"/><s n="GEL"/><s n="ELI"/><j/><s n="DEK"/><s n="NUMS"/><j/><s n="DEK"/><s n="ABU"/></r>
+        </p>
+      </e>
+      <e>
+        <p>
+          <l>tzetakorantz</l>
+          <r><j/><s n="DEK"/><s n="MG"/><j/><s n="DEK"/><s n="GEL"/><j/><s n="DEK"/><s n="NUMS"/><j/><s n="DEK"/><s n="ABZ"/></r>
+        </p>
+      </e>
+      <e>
+        <p>
+          <l>tzetakorantz</l>
+          <r><j/><s n="DEK"/><s n="MG"/><j/><s n="DEK"/><s n="GEL"/><s n="ELI"/><j/><s n="DEK"/><s n="NUMS"/><j/><s n="DEK"/><s n="ABZ"/></r>
+        </p>
+      </e>
+      <e>
+        <p>
+          <l>tzetakorantz</l>
+          <r><j/><s n="DEK"/><s n="NUMP"/><j/><s n="DEK"/><s n="GEL"/><j/><s n="DEK"/><s n="NUMS"/><j/><s n="DEK"/><s n="ABZ"/></r>
+        </p>
+      </e>
+      <e>
+        <p>
+          <l>tzetakorantz</l>
+          <r><j/><s n="DEK"/><s n="NUMP"/><j/><s n="DEK"/><s n="GEL"/><s n="ELI"/><j/><s n="DEK"/><s n="NUMS"/><j/><s n="DEK"/><s n="ABZ"/></r>
+        </p>
+      </e>
+      <e>
+        <p>
+          <l>tzetakora</l>
+          <r><j/><s n="DEK"/><s n="MG"/><j/><s n="DEK"/><s n="GEL"/><j/><s n="DEK"/><s n="NUMS"/><j/><s n="DEK"/><s n="ALA"/></r>
+        </p>
+      </e>
+      <e>
+        <p>
+          <l>tzetakora</l>
+          <r><j/><s n="DEK"/><s n="MG"/><j/><s n="DEK"/><s n="GEL"/><s n="ELI"/><j/><s n="DEK"/><s n="NUMS"/><j/><s n="DEK"/><s n="ALA"/></r>
+        </p>
+      </e>
+      <e>
+        <p>
+          <l>tzetakora</l>
+          <r><j/><s n="DEK"/><s n="NUMP"/><j/><s n="DEK"/><s n="GEL"/><j/><s n="DEK"/><s n="NUMS"/><j/><s n="DEK"/><s n="ALA"/></r>
+        </p>
+      </e>
+      <e>
+        <p>
+          <l>tzetakora</l>
+          <r><j/><s n="DEK"/><s n="NUMP"/><j/><s n="DEK"/><s n="GEL"/><s n="ELI"/><j/><s n="DEK"/><s n="NUMS"/><j/><s n="DEK"/><s n="ALA"/></r>
+        </p>
+      </e>
+      <e>
+        <p>
+          <l>tzetakotik</l>
+          <r><j/><s n="DEK"/><s n="MG"/><j/><s n="DEK"/><s n="GEL"/><j/><s n="DEK"/><s n="NUMS"/><j/><s n="DEK"/><s n="ABL"/></r>
+        </p>
+      </e>
+      <e>
+        <p>
+          <l>tzetakotik</l>
+          <r><j/><s n="DEK"/><s n="MG"/><j/><s n="DEK"/><s n="GEL"/><s n="ELI"/><j/><s n="DEK"/><s n="NUMS"/><j/><s n="DEK"/><s n="ABL"/></r>
+        </p>
+      </e>
+      <e>
+        <p>
+          <l>tzetakotik</l>
+          <r><j/><s n="DEK"/><s n="NUMP"/><j/><s n="DEK"/><s n="GEL"/><j/><s n="DEK"/><s n="NUMS"/><j/><s n="DEK"/><s n="ABL"/></r>
+        </p>
+      </e>
+      <e>
+        <p>
+          <l>tzetakotik</l>
+          <r><j/><s n="DEK"/><s n="NUMP"/><j/><s n="DEK"/><s n="GEL"/><s n="ELI"/><j/><s n="DEK"/><s n="NUMS"/><j/><s n="DEK"/><s n="ABL"/></r>
+        </p>
+      </e>
+      <e>
+        <p>
+          <l>tzetaraino</l>
+          <r><j/><s n="DEK"/><s n="MG"/><j/><s n="DEK"/><s n="ABU"/></r>
+        </p>
+      </e>
+      <e>
+        <p>
+          <l>tzetaraino</l>
+          <r><j/><s n="DEK"/><s n="NUMP"/><j/><s n="DEK"/><s n="ABU"/></r>
+        </p>
+      </e>
+      <e>
+        <p>
+          <l>tzetarainoko</l>
+          <r><j/><s n="DEK"/><s n="MG"/><j/><s n="DEK"/><s n="ABU"/><j/><s n="DEK"/><s n="GEL"/></r>
+        </p>
+      </e>
+      <e>
+        <p>
+          <l>tzetarainoko</l>
+          <r><j/><s n="DEK"/><s n="MG"/><j/><s n="DEK"/><s n="ABU"/><j/><s n="DEK"/><s n="GEL"/><j/><s n="DEK"/><s n="ABS"/><s n="MG"/></r>
+        </p>
+      </e>
+      <e>
+        <p>
+          <l>tzetarainoko</l>
+          <r><j/><s n="DEK"/><s n="NUMP"/><j/><s n="DEK"/><s n="ABU"/><j/><s n="DEK"/><s n="GEL"/></r>
+        </p>
+      </e>
+      <e>
+        <p>
+          <l>tzetarainoko</l>
+          <r><j/><s n="DEK"/><s n="NUMP"/><j/><s n="DEK"/><s n="ABU"/><j/><s n="DEK"/><s n="GEL"/><j/><s n="DEK"/><s n="ABS"/><s n="MG"/></r>
+        </p>
+      </e>
+      <e>
+        <p>
+          <l>tzetarantz</l>
+          <r><j/><s n="DEK"/><s n="MG"/><j/><s n="DEK"/><s n="ABZ"/></r>
+        </p>
+      </e>
+      <e>
+        <p>
+          <l>tzetarantz</l>
+          <r><j/><s n="DEK"/><s n="NUMP"/><j/><s n="DEK"/><s n="ABZ"/></r>
+        </p>
+      </e>
+      <e>
+        <p>
+          <l>tzetarantzago</l>
+          <r><j/><s n="DEK"/><s n="MG"/><j/><s n="DEK"/><s n="ABZ"/><j/><s n="GRA"/><s n="KONP"/></r>
+        </p>
+      </e>
+      <e>
+        <p>
+          <l>tzetarantzago</l>
+          <r><j/><s n="DEK"/><s n="NUMP"/><j/><s n="DEK"/><s n="ABZ"/><j/><s n="GRA"/><s n="KONP"/></r>
+        </p>
+      </e>
+      <e>
+        <p>
+          <l>tzetarantzegi</l>
+          <r><j/><s n="DEK"/><s n="MG"/><j/><s n="DEK"/><s n="ABZ"/><j/><s n="GRA"/><s n="GEHI"/></r>
+        </p>
+      </e>
+      <e>
+        <p>
+          <l>tzetarantzegi</l>
+          <r><j/><s n="DEK"/><s n="NUMP"/><j/><s n="DEK"/><s n="ABZ"/><j/><s n="GRA"/><s n="GEHI"/></r>
+        </p>
+      </e>
+      <e>
+        <p>
+          <l>tzetaranzko</l>
+          <r><j/><s n="DEK"/><s n="MG"/><j/><s n="DEK"/><s n="ABZ"/><j/><s n="DEK"/><s n="GEL"/></r>
+        </p>
+      </e>
+      <e>
+        <p>
+          <l>tzetaranzko</l>
+          <r><j/><s n="DEK"/><s n="MG"/><j/><s n="DEK"/><s n="ABZ"/><j/><s n="DEK"/><s n="GEL"/><j/><s n="DEK"/><s n="ABS"/><s n="MG"/></r>
+        </p>
+      </e>
+      <e>
+        <p>
+          <l>tzetaranzko</l>
+          <r><j/><s n="DEK"/><s n="NUMP"/><j/><s n="DEK"/><s n="ABZ"/><j/><s n="DEK"/><s n="GEL"/></r>
+        </p>
+      </e>
+      <e>
+        <p>
+          <l>tzetaranzko</l>
+          <r><j/><s n="DEK"/><s n="NUMP"/><j/><s n="DEK"/><s n="ABZ"/><j/><s n="DEK"/><s n="GEL"/><j/><s n="DEK"/><s n="ABS"/><s n="MG"/></r>
+        </p>
+      </e>
+      <e>
+        <p>
+          <l>tzetara</l>
+          <r><j/><s n="DEK"/><s n="MG"/><j/><s n="DEK"/><s n="ALA"/></r>
+        </p>
+      </e>
+      <e>
+        <p>
+          <l>tzetara</l>
+          <r><j/><s n="DEK"/><s n="NUMP"/><j/><s n="DEK"/><s n="ALA"/></r>
+        </p>
+      </e>
+      <e>
+        <p>
+          <l>tzetarako</l>
+          <r><j/><s n="DEK"/><s n="MG"/><j/><s n="DEK"/><s n="ALA"/><j/><s n="DEK"/><s n="GEL"/></r>
+        </p>
+      </e>
+      <e>
+        <p>
+          <l>tzetarako</l>
+          <r><j/><s n="DEK"/><s n="MG"/><j/><s n="DEK"/><s n="ALA"/><j/><s n="DEK"/><s n="GEL"/><j/><s n="DEK"/><s n="ABS"/><s n="MG"/></r>
+        </p>
+      </e>
+      <e>
+        <p>
+          <l>tzetarako</l>
+          <r><j/><s n="DEK"/><s n="NUMP"/><j/><s n="DEK"/><s n="ALA"/><j/><s n="DEK"/><s n="GEL"/></r>
+        </p>
+      </e>
+      <e>
+        <p>
+          <l>tzetarako</l>
+          <r><j/><s n="DEK"/><s n="NUMP"/><j/><s n="DEK"/><s n="ALA"/><j/><s n="DEK"/><s n="GEL"/><j/><s n="DEK"/><s n="ABS"/><s n="MG"/></r>
+        </p>
+      </e>
+      <e>
+        <p>
+          <l>tzetarago</l>
+          <r><j/><s n="DEK"/><s n="MG"/><j/><s n="DEK"/><s n="ALA"/><j/><s n="GRA"/><s n="KONP"/></r>
+        </p>
+      </e>
+      <e>
+        <p>
+          <l>tzetarago</l>
+          <r><j/><s n="DEK"/><s n="NUMP"/><j/><s n="DEK"/><s n="ALA"/><j/><s n="GRA"/><s n="KONP"/></r>
+        </p>
+      </e>
+      <e>
+        <p>
+          <l>tzetatik</l>
+          <r><j/><s n="DEK"/><s n="MG"/><j/><s n="DEK"/><s n="ABL"/></r>
+        </p>
+      </e>
+      <e>
+        <p>
+          <l>tzetatik</l>
+          <r><j/><s n="DEK"/><s n="NUMP"/><j/><s n="DEK"/><s n="ABL"/></r>
+        </p>
+      </e>
+      <e>
+        <p>
+          <l>tzetatiko</l>
+          <r><j/><s n="DEK"/><s n="MG"/><j/><s n="DEK"/><s n="ABL"/><j/><s n="DEK"/><s n="GEL"/></r>
+        </p>
+      </e>
+      <e>
+        <p>
+          <l>tzetatiko</l>
+          <r><j/><s n="DEK"/><s n="MG"/><j/><s n="DEK"/><s n="ABL"/><j/><s n="DEK"/><s n="GEL"/><j/><s n="DEK"/><s n="ABS"/><s n="MG"/></r>
+        </p>
+      </e>
+      <e>
+        <p>
+          <l>tzetatiko</l>
+          <r><j/><s n="DEK"/><s n="NUMP"/><j/><s n="DEK"/><s n="ABL"/><j/><s n="DEK"/><s n="GEL"/></r>
+        </p>
+      </e>
+      <e>
+        <p>
+          <l>tzetatiko</l>
+          <r><j/><s n="DEK"/><s n="NUMP"/><j/><s n="DEK"/><s n="ABL"/><j/><s n="DEK"/><s n="GEL"/><j/><s n="DEK"/><s n="ABS"/><s n="MG"/></r>
+        </p>
+      </e>
+      <e>
+        <p>
+          <l>tzetan</l>
+          <r><j/><s n="DEK"/><s n="MG"/><j/><s n="DEK"/><s n="INE"/></r>
+        </p>
+      </e>
+      <e>
+        <p>
+          <l>tzetan</l>
+          <r><j/><s n="DEK"/><s n="NUMP"/><j/><s n="DEK"/><s n="INE"/></r>
+        </p>
+      </e>
+      <e>
+        <p>
+          <l>tzez</l>
+          <r><j/><s n="DEK"/><s n="INS"/><s n="MG"/></r>
+        </p>
+      </e>
+      <e>
+        <p>
+          <l>tzez</l>
+          <r><j/><s n="DEK"/><s n="INS"/><s n="NUMP"/></r>
+        </p>
+      </e>
+      <e>
+        <p>
+          <l>tzen</l>
+          <r><j/><s n="DEK"/><s n="GEN"/><s n="NUMP"/></r>
+        </p>
+      </e>
+      <e>
+        <p>
+          <l>tzen</l>
+          <r><j/><s n="DEK"/><s n="GEN"/><s n="NUMP"/><j/><s n="DEK"/><s n="ABS"/><s n="MG"/></r>
+        </p>
+      </e>
+      <e>
+        <p>
+          <l>tzen</l>
+          <r><j/><s n="DEK"/><s n="GEN"/><s n="MG"/></r>
+        </p>
+      </e>
+      <e>
+        <p>
+          <l>tzen</l>
+          <r><j/><s n="DEK"/><s n="GEN"/><s n="MG"/><j/><s n="DEK"/><s n="ABS"/><s n="MG"/></r>
+        </p>
+      </e>
+      <e>
+        <p>
+          <l>tzena</l>
+          <r><j/><s n="DEK"/><s n="GEN"/><s n="NUMP"/><j/><s n="DEK"/><s n="ABS"/><s n="NUMS"/></r>
+        </p>
+      </e>
+      <e>
+        <p>
+          <l>tzena</l>
+          <r><j/><s n="DEK"/><s n="GEN"/><s n="NUMP"/><s n="ELI"/><j/><s n="DEK"/><s n="ABS"/><s n="NUMS"/></r>
+        </p>
+      </e>
+      <e>
+        <p>
+          <l>tzena</l>
+          <r><j/><s n="DEK"/><s n="GEN"/><s n="MG"/><j/><s n="DEK"/><s n="ABS"/><s n="NUMS"/></r>
+        </p>
+      </e>
+      <e>
+        <p>
+          <l>tzena</l>
+          <r><j/><s n="DEK"/><s n="GEN"/><s n="MG"/><s n="ELI"/><j/><s n="DEK"/><s n="ABS"/><s n="NUMS"/></r>
+        </p>
+      </e>
+      <e>
+        <p>
+          <l>tzenak</l>
+          <r><j/><s n="DEK"/><s n="GEN"/><s n="NUMP"/><j/><s n="DEK"/><s n="ABS"/><s n="NUMP"/></r>
+        </p>
+      </e>
+      <e>
+        <p>
+          <l>tzenak</l>
+          <r><j/><s n="DEK"/><s n="GEN"/><s n="NUMP"/><j/><s n="DEK"/><s n="ERG"/><s n="NUMS"/></r>
+        </p>
+      </e>
+      <e>
+        <p>
+          <l>tzenak</l>
+          <r><j/><s n="DEK"/><s n="GEN"/><s n="NUMP"/><s n="ELI"/><j/><s n="DEK"/><s n="ABS"/><s n="NUMP"/></r>
+        </p>
+      </e>
+      <e>
+        <p>
+          <l>tzenak</l>
+          <r><j/><s n="DEK"/><s n="GEN"/><s n="NUMP"/><s n="ELI"/><j/><s n="DEK"/><s n="ERG"/><s n="NUMS"/></r>
+        </p>
+      </e>
+      <e>
+        <p>
+          <l>tzenak</l>
+          <r><j/><s n="DEK"/><s n="GEN"/><s n="MG"/><j/><s n="DEK"/><s n="ABS"/><s n="NUMP"/></r>
+        </p>
+      </e>
+      <e>
+        <p>
+          <l>tzenak</l>
+          <r><j/><s n="DEK"/><s n="GEN"/><s n="MG"/><j/><s n="DEK"/><s n="ERG"/><s n="NUMS"/></r>
+        </p>
+      </e>
+      <e>
+        <p>
+          <l>tzenak</l>
+          <r><j/><s n="DEK"/><s n="GEN"/><s n="MG"/><s n="ELI"/><j/><s n="DEK"/><s n="ABS"/><s n="NUMP"/></r>
+        </p>
+      </e>
+      <e>
+        <p>
+          <l>tzenak</l>
+          <r><j/><s n="DEK"/><s n="GEN"/><s n="MG"/><s n="ELI"/><j/><s n="DEK"/><s n="ERG"/><s n="NUMS"/></r>
+        </p>
+      </e>
+      <e>
+        <p>
+          <l>tzenarekin</l>
+          <r><j/><s n="DEK"/><s n="GEN"/><s n="NUMP"/><j/><s n="DEK"/><s n="SOZ"/><s n="NUMS"/></r>
+        </p>
+      </e>
+      <e>
+        <p>
+          <l>tzenarekin</l>
+          <r><j/><s n="DEK"/><s n="GEN"/><s n="NUMP"/><s n="ELI"/><j/><s n="DEK"/><s n="SOZ"/><s n="NUMS"/></r>
+        </p>
+      </e>
+      <e>
+        <p>
+          <l>tzenarekin</l>
+          <r><j/><s n="DEK"/><s n="GEN"/><s n="MG"/><j/><s n="DEK"/><s n="SOZ"/><s n="NUMS"/></r>
+        </p>
+      </e>
+      <e>
+        <p>
+          <l>tzenarekin</l>
+          <r><j/><s n="DEK"/><s n="GEN"/><s n="MG"/><s n="ELI"/><j/><s n="DEK"/><s n="SOZ"/><s n="NUMS"/></r>
+        </p>
+      </e>
+      <e>
+        <p>
+          <l>tzenarentzat</l>
+          <r><j/><s n="DEK"/><s n="GEN"/><s n="NUMP"/><j/><s n="DEK"/><s n="DES"/><s n="NUMS"/></r>
+        </p>
+      </e>
+      <e>
+        <p>
+          <l>tzenarentzat</l>
+          <r><j/><s n="DEK"/><s n="GEN"/><s n="NUMP"/><j/><s n="DEK"/><s n="GEN"/><s n="NUMS"/><j/><s n="DEK"/><s n="PRO"/><s n="MG"/></r>
+        </p>
+      </e>
+      <e>
+        <p>
+          <l>tzenarentzat</l>
+          <r><j/><s n="DEK"/><s n="GEN"/><s n="NUMP"/><s n="ELI"/><j/><s n="DEK"/><s n="DES"/><s n="NUMS"/></r>
+        </p>
+      </e>
+      <e>
+        <p>
+          <l>tzenarentzat</l>
+          <r><j/><s n="DEK"/><s n="GEN"/><s n="NUMP"/><s n="ELI"/><j/><s n="DEK"/><s n="GEN"/><s n="NUMS"/><j/><s n="DEK"/><s n="PRO"/><s n="MG"/></r>
+        </p>
+      </e>
+      <e>
+        <p>
+          <l>tzenarentzat</l>
+          <r><j/><s n="DEK"/><s n="GEN"/><s n="MG"/><j/><s n="DEK"/><s n="DES"/><s n="NUMS"/></r>
+        </p>
+      </e>
+      <e>
+        <p>
+          <l>tzenarentzat</l>
+          <r><j/><s n="DEK"/><s n="GEN"/><s n="MG"/><j/><s n="DEK"/><s n="GEN"/><s n="NUMS"/><j/><s n="DEK"/><s n="PRO"/><s n="MG"/></r>
+        </p>
+      </e>
+      <e>
+        <p>
+          <l>tzenarentzat</l>
+          <r><j/><s n="DEK"/><s n="GEN"/><s n="MG"/><s n="ELI"/><j/><s n="DEK"/><s n="DES"/><s n="NUMS"/></r>
+        </p>
+      </e>
+      <e>
+        <p>
+          <l>tzenarentzat</l>
+          <r><j/><s n="DEK"/><s n="GEN"/><s n="MG"/><s n="ELI"/><j/><s n="DEK"/><s n="GEN"/><s n="NUMS"/><j/><s n="DEK"/><s n="PRO"/><s n="MG"/></r>
+        </p>
+      </e>
+      <e>
+        <p>
+          <l>tzenari</l>
+          <r><j/><s n="DEK"/><s n="GEN"/><s n="NUMP"/><j/><s n="DEK"/><s n="DAT"/><s n="NUMS"/></r>
+        </p>
+      </e>
+      <e>
+        <p>
+          <l>tzenari</l>
+          <r><j/><s n="DEK"/><s n="GEN"/><s n="NUMP"/><s n="ELI"/><j/><s n="DEK"/><s n="DAT"/><s n="NUMS"/></r>
+        </p>
+      </e>
+      <e>
+        <p>
+          <l>tzenari</l>
+          <r><j/><s n="DEK"/><s n="GEN"/><s n="MG"/><j/><s n="DEK"/><s n="DAT"/><s n="NUMS"/></r>
+        </p>
+      </e>
+      <e>
+        <p>
+          <l>tzenari</l>
+          <r><j/><s n="DEK"/><s n="GEN"/><s n="MG"/><s n="ELI"/><j/><s n="DEK"/><s n="DAT"/><s n="NUMS"/></r>
+        </p>
+      </e>
+      <e>
+        <p>
+          <l>tzenaz</l>
+          <r><j/><s n="DEK"/><s n="GEN"/><s n="NUMP"/><j/><s n="DEK"/><s n="INS"/><s n="NUMS"/></r>
+        </p>
+      </e>
+      <e>
+        <p>
+          <l>tzenaz</l>
+          <r><j/><s n="DEK"/><s n="GEN"/><s n="NUMP"/><s n="ELI"/><j/><s n="DEK"/><s n="INS"/><s n="NUMS"/></r>
+        </p>
+      </e>
+      <e>
+        <p>
+          <l>tzenaz</l>
+          <r><j/><s n="DEK"/><s n="GEN"/><s n="MG"/><j/><s n="DEK"/><s n="INS"/><s n="NUMS"/></r>
+        </p>
+      </e>
+      <e>
+        <p>
+          <l>tzenaz</l>
+          <r><j/><s n="DEK"/><s n="GEN"/><s n="MG"/><s n="ELI"/><j/><s n="DEK"/><s n="INS"/><s n="NUMS"/></r>
+        </p>
+      </e>
+      <e>
+        <p>
+          <l>tzenei</l>
+          <r><j/><s n="DEK"/><s n="GEN"/><s n="NUMP"/><j/><s n="DEK"/><s n="DAT"/><s n="NUMP"/></r>
+        </p>
+      </e>
+      <e>
+        <p>
+          <l>tzenei</l>
+          <r><j/><s n="DEK"/><s n="GEN"/><s n="NUMP"/><s n="ELI"/><j/><s n="DEK"/><s n="DAT"/><s n="NUMP"/></r>
+        </p>
+      </e>
+      <e>
+        <p>
+          <l>tzenei</l>
+          <r><j/><s n="DEK"/><s n="GEN"/><s n="MG"/><j/><s n="DEK"/><s n="DAT"/><s n="NUMP"/></r>
+        </p>
+      </e>
+      <e>
+        <p>
+          <l>tzenei</l>
+          <r><j/><s n="DEK"/><s n="GEN"/><s n="MG"/><s n="ELI"/><j/><s n="DEK"/><s n="DAT"/><s n="NUMP"/></r>
+        </p>
+      </e>
+      <e>
+        <p>
+          <l>tzenek</l>
+          <r><j/><s n="DEK"/><s n="GEN"/><s n="NUMP"/><j/><s n="DEK"/><s n="ERG"/><s n="MG"/></r>
+        </p>
+      </e>
+      <e>
+        <p>
+          <l>tzenek</l>
+          <r><j/><s n="DEK"/><s n="GEN"/><s n="NUMP"/><j/><s n="DEK"/><s n="ERG"/><s n="NUMP"/></r>
+        </p>
+      </e>
+      <e>
+        <p>
+          <l>tzenek</l>
+          <r><j/><s n="DEK"/><s n="GEN"/><s n="NUMP"/><s n="ELI"/><j/><s n="DEK"/><s n="ERG"/><s n="NUMP"/></r>
+        </p>
+      </e>
+      <e>
+        <p>
+          <l>tzenek</l>
+          <r><j/><s n="DEK"/><s n="GEN"/><s n="MG"/><j/><s n="DEK"/><s n="ERG"/><s n="MG"/></r>
+        </p>
+      </e>
+      <e>
+        <p>
+          <l>tzenek</l>
+          <r><j/><s n="DEK"/><s n="GEN"/><s n="MG"/><j/><s n="DEK"/><s n="ERG"/><s n="NUMP"/></r>
+        </p>
+      </e>
+      <e>
+        <p>
+          <l>tzenek</l>
+          <r><j/><s n="DEK"/><s n="GEN"/><s n="MG"/><s n="ELI"/><j/><s n="DEK"/><s n="ERG"/><s n="NUMP"/></r>
+        </p>
+      </e>
+      <e>
+        <p>
+          <l>tzenekin</l>
+          <r><j/><s n="DEK"/><s n="GEN"/><s n="NUMP"/><j/><s n="DEK"/><s n="SOZ"/><s n="NUMP"/></r>
+        </p>
+      </e>
+      <e>
+        <p>
+          <l>tzenekin</l>
+          <r><j/><s n="DEK"/><s n="GEN"/><s n="NUMP"/><j/><s n="DEK"/><s n="SOZ"/><s n="MG"/></r>
+        </p>
+      </e>
+      <e>
+        <p>
+          <l>tzenekin</l>
+          <r><j/><s n="DEK"/><s n="GEN"/><s n="NUMP"/><s n="ELI"/><j/><s n="DEK"/><s n="SOZ"/><s n="NUMP"/></r>
+        </p>
+      </e>
+      <e>
+        <p>
+          <l>tzenekin</l>
+          <r><j/><s n="DEK"/><s n="GEN"/><s n="MG"/><j/><s n="DEK"/><s n="SOZ"/><s n="NUMP"/></r>
+        </p>
+      </e>
+      <e>
+        <p>
+          <l>tzenekin</l>
+          <r><j/><s n="DEK"/><s n="GEN"/><s n="MG"/><j/><s n="DEK"/><s n="SOZ"/><s n="MG"/></r>
+        </p>
+      </e>
+      <e>
+        <p>
+          <l>tzenekin</l>
+          <r><j/><s n="DEK"/><s n="GEN"/><s n="MG"/><s n="ELI"/><j/><s n="DEK"/><s n="SOZ"/><s n="NUMP"/></r>
+        </p>
+      </e>
+      <e>
+        <p>
+          <l>tzenentzat</l>
+          <r><j/><s n="DEK"/><s n="GEN"/><s n="NUMP"/><j/><s n="DEK"/><s n="DES"/><s n="NUMP"/></r>
+        </p>
+      </e>
+      <e>
+        <p>
+          <l>tzenentzat</l>
+          <r><j/><s n="DEK"/><s n="GEN"/><s n="NUMP"/><j/><s n="DEK"/><s n="GEN"/><s n="NUMP"/><j/><s n="DEK"/><s n="PRO"/><s n="MG"/></r>
+        </p>
+      </e>
+      <e>
+        <p>
+          <l>tzenentzat</l>
+          <r><j/><s n="DEK"/><s n="GEN"/><s n="NUMP"/><j/><s n="DEK"/><s n="DES"/><s n="MG"/></r>
+        </p>
+      </e>
+      <e>
+        <p>
+          <l>tzenentzat</l>
+          <r><j/><s n="DEK"/><s n="GEN"/><s n="NUMP"/><j/><s n="DEK"/><s n="GEN"/><s n="MG"/><j/><s n="DEK"/><s n="PRO"/><s n="MG"/></r>
+        </p>
+      </e>
+      <e>
+        <p>
+          <l>tzenentzat</l>
+          <r><j/><s n="DEK"/><s n="GEN"/><s n="NUMP"/><s n="ELI"/><j/><s n="DEK"/><s n="DES"/><s n="NUMP"/></r>
+        </p>
+      </e>
+      <e>
+        <p>
+          <l>tzenentzat</l>
+          <r><j/><s n="DEK"/><s n="GEN"/><s n="NUMP"/><s n="ELI"/><j/><s n="DEK"/><s n="GEN"/><s n="NUMP"/><j/><s n="DEK"/><s n="PRO"/><s n="MG"/></r>
+        </p>
+      </e>
+      <e>
+        <p>
+          <l>tzenentzat</l>
+          <r><j/><s n="DEK"/><s n="GEN"/><s n="MG"/><j/><s n="DEK"/><s n="DES"/><s n="NUMP"/></r>
+        </p>
+      </e>
+      <e>
+        <p>
+          <l>tzenentzat</l>
+          <r><j/><s n="DEK"/><s n="GEN"/><s n="MG"/><j/><s n="DEK"/><s n="GEN"/><s n="NUMP"/><j/><s n="DEK"/><s n="PRO"/><s n="MG"/></r>
+        </p>
+      </e>
+      <e>
+        <p>
+          <l>tzenentzat</l>
+          <r><j/><s n="DEK"/><s n="GEN"/><s n="MG"/><j/><s n="DEK"/><s n="DES"/><s n="MG"/></r>
+        </p>
+      </e>
+      <e>
+        <p>
+          <l>tzenentzat</l>
+          <r><j/><s n="DEK"/><s n="GEN"/><s n="MG"/><j/><s n="DEK"/><s n="GEN"/><s n="MG"/><j/><s n="DEK"/><s n="PRO"/><s n="MG"/></r>
+        </p>
+      </e>
+      <e>
+        <p>
+          <l>tzenentzat</l>
+          <r><j/><s n="DEK"/><s n="GEN"/><s n="MG"/><s n="ELI"/><j/><s n="DEK"/><s n="DES"/><s n="NUMP"/></r>
+        </p>
+      </e>
+      <e>
+        <p>
+          <l>tzenentzat</l>
+          <r><j/><s n="DEK"/><s n="GEN"/><s n="MG"/><s n="ELI"/><j/><s n="DEK"/><s n="GEN"/><s n="NUMP"/><j/><s n="DEK"/><s n="PRO"/><s n="MG"/></r>
+        </p>
+      </e>
+      <e>
+        <p>
+          <l>tzenetaz</l>
+          <r><j/><s n="DEK"/><s n="GEN"/><s n="NUMP"/><j/><s n="DEK"/><s n="INS"/><s n="NUMP"/></r>
+        </p>
+      </e>
+      <e>
+        <p>
+          <l>tzenetaz</l>
+          <r><j/><s n="DEK"/><s n="GEN"/><s n="NUMP"/><s n="ELI"/><j/><s n="DEK"/><s n="INS"/><s n="NUMP"/></r>
+        </p>
+      </e>
+      <e>
+        <p>
+          <l>tzenetaz</l>
+          <r><j/><s n="DEK"/><s n="GEN"/><s n="MG"/><j/><s n="DEK"/><s n="INS"/><s n="NUMP"/></r>
+        </p>
+      </e>
+      <e>
+        <p>
+          <l>tzenetaz</l>
+          <r><j/><s n="DEK"/><s n="GEN"/><s n="MG"/><s n="ELI"/><j/><s n="DEK"/><s n="INS"/><s n="NUMP"/></r>
+        </p>
+      </e>
+      <e>
+        <p>
+          <l>tzenetaraino</l>
+          <r><j/><s n="DEK"/><s n="GEN"/><s n="NUMP"/><j/><s n="DEK"/><s n="MG"/><j/><s n="DEK"/><s n="ABU"/></r>
+        </p>
+      </e>
+      <e>
+        <p>
+          <l>tzenetaraino</l>
+          <r><j/><s n="DEK"/><s n="GEN"/><s n="NUMP"/><j/><s n="DEK"/><s n="NUMP"/><j/><s n="DEK"/><s n="ABU"/></r>
+        </p>
+      </e>
+      <e>
+        <p>
+          <l>tzenetaraino</l>
+          <r><j/><s n="DEK"/><s n="GEN"/><s n="NUMP"/><s n="ELI"/><j/><s n="DEK"/><s n="NUMP"/><j/><s n="DEK"/><s n="ABU"/></r>
+        </p>
+      </e>
+      <e>
+        <p>
+          <l>tzenetaraino</l>
+          <r><j/><s n="DEK"/><s n="GEN"/><s n="MG"/><j/><s n="DEK"/><s n="MG"/><j/><s n="DEK"/><s n="ABU"/></r>
+        </p>
+      </e>
+      <e>
+        <p>
+          <l>tzenetaraino</l>
+          <r><j/><s n="DEK"/><s n="GEN"/><s n="MG"/><j/><s n="DEK"/><s n="NUMP"/><j/><s n="DEK"/><s n="ABU"/></r>
+        </p>
+      </e>
+      <e>
+        <p>
+          <l>tzenetaraino</l>
+          <r><j/><s n="DEK"/><s n="GEN"/><s n="MG"/><s n="ELI"/><j/><s n="DEK"/><s n="NUMP"/><j/><s n="DEK"/><s n="ABU"/></r>
+        </p>
+      </e>
+      <e>
+        <p>
+          <l>tzenetarantz</l>
+          <r><j/><s n="DEK"/><s n="GEN"/><s n="NUMP"/><j/><s n="DEK"/><s n="MG"/><j/><s n="DEK"/><s n="ABZ"/></r>
+        </p>
+      </e>
+      <e>
+        <p>
+          <l>tzenetarantz</l>
+          <r><j/><s n="DEK"/><s n="GEN"/><s n="NUMP"/><j/><s n="DEK"/><s n="NUMP"/><j/><s n="DEK"/><s n="ABZ"/></r>
+        </p>
+      </e>
+      <e>
+        <p>
+          <l>tzenetarantz</l>
+          <r><j/><s n="DEK"/><s n="GEN"/><s n="NUMP"/><s n="ELI"/><j/><s n="DEK"/><s n="NUMP"/><j/><s n="DEK"/><s n="ABZ"/></r>
+        </p>
+      </e>
+      <e>
+        <p>
+          <l>tzenetarantz</l>
+          <r><j/><s n="DEK"/><s n="GEN"/><s n="MG"/><j/><s n="DEK"/><s n="MG"/><j/><s n="DEK"/><s n="ABZ"/></r>
+        </p>
+      </e>
+      <e>
+        <p>
+          <l>tzenetarantz</l>
+          <r><j/><s n="DEK"/><s n="GEN"/><s n="MG"/><j/><s n="DEK"/><s n="NUMP"/><j/><s n="DEK"/><s n="ABZ"/></r>
+        </p>
+      </e>
+      <e>
+        <p>
+          <l>tzenetarantz</l>
+          <r><j/><s n="DEK"/><s n="GEN"/><s n="MG"/><s n="ELI"/><j/><s n="DEK"/><s n="NUMP"/><j/><s n="DEK"/><s n="ABZ"/></r>
+        </p>
+      </e>
+      <e>
+        <p>
+          <l>tzenetara</l>
+          <r><j/><s n="DEK"/><s n="GEN"/><s n="NUMP"/><j/><s n="DEK"/><s n="MG"/><j/><s n="DEK"/><s n="ALA"/></r>
+        </p>
+      </e>
+      <e>
+        <p>
+          <l>tzenetara</l>
+          <r><j/><s n="DEK"/><s n="GEN"/><s n="NUMP"/><j/><s n="DEK"/><s n="NUMP"/><j/><s n="DEK"/><s n="ALA"/></r>
+        </p>
+      </e>
+      <e>
+        <p>
+          <l>tzenetara</l>
+          <r><j/><s n="DEK"/><s n="GEN"/><s n="NUMP"/><s n="ELI"/><j/><s n="DEK"/><s n="NUMP"/><j/><s n="DEK"/><s n="ALA"/></r>
+        </p>
+      </e>
+      <e>
+        <p>
+          <l>tzenetara</l>
+          <r><j/><s n="DEK"/><s n="GEN"/><s n="MG"/><j/><s n="DEK"/><s n="MG"/><j/><s n="DEK"/><s n="ALA"/></r>
+        </p>
+      </e>
+      <e>
+        <p>
+          <l>tzenetara</l>
+          <r><j/><s n="DEK"/><s n="GEN"/><s n="MG"/><j/><s n="DEK"/><s n="NUMP"/><j/><s n="DEK"/><s n="ALA"/></r>
+        </p>
+      </e>
+      <e>
+        <p>
+          <l>tzenetara</l>
+          <r><j/><s n="DEK"/><s n="GEN"/><s n="MG"/><s n="ELI"/><j/><s n="DEK"/><s n="NUMP"/><j/><s n="DEK"/><s n="ALA"/></r>
+        </p>
+      </e>
+      <e>
+        <p>
+          <l>tzenetatik</l>
+          <r><j/><s n="DEK"/><s n="GEN"/><s n="NUMP"/><j/><s n="DEK"/><s n="MG"/><j/><s n="DEK"/><s n="ABL"/></r>
+        </p>
+      </e>
+      <e>
+        <p>
+          <l>tzenetatik</l>
+          <r><j/><s n="DEK"/><s n="GEN"/><s n="NUMP"/><j/><s n="DEK"/><s n="NUMP"/><j/><s n="DEK"/><s n="ABL"/></r>
+        </p>
+      </e>
+      <e>
+        <p>
+          <l>tzenetatik</l>
+          <r><j/><s n="DEK"/><s n="GEN"/><s n="NUMP"/><s n="ELI"/><j/><s n="DEK"/><s n="NUMP"/><j/><s n="DEK"/><s n="ABL"/></r>
+        </p>
+      </e>
+      <e>
+        <p>
+          <l>tzenetatik</l>
+          <r><j/><s n="DEK"/><s n="GEN"/><s n="MG"/><j/><s n="DEK"/><s n="MG"/><j/><s n="DEK"/><s n="ABL"/></r>
+        </p>
+      </e>
+      <e>
+        <p>
+          <l>tzenetatik</l>
+          <r><j/><s n="DEK"/><s n="GEN"/><s n="MG"/><j/><s n="DEK"/><s n="NUMP"/><j/><s n="DEK"/><s n="ABL"/></r>
+        </p>
+      </e>
+      <e>
+        <p>
+          <l>tzenetatik</l>
+          <r><j/><s n="DEK"/><s n="GEN"/><s n="MG"/><s n="ELI"/><j/><s n="DEK"/><s n="NUMP"/><j/><s n="DEK"/><s n="ABL"/></r>
+        </p>
+      </e>
+      <e>
+        <p>
+          <l>tzenetan</l>
+          <r><j/><s n="DEK"/><s n="GEN"/><s n="NUMP"/><j/><s n="DEK"/><s n="MG"/><j/><s n="DEK"/><s n="INE"/></r>
+        </p>
+      </e>
+      <e>
+        <p>
+          <l>tzenetan</l>
+          <r><j/><s n="DEK"/><s n="GEN"/><s n="NUMP"/><j/><s n="DEK"/><s n="NUMP"/><j/><s n="DEK"/><s n="INE"/></r>
+        </p>
+      </e>
+      <e>
+        <p>
+          <l>tzenetan</l>
+          <r><j/><s n="DEK"/><s n="GEN"/><s n="NUMP"/><s n="ELI"/><j/><s n="DEK"/><s n="NUMP"/><j/><s n="DEK"/><s n="INE"/></r>
+        </p>
+      </e>
+      <e>
+        <p>
+          <l>tzenetan</l>
+          <r><j/><s n="DEK"/><s n="GEN"/><s n="MG"/><j/><s n="DEK"/><s n="MG"/><j/><s n="DEK"/><s n="INE"/></r>
+        </p>
+      </e>
+      <e>
+        <p>
+          <l>tzenetan</l>
+          <r><j/><s n="DEK"/><s n="GEN"/><s n="MG"/><j/><s n="DEK"/><s n="NUMP"/><j/><s n="DEK"/><s n="INE"/></r>
+        </p>
+      </e>
+      <e>
+        <p>
+          <l>tzenetan</l>
+          <r><j/><s n="DEK"/><s n="GEN"/><s n="MG"/><s n="ELI"/><j/><s n="DEK"/><s n="NUMP"/><j/><s n="DEK"/><s n="INE"/></r>
+        </p>
+      </e>
+      <e>
+        <p>
+          <l>tzenez</l>
+          <r><j/><s n="DEK"/><s n="GEN"/><s n="NUMP"/><j/><s n="DEK"/><s n="INS"/><s n="MG"/></r>
+        </p>
+      </e>
+      <e>
+        <p>
+          <l>tzenez</l>
+          <r><j/><s n="DEK"/><s n="GEN"/><s n="NUMP"/><j/><s n="DEK"/><s n="INS"/><s n="NUMP"/></r>
+        </p>
+      </e>
+      <e>
+        <p>
+          <l>tzenez</l>
+          <r><j/><s n="DEK"/><s n="GEN"/><s n="NUMP"/><s n="ELI"/><j/><s n="DEK"/><s n="INS"/><s n="NUMP"/></r>
+        </p>
+      </e>
+      <e>
+        <p>
+          <l>tzenez</l>
+          <r><j/><s n="DEK"/><s n="GEN"/><s n="MG"/><j/><s n="DEK"/><s n="INS"/><s n="MG"/></r>
+        </p>
+      </e>
+      <e>
+        <p>
+          <l>tzenez</l>
+          <r><j/><s n="DEK"/><s n="GEN"/><s n="MG"/><j/><s n="DEK"/><s n="INS"/><s n="NUMP"/></r>
+        </p>
+      </e>
+      <e>
+        <p>
+          <l>tzenez</l>
+          <r><j/><s n="DEK"/><s n="GEN"/><s n="MG"/><s n="ELI"/><j/><s n="DEK"/><s n="INS"/><s n="NUMP"/></r>
+        </p>
+      </e>
+      <e>
+        <p>
+          <l>tzengan</l>
+          <r><j/><s n="DEK"/><s n="GEN"/><s n="NUMP"/><j/><s n="DEK"/><s n="INE"/><s n="GAN"/></r>
+        </p>
+      </e>
+      <e>
+        <p>
+          <l>tzengan</l>
+          <r><j/><s n="DEK"/><s n="GEN"/><s n="MG"/><j/><s n="DEK"/><s n="INE"/><s n="GAN"/></r>
+        </p>
+      </e>
+      <e>
+        <p>
+          <l>tzengana</l>
+          <r><j/><s n="DEK"/><s n="GEN"/><s n="NUMP"/><j/><s n="DEK"/><s n="ALA"/><s n="GAN"/></r>
+        </p>
+      </e>
+      <e>
+        <p>
+          <l>tzengana</l>
+          <r><j/><s n="DEK"/><s n="GEN"/><s n="MG"/><j/><s n="DEK"/><s n="ALA"/><s n="GAN"/></r>
+        </p>
+      </e>
+      <e>
+        <p>
+          <l>tzenganaino</l>
+          <r><j/><s n="DEK"/><s n="GEN"/><s n="NUMP"/><j/><s n="DEK"/><s n="ABU"/><s n="GAN"/></r>
+        </p>
+      </e>
+      <e>
+        <p>
+          <l>tzenganaino</l>
+          <r><j/><s n="DEK"/><s n="GEN"/><s n="MG"/><j/><s n="DEK"/><s n="ABU"/><s n="GAN"/></r>
+        </p>
+      </e>
+      <e>
+        <p>
+          <l>tzenganantz</l>
+          <r><j/><s n="DEK"/><s n="GEN"/><s n="NUMP"/><j/><s n="DEK"/><s n="ABZ"/><s n="GAN"/></r>
+        </p>
+      </e>
+      <e>
+        <p>
+          <l>tzenganantz</l>
+          <r><j/><s n="DEK"/><s n="GEN"/><s n="MG"/><j/><s n="DEK"/><s n="ABZ"/><s n="GAN"/></r>
+        </p>
+      </e>
+      <e>
+        <p>
+          <l>tzengandik</l>
+          <r><j/><s n="DEK"/><s n="GEN"/><s n="NUMP"/><j/><s n="DEK"/><s n="ABL"/><s n="GAN"/></r>
+        </p>
+      </e>
+      <e>
+        <p>
+          <l>tzengandik</l>
+          <r><j/><s n="DEK"/><s n="GEN"/><s n="MG"/><j/><s n="DEK"/><s n="ABL"/><s n="GAN"/></r>
+        </p>
+      </e>
+      <e>
+        <p>
+          <l>tzengatik</l>
+          <r><j/><s n="DEK"/><s n="GEN"/><s n="NUMP"/><j/><s n="DEK"/><s n="MOT"/></r>
+        </p>
+      </e>
+      <e>
+        <p>
+          <l>tzengatik</l>
+          <r><j/><s n="DEK"/><s n="GEN"/><s n="MG"/><j/><s n="DEK"/><s n="MOT"/></r>
+        </p>
+      </e>
+      <e>
+        <p>
+          <l>tzenoi</l>
+          <r><j/><s n="DEK"/><s n="GEN"/><s n="NUMP"/><j/><s n="DEK"/><s n="DAT"/><s n="PH"/></r>
+        </p>
+      </e>
+      <e>
+        <p>
+          <l>tzenoi</l>
+          <r><j/><s n="DEK"/><s n="GEN"/><s n="NUMP"/><s n="ELI"/><j/><s n="DEK"/><s n="DAT"/><s n="PH"/></r>
+        </p>
+      </e>
+      <e>
+        <p>
+          <l>tzenoi</l>
+          <r><j/><s n="DEK"/><s n="GEN"/><s n="MG"/><j/><s n="DEK"/><s n="DAT"/><s n="PH"/></r>
+        </p>
+      </e>
+      <e>
+        <p>
+          <l>tzenoi</l>
+          <r><j/><s n="DEK"/><s n="GEN"/><s n="MG"/><s n="ELI"/><j/><s n="DEK"/><s n="DAT"/><s n="PH"/></r>
+        </p>
+      </e>
+      <e>
+        <p>
+          <l>tzenok</l>
+          <r><j/><s n="DEK"/><s n="GEN"/><s n="NUMP"/><j/><s n="DEK"/><s n="ABS"/><s n="PH"/></r>
+        </p>
+      </e>
+      <e>
+        <p>
+          <l>tzenok</l>
+          <r><j/><s n="DEK"/><s n="GEN"/><s n="NUMP"/><j/><s n="DEK"/><s n="ERG"/><s n="PH"/></r>
+        </p>
+      </e>
+      <e>
+        <p>
+          <l>tzenok</l>
+          <r><j/><s n="DEK"/><s n="GEN"/><s n="NUMP"/><s n="ELI"/><j/><s n="DEK"/><s n="ABS"/><s n="PH"/></r>
+        </p>
+      </e>
+      <e>
+        <p>
+          <l>tzenok</l>
+          <r><j/><s n="DEK"/><s n="GEN"/><s n="NUMP"/><s n="ELI"/><j/><s n="DEK"/><s n="ERG"/><s n="PH"/></r>
+        </p>
+      </e>
+      <e>
+        <p>
+          <l>tzenok</l>
+          <r><j/><s n="DEK"/><s n="GEN"/><s n="MG"/><j/><s n="DEK"/><s n="ABS"/><s n="PH"/></r>
+        </p>
+      </e>
+      <e>
+        <p>
+          <l>tzenok</l>
+          <r><j/><s n="DEK"/><s n="GEN"/><s n="MG"/><j/><s n="DEK"/><s n="ERG"/><s n="PH"/></r>
+        </p>
+      </e>
+      <e>
+        <p>
+          <l>tzenok</l>
+          <r><j/><s n="DEK"/><s n="GEN"/><s n="MG"/><s n="ELI"/><j/><s n="DEK"/><s n="ABS"/><s n="PH"/></r>
+        </p>
+      </e>
+      <e>
+        <p>
+          <l>tzenok</l>
+          <r><j/><s n="DEK"/><s n="GEN"/><s n="MG"/><s n="ELI"/><j/><s n="DEK"/><s n="ERG"/><s n="PH"/></r>
+        </p>
+      </e>
+      <e>
+        <p>
+          <l>tzenokin</l>
+          <r><j/><s n="DEK"/><s n="GEN"/><s n="NUMP"/><j/><s n="DEK"/><s n="SOZ"/><s n="PH"/></r>
+        </p>
+      </e>
+      <e>
+        <p>
+          <l>tzenokin</l>
+          <r><j/><s n="DEK"/><s n="GEN"/><s n="NUMP"/><s n="ELI"/><j/><s n="DEK"/><s n="SOZ"/><s n="PH"/></r>
+        </p>
+      </e>
+      <e>
+        <p>
+          <l>tzenokin</l>
+          <r><j/><s n="DEK"/><s n="GEN"/><s n="MG"/><j/><s n="DEK"/><s n="SOZ"/><s n="PH"/></r>
+        </p>
+      </e>
+      <e>
+        <p>
+          <l>tzenokin</l>
+          <r><j/><s n="DEK"/><s n="GEN"/><s n="MG"/><s n="ELI"/><j/><s n="DEK"/><s n="SOZ"/><s n="PH"/></r>
+        </p>
+      </e>
+      <e>
+        <p>
+          <l>tzenontzat</l>
+          <r><j/><s n="DEK"/><s n="GEN"/><s n="NUMP"/><j/><s n="DEK"/><s n="DES"/><s n="PH"/></r>
+        </p>
+      </e>
+      <e>
+        <p>
+          <l>tzenontzat</l>
+          <r><j/><s n="DEK"/><s n="GEN"/><s n="NUMP"/><s n="ELI"/><j/><s n="DEK"/><s n="DES"/><s n="PH"/></r>
+        </p>
+      </e>
+      <e>
+        <p>
+          <l>tzenontzat</l>
+          <r><j/><s n="DEK"/><s n="GEN"/><s n="MG"/><j/><s n="DEK"/><s n="DES"/><s n="PH"/></r>
+        </p>
+      </e>
+      <e>
+        <p>
+          <l>tzenontzat</l>
+          <r><j/><s n="DEK"/><s n="GEN"/><s n="MG"/><s n="ELI"/><j/><s n="DEK"/><s n="DES"/><s n="PH"/></r>
+        </p>
+      </e>
+      <e>
+        <p>
+          <l>tzenotaz</l>
+          <r><j/><s n="DEK"/><s n="GEN"/><s n="NUMP"/><j/><s n="DEK"/><s n="INS"/><s n="PH"/></r>
+        </p>
+      </e>
+      <e>
+        <p>
+          <l>tzenotaz</l>
+          <r><j/><s n="DEK"/><s n="GEN"/><s n="NUMP"/><s n="ELI"/><j/><s n="DEK"/><s n="INS"/><s n="PH"/></r>
+        </p>
+      </e>
+      <e>
+        <p>
+          <l>tzenotaz</l>
+          <r><j/><s n="DEK"/><s n="GEN"/><s n="MG"/><j/><s n="DEK"/><s n="INS"/><s n="PH"/></r>
+        </p>
+      </e>
+      <e>
+        <p>
+          <l>tzenotaz</l>
+          <r><j/><s n="DEK"/><s n="GEN"/><s n="MG"/><s n="ELI"/><j/><s n="DEK"/><s n="INS"/><s n="PH"/></r>
+        </p>
+      </e>
+      <e>
+        <p>
+          <l>tzeni</l>
+          <r><j/><s n="DEK"/><s n="GEN"/><s n="NUMP"/><j/><s n="DEK"/><s n="DAT"/><s n="MG"/></r>
+        </p>
+      </e>
+      <e>
+        <p>
+          <l>tzeni</l>
+          <r><j/><s n="DEK"/><s n="GEN"/><s n="MG"/><j/><s n="DEK"/><s n="DAT"/><s n="MG"/></r>
+        </p>
+      </e>
+      <e>
+        <p>
+          <l>tzenik</l>
+          <r><j/><s n="DEK"/><s n="GEN"/><s n="NUMP"/><j/><s n="DEK"/><s n="PAR"/><s n="MG"/></r>
+        </p>
+      </e>
+      <e>
+        <p>
+          <l>tzenik</l>
+          <r><j/><s n="DEK"/><s n="GEN"/><s n="MG"/><j/><s n="DEK"/><s n="PAR"/><s n="MG"/></r>
+        </p>
+      </e>
+      <e>
+        <p>
+          <l>tzenean</l>
+          <r><j/><s n="DEK"/><s n="GEN"/><s n="NUMP"/><j/><s n="DEK"/><s n="NUMS"/><j/><s n="DEK"/><s n="INE"/></r>
+        </p>
+      </e>
+      <e>
+        <p>
+          <l>tzenean</l>
+          <r><j/><s n="DEK"/><s n="GEN"/><s n="NUMP"/><s n="ELI"/><j/><s n="DEK"/><s n="NUMS"/><j/><s n="DEK"/><s n="INE"/></r>
+        </p>
+      </e>
+      <e>
+        <p>
+          <l>tzenean</l>
+          <r><j/><s n="DEK"/><s n="GEN"/><s n="MG"/><j/><s n="DEK"/><s n="NUMS"/><j/><s n="DEK"/><s n="INE"/></r>
+        </p>
+      </e>
+      <e>
+        <p>
+          <l>tzenean</l>
+          <r><j/><s n="DEK"/><s n="GEN"/><s n="MG"/><s n="ELI"/><j/><s n="DEK"/><s n="NUMS"/><j/><s n="DEK"/><s n="INE"/></r>
+        </p>
+      </e>
+      <e>
+        <p>
+          <l>tzeneraino</l>
+          <r><j/><s n="DEK"/><s n="GEN"/><s n="NUMP"/><j/><s n="DEK"/><s n="NUMS"/><j/><s n="DEK"/><s n="ABU"/></r>
+        </p>
+      </e>
+      <e>
+        <p>
+          <l>tzeneraino</l>
+          <r><j/><s n="DEK"/><s n="GEN"/><s n="NUMP"/><s n="ELI"/><j/><s n="DEK"/><s n="NUMS"/><j/><s n="DEK"/><s n="ABU"/></r>
+        </p>
+      </e>
+      <e>
+        <p>
+          <l>tzeneraino</l>
+          <r><j/><s n="DEK"/><s n="GEN"/><s n="MG"/><j/><s n="DEK"/><s n="NUMS"/><j/><s n="DEK"/><s n="ABU"/></r>
+        </p>
+      </e>
+      <e>
+        <p>
+          <l>tzeneraino</l>
+          <r><j/><s n="DEK"/><s n="GEN"/><s n="MG"/><s n="ELI"/><j/><s n="DEK"/><s n="NUMS"/><j/><s n="DEK"/><s n="ABU"/></r>
+        </p>
+      </e>
+      <e>
+        <p>
+          <l>tzenerantz</l>
+          <r><j/><s n="DEK"/><s n="GEN"/><s n="NUMP"/><j/><s n="DEK"/><s n="NUMS"/><j/><s n="DEK"/><s n="ABZ"/></r>
+        </p>
+      </e>
+      <e>
+        <p>
+          <l>tzenerantz</l>
+          <r><j/><s n="DEK"/><s n="GEN"/><s n="NUMP"/><s n="ELI"/><j/><s n="DEK"/><s n="NUMS"/><j/><s n="DEK"/><s n="ABZ"/></r>
+        </p>
+      </e>
+      <e>
+        <p>
+          <l>tzenerantz</l>
+          <r><j/><s n="DEK"/><s n="GEN"/><s n="MG"/><j/><s n="DEK"/><s n="NUMS"/><j/><s n="DEK"/><s n="ABZ"/></r>
+        </p>
+      </e>
+      <e>
+        <p>
+          <l>tzenerantz</l>
+          <r><j/><s n="DEK"/><s n="GEN"/><s n="MG"/><s n="ELI"/><j/><s n="DEK"/><s n="NUMS"/><j/><s n="DEK"/><s n="ABZ"/></r>
+        </p>
+      </e>
+      <e>
+        <p>
+          <l>tzenera</l>
+          <r><j/><s n="DEK"/><s n="GEN"/><s n="NUMP"/><j/><s n="DEK"/><s n="NUMS"/><j/><s n="DEK"/><s n="ALA"/></r>
+        </p>
+      </e>
+      <e>
+        <p>
+          <l>tzenera</l>
+          <r><j/><s n="DEK"/><s n="GEN"/><s n="NUMP"/><s n="ELI"/><j/><s n="DEK"/><s n="NUMS"/><j/><s n="DEK"/><s n="ALA"/></r>
+        </p>
+      </e>
+      <e>
+        <p>
+          <l>tzenera</l>
+          <r><j/><s n="DEK"/><s n="GEN"/><s n="MG"/><j/><s n="DEK"/><s n="NUMS"/><j/><s n="DEK"/><s n="ALA"/></r>
+        </p>
+      </e>
+      <e>
+        <p>
+          <l>tzenera</l>
+          <r><j/><s n="DEK"/><s n="GEN"/><s n="MG"/><s n="ELI"/><j/><s n="DEK"/><s n="NUMS"/><j/><s n="DEK"/><s n="ALA"/></r>
+        </p>
+      </e>
+      <e>
+        <p>
+          <l>tzenetik</l>
+          <r><j/><s n="DEK"/><s n="GEN"/><s n="NUMP"/><j/><s n="DEK"/><s n="NUMS"/><j/><s n="DEK"/><s n="ABL"/></r>
+        </p>
+      </e>
+      <e>
+        <p>
+          <l>tzenetik</l>
+          <r><j/><s n="DEK"/><s n="GEN"/><s n="NUMP"/><s n="ELI"/><j/><s n="DEK"/><s n="NUMS"/><j/><s n="DEK"/><s n="ABL"/></r>
+        </p>
+      </e>
+      <e>
+        <p>
+          <l>tzenetik</l>
+          <r><j/><s n="DEK"/><s n="GEN"/><s n="MG"/><j/><s n="DEK"/><s n="NUMS"/><j/><s n="DEK"/><s n="ABL"/></r>
+        </p>
+      </e>
+      <e>
+        <p>
+          <l>tzenetik</l>
+          <r><j/><s n="DEK"/><s n="GEN"/><s n="MG"/><s n="ELI"/><j/><s n="DEK"/><s n="NUMS"/><j/><s n="DEK"/><s n="ABL"/></r>
+        </p>
+      </e>
+      <e>
+        <p>
+          <l>tzgatik</l>
+          <r><j/><s n="DEK"/><s n="MOT"/></r>
+        </p>
+      </e>
+      <e>
+        <p>
+          <l>tzoi</l>
+          <r><j/><s n="DEK"/><s n="DAT"/><s n="PH"/></r>
+        </p>
+      </e>
+      <e>
+        <p>
+          <l>tzok</l>
+          <r><j/><s n="DEK"/><s n="ABS"/><s n="PH"/></r>
+        </p>
+      </e>
+      <e>
+        <p>
+          <l>tzok</l>
+          <r><j/><s n="DEK"/><s n="ERG"/><s n="PH"/></r>
+        </p>
+      </e>
+      <e>
+        <p>
+          <l>tzokin</l>
+          <r><j/><s n="DEK"/><s n="SOZ"/><s n="PH"/></r>
+        </p>
+      </e>
+      <e>
+        <p>
+          <l>tzokiko</l>
+          <r><j/><s n="DEK"/><s n="SOZ"/><s n="PH"/><j/><s n="DEK"/><s n="GEL"/></r>
+        </p>
+      </e>
+      <e>
+        <p>
+          <l>tzokiko</l>
+          <r><j/><s n="DEK"/><s n="SOZ"/><s n="PH"/><j/><s n="DEK"/><s n="GEL"/><j/><s n="DEK"/><s n="ABS"/><s n="MG"/></r>
+        </p>
+      </e>
+      <e>
+        <p>
+          <l>tzontzat</l>
+          <r><j/><s n="DEK"/><s n="DES"/><s n="PH"/></r>
+        </p>
+      </e>
+      <e>
+        <p>
+          <l>tzontzako</l>
+          <r><j/><s n="DEK"/><s n="DES"/><s n="PH"/><j/><s n="DEK"/><s n="GEL"/></r>
+        </p>
+      </e>
+      <e>
+        <p>
+          <l>tzontzako</l>
+          <r><j/><s n="DEK"/><s n="DES"/><s n="PH"/><j/><s n="DEK"/><s n="GEL"/><j/><s n="DEK"/><s n="ABS"/><s n="MG"/></r>
+        </p>
+      </e>
+      <e>
+        <p>
+          <l>tzotaz</l>
+          <r><j/><s n="DEK"/><s n="INS"/><s n="PH"/></r>
+        </p>
+      </e>
+      <e>
+        <p>
+          <l>tzotako</l>
+          <r><j/><s n="DEK"/><s n="PH"/><j/><s n="DEK"/><s n="GEL"/></r>
+        </p>
+      </e>
+      <e>
+        <p>
+          <l>tzotako</l>
+          <r><j/><s n="DEK"/><s n="PH"/><j/><s n="DEK"/><s n="GEL"/><j/><s n="DEK"/><s n="ABS"/><s n="MG"/></r>
+        </p>
+      </e>
+      <e>
+        <p>
+          <l>tzotaraino</l>
+          <r><j/><s n="DEK"/><s n="PH"/><j/><s n="DEK"/><s n="ABU"/></r>
+        </p>
+      </e>
+      <e>
+        <p>
+          <l>tzotarantz</l>
+          <r><j/><s n="DEK"/><s n="PH"/><j/><s n="DEK"/><s n="ABZ"/></r>
+        </p>
+      </e>
+      <e>
+        <p>
+          <l>tzotara</l>
+          <r><j/><s n="DEK"/><s n="PH"/><j/><s n="DEK"/><s n="ALA"/></r>
+        </p>
+      </e>
+      <e>
+        <p>
+          <l>tzotatik</l>
+          <r><j/><s n="DEK"/><s n="PH"/><j/><s n="DEK"/><s n="ABL"/></r>
+        </p>
+      </e>
+      <e>
+        <p>
+          <l>tzotan</l>
+          <r><j/><s n="DEK"/><s n="PH"/><j/><s n="DEK"/><s n="INE"/></r>
+        </p>
+      </e>
+      <e>
+        <p>
+          <l>tzeko</l>
+          <r><j/><s n="DEK"/><s n="BNK"/><s n="MG"/></r>
+        </p>
+      </e>
+      <e>
+        <p>
+          <l>tzeko</l>
+          <r><j/><s n="DEK"/><s n="DESK"/></r>
+        </p>
+      </e>
+      <e>
+        <p>
+          <l>tzeko</l>
+          <r><j/><s n="DEK"/><s n="DESK"/><j/><s n="DEK"/><s n="ABS"/><s n="MG"/></r>
+        </p>
+      </e>
+      <e>
+        <p>
+          <l>tzeko</l>
+          <r><j/><s n="DEK"/><s n="NUMS"/><j/><s n="DEK"/><s n="GEL"/></r>
+        </p>
+      </e>
+      <e>
+        <p>
+          <l>tzeko</l>
+          <r><j/><s n="DEK"/><s n="NUMS"/><j/><s n="DEK"/><s n="GEL"/><j/><s n="DEK"/><s n="ABS"/><s n="MG"/></r>
+        </p>
+      </e>
+      <e>
+        <p>
+          <l>tzekoa</l>
+          <r><j/><s n="DEK"/><s n="DESK"/><j/><s n="DEK"/><s n="ABS"/><s n="NUMS"/></r>
+        </p>
+      </e>
+      <e>
+        <p>
+          <l>tzekoa</l>
+          <r><j/><s n="DEK"/><s n="NUMS"/><j/><s n="DEK"/><s n="GEL"/><j/><s n="DEK"/><s n="ABS"/><s n="NUMS"/></r>
+        </p>
+      </e>
+      <e>
+        <p>
+          <l>tzekoa</l>
+          <r><j/><s n="DEK"/><s n="NUMS"/><j/><s n="DEK"/><s n="GEL"/><s n="ELI"/><j/><s n="DEK"/><s n="ABS"/><s n="NUMS"/></r>
+        </p>
+      </e>
+      <e>
+        <p>
+          <l>tzekoak</l>
+          <r><j/><s n="DEK"/><s n="DESK"/><j/><s n="DEK"/><s n="ABS"/><s n="NUMP"/></r>
+        </p>
+      </e>
+      <e>
+        <p>
+          <l>tzekoak</l>
+          <r><j/><s n="DEK"/><s n="DESK"/><j/><s n="DEK"/><s n="ERG"/><s n="NUMS"/></r>
+        </p>
+      </e>
+      <e>
+        <p>
+          <l>tzekoak</l>
+          <r><j/><s n="DEK"/><s n="NUMS"/><j/><s n="DEK"/><s n="GEL"/><j/><s n="DEK"/><s n="ABS"/><s n="NUMP"/></r>
+        </p>
+      </e>
+      <e>
+        <p>
+          <l>tzekoak</l>
+          <r><j/><s n="DEK"/><s n="NUMS"/><j/><s n="DEK"/><s n="GEL"/><j/><s n="DEK"/><s n="ERG"/><s n="NUMS"/></r>
+        </p>
+      </e>
+      <e>
+        <p>
+          <l>tzekoak</l>
+          <r><j/><s n="DEK"/><s n="NUMS"/><j/><s n="DEK"/><s n="GEL"/><s n="ELI"/><j/><s n="DEK"/><s n="ABS"/><s n="NUMP"/></r>
+        </p>
+      </e>
+      <e>
+        <p>
+          <l>tzekoak</l>
+          <r><j/><s n="DEK"/><s n="NUMS"/><j/><s n="DEK"/><s n="GEL"/><s n="ELI"/><j/><s n="DEK"/><s n="ERG"/><s n="NUMS"/></r>
+        </p>
+      </e>
+      <e>
+        <p>
+          <l>tzekoarekin</l>
+          <r><j/><s n="DEK"/><s n="DESK"/><j/><s n="DEK"/><s n="SOZ"/><s n="NUMS"/></r>
+        </p>
+      </e>
+      <e>
+        <p>
+          <l>tzekoarekin</l>
+          <r><j/><s n="DEK"/><s n="NUMS"/><j/><s n="DEK"/><s n="GEL"/><j/><s n="DEK"/><s n="SOZ"/><s n="NUMS"/></r>
+        </p>
+      </e>
+      <e>
+        <p>
+          <l>tzekoarekin</l>
+          <r><j/><s n="DEK"/><s n="NUMS"/><j/><s n="DEK"/><s n="GEL"/><s n="ELI"/><j/><s n="DEK"/><s n="SOZ"/><s n="NUMS"/></r>
+        </p>
+      </e>
+      <e>
+        <p>
+          <l>tzekoarentzat</l>
+          <r><j/><s n="DEK"/><s n="DESK"/><j/><s n="DEK"/><s n="DES"/><s n="NUMS"/></r>
+        </p>
+      </e>
+      <e>
+        <p>
+          <l>tzekoarentzat</l>
+          <r><j/><s n="DEK"/><s n="DESK"/><j/><s n="DEK"/><s n="GEN"/><s n="NUMS"/><j/><s n="DEK"/><s n="PRO"/><s n="MG"/></r>
+        </p>
+      </e>
+      <e>
+        <p>
+          <l>tzekoarentzat</l>
+          <r><j/><s n="DEK"/><s n="NUMS"/><j/><s n="DEK"/><s n="GEL"/><j/><s n="DEK"/><s n="DES"/><s n="NUMS"/></r>
+        </p>
+      </e>
+      <e>
+        <p>
+          <l>tzekoarentzat</l>
+          <r><j/><s n="DEK"/><s n="NUMS"/><j/><s n="DEK"/><s n="GEL"/><j/><s n="DEK"/><s n="GEN"/><s n="NUMS"/><j/><s n="DEK"/><s n="PRO"/><s n="MG"/></r>
+        </p>
+      </e>
+      <e>
+        <p>
+          <l>tzekoarentzat</l>
+          <r><j/><s n="DEK"/><s n="NUMS"/><j/><s n="DEK"/><s n="GEL"/><s n="ELI"/><j/><s n="DEK"/><s n="DES"/><s n="NUMS"/></r>
+        </p>
+      </e>
+      <e>
+        <p>
+          <l>tzekoarentzat</l>
+          <r><j/><s n="DEK"/><s n="NUMS"/><j/><s n="DEK"/><s n="GEL"/><s n="ELI"/><j/><s n="DEK"/><s n="GEN"/><s n="NUMS"/><j/><s n="DEK"/><s n="PRO"/><s n="MG"/></r>
+        </p>
+      </e>
+      <e>
+        <p>
+          <l>tzekoari</l>
+          <r><j/><s n="DEK"/><s n="DESK"/><j/><s n="DEK"/><s n="DAT"/><s n="NUMS"/></r>
+        </p>
+      </e>
+      <e>
+        <p>
+          <l>tzekoari</l>
+          <r><j/><s n="DEK"/><s n="NUMS"/><j/><s n="DEK"/><s n="GEL"/><j/><s n="DEK"/><s n="DAT"/><s n="NUMS"/></r>
+        </p>
+      </e>
+      <e>
+        <p>
+          <l>tzekoari</l>
+          <r><j/><s n="DEK"/><s n="NUMS"/><j/><s n="DEK"/><s n="GEL"/><s n="ELI"/><j/><s n="DEK"/><s n="DAT"/><s n="NUMS"/></r>
+        </p>
+      </e>
+      <e>
+        <p>
+          <l>tzekoaz</l>
+          <r><j/><s n="DEK"/><s n="DESK"/><j/><s n="DEK"/><s n="INS"/><s n="NUMS"/></r>
+        </p>
+      </e>
+      <e>
+        <p>
+          <l>tzekoaz</l>
+          <r><j/><s n="DEK"/><s n="NUMS"/><j/><s n="DEK"/><s n="GEL"/><j/><s n="DEK"/><s n="INS"/><s n="NUMS"/></r>
+        </p>
+      </e>
+      <e>
+        <p>
+          <l>tzekoaz</l>
+          <r><j/><s n="DEK"/><s n="NUMS"/><j/><s n="DEK"/><s n="GEL"/><s n="ELI"/><j/><s n="DEK"/><s n="INS"/><s n="NUMS"/></r>
+        </p>
+      </e>
+      <e>
+        <p>
+          <l>tzekoei</l>
+          <r><j/><s n="DEK"/><s n="DESK"/><j/><s n="DEK"/><s n="DAT"/><s n="NUMP"/></r>
+        </p>
+      </e>
+      <e>
+        <p>
+          <l>tzekoei</l>
+          <r><j/><s n="DEK"/><s n="NUMS"/><j/><s n="DEK"/><s n="GEL"/><j/><s n="DEK"/><s n="DAT"/><s n="NUMP"/></r>
+        </p>
+      </e>
+      <e>
+        <p>
+          <l>tzekoei</l>
+          <r><j/><s n="DEK"/><s n="NUMS"/><j/><s n="DEK"/><s n="GEL"/><s n="ELI"/><j/><s n="DEK"/><s n="DAT"/><s n="NUMP"/></r>
+        </p>
+      </e>
+      <e>
+        <p>
+          <l>tzekoek</l>
+          <r><j/><s n="DEK"/><s n="DESK"/><j/><s n="DEK"/><s n="ERG"/><s n="NUMP"/></r>
+        </p>
+      </e>
+      <e>
+        <p>
+          <l>tzekoek</l>
+          <r><j/><s n="DEK"/><s n="NUMS"/><j/><s n="DEK"/><s n="GEL"/><j/><s n="DEK"/><s n="ERG"/><s n="NUMP"/></r>
+        </p>
+      </e>
+      <e>
+        <p>
+          <l>tzekoek</l>
+          <r><j/><s n="DEK"/><s n="NUMS"/><j/><s n="DEK"/><s n="GEL"/><s n="ELI"/><j/><s n="DEK"/><s n="ERG"/><s n="NUMP"/></r>
+        </p>
+      </e>
+      <e>
+        <p>
+          <l>tzekoekin</l>
+          <r><j/><s n="DEK"/><s n="DESK"/><j/><s n="DEK"/><s n="SOZ"/><s n="NUMP"/></r>
+        </p>
+      </e>
+      <e>
+        <p>
+          <l>tzekoekin</l>
+          <r><j/><s n="DEK"/><s n="NUMS"/><j/><s n="DEK"/><s n="GEL"/><j/><s n="DEK"/><s n="SOZ"/><s n="NUMP"/></r>
+        </p>
+      </e>
+      <e>
+        <p>
+          <l>tzekoekin</l>
+          <r><j/><s n="DEK"/><s n="NUMS"/><j/><s n="DEK"/><s n="GEL"/><s n="ELI"/><j/><s n="DEK"/><s n="SOZ"/><s n="NUMP"/></r>
+        </p>
+      </e>
+      <e>
+        <p>
+          <l>tzekoentzat</l>
+          <r><j/><s n="DEK"/><s n="DESK"/><j/><s n="DEK"/><s n="DES"/><s n="NUMP"/></r>
+        </p>
+      </e>
+      <e>
+        <p>
+          <l>tzekoentzat</l>
+          <r><j/><s n="DEK"/><s n="DESK"/><j/><s n="DEK"/><s n="GEN"/><s n="NUMP"/><j/><s n="DEK"/><s n="PRO"/><s n="MG"/></r>
+        </p>
+      </e>
+      <e>
+        <p>
+          <l>tzekoentzat</l>
+          <r><j/><s n="DEK"/><s n="NUMS"/><j/><s n="DEK"/><s n="GEL"/><j/><s n="DEK"/><s n="DES"/><s n="NUMP"/></r>
+        </p>
+      </e>
+      <e>
+        <p>
+          <l>tzekoentzat</l>
+          <r><j/><s n="DEK"/><s n="NUMS"/><j/><s n="DEK"/><s n="GEL"/><j/><s n="DEK"/><s n="GEN"/><s n="NUMP"/><j/><s n="DEK"/><s n="PRO"/><s n="MG"/></r>
+        </p>
+      </e>
+      <e>
+        <p>
+          <l>tzekoentzat</l>
+          <r><j/><s n="DEK"/><s n="NUMS"/><j/><s n="DEK"/><s n="GEL"/><s n="ELI"/><j/><s n="DEK"/><s n="DES"/><s n="NUMP"/></r>
+        </p>
+      </e>
+      <e>
+        <p>
+          <l>tzekoentzat</l>
+          <r><j/><s n="DEK"/><s n="NUMS"/><j/><s n="DEK"/><s n="GEL"/><s n="ELI"/><j/><s n="DEK"/><s n="GEN"/><s n="NUMP"/><j/><s n="DEK"/><s n="PRO"/><s n="MG"/></r>
+        </p>
+      </e>
+      <e>
+        <p>
+          <l>tzekoetaz</l>
+          <r><j/><s n="DEK"/><s n="DESK"/><j/><s n="DEK"/><s n="INS"/><s n="NUMP"/></r>
+        </p>
+      </e>
+      <e>
+        <p>
+          <l>tzekoetaz</l>
+          <r><j/><s n="DEK"/><s n="NUMS"/><j/><s n="DEK"/><s n="GEL"/><j/><s n="DEK"/><s n="INS"/><s n="NUMP"/></r>
+        </p>
+      </e>
+      <e>
+        <p>
+          <l>tzekoetaz</l>
+          <r><j/><s n="DEK"/><s n="NUMS"/><j/><s n="DEK"/><s n="GEL"/><s n="ELI"/><j/><s n="DEK"/><s n="INS"/><s n="NUMP"/></r>
+        </p>
+      </e>
+      <e>
+        <p>
+          <l>tzekoetaraino</l>
+          <r><j/><s n="DEK"/><s n="DESK"/><j/><s n="DEK"/><s n="NUMP"/><j/><s n="DEK"/><s n="ABU"/></r>
+        </p>
+      </e>
+      <e>
+        <p>
+          <l>tzekoetaraino</l>
+          <r><j/><s n="DEK"/><s n="NUMS"/><j/><s n="DEK"/><s n="GEL"/><j/><s n="DEK"/><s n="NUMP"/><j/><s n="DEK"/><s n="ABU"/></r>
+        </p>
+      </e>
+      <e>
+        <p>
+          <l>tzekoetaraino</l>
+          <r><j/><s n="DEK"/><s n="NUMS"/><j/><s n="DEK"/><s n="GEL"/><s n="ELI"/><j/><s n="DEK"/><s n="NUMP"/><j/><s n="DEK"/><s n="ABU"/></r>
+        </p>
+      </e>
+      <e>
+        <p>
+          <l>tzekoetarantz</l>
+          <r><j/><s n="DEK"/><s n="DESK"/><j/><s n="DEK"/><s n="NUMP"/><j/><s n="DEK"/><s n="ABZ"/></r>
+        </p>
+      </e>
+      <e>
+        <p>
+          <l>tzekoetarantz</l>
+          <r><j/><s n="DEK"/><s n="NUMS"/><j/><s n="DEK"/><s n="GEL"/><j/><s n="DEK"/><s n="NUMP"/><j/><s n="DEK"/><s n="ABZ"/></r>
+        </p>
+      </e>
+      <e>
+        <p>
+          <l>tzekoetarantz</l>
+          <r><j/><s n="DEK"/><s n="NUMS"/><j/><s n="DEK"/><s n="GEL"/><s n="ELI"/><j/><s n="DEK"/><s n="NUMP"/><j/><s n="DEK"/><s n="ABZ"/></r>
+        </p>
+      </e>
+      <e>
+        <p>
+          <l>tzekoetara</l>
+          <r><j/><s n="DEK"/><s n="DESK"/><j/><s n="DEK"/><s n="NUMP"/><j/><s n="DEK"/><s n="ALA"/></r>
+        </p>
+      </e>
+      <e>
+        <p>
+          <l>tzekoetara</l>
+          <r><j/><s n="DEK"/><s n="NUMS"/><j/><s n="DEK"/><s n="GEL"/><j/><s n="DEK"/><s n="NUMP"/><j/><s n="DEK"/><s n="ALA"/></r>
+        </p>
+      </e>
+      <e>
+        <p>
+          <l>tzekoetara</l>
+          <r><j/><s n="DEK"/><s n="NUMS"/><j/><s n="DEK"/><s n="GEL"/><s n="ELI"/><j/><s n="DEK"/><s n="NUMP"/><j/><s n="DEK"/><s n="ALA"/></r>
+        </p>
+      </e>
+      <e>
+        <p>
+          <l>tzekoetatik</l>
+          <r><j/><s n="DEK"/><s n="DESK"/><j/><s n="DEK"/><s n="NUMP"/><j/><s n="DEK"/><s n="ABL"/></r>
+        </p>
+      </e>
+      <e>
+        <p>
+          <l>tzekoetatik</l>
+          <r><j/><s n="DEK"/><s n="NUMS"/><j/><s n="DEK"/><s n="GEL"/><j/><s n="DEK"/><s n="NUMP"/><j/><s n="DEK"/><s n="ABL"/></r>
+        </p>
+      </e>
+      <e>
+        <p>
+          <l>tzekoetatik</l>
+          <r><j/><s n="DEK"/><s n="NUMS"/><j/><s n="DEK"/><s n="GEL"/><s n="ELI"/><j/><s n="DEK"/><s n="NUMP"/><j/><s n="DEK"/><s n="ABL"/></r>
+        </p>
+      </e>
+      <e>
+        <p>
+          <l>tzekoetan</l>
+          <r><j/><s n="DEK"/><s n="DESK"/><j/><s n="DEK"/><s n="NUMP"/><j/><s n="DEK"/><s n="INE"/></r>
+        </p>
+      </e>
+      <e>
+        <p>
+          <l>tzekoetan</l>
+          <r><j/><s n="DEK"/><s n="NUMS"/><j/><s n="DEK"/><s n="GEL"/><j/><s n="DEK"/><s n="NUMP"/><j/><s n="DEK"/><s n="INE"/></r>
+        </p>
+      </e>
+      <e>
+        <p>
+          <l>tzekoetan</l>
+          <r><j/><s n="DEK"/><s n="NUMS"/><j/><s n="DEK"/><s n="GEL"/><s n="ELI"/><j/><s n="DEK"/><s n="NUMP"/><j/><s n="DEK"/><s n="INE"/></r>
+        </p>
+      </e>
+      <e>
+        <p>
+          <l>tzekoez</l>
+          <r><j/><s n="DEK"/><s n="DESK"/><j/><s n="DEK"/><s n="INS"/><s n="NUMP"/></r>
+        </p>
+      </e>
+      <e>
+        <p>
+          <l>tzekoez</l>
+          <r><j/><s n="DEK"/><s n="NUMS"/><j/><s n="DEK"/><s n="GEL"/><j/><s n="DEK"/><s n="INS"/><s n="NUMP"/></r>
+        </p>
+      </e>
+      <e>
+        <p>
+          <l>tzekoez</l>
+          <r><j/><s n="DEK"/><s n="NUMS"/><j/><s n="DEK"/><s n="GEL"/><s n="ELI"/><j/><s n="DEK"/><s n="INS"/><s n="NUMP"/></r>
+        </p>
+      </e>
+      <e>
+        <p>
+          <l>tzekogatik</l>
+          <r><j/><s n="DEK"/><s n="DESK"/><j/><s n="DEK"/><s n="MOT"/></r>
+        </p>
+      </e>
+      <e>
+        <p>
+          <l>tzekogatik</l>
+          <r><j/><s n="DEK"/><s n="NUMS"/><j/><s n="DEK"/><s n="GEL"/><j/><s n="DEK"/><s n="MOT"/></r>
+        </p>
+      </e>
+      <e>
+        <p>
+          <l>tzekooi</l>
+          <r><j/><s n="DEK"/><s n="DESK"/><j/><s n="DEK"/><s n="DAT"/><s n="PH"/></r>
+        </p>
+      </e>
+      <e>
+        <p>
+          <l>tzekooi</l>
+          <r><j/><s n="DEK"/><s n="NUMS"/><j/><s n="DEK"/><s n="GEL"/><j/><s n="DEK"/><s n="DAT"/><s n="PH"/></r>
+        </p>
+      </e>
+      <e>
+        <p>
+          <l>tzekooi</l>
+          <r><j/><s n="DEK"/><s n="NUMS"/><j/><s n="DEK"/><s n="GEL"/><s n="ELI"/><j/><s n="DEK"/><s n="DAT"/><s n="PH"/></r>
+        </p>
+      </e>
+      <e>
+        <p>
+          <l>tzekook</l>
+          <r><j/><s n="DEK"/><s n="DESK"/><j/><s n="DEK"/><s n="ABS"/><s n="PH"/></r>
+        </p>
+      </e>
+      <e>
+        <p>
+          <l>tzekook</l>
+          <r><j/><s n="DEK"/><s n="DESK"/><j/><s n="DEK"/><s n="ERG"/><s n="PH"/></r>
+        </p>
+      </e>
+      <e>
+        <p>
+          <l>tzekook</l>
+          <r><j/><s n="DEK"/><s n="NUMS"/><j/><s n="DEK"/><s n="GEL"/><j/><s n="DEK"/><s n="ABS"/><s n="PH"/></r>
+        </p>
+      </e>
+      <e>
+        <p>
+          <l>tzekook</l>
+          <r><j/><s n="DEK"/><s n="NUMS"/><j/><s n="DEK"/><s n="GEL"/><j/><s n="DEK"/><s n="ERG"/><s n="PH"/></r>
+        </p>
+      </e>
+      <e>
+        <p>
+          <l>tzekook</l>
+          <r><j/><s n="DEK"/><s n="NUMS"/><j/><s n="DEK"/><s n="GEL"/><s n="ELI"/><j/><s n="DEK"/><s n="ABS"/><s n="PH"/></r>
+        </p>
+      </e>
+      <e>
+        <p>
+          <l>tzekook</l>
+          <r><j/><s n="DEK"/><s n="NUMS"/><j/><s n="DEK"/><s n="GEL"/><s n="ELI"/><j/><s n="DEK"/><s n="ERG"/><s n="PH"/></r>
+        </p>
+      </e>
+      <e>
+        <p>
+          <l>tzekookin</l>
+          <r><j/><s n="DEK"/><s n="DESK"/><j/><s n="DEK"/><s n="SOZ"/><s n="PH"/></r>
+        </p>
+      </e>
+      <e>
+        <p>
+          <l>tzekookin</l>
+          <r><j/><s n="DEK"/><s n="NUMS"/><j/><s n="DEK"/><s n="GEL"/><j/><s n="DEK"/><s n="SOZ"/><s n="PH"/></r>
+        </p>
+      </e>
+      <e>
+        <p>
+          <l>tzekookin</l>
+          <r><j/><s n="DEK"/><s n="NUMS"/><j/><s n="DEK"/><s n="GEL"/><s n="ELI"/><j/><s n="DEK"/><s n="SOZ"/><s n="PH"/></r>
+        </p>
+      </e>
+      <e>
+        <p>
+          <l>tzekoontzat</l>
+          <r><j/><s n="DEK"/><s n="DESK"/><j/><s n="DEK"/><s n="DES"/><s n="PH"/></r>
+        </p>
+      </e>
+      <e>
+        <p>
+          <l>tzekoontzat</l>
+          <r><j/><s n="DEK"/><s n="NUMS"/><j/><s n="DEK"/><s n="GEL"/><j/><s n="DEK"/><s n="DES"/><s n="PH"/></r>
+        </p>
+      </e>
+      <e>
+        <p>
+          <l>tzekoontzat</l>
+          <r><j/><s n="DEK"/><s n="NUMS"/><j/><s n="DEK"/><s n="GEL"/><s n="ELI"/><j/><s n="DEK"/><s n="DES"/><s n="PH"/></r>
+        </p>
+      </e>
+      <e>
+        <p>
+          <l>tzekootaz</l>
+          <r><j/><s n="DEK"/><s n="DESK"/><j/><s n="DEK"/><s n="INS"/><s n="PH"/></r>
+        </p>
+      </e>
+      <e>
+        <p>
+          <l>tzekootaz</l>
+          <r><j/><s n="DEK"/><s n="NUMS"/><j/><s n="DEK"/><s n="GEL"/><j/><s n="DEK"/><s n="INS"/><s n="PH"/></r>
+        </p>
+      </e>
+      <e>
+        <p>
+          <l>tzekootaz</l>
+          <r><j/><s n="DEK"/><s n="NUMS"/><j/><s n="DEK"/><s n="GEL"/><s n="ELI"/><j/><s n="DEK"/><s n="INS"/><s n="PH"/></r>
+        </p>
+      </e>
+      <e>
+        <p>
+          <l>tzekotzat</l>
+          <r><j/><s n="DEK"/><s n="DESK"/><j/><s n="DEK"/><s n="PRO"/><s n="MG"/></r>
+        </p>
+      </e>
+      <e>
+        <p>
+          <l>tzekotzat</l>
+          <r><j/><s n="DEK"/><s n="NUMS"/><j/><s n="DEK"/><s n="GEL"/><j/><s n="DEK"/><s n="PRO"/><s n="MG"/></r>
+        </p>
+      </e>
+      <e>
+        <p>
+          <l>tzekok</l>
+          <r><j/><s n="DEK"/><s n="DESK"/><j/><s n="DEK"/><s n="ERG"/><s n="MG"/></r>
+        </p>
+      </e>
+      <e>
+        <p>
+          <l>tzekok</l>
+          <r><j/><s n="DEK"/><s n="NUMS"/><j/><s n="DEK"/><s n="GEL"/><j/><s n="DEK"/><s n="ERG"/><s n="MG"/></r>
+        </p>
+      </e>
+      <e>
+        <p>
+          <l>tzekotaraino</l>
+          <r><j/><s n="DEK"/><s n="DESK"/><j/><s n="DEK"/><s n="MG"/><j/><s n="DEK"/><s n="ABU"/></r>
+        </p>
+      </e>
+      <e>
+        <p>
+          <l>tzekotaraino</l>
+          <r><j/><s n="DEK"/><s n="NUMS"/><j/><s n="DEK"/><s n="GEL"/><j/><s n="DEK"/><s n="MG"/><j/><s n="DEK"/><s n="ABU"/></r>
+        </p>
+      </e>
+      <e>
+        <p>
+          <l>tzekotarantz</l>
+          <r><j/><s n="DEK"/><s n="DESK"/><j/><s n="DEK"/><s n="MG"/><j/><s n="DEK"/><s n="ABZ"/></r>
+        </p>
+      </e>
+      <e>
+        <p>
+          <l>tzekotarantz</l>
+          <r><j/><s n="DEK"/><s n="NUMS"/><j/><s n="DEK"/><s n="GEL"/><j/><s n="DEK"/><s n="MG"/><j/><s n="DEK"/><s n="ABZ"/></r>
+        </p>
+      </e>
+      <e>
+        <p>
+          <l>tzekotara</l>
+          <r><j/><s n="DEK"/><s n="DESK"/><j/><s n="DEK"/><s n="MG"/><j/><s n="DEK"/><s n="ALA"/></r>
+        </p>
+      </e>
+      <e>
+        <p>
+          <l>tzekotara</l>
+          <r><j/><s n="DEK"/><s n="NUMS"/><j/><s n="DEK"/><s n="GEL"/><j/><s n="DEK"/><s n="MG"/><j/><s n="DEK"/><s n="ALA"/></r>
+        </p>
+      </e>
+      <e>
+        <p>
+          <l>tzekotatik</l>
+          <r><j/><s n="DEK"/><s n="DESK"/><j/><s n="DEK"/><s n="MG"/><j/><s n="DEK"/><s n="ABL"/></r>
+        </p>
+      </e>
+      <e>
+        <p>
+          <l>tzekotatik</l>
+          <r><j/><s n="DEK"/><s n="NUMS"/><j/><s n="DEK"/><s n="GEL"/><j/><s n="DEK"/><s n="MG"/><j/><s n="DEK"/><s n="ABL"/></r>
+        </p>
+      </e>
+      <e>
+        <p>
+          <l>tzekotan</l>
+          <r><j/><s n="DEK"/><s n="DESK"/><j/><s n="DEK"/><s n="MG"/><j/><s n="DEK"/><s n="INE"/></r>
+        </p>
+      </e>
+      <e>
+        <p>
+          <l>tzekotan</l>
+          <r><j/><s n="DEK"/><s n="NUMS"/><j/><s n="DEK"/><s n="GEL"/><j/><s n="DEK"/><s n="MG"/><j/><s n="DEK"/><s n="INE"/></r>
+        </p>
+      </e>
+      <e>
+        <p>
+          <l>tzekoz</l>
+          <r><j/><s n="DEK"/><s n="DESK"/><j/><s n="DEK"/><s n="INS"/><s n="MG"/></r>
+        </p>
+      </e>
+      <e>
+        <p>
+          <l>tzekoz</l>
+          <r><j/><s n="DEK"/><s n="NUMS"/><j/><s n="DEK"/><s n="GEL"/><j/><s n="DEK"/><s n="INS"/><s n="MG"/></r>
+        </p>
+      </e>
+      <e>
+        <p>
+          <l>tzekorekin</l>
+          <r><j/><s n="DEK"/><s n="DESK"/><j/><s n="DEK"/><s n="SOZ"/><s n="MG"/></r>
+        </p>
+      </e>
+      <e>
+        <p>
+          <l>tzekorekin</l>
+          <r><j/><s n="DEK"/><s n="NUMS"/><j/><s n="DEK"/><s n="GEL"/><j/><s n="DEK"/><s n="SOZ"/><s n="MG"/></r>
+        </p>
+      </e>
+      <e>
+        <p>
+          <l>tzekorentzat</l>
+          <r><j/><s n="DEK"/><s n="DESK"/><j/><s n="DEK"/><s n="DES"/><s n="MG"/></r>
+        </p>
+      </e>
+      <e>
+        <p>
+          <l>tzekorentzat</l>
+          <r><j/><s n="DEK"/><s n="DESK"/><j/><s n="DEK"/><s n="GEN"/><s n="MG"/><j/><s n="DEK"/><s n="PRO"/><s n="MG"/></r>
+        </p>
+      </e>
+      <e>
+        <p>
+          <l>tzekorentzat</l>
+          <r><j/><s n="DEK"/><s n="NUMS"/><j/><s n="DEK"/><s n="GEL"/><j/><s n="DEK"/><s n="DES"/><s n="MG"/></r>
+        </p>
+      </e>
+      <e>
+        <p>
+          <l>tzekorentzat</l>
+          <r><j/><s n="DEK"/><s n="NUMS"/><j/><s n="DEK"/><s n="GEL"/><j/><s n="DEK"/><s n="GEN"/><s n="MG"/><j/><s n="DEK"/><s n="PRO"/><s n="MG"/></r>
+        </p>
+      </e>
+      <e>
+        <p>
+          <l>tzekori</l>
+          <r><j/><s n="DEK"/><s n="DESK"/><j/><s n="DEK"/><s n="DAT"/><s n="MG"/></r>
+        </p>
+      </e>
+      <e>
+        <p>
+          <l>tzekori</l>
+          <r><j/><s n="DEK"/><s n="NUMS"/><j/><s n="DEK"/><s n="GEL"/><j/><s n="DEK"/><s n="DAT"/><s n="MG"/></r>
+        </p>
+      </e>
+      <e>
+        <p>
+          <l>tzekorik</l>
+          <r><j/><s n="DEK"/><s n="DESK"/><j/><s n="DEK"/><s n="PAR"/><s n="MG"/></r>
+        </p>
+      </e>
+      <e>
+        <p>
+          <l>tzekorik</l>
+          <r><j/><s n="DEK"/><s n="NUMS"/><j/><s n="DEK"/><s n="GEL"/><j/><s n="DEK"/><s n="PAR"/><s n="MG"/></r>
+        </p>
+      </e>
+      <e>
+        <p>
+          <l>tzekoan</l>
+          <r><j/><s n="DEK"/><s n="DESK"/><j/><s n="DEK"/><s n="NUMS"/><j/><s n="DEK"/><s n="INE"/></r>
+        </p>
+      </e>
+      <e>
+        <p>
+          <l>tzekoan</l>
+          <r><j/><s n="DEK"/><s n="NUMS"/><j/><s n="DEK"/><s n="GEL"/><j/><s n="DEK"/><s n="NUMS"/><j/><s n="DEK"/><s n="INE"/></r>
+        </p>
+      </e>
+      <e>
+        <p>
+          <l>tzekoan</l>
+          <r><j/><s n="DEK"/><s n="NUMS"/><j/><s n="DEK"/><s n="GEL"/><s n="ELI"/><j/><s n="DEK"/><s n="NUMS"/><j/><s n="DEK"/><s n="INE"/></r>
+        </p>
+      </e>
+      <e>
+        <p>
+          <l>tzekoraino</l>
+          <r><j/><s n="DEK"/><s n="DESK"/><j/><s n="DEK"/><s n="NUMS"/><j/><s n="DEK"/><s n="ABU"/></r>
+        </p>
+      </e>
+      <e>
+        <p>
+          <l>tzekoraino</l>
+          <r><j/><s n="DEK"/><s n="NUMS"/><j/><s n="DEK"/><s n="GEL"/><j/><s n="DEK"/><s n="NUMS"/><j/><s n="DEK"/><s n="ABU"/></r>
+        </p>
+      </e>
+      <e>
+        <p>
+          <l>tzekoraino</l>
+          <r><j/><s n="DEK"/><s n="NUMS"/><j/><s n="DEK"/><s n="GEL"/><s n="ELI"/><j/><s n="DEK"/><s n="NUMS"/><j/><s n="DEK"/><s n="ABU"/></r>
+        </p>
+      </e>
+      <e>
+        <p>
+          <l>tzekorantz</l>
+          <r><j/><s n="DEK"/><s n="DESK"/><j/><s n="DEK"/><s n="NUMS"/><j/><s n="DEK"/><s n="ABZ"/></r>
+        </p>
+      </e>
+      <e>
+        <p>
+          <l>tzekorantz</l>
+          <r><j/><s n="DEK"/><s n="NUMS"/><j/><s n="DEK"/><s n="GEL"/><j/><s n="DEK"/><s n="NUMS"/><j/><s n="DEK"/><s n="ABZ"/></r>
+        </p>
+      </e>
+      <e>
+        <p>
+          <l>tzekorantz</l>
+          <r><j/><s n="DEK"/><s n="NUMS"/><j/><s n="DEK"/><s n="GEL"/><s n="ELI"/><j/><s n="DEK"/><s n="NUMS"/><j/><s n="DEK"/><s n="ABZ"/></r>
+        </p>
+      </e>
+      <e>
+        <p>
+          <l>tzekora</l>
+          <r><j/><s n="DEK"/><s n="DESK"/><j/><s n="DEK"/><s n="NUMS"/><j/><s n="DEK"/><s n="ALA"/></r>
+        </p>
+      </e>
+      <e>
+        <p>
+          <l>tzekora</l>
+          <r><j/><s n="DEK"/><s n="NUMS"/><j/><s n="DEK"/><s n="GEL"/><j/><s n="DEK"/><s n="NUMS"/><j/><s n="DEK"/><s n="ALA"/></r>
+        </p>
+      </e>
+      <e>
+        <p>
+          <l>tzekora</l>
+          <r><j/><s n="DEK"/><s n="NUMS"/><j/><s n="DEK"/><s n="GEL"/><s n="ELI"/><j/><s n="DEK"/><s n="NUMS"/><j/><s n="DEK"/><s n="ALA"/></r>
+        </p>
+      </e>
+      <e>
+        <p>
+          <l>tzekotik</l>
+          <r><j/><s n="DEK"/><s n="DESK"/><j/><s n="DEK"/><s n="NUMS"/><j/><s n="DEK"/><s n="ABL"/></r>
+        </p>
+      </e>
+      <e>
+        <p>
+          <l>tzekotik</l>
+          <r><j/><s n="DEK"/><s n="NUMS"/><j/><s n="DEK"/><s n="GEL"/><j/><s n="DEK"/><s n="NUMS"/><j/><s n="DEK"/><s n="ABL"/></r>
+        </p>
+      </e>
+      <e>
+        <p>
+          <l>tzekotik</l>
+          <r><j/><s n="DEK"/><s n="NUMS"/><j/><s n="DEK"/><s n="GEL"/><s n="ELI"/><j/><s n="DEK"/><s n="NUMS"/><j/><s n="DEK"/><s n="ABL"/></r>
+        </p>
+      </e>
+      <e>
+        <p>
+          <l>tzezko</l>
+          <r><j/><s n="DEK"/><s n="INS"/><s n="MG"/><j/><s n="DEK"/><s n="GEL"/></r>
+        </p>
+      </e>
+      <e>
+        <p>
+          <l>tzezko</l>
+          <r><j/><s n="DEK"/><s n="INS"/><s n="MG"/><j/><s n="DEK"/><s n="GEL"/><j/><s n="DEK"/><s n="ABS"/><s n="MG"/></r>
+        </p>
+      </e>
+      <e>
+        <p>
+          <l>tzegatik</l>
+          <r><j/><s n="DEK"/><s n="GEN"/><s n="MG"/><j/><s n="DEK"/><s n="MOT"/></r>
+        </p>
+      </e>
+      <e>
+        <p>
+          <l>tzi</l>
+          <r><j/><s n="DEK"/><s n="DAT"/><s n="MG"/></r>
+        </p>
+      </e>
+      <e>
+        <p>
+          <l>tzik</l>
+          <r><j/><s n="DEK"/><s n="PAR"/><s n="MG"/></r>
+        </p>
+      </e>
+      <e>
+        <p>
+          <l>tzpe</l>
+          <r>pe<s n="ATZ"/><s n="IZE"/><s n="ARR"/><j/><s n="DEK"/><s n="ABS"/><s n="MG"/></r>
+        </p>
+      </e>
+      <e>
+        <p>
+          <l>tzpea</l>
+          <r>pe<s n="ATZ"/><s n="IZE"/><s n="ARR"/><j/><s n="DEK"/><s n="ABS"/><s n="NUMS"/></r>
+        </p>
+      </e>
+      <e>
+        <p>
+          <l>tzpeak</l>
+          <r>pe<s n="ATZ"/><s n="IZE"/><s n="ARR"/><j/><s n="DEK"/><s n="ABS"/><s n="NUMP"/></r>
+        </p>
+      </e>
+      <e>
+        <p>
+          <l>tzpeak</l>
+          <r>pe<s n="ATZ"/><s n="IZE"/><s n="ARR"/><j/><s n="DEK"/><s n="ERG"/><s n="NUMS"/></r>
+        </p>
+      </e>
+      <e>
+        <p>
+          <l>tzpearekin</l>
+          <r>pe<s n="ATZ"/><s n="IZE"/><s n="ARR"/><j/><s n="DEK"/><s n="SOZ"/><s n="NUMS"/></r>
+        </p>
+      </e>
+      <e>
+        <p>
+          <l>tzpearentzat</l>
+          <r>pe<s n="ATZ"/><s n="IZE"/><s n="ARR"/><j/><s n="DEK"/><s n="DES"/><s n="NUMS"/></r>
+        </p>
+      </e>
+      <e>
+        <p>
+          <l>tzpearentzat</l>
+          <r>pe<s n="ATZ"/><s n="IZE"/><s n="ARR"/><j/><s n="DEK"/><s n="GEN"/><s n="NUMS"/><j/><s n="DEK"/><s n="PRO"/><s n="MG"/></r>
+        </p>
+      </e>
+      <e>
+        <p>
+          <l>tzpearen</l>
+          <r>pe<s n="ATZ"/><s n="IZE"/><s n="ARR"/><j/><s n="DEK"/><s n="GEN"/><s n="NUMS"/></r>
+        </p>
+      </e>
+      <e>
+        <p>
+          <l>tzpearen</l>
+          <r>pe<s n="ATZ"/><s n="IZE"/><s n="ARR"/><j/><s n="DEK"/><s n="GEN"/><s n="NUMS"/><j/><s n="DEK"/><s n="ABS"/><s n="MG"/></r>
+        </p>
+      </e>
+      <e>
+        <p>
+          <l>tzpeari</l>
+          <r>pe<s n="ATZ"/><s n="IZE"/><s n="ARR"/><j/><s n="DEK"/><s n="DAT"/><s n="NUMS"/></r>
+        </p>
+      </e>
+      <e>
+        <p>
+          <l>tzpeaz</l>
+          <r>pe<s n="ATZ"/><s n="IZE"/><s n="ARR"/><j/><s n="DEK"/><s n="INS"/><s n="NUMS"/></r>
+        </p>
+      </e>
+      <e>
+        <p>
+          <l>tzpeei</l>
+          <r>pe<s n="ATZ"/><s n="IZE"/><s n="ARR"/><j/><s n="DEK"/><s n="DAT"/><s n="NUMP"/></r>
+        </p>
+      </e>
+      <e>
+        <p>
+          <l>tzpeek</l>
+          <r>pe<s n="ATZ"/><s n="IZE"/><s n="ARR"/><j/><s n="DEK"/><s n="ERG"/><s n="NUMP"/></r>
+        </p>
+      </e>
+      <e>
+        <p>
+          <l>tzpeekin</l>
+          <r>pe<s n="ATZ"/><s n="IZE"/><s n="ARR"/><j/><s n="DEK"/><s n="SOZ"/><s n="NUMP"/></r>
+        </p>
+      </e>
+      <e>
+        <p>
+          <l>tzpeentzat</l>
+          <r>pe<s n="ATZ"/><s n="IZE"/><s n="ARR"/><j/><s n="DEK"/><s n="DES"/><s n="NUMP"/></r>
+        </p>
+      </e>
+      <e>
+        <p>
+          <l>tzpeentzat</l>
+          <r>pe<s n="ATZ"/><s n="IZE"/><s n="ARR"/><j/><s n="DEK"/><s n="GEN"/><s n="NUMP"/><j/><s n="DEK"/><s n="PRO"/><s n="MG"/></r>
+        </p>
+      </e>
+      <e>
+        <p>
+          <l>tzpeetaz</l>
+          <r>pe<s n="ATZ"/><s n="IZE"/><s n="ARR"/><j/><s n="DEK"/><s n="INS"/><s n="NUMP"/></r>
+        </p>
+      </e>
+      <e>
+        <p>
+          <l>tzpeez</l>
+          <r>pe<s n="ATZ"/><s n="IZE"/><s n="ARR"/><j/><s n="DEK"/><s n="INS"/><s n="NUMP"/></r>
+        </p>
+      </e>
+      <e>
+        <p>
+          <l>tzpeen</l>
+          <r>pe<s n="ATZ"/><s n="IZE"/><s n="ARR"/><j/><s n="DEK"/><s n="GEN"/><s n="NUMP"/></r>
+        </p>
+      </e>
+      <e>
+        <p>
+          <l>tzpeen</l>
+          <r>pe<s n="ATZ"/><s n="IZE"/><s n="ARR"/><j/><s n="DEK"/><s n="GEN"/><s n="NUMP"/><j/><s n="DEK"/><s n="ABS"/><s n="MG"/></r>
+        </p>
+      </e>
+      <e>
+        <p>
+          <l>tzpegatik</l>
+          <r>pe<s n="ATZ"/><s n="IZE"/><s n="ARR"/><j/><s n="DEK"/><s n="MOT"/></r>
+        </p>
+      </e>
+      <e>
+        <p>
+          <l>tzpeoi</l>
+          <r>pe<s n="ATZ"/><s n="IZE"/><s n="ARR"/><j/><s n="DEK"/><s n="DAT"/><s n="PH"/></r>
+        </p>
+      </e>
+      <e>
+        <p>
+          <l>tzpeok</l>
+          <r>pe<s n="ATZ"/><s n="IZE"/><s n="ARR"/><j/><s n="DEK"/><s n="ABS"/><s n="PH"/></r>
+        </p>
+      </e>
+      <e>
+        <p>
+          <l>tzpeok</l>
+          <r>pe<s n="ATZ"/><s n="IZE"/><s n="ARR"/><j/><s n="DEK"/><s n="ERG"/><s n="PH"/></r>
+        </p>
+      </e>
+      <e>
+        <p>
+          <l>tzpeokin</l>
+          <r>pe<s n="ATZ"/><s n="IZE"/><s n="ARR"/><j/><s n="DEK"/><s n="SOZ"/><s n="PH"/></r>
+        </p>
+      </e>
+      <e>
+        <p>
+          <l>tzpeontzat</l>
+          <r>pe<s n="ATZ"/><s n="IZE"/><s n="ARR"/><j/><s n="DEK"/><s n="DES"/><s n="PH"/></r>
+        </p>
+      </e>
+      <e>
+        <p>
+          <l>tzpeotaz</l>
+          <r>pe<s n="ATZ"/><s n="IZE"/><s n="ARR"/><j/><s n="DEK"/><s n="INS"/><s n="PH"/></r>
+        </p>
+      </e>
+      <e>
+        <p>
+          <l>tzpetzat</l>
+          <r>pe<s n="ATZ"/><s n="IZE"/><s n="ARR"/><j/><s n="DEK"/><s n="PRO"/><s n="MG"/></r>
+        </p>
+      </e>
+      <e>
+        <p>
+          <l>tzpek</l>
+          <r>pe<s n="ATZ"/><s n="IZE"/><s n="ARR"/><j/><s n="DEK"/><s n="ERG"/><s n="MG"/></r>
+        </p>
+      </e>
+      <e>
+        <p>
+          <l>tzpez</l>
+          <r>pe<s n="ATZ"/><s n="IZE"/><s n="ARR"/><j/><s n="DEK"/><s n="INS"/><s n="MG"/></r>
+        </p>
+      </e>
+      <e>
+        <p>
+          <l>tzperekin</l>
+          <r>pe<s n="ATZ"/><s n="IZE"/><s n="ARR"/><j/><s n="DEK"/><s n="SOZ"/><s n="MG"/></r>
+        </p>
+      </e>
+      <e>
+        <p>
+          <l>tzperentzat</l>
+          <r>pe<s n="ATZ"/><s n="IZE"/><s n="ARR"/><j/><s n="DEK"/><s n="DES"/><s n="MG"/></r>
+        </p>
+      </e>
+      <e>
+        <p>
+          <l>tzperentzat</l>
+          <r>pe<s n="ATZ"/><s n="IZE"/><s n="ARR"/><j/><s n="DEK"/><s n="GEN"/><s n="MG"/><j/><s n="DEK"/><s n="PRO"/><s n="MG"/></r>
+        </p>
+      </e>
+      <e>
+        <p>
+          <l>tzperen</l>
+          <r>pe<s n="ATZ"/><s n="IZE"/><s n="ARR"/><j/><s n="DEK"/><s n="GEN"/><s n="MG"/></r>
+        </p>
+      </e>
+      <e>
+        <p>
+          <l>tzperen</l>
+          <r>pe<s n="ATZ"/><s n="IZE"/><s n="ARR"/><j/><s n="DEK"/><s n="GEN"/><s n="MG"/><j/><s n="DEK"/><s n="ABS"/><s n="MG"/></r>
+        </p>
+      </e>
+      <e>
+        <p>
+          <l>tzperi</l>
+          <r>pe<s n="ATZ"/><s n="IZE"/><s n="ARR"/><j/><s n="DEK"/><s n="DAT"/><s n="MG"/></r>
+        </p>
+      </e>
+      <e>
+        <p>
+          <l>tzperik</l>
+          <r>pe<s n="ATZ"/><s n="IZE"/><s n="ARR"/><j/><s n="DEK"/><s n="PAR"/><s n="MG"/></r>
+        </p>
+      </e>
+      <e>
+        <p>
+          <l>tzpean</l>
+          <r>pe<s n="ATZ"/><s n="IZE"/><s n="ARR"/><j/><s n="DEK"/><s n="NUMS"/><j/><s n="DEK"/><s n="INE"/></r>
+        </p>
+      </e>
+      <e>
+        <p>
+          <l>tzpeko</l>
+          <r>pe<s n="ATZ"/><s n="IZE"/><s n="ARR"/><j/><s n="DEK"/><s n="NUMS"/><j/><s n="DEK"/><s n="GEL"/></r>
+        </p>
+      </e>
+      <e>
+        <p>
+          <l>tzpeko</l>
+          <r>pe<s n="ATZ"/><s n="IZE"/><s n="ARR"/><j/><s n="DEK"/><s n="NUMS"/><j/><s n="DEK"/><s n="GEL"/><j/><s n="DEK"/><s n="ABS"/><s n="MG"/></r>
+        </p>
+      </e>
+      <e>
+        <p>
+          <l>tzperaino</l>
+          <r>pe<s n="ATZ"/><s n="IZE"/><s n="ARR"/><j/><s n="DEK"/><s n="NUMS"/><j/><s n="DEK"/><s n="ABU"/></r>
+        </p>
+      </e>
+      <e>
+        <p>
+          <l>tzperantz</l>
+          <r>pe<s n="ATZ"/><s n="IZE"/><s n="ARR"/><j/><s n="DEK"/><s n="NUMS"/><j/><s n="DEK"/><s n="ABZ"/></r>
+        </p>
+      </e>
+      <e>
+        <p>
+          <l>tzpera</l>
+          <r>pe<s n="ATZ"/><s n="IZE"/><s n="ARR"/><j/><s n="DEK"/><s n="NUMS"/><j/><s n="DEK"/><s n="ALA"/></r>
+        </p>
+      </e>
+      <e>
+        <p>
+          <l>tzpetik</l>
+          <r>pe<s n="ATZ"/><s n="IZE"/><s n="ARR"/><j/><s n="DEK"/><s n="NUMS"/><j/><s n="DEK"/><s n="ABL"/></r>
+        </p>
+      </e>
+      <e>
+        <p>
+          <l>tzean</l>
+          <r><j/><s n="DEK"/><s n="NUMS"/><j/><s n="DEK"/><s n="INE"/></r>
+        </p>
+      </e>
+      <e>
+        <p>
+          <l>tzekoago</l>
+          <r><j/><s n="DEK"/><s n="NUMS"/><j/><s n="DEK"/><s n="GEL"/><j/><s n="GRA"/><s n="KONP"/></r>
+        </p>
+      </e>
+      <e>
+        <p>
+          <l>tzekoago</l>
+          <r><j/><s n="DEK"/><s n="NUMS"/><j/><s n="DEK"/><s n="GEL"/><j/><s n="GRA"/><s n="KONP"/><j/><s n="DEK"/><s n="ABS"/><s n="MG"/></r>
+        </p>
+      </e>
+      <e>
+        <p>
+          <l>tzekoegi</l>
+          <r><j/><s n="DEK"/><s n="NUMS"/><j/><s n="DEK"/><s n="GEL"/><j/><s n="GRA"/><s n="GEHI"/></r>
+        </p>
+      </e>
+      <e>
+        <p>
+          <l>tzekoegi</l>
+          <r><j/><s n="DEK"/><s n="NUMS"/><j/><s n="DEK"/><s n="GEL"/><j/><s n="GRA"/><s n="GEHI"/><j/><s n="DEK"/><s n="ABS"/><s n="MG"/></r>
+        </p>
+      </e>
+      <e>
+        <p>
+          <l>tzeraino</l>
+          <r><j/><s n="DEK"/><s n="NUMS"/><j/><s n="DEK"/><s n="ABU"/></r>
+        </p>
+      </e>
+      <e>
+        <p>
+          <l>tzerainoko</l>
+          <r><j/><s n="DEK"/><s n="NUMS"/><j/><s n="DEK"/><s n="ABU"/><j/><s n="DEK"/><s n="GEL"/></r>
+        </p>
+      </e>
+      <e>
+        <p>
+          <l>tzerainoko</l>
+          <r><j/><s n="DEK"/><s n="NUMS"/><j/><s n="DEK"/><s n="ABU"/><j/><s n="DEK"/><s n="GEL"/><j/><s n="DEK"/><s n="ABS"/><s n="MG"/></r>
+        </p>
+      </e>
+      <e>
+        <p>
+          <l>tzerantz</l>
+          <r><j/><s n="DEK"/><s n="NUMS"/><j/><s n="DEK"/><s n="ABZ"/></r>
+        </p>
+      </e>
+      <e>
+        <p>
+          <l>tzerantzago</l>
+          <r><j/><s n="DEK"/><s n="NUMS"/><j/><s n="DEK"/><s n="ABZ"/><j/><s n="GRA"/><s n="KONP"/></r>
+        </p>
+      </e>
+      <e>
+        <p>
+          <l>tzerantzegi</l>
+          <r><j/><s n="DEK"/><s n="NUMS"/><j/><s n="DEK"/><s n="ABZ"/><j/><s n="GRA"/><s n="GEHI"/></r>
+        </p>
+      </e>
+      <e>
+        <p>
+          <l>tzeranzko</l>
+          <r><j/><s n="DEK"/><s n="NUMS"/><j/><s n="DEK"/><s n="ABZ"/><j/><s n="DEK"/><s n="GEL"/></r>
+        </p>
+      </e>
+      <e>
+        <p>
+          <l>tzeranzko</l>
+          <r><j/><s n="DEK"/><s n="NUMS"/><j/><s n="DEK"/><s n="ABZ"/><j/><s n="DEK"/><s n="GEL"/><j/><s n="DEK"/><s n="ABS"/><s n="MG"/></r>
+        </p>
+      </e>
+      <e>
+        <p>
+          <l>tzera</l>
+          <r><j/><s n="DEK"/><s n="NUMS"/><j/><s n="DEK"/><s n="ALA"/></r>
+        </p>
+      </e>
+      <e>
+        <p>
+          <l>tzerako</l>
+          <r><j/><s n="DEK"/><s n="NUMS"/><j/><s n="DEK"/><s n="ALA"/><j/><s n="DEK"/><s n="GEL"/></r>
+        </p>
+      </e>
+      <e>
+        <p>
+          <l>tzerako</l>
+          <r><j/><s n="DEK"/><s n="NUMS"/><j/><s n="DEK"/><s n="ALA"/><j/><s n="DEK"/><s n="GEL"/><j/><s n="DEK"/><s n="ABS"/><s n="MG"/></r>
+        </p>
+      </e>
+      <e>
+        <p>
+          <l>tzerago</l>
+          <r><j/><s n="DEK"/><s n="NUMS"/><j/><s n="DEK"/><s n="ALA"/><j/><s n="GRA"/><s n="KONP"/></r>
+        </p>
+      </e>
+      <e>
+        <p>
+          <l>tzetik</l>
+          <r><j/><s n="DEK"/><s n="NUMS"/><j/><s n="DEK"/><s n="ABL"/></r>
+        </p>
+      </e>
+      <e>
+        <p>
+          <l>tzetiko</l>
+          <r><j/><s n="DEK"/><s n="NUMS"/><j/><s n="DEK"/><s n="ABL"/><j/><s n="DEK"/><s n="GEL"/></r>
+        </p>
+      </e>
+      <e>
+        <p>
+          <l>tzetiko</l>
+          <r><j/><s n="DEK"/><s n="NUMS"/><j/><s n="DEK"/><s n="ABL"/><j/><s n="DEK"/><s n="GEL"/><j/><s n="DEK"/><s n="ABS"/><s n="MG"/></r>
+        </p>
+      </e>
+      <e>
+        <p>
+          <l>ztzat</l>
+          <r><j/><s n="DEK"/><s n="PRO"/><s n="MG"/></r>
+        </p>
+      </e>
+      <e>
+        <p>
+          <l>zdun</l>
+          <r>dun<s n="ATZ"/><s n="ADJ"/><s n="IZO"/></r>
+        </p>
+      </e>
+      <e>
+        <p>
+          <l>zdun</l>
+          <r>dun<s n="ATZ"/><s n="ADJ"/><s n="IZO"/><j/><s n="DEK"/><s n="ABS"/><s n="MG"/></r>
+        </p>
+      </e>
+      <e>
+        <p>
+          <l>zduna</l>
+          <r>dun<s n="ATZ"/><s n="ADJ"/><s n="IZO"/><j/><s n="DEK"/><s n="ABS"/><s n="NUMS"/></r>
+        </p>
+      </e>
+      <e>
+        <p>
+          <l>zdunago</l>
+          <r>dun<s n="ATZ"/><s n="ADJ"/><s n="IZO"/><j/><s n="GRA"/><s n="KONP"/></r>
+        </p>
+      </e>
+      <e>
+        <p>
+          <l>zdunago</l>
+          <r>dun<s n="ATZ"/><s n="ADJ"/><s n="IZO"/><j/><s n="GRA"/><s n="KONP"/><j/><s n="DEK"/><s n="ABS"/><s n="MG"/></r>
+        </p>
+      </e>
+      <e>
+        <p>
+          <l>zdunak</l>
+          <r>dun<s n="ATZ"/><s n="ADJ"/><s n="IZO"/><j/><s n="DEK"/><s n="ABS"/><s n="NUMP"/></r>
+        </p>
+      </e>
+      <e>
+        <p>
+          <l>zdunak</l>
+          <r>dun<s n="ATZ"/><s n="ADJ"/><s n="IZO"/><j/><s n="DEK"/><s n="ERG"/><s n="NUMS"/></r>
+        </p>
+      </e>
+      <e>
+        <p>
+          <l>zdunarekin</l>
+          <r>dun<s n="ATZ"/><s n="ADJ"/><s n="IZO"/><j/><s n="DEK"/><s n="SOZ"/><s n="NUMS"/></r>
+        </p>
+      </e>
+      <e>
+        <p>
+          <l>zdunarentzat</l>
+          <r>dun<s n="ATZ"/><s n="ADJ"/><s n="IZO"/><j/><s n="DEK"/><s n="DES"/><s n="NUMS"/></r>
+        </p>
+      </e>
+      <e>
+        <p>
+          <l>zdunarentzat</l>
+          <r>dun<s n="ATZ"/><s n="ADJ"/><s n="IZO"/><j/><s n="DEK"/><s n="GEN"/><s n="NUMS"/><j/><s n="DEK"/><s n="PRO"/><s n="MG"/></r>
+        </p>
+      </e>
+      <e>
+        <p>
+          <l>zdunaren</l>
+          <r>dun<s n="ATZ"/><s n="ADJ"/><s n="IZO"/><j/><s n="DEK"/><s n="GEN"/><s n="NUMS"/></r>
+        </p>
+      </e>
+      <e>
+        <p>
+          <l>zdunaren</l>
+          <r>dun<s n="ATZ"/><s n="ADJ"/><s n="IZO"/><j/><s n="DEK"/><s n="GEN"/><s n="NUMS"/><j/><s n="DEK"/><s n="ABS"/><s n="MG"/></r>
+        </p>
+      </e>
+      <e>
+        <p>
+          <l>zdunari</l>
+          <r>dun<s n="ATZ"/><s n="ADJ"/><s n="IZO"/><j/><s n="DEK"/><s n="DAT"/><s n="NUMS"/></r>
+        </p>
+      </e>
+      <e>
+        <p>
+          <l>zdunaz</l>
+          <r>dun<s n="ATZ"/><s n="ADJ"/><s n="IZO"/><j/><s n="DEK"/><s n="INS"/><s n="NUMS"/></r>
+        </p>
+      </e>
+      <e>
+        <p>
+          <l>zdunei</l>
+          <r>dun<s n="ATZ"/><s n="ADJ"/><s n="IZO"/><j/><s n="DEK"/><s n="DAT"/><s n="NUMP"/></r>
+        </p>
+      </e>
+      <e>
+        <p>
+          <l>zdunek</l>
+          <r>dun<s n="ATZ"/><s n="ADJ"/><s n="IZO"/><j/><s n="DEK"/><s n="ERG"/><s n="MG"/></r>
+        </p>
+      </e>
+      <e>
+        <p>
+          <l>zdunek</l>
+          <r>dun<s n="ATZ"/><s n="ADJ"/><s n="IZO"/><j/><s n="DEK"/><s n="ERG"/><s n="NUMP"/></r>
+        </p>
+      </e>
+      <e>
+        <p>
+          <l>zdunekin</l>
+          <r>dun<s n="ATZ"/><s n="ADJ"/><s n="IZO"/><j/><s n="DEK"/><s n="SOZ"/><s n="NUMP"/></r>
+        </p>
+      </e>
+      <e>
+        <p>
+          <l>zdunekin</l>
+          <r>dun<s n="ATZ"/><s n="ADJ"/><s n="IZO"/><j/><s n="DEK"/><s n="SOZ"/><s n="MG"/></r>
+        </p>
+      </e>
+      <e>
+        <p>
+          <l>zdunentzat</l>
+          <r>dun<s n="ATZ"/><s n="ADJ"/><s n="IZO"/><j/><s n="DEK"/><s n="DES"/><s n="NUMP"/></r>
+        </p>
+      </e>
+      <e>
+        <p>
+          <l>zdunentzat</l>
+          <r>dun<s n="ATZ"/><s n="ADJ"/><s n="IZO"/><j/><s n="DEK"/><s n="GEN"/><s n="NUMP"/><j/><s n="DEK"/><s n="PRO"/><s n="MG"/></r>
+        </p>
+      </e>
+      <e>
+        <p>
+          <l>zdunentzat</l>
+          <r>dun<s n="ATZ"/><s n="ADJ"/><s n="IZO"/><j/><s n="DEK"/><s n="DES"/><s n="MG"/></r>
+        </p>
+      </e>
+      <e>
+        <p>
+          <l>zdunentzat</l>
+          <r>dun<s n="ATZ"/><s n="ADJ"/><s n="IZO"/><j/><s n="DEK"/><s n="GEN"/><s n="MG"/><j/><s n="DEK"/><s n="PRO"/><s n="MG"/></r>
+        </p>
+      </e>
+      <e>
+        <p>
+          <l>zdunetaz</l>
+          <r>dun<s n="ATZ"/><s n="ADJ"/><s n="IZO"/><j/><s n="DEK"/><s n="INS"/><s n="NUMP"/></r>
+        </p>
+      </e>
+      <e>
+        <p>
+          <l>zdunetako</l>
+          <r>dun<s n="ATZ"/><s n="ADJ"/><s n="IZO"/><j/><s n="DEK"/><s n="MG"/><j/><s n="DEK"/><s n="GEL"/></r>
+        </p>
+      </e>
+      <e>
+        <p>
+          <l>zdunetako</l>
+          <r>dun<s n="ATZ"/><s n="ADJ"/><s n="IZO"/><j/><s n="DEK"/><s n="MG"/><j/><s n="DEK"/><s n="GEL"/><j/><s n="DEK"/><s n="ABS"/><s n="MG"/></r>
+        </p>
+      </e>
+      <e>
+        <p>
+          <l>zdunetako</l>
+          <r>dun<s n="ATZ"/><s n="ADJ"/><s n="IZO"/><j/><s n="DEK"/><s n="NUMP"/><j/><s n="DEK"/><s n="GEL"/></r>
+        </p>
+      </e>
+      <e>
+        <p>
+          <l>zdunetako</l>
+          <r>dun<s n="ATZ"/><s n="ADJ"/><s n="IZO"/><j/><s n="DEK"/><s n="NUMP"/><j/><s n="DEK"/><s n="GEL"/><j/><s n="DEK"/><s n="ABS"/><s n="MG"/></r>
+        </p>
+      </e>
+      <e>
+        <p>
+          <l>zdunetaraino</l>
+          <r>dun<s n="ATZ"/><s n="ADJ"/><s n="IZO"/><j/><s n="DEK"/><s n="MG"/><j/><s n="DEK"/><s n="ABU"/></r>
+        </p>
+      </e>
+      <e>
+        <p>
+          <l>zdunetaraino</l>
+          <r>dun<s n="ATZ"/><s n="ADJ"/><s n="IZO"/><j/><s n="DEK"/><s n="NUMP"/><j/><s n="DEK"/><s n="ABU"/></r>
+        </p>
+      </e>
+      <e>
+        <p>
+          <l>zdunetarantz</l>
+          <r>dun<s n="ATZ"/><s n="ADJ"/><s n="IZO"/><j/><s n="DEK"/><s n="MG"/><j/><s n="DEK"/><s n="ABZ"/></r>
+        </p>
+      </e>
+      <e>
+        <p>
+          <l>zdunetarantz</l>
+          <r>dun<s n="ATZ"/><s n="ADJ"/><s n="IZO"/><j/><s n="DEK"/><s n="NUMP"/><j/><s n="DEK"/><s n="ABZ"/></r>
+        </p>
+      </e>
+      <e>
+        <p>
+          <l>zdunetara</l>
+          <r>dun<s n="ATZ"/><s n="ADJ"/><s n="IZO"/><j/><s n="DEK"/><s n="MG"/><j/><s n="DEK"/><s n="ALA"/></r>
+        </p>
+      </e>
+      <e>
+        <p>
+          <l>zdunetara</l>
+          <r>dun<s n="ATZ"/><s n="ADJ"/><s n="IZO"/><j/><s n="DEK"/><s n="NUMP"/><j/><s n="DEK"/><s n="ALA"/></r>
+        </p>
+      </e>
+      <e>
+        <p>
+          <l>zdunetatik</l>
+          <r>dun<s n="ATZ"/><s n="ADJ"/><s n="IZO"/><j/><s n="DEK"/><s n="MG"/><j/><s n="DEK"/><s n="ABL"/></r>
+        </p>
+      </e>
+      <e>
+        <p>
+          <l>zdunetatik</l>
+          <r>dun<s n="ATZ"/><s n="ADJ"/><s n="IZO"/><j/><s n="DEK"/><s n="NUMP"/><j/><s n="DEK"/><s n="ABL"/></r>
+        </p>
+      </e>
+      <e>
+        <p>
+          <l>zdunetan</l>
+          <r>dun<s n="ATZ"/><s n="ADJ"/><s n="IZO"/><j/><s n="DEK"/><s n="MG"/><j/><s n="DEK"/><s n="INE"/></r>
+        </p>
+      </e>
+      <e>
+        <p>
+          <l>zdunetan</l>
+          <r>dun<s n="ATZ"/><s n="ADJ"/><s n="IZO"/><j/><s n="DEK"/><s n="NUMP"/><j/><s n="DEK"/><s n="INE"/></r>
+        </p>
+      </e>
+      <e>
+        <p>
+          <l>zdunez</l>
+          <r>dun<s n="ATZ"/><s n="ADJ"/><s n="IZO"/><j/><s n="DEK"/><s n="INS"/><s n="MG"/></r>
+        </p>
+      </e>
+      <e>
+        <p>
+          <l>zdunez</l>
+          <r>dun<s n="ATZ"/><s n="ADJ"/><s n="IZO"/><j/><s n="DEK"/><s n="INS"/><s n="NUMP"/></r>
+        </p>
+      </e>
+      <e>
+        <p>
+          <l>zdunen</l>
+          <r>dun<s n="ATZ"/><s n="ADJ"/><s n="IZO"/><j/><s n="DEK"/><s n="GEN"/><s n="NUMP"/></r>
+        </p>
+      </e>
+      <e>
+        <p>
+          <l>zdunen</l>
+          <r>dun<s n="ATZ"/><s n="ADJ"/><s n="IZO"/><j/><s n="DEK"/><s n="GEN"/><s n="NUMP"/><j/><s n="DEK"/><s n="ABS"/><s n="MG"/></r>
+        </p>
+      </e>
+      <e>
+        <p>
+          <l>zdunen</l>
+          <r>dun<s n="ATZ"/><s n="ADJ"/><s n="IZO"/><j/><s n="DEK"/><s n="GEN"/><s n="MG"/></r>
+        </p>
+      </e>
+      <e>
+        <p>
+          <l>zdunen</l>
+          <r>dun<s n="ATZ"/><s n="ADJ"/><s n="IZO"/><j/><s n="DEK"/><s n="GEN"/><s n="MG"/><j/><s n="DEK"/><s n="ABS"/><s n="MG"/></r>
+        </p>
+      </e>
+      <e>
+        <p>
+          <l>zdungatik</l>
+          <r>dun<s n="ATZ"/><s n="ADJ"/><s n="IZO"/><j/><s n="DEK"/><s n="MOT"/></r>
+        </p>
+      </e>
+      <e>
+        <p>
+          <l>zdunoi</l>
+          <r>dun<s n="ATZ"/><s n="ADJ"/><s n="IZO"/><j/><s n="DEK"/><s n="DAT"/><s n="PH"/></r>
+        </p>
+      </e>
+      <e>
+        <p>
+          <l>zdunok</l>
+          <r>dun<s n="ATZ"/><s n="ADJ"/><s n="IZO"/><j/><s n="DEK"/><s n="ABS"/><s n="PH"/></r>
+        </p>
+      </e>
+      <e>
+        <p>
+          <l>zdunok</l>
+          <r>dun<s n="ATZ"/><s n="ADJ"/><s n="IZO"/><j/><s n="DEK"/><s n="ERG"/><s n="PH"/></r>
+        </p>
+      </e>
+      <e>
+        <p>
+          <l>zdunokin</l>
+          <r>dun<s n="ATZ"/><s n="ADJ"/><s n="IZO"/><j/><s n="DEK"/><s n="SOZ"/><s n="PH"/></r>
+        </p>
+      </e>
+      <e>
+        <p>
+          <l>zdunontzat</l>
+          <r>dun<s n="ATZ"/><s n="ADJ"/><s n="IZO"/><j/><s n="DEK"/><s n="DES"/><s n="PH"/></r>
+        </p>
+      </e>
+      <e>
+        <p>
+          <l>zdunotaz</l>
+          <r>dun<s n="ATZ"/><s n="ADJ"/><s n="IZO"/><j/><s n="DEK"/><s n="INS"/><s n="PH"/></r>
+        </p>
+      </e>
+      <e>
+        <p>
+          <l>zduntzat</l>
+          <r>dun<s n="ATZ"/><s n="ADJ"/><s n="IZO"/><j/><s n="DEK"/><s n="PRO"/><s n="MG"/></r>
+        </p>
+      </e>
+      <e>
+        <p>
+          <l>zduni</l>
+          <r>dun<s n="ATZ"/><s n="ADJ"/><s n="IZO"/><j/><s n="DEK"/><s n="DAT"/><s n="MG"/></r>
+        </p>
+      </e>
+      <e>
+        <p>
+          <l>zdunik</l>
+          <r>dun<s n="ATZ"/><s n="ADJ"/><s n="IZO"/><j/><s n="DEK"/><s n="PAR"/><s n="MG"/></r>
+        </p>
+      </e>
+      <e>
+        <p>
+          <l>zdunean</l>
+          <r>dun<s n="ATZ"/><s n="ADJ"/><s n="IZO"/><j/><s n="DEK"/><s n="NUMS"/><j/><s n="DEK"/><s n="INE"/></r>
+        </p>
+      </e>
+      <e>
+        <p>
+          <l>zduneko</l>
+          <r>dun<s n="ATZ"/><s n="ADJ"/><s n="IZO"/><j/><s n="DEK"/><s n="NUMS"/><j/><s n="DEK"/><s n="GEL"/></r>
+        </p>
+      </e>
+      <e>
+        <p>
+          <l>zduneko</l>
+          <r>dun<s n="ATZ"/><s n="ADJ"/><s n="IZO"/><j/><s n="DEK"/><s n="NUMS"/><j/><s n="DEK"/><s n="GEL"/><j/><s n="DEK"/><s n="ABS"/><s n="MG"/></r>
+        </p>
+      </e>
+      <e>
+        <p>
+          <l>zduneraino</l>
+          <r>dun<s n="ATZ"/><s n="ADJ"/><s n="IZO"/><j/><s n="DEK"/><s n="NUMS"/><j/><s n="DEK"/><s n="ABU"/></r>
+        </p>
+      </e>
+      <e>
+        <p>
+          <l>zdunerantz</l>
+          <r>dun<s n="ATZ"/><s n="ADJ"/><s n="IZO"/><j/><s n="DEK"/><s n="NUMS"/><j/><s n="DEK"/><s n="ABZ"/></r>
+        </p>
+      </e>
+      <e>
+        <p>
+          <l>zdunera</l>
+          <r>dun<s n="ATZ"/><s n="ADJ"/><s n="IZO"/><j/><s n="DEK"/><s n="NUMS"/><j/><s n="DEK"/><s n="ALA"/></r>
+        </p>
+      </e>
+      <e>
+        <p>
+          <l>zdunetik</l>
+          <r>dun<s n="ATZ"/><s n="ADJ"/><s n="IZO"/><j/><s n="DEK"/><s n="NUMS"/><j/><s n="DEK"/><s n="ABL"/></r>
+        </p>
+      </e>
+      <e>
+        <p>
+          <l>zka</l>
+          <r>ka<s n="ATZ"/><s n="ADB"/><s n="ADOARR"/></r>
+        </p>
+      </e>
+      <e>
+        <p>
+          <l>zkako</l>
+          <r>ka<s n="ATZ"/><s n="ADB"/><s n="ADOARR"/><j/><s n="DEK"/><s n="GEL"/></r>
+        </p>
+      </e>
+      <e>
+        <p>
+          <l>zkako</l>
+          <r>ka<s n="ATZ"/><s n="ADB"/><s n="ADOARR"/><j/><s n="DEK"/><s n="GEL"/><j/><s n="DEK"/><s n="ABS"/><s n="MG"/></r>
+        </p>
+      </e>
+      <e>
+        <p>
+          <l>ztsu</l>
+          <r>tsu<s n="ATZ"/><s n="ADJ"/><s n="IZO"/></r>
+        </p>
+      </e>
+      <e>
+        <p>
+          <l>ztsu</l>
+          <r>tsu<s n="ATZ"/><s n="ADJ"/><s n="IZO"/><j/><s n="DEK"/><s n="ABS"/><s n="MG"/></r>
+        </p>
+      </e>
+      <e>
+        <p>
+          <l>ztsua</l>
+          <r>tsu<s n="ATZ"/><s n="ADJ"/><s n="IZO"/><j/><s n="DEK"/><s n="ABS"/><s n="NUMS"/></r>
+        </p>
+      </e>
+      <e>
+        <p>
+          <l>ztsuago</l>
+          <r>tsu<s n="ATZ"/><s n="ADJ"/><s n="IZO"/><j/><s n="GRA"/><s n="KONP"/></r>
+        </p>
+      </e>
+      <e>
+        <p>
+          <l>ztsuago</l>
+          <r>tsu<s n="ATZ"/><s n="ADJ"/><s n="IZO"/><j/><s n="GRA"/><s n="KONP"/><j/><s n="DEK"/><s n="ABS"/><s n="MG"/></r>
+        </p>
+      </e>
+      <e>
+        <p>
+          <l>ztsuak</l>
+          <r>tsu<s n="ATZ"/><s n="ADJ"/><s n="IZO"/><j/><s n="DEK"/><s n="ABS"/><s n="NUMP"/></r>
+        </p>
+      </e>
+      <e>
+        <p>
+          <l>ztsuak</l>
+          <r>tsu<s n="ATZ"/><s n="ADJ"/><s n="IZO"/><j/><s n="DEK"/><s n="ERG"/><s n="NUMS"/></r>
+        </p>
+      </e>
+      <e>
+        <p>
+          <l>ztsuarekin</l>
+          <r>tsu<s n="ATZ"/><s n="ADJ"/><s n="IZO"/><j/><s n="DEK"/><s n="SOZ"/><s n="NUMS"/></r>
+        </p>
+      </e>
+      <e>
+        <p>
+          <l>ztsuarentzat</l>
+          <r>tsu<s n="ATZ"/><s n="ADJ"/><s n="IZO"/><j/><s n="DEK"/><s n="DES"/><s n="NUMS"/></r>
+        </p>
+      </e>
+      <e>
+        <p>
+          <l>ztsuarentzat</l>
+          <r>tsu<s n="ATZ"/><s n="ADJ"/><s n="IZO"/><j/><s n="DEK"/><s n="GEN"/><s n="NUMS"/><j/><s n="DEK"/><s n="PRO"/><s n="MG"/></r>
+        </p>
+      </e>
+      <e>
+        <p>
+          <l>ztsuaren</l>
+          <r>tsu<s n="ATZ"/><s n="ADJ"/><s n="IZO"/><j/><s n="DEK"/><s n="GEN"/><s n="NUMS"/></r>
+        </p>
+      </e>
+      <e>
+        <p>
+          <l>ztsuaren</l>
+          <r>tsu<s n="ATZ"/><s n="ADJ"/><s n="IZO"/><j/><s n="DEK"/><s n="GEN"/><s n="NUMS"/><j/><s n="DEK"/><s n="ABS"/><s n="MG"/></r>
+        </p>
+      </e>
+      <e>
+        <p>
+          <l>ztsuari</l>
+          <r>tsu<s n="ATZ"/><s n="ADJ"/><s n="IZO"/><j/><s n="DEK"/><s n="DAT"/><s n="NUMS"/></r>
+        </p>
+      </e>
+      <e>
+        <p>
+          <l>ztsuaz</l>
+          <r>tsu<s n="ATZ"/><s n="ADJ"/><s n="IZO"/><j/><s n="DEK"/><s n="INS"/><s n="NUMS"/></r>
+        </p>
+      </e>
+      <e>
+        <p>
+          <l>ztsuegi</l>
+          <r>tsu<s n="ATZ"/><s n="ADJ"/><s n="IZO"/><j/><s n="GRA"/><s n="GEHI"/></r>
+        </p>
+      </e>
+      <e>
+        <p>
+          <l>ztsuegi</l>
+          <r>tsu<s n="ATZ"/><s n="ADJ"/><s n="IZO"/><j/><s n="GRA"/><s n="GEHI"/><j/><s n="DEK"/><s n="ABS"/><s n="MG"/></r>
+        </p>
+      </e>
+      <e>
+        <p>
+          <l>ztsuei</l>
+          <r>tsu<s n="ATZ"/><s n="ADJ"/><s n="IZO"/><j/><s n="DEK"/><s n="DAT"/><s n="NUMP"/></r>
+        </p>
+      </e>
+      <e>
+        <p>
+          <l>ztsuek</l>
+          <r>tsu<s n="ATZ"/><s n="ADJ"/><s n="IZO"/><j/><s n="DEK"/><s n="ERG"/><s n="NUMP"/></r>
+        </p>
+      </e>
+      <e>
+        <p>
+          <l>ztsuekin</l>
+          <r>tsu<s n="ATZ"/><s n="ADJ"/><s n="IZO"/><j/><s n="DEK"/><s n="SOZ"/><s n="NUMP"/></r>
+        </p>
+      </e>
+      <e>
+        <p>
+          <l>ztsuen</l>
+          <r>tsu<s n="ATZ"/><s n="ADJ"/><s n="IZO"/><j/><s n="DEK"/><s n="GEN"/><s n="NUMP"/></r>
+        </p>
+      </e>
+      <e>
+        <p>
+          <l>ztsuen</l>
+          <r>tsu<s n="ATZ"/><s n="ADJ"/><s n="IZO"/><j/><s n="DEK"/><s n="GEN"/><s n="NUMP"/><j/><s n="DEK"/><s n="ABS"/><s n="MG"/></r>
+        </p>
+      </e>
+      <e>
+        <p>
+          <l>ztsuen</l>
+          <r>tsu<s n="ATZ"/><s n="ADJ"/><s n="IZO"/><j/><s n="GRA"/><s n="SUP"/></r>
+        </p>
+      </e>
+      <e>
+        <p>
+          <l>ztsuen</l>
+          <r>tsu<s n="ATZ"/><s n="ADJ"/><s n="IZO"/><j/><s n="GRA"/><s n="SUP"/><j/><s n="DEK"/><s n="ABS"/><s n="MG"/></r>
+        </p>
+      </e>
+      <e>
+        <p>
+          <l>ztsuentzat</l>
+          <r>tsu<s n="ATZ"/><s n="ADJ"/><s n="IZO"/><j/><s n="DEK"/><s n="DES"/><s n="NUMP"/></r>
+        </p>
+      </e>
+      <e>
+        <p>
+          <l>ztsuentzat</l>
+          <r>tsu<s n="ATZ"/><s n="ADJ"/><s n="IZO"/><j/><s n="DEK"/><s n="GEN"/><s n="NUMP"/><j/><s n="DEK"/><s n="PRO"/><s n="MG"/></r>
+        </p>
+      </e>
+      <e>
+        <p>
+          <l>ztsuentzat</l>
+          <r>tsu<s n="ATZ"/><s n="ADJ"/><s n="IZO"/><j/><s n="GRA"/><s n="SUP"/><j/><s n="DEK"/><s n="PRO"/><s n="MG"/></r>
+        </p>
+      </e>
+      <e>
+        <p>
+          <l>ztsuetaz</l>
+          <r>tsu<s n="ATZ"/><s n="ADJ"/><s n="IZO"/><j/><s n="DEK"/><s n="INS"/><s n="NUMP"/></r>
+        </p>
+      </e>
+      <e>
+        <p>
+          <l>ztsuetako</l>
+          <r>tsu<s n="ATZ"/><s n="ADJ"/><s n="IZO"/><j/><s n="DEK"/><s n="NUMP"/><j/><s n="DEK"/><s n="GEL"/></r>
+        </p>
+      </e>
+      <e>
+        <p>
+          <l>ztsuetako</l>
+          <r>tsu<s n="ATZ"/><s n="ADJ"/><s n="IZO"/><j/><s n="DEK"/><s n="NUMP"/><j/><s n="DEK"/><s n="GEL"/><j/><s n="DEK"/><s n="ABS"/><s n="MG"/></r>
+        </p>
+      </e>
+      <e>
+        <p>
+          <l>ztsuetaraino</l>
+          <r>tsu<s n="ATZ"/><s n="ADJ"/><s n="IZO"/><j/><s n="DEK"/><s n="NUMP"/><j/><s n="DEK"/><s n="ABU"/></r>
+        </p>
+      </e>
+      <e>
+        <p>
+          <l>ztsuetarantz</l>
+          <r>tsu<s n="ATZ"/><s n="ADJ"/><s n="IZO"/><j/><s n="DEK"/><s n="NUMP"/><j/><s n="DEK"/><s n="ABZ"/></r>
+        </p>
+      </e>
+      <e>
+        <p>
+          <l>ztsuetara</l>
+          <r>tsu<s n="ATZ"/><s n="ADJ"/><s n="IZO"/><j/><s n="DEK"/><s n="NUMP"/><j/><s n="DEK"/><s n="ALA"/></r>
+        </p>
+      </e>
+      <e>
+        <p>
+          <l>ztsuetatik</l>
+          <r>tsu<s n="ATZ"/><s n="ADJ"/><s n="IZO"/><j/><s n="DEK"/><s n="NUMP"/><j/><s n="DEK"/><s n="ABL"/></r>
+        </p>
+      </e>
+      <e>
+        <p>
+          <l>ztsuetan</l>
+          <r>tsu<s n="ATZ"/><s n="ADJ"/><s n="IZO"/><j/><s n="DEK"/><s n="NUMP"/><j/><s n="DEK"/><s n="INE"/></r>
+        </p>
+      </e>
+      <e>
+        <p>
+          <l>ztsuez</l>
+          <r>tsu<s n="ATZ"/><s n="ADJ"/><s n="IZO"/><j/><s n="DEK"/><s n="INS"/><s n="NUMP"/></r>
+        </p>
+      </e>
+      <e>
+        <p>
+          <l>ztsugatik</l>
+          <r>tsu<s n="ATZ"/><s n="ADJ"/><s n="IZO"/><j/><s n="DEK"/><s n="MOT"/></r>
+        </p>
+      </e>
+      <e>
+        <p>
+          <l>ztsuoi</l>
+          <r>tsu<s n="ATZ"/><s n="ADJ"/><s n="IZO"/><j/><s n="DEK"/><s n="DAT"/><s n="PH"/></r>
+        </p>
+      </e>
+      <e>
+        <p>
+          <l>ztsuok</l>
+          <r>tsu<s n="ATZ"/><s n="ADJ"/><s n="IZO"/><j/><s n="DEK"/><s n="ABS"/><s n="PH"/></r>
+        </p>
+      </e>
+      <e>
+        <p>
+          <l>ztsuok</l>
+          <r>tsu<s n="ATZ"/><s n="ADJ"/><s n="IZO"/><j/><s n="DEK"/><s n="ERG"/><s n="PH"/></r>
+        </p>
+      </e>
+      <e>
+        <p>
+          <l>ztsuokin</l>
+          <r>tsu<s n="ATZ"/><s n="ADJ"/><s n="IZO"/><j/><s n="DEK"/><s n="SOZ"/><s n="PH"/></r>
+        </p>
+      </e>
+      <e>
+        <p>
+          <l>ztsuontzat</l>
+          <r>tsu<s n="ATZ"/><s n="ADJ"/><s n="IZO"/><j/><s n="DEK"/><s n="DES"/><s n="PH"/></r>
+        </p>
+      </e>
+      <e>
+        <p>
+          <l>ztsuotaz</l>
+          <r>tsu<s n="ATZ"/><s n="ADJ"/><s n="IZO"/><j/><s n="DEK"/><s n="INS"/><s n="PH"/></r>
+        </p>
+      </e>
+      <e>
+        <p>
+          <l>ztsutzat</l>
+          <r>tsu<s n="ATZ"/><s n="ADJ"/><s n="IZO"/><j/><s n="DEK"/><s n="PRO"/><s n="MG"/></r>
+        </p>
+      </e>
+      <e>
+        <p>
+          <l>ztsuk</l>
+          <r>tsu<s n="ATZ"/><s n="ADJ"/><s n="IZO"/><j/><s n="DEK"/><s n="ERG"/><s n="MG"/></r>
+        </p>
+      </e>
+      <e>
+        <p>
+          <l>ztsutako</l>
+          <r>tsu<s n="ATZ"/><s n="ADJ"/><s n="IZO"/><j/><s n="DEK"/><s n="MG"/><j/><s n="DEK"/><s n="GEL"/></r>
+        </p>
+      </e>
+      <e>
+        <p>
+          <l>ztsutako</l>
+          <r>tsu<s n="ATZ"/><s n="ADJ"/><s n="IZO"/><j/><s n="DEK"/><s n="MG"/><j/><s n="DEK"/><s n="GEL"/><j/><s n="DEK"/><s n="ABS"/><s n="MG"/></r>
+        </p>
+      </e>
+      <e>
+        <p>
+          <l>ztsutaraino</l>
+          <r>tsu<s n="ATZ"/><s n="ADJ"/><s n="IZO"/><j/><s n="DEK"/><s n="MG"/><j/><s n="DEK"/><s n="ABU"/></r>
+        </p>
+      </e>
+      <e>
+        <p>
+          <l>ztsutarantz</l>
+          <r>tsu<s n="ATZ"/><s n="ADJ"/><s n="IZO"/><j/><s n="DEK"/><s n="MG"/><j/><s n="DEK"/><s n="ABZ"/></r>
+        </p>
+      </e>
+      <e>
+        <p>
+          <l>ztsutara</l>
+          <r>tsu<s n="ATZ"/><s n="ADJ"/><s n="IZO"/><j/><s n="DEK"/><s n="MG"/><j/><s n="DEK"/><s n="ALA"/></r>
+        </p>
+      </e>
+      <e>
+        <p>
+          <l>ztsutatik</l>
+          <r>tsu<s n="ATZ"/><s n="ADJ"/><s n="IZO"/><j/><s n="DEK"/><s n="MG"/><j/><s n="DEK"/><s n="ABL"/></r>
+        </p>
+      </e>
+      <e>
+        <p>
+          <l>ztsutan</l>
+          <r>tsu<s n="ATZ"/><s n="ADJ"/><s n="IZO"/><j/><s n="DEK"/><s n="MG"/><j/><s n="DEK"/><s n="INE"/></r>
+        </p>
+      </e>
+      <e>
+        <p>
+          <l>ztsuz</l>
+          <r>tsu<s n="ATZ"/><s n="ADJ"/><s n="IZO"/><j/><s n="DEK"/><s n="INS"/><s n="MG"/></r>
+        </p>
+      </e>
+      <e>
+        <p>
+          <l>ztsurekin</l>
+          <r>tsu<s n="ATZ"/><s n="ADJ"/><s n="IZO"/><j/><s n="DEK"/><s n="SOZ"/><s n="MG"/></r>
+        </p>
+      </e>
+      <e>
+        <p>
+          <l>ztsurentzat</l>
+          <r>tsu<s n="ATZ"/><s n="ADJ"/><s n="IZO"/><j/><s n="DEK"/><s n="DES"/><s n="MG"/></r>
+        </p>
+      </e>
+      <e>
+        <p>
+          <l>ztsurentzat</l>
+          <r>tsu<s n="ATZ"/><s n="ADJ"/><s n="IZO"/><j/><s n="DEK"/><s n="GEN"/><s n="MG"/><j/><s n="DEK"/><s n="PRO"/><s n="MG"/></r>
+        </p>
+      </e>
+      <e>
+        <p>
+          <l>ztsuren</l>
+          <r>tsu<s n="ATZ"/><s n="ADJ"/><s n="IZO"/><j/><s n="DEK"/><s n="GEN"/><s n="MG"/></r>
+        </p>
+      </e>
+      <e>
+        <p>
+          <l>ztsuren</l>
+          <r>tsu<s n="ATZ"/><s n="ADJ"/><s n="IZO"/><j/><s n="DEK"/><s n="GEN"/><s n="MG"/><j/><s n="DEK"/><s n="ABS"/><s n="MG"/></r>
+        </p>
+      </e>
+      <e>
+        <p>
+          <l>ztsuri</l>
+          <r>tsu<s n="ATZ"/><s n="ADJ"/><s n="IZO"/><j/><s n="DEK"/><s n="DAT"/><s n="MG"/></r>
+        </p>
+      </e>
+      <e>
+        <p>
+          <l>ztsurik</l>
+          <r>tsu<s n="ATZ"/><s n="ADJ"/><s n="IZO"/><j/><s n="DEK"/><s n="PAR"/><s n="MG"/></r>
+        </p>
+      </e>
+      <e>
+        <p>
+          <l>ztsuan</l>
+          <r>tsu<s n="ATZ"/><s n="ADJ"/><s n="IZO"/><j/><s n="DEK"/><s n="NUMS"/><j/><s n="DEK"/><s n="INE"/></r>
+        </p>
+      </e>
+      <e>
+        <p>
+          <l>ztsuko</l>
+          <r>tsu<s n="ATZ"/><s n="ADJ"/><s n="IZO"/><j/><s n="DEK"/><s n="NUMS"/><j/><s n="DEK"/><s n="GEL"/></r>
+        </p>
+      </e>
+      <e>
+        <p>
+          <l>ztsuko</l>
+          <r>tsu<s n="ATZ"/><s n="ADJ"/><s n="IZO"/><j/><s n="DEK"/><s n="NUMS"/><j/><s n="DEK"/><s n="GEL"/><j/><s n="DEK"/><s n="ABS"/><s n="MG"/></r>
+        </p>
+      </e>
+      <e>
+        <p>
+          <l>ztsuraino</l>
+          <r>tsu<s n="ATZ"/><s n="ADJ"/><s n="IZO"/><j/><s n="DEK"/><s n="NUMS"/><j/><s n="DEK"/><s n="ABU"/></r>
+        </p>
+      </e>
+      <e>
+        <p>
+          <l>ztsurantz</l>
+          <r>tsu<s n="ATZ"/><s n="ADJ"/><s n="IZO"/><j/><s n="DEK"/><s n="NUMS"/><j/><s n="DEK"/><s n="ABZ"/></r>
+        </p>
+      </e>
+      <e>
+        <p>
+          <l>ztsura</l>
+          <r>tsu<s n="ATZ"/><s n="ADJ"/><s n="IZO"/><j/><s n="DEK"/><s n="NUMS"/><j/><s n="DEK"/><s n="ALA"/></r>
+        </p>
+      </e>
+      <e>
+        <p>
+          <l>ztsutik</l>
+          <r>tsu<s n="ATZ"/><s n="ADJ"/><s n="IZO"/><j/><s n="DEK"/><s n="NUMS"/><j/><s n="DEK"/><s n="ABL"/></r>
+        </p>
+      </e>
+      <e>
+        <p>
+          <l>ztxo</l>
+          <r>txo<s n="ATZ"/><s n="IZE"/><s n="ARR"/></r>
+        </p>
+      </e>
+      <e>
+        <p>
+          <l>ztxo</l>
+          <r>txo<s n="ATZ"/><s n="IZE"/><s n="ARR"/><j/><s n="DEK"/><s n="ABS"/><s n="MG"/></r>
+        </p>
+      </e>
+      <e>
+        <p>
+          <l>ztxoa</l>
+          <r>txo<s n="ATZ"/><s n="IZE"/><s n="ARR"/><j/><s n="DEK"/><s n="ABS"/><s n="NUMS"/></r>
+        </p>
+      </e>
+      <e>
+        <p>
+          <l>ztxoak</l>
+          <r>txo<s n="ATZ"/><s n="IZE"/><s n="ARR"/><j/><s n="DEK"/><s n="ABS"/><s n="NUMP"/></r>
+        </p>
+      </e>
+      <e>
+        <p>
+          <l>ztxoak</l>
+          <r>txo<s n="ATZ"/><s n="IZE"/><s n="ARR"/><j/><s n="DEK"/><s n="ERG"/><s n="NUMS"/></r>
+        </p>
+      </e>
+      <e>
+        <p>
+          <l>ztxoarekin</l>
+          <r>txo<s n="ATZ"/><s n="IZE"/><s n="ARR"/><j/><s n="DEK"/><s n="SOZ"/><s n="NUMS"/></r>
+        </p>
+      </e>
+      <e>
+        <p>
+          <l>ztxoarentzat</l>
+          <r>txo<s n="ATZ"/><s n="IZE"/><s n="ARR"/><j/><s n="DEK"/><s n="DES"/><s n="NUMS"/></r>
+        </p>
+      </e>
+      <e>
+        <p>
+          <l>ztxoarentzat</l>
+          <r>txo<s n="ATZ"/><s n="IZE"/><s n="ARR"/><j/><s n="DEK"/><s n="GEN"/><s n="NUMS"/><j/><s n="DEK"/><s n="PRO"/><s n="MG"/></r>
+        </p>
+      </e>
+      <e>
+        <p>
+          <l>ztxoaren</l>
+          <r>txo<s n="ATZ"/><s n="IZE"/><s n="ARR"/><j/><s n="DEK"/><s n="GEN"/><s n="NUMS"/></r>
+        </p>
+      </e>
+      <e>
+        <p>
+          <l>ztxoaren</l>
+          <r>txo<s n="ATZ"/><s n="IZE"/><s n="ARR"/><j/><s n="DEK"/><s n="GEN"/><s n="NUMS"/><j/><s n="DEK"/><s n="ABS"/><s n="MG"/></r>
+        </p>
+      </e>
+      <e>
+        <p>
+          <l>ztxoari</l>
+          <r>txo<s n="ATZ"/><s n="IZE"/><s n="ARR"/><j/><s n="DEK"/><s n="DAT"/><s n="NUMS"/></r>
+        </p>
+      </e>
+      <e>
+        <p>
+          <l>ztxoaz</l>
+          <r>txo<s n="ATZ"/><s n="IZE"/><s n="ARR"/><j/><s n="DEK"/><s n="INS"/><s n="NUMS"/></r>
+        </p>
+      </e>
+      <e>
+        <p>
+          <l>ztxoei</l>
+          <r>txo<s n="ATZ"/><s n="IZE"/><s n="ARR"/><j/><s n="DEK"/><s n="DAT"/><s n="NUMP"/></r>
+        </p>
+      </e>
+      <e>
+        <p>
+          <l>ztxoek</l>
+          <r>txo<s n="ATZ"/><s n="IZE"/><s n="ARR"/><j/><s n="DEK"/><s n="ERG"/><s n="NUMP"/></r>
+        </p>
+      </e>
+      <e>
+        <p>
+          <l>ztxoekin</l>
+          <r>txo<s n="ATZ"/><s n="IZE"/><s n="ARR"/><j/><s n="DEK"/><s n="SOZ"/><s n="NUMP"/></r>
+        </p>
+      </e>
+      <e>
+        <p>
+          <l>ztxoentzat</l>
+          <r>txo<s n="ATZ"/><s n="IZE"/><s n="ARR"/><j/><s n="DEK"/><s n="DES"/><s n="NUMP"/></r>
+        </p>
+      </e>
+      <e>
+        <p>
+          <l>ztxoentzat</l>
+          <r>txo<s n="ATZ"/><s n="IZE"/><s n="ARR"/><j/><s n="DEK"/><s n="GEN"/><s n="NUMP"/><j/><s n="DEK"/><s n="PRO"/><s n="MG"/></r>
+        </p>
+      </e>
+      <e>
+        <p>
+          <l>ztxoetaz</l>
+          <r>txo<s n="ATZ"/><s n="IZE"/><s n="ARR"/><j/><s n="DEK"/><s n="INS"/><s n="NUMP"/></r>
+        </p>
+      </e>
+      <e>
+        <p>
+          <l>ztxoez</l>
+          <r>txo<s n="ATZ"/><s n="IZE"/><s n="ARR"/><j/><s n="DEK"/><s n="INS"/><s n="NUMP"/></r>
+        </p>
+      </e>
+      <e>
+        <p>
+          <l>ztxoen</l>
+          <r>txo<s n="ATZ"/><s n="IZE"/><s n="ARR"/><j/><s n="DEK"/><s n="GEN"/><s n="NUMP"/></r>
+        </p>
+      </e>
+      <e>
+        <p>
+          <l>ztxoen</l>
+          <r>txo<s n="ATZ"/><s n="IZE"/><s n="ARR"/><j/><s n="DEK"/><s n="GEN"/><s n="NUMP"/><j/><s n="DEK"/><s n="ABS"/><s n="MG"/></r>
+        </p>
+      </e>
+      <e>
+        <p>
+          <l>ztxogatik</l>
+          <r>txo<s n="ATZ"/><s n="IZE"/><s n="ARR"/><j/><s n="DEK"/><s n="MOT"/></r>
+        </p>
+      </e>
+      <e>
+        <p>
+          <l>ztxooi</l>
+          <r>txo<s n="ATZ"/><s n="IZE"/><s n="ARR"/><j/><s n="DEK"/><s n="DAT"/><s n="PH"/></r>
+        </p>
+      </e>
+      <e>
+        <p>
+          <l>ztxook</l>
+          <r>txo<s n="ATZ"/><s n="IZE"/><s n="ARR"/><j/><s n="DEK"/><s n="ABS"/><s n="PH"/></r>
+        </p>
+      </e>
+      <e>
+        <p>
+          <l>ztxook</l>
+          <r>txo<s n="ATZ"/><s n="IZE"/><s n="ARR"/><j/><s n="DEK"/><s n="ERG"/><s n="PH"/></r>
+        </p>
+      </e>
+      <e>
+        <p>
+          <l>ztxookin</l>
+          <r>txo<s n="ATZ"/><s n="IZE"/><s n="ARR"/><j/><s n="DEK"/><s n="SOZ"/><s n="PH"/></r>
+        </p>
+      </e>
+      <e>
+        <p>
+          <l>ztxoontzat</l>
+          <r>txo<s n="ATZ"/><s n="IZE"/><s n="ARR"/><j/><s n="DEK"/><s n="DES"/><s n="PH"/></r>
+        </p>
+      </e>
+      <e>
+        <p>
+          <l>ztxootaz</l>
+          <r>txo<s n="ATZ"/><s n="IZE"/><s n="ARR"/><j/><s n="DEK"/><s n="INS"/><s n="PH"/></r>
+        </p>
+      </e>
+      <e>
+        <p>
+          <l>ztxotzat</l>
+          <r>txo<s n="ATZ"/><s n="IZE"/><s n="ARR"/><j/><s n="DEK"/><s n="PRO"/><s n="MG"/></r>
+        </p>
+      </e>
+      <e>
+        <p>
+          <l>ztxok</l>
+          <r>txo<s n="ATZ"/><s n="IZE"/><s n="ARR"/><j/><s n="DEK"/><s n="ERG"/><s n="MG"/></r>
+        </p>
+      </e>
+      <e>
+        <p>
+          <l>ztxoz</l>
+          <r>txo<s n="ATZ"/><s n="IZE"/><s n="ARR"/><j/><s n="DEK"/><s n="INS"/><s n="MG"/></r>
+        </p>
+      </e>
+      <e>
+        <p>
+          <l>ztxorekin</l>
+          <r>txo<s n="ATZ"/><s n="IZE"/><s n="ARR"/><j/><s n="DEK"/><s n="SOZ"/><s n="MG"/></r>
+        </p>
+      </e>
+      <e>
+        <p>
+          <l>ztxorentzat</l>
+          <r>txo<s n="ATZ"/><s n="IZE"/><s n="ARR"/><j/><s n="DEK"/><s n="DES"/><s n="MG"/></r>
+        </p>
+      </e>
+      <e>
+        <p>
+          <l>ztxorentzat</l>
+          <r>txo<s n="ATZ"/><s n="IZE"/><s n="ARR"/><j/><s n="DEK"/><s n="GEN"/><s n="MG"/><j/><s n="DEK"/><s n="PRO"/><s n="MG"/></r>
+        </p>
+      </e>
+      <e>
+        <p>
+          <l>ztxoren</l>
+          <r>txo<s n="ATZ"/><s n="IZE"/><s n="ARR"/><j/><s n="DEK"/><s n="GEN"/><s n="MG"/></r>
+        </p>
+      </e>
+      <e>
+        <p>
+          <l>ztxoren</l>
+          <r>txo<s n="ATZ"/><s n="IZE"/><s n="ARR"/><j/><s n="DEK"/><s n="GEN"/><s n="MG"/><j/><s n="DEK"/><s n="ABS"/><s n="MG"/></r>
+        </p>
+      </e>
+      <e>
+        <p>
+          <l>ztxori</l>
+          <r>txo<s n="ATZ"/><s n="IZE"/><s n="ARR"/><j/><s n="DEK"/><s n="DAT"/><s n="MG"/></r>
+        </p>
+      </e>
+      <e>
+        <p>
+          <l>ztxorik</l>
+          <r>txo<s n="ATZ"/><s n="IZE"/><s n="ARR"/><j/><s n="DEK"/><s n="PAR"/><s n="MG"/></r>
+        </p>
+      </e>
+      <e>
+        <p>
+          <l>ztxoan</l>
+          <r>txo<s n="ATZ"/><s n="IZE"/><s n="ARR"/><j/><s n="DEK"/><s n="NUMS"/><j/><s n="DEK"/><s n="INE"/></r>
+        </p>
+      </e>
+      <e>
+        <p>
+          <l>ztxoko</l>
+          <r>txo<s n="ATZ"/><s n="IZE"/><s n="ARR"/><j/><s n="DEK"/><s n="NUMS"/><j/><s n="DEK"/><s n="GEL"/></r>
+        </p>
+      </e>
+      <e>
+        <p>
+          <l>ztxoko</l>
+          <r>txo<s n="ATZ"/><s n="IZE"/><s n="ARR"/><j/><s n="DEK"/><s n="NUMS"/><j/><s n="DEK"/><s n="GEL"/><j/><s n="DEK"/><s n="ABS"/><s n="MG"/></r>
+        </p>
+      </e>
+      <e>
+        <p>
+          <l>ztxoraino</l>
+          <r>txo<s n="ATZ"/><s n="IZE"/><s n="ARR"/><j/><s n="DEK"/><s n="NUMS"/><j/><s n="DEK"/><s n="ABU"/></r>
+        </p>
+      </e>
+      <e>
+        <p>
+          <l>ztxorantz</l>
+          <r>txo<s n="ATZ"/><s n="IZE"/><s n="ARR"/><j/><s n="DEK"/><s n="NUMS"/><j/><s n="DEK"/><s n="ABZ"/></r>
+        </p>
+      </e>
+      <e>
+        <p>
+          <l>ztxora</l>
+          <r>txo<s n="ATZ"/><s n="IZE"/><s n="ARR"/><j/><s n="DEK"/><s n="NUMS"/><j/><s n="DEK"/><s n="ALA"/></r>
+        </p>
+      </e>
+      <e>
+        <p>
+          <l>ztxotik</l>
+          <r>txo<s n="ATZ"/><s n="IZE"/><s n="ARR"/><j/><s n="DEK"/><s n="NUMS"/><j/><s n="DEK"/><s n="ABL"/></r>
+        </p>
+      </e>
+      <e>
+        <p>
+          <l>ztzar</l>
+          <r>tzar<s n="ATZ"/><s n="IZE"/><s n="ARR"/></r>
+        </p>
+      </e>
+      <e>
+        <p>
+          <l>ztzar</l>
+          <r>tzar<s n="ATZ"/><s n="IZE"/><s n="ARR"/><j/><s n="DEK"/><s n="ABS"/><s n="MG"/></r>
+        </p>
+      </e>
+      <e>
+        <p>
+          <l>ztzarra</l>
+          <r>tzar<s n="ATZ"/><s n="IZE"/><s n="ARR"/><j/><s n="DEK"/><s n="ABS"/><s n="NUMS"/></r>
+        </p>
+      </e>
+      <e>
+        <p>
+          <l>ztzarrak</l>
+          <r>tzar<s n="ATZ"/><s n="IZE"/><s n="ARR"/><j/><s n="DEK"/><s n="ABS"/><s n="NUMP"/></r>
+        </p>
+      </e>
+      <e>
+        <p>
+          <l>ztzarrak</l>
+          <r>tzar<s n="ATZ"/><s n="IZE"/><s n="ARR"/><j/><s n="DEK"/><s n="ERG"/><s n="NUMS"/></r>
+        </p>
+      </e>
+      <e>
+        <p>
+          <l>ztzarrarekin</l>
+          <r>tzar<s n="ATZ"/><s n="IZE"/><s n="ARR"/><j/><s n="DEK"/><s n="SOZ"/><s n="NUMS"/></r>
+        </p>
+      </e>
+      <e>
+        <p>
+          <l>ztzarrarentzat</l>
+          <r>tzar<s n="ATZ"/><s n="IZE"/><s n="ARR"/><j/><s n="DEK"/><s n="DES"/><s n="NUMS"/></r>
+        </p>
+      </e>
+      <e>
+        <p>
+          <l>ztzarrarentzat</l>
+          <r>tzar<s n="ATZ"/><s n="IZE"/><s n="ARR"/><j/><s n="DEK"/><s n="GEN"/><s n="NUMS"/><j/><s n="DEK"/><s n="PRO"/><s n="MG"/></r>
+        </p>
+      </e>
+      <e>
+        <p>
+          <l>ztzarraren</l>
+          <r>tzar<s n="ATZ"/><s n="IZE"/><s n="ARR"/><j/><s n="DEK"/><s n="GEN"/><s n="NUMS"/></r>
+        </p>
+      </e>
+      <e>
+        <p>
+          <l>ztzarraren</l>
+          <r>tzar<s n="ATZ"/><s n="IZE"/><s n="ARR"/><j/><s n="DEK"/><s n="GEN"/><s n="NUMS"/><j/><s n="DEK"/><s n="ABS"/><s n="MG"/></r>
+        </p>
+      </e>
+      <e>
+        <p>
+          <l>ztzarrari</l>
+          <r>tzar<s n="ATZ"/><s n="IZE"/><s n="ARR"/><j/><s n="DEK"/><s n="DAT"/><s n="NUMS"/></r>
+        </p>
+      </e>
+      <e>
+        <p>
+          <l>ztzarraz</l>
+          <r>tzar<s n="ATZ"/><s n="IZE"/><s n="ARR"/><j/><s n="DEK"/><s n="INS"/><s n="NUMS"/></r>
+        </p>
+      </e>
+      <e>
+        <p>
+          <l>ztzarrei</l>
+          <r>tzar<s n="ATZ"/><s n="IZE"/><s n="ARR"/><j/><s n="DEK"/><s n="DAT"/><s n="NUMP"/></r>
+        </p>
+      </e>
+      <e>
+        <p>
+          <l>ztzarrek</l>
+          <r>tzar<s n="ATZ"/><s n="IZE"/><s n="ARR"/><j/><s n="DEK"/><s n="ERG"/><s n="MG"/></r>
+        </p>
+      </e>
+      <e>
+        <p>
+          <l>ztzarrek</l>
+          <r>tzar<s n="ATZ"/><s n="IZE"/><s n="ARR"/><j/><s n="DEK"/><s n="ERG"/><s n="NUMP"/></r>
+        </p>
+      </e>
+      <e>
+        <p>
+          <l>ztzarrekin</l>
+          <r>tzar<s n="ATZ"/><s n="IZE"/><s n="ARR"/><j/><s n="DEK"/><s n="SOZ"/><s n="NUMP"/></r>
+        </p>
+      </e>
+      <e>
+        <p>
+          <l>ztzarrekin</l>
+          <r>tzar<s n="ATZ"/><s n="IZE"/><s n="ARR"/><j/><s n="DEK"/><s n="SOZ"/><s n="MG"/></r>
+        </p>
+      </e>
+      <e>
+        <p>
+          <l>ztzarrentzat</l>
+          <r>tzar<s n="ATZ"/><s n="IZE"/><s n="ARR"/><j/><s n="DEK"/><s n="DES"/><s n="NUMP"/></r>
+        </p>
+      </e>
+      <e>
+        <p>
+          <l>ztzarrentzat</l>
+          <r>tzar<s n="ATZ"/><s n="IZE"/><s n="ARR"/><j/><s n="DEK"/><s n="GEN"/><s n="NUMP"/><j/><s n="DEK"/><s n="PRO"/><s n="MG"/></r>
+        </p>
+      </e>
+      <e>
+        <p>
+          <l>ztzarrentzat</l>
+          <r>tzar<s n="ATZ"/><s n="IZE"/><s n="ARR"/><j/><s n="DEK"/><s n="DES"/><s n="MG"/></r>
+        </p>
+      </e>
+      <e>
+        <p>
+          <l>ztzarrentzat</l>
+          <r>tzar<s n="ATZ"/><s n="IZE"/><s n="ARR"/><j/><s n="DEK"/><s n="GEN"/><s n="MG"/><j/><s n="DEK"/><s n="PRO"/><s n="MG"/></r>
+        </p>
+      </e>
+      <e>
+        <p>
+          <l>ztzarretaz</l>
+          <r>tzar<s n="ATZ"/><s n="IZE"/><s n="ARR"/><j/><s n="DEK"/><s n="INS"/><s n="NUMP"/></r>
+        </p>
+      </e>
+      <e>
+        <p>
+          <l>ztzarrez</l>
+          <r>tzar<s n="ATZ"/><s n="IZE"/><s n="ARR"/><j/><s n="DEK"/><s n="INS"/><s n="MG"/></r>
+        </p>
+      </e>
+      <e>
+        <p>
+          <l>ztzarrez</l>
+          <r>tzar<s n="ATZ"/><s n="IZE"/><s n="ARR"/><j/><s n="DEK"/><s n="INS"/><s n="NUMP"/></r>
+        </p>
+      </e>
+      <e>
+        <p>
+          <l>ztzarren</l>
+          <r>tzar<s n="ATZ"/><s n="IZE"/><s n="ARR"/><j/><s n="DEK"/><s n="GEN"/><s n="NUMP"/></r>
+        </p>
+      </e>
+      <e>
+        <p>
+          <l>ztzarren</l>
+          <r>tzar<s n="ATZ"/><s n="IZE"/><s n="ARR"/><j/><s n="DEK"/><s n="GEN"/><s n="NUMP"/><j/><s n="DEK"/><s n="ABS"/><s n="MG"/></r>
+        </p>
+      </e>
+      <e>
+        <p>
+          <l>ztzarren</l>
+          <r>tzar<s n="ATZ"/><s n="IZE"/><s n="ARR"/><j/><s n="DEK"/><s n="GEN"/><s n="MG"/></r>
+        </p>
+      </e>
+      <e>
+        <p>
+          <l>ztzarren</l>
+          <r>tzar<s n="ATZ"/><s n="IZE"/><s n="ARR"/><j/><s n="DEK"/><s n="GEN"/><s n="MG"/><j/><s n="DEK"/><s n="ABS"/><s n="MG"/></r>
+        </p>
+      </e>
+      <e>
+        <p>
+          <l>ztzarroi</l>
+          <r>tzar<s n="ATZ"/><s n="IZE"/><s n="ARR"/><j/><s n="DEK"/><s n="DAT"/><s n="PH"/></r>
+        </p>
+      </e>
+      <e>
+        <p>
+          <l>ztzarrok</l>
+          <r>tzar<s n="ATZ"/><s n="IZE"/><s n="ARR"/><j/><s n="DEK"/><s n="ABS"/><s n="PH"/></r>
+        </p>
+      </e>
+      <e>
+        <p>
+          <l>ztzarrok</l>
+          <r>tzar<s n="ATZ"/><s n="IZE"/><s n="ARR"/><j/><s n="DEK"/><s n="ERG"/><s n="PH"/></r>
+        </p>
+      </e>
+      <e>
+        <p>
+          <l>ztzarrokin</l>
+          <r>tzar<s n="ATZ"/><s n="IZE"/><s n="ARR"/><j/><s n="DEK"/><s n="SOZ"/><s n="PH"/></r>
+        </p>
+      </e>
+      <e>
+        <p>
+          <l>ztzarrontzat</l>
+          <r>tzar<s n="ATZ"/><s n="IZE"/><s n="ARR"/><j/><s n="DEK"/><s n="DES"/><s n="PH"/></r>
+        </p>
+      </e>
+      <e>
+        <p>
+          <l>ztzarrotaz</l>
+          <r>tzar<s n="ATZ"/><s n="IZE"/><s n="ARR"/><j/><s n="DEK"/><s n="INS"/><s n="PH"/></r>
+        </p>
+      </e>
+      <e>
+        <p>
+          <l>ztzarri</l>
+          <r>tzar<s n="ATZ"/><s n="IZE"/><s n="ARR"/><j/><s n="DEK"/><s n="DAT"/><s n="MG"/></r>
+        </p>
+      </e>
+      <e>
+        <p>
+          <l>ztzarrik</l>
+          <r>tzar<s n="ATZ"/><s n="IZE"/><s n="ARR"/><j/><s n="DEK"/><s n="PAR"/><s n="MG"/></r>
+        </p>
+      </e>
+      <e>
+        <p>
+          <l>ztzarrean</l>
+          <r>tzar<s n="ATZ"/><s n="IZE"/><s n="ARR"/><j/><s n="DEK"/><s n="NUMS"/><j/><s n="DEK"/><s n="INE"/></r>
+        </p>
+      </e>
+      <e>
+        <p>
+          <l>ztzarreko</l>
+          <r>tzar<s n="ATZ"/><s n="IZE"/><s n="ARR"/><j/><s n="DEK"/><s n="NUMS"/><j/><s n="DEK"/><s n="GEL"/></r>
+        </p>
+      </e>
+      <e>
+        <p>
+          <l>ztzarreko</l>
+          <r>tzar<s n="ATZ"/><s n="IZE"/><s n="ARR"/><j/><s n="DEK"/><s n="NUMS"/><j/><s n="DEK"/><s n="GEL"/><j/><s n="DEK"/><s n="ABS"/><s n="MG"/></r>
+        </p>
+      </e>
+      <e>
+        <p>
+          <l>ztzarreraino</l>
+          <r>tzar<s n="ATZ"/><s n="IZE"/><s n="ARR"/><j/><s n="DEK"/><s n="NUMS"/><j/><s n="DEK"/><s n="ABU"/></r>
+        </p>
+      </e>
+      <e>
+        <p>
+          <l>ztzarrerantz</l>
+          <r>tzar<s n="ATZ"/><s n="IZE"/><s n="ARR"/><j/><s n="DEK"/><s n="NUMS"/><j/><s n="DEK"/><s n="ABZ"/></r>
+        </p>
+      </e>
+      <e>
+        <p>
+          <l>ztzarrera</l>
+          <r>tzar<s n="ATZ"/><s n="IZE"/><s n="ARR"/><j/><s n="DEK"/><s n="NUMS"/><j/><s n="DEK"/><s n="ALA"/></r>
+        </p>
+      </e>
+      <e>
+        <p>
+          <l>ztzarretik</l>
+          <r>tzar<s n="ATZ"/><s n="IZE"/><s n="ARR"/><j/><s n="DEK"/><s n="NUMS"/><j/><s n="DEK"/><s n="ABL"/></r>
+        </p>
+      </e>
+      <e>
+        <p>
+          <l>ztzargatik</l>
+          <r>tzar<s n="ATZ"/><s n="IZE"/><s n="ARR"/><j/><s n="DEK"/><s n="MOT"/></r>
+        </p>
+      </e>
+      <e>
+        <p>
+          <l>ztzartzat</l>
+          <r>tzar<s n="ATZ"/><s n="IZE"/><s n="ARR"/><j/><s n="DEK"/><s n="PRO"/><s n="MG"/></r>
+        </p>
+      </e>
+    </pardef>
     <pardef n="IMPG_GARREN_26">
       <e>
         <p>
@@ -60539,10 +66343,10 @@
     </e>
     <e>
       <p>
-        <l>martxo</l>
+        <l>maia</l>
         <r>5<s n="MM"/></r>
       </p>
-      <par n="I_40"/>
+      <par n="I_7"/>
     </e>
     <e>
       <p>
