@@ -1,19 +1,32 @@
-#-     [ZERO]    my.type='unkw'        -
--     [ZERO]    my.type='p-koma'       -   # Puntuazio ikurrak ez dute kasurik behar...
--     [ZERO]    my.type='p-ez-koma'    -   # Puntuazio ikurrak ez dute kasurik behar...
--     [ZERO]    my.type='p-buka'       -   # Puntuazio ikurrak ez dute kasurik behar...
--     [ZERO]    my.type='adi-par'      -   # partizipioa ez da deklinatzen.
--     [ZERO]    my.type='adbs'         -   # adberbioak ez dira deklinatzen.
--     [INE]     (my.type='data' || my.headsem=~'[DEN+]') && parent.headlem!='izan'   -   # el cuatro de julio, uztaila
--     [ABS]    parent.type='adi-pas'   -   # El libro ha sido comprado: liburua erosi du
--     [ABS]    my.si='dobj'            -   # he comprado un libro, nik liburua erosi dut
--     [ABS]    my.si='att'             -   # yo soy guapo: polita naiz
--     [ABS]    my.si!='ncsubj'         -   # Subjektua ez denean...
--     [ERG]    -                       +   # la chica le ha dado el libro, neskak liburua eman dio   ##DU aditza
--     [ABS]    -                       +   # Garikoitz se ha enfadado, Garikoitz haserretu egin da   ##DA aditza
+# Format:
+# prepEn	caseEU		condition	    exclusion  ## comment
+#
+# condition:   (baldintza betetzen bada, itzulpen hori hartu da )
+#   chunk.attrib='value'
+#
+#   chunk:   
+#     my	= the current chunk
+#     parent	= the parent of the current chunk
+#
+# exclusion
+#   -  : ez ba du baldintza betetzen, itzulpen hori ez da kontutan hartuko
+#   + : baldintza ez bada betetzen,hurrengo urratsean itzulpen hori kontutan hartuko da
+
+
+# prepEn	caseEU		 condition	    exclusion  ## comment
+
+# Not preposition
+#####################
+
+-     [ERG]	-			+   
+-     [ABS]	-			+   
+
+# Sinple prepositions
+#####################
+
 about       [DAT]++buruz            -       +
 about	    [ABL]		    -	    +
-above	    [ABL]++gora/ALA	    -	    +	#(my.leafpos='[Z]' || my.headpos='[Z]') && my.mi='[MG]'   -    ## más allá de siete,zazpitik gora##zenbakiekin
+above	    [ABL]++gora/ALA	    -	    +	#(my.leafpos='[Z]' || my.headpos='[Z]') && my.mi='[MG]'   -    
 above	    [GEN]++gainetik         -       +
 according   [GEN]++arabera          -       +
 across	    [INE]++zehar            -       +
@@ -39,6 +52,7 @@ at	    [DAT]		    -	    +
 at	    [SOZ]		    -	    +
 #because	because	IN>-	-	-	-	-	-	+lako[ERL][MEN][KAUS]
 because		+lako[ERL][MEN][KAUS]	-	+
+because_of	[MOT]			-	      +
 before	    [ABS]++baino_lehen      -       +
 before	    [GEN]++aurrean	    -	    +
 #before	before	IN>-	-	-	-	-	-	[AMM][PART]+[ASP][BURU]++baino lehen
@@ -181,6 +195,7 @@ throughout  [INE]		-	+
 till	    ++arte		-	+
 #till	till	IN>-	-	-	-	-	-	[AMM][PART]+[ASP][BURU]++arte
 till	++arte	-	+
+to	+[AMM][ADIZE]+[DEK][GEL]	my.type='inf-to'	-	##I come to read it.
 to	    [ALA]		-	+
 to	    [DAT]		-	+
 to	    [ABU]		-	+
@@ -247,3 +262,5 @@ within	    ++baino_gutxiagotan	-	+
 within	    [GEL]++epean	-	+
 within	    ++baino_gertuago	-	+
 without	    [PAR]++gabe		-	+
+'s	    [GEN]		-	+
+
