@@ -15,6 +15,7 @@ vb-chunk	adi-kat		#grupo verbal	aditz-katea
 vb-be		adi-kat		#grupo verbal	aditz-katea
 sv		adi-kat		#grupo verbal	aditz-katea
 rel		adi-kat		#grupo verbal debajo de "rel"	"rel" (that) baten azpiko aditz-katea
+vb-compl	adi-kat		#grupo verbal	aditz-katea	berez ez dakit zer den, baina top batean agertu zaigu eta badaezpada sartu dut (Climate change report shows things going from bad to worse .)
 
 sf-brk		p-koma	#signo de puntuación "koma"	puntuazioa: koma
 st-brk		p-buka		#punto	      puntua
