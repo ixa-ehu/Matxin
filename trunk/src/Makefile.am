@@ -1,7 +1,7 @@
-EXTRA_DIST = config.h data_manager.h matxin_string_utils.h simpleregex.h string_utils.h utf_converter.h XML_reader.h gen_fst2regex.sh gen_Matxin_translator.sh deformat.xsl txt-format.xml rtf-format.xml html-format.xml
+EXTRA_DIST = config.h data_manager.h matxin_string_utils.h simpleregex.h string_utils.h utf_converter.h XML_reader.h gen_fst2regex.sh gen_Matxin_translator.sh deformat.xsl txt-format.xml wiki-format.xml rtf-format.xml html-format.xml
 
 bin_PROGRAMS = Analyzer LT ST_intra ST_inter ST_prep ST_verb SG_inter SG_intra \
-               MG reFormat txt-deformat html-deformat rtf-deformat
+               MG reFormat txt-deformat wiki-deformat html-deformat rtf-deformat
 
 bin_SCRIPTS = Matxin_translator fst2regex.pl
 
@@ -35,11 +35,15 @@ MG_LDADD = -lmorfo -lcfg+ -ldb_cxx -lfries -lomlet -lboost_filesystem
 reFormat_SOURCES = reFormat.cc utf_converter.cc data_manager.cc XML_reader.cc simpleregex.cc matxin_string_utils.cc matxin_string_utils.h IORedirectHandler.cc IORedirectHandler.hpp
 
 txt_deformat_SOURCES = txt-deformat.cc
+wiki_deformat_SOURCES = wiki-deformat.cc
 html_deformat_SOURCES = html-deformat.cc
 rtf_deformat_SOURCES = rtf-deformat.cc
 
 txt-deformat.cc: txt-format.xml Makefile.am deformat.xsl
 	$(XSLTPROC) --stringparam mode matxin deformat.xsl txt-format.xml | $(FLEX) -Cfer -t >$@
+
+wiki-deformat.cc: wiki-format.xml Makefile.am deformat.xsl
+	$(XSLTPROC) --stringparam mode matxin deformat.xsl wiki-format.xml | $(FLEX) -Cfer -t >$@
 
 html-deformat.cc: html-format.xml Makefile.am deformat.xsl
 	$(XSLTPROC) --stringparam mode matxin deformat.xsl html-format.xml | $(FLEX) -Cfer -t >$@
