@@ -43,6 +43,9 @@ case $FORMAT in
 txt)
   DE_FORMATER="txt-deformat"
   ;;
+wiki)
+  DE_FORMATER="wiki-deformat"
+  ;;
 rtf)
   DE_FORMATER="rtf-deformat"
   ;;
