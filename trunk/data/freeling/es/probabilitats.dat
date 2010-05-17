@@ -1,3 +1,12 @@
+<CheckerOverGuesser>
+3.0
+</CheckerOverGuesser>
+<ExactMatchBonus>
+2.0
+</ExactMatchBonus>
+<AlternativeAnalysisMass>
+0.8
+</AlternativeAnalysisMass>
 <UnknownTags>
 AQ0000 1
 AQ0CN0 27
@@ -25429,7 +25438,7 @@ ixta 1 AQ0FS0 1
 unica 3 VMIP3S0 3
 manada 1 NCFS000 1
 eparan 1 VMIP3P0 1
-bueno 31 AQ0MS0 14 I 17
+bueno 31 AQ0MS0 17 I 14
 fines 9 NCMP000 9
 apartado 2 NCMS000 1 VMP00SM 1
 entramos 1 VMIP1P0 1
@@ -37184,7 +37193,7 @@ AO-NC-NP AO 78 NC 12 NP 54
 AO-NC-RG AO 15 NC 0 RG 9
 AO-NC-VMI AO 23 NC 14 VMI 0
 AO-NC-VMI-VMM AO 19 NC 3 VMI 0 VMM 0
-AQ-CS-NC-RG-VMM-VMS AQ 1 CS 0 NC 0 RG 0 VMM 0 VMS 0
+AQ-CS-NC-RG-VMM-VMS AQ 1 CS 1 NC 0 RG 0 VMM 0 VMS 0
 AQ-CS-RG AQ 0 CS 0 RG 55
 AQ-DD-NC AQ 8 DD 4 NC 2
 AQ-DI-NC-PI AQ 0 DI 13 NC 0 PI 1
@@ -37367,7 +37376,7 @@ SP-VMI-VMM SP 0 VMI 9 VMM 0
 SP-VMI-VMM-VMS SP 557 VMI 0 VMM 0 VMS 0
 SP-VMM-VMS SP 156 VMM 0 VMS 0
 VAG-VMG VAG 0 VMG 2
-VAI-VAM VAI 125 VAM 0
+VAI-VAM-VMI VAI 64 VAM 0 VMI 63
 VAI-VMI VAI 109 VMI 64
 VAM-VAS VAM 0 VAS 9
 VAN-VMN VAN 10 VMN 0
@@ -38063,7 +38072,7 @@ brutas AQ-NC AQ 1 NC 0
 bruto AQ-NC AQ 1 NC 0
 brutos AQ-NC AQ 1 NC 0
 budistas AQ-NC AQ 1 NC 0
-bueno AQ-I AQ 14 I 17
+bueno AQ-I AQ 17 I 14
 burda AQ-NC AQ 1 NC 0
 burdeos AQ-NC AQ 1 NC 0
 burgos NC-NP NC 0 NP 1
@@ -38418,7 +38427,7 @@ confiesa VMI-VMM VMI 1 VMM 0
 confinada NC-VMP NC 0 VMP 1
 confines AQ-NC-VMS AQ 0 NC 1 VMS 0
 conforma VMI-VMM VMI 2 VMM 0
-conforme AQ-CS-NC-RG-VMM-VMS AQ 1 CS 0 NC 0 RG 0 VMM 0 VMS 0
+conforme AQ-CS-NC-RG-VMM-VMS AQ 1 CS 1 NC 0 RG 0 VMM 0 VMS 0
 confunde VMI-VMM VMI 2 VMM 0
 confín AQ-NC AQ 0 NC 1
 congreso NC-NP NC 0 NP 4
@@ -39304,7 +39313,7 @@ estudiante AQ-NC AQ 0 NC 1
 estudiantes AQ-NC AQ 0 NC 3
 estudio NC-VMI NC 10 VMI 0
 estudiosos AQ-NC AQ 0 NC 1
-está VAI-VAM VAI 125 VAM 0
+está VAI-VAM-VMI VAI 64 VAM 0 VMI 63
 estándar AQ-NC AQ 1 NC 0
 esté VAM-VAS VAM 0 VAS 6
 estén VAM-VAS VAM 0 VAS 3
@@ -40010,7 +40019,7 @@ juveniles AQ-NC AQ 2 NC 0
 juzgado NC-VMP NC 0 VMP 1
 jóvenes AQ-NC AQ 5 NC 9
 kilométrico AQ-NC AQ 1 NC 0
-la DA-NC-PP DA 3548 NC 0 PP 101
+la DA-NC-PP DA 1900 NC 0 PP 1700
 laborales AQ-VMM AQ 2 VMM 0
 labores NC-VMS NC 1 VMS 0
 lacera VMI-VMM VMI 1 VMM 0
@@ -40029,7 +40038,7 @@ larga AQ-NC-VMI-VMM AQ 2 NC 0 VMI 0 VMM 0
 largas AQ-NC-VMI AQ 4 NC 0 VMI 0
 largo AQ-NC-RG-VMI AQ 8 NC 0 RG 9 VMI 0
 largos AQ-NC AQ 4 NC 0
-las DA-NC-PP DA 976 NC 0 PP 29
+las DA-NC-PP DA 600 NC 0 PP 400
 lata AQ-NC-VMM-VMS AQ 0 NC 2 VMM 0 VMS 0
 latas AQ-NC-VMS AQ 0 NC 2 VMS 0
 latazo AQ-NC AQ 0 NC 1
@@ -40126,7 +40135,7 @@ locomotora AQ-NC AQ 0 NC 1
 logra VMI-VMM VMI 2 VMM 0
 lograse VMM-VMS VMM 0 VMS 1
 logro NC-VMI NC 1 VMI 0
-los DA-NC-PP DA 1752 NC 0 PP 42
+los DA-NC-PP DA 1000 NC 0 PP 800
 los_pleneros_de_la_21 NP-Z NP 1 Z 0
 losa NC-VMI-VMM NC 2 VMI 0 VMM 0
 luces NC-VMI NC 2 VMI 0

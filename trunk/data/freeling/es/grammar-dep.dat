@@ -12,8 +12,11 @@
 %relatius=
 %conj-subord=
 %sn= det + grup-nom
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%NOVETATS (NOV2009)%%%%%%%%%%
+% estar+participi/gerundi
+% P0300000 --> P03CN000
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 %%Regles afegides per opentrad
 verb ==> VMI*<querer>, +infinitiu | VMS*<querer>, +infinitiu.
@@ -165,7 +168,7 @@ paton-ms ==> PP3MSA00.	%lo: CD masculí singular
 paton ==> PP3CNA00.	%lo: atribut: inespecificat
 
 morf-pron ==> P010S000 | P010P000 | P020S000 | P020P000.
-morf-pron ==> P0300000.	%se-pronominal
+morf-pron ==> P03CN000.	%se-pronominal
 
 morfema-verbal ==> P0000000.	%se impersonal/passiu
 grup-verb ==> morf-pron, +grup-verb.
@@ -197,24 +200,24 @@ pinterrog ==> PT0CN000.	        %qué
 %Pronoms possessius 
 
 % el_mío|el_nuestro|el_tuyo|el_vuestro|el_suyo 
-pposs-ms ==> DA0MS0, +PX1MS0S0 | DA0MS0, +PX1MS0P0 | DA0MS0, +PX2MS0S0 | 
-             DA0MS0, +PX2MS0P0 | DA0MS0, +PX3MS0C0.
+pposs-ms ==> DA0MS0, +PX1MS0S0 | PX1MS0S0 | DA0MS0, +PX1MS0P0 | PX1MS0P0 | DA0MS0, +PX2MS0S0 | PX2MS0S0 | 
+             DA0MS0, +PX2MS0P0 | PX2MS0P0 | DA0MS0, +PX3MS0C0 |PX3MS0C0.
 
 % lo_mío|lo_nuestro|lo_tuyo|lo_vuestro|lo_suyo 
-pposs-ns ==> DA0NS0, +PX1NS0S0 | DA0NS0, +PX1NS0P0 | DA0NS0, +PX2NS0S0 | 
-             DA0NS0, +PX2NS0P0 | DA0NS0, +PX3NS0C0.
+pposs-ns ==> DA0NS0, +PX1NS0S0 | PX1NS0S0 | DA0NS0, +PX1NS0P0 | PX1NS0P0 | DA0NS0, +PX2NS0S0 | PX2NS0S0 |
+             DA0NS0, +PX2NS0P0 | PX2NS0P0 | DA0NS0, +PX3NS0C0 |PX3NS0C0.
 
 % la_mía|la_nuestra|la_tuya|la_vuestra|la_suya
-pposs-fs ==> DA0FS0, +PX1FS0S0 | DA0FS0, +PX1FS0P0 | DA0FS0, +PX2FS0S0 | 
-             DA0FS0, +PX2FS0P0 | DA0FS0, +PX3FS0C0. 
+pposs-fs ==> DA0FS0, +PX1FS0S0 | PX1FS0S0 | DA0FS0, +PX1FS0P0 | PX1FS0P0 | DA0FS0, +PX2FS0S0 | PX2FS0S0 | 
+             DA0FS0, +PX2FS0P0 | PX2FS0P0 | DA0FS0, +PX3FS0C0 |PX3FS0C0. 
 
 % los_míos|los_nuestros|los_tuyos|los_vuestros|los_suyos
-pposs-mp ==> DA0MP0, +PX1MP0S0 | DA0MP0, +PX1MP0P0 | DA0MP0, +PX2MP0S0 | 
-             DA0MP0, +PX2MP0P0 | DA0MP0, +PX3MP0C0.
+pposs-mp ==> DA0MP0, +PX1MP0S0 | PX1MP0S0 | DA0MP0, +PX1MP0P0 | PX1MP0P0 | DA0MP0, +PX2MP0S0 | PX2MP0S0 | 
+             DA0MP0, +PX2MP0P0 | PX2MP0P0 | DA0MP0, +PX3MP0C0 |PX3MP0C0.
 
 % las_mías|las_nuestras|las_tuyas|las_vuestras|las_suyas
-pposs-fp ==> DA0FP0, +PX1FP0S0 | DA0FP0, +PX1FP0P0 | DA0FP0, +PX2FP0S0 | 
-             DA0FP0, +PX2FP0P0 | DA0FP0, +PX3FP0C0.
+pposs-fp ==> DA0FP0, +PX1FP0S0 | PX1FP0S0 | DA0FP0, +PX1FP0P0 | PX1FP0P0 | DA0FP0, +PX2FP0S0 | PX2FP0S0 | 
+             DA0FP0, +PX2FP0P0 | PX2FP0P0 | DA0FP0, +PX3FP0C0 |PX3FP0C0.
 
 %Pronoms relatius
 cuyo-ms ==> PR0MS000(cuyo).	%cuyo
@@ -733,21 +736,23 @@ verb ==> VMI* | VMM* | VMS*.
 verb ==>  VSI* | VSM* | VSS*.
 
 % haber: només pot ser principal la 3 pers sing
-verb ==>  VAIP3S0. 	%ha
-verb ==>  VAII3S0.  	%había%
-verb ==>  VAIS3S0.  	%hubo%
-verb ==>  VAIF3S0.  	%habrá%
-verb ==>  VAIC3S0.    	%habría%
-verb ==>  VASP3S0.  	%haya%
-verb ==>  VASI3S0.   	%hubiera; hubiese%
-verb ==>  VASF3S0.  	%hubiere%
+verb ==>  VAIP3*. 	%ha, han
+verb ==>  VAII3*.  	%había, habían%
+verb ==>  VAIS3*.  	%hubo%
+verb ==>  VAIF3*.  	%habrá%
+verb ==>  VAIC3*.    	%habría%
+verb ==>  VASP3*.  	%haya%
+verb ==>  VASI3*.   	%hubiera; hubiese%
+verb ==>  VASF3*.  	%hubiere%
 
 
 % auxiliares %%!!!el problema és que "hay" y "es" de les atributives
 %%%%%%%%%%%%%%%%%% tbé els dóna com a vaux el morfo: vai... i que
 %%%%%%%%%%%%%%%%%% vaux no es reescriu tot sol.
 
-vaux==> VAI* | VAM* | VAS*.
+% vaux ==> VAI*<ser> | VAM*<ser> | VAS*<ser> |  VAI*<haber> | VAM*<haber> | VAS*<haber>.
+vaux2 ==> VAI*<ser> | VAM*<ser> | VAS*<ser> |  VAI*<haber> | VAM*<haber> | VAS*<haber>.
+vaux ==> VAI* | VAM* | VAS*.
 
 % aquests participis nomes apareixen en  perífrasis determinades 
 parti-aux ==> VAP00SM.  	%habido
@@ -755,7 +760,7 @@ parti-ser ==> VSP00SM.  	%sido
 
 %participi de temps compostos no passius: participi "principal"
 %parti ==> VMP00SM. 	%comido  amado%
-parti ==> parti-ms | parti-mp | parti-fs | parti-fp.
+parti ==> parti-ms | parti-mp | parti-fs | parti-fp | parti-n.
 
 %participis flexius: per una banda es poden reescriure com a adjectius;
 %i per l'altra entren als temps passius
@@ -763,6 +768,7 @@ parti-ms ==> VMP00SM. 	%comido  amado%
 parti-mp ==> VMP00PM. 	%comidos  amados%
 parti-fs ==> VMP00SF. 	%comida  amada%
 parti-fp ==> VMP00PF. 	%comidas  amadas%
+parti-n ==> VMP0000.   %nevado, llovido%
 
 infaux-ser ==> VSN0000.
 infaux ==> VAN0000. 
@@ -809,16 +815,24 @@ grup-verb-inf ==> +infinitiu.
 %ser amado/a/os/as | haber sido amado
 inf-pas ==> infaux-ser, +parti-flex | infaux, parti-ser, +parti-flex. 
 
-%he dicho |  han sido (escasos) ... ve aixi del MACO
-verb ==> vaux, +parti | vaux, +parti-ser.	
+%he dicho |  han sido (escasos) | está cansado | están cansados | están cantando... ve aixi del MACO
+verb ==> vaux2, +parti | vaux2, +parti-flex | vaux, +parti-ser | vaux, +forma-ger.
+verb ==> vaux, parti-aux, +forma-ger. %(ha estado cantando)
 
 %ha habido
 verb ==> vaux, +parti-aux.
+
+%está cansado | están cantando ... temps verbals simples
+%verb ==> VA*<estar>, +parti-flex | VA*<estar>, +forma-ger.
 
 %soy amado/a/os/as | he sido amado/a/os/as
 verb-pass ==> vser, +parti-flex | vaux, parti-ser,+parti-flex. 
 
 grup-verb ==> +verb | +verb-pass.
+
+%% grup-verb-normal ==> VMI* | VMS* | VMM* | VA*<estar>.     %%  pasear por el parque | comer pollo | estar en casa
+%% grup-verb-compuest ==> VA*<estar>, +VMP* | VA*<estar>, +VMG*.    %% estar cansado
+%% grup-verb-compuest ==> VA*<estar>, VMG*.    %% estar durmiendo
 
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
@@ -981,6 +995,7 @@ verb ==> VMI*<deber>, +infinitiu | VMS*<deber>, +infinitiu.
 verb ==> VMI*<deber>, SPS00(de), +infinitiu | VMS*<deber>, SPS00(de), +infinitiu.
 verb ==> VMI*<tener>, CS(que), +infinitiu | VMS*<tener>, CS(que), +infinitiu.
 verb ==> VMI*<poder>, +infinitiu | VMS*<poder>, +infinitiu.
+verb ==> VMI*<dejar>, +infinitiu | VMS*<dejar>, +infinitiu.
 verb ==> VMI*<ir>, SPS00(a), +infinitiu | VMS*<ir>, SPS00(a), +infinitiu.
 verb ==> VMI*<empezar>, SPS00(a), +infinitiu | VMS*<empezar>, SPS00(a), +infinitiu.
 verb ==> VMI*<comenzar>, SPS00(a), +infinitiu | VMS*<comenzar>, SPS00(a), +infinitiu.

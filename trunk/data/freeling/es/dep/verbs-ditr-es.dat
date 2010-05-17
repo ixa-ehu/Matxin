@@ -4,6 +4,7 @@
 
 <CLASS>
 calificar
+cantar
 colgar
 comenzar
 comer
@@ -27,6 +28,7 @@ decir
 dedicar
 devolver
 encontrar
+enviar
 escribir
 magnetizar
 manifestar
@@ -136,8 +138,8 @@ sufrir
 sumergir
 suministrar
 superar
-suspender
-tener
+%suspender
+%tener
 tirar
 tocar
 tranquilizar

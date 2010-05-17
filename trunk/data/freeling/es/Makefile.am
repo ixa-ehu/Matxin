@@ -1,4 +1,4 @@
-SUBDIRS = dep nec ner corrector
+SUBDIRS = dep nec ner corrector coref
 
 freelingesdir = $(pkgdatadir)/freeling/es
 freelinges_DATA =  constr_gram.dat \

@@ -66,6 +66,32 @@ VerbCompl = <acentuar> <aceptar> <aconsejar> <acordar> <admitir> <advertir>
 
 CONSTRAINTS
 
+% choose an adjective after "tan". (Garbiñe)
+5.0 AQ*
+    (0 VM* or AQ*)
+    (-1 <tan>);
+
+% "estar" as main verb.(Garbiñe)
+5.0 VMI*
+    (0 VAI* <estar>)
+    (not 1 V*);
+
+% after a gerund better a participle than a noun.
+5.0 VMP*
+    (0 NC*)
+    (-1 VMG*);
+
+
+% after an adverb, better adjective than noun
+5.0 AQ*
+    (0 NC*)
+    (-1 RG*);
+
+%% PPren pisua igo, hurrengo hitza aditza bada. (Garbiñe)
+5.0 PP*
+     (0 DA*)
+     (1 VM* or VA);
+
 %% VMSren pisua jaitsi esaldi hasieran, hitza hiztegian agertzen bada. (Garbiñe)
 -5.0 VMS*
      (0 NC* or AQ*)
@@ -156,6 +182,13 @@ CONSTRAINTS
 4.0 NC*
     (0 VMS* or VMI* or VMM* or VMG* or VMP*)
     (-1 SP*);
+
+%% after a determinant, better noun than verb (Garbiñe)
+%5.0 NC* (0 V*) (-1 D*);
+
+%% la libra está muy cara
+5.0 NC* (0 VMM*(libra)) (-1 D*);
+5.0 D*  (0 (la)) (1 NC*(libra));
 
 %% better tag "que" as a PR0CN000 after a noun without no verb before it
 15.0 PR*<que>
