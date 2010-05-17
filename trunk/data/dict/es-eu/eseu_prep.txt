@@ -44,6 +44,7 @@ desde		[ABL]			-	    +
 dirección	[ABZ]			-	    +
 entre		[GEN]++artean/INE	-	      +	   ## Colocala entre las dos mesas, argia bi mahaien artean ipin ezazu
 según		[GEN]++arabera          -       +
+mediante	[GEN]++bitartez		-	+
 
 # sinple ambiguous
 
@@ -130,8 +131,8 @@ a_guisa_de      [ZERO]++gisa            -       +
 a_imitación_de	[GEN]++antzera		-	+
 a_instancia_de	[ERG]++eskatuta		-	+
 a_instancias_de	[ERG]++eskatuta		-	+
+a_juicio_de	[GEN]++ustetan		-	+
 a_juzgar_por    [GEN]++arabera          -       +
-a_la_altura_de	[GEN]++parean		-	+
 a_la_atención_de	[DES]		-	+
 a_la_busca_de   [GEN]++bila             -       +
 a_la_espera_de  [GEN]++zain             -       +
@@ -154,6 +155,7 @@ a_nombre_de     [GEN]++izenean          -       +
 a_orillas_de	[GEN]++ertzean	-	+
 a_partir_de     [ABL]++aurrera          -       +
 a_petición_de   [ERG]++eskatuta         -       +
+a_pie_de	[INE]++bertan		-	+
 a_presencia_de	[GEN]++aurrera		-	+
 a_primeros_de	[ZERO]++hasieran	-	+
 a_principios_de		[GEN]++hasieran         -       +
@@ -191,20 +193,25 @@ al_conjuro_de   [GEN]++kariaz           -       +
 al_cuidado_de	[GEN]++kargu		-	+
 al_decir_de     [GEN]++arabera          -       +
 al_derredor_de  [GEN]++inguruan         -       +
+al_este_de	[GEL]++ekialdean	-	+
 al_hilo_de	[GEN]++harian		    -	    +
 al_filo_de      [ABS]++aldera           -       +
 al_frente_de    [GEN]++buruan           -       +
 al_interior_de  [GEN]++barnera          -       +
 al_margen_de	[INS]++at		-	+
 al_modo_de      [GEN]++erara            -       +
+al_norte_de	[GEL]++iparraldean	-	+
 al_objeto_de    +[AMM][ADIZE]+[DEK][GEL]++asmoz	my.headpos='[ADI][SIN]'          -
+al_oeste_de	[GEL]++mendebaldean	-	+
 al_olor_de      [GEN]++usainean         -       +
 al_par_de	[GEN]++parean		-	+
 al_parecer_de	[GEN]++iritziz		-	+
 al_sentir_de	[GEN]++ustez		-	+
 al_servicio_de  [GEN]++zerbitzura               -       +
 al_socaire_de   [GEN]++babesean         -       +
+al_sur_de	[GEL]++hegoaldean	-	+
 al_tenor_de     [GEN]++arabera          -       +
+al_termino_de	[GEN]++amaieran		-	+
 allende_de      [INS]++bestalde         -       +
 amén_de		[INS]++gain			-	+
 anterior_a      [ABS]++baino_lehen              -       +
@@ -216,6 +223,7 @@ bajo_la_condición_de	+[AMM][ADIZE]+[DEK][GEL]++baldintzapean	my.headpos='[ADI][
 bajo_la_responsabilidad_de      [GEN]++esku             -       +
 bajo_pena_de	[GEL]++zigorra_ezarriko_da_bestela	-	+
 camino_de	[GEL]++bidean	-	+
+cantidad_correspondiente_a	[DAT]++dagokion_kopurua	-	+
 cara_a		[DAT]++begira	-	+
 como_cosa_de	[GEN]++bat	-	+
 como_muestra_de	[GEN]++erakusgarri		-	+
@@ -223,7 +231,9 @@ como_para	+[AMM][ADIZE]+[DEK][GEL]++moduan	my.headpos='[ADI][SIN]'          -
 con_ánimo_de	+[AMM][ADIZE]+[DEK][GEL]++gogoz	my.headpos='[ADI][SIN]'          -
 con_anterioridad_a	[GEN]++aurretik			-	+
 con_arreglo_a	[GEN]++arabera				-	+
+con_base_en	[INE]++oinarrituta			-	+
 con_destino_a	[ALA]++doan	-	+
+con_el_transcurso_de	[ZERO]++igaro_ahala	-	+
 con_honores_de  [ZERO]++moduko          -       +
 con_independencia_de	[DAT]++kasurik_egin_gabe	-	+
 con_la_condición_de     +[AMM][ADIZE]+[DEK][GEL]++baldintzapean	my.headpos='[ADI][SIN]'          -
@@ -247,12 +257,16 @@ de_cuenta_de	[GEN]++kontura		-	+
 de_la_mano_de   [GEN]++eskutik          -       +
 de_parte_de	[GEN]++partetik		-	+
 del_poder_de    [GEN]++menetik          -       +
+delito_de_colaboración_con	[DAT]++laguntzeagatiko_delitu	-	+
 después_de      [GEN]++ondoren         -       +
 dirección_a     [ABZ]           -       +
+durante_el_transcurso_de	   [INE]++zehar	   -  +
+empleo_de	[GEN]++erabilera	-	+
 en_alabanza_de	[GEN]++goresgarri	-	+
 en_aras_de      [GEN]++onerako          -       +
 en_atención_a   [ABS]++kontuan_hartuta          -       +
 en_ausencia_de  [PAR]++gabe             -       +
+en_base_a	[GEN]++arabera		-	+
 en_beneficio_de	[GEN]++alde		-	+
 en_bien_de	[GEN]++onerako		-	+
 en_busca_de     [GEN]++bila            -       +
@@ -271,19 +285,25 @@ en_cuanto_a	[DAT]++dagokionez	-	+
 en_defecto_de   [PAR]++ezean            -       +
 en_demanda_de   [ZERO]++eske            -       +
 en_derredor_de  [GEN]++inguruan         -       +
-en_dirección_a  [ABZ]           -       +
+en_dirección_a  [ZERO]++aldera           -       +
 en_disposición_de	+[AMM][ADIZE]+[DEK][GEL]++moduan	my.headpos='[ADI][SIN]'          -
+en_el_alto_de	[GEN]++gainean	-	+
 en_el_bien_de	[GEN]++onerako	-	+
 en_el_caso_de	[GEN]++kasuan	-	+
 en_el_centro_de		[GEN]++erdian           -       +
 en_el_curso_de	[INE]	-	+
 en_el_entorno_de        [GEN]++inguruan         -       +
 en_el_espacio_de	[GEN]++buruan		    -	    +
+en_el_este_de		[GEL]++ekialdean	-	+
 en_el_interior_de       [GEN]++barnean          -       +
+en_el_norte_de		[GEL]++iparraldean	-	+
+en_el_oeste_de		[GEL]++mendebaldean	-	+
 en_el_otro_lado_de      [INS]++bestaldean               -       +
 en_el_término_de	[GEL]++epean	-		    +
 en_el_plazo_de  [ZERO]++barru           -       +
 en_el_sentir_de	[GEN]++ustez		-	+
+en_el_sur_de		[GEL]++hegoaldean	-	+
+en_el_transcurso_de	[INE]++zehar	-	+
 en_espera_de    [GEN]++zain             -       +
 en_evitación_de		[ZERO]++saihestuz               -       +
 en_favor_de     [GEN]++alde             -       +
@@ -317,7 +337,9 @@ en_pro_de       [GEN]++alde             -       +
 en_provecho_de	[GEN]++onerako		-	+
 en_prueba_de    [GEN]++proba_gisa               -       +
 en_recuerdo_de  [GEN]++oroimenez                -       +
+en_referencia_a	[DAT]++dagokionez		-	+
 en_relación_a   [DAT]++buruz            -       +
+en_relación_con	[GEN]++arabera		-	+
 en_representación_de    [GEN]++izenean          -       +
 en_seguimiento_de	[GEN]++atzetik		-	+
 en_señal_de     [GEN]++adierazgarri             -       +
@@ -347,6 +369,7 @@ natural_de	[INE]++jaioa		-	+
 no_sin		[INS]			-	+
 para_bien_de	[GEN]++onerako		-	+
 para_el_bien_de	[GEN]++onerako		-	+
+para_sorpresa_de	[GEN]++harridurarako	-	+
 parecido_a      [GEN]++antzeko          -       +
 parte_de	[GEL]++batzuk		-	+
 pletórico_de	[INS]++betea			-			+
@@ -361,6 +384,7 @@ por_detrás_de   [GEN]++atzetik          -       +
 por_el_bien_de	[GEN]++onerako		-	+
 por_el_centro_de        [GEN]++erditik          -       +
 por_el_otro_lado_de     [GEN]++bestaldetik      -       +
+por_el_transcurso_de	[ZERO]++igarotzeagatik	-	+
 por_encima_de   [GEN]++gainetik         -       +
 por_espacio_de	[INS]			-	+
 por_este_lado_de        [GEN]++alde_honetatik   -       +
@@ -372,12 +396,14 @@ por_mediación_de    [GEN]++bidez	-	+
 por_medio_de    [GEN]++bidez            -       +
 por_mor_de	[GEN]++mesedetan	-	+
 por_motivo_de   [GEN]++kariaz           -       +
+por_motivos_de	[GEN]++kariaz           -       +
 por_obra_de     [GEN]++eskutik          -       +
 por_obra_y_gracia_de    [GEN]++eskutik	-       +
 por_orden_de	[GEN]++aginduz		-	+
 por_parte_de	[GEN]++aldetik		-	+
 por_valor_de    [GEL]++balioarekin	-       +
 por_vía_de      [GEN]++bidez            -       +
+potencia_total_de	[GEL]++potentzia_guztira	-	+
 pro_de		[GEN]++alde             -       +
 procedente_de	[ABL]++datorren		-	+
 respecto_a      [DAT]++buruz            -       +
@@ -392,6 +418,8 @@ sin_ánimo_de	+[AMM][ADIZE]+[DEK][GEL]++gogorik_gabe	my.headpos='[ADI][SIN]'    
 sin_contar_con  [ABS]++kontuan_hartu_gabe               -       +
 sin_perjuicio_de        [DAT]++utzi_gabe                -       +
 so_pena_de	[GEL]++zigorra_ezarriko_da_bestela	-	+
+superficie_total_de	+[AMM][ADIZE]+[DEK][GEL]++azalera_guztira	my.headpos='[ADI][SIN]'          -
+superficie_total_de	[GEL]++azalera_guztira		-	+
 tras_de		+[AMM][ADIZE]+[DEK][INS][NUMS]++gain	my.headpos='[ADI][SIN]'	-	##tras de venir tarde = berandu etortzeaz gain.
 una_especie_de		[GEN]++moduko			-	+
 
@@ -403,6 +431,8 @@ a_despecho_de   nahiz_eta		my.headpos='[ADI][SIN]'	     -       ## A pesar de co
 a_despecho_de   [GEN]++gogoz_bestera    my.headpos='[IZE][ARR]'      -       ## A pesar del jefe, hemos hecho huelga: nagusiaren gogoz bestera, greba egin dugu ##izenaren aurrean
 a_fin_de        +[AMM][ADIZE]+[DEK][GEL]	my.headpos='[ADI][SIN]'	     -       ## ##aditzaren aurrean
 a_fin_de        [GEN]++bukaeran		my.headpos='[IZE][ARR]'      -       ## ##izenaren aurrean
+a_la_altura_de	[GEN]++inguruan		-	+			     ##ELEKAtik; ez dakit zer desberdintasun duen ondokoarekin.
+a_la_altura_de	[GEN]++parean		-	+
 a_la_mitad_de   [GEN]++erdiei/DAT       -			     +       ## han zeudenen erdiei ezetz esan nien  ##
 a_la_mitad_de   [GEN]++erdiak/ABS       -			     +       ## han zeudenen erdiak ezagutzen nituen ##
 a_la_mitad_de   [GEN]++erdira/ALA       -			     +       ## desertuaren erdira joan nintzen   ##lekua + mugim aditza
@@ -431,12 +461,22 @@ alrededor_de    [ZERO]++inguru	  my.headpos='[Z]'    -   ## son alrededor de las
 alrededor_de    [GEN]++inguruan/INE	    -	    +   ## está alrededor de la casa, etxearen inguruan dago  ##aditz estatikoak
 alrededor_de    [GEN]++ingurutik/ABL        -       +   ## pasó alrededor de casa, etxearen ingurutik pasa zen  ##mugimenduzko aditzak
 alrededor_de    [GEN]++ingurura/ALA	    -       +   ## llegó alrededor de casa, etxearen ingurura iritsi zen    ##mugimenduzko aditzak
+cantidad_de	[ZERO]++asko	parent.type='adi-kat'	-
+cantidad_de	[ZERO]++kopuru	-	+
+capacidad_de	+[AMM][ADIZE]+[DEK][GEL]++gaitasun	my.headpos='[ADI][SIN]'          -
+capacidad_de	[DES][GEL]++gaitasun			-				 +
+capacidad_total_de	+[AMM][ADIZE]+[DEK][GEL]++gaitasuna_guztira	my.headpos='[ADI][SIN]'		-
+capacidad_total_de	[GEL]++gaitasuna_guztira	-				 +
+con_capacidad_para	+[AMM][ADIZE]+[DEK][GEL]++gaitasunaz	my.headpos='[ADI][SIN]'          -
+con_capacidad_para	[DES][GEL]++gaitasunaz		-	+
 cerca_de        [ABL]++gertu/INE	    -       +   ## Vivo cerca de la iglesia: elizatik gertu bizi naiz   ##aditz estatikoa
 cerca_de        [GEN]++hurrera/ALA	    -       +   ## Se los llevaron cerca del puente: zubiaren hurrera eraman zituzten ##mugim aditza
 cerca_de        [ZERO]++inguru   ( my.leafpos='[Z]' || my.headpos='[Z]' ) && my.mi='[MG]'   -   ## Había cerca de cien personas:ehun lagun inguru zegoen  ##zenbakiekin
 cerca_de        [ABS]++inguru    my.headpos='[Z]' && my.mi='[MUG]'  -   ## eran cerca de las diez, hamarrak inguru ziren  ##zenbakiak + determ
 con_achaque_de	+[AMM][ADIZE]+[DEK][GEL]++aitzakiarekin	my.headpos='[ADI][SIN]'   -
 con_achaque_de	[GEN]++aitzakiarekin		-	+
+con_un_capital_cercano_a	[ZERO]++inguruko_kapitalarekin	-	+
+con_un_capital_de		[GEL]++kapitalarekin		-	+
 con_vistas_a	+[AMM][ADIZE]+[DEK][GEL]	my.headpos='[ADI][SIN]'	  -
 con_vistas_a    [ALA]++begira           -       +
 con_tal_de      +[AMM][ADIZE]+[DEK][GEL]+[DEK][INE][MG]       my.headpos='[ADI][SIN]'	  -   ## No le importa trabajar, con tal de recibir algo a cambio: lan egiteak ez dio ardura, horren truke zerbait jasotzekotan
@@ -501,6 +541,8 @@ mirando_a       [DAT]++begira   my.headpos=~'[BIZ+]   -     ## estaba mirándome
 mirando_a       [ALA]++begira   -       +		   ## rezan mirando a la meca, mekara begira errezatzen dute       ##lekuak
 mirando_hacia   [DAT]++begira    my.headpos=~'[BIZ+]   -    ## estaba mirando hacia mi, niri begira zegoen; ##bizidunak
 mirando_hacia   [ALA]++begira   -       +		   ## rezan mirando hacia la meca, mekara begira errezatzen dute   ##lekuak
+motivo_de	+[AMM][ADIZE]+[DEK][GEL]++arrazoia   my.headpos='[ADI][SIN]'	      -
+motivo_de	[GEN]++arrazoia	-	+
 pendiente_de	+[AMM][ADIZE]+[DEK][GEL]	my.headpos='[ADI][SIN]'    -
 pendiente_de	[DAT]++begira		-	+
 pese_a  [GEN]++gogoz_bestera     my.headpos='[IZE][ARR]'       +       ## Pese al jefe, hemos hecho huelga: nagusia kontra egon arren, greba egin dugu ##izenaren aurretik
