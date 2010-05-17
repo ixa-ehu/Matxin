@@ -216,10 +216,13 @@
 	<e><p><l>ohartarazi[ADI][SIN]</l><r>ohartu[ADI][SIN]arazi[ATZ][ADI][SIN]+[AMM][PART]</r></p></e>
 	<e><p><l>adopziozko[ADJ][IZL]</l><r>adopzio[IZE][ARR]+[DEK][INS][MG]+[DEK][GEL]</r></p></e>
 	<e><p><l>jitoan[ADJ][IZL]</l><r>jito[IZE][ARR]+[DEK][NUMS]+[DEK][INE]</r></p></e>
+	<e><p><l>aurreratu[ADJ][IZO]</l><r>aurreratu[ADI][SIN]+[AMM][PART]</r></p></e>
 	<e><p><l>abantailatsu[ADJ][IZO]</l><r>abantaila[IZE][ARR]tsu[ATZ][ADJ][IZO]</r></p></e>
 	<e><p><l>aurkako[ADJ][IZL]</l><r>aurka[IZE][ARR]+[DEK][NUMS]+[DEK][GEL]</r></p></e>
+	<e><p><l>aireko[ADJ][IZL]</l><r>aire[IZE][ARR]+[DEK][NUMS]+[DEK][GEL]</r></p></e>
 	<e><p><l>ikaratu[ADJ][IZO]</l><r>ikaratu[ADI][SIN]+[AMM][PART]</r></p></e>
 	<e><p><l>haraindi[IZE][ARR]</l><r>haraindi[ADB][ADOARR]</r></p></e>
+	<e><p><l>guztizko[IZE][ARR]</l><r>guztizko[ADJ][IZL]</r></p></e>
 	<e><p><l>izutu[ADJ][IZO]</l><r>izutu[ADI][SIN]+[AMM][PART]</r></p></e>
 	<e><p><l>nekazaritza[ADJ][IZL]</l><r>nekazaritza[IZE][ARR]</r></p></e>
 	<e><p><l>ajetsu[ADJ][IZO]</l><r>aje[IZE][ARR]tsu[ATZ][ADJ][IZO]</r></p></e>
@@ -229,6 +232,7 @@
 	<e><p><l>erdi_ireki[ADJ][IZO]</l><r>ireki[ADI][SIN]+[AMM][PART]</r></p></e>
 	<e><p><l>nahiz_eta[LOT][JNT]</l><r>eta[LOT][JNT][EMEN]</r></p></e>
 	<e><p><l>garagardo-mota_bat[IZE][ARR]</l><r>bat[IZE][ARR][RARE]</r></p></e>
+	<e><p><l>alerta[IZE][ARR]</l><r>alertatu[ADI][SIN]+[AMM][PART]</r></p></e>
 	<e><p><l>algak[IZE][ARR]</l><r>alga[IZE][ARR]</r></p></e>
 	<e><p><l>piztuta_dagoen[ADJ][IZL]</l><r>egon[ADT][A1][NR_HU]+n[ERL][MEN][ERLT]</r></p></e>
 	<e><p><l>kale_txiki[IZE][ARR]</l><r>txiki[ADJ][IZO]</r></p></e>
@@ -245,15 +249,19 @@
 	<e><p><l>dibertimendu[IZE][ARR]</l><r>dibertitu[ADI][SIN]mendu[ATZ][IZE][ARR]</r></p></e>
 	<e><p><l>anestesiko[IZE][ARR]</l><r>anestesiko[ADJ][IZO]</r></p></e>
 	<e><p><l>ertz_askoko[ADJ][IZL]</l><r>asko[ADB][ADOARR]+[DEK][NUMS]+[DEK][GEL]</r></p></e>
-	<e><p><l>urtean_behingo[IZE][ARR]</l><r>behin[ADB][ADOARR]+[DEK][GEL]</r></p></e>
+	<e><p><l>urtean_behingo[ADJ][IZL]</l><r>behin[ADB][ADOARR]+[DEK][GEL]</r></p></e>
 	<e><p><l>urteroko[IZE][ARR]</l><r>urteroko[ADJ][IZL]</r></p></e>
 	<e><p><l>erantzule[ADJ][IZL]</l><r>erantzule[IZE][ARR]</r></p></e>
+	<e><p><l>jaio_aurreko[ADJ][IZL]</l><r>aurre[IZE][ARR]+[DEK][NUMS]+[DEK][GEL]</r></p></e>
 	<e><p><l>arduratu[ADJ][IZO]</l><r>arduratu[ADI][SIN]+[AMM][PART]</r></p></e>
 	<e><p><l>sentitzen_duen[ADJ][IZL]</l><r>edun[ADL][A1][NR_HU][NK_HU]+n[ERL][MEN][ERLT]</r></p></e>
 	<e><p><l>jangarri[ADJ][IZO]</l><r>jan[ADI][SIN]garri[ATZ][ADJ][IZO]</r></p></e>
+	<e><p><l>aplikatu[ADJ][IZO]</l><r>aplikatu[ADI][SIN]+[AMM][PART]</r></p></e>
 	<e><p><l>esker_oneko[ADJ][IZL]</l><r>on[ADJ][IZO]+[DEK][NUMS]+[DEK][GEL]</r></p></e>
 	<e><p><l>heltze[IZE][ARR]</l><r>heldu[ADI][SIN]tze[ATZ][IZE][ARR]</r></p></e>
-	<e><p><l>uretako[IZE][ARR]</l><r>ur[IZE][ARR]+[DEK][MG]+[DEK][GEL]</r></p></e>
+	<e><p><l>gutxi_gorabeherako[ADJ][IZL]</l><r>gorabehera[ADB][ALGARR]+[DEK][GEL]</r></p></e>
+	<e><p><l>uretako[ADJ][IZL]</l><r>ur[IZE][ARR]+[DEK][MG]+[DEK][GEL]</r></p></e>
+	<e><p><l>armatu[ADJ][IZO]</l><r>armatu[ADI][SIN]+[AMM][PART]</r></p></e>
 	<e><p><l>atzerakinak[IZE][ARR]</l><r>atzerakin[IZE][ARR]</r></p></e>
 	<e><p><l>atxilotze[IZE][ARR]</l><r>atxilotu[ADI][SIN]tze[ATZ][IZE][ARR]</r></p></e>
 	<e><p><l>nahiz[LOT][JNT]</l><r>nahiz[LOT][JNT][HAUT]</r></p></e>
@@ -267,14 +275,17 @@
 	<e><p><l>ikus-entzunezko[ADJ][IZL]</l><r>entzun[ADI][SIN]+[AMM][PART]+[DEK][INS][MG]+[DEK][GEL]</r></p></e>
 	<e><p><l>auto_automatiko[IZE][ARR]</l><r>automatiko[ADJ][IZO]</r></p></e>
 	<e><p><l>elur-jausi[IZE][ARR]</l><r>jausi[ADI][SIN]+[AMM][PART]</r></p></e>
+	<e><p><l>batez_besteko[IZE][ARR]</l><r>beste[ADB][ADOARR]+[DEK][GEL]</r></p></e>
 	<e><p><l>batez_besteko[ADJ][IZL]</l><r>beste[ADB][ADOARR]+[DEK][GEL]</r></p></e>
 	<e><p><l>esnatze[IZE][ARR]</l><r>esnatu[ADI][SIN]tze[ATZ][IZE][ARR]</r></p></e>
 	<e><p><l>bai[IZE][ARR]</l><r>baia[IZE][ARR]</r></p></e>
 	<e><p><l>si[IZE][ARR]</l><r>si[IZE][ARR][RARE]</r></p></e>
+	<e><p><l>atzeko[ADJ][IZL]</l><r>atze[ADJ][IZO][RARE]+[DEK][NUMS]+[DEK][GEL]</r></p></e>
 	<e><p><l>errebes[IZE][ARR]</l><r>errebes[ADJ][IZO]</r></p></e>
 	<e><p><l>bi_adierako[ADJ][IZL]</l><r>adiera[IZE][ARR]+[DEK][NUMS]+[DEK][GEL]</r></p></e>
 	<e><p><l>ur_geldi[IZE][ARR]</l><r>geldi[ADJ][IZO]</r></p></e>
 	<e><p><l>gogaitarazi[ADI][SIN]</l><r>gogaitu[ADI][SIN]arazi[ATZ][ADI][SIN]+[AMM][PART]</r></p></e>
+	<e><p><l>aiurri_txarreko[ADJ][IZL]</l><r>txar[ADJ][IZO]+[DEK][NUMS]+[DEK][GEL]</r></p></e>
 	<e><p><l>fardelak[IZE][ARR]</l><r>fardel[IZE][ARR]</r></p></e>
 	<e><p><l>porrot_egin_duen[ADJ][IZL]</l><r>edun[ADL][A1][NR_HU][NK_HU]+n[ERL][MEN][ERLT]</r></p></e>
 	<e><p><l>zela_gabe[ADJ][IZO]</l><r>gabe[ADJ][IZO][RARE]</r></p></e>
@@ -287,17 +298,20 @@
 	<e><p><l>borondate_oneko[ADJ][IZL]</l><r>on[ADJ][IZO]+[DEK][NUMS]+[DEK][GEL]</r></p></e>
 	<e><p><l>haserre_dagoen[ADJ][IZL]</l><r>egon[ADT][A1][NR_HU]+n[ERL][MEN][ERLT]</r></p></e>
 	<e><p><l>onen[ADJ][IZO]</l><r>on[ADJ][IZO]+[GRA][SUP]</r></p></e>
-	<e><p><l>onena[ADJ][IZL]</l><r>on[ADJ][IZO]+[DEK][GEN]</r></p></e>
+	<e><p><l>onena[IZE][ARR]</l><r>on[ADJ][IZO]+[DEK][GEN][NUMP]+[NUMS]</r></p></e>
 	<e><p><l>prismatikoak[IZE][ARR]</l><r>prismatiko[IZE][ARR]</r></p></e>
+	<e><p><l>beltz[IZE][ARR]</l><r>beltz[ADJ][IZO]</r></p></e>
 	<e><p><l>leherrarazi[ADI][SIN]</l><r>lehertu[ADI][SIN]arazi[ATZ][ADI][SIN]+[AMM][PART]</r></p></e>
 	<e><p><l>balaka[IZE][ARR]</l><r>balakatu[ADI][SIN]+[AMM][PART]</r></p></e>
 	<e><p><l>begiak_estalita[IZE][ARR]</l><r>estali[ADI][SIN]+[AMM][PART]+[ERL][MEN][MOD]</r></p></e>
+	<e><p><l>puztu[ADJ][IZO]</l><r>puztu[ADI][SIN]+[AMM][PART]</r></p></e>
 	<e><p><l>horail[IZE][ARR]</l><r>horail[ADJ][IZO]</r></p></e>
 	<e><p><l>industrian_eskulana_egiten_duenaz_esaten_da[ADJ][IZL]</l><r>izan[ADL][A1][NR_HU]</r></p></e>
 	<e><p><l>gorritze[IZE][ARR]</l><r>gorritu[ADI][SIN]tze[ATZ][IZE][ARR]</r></p></e>
 	<e><p><l>ile_motz[IZE][ARR]</l><r>motz[ADJ][IZO]</r></p></e>
 	<e><p><l>gorputzaren[ADJ][IZL]</l><r>gorputz[IZE][ARR]+[DEK][GEN]</r></p></e>
 	<e><p><l>oihukatze[IZE][ARR]</l><r>oihukatu[ADI][SIN]tze[ATZ][IZE][ARR]</r></p></e>
+	<e><p><l>gogaikarri[IZE][ARR]</l><r>gogaikarri[ADJ][IZO]</r></p></e>
 	<e><p><l>aspertze[IZE][ARR]</l><r>aspertu[ADI][SIN]tze[ATZ][IZE][ARR]</r></p></e>
 	<e><p><l>jaiotako[ADJ][IZL]</l><r>jaio[ADI][SIN]+[AMM][PART]+[ERL][MEN][MOD]+[DEK][GEL]</r></p></e>
 	<e><p><l>mutilen[ADJ][IZL]</l><r>mutil[IZE][ARR]+[DEK][GEN]</r></p></e>
@@ -306,9 +320,10 @@
 	<e><p><l>haize_leun[IZE][ARR]</l><r>leun[ADJ][IZO]</r></p></e>
 	<e><p><l>garagardogile[IZE][ARR]</l><r>garagardo[IZE][ARR]gile[ATZ][IZE][ARR]</r></p></e>
 	<e><p><l>ezteietako[ADJ][IZL]</l><r>eztei[IZE][ARR]+[DEK][NUMP]+[DEK][GEL]</r></p></e>
-	<e><p><l>argibideak[ADJ][IZL]</l><r>argibide[IZE][ARR]+[NUMP]</r></p></e>
+	<e><p><l>argibideak[IZE][ARR]</l><r>argibide[IZE][ARR]</r></p></e>
 	<e><p><l>Britainia_Handia[IZE][ARR]</l><r>handi[ADJ][IZO]+[NUMS]</r></p></e>
 	<e><p><l>orri_handiko_egunkari[IZE][ARR]</l><r>egunkari[IZE][ARR]</r></p></e>
+	<e><p><l>hautsi[ADJ][IZO]</l><r>hautsi[ADI][SIN]+[AMM][PART]</r></p></e>
 	<e><p><l>paparreko[IZE][ARR]</l><r>papar[IZE][ARR]+[DEK][NUMS]+[DEK][GEL]</r></p></e>
 	<e><p><l>zale[IZE][ARR]</l><r>zale[ADJ][IZO]</r></p></e>
 	<e><p><l>horma[ADJ][IZL]</l><r>horma[IZE][ARR]</r></p></e>
@@ -316,46 +331,56 @@
 	<e><p><l>erreka_jo[IZE][ARR]</l><r>jo[ADI][SIN]+[AMM][PART]</r></p></e>
 	<e><p><l>garai_bateko[ADJ][IZL]</l><r>bate[IZE][ARR]+[DEK][NUMS]+[DEK][GEL]</r></p></e>
 	<e><p><l>do[IZE][ARR]</l><r>do[IZE][ARR][RARE]</r></p></e>
+	<e><p><l>txakur[ADJ][IZL]</l><r>txakur[IZE][ARR]</r></p></e>
 	<e><p><l>olana[IZE][ARR]</l><r>olana[IZE][ARR][RARE]</r></p></e>
 	<e><p><l>preso[ADJ][IZL]</l><r>preso[IZE][ARR]</r></p></e>
 	<e><p><l>atzemate[IZE][ARR]</l><r>atzeman[ADI][SIN]te[ATZ][IZE][ARR]</r></p></e>
 	<e><p><l>zamo_arrunt[IZE][ARR]</l><r>arrunt[ADJ][IZO]</r></p></e>
+	<e><p><l>gelditu[IZE][ARR]</l><r>gelditu[ADI][SIN]+[AMM][PART]</r></p></e>
 	<e><p><l>zeramikazko[ADJ][IZL]</l><r>zeramika[IZE][ARR]+[DEK][INS][MG]+[DEK][GEL]</r></p></e>
 	<e><p><l>ziurtatu[ADJ][IZO]</l><r>ziurtatu[ADI][SIN]+[AMM][PART]</r></p></e>
 	<e><p><l>berritsu[IZE][ARR]</l><r>berritsu[ADJ][IZO]</r></p></e>
 	<e><p><l>gai_kimiko[IZE][ARR]</l><r>kimiko[ADJ][IZO]</r></p></e>
 	<e><p><l>koadrodun[ADJ][IZO]</l><r>koadro[ADJ][IZO]dun[ATZ][ADJ][IZO]</r></p></e>
 	<e><p><l>haurren[ADJ][IZL]</l><r>haur[IZE][ARR]+[DEK][GEN]</r></p></e>
-	<e><p><l>kalitate_oneko[IZE][ARR]</l><r>on[ADJ][IZO]+[DEK][NUMS]+[DEK][GEL]</r></p></e>
+	<e><p><l>kalitate_oneko[ADJ][IZL]</l><r>on[ADJ][IZO]+[DEK][NUMS]+[DEK][GEL]</r></p></e>
 	<e><p><l>Eguberriak[IZE][ARR]</l><r>Eguberri[IZE][ARR]</r></p></e>
+	<e><p><l>gauza_erraz[IZE][ARR]</l><r>erraz[ADJ][IZO]</r></p></e>
 	<e><p><l>hiriko[ADJ][IZL]</l><r>hiri[IZE][ARR]+[DEK][NUMS]+[DEK][GEL]</r></p></e>
+	<e><p><l>klasiko[IZE][ARR]</l><r>klasiko[ADJ][IZO]</r></p></e>
 	<e><p><l>bulegoko[ADJ][IZL]</l><r>bulego[IZE][ARR]+[DEK][NUMS]+[DEK][GEL]</r></p></e>
+	<e><p><l>itxi[ADJ][IZO]</l><r>itxi[ADI][SIN]+[AMM][PART]</r></p></e>
 	<e><p><l>ixte[IZE][ARR]</l><r>itxi[ADI][SIN]te[ATZ][IZE][ARR]</r></p></e>
 	<e><p><l>kostako[ADJ][IZL]</l><r>kosta[IZE][ARR]+[DEK][NUMS]+[DEK][GEL]</r></p></e>
 	<e><p><l>biribilki[IZE][ARR]</l><r>biribilki[ADB][ADOARR]</r></p></e>
-	<e><p><l>herri-lurrak[ADJ][IZL]</l><r>lur[IZE][ARR]+[NUMP]</r></p></e>
+	<e><p><l>hartzaileak_ordaintzeko[ADJ][IZL]</l><r>ordaindu[ADI][SIN]tze[ATZ][IZE][ARR]+[DEK][NUMS]+[DEK][GEL]</r></p></e>
+	<e><p><l>koloreko[ADJ][IZL]</l><r>kolore[IZE][ARR]+[DEK][NUMS]+[DEK][GEL]</r></p></e>
+	<e><p><l>herri-lurrak[IZE][ARR]</l><r>lur[IZE][ARR]</r></p></e>
 	<e><p><l>lanera_egunero_trenez[IZE][ARR]</l><r>tren[IZE][ARR]+[DEK][INS][MG]</r></p></e>
 	<e><p><l>konparatibo[IZE][ARR]</l><r>konparatibo[ADJ][IZO]</r></p></e>
 	<e><p><l>norbere_buruarekin_pozik_dagoen[ADJ][IZL]</l><r>egon[ADT][A1][NR_HU]+n[ERL][MEN][ERLT]</r></p></e>
+	<e><p><l>oso[IZE][ARR]</l><r>oso[ADJ][IZO]</r></p></e>
 	<e><p><l>emate[IZE][ARR]</l><r>eman[ADI][SIN]te[ATZ][IZE][ARR]</r></p></e>
 	<e><p><l>handikeria_erakusten_duen[ADJ][IZL]</l><r>edun[ADL][A1][NR_HU][NK_HU]+n[ERL][MEN][ERLT]</r></p></e>
-	<e><p><l>baldintzazko[IZE][ARR]</l><r>baldintza[IZE][ARR]+[DEK][INS][MG]+[DEK][GEL]</r></p></e>
+	<e><p><l>baldintzazko[ADJ][IZL]</l><r>baldintza[IZE][ARR]+[DEK][INS][MG]+[DEK][GEL]</r></p></e>
 	<e><p><l>baldintzazko_adizkiak[IZE][ARR]</l><r>adizki[IZE][ARR]</r></p></e>
 	<e><p><l>bere_buruaz_ziur_dagoen[ADJ][IZL]</l><r>egon[ADT][A1][NR_HU]+n[ERL][MEN][ERLT]</r></p></e>
 	<e><p><l>isilpeko[ADJ][IZL]</l><r>isilpe[IZE][ARR]+[DEK][NUMS]+[DEK][GEL]</r></p></e>
+	<e><p><l>harrituta[ADJ][IZO]</l><r>harritu[ADI][SIN]+[AMM][PART]+[ERL][MEN][MOD]</r></p></e>
 	<e><p><l>konglomeratu[IZE][ARR]</l><r>konglomeratu[ADI][SIN]+[AMM][PART]</r></p></e>
 	<e><p><l>eliztarrak[IZE][ARR]</l><r>eliztar[IZE][ARR]</r></p></e>
+	<e><p><l>garaikide[ADJ][IZL]</l><r>garaikide[IZE][ARR]</r></p></e>
 	<e><p><l>mespretxuzko[ADJ][IZL]</l><r>mespretxu[IZE][ARR]+[DEK][INS][MG]+[DEK][GEL]</r></p></e>
-	<e><p><l>pozik[IZE][ARR]</l><r>pozik[ADB][ADOARR]</r></p></e>
 	<e><p><l>sofa-ohe[ADJ][IZL]</l><r>ohe[IZE][ARR]</r></p></e>
 	<e><p><l>uste_oso[IZE][ARR]</l><r>oso[ADJ][IZO]</r></p></e>
 	<e><p><l>konbentzitzen_duen[ADJ][IZL]</l><r>edun[ADL][A1][NR_HU][NK_HU]+n[ERL][MEN][ERLT]</r></p></e>
 	<e><p><l>kortxo-kentzeko[IZE][ARR]</l><r>kendu[ADI][SIN]tze[ATZ][IZE][ARR]+[DEK][BNK][MG]</r></p></e>
+	<e><p><l>kosmetiko[IZE][ARR]</l><r>kosmetiko[ADJ][IZO]</r></p></e>
 	<e><p><l>gainazaleko[ADJ][IZL]</l><r>gainazal[IZE][ARR]+[DEK][NUMS]+[DEK][GEL]</r></p></e>
 	<e><p><l>homologo[IZE][ARR]</l><r>homologo[ADJ][IZO]</r></p></e>
 	<e><p><l>koldar[IZE][ARR]</l><r>koldar[ADJ][IZO]</r></p></e>
 	<e><p><l>galleta_gatzdun[IZE][ARR]</l><r>gatzdun[ADJ][IZO]</r></p></e>
-	<e><p><l>sortzeko[IZE][ARR]</l><r>sortze[IZE][ARR]+[DEK][NUMS]+[DEK][GEL]</r></p></e>
+	<e><p><l>sortzeko[ADJ][IZL]</l><r>sortze[IZE][ARR]+[DEK][NUMS]+[DEK][GEL]</r></p></e>
 	<e><p><l>kredentzialak[IZE][ARR]</l><r>kredentzial[IZE][ARR]</r></p></e>
 	<e><p><l>karmin-koloreko[ADJ][IZL]</l><r>kolore[IZE][ARR]+[DEK][NUMS]+[DEK][GEL]</r></p></e>
 	<e><p><l>kritikatzaile[ADJ][IZL]</l><r>kritikatzaile[IZE][ARR]</r></p></e>
@@ -370,17 +395,18 @@
 	<e><p><l>hil[ADJ][IZL]</l><r>hil[IZE][ARR]</r></p></e>
 	<e><p><l>jaiste[IZE][ARR]</l><r>jaitsi[ADI][SIN]te[ATZ][IZE][ARR]</r></p></e>
 	<e><p><l>babeserako[ADJ][IZL]</l><r>babes[IZE][ARR]+[DEK][NUMS]+[DEK][ALA]+[DEK][GEL]</r></p></e>
+	<e><p><l>galdu[ADJ][IZO]</l><r>galdu[ADI][SIN]+[AMM][PART]</r></p></e>
 	<e><p><l>jakinaren_gainean_egindako[ADJ][IZL]</l><r>egin[ADI][SIN]+[AMM][PART]+[ERL][MEN][MOD]+[DEK][GEL]</r></p></e>
 	<e><p><l>hortzetako[ADJ][IZL]</l><r>hortz[IZE][ARR]+[DEK][MG]+[DEK][GEL]</r></p></e>
 	<e><p><l>usain-kengarri[IZE][ARR]</l><r>kengarri[ADJ][IZO]</r></p></e>
 	<e><p><l>irtete[IZE][ARR]</l><r>irten[ADI][SIN]te[ATZ][IZE][ARR]</r></p></e>
-	<e><p><l>utzi[IZE][ARR]</l><r>utzi[ADI][SIN]+[AMM][PART]</r></p></e>
+	<e><p><l>deprimitu[ADJ][IZO]</l><r>deprimitu[ADI][SIN]+[AMM][PART]</r></p></e>
+	<e><p><l>utzi[ADJ][IZO]</l><r>utzi[ADI][SIN]+[AMM][PART]</r></p></e>
 	<e><p><l>eratorri[ADJ][IZO]</l><r>eratorri[ADI][SIN]+[AMM][PART]</r></p></e>
 	<e><p><l>aukeratu[ADJ][IZO]</l><r>aukeratu[ADI][SIN]+[AMM][PART]</r></p></e>
 	<e><p><l>markako[IZE][ARR]</l><r>marka[IZE][ARR]+[DEK][NUMS]+[DEK][GEL]</r></p></e>
-	<e><p><l>atsekabegarri[ADJ][IZO]</l><r>atsekabetu[ADI][SIN]garri[ATZ][ADJ][IZO]</r></p></e>
-	<e><p><l>etsi[ADJ][IZO]</l><r>etsi[ADI][SIN]+[AMM][PART]</r></p></e>
 	<e><p><l>atsekabetu[ADJ][IZO]</l><r>atsekabetu[ADI][SIN]+[AMM][PART]</r></p></e>
+	<e><p><l>etsi[ADJ][IZO]</l><r>etsi[ADI][SIN]+[AMM][PART]</r></p></e>
 	<e><p><l>norako[IZE][ARR]</l><r>nora[ADB][ALGGAL]+[DEK][GEL]</r></p></e>
 	<e><p><l>zehaztu[ADJ][IZO]</l><r>zehaztu[ADI][SIN]+[AMM][PART]</r></p></e>
 	<e><p><l>erabakitasun[IZE][ARR]</l><r>erabaki[ADI][SIN]+[AMM][PART]tasun[ATZ][IZE][ARR]</r></p></e>
@@ -389,7 +415,6 @@
 	<e><p><l>eskuordetze[IZE][ARR]</l><r>eskuordetu[ADI][SIN]tze[ATZ][IZE][ARR]</r></p></e>
 	<e><p><l>egoskor[IZE][ARR]</l><r>egoskor[ADJ][IZO]</r></p></e>
 	<e><p><l>hondatu[ADJ][IZO]</l><r>hondatu[ADI][SIN]+[AMM][PART]</r></p></e>
-	<e><p><l>argibideak[IZE][ARR]</l><r>argibide[IZE][ARR]</r></p></e>
 	<e><p><l>ezagutarazi[ADI][SIN]</l><r>ezagutu[ADI][SIN]arazi[ATZ][ADI][SIN]+[AMM][PART]</r></p></e>
 	<e><p><l>ezagutarazte[IZE][ARR]</l><r>ezagutu[ADI][SIN]arazi[ATZ][ADI][SIN]te[ATZ][IZE][ARR]</r></p></e>
 	<e><p><l>deserosotasun[IZE][ARR]</l><r>deseroso[ADJ][IZO]tasun[ATZ][IZE][ARR]</r></p></e>
@@ -401,23 +426,23 @@
 	<e><p><l>esan_txarreko[ADJ][IZL]</l><r>txar[ADJ][IZO]+[DEK][NUMS]+[DEK][GEL]</r></p></e>
 	<e><p><l>grinarik_gabeko[ADJ][IZL]</l><r>gabe[ADB][ADOARR]+[DEK][GEL]</r></p></e>
 	<e><p><l>desagerrarazi[ADI][SIN]</l><r>desagertu[ADI][SIN]arazi[ATZ][ADI][SIN]+[AMM][PART]</r></p></e>
-	<e><p><l>erabili_eta_botatzeko[IZE][ARR]</l><r>botatu[ADI][SIN]tze[ATZ][IZE][ARR]+[DEK][NUMS]+[DEK][GEL]</r></p></e>
+	<e><p><l>erabili_eta_botatzeko[ADJ][IZL]</l><r>botatu[ADI][SIN]tze[ATZ][IZE][ARR]+[DEK][NUMS]+[DEK][GEL]</r></p></e>
 	<e><p><l>ezabatze[IZE][ARR]</l><r>ezabatu[ADI][SIN]tze[ATZ][IZE][ARR]</r></p></e>
 	<e><p><l>zerbait_egiteko_prest_dagoen[ADJ][IZL]</l><r>egon[ADT][A1][NR_HU]+n[ERL][MEN][ERLT]</r></p></e>
-	<e><p><l>utzi[ADJ][IZO]</l><r>utzi[ADI][SIN]+[AMM][PART]</r></p></e>
 	<e><p><l>murgiltze[IZE][ARR]</l><r>murgildu[ADI][SIN]tze[ATZ][IZE][ARR]</r></p></e>
 	<e><p><l>zorabiatu[ADJ][IZO]</l><r>zorabiatu[ADI][SIN]+[AMM][PART]</r></p></e>
 	<e><p><l>DNA[IZE][ARR]</l><r>DNA[SIG]</r></p></e>
 	<e><p><l>adarzabal[IZE][ARR]</l><r>adarzabal[ADJ][IZO]</r></p></e>
 	<e><p><l>geldirik_dagoen[IZE][ARR]</l><r>egon[ADT][A1][NR_HU]+n[ERL][MEN][ERLT]</r></p></e>
 	<e><p><l>jarduera[ADJ][IZL]</l><r>jarduera[IZE][ARR]</r></p></e>
-	<e><p><l>behera[IZE][ARR]</l><r>behera[ADJ][IZO][RARE]</r></p></e>
+	<e><p><l>bikoitz[IZE][ARR]</l><r>bikoitz[ADJ][IZO]</r></p></e>
 	<e><p><l>errekan_behera[ADJ][IZL]</l><r>beheratu[ADI][SIN]+[AMM][ADOIN]</r></p></e>
 	<e><p><l>beheranzko[ADJ][IZL]</l><r>behe[IZE][ARR]+[DEK][NUMS]+[DEK][ABZ]+[DEK][GEL]</r></p></e>
 	<e><p><l>logura_den[ADJ][IZL]</l><r>izan[ADL][A1][NR_HU]+n[ERL][MEN][ERLT]</r></p></e>
 	<e><p><l>gidatze[IZE][ARR]</l><r>gidatu[ADI][SIN]tze[ATZ][IZE][ARR]</r></p></e>
 	<e><p><l>ordaintzeko[ADJ][IZL]</l><r>ordaindu[ADI][SIN]tze[ATZ][IZE][ARR]+[DEK][NUMS]+[DEK][GEL]</r></p></e>
 	<e><p><l>imitaziozko[IZE][ARR]</l><r>imitazio[IZE][ARR]+[DEK][INS][MG]+[DEK][GEL]</r></p></e>
+	<e><p><l>bikoiztu[ADJ][IZO]</l><r>bikoiztu[ADI][SIN]+[AMM][PART]</r></p></e>
 	<e><p><l>hilzorian_dagoen[ADJ][IZL]</l><r>egon[ADT][A1][NR_HU]+n[ERL][MEN][ERLT]</r></p></e>
 	<e><p><l>mi[IZE][ARR]</l><r>mi[IZE][ARR][RARE]</r></p></e>
 	<e><p><l>belarritakoak[IZE][ARR]</l><r>belarritako[IZE][ARR]</r></p></e>
@@ -428,10 +453,11 @@
 	<e><p><l>ebanozko[ADJ][IZL]</l><r>ebano[IZE][ARR]+[DEK][INS][MG]+[DEK][GEL]</r></p></e>
 	<e><p><l>elizaren[ADJ][IZL]</l><r>eliza[IZE][ARR]+[DEK][GEN]</r></p></e>
 	<e><p><l>jateko[ADJ][IZL]</l><r>jan[ADI][SIN]te[ATZ][IZE][ARR]+[DEK][NUMS]+[DEK][GEL]</r></p></e>
+	<e><p><l>erredakzio[ADJ][IZL]</l><r>erredakzio[IZE][ARR]</r></p></e>
 	<e><p><l>ahalegin_handirik_egiten_ez_duen[ADJ][IZL]</l><r>edun[ADL][A1][NR_HU][NK_HU]+n[ERL][MEN][ERLT]</r></p></e>
 	<e><p><l>zortzigarren[ADJ][IZL]</l><r>zortzi[DET][DZH][NUMP]garren[ATZ][DET][ORD]</r></p></e>
 	<e><p><l>zortzi[IZE][ARR]</l><r>zortzi[IZE][ARR][RARE]</r></p></e>
-	<e><p><l>gomazko[IZE][ARR]</l><r>goma[IZE][ARR]+[DEK][INS][MG]+[DEK][GEL]</r></p></e>
+	<e><p><l>gomazko[ADJ][IZL]</l><r>goma[IZE][ARR]+[DEK][INS][MG]+[DEK][GEL]</r></p></e>
 	<e><p><l>zaharren[ADJ][IZO]</l><r>zahar[ADJ][IZO]+[GRA][SUP]</r></p></e>
 	<e><p><l>zaharrak[ADJ][IZL]</l><r>zahar[ADJ][IZO]+[NUMP]</r></p></e>
 	<e><p><l>hautesleak[IZE][ARR]</l><r>hautesle[IZE][ARR]</r></p></e>
@@ -439,6 +465,7 @@
 	<e><p><l>hamaikagarren[IZE][ARR]</l><r>hamaika[DET][DZH][NUMP]garren[ATZ][DET][ORD]</r></p></e>
 	<e><p><l>posta_elektroniko[IZE][ARR]</l><r>elektroniko[ADJ][IZO]</r></p></e>
 	<e><p><l>brodatu[IZE][ARR]</l><r>brodatu[ADI][SIN]+[AMM][PART]</r></p></e>
+	<e><p><l>esmeralda[ADJ][IZL]</l><r>esmeralda[IZE][ARR]</r></p></e>
 	<e><p><l>joandako[IZE][ARR]</l><r>joan[ADI][SIN]+[AMM][PART]+[ERL][MEN][MOD]+[DEK][GEL]</r></p></e>
 	<e><p><l>ahalmena_emate[IZE][ARR]</l><r>eman[ADI][SIN]te[ATZ][IZE][ARR]</r></p></e>
 	<e><p><l>onartze[IZE][ARR]</l><r>onartu[ADI][SIN]tze[ATZ][IZE][ARR]</r></p></e>
@@ -450,6 +477,7 @@
 	<e><p><l>erraiak[IZE][ARR]</l><r>errai[IZE][ARR]</r></p></e>
 	<e><p><l>ingurumenaren[ADJ][IZL]</l><r>ingurumen[IZE][ARR]+[DEK][GEN]</r></p></e>
 	<e><p><l>orekatu[ADJ][IZO]</l><r>orekatu[ADI][SIN]+[AMM][PART]</r></p></e>
+	<e><p><l>berdin[IZE][ARR]</l><r>berdin[ADJ][IZO]</r></p></e>
 	<e><p><l>zalantzazko[ADJ][IZL]</l><r>zalantza[IZE][ARR]+[DEK][INS][MG]+[DEK][GEL]</r></p></e>
 	<e><p><l>tentetze[IZE][ARR]</l><r>tentetu[ADI][SIN]tze[ATZ][IZE][ARR]</r></p></e>
 	<e><p><l>eskailera_mekaniko[IZE][ARR]</l><r>mekaniko[ADJ][IZO]</r></p></e>
@@ -459,12 +487,14 @@
 	<e><p><l>landare_hostoiraunkor[IZE][ARR]</l><r>hostoiraunkor[ADJ][IZO]</r></p></e>
 	<e><p><l>mundu_guztia[IZE][ARR]</l><r>guzti[DET][ORO]+[NUMS]</r></p></e>
 	<e><p><l>gogorarazi[ADI][SIN]</l><r>gogoratu[ADI][SIN]arazi[ATZ][ADI][SIN]+[AMM][PART]</r></p></e>
+	<e><p><l>bikotekide_ohi[IZE][ARR]</l><r>ohi[ADJ][IZO]</r></p></e>
 	<e><p><l>puzte[IZE][ARR]</l><r>puztu[ADI][SIN]te[ATZ][IZE][ARR]</r></p></e>
 	<e><p><l>salbuespenezko[ADJ][IZL]</l><r>salbuespen[IZE][ARR]+[DEK][INS][MG]+[DEK][GEL]</r></p></e>
 	<e><p><l>gehiegizko[IZE][ARR]</l><r>gehiegizko[ADJ][IZL]</r></p></e>
 	<e><p><l>gehiegi[ADJ][IZO]</l><r>gehiegi[ADJ][IZO][RARE]</r></p></e>
 	<e><p><l>hunkituta_dagoen[ADJ][IZL]</l><r>egon[ADT][A1][NR_HU]+n[ERL][MEN][ERLT]</r></p></e>
 	<e><p><l>baztertze[IZE][ARR]</l><r>baztertu[ADI][SIN]tze[ATZ][IZE][ARR]</r></p></e>
+	<e><p><l>betearazle[ADJ][IZL]</l><r>betearazle[IZE][ARR]</r></p></e>
 	<e><p><l>salbuetsi[ADJ][IZO]</l><r>salbuetsi[ADI][SIN]+[AMM][PART]</r></p></e>
 	<e><p><l>bizigarri[ADJ][IZO]</l><r>bizitu[ADI][SIN]garri[ATZ][ADJ][IZO]</r></p></e>
 	<e><p><l>dagoen[ADJ][IZL]</l><r>egon[ADT][A1][NR_HU]+n[ERL][MEN][ERLT]</r></p></e>
@@ -474,35 +504,41 @@
 	<e><p><l>iraungi[ADJ][IZO]</l><r>iraungi[ADI][SIN]+[AMM][PART]</r></p></e>
 	<e><p><l>gehiago[IZE][ARR]</l><r>gehiagotu[ADI][SIN]+[AMM][PART]</r></p></e>
 	<e><p><l>luxuzko[ADJ][IZL]</l><r>luxu[IZE][ARR]+[DEK][INS][MG]+[DEK][GEL]</r></p></e>
-	<e><p><l>ireki[IZE][ARR]</l><r>ireki[ADI][SIN]+[AMM][PART]</r></p></e>
+	<e><p><l>ireki[ADJ][IZO]</l><r>ireki[ADI][SIN]+[AMM][PART]</r></p></e>
 	<e><p><l>fa[IZE][ARR]</l><r>fa[IZE][ARR][RARE]</r></p></e>
 	<e><p><l>ehun[IZE][ARR]</l><r>ehun[IZE][ARR][RARE]</r></p></e>
+	<e><p><l>aurrez_aurreko[ADJ][IZL]</l><r>aurre[IZE][ARR]+[DEK][NUMS]+[DEK][GEL]</r></p></e>
 	<e><p><l>egitatezko[ADJ][IZL]</l><r>egitate[IZE][ARR]+[DEK][INS][MG]+[DEK][GEL]</r></p></e>
 	<e><p><l>maitagarri[IZE][ARR]</l><r>maitagarri[ADJ][IZO]</r></p></e>
 	<e><p><l>faltsutze[IZE][ARR]</l><r>faltsutu[ADI][SIN]tze[ATZ][IZE][ARR]</r></p></e>
 	<e><p><l>huts_egin_dezakeen[ADJ][IZL]</l><r>ezan[ADL][A5][NR_HU][NK_HU]+n[ERL][MEN][ERLT]</r></p></e>
+	<e><p><l>lugorri[ADJ][IZL]</l><r>lugorri[IZE][ARR]</r></p></e>
+	<e><p><l>muturreko[ADJ][IZL]</l><r>mutur[IZE][ARR]+[DEK][NUMS]+[DEK][GEL]</r></p></e>
 	<e><p><l>garrantzi_handiko[ADJ][IZL]</l><r>handi[ADJ][IZO]+[DEK][NUMS]+[DEK][GEL]</r></p></e>
 	<e><p><l>modan_dagoen[ADJ][IZL]</l><r>egon[ADT][A1][NR_HU]+n[ERL][MEN][ERLT]</r></p></e>
 	<e><p><l>gantz_gabe[ADJ][IZO]</l><r>gabe[ADJ][IZO][RARE]</r></p></e>
 	<e><p><l>aldeko[ADJ][IZL]</l><r>alde[IZE][ARR]+[DEK][NUMS]+[DEK][GEL]</r></p></e>
-	<e><p><l>gustukoen[IZE][ARR]</l><r>gustuko[ADJ][IZL]+[DEK][GEN][NUMP]</r></p></e>
 	<e><p><l>gustukoen[ADJ][IZL]</l><r>gustuko[ADJ][IZL]+[GRA][SUP]</r></p></e>
 	<e><p><l>egingarri[ADJ][IZO]</l><r>egin[ADI][SIN]garri[ATZ][ADJ][IZO]</r></p></e>
 	<e><p><l>zerbitzu-sariak[IZE][ARR]</l><r>sari[IZE][ARR]</r></p></e>
 	<e><p><l>emakumezkoaren[ADJ][IZL]</l><r>emakume[IZE][ARR]+[DEK][INS][MG]+[DEK][GEL]</r></p></e>
 	<e><p><l>jai[ADJ][IZL]</l><r>jai[IZE][ARR]</r></p></e>
 	<e><p><l>jaiak[IZE][ARR]</l><r>jai[IZE][ARR]</r></p></e>
+	<e><p><l>gutxiago[ADJ][IZL]</l><r>gutxiagotu[ADI][SIN]+[AMM][ADOIN]</r></p></e>
 	<e><p><l>ustel_gertatzen_den[IZE][ARR]</l><r>izan[ADL][A1][NR_HU]+n[ERL][MEN][ERLT]</r></p></e>
 	<e><p><l>nobelako[ADJ][IZL]</l><r>nobela[IZE][ARR]+[DEK][NUMS]+[DEK][GEL]</r></p></e>
 	<e><p><l>fikziozko[ADJ][IZL]</l><r>fikzio[IZE][ARR]+[DEK][INS][MG]+[DEK][GEL]</r></p></e>
 	<e><p><l>gaizto[IZE][ARR]</l><r>gaizto[ADJ][IZO]</r></p></e>
 	<e><p><l>bost[IZE][ARR]</l><r>bost[IZE][ARR][RARE]</r></p></e>
+	<e><p><l>azken[ADJ][IZL]</l><r>azken[IZE][ARR]</r></p></e>
 	<e><p><l>mugatu[ADJ][IZO]</l><r>mugatu[ADI][SIN]+[AMM][PART]</r></p></e>
 	<e><p><l>su_artifizialak[IZE][ARR]</l><r>artifizial[ADJ][IZO]+[NUMP]</r></p></e>
+	<e><p><l>lehenengo[IZE][ARR]</l><r>lehenengo[ADB][ALGARR]</r></p></e>
 	<e><p><l>arrain_usaina_duen[ADJ][IZL]</l><r>edun[ADL][A1][NR_HU][NK_HU]+n[ERL][MEN][ERLT]</r></p></e>
 	<e><p><l>akatsik_gabe[ADJ][IZO]</l><r>gabe[ADJ][IZO][RARE]</r></p></e>
 	<e><p><l>irtirin[IZE][ARR]</l><r>irtirin[ADJ][IZO]</r></p></e>
-	<e><p><l>erori[IZE][ARR]</l><r>erori[ADI][SIN]+[AMM][PART]</r></p></e>
+	<e><p><l>erori[ADJ][IZO]</l><r>erori[ADI][SIN]+[AMM][PART]</r></p></e>
+	<e><p><l>keinu_zeremoniatsu[IZE][ARR]</l><r>zeremoniatsu[ADJ][IZO]</r></p></e>
 	<e><p><l>peluxezko[ADJ][IZL]</l><r>peluxe[IZE][ARR]+[DEK][INS][MG]+[DEK][GEL]</r></p></e>
 	<e><p><l>maila_berean[ADJ][IZL]</l><r>bera[DET][ERKIND][NUMS]+[DEK][GEN]</r></p></e>
 	<e><p><l>pasabide_jaso[IZE][ARR]</l><r>jaso[ADI][SIN]+[AMM][PART]</r></p></e>
@@ -514,21 +550,25 @@
 	<e><p><l>lehen[ADJ][IZL]</l><r>lehen[IZE][ARR]</r></p></e>
 	<e><p><l>auzitegiko[ADJ][IZL]</l><r>auzitegi[IZE][ARR]+[DEK][NUMS]+[DEK][GEL]</r></p></e>
 	<e><p><l>aurreikus_daitekeen[ADJ][IZL]</l><r>edin[ADL][A5][NR_HU]+n[ERL][MEN][ERLT]</r></p></e>
+	<e><p><l>aurreranzko[ADJ][IZL]</l><r>aurre[IZE][ARR]+[DEK][NUMS]+[DEK][ABZ]+[DEK][GEL]</r></p></e>
 	<e><p><l>laugarren[ADJ][IZL]</l><r>lau[DET][DZH][NUMP]garren[ATZ][DET][ORD]</r></p></e>
 	<e><p><l>lau[IZE][ARR]</l><r>lau[IZE][ARR][RARE]</r></p></e>
 	<e><p><l>kargatu[ADJ][IZO]</l><r>kargatu[ADI][SIN]+[AMM][PART]</r></p></e>
-	<e><p><l>unibertsitate_edo_fakultate_bateko_lehen_urteko_ikaslea[ADJ][IZL]</l><r>ikasle[IZE][ARR]+[NUMS]</r></p></e>
 	<e><p><l>unibertsitate_edo_fakultate_bateko_lehen_urteko_ikasle[IZE][ARR]</l><r>ikasle[IZE][ARR]</r></p></e>
 	<e><p><l>ur_geza[IZE][ARR]</l><r>geza[ADJ][IZO]</r></p></e>
 	<e><p><l>beldurtuta_dagoen[ADJ][IZL]</l><r>egon[ADT][A1][NR_HU]+n[ERL][MEN][ERLT]</r></p></e>
+	<e><p><l>aurreko[ADJ][IZL]</l><r>aurre[IZE][ARR]+[DEK][NUMS]+[DEK][GEL]</r></p></e>
 	<e><p><l>faborito[IZE][ARR]</l><r>faborito[ADJ][IZO]</r></p></e>
 	<e><p><l>izoztu[ADJ][IZO]</l><r>izoztu[ADI][SIN]+[AMM][PART]</r></p></e>
 	<e><p><l>fruiturik_gabe[ADJ][IZO]</l><r>gabe[ADJ][IZO][RARE]</r></p></e>
 	<e><p><l>frijituak[IZE][ARR]</l><r>frijitu[ADI][SIN]+[AMM][PART]</r></p></e>
 	<e><p><l>sol[IZE][ARR]</l><r>sol[IZE][ARR][RARE]</r></p></e>
 	<e><p><l>arraustu[ADJ][IZO]</l><r>arraustu[ADI][SIN]+[AMM][PART]</r></p></e>
+	<e><p><l>gay[ADJ][IZL]</l><r>gay[IZE][ARR]</r></p></e>
 	<e><p><l>gel[IZE][ARR]</l><r>gel[IZE][ARR][RARE]</r></p></e>
 	<e><p><l>orokortze[IZE][ARR]</l><r>orokortu[ADI][SIN]tze[ATZ][IZE][ARR]</r></p></e>
+	<e><p><l>geriatriko[ADJ][IZL]</l><r>geriatriko[IZE][ARR]</r></p></e>
+	<e><p><l>dohaindu[ADJ][IZL]</l><r>dohaindu[ADI][SIN]</r></p></e>
 	<e><p><l>urreztatze[IZE][ARR]</l><r>urreztatu[ADI][SIN]tze[ATZ][IZE][ARR]</r></p></e>
 	<e><p><l>urre-koloreko[ADJ][IZL]</l><r>kolore[IZE][ARR]+[DEK][NUMS]+[DEK][GEL]</r></p></e>
 	<e><p><l>xarma_asko_duen[IZE][ARR]</l><r>edun[ADL][A1][NR_HU][NK_HU]+n[ERL][MEN][ERLT]</r></p></e>
@@ -543,7 +583,7 @@
 	<e><p><l>urre-koloreko[IZE][ARR]</l><r>kolore[IZE][ARR]+[DEK][NUMS]+[DEK][GEL]</r></p></e>
 	<e><p><l>pixkanakako[ADJ][IZL]</l><r>pixkanaka[ADB][ADOARR]+[DEK][GEL]</r></p></e>
 	<e><p><l>lizentziadun[IZE][ARR]</l><r>lizentziadun[ADJ][IZO]</r></p></e>
-	<e><p><l>harea_bota_lurrera[IZE][ARR]</l><r>lurreratu[ADI][SIN]+[AMM][PART]</r></p></e>
+	<e><p><l>lan_astun[IZE][ARR]</l><r>astun[ADJ][IZO]</r></p></e>
 	<e><p><l>oinarri_gabe[ADJ][IZO]</l><r>gabe[ADJ][IZO][RARE]</r></p></e>
 	<e><p><l>gonbidatu[IZE][ARR]</l><r>gonbidatu[ADI][SIN]+[AMM][PART]</r></p></e>
 	<e><p><l>gogotsu[IZE][ARR]</l><r>gogotsu[ADJ][IZO]</r></p></e>
@@ -561,24 +601,25 @@
 	<e><p><l>atzeko_atea_duen_kotxe[IZE][ARR]</l><r>kotxe[IZE][ARR]</r></p></e>
 	<e><p><l>ipurmasailak[IZE][ARR]</l><r>ipurmasail[IZE][ARR]</r></p></e>
 	<e><p><l>belar_ondu[IZE][ARR]</l><r>ondu[ADI][SIN]+[AMM][PART]</r></p></e>
-	<e><p><l>hur-koloreko[IZE][ARR]</l><r>kolore[IZE][ARR]+[DEK][NUMS]+[DEK][GEL]</r></p></e>
+	<e><p><l>hur-koloreko[ADJ][IZL]</l><r>kolore[IZE][ARR]+[DEK][NUMS]+[DEK][GEL]</r></p></e>
 	<e><p><l>sendatze[IZE][ARR]</l><r>sendatu[ADI][SIN]tze[ATZ][IZE][ARR]</r></p></e>
 	<e><p><l>oinordetzako[ADJ][IZL]</l><r>oinordetza[IZE][ARR]+[DEK][NUMS]+[DEK][GEL]</r></p></e>
 	<e><p><l>heterosexual[IZE][ARR]</l><r>heterosexual[ADJ][IZO]</r></p></e>
+	<e><p><l>hi-fi[IZE][ARR]</l><r>hi-fi[ADJ][IZL]</r></p></e>
 	<e><p><l>altuera[ADJ][IZL]</l><r>altuera[IZE][ARR]</r></p></e>
+	<e><p><l>puntu_goren[IZE][ARR]</l><r>goren[ADJ][IZO]</r></p></e>
 	<e><p><l>goi-mailako[ADJ][IZL]</l><r>maila[IZE][ARR]+[DEK][NUMS]+[DEK][GEL]</r></p></e>
 	<e><p><l>graduazio_altuko[ADJ][IZL]</l><r>altu[ADJ][IZO]+[DEK][NUMS]+[DEK][GEL]</r></p></e>
 	<e><p><l>goi-mailako_teknologia_duen[ADJ][IZL]</l><r>edun[ADL][A1][NR_HU][NK_HU]+n[ERL][MEN][ERLT]</r></p></e>
 	<e><p><l>ibiltari[IZE][ARR]</l><r>ibiltari[ADJ][IZO]</r></p></e>
 	<e><p><l>barrez_lehertzeko[ADJ][IZL]</l><r>lehertu[ADI][SIN]tze[ATZ][IZE][ARR]+[DEK][NUMS]+[DEK][GEL]</r></p></e>
-	<e><p><l>atzeko[ADJ][IZL]</l><r>atze[ADJ][IZO][RARE]+[DEK][NUMS]+[DEK][GEL]</r></p></e>
 	<e><p><l>aurrez_pentsatu_gabe[ADJ][IZO]</l><r>gabe[ADJ][IZO][RARE]</r></p></e>
 	<e><p><l>objektu_bati_eusten_diona[IZE][ARR]</l><r>edun[ADL][A1][NR_HU][NI_HU][NK_HU]+na[ERL][MEN][KONP]</r></p></e>
 	<e><p><l>tokiko[IZE][ARR]</l><r>toki[IZE][ARR]+[DEK][NUMS]+[DEK][GEL]</r></p></e>
-	<e><p><l>etxera[IZE][ARR]</l><r>etxeratu[ADI][SIN]+[AMM][PART]</r></p></e>
 	<e><p><l>etxerik_ez_duen[ADJ][IZL]</l><r>edun[ADL][A1][NR_HU][NK_HU]+n[ERL][MEN][ERLT]</r></p></e>
 	<e><p><l>etxeko[ADJ][IZL]</l><r>etxe[IZE][ARR]+[DEK][NUMS]+[DEK][GEL]</r></p></e>
 	<e><p><l>herriminez[ADJ][IZL]</l><r>herrimin[IZE][ARR]+[DEK][INS][MG]</r></p></e>
+	<e><p><l>itzultzeko[ADJ][IZL]</l><r>itzultze[IZE][ARR]+[DEK][NUMS]+[DEK][GEL]</r></p></e>
 	<e><p><l>etsita[ADJ][IZO]</l><r>etsi[ADI][SIN]+[AMM][PART]+[ERL][MEN][MOD]</r></p></e>
 	<e><p><l>horizontal[IZE][ARR]</l><r>horizontal[ADJ][IZO]</r></p></e>
 	<e><p><l>gaixo_terminalentzako_ospitale[IZE][ARR]</l><r>ospitale[IZE][ARR]</r></p></e>
@@ -587,12 +628,14 @@
 	<e><p><l>etxeko_lanak[IZE][ARR]</l><r>lan[IZE][ARR]</r></p></e>
 	<e><p><l>makurrarazi[ADI][SIN]</l><r>makurtu[ADI][SIN]arazi[ATZ][ADI][SIN]+[AMM][PART]</r></p></e>
 	<e><p><l>ehungarren[DET][ORD]</l><r>ehun[DET][DZH][NUMP]garren[ATZ][DET][ORD]</r></p></e>
+	<e><p><l>hibrido[IZE][ARR]</l><r>hibrido[ADJ][IZO]</r></p></e>
 	<e><p><l>hipokondriako[IZE][ARR]</l><r>hipokondriako[ADJ][IZO]</r></p></e>
 	<e><p><l>hipokrita[IZE][ARR]</l><r>hipokrita[ADJ][IZO]</r></p></e>
 	<e><p><l>idiomatiko[ADJ][IZL]</l><r>idioma[IZE][ARR]+[DEK][NUMS]+[DEK][ABL]+[DEK][GEL]</r></p></e>
 	<e><p><l>hau_da[IZE][ARR]</l><r>izan[ADL][A1][NR_HU]</r></p></e>
 	<e><p><l>sutze[IZE][ARR]</l><r>sutu[ADI][SIN]tze[ATZ][IZE][ARR]</r></p></e>
 	<e><p><l>gomendagarria_ez_den[ADJ][IZL]</l><r>izan[ADL][A1][NR_HU]+n[ERL][MEN][ERLT]</r></p></e>
+	<e><p><l>gaizki_hornitu[ADJ][IZO]</l><r>hornitu[ADI][SIN]+[AMM][PART]</r></p></e>
 	<e><p><l>irudizko[ADJ][IZL]</l><r>irudiz[ADB][ALGARR]+[DEK][GEL]</r></p></e>
 	<e><p><l>ergel[IZE][ARR]</l><r>ergel[ADJ][IZO]</r></p></e>
 	<e><p><l>garrantzirik_gabeko[ADJ][IZL]</l><r>gabe[ADB][ADOARR]+[DEK][GEL]</r></p></e>
@@ -603,7 +646,7 @@
 	<e><p><l>ondo_hitz_egiten_ez_duen[ADJ][IZL]</l><r>edun[ADL][A1][NR_HU][NK_HU]+n[ERL][MEN][ERLT]</r></p></e>
 	<e><p><l>hasiera_emate[IZE][ARR]</l><r>eman[ADI][SIN]te[ATZ][IZE][ARR]</r></p></e>
 	<e><p><l>jaiotzetiko[ADJ][IZL]</l><r>jaiotze[IZE][ARR]+[DEK][NUMS]+[DEK][ABL]+[DEK][GEL]</r></p></e>
-	<e><p><l>bigarren_mailako[IZE][ARR]</l><r>maila[IZE][ARR]+[DEK][NUMS]+[DEK][GEL]</r></p></e>
+	<e><p><l>bigarren_mailako[ADJ][IZL]</l><r>maila[IZE][ARR]+[DEK][NUMS]+[DEK][GEL]</r></p></e>
 	<e><p><l>joera_duen[ADJ][IZL]</l><r>edun[ADL][A1][NR_HU][NK_HU]+n[ERL][MEN][ERLT]</r></p></e>
 	<e><p><l>barne[ADJ][IZO]</l><r>barne[ADJ][IZO][RARE]</r></p></e>
 	<e><p><l>loturarik_gabe[ADJ][IZO]</l><r>gabe[ADJ][IZO][RARE]</r></p></e>
@@ -613,7 +656,7 @@
 	<e><p><l>ezin_zuzenduzko[ADJ][IZL]</l><r>zuzendu[ADI][SIN]+[AMM][PART]+[DEK][INS][MG]+[DEK][GEL]</r></p></e>
 	<e><p><l>handiagotze[IZE][ARR]</l><r>handiagotu[ADI][SIN]tze[ATZ][IZE][ARR]</r></p></e>
 	<e><p><l>geroz_eta_handiagoa_den[ADJ][IZL]</l><r>izan[ADL][A1][NR_HU]+n[ERL][MEN][ERLT]</r></p></e>
-	<e><p><l>eginkizuna_den[IZE][ARR]</l><r>izan[ADL][A1][NR_HU]+n[ERL][MEN][ERLT]</r></p></e>
+	<e><p><l>eginkizuna_den[ADJ][IZL]</l><r>izan[ADL][A1][NR_HU]+n[ERL][MEN][ERLT]</r></p></e>
 	<e><p><l>zorpetu[ADJ][IZO]</l><r>zorpetu[ADI][SIN]+[AMM][PART]</r></p></e>
 	<e><p><l>ezin_deskribatuzko[ADJ][IZL]</l><r>deskribatu[ADI][SIN]+[AMM][PART]+[DEK][INS][MG]+[DEK][GEL]</r></p></e>
 	<e><p><l>indigena[ADJ][IZL]</l><r>indigena[IZE][ARR]</r></p></e>
@@ -625,13 +668,15 @@
 	<e><p><l>jatekoa_ez_den[ADJ][IZL]</l><r>izan[ADL][A1][NR_HU]+n[ERL][MEN][ERLT]</r></p></e>
 	<e><p><l>trebetasunik_gabe[ADJ][IZO]</l><r>gabe[ADJ][IZO][RARE]</r></p></e>
 	<e><p><l>ezin_adierazizko[ADJ][IZL]</l><r>adierazi[IZE][ARR]+[DEK][INS][MG]+[DEK][GEL]</r></p></e>
-	<e><p><l>txikiago[IZE][ARR]</l><r>txikiagotu[ADI][SIN]+[AMM][PART]</r></p></e>
+	<e><p><l>txikiago[ADJ][IZO]</l><r>txiki[ADJ][IZO]+[GRA][KONP]</r></p></e>
 	<e><p><l>eragin_handiko[ADJ][IZL]</l><r>handi[ADJ][IZO]+[DEK][NUMS]+[DEK][GEL]</r></p></e>
 	<e><p><l>informatzaile[ADJ][IZL]</l><r>informatzaile[IZE][ARR]</r></p></e>
 	<e><p><l>buruan_sartuta_dagoen[ADJ][IZL]</l><r>egon[ADT][A1][NR_HU]+n[ERL][MEN][ERLT]</r></p></e>
 	<e><p><l>berezkoa_duen[ADJ][IZL]</l><r>edun[ADL][A1][NR_HU][NK_HU]+n[ERL][MEN][ERLT]</r></p></e>
 	<e><p><l>galarazi[ADI][SIN]</l><r>galdu[ADI][SIN]arazi[ATZ][ADI][SIN]+[AMM][PART]</r></p></e>
 	<e><p><l>hasierako[ADJ][IZL]</l><r>hasiera[IZE][ARR]+[DEK][NUMS]+[DEK][GEL]</r></p></e>
+	<e><p><l>zauritu[ADJ][IZO]</l><r>zauritu[ADI][SIN]+[AMM][PART]</r></p></e>
+	<e><p><l>barrualde[ADJ][IZL]</l><r>barrualde[IZE][ARR]</r></p></e>
 	<e><p><l>sortzetiko[ADJ][IZL]</l><r>sortze[IZE][ARR]+[DEK][NUMS]+[DEK][ABL]+[DEK][GEL]</r></p></e>
 	<e><p><l>barruko[ADJ][IZL]</l><r>barru[IZE][ARR]+[DEK][NUMS]+[DEK][GEL]</r></p></e>
 	<e><p><l>kalterik_egiten_ez_duen[ADJ][IZL]</l><r>edun[ADL][A1][NR_HU][NK_HU]+n[ERL][MEN][ERLT]</r></p></e>
@@ -642,10 +687,13 @@
 	<e><p><l>senezko[ADJ][IZL]</l><r>sen[IZE][ARR]+[DEK][INS][MG]+[DEK][GEL]</r></p></e>
 	<e><p><l>laguntzen_duen[ADJ][IZL]</l><r>edun[ADL][A1][NR_HU][NK_HU]+n[ERL][MEN][ERLT]</r></p></e>
 	<e><p><l>sendotasunik_gabe[ADJ][IZO]</l><r>gabe[ADJ][IZO][RARE]</r></p></e>
-	<e><p><l>murgildu[IZE][ARR]</l><r>murgildu[ADI][SIN]+[AMM][PART]</r></p></e>
+	<e><p><l>parte[ADJ][IZL]</l><r>parte[IZE][ARR]</r></p></e>
+	<e><p><l>nahitako[ADJ][IZL]</l><r>nahi[IZE][ARR]+[DEK][MG]+[DEK][GEL]</r></p></e>
+	<e><p><l>murgildu[ADJ][IZO]</l><r>murgildu[ADI][SIN]+[AMM][PART]</r></p></e>
 	<e><p><l>interesatu[ADJ][IZO]</l><r>interesatu[ADI][SIN]+[AMM][PART]</r></p></e>
-	<e><p><l>erdiko[IZE][ARR]</l><r>erdi[IZE][ARR]+[DEK][NUMS]+[DEK][GEL]</r></p></e>
+	<e><p><l>erdiko[ADJ][IZL]</l><r>erdi[IZE][ARR]+[DEK][NUMS]+[DEK][GEL]</r></p></e>
 	<e><p><l>aldizkako[ADJ][IZL]</l><r>aldizka[ADB][ADOARR]+[DEK][GEL]</r></p></e>
+	<e><p><l>barneko[ADJ][IZL]</l><r>barne[ADJ][IZO][RARE]+[DEK][NUMS]+[DEK][GEL]</r></p></e>
 	<e><p><l>Internet[IZE][IZB]</l><r>internet[IZE][ARR]</r></p></e>
 	<e><p><l>zain_barneko[ADJ][IZL]</l><r>barne[ADJ][IZO][RARE]+[DEK][NUMS]+[DEK][GEL]</r></p></e>
 	<e><p><l>jakin-mina_eragiten_duen[ADJ][IZL]</l><r>edun[ADL][A1][NR_HU][NK_HU]+n[ERL][MEN][ERLT]</r></p></e>
@@ -655,37 +703,39 @@
 	<e><p><l>nonbait_sartuta_dagoen[ADJ][IZL]</l><r>egon[ADT][A1][NR_HU]+n[ERL][MEN][ERLT]</r></p></e>
 	<e><p><l>IRA[IZE][ARR]</l><r>IRA[SIG]</r></p></e>
 	<e><p><l>burdinazko[IZE][ARR]</l><r>burdina[IZE][ARR]+[DEK][INS][MG]+[DEK][GEL]</r></p></e>
+	<e><p><l>aldendu[ADJ][IZO]</l><r>aldendu[ADI][SIN]+[AMM][PART]</r></p></e>
 	<e><p><l>UBG[IZE][ARR]</l><r>UBG[SIG]</r></p></e>
 	<e><p><l>nekatu[ADJ][IZO]</l><r>nekatu[ADI][SIN]+[AMM][PART]</r></p></e>
+	<e><p><l>lepo[ADJ][IZL]</l><r>lepo[IZE][ARR]</r></p></e>
 	<e><p><l>min_hori[IZE][ARR]</l><r>hori[ADJ][IZO]</r></p></e>
 	<e><p><l>zorte_txarra_dakarren[IZE][ARR]</l><r>ekarri[ADT][A1][NR_HU][NK_HU]+n[ERL][MEN][ERLT]</r></p></e>
 	<e><p><l>banatu[ADJ][IZO]</l><r>banatu[ADI][SIN]+[AMM][PART]</r></p></e>
 	<e><p><l>botere_judizial[IZE][ARR]</l><r>judizial[ADJ][IZO]</r></p></e>
 	<e><p><l>kamioitzar[IZE][ARR]</l><r>kamioi[IZE][ARR]tzar[ATZ][IZE][ARR]</r></p></e>
-	<e><p><l>ahaideak[ADJ][IZL]</l><r>ahaide[IZE][ARR]+[NUMP]</r></p></e>
+	<e><p><l>hondatzaile[IZE][ARR]</l><r>hondatzaile[ADJ][IZO]</r></p></e>
 	<e><p><l>ahaideak[IZE][ARR]</l><r>ahaide[IZE][ARR]</r></p></e>
 	<e><p><l>zeelandaberritar[IZE][ARR]</l><r>zeelandaberritar[ADJ][IZO]</r></p></e>
+	<e><p><l>leher_eginda[ADJ][IZO]</l><r>egin[ADI][SIN]+[AMM][PART]+[ERL][MEN][MOD]</r></p></e>
 	<e><p><l>kulotak[IZE][ARR]</l><r>kulot[IZE][ARR]</r></p></e>
 	<e><p><l>'Sir'_titulu[IZE][ARR]</l><r>titulu[IZE][ARR]</r></p></e>
 	<e><p><l>KO[IZE][ARR]</l><r>KO[SIG]</r></p></e>
+	<e><p><l>beteta[ADJ][IZO]</l><r>bete[ADI][SIN]+[AMM][PART]+[ERL][MEN][MOD]</r></p></e>
 	<e><p><l>lurdun[IZE][ARR]</l><r>lurdun[ADJ][IZO]</r></p></e>
 	<e><p><l>ordenagailu_eramangarri[IZE][ARR]</l><r>eramangarri[ADJ][IZO]</r></p></e>
 	<e><p><l>gelditzen_den[ADJ][IZL]</l><r>izan[ADL][A1][NR_HU]+n[ERL][MEN][ERLT]</r></p></e>
-	<e><p><l>azken[ADJ][IZL]</l><r>azken[IZE][ARR]</r></p></e>
 	<e><p><l>alfer[IZE][ARR]</l><r>alfer[ADJ][IZO]</r></p></e>
 	<e><p><l>beruna_duen[ADJ][IZL]</l><r>edun[ADL][A1][NR_HU][NK_HU]+n[ERL][MEN][ERLT]</r></p></e>
 	<e><p><l>ezkerreko[ADJ][IZL]</l><r>ezker[ADJ][IZO]+[DEK][NUMS]+[DEK][GEL]</r></p></e>
-	<e><p><l>soberako[IZE][ARR]</l><r>sobera[ADB][ADOARR]+[DEK][GEL]</r></p></e>
+	<e><p><l>soberako[ADJ][IZL]</l><r>sobera[ADB][ADOARR]+[DEK][GEL]</r></p></e>
 	<e><p><l>legendazko[ADJ][IZL]</l><r>legenda[IZE][ARR]+[DEK][INS][MG]+[DEK][GEL]</r></p></e>
-	<e><p><l>txikiago[ADJ][IZO]</l><r>txiki[ADJ][IZO]+[GRA][KONP]</r></p></e>
 	<e><p><l>eman[ADJ][IZL]</l><r>eman[IZE][ARR]</r></p></e>
 	<e><p><l>askatze[IZE][ARR]</l><r>askatu[ADI][SIN]tze[ATZ][IZE][ARR]</r></p></e>
 	<e><p><l>arin[IZE][ARR]</l><r>arin[ADJ][IZO]</r></p></e>
 	<e><p><l>gerta_daitekeen[ADJ][IZL]</l><r>edin[ADL][A5][NR_HU]+n[ERL][MEN][ERLT]</r></p></e>
 	<e><p><l>hizkuntzalaritzaren[ADJ][IZL]</l><r>hizkuntzalaritza[IZE][ARR]+[DEK][GEN]</r></p></e>
-	<e><p><l>irakurtzen_eta_idazten_dakien[IZE][ARR]</l><r>edin[ADL][A3][NR_HU][NI_HK]+n[ERL][MEN][ERLT]</r></p></e>
+	<e><p><l>irakurtzen_eta_idazten_dakien[ADJ][IZL]</l><r>edin[ADL][A3][NR_HU][NI_HK]+n[ERL][MEN][ERLT]</r></p></e>
 	<e><p><l>lekuko[ADJ][IZL]</l><r>leku[IZE][ARR]+[DEK][NUMS]+[DEK][GEL]</r></p></e>
-	<e><p><l>udaleko[ADJ][IZL]</l><r>udal[IZE][ARR]+[DEK][NUMS]+[DEK][GEL]</r></p></e>
+	<e><p><l>udaleko[IZE][ARR]</l><r>udal[IZE][ARR]+[DEK][NUMS]+[DEK][GEL]</r></p></e>
 	<e><p><l>irrikatzen_duen[ADJ][IZL]</l><r>edun[ADL][A1][NR_HU][NK_HU]+n[ERL][MEN][ERLT]</r></p></e>
 	<e><p><l>iraupen_luzeko[ADJ][IZL]</l><r>luze[ADJ][IZO]+[DEK][NUMS]+[DEK][GEL]</r></p></e>
 	<e><p><l>epe_luzeko[ADJ][IZL]</l><r>luze[ADJ][IZO]+[DEK][NUMS]+[DEK][GEL]</r></p></e>
@@ -702,14 +752,16 @@
 	<e><p><l>gizakiak_sortutako[ADJ][IZL]</l><r>sortu[ADI][SIN]+[AMM][PART]+[DEK][MG]+[DEK][GEL]</r></p></e>
 	<e><p><l>itsasoko[ADJ][IZL]</l><r>itsaso[IZE][ARR]+[DEK][NUMS]+[DEK][GEL]</r></p></e>
 	<e><p><l>ezkontzazko[ADJ][IZL]</l><r>ezkontza[IZE][ARR]+[DEK][INS][MG]+[DEK][GEL]</r></p></e>
+	<e><p><l>granate[ADJ][IZL]</l><r>granate[IZE][ARR]</r></p></e>
 	<e><p><l>ezkondu[ADJ][IZO]</l><r>ezkondu[ADI][SIN]+[AMM][PART]</r></p></e>
 	<e><p><l>gerrako[ADJ][IZL]</l><r>gerra[IZE][ARR]+[DEK][NUMS]+[DEK][GEL]</r></p></e>
 	<e><p><l>gizonezkoaren[ADJ][IZL]</l><r>gizon[IZE][ARR]+[DEK][INS][MG]+[DEK][GEL]</r></p></e>
+	<e><p><l>masa[ADJ][IZL]</l><r>masa[IZE][ARR]</r></p></e>
 	<e><p><l>bat_datorren[ADJ][IZL]</l><r>etorri[ADT][A1][NR_HU]+n[ERL][MEN][ERLT]</r></p></e>
 	<e><p><l>amaren[ADJ][IZL]</l><r>ama[IZE][ARR]+[DEK][GEN]</r></p></e>
 	<e><p><l>mate[ADJ][IZL]</l><r>mate[IZE][ARR]</r></p></e>
-	<e><p><l>malba-koloreko[IZE][ARR]</l><r>kolore[IZE][ARR]+[DEK][NUMS]+[DEK][GEL]</r></p></e>
-	<e><p><l>handien[IZE][ARR]</l><r>handi[ADJ][IZO]+[DEK][GEN][NUMP]</r></p></e>
+	<e><p><l>malba-koloreko[ADJ][IZL]</l><r>kolore[IZE][ARR]+[DEK][NUMS]+[DEK][GEL]</r></p></e>
+	<e><p><l>handien[ADJ][IZO]</l><r>handi[ADJ][IZO]+[GRA][SUP]</r></p></e>
 	<e><p><l>neurtze[IZE][ARR]</l><r>neurtu[ADI][SIN]tze[ATZ][IZE][ARR]</r></p></e>
 	<e><p><l>azterketa_mediko[IZE][ARR]</l><r>mediko[ADJ][IZO]</r></p></e>
 	<e><p><l>Erdi_Aroko[ADJ][IZL]</l><r>aro[IZE][ARR]+[DEK][NUMS]+[DEK][GEL]</r></p></e>
@@ -718,37 +770,41 @@
 	<e><p><l>merkataritzako[IZE][ARR]</l><r>merkataritza[IZE][ARR]+[DEK][NUMS]+[DEK][GEL]</r></p></e>
 	<e><p><l>adin_ertaineko[ADJ][IZL]</l><r>ertain[ADJ][IZO]+[DEK][NUMS]+[DEK][GEL]</r></p></e>
 	<e><p><l>klase_ertaineko[ADJ][IZL]</l><r>ertain[ADJ][IZO]+[DEK][NUMS]+[DEK][GEL]</r></p></e>
+	<e><p><l>imitatzaile[IZE][ARR]</l><r>imitatzaile[ADJ][IZO]</r></p></e>
 	<e><p><l>haragi_xehatu[IZE][ARR]</l><r>xehatu[ADI][SIN]+[AMM][PART]</r></p></e>
 	<e><p><l>txikien[ADJ][IZO]</l><r>txiki[ADJ][IZO]+[GRA][SUP]</r></p></e>
 	<e><p><l>ministroaren[ADJ][IZL]</l><r>ministro[IZE][ARR]+[DEK][GEN]</r></p></e>
-	<e><p><l>adin-txikiko[ADJ][IZL]</l><r>txiki[ADJ][IZO]+[DEK][NUMS]+[DEK][GEL]</r></p></e>
+	<e><p><l>adin-txikiko[IZE][ARR]</l><r>txiki[ADJ][IZO]+[DEK][NUMS]+[DEK][GEL]</r></p></e>
 	<e><p><l>gutxienen[IZE][ARR]</l><r>gutxien[DET][DZG]+[DEK][GEN][NUMP]</r></p></e>
 	<e><p><l>gutxienak[IZE][ARR]</l><r>gutxien[DET][DZG]+[NUMP]</r></p></e>
 	<e><p><l>gaizki-ulertu[IZE][ARR]</l><r>ulertu[ADI][SIN]+[AMM][PART]</r></p></e>
 	<e><p><l>jokabide_gaizto[IZE][ARR]</l><r>gaizto[ADJ][IZO]</r></p></e>
 	<e><p><l>arau-hauste_arin[IZE][ARR]</l><r>arin[ADJ][IZO]</r></p></e>
 	<e><p><l>diruzale[IZE][ARR]</l><r>diruzale[ADJ][IZO]</r></p></e>
-	<e><p><l>galdu[ADJ][IZO]</l><r>galdu[ADI][SIN]+[AMM][PART]</r></p></e>
 	<e><p><l>gaizki_ulertze[IZE][ARR]</l><r>ulertu[ADI][SIN]tze[ATZ][IZE][ARR]</r></p></e>
 	<e><p><l>telefono_mugikor[IZE][ARR]</l><r>mugikor[ADJ][IZO]</r></p></e>
 	<e><p><l>etsenpluzko[IZE][ARR]</l><r>etsenplu[IZE][ARR]+[DEK][INS][MG]+[DEK][GEL]</r></p></e>
+	<e><p><l>modelotza[IZE][ARR]</l><r>modelotza[ADI][SIN]</r></p></e>
 	<e><p><l>moderatu[ADJ][IZO]</l><r>moderatu[ADI][SIN]+[AMM][PART]</r></p></e>
 	<e><p><l>modernizatze[IZE][ARR]</l><r>modernizatu[ADI][SIN]tze[ATZ][IZE][ARR]</r></p></e>
 	<e><p><l>urtu[ADJ][IZO]</l><r>urtu[ADI][SIN]+[AMM][PART]</r></p></e>
 	<e><p><l>une_bateko[ADJ][IZL]</l><r>bate[IZE][ARR]+[DEK][NUMS]+[DEK][GEL]</r></p></e>
 	<e><p><l>moneta[ADJ][IZL]</l><r>moneta[IZE][ARR]</r></p></e>
+	<e><p><l>moral[ADJ][IZL]</l><r>moral[IZE][ARR]</r></p></e>
+	<e><p><l>gehiago[ADJ][IZL]</l><r>gehiagotu[ADI][SIN]+[AMM][ADOIN]</r></p></e>
 	<e><p><l>lizundu[ADJ][IZO]</l><r>lizundu[ADI][SIN]+[AMM][PART]</r></p></e>
 	<e><p><l>emakume_baten_abizenaren__aurrean_jartzen_den_titulu[IZE][ARR]</l><r>titulu[IZE][ARR]</r></p></e>
 	<e><p><l>sargori[ADJ][IZL]</l><r>sargori[IZE][ARR]</r></p></e>
-	<e><p><l>isilik[IZE][ARR]</l><r>isilik[ADB][ALGARR]</r></p></e>
 	<e><p><l>hazizurriak[IZE][ARR]</l><r>hazizurri[IZE][ARR]</r></p></e>
 	<e><p><l>udalaren[ADJ][IZL]</l><r>udal[IZE][ARR]+[DEK][GEN]</r></p></e>
 	<e><p><l>munizioak[IZE][ARR]</l><r>munizio[IZE][ARR]</r></p></e>
-	<e><p><l>musikaren[IZE][ARR]</l><r>musika[IZE][ARR]+[DEK][GEN][MG]</r></p></e>
+	<e><p><l>musikaren[ADJ][IZL]</l><r>musika[IZE][ARR]+[DEK][GEN]</r></p></e>
 	<e><p><l>musikal[IZE][ARR]</l><r>musikal[ADJ][IZO]</r></p></e>
 	<e><p><l>heze-usaina_duen[ADJ][IZL]</l><r>edun[ADL][A1][NR_HU][NK_HU]+n[ERL][MEN][ERLT]</r></p></e>
 	<e><p><l>elkarrekiko[ADJ][IZL]</l><r>elkar[IOR][ELK]+[DEK][SOZ][MG]+[DEK][GEL]</r></p></e>
+	<e><p><l>elemenia[ADJ][IZL]</l><r>elemenia[IZE][ARR]</r></p></e>
 	<e><p><l>ikuspegi_estuko[ADJ][IZL]</l><r>estu[ADJ][IZO]+[DEK][NUMS]+[DEK][GEL]</r></p></e>
+	<e><p><l>sudurreko[ADJ][IZL]</l><r>sudur[IZE][ARR]+[DEK][NUMS]+[DEK][GEL]</r></p></e>
 	<e><p><l>nazio_osoan[ADJ][IZL]</l><r>oso[ADJ][IZO]+[DEK][NUMS]+[DEK][INE]</r></p></e>
 	<e><p><l>NATO[IZE][ARR]</l><r>NATO[SIG]</r></p></e>
 	<e><p><l>entzun_txarreko[ADJ][IZL]</l><r>txar[ADJ][IZO]+[DEK][NUMS]+[DEK][GEL]</r></p></e>
@@ -767,10 +823,11 @@
 	<e><p><l>ez_ordaintze[IZE][ARR]</l><r>ordaindu[ADI][SIN]tze[ATZ][IZE][ARR]</r></p></e>
 	<e><p><l>ez_itzultzeko[ADJ][IZL]</l><r>itzultze[IZE][ARR]+[DEK][NUMS]+[DEK][GEL]</r></p></e>
 	<e><p><l>normal[IZE][ARR]</l><r>normal[ADJ][IZO]</r></p></e>
+	<e><p><l>ipar-ekialde[ADJ][IZL]</l><r>ekialde[IZE][ARR]</r></p></e>
 	<e><p><l>ipar[ADJ][IZL]</l><r>ipar[IZE][ARR]</r></p></e>
 	<e><p><l>fama_txarreko[ADJ][IZL]</l><r>txar[ADJ][IZO]+[DEK][NUMS]+[DEK][GEL]</r></p></e>
 	<e><p><l>biluzi[IZE][ARR]</l><r>biluzi[ADI][SIN]+[AMM][PART]</r></p></e>
-	<e><p><l>gogaikarri[IZE][ARR]</l><r>gogaikarri[ADJ][IZO]</r></p></e>
+	<e><p><l>gogortu[ADJ][IZO]</l><r>gogortu[ADI][SIN]+[AMM][PART]</r></p></e>
 	<e><p><l>zenbakizko[ADJ][IZL]</l><r>zenbaki[IZE][ARR]+[DEK][INS][MG]+[DEK][GEL]</r></p></e>
 	<e><p><l>zenbait_zuhaitzen_fruitu_oskoldun[IZE][ARR]</l><r>oskoldun[IZE][ARR]</r></p></e>
 	<e><p><l>intxaur_muskatu[IZE][ARR]</l><r>muskatu[ADI][SIN]+[AMM][PART]</r></p></e>
@@ -783,50 +840,48 @@
 	<e><p><l>arrarotasun[IZE][ARR]</l><r>arraro[ADJ][IZO]tasun[ATZ][IZE][ARR]</r></p></e>
 	<e><p><l>soberakinak[IZE][ARR]</l><r>soberakin[IZE][ARR]</r></p></e>
 	<e><p><l>aukerak[IZE][ARR]</l><r>aukera[IZE][ARR]</r></p></e>
+	<e><p><l>usteldu[ADJ][IZO]</l><r>usteldu[ADI][SIN]+[AMM][PART]</r></p></e>
 	<e><p><l>mehatxuzko[ADJ][IZL]</l><r>mehatxu[IZE][ARR]+[DEK][INS][MG]+[DEK][GEL]</r></p></e>
 	<e><p><l>bat[IZE][ARR]</l><r>bat[IZE][ARR][RARE]</r></p></e>
 	<e><p><l>noranzko_bakarreko[ADJ][IZL]</l><r>bakar[ADJ][IZO]+[DEK][NUMS]+[DEK][GEL]</r></p></e>
-	<e><p><l>ireki[ADJ][IZO]</l><r>ireki[ADI][SIN]+[AMM][PART]</r></p></e>
 	<e><p><l>indarreko[ADJ][IZL]</l><r>indar[IZE][ARR]+[DEK][NUMS]+[DEK][GEL]</r></p></e>
 	<e><p><l>oportunista[IZE][ARR]</l><r>oportunista[ADJ][IZO]</r></p></e>
 	<e><p><l>aurrean[ADJ][IZL]</l><r>aurre[IZE][ARR]+[DEK][NUMS]+[DEK][INE]</r></p></e>
+	<e><p><l>laranja[ADJ][IZL]</l><r>laranja[IZE][ARR]</r></p></e>
 	<e><p><l>ordenadun[ADJ][IZO]</l><r>ordena[IZE][ARR]dun[ATZ][ADJ][IZO]</r></p></e>
 	<e><p><l>ordenatu[ADJ][IZL]</l><r>ordenatu[IZE][ARR]</r></p></e>
 	<e><p><l>antolaketa[ADJ][IZL]</l><r>antolaketa[IZE][ARR]</r></p></e>
 	<e><p><l>apaindu[ADJ][IZO]</l><r>apaindu[ADI][SIN]+[AMM][PART]</r></p></e>
 	<e><p><l>beste_bat[ADJ][IZL]</l><r>batu[ADI][SIN]+[AMM][ADOIN]</r></p></e>
 	<e><p><l>pizte[IZE][ARR]</l><r>piztu[ADI][SIN]te[ATZ][IZE][ARR]</r></p></e>
-	<e><p><l>baztertu[IZE][ARR]</l><r>baztertu[ADI][SIN]+[AMM][PART]</r></p></e>
+	<e><p><l>baztertu[ADJ][IZO]</l><r>baztertu[ADI][SIN]+[AMM][PART]</r></p></e>
 	<e><p><l>protesta_ozen[IZE][ARR]</l><r>ozen[ADJ][IZO]</r></p></e>
 	<e><p><l>gastuak[ADJ][IZL]</l><r>gastu[IZE][ARR]+[NUMP]</r></p></e>
-	<e><p><l>oro_har[ADJ][IZL]</l><r>har[IZE][ARR]</r></p></e>
+	<e><p><l>joaneko[ADJ][IZL]</l><r>joan[ADI][SIN]+[AMM][PART]+[DEK][NUMS]+[DEK][GEL]</r></p></e>
 	<e><p><l>lainotu[ADJ][IZO]</l><r>lainotu[ADI][SIN]+[AMM][PART]</r></p></e>
 	<e><p><l>martxa_bizkorren[IZE][ARR]</l><r>bizkor[ADB][ADOARR]+[GRA][SUP]</r></p></e>
 	<e><p><l>atzeratuta[ADJ][IZO]</l><r>atzeratu[ADI][SIN]+[AMM][PART]+[ERL][MEN][MOD]</r></p></e>
 	<e><p><l>gainezkatze[IZE][ARR]</l><r>gainezkatu[ADI][SIN]tze[ATZ][IZE][ARR]</r></p></e>
 	<e><p><l>berrikusi[ADI][SIN]</l><r>ber[AUR]ikusi[ADI][SIN]+[AMM][PART]</r></p></e>
-	<e><p><l>goian[IZE][ARR]</l><r>goi[ADJ][IZO][RARE]+[DEK][NUMS]+[DEK][INE]</r></p></e>
 	<e><p><l>gastu_orokorrak[IZE][ARR]</l><r>orokor[ADJ][IZO]+[NUMP]</r></p></e>
 	<e><p><l>gainjartze[IZE][ARR]</l><r>gainjarri[ADI][SIN]tze[ATZ][IZE][ARR]</r></p></e>
 	<e><p><l>gaueko[ADJ][IZL]</l><r>gau[IZE][ARR]+[DEK][NUMS]+[DEK][GEL]</r></p></e>
-	<e><p><l>gauean[ADJ][IZL]</l><r>gau[IZE][ARR]+[DEK][NUMS]+[DEK][INE]</r></p></e>
 	<e><p><l>atzerriko[ADJ][IZL]</l><r>atzerri[IZE][ARR]+[DEK][NUMS]+[DEK][GEL]</r></p></e>
-	<e><p><l>atzerrian[ADJ][IZL]</l><r>atzerri[IZE][ARR]+[DEK][NUMS]+[DEK][INE]</r></p></e>
 	<e><p><l>uzkailtze[IZE][ARR]</l><r>uzkaildu[ADI][SIN]tze[ATZ][IZE][ARR]</r></p></e>
 	<e><p><l>aparteko_orduak[IZE][ARR]</l><r>ordu[IZE][ARR]</r></p></e>
 	<e><p><l>neure[ADJ][IZL]</l><r>neu[IOR][PERIND][NUMS][NI]+[DEK][GEN]</r></p></e>
-	<e><p><l>paketatze[IZE][ARR]</l><r>paketatu[ADI][SIN]tze[ATZ][IZE][ARR]</r></p></e>
+	<e><p><l>bilgarri[IZE][ARR]</l><r>bilgarri[ADJ][IZO]</r></p></e>
 	<e><p><l>bat-batean_desagerrarazi[ADI][SIN]</l><r>desagertu[ADI][SIN]arazi[ATZ][ADI][SIN]+[AMM][PART]</r></p></e>
 	<e><p><l>izapideak[IZE][ARR]</l><r>izapide[IZE][ARR]</r></p></e>
+	<e><p><l>paralitiko[ADJ][IZL]</l><r>paralitiko[IZE][ARR]</r></p></e>
 	<e><p><l>gurasoen[ADJ][IZL]</l><r>guraso[IZE][ARR]+[DEK][GEN]</r></p></e>
 	<e><p><l>aparkatze[IZE][ARR]</l><r>aparkatu[ADI][SIN]tze[ATZ][IZE][ARR]</r></p></e>
 	<e><p><l>parrokiako[ADJ][IZL]</l><r>parrokia[IZE][ARR]+[DEK][NUMS]+[DEK][GEL]</r></p></e>
-	<e><p><l>zati_baten[IZE][ARR]</l><r>bat[DET][DZH][NUMS]+[DEK][GEN]</r></p></e>
+	<e><p><l>zati_baten[ADJ][IZL]</l><r>bat[DET][DZH][NUMS]+[DEK][GEN]</r></p></e>
 	<e><p><l>igarotze[IZE][ARR]</l><r>igaro[ADI][SIN]tze[ATZ][IZE][ARR]</r></p></e>
-	<e><p><l>eta[ADJ][IZL]</l><r>eta[LOT][JNT][EMEN]</r></p></e>
 	<e><p><l>artzain[ADJ][IZL]</l><r>artzain[IZE][ARR]</r></p></e>
 	<e><p><l>aitaren[ADJ][IZL]</l><r>aita[IZE][ARR]+[DEK][GEN]</r></p></e>
-	<e><p><l>eraman_handiko[IZE][ARR]</l><r>handi[ADJ][IZO]+[DEK][NUMS]+[DEK][GEL]</r></p></e>
+	<e><p><l>eraman_handiko[ADJ][IZL]</l><r>handi[ADJ][IZO]+[DEK][NUMS]+[DEK][GEL]</r></p></e>
 	<e><p><l>paziente[IZE][ARR]</l><r>paziente[ADJ][IZO]</r></p></e>
 	<e><p><l>aberriko[ADJ][IZL]</l><r>aberri[IZE][ARR]+[DEK][NUMS]+[DEK][GEL]</r></p></e>
 	<e><p><l>mertxika-koloreko[IZE][ARR]</l><r>kolore[IZE][ARR]+[DEK][NUMS]+[DEK][GEL]</r></p></e>
@@ -838,12 +893,11 @@
 	<e><p><l>pio[IZE][ARR]</l><r>pio[IZE][ARR][RARE]</r></p></e>
 	<e><p><l>umore_txarreko[ADJ][IZL]</l><r>txar[ADJ][IZO]+[DEK][NUMS]+[DEK][GEL]</r></p></e>
 	<e><p><l>bolatxo[IZE][ARR]</l><r>bola[IZE][ARR]txo[ATZ][IZE][ARR]</r></p></e>
-	<e><p><l>penitentziazko[IZE][ARR]</l><r>penitentzia[IZE][ARR]+[DEK][INS][MG]+[DEK][GEL]</r></p></e>
+	<e><p><l>penitentziazko[ADJ][IZL]</l><r>penitentzia[IZE][ARR]+[DEK][INS][MG]+[DEK][GEL]</r></p></e>
 	<e><p><l>pentsiodun[IZE][ARR]</l><r>pentsiodun[ADJ][IZO]</r></p></e>
 	<e><p><l>azken-aurreko[ADJ][IZL]</l><r>aurre[IZE][ARR]+[DEK][NUMS]+[DEK][GEL]</r></p></e>
 	<e><p><l>hautemate[IZE][ARR]</l><r>hauteman[ADI][SIN]te[ATZ][IZE][ARR]</r></p></e>
-	<e><p><l>aldizkako[IZE][ARR]</l><r>aldizka[ADB][ADOARR]+[DEK][GEL]</r></p></e>
-	<e><p><l>bazterreko[IZE][ARR]</l><r>bazter[IZE][ARR]+[DEK][NUMS]+[DEK][GEL]</r></p></e>
+	<e><p><l>bazterreko[ADJ][IZL]</l><r>bazter[IZE][ARR]+[DEK][NUMS]+[DEK][GEL]</r></p></e>
 	<e><p><l>periferiko[IZE][ARR]</l><r>periferiko[ADJ][IZO]</r></p></e>
 	<e><p><l>zut[IZE][ARR]</l><r>zut[ADJ][IZO]</r></p></e>
 	<e><p><l>iraunarazi[ADI][SIN]</l><r>iraun[ADI][SIN]arazi[ATZ][ADI][SIN]+[AMM][PART]</r></p></e>
@@ -852,15 +906,16 @@
 	<e><p><l>intsektu_kaltegarri[IZE][ARR]</l><r>kaltegarri[ADJ][IZO]</r></p></e>
 	<e><p><l>maiteen[IZE][ARR]</l><r>maite[ADJ][IZO]+[DEK][GEN][NUMP]</r></p></e>
 	<e><p><l>farmazeutiko[ADJ][IZL]</l><r>farmazeutiko[IZE][ARR]</r></p></e>
+	<e><p><l>itxurati[IZE][ARR]</l><r>itxurati[ADJ][IZO]</r></p></e>
 	<e><p><l>arpilatze[IZE][ARR]</l><r>arpilatu[ADI][SIN]tze[ATZ][IZE][ARR]</r></p></e>
 	<e><p><l>kurrikak[IZE][ARR]</l><r>kurrika[IZE][ARR]</r></p></e>
+	<e><p><l>arrosa[ADJ][IZL]</l><r>arrosa[IZE][ARR]</r></p></e>
 	<e><p><l>hatz_txiki[IZE][ARR]</l><r>txiki[ADJ][IZO]</r></p></e>
 	<e><p><l>jartze[IZE][ARR]</l><r>jarri[ADI][SIN]tze[ATZ][IZE][ARR]</r></p></e>
-	<e><p><l>plastikozko[IZE][ARR]</l><r>plastiko[ADJ][IZO]+[DEK][INS][MG]+[DEK][GEL]</r></p></e>
+	<e><p><l>plastikozko[ADJ][IZL]</l><r>plastiko[ADJ][IZO]+[DEK][INS][MG]+[DEK][GEL]</r></p></e>
 	<e><p><l>SA[IZE][ARR]</l><r>SA[SIG]</r></p></e>
 	<e><p><l>aliketak[IZE][ARR]</l><r>aliketa[IZE][ARR]</r></p></e>
 	<e><p><l>aran-koloreko[IZE][ARR]</l><r>kolore[IZE][ARR]+[DEK][NUMS]+[DEK][GEL]</r></p></e>
-	<e><p><l>gehi[ADJ][IZL]</l><r>gehi[IZE][ARR]</r></p></e>
 	<e><p><l>edo_gehiago[ADJ][IZL]</l><r>gehiagotu[ADI][SIN]+[AMM][ADOIN]</r></p></e>
 	<e><p><l>prest[ADJ][IZO]</l><r>prest[ADJ][IZO][RARE]</r></p></e>
 	<e><p><l>ongi_hazi[ADJ][IZL]</l><r>hazi[IZE][ARR]</r></p></e>
@@ -873,29 +928,34 @@
 	<e><p><l>azterketa_praktiko[IZE][ARR]</l><r>praktiko[ADJ][IZO]</r></p></e>
 	<e><p><l>lehentasunezko[ADJ][IZL]</l><r>lehentasun[IZE][ARR]+[DEK][INS][MG]+[DEK][GEL]</r></p></e>
 	<e><p><l>historiaurreko[ADJ][IZL]</l><r>historiaurre[IZE][ARR]+[DEK][NUMS]+[DEK][GEL]</r></p></e>
-	<e><p><l>aurretiazko[IZE][ARR]</l><r>aurretiaz[ADB][ALGARR]+[DEK][GEL]</r></p></e>
-	<e><p><l>lehenengo[IZE][ARR]</l><r>lehenengo[ADB][ALGARR]</r></p></e>
+	<e><p><l>aurretiazko[ADJ][IZL]</l><r>aurretiaz[ADB][ALGARR]+[DEK][GEL]</r></p></e>
 	<e><p><l>prestatzeko[ADJ][IZL]</l><r>prestatu[ADI][SIN]tze[ATZ][IZE][ARR]+[DEK][NUMS]+[DEK][GEL]</r></p></e>
 	<e><p><l>agindutako[ADJ][IZL]</l><r>agindu[ADI][SIN]+[AMM][PART]+[ERL][MEN][MOD]+[DEK][GEL]</r></p></e>
+	<e><p><l>orain[IZE][ARR]</l><r>orain[ADB][ADOARR]</r></p></e>
 	<e><p><l>kontserbagarri[IZE][ARR]</l><r>kontserbatu[ADI][SIN]garri[ATZ][ADJ][IZO]</r></p></e>
 	<e><p><l>lehendakariaren[ADJ][IZL]</l><r>lehendakari[IZE][ARR]+[DEK][GEN]</r></p></e>
 	<e><p><l>estutze[IZE][ARR]</l><r>estutu[ADI][SIN]tze[ATZ][IZE][ARR]</r></p></e>
+	<e><p><l>primario[IZE][ARR]</l><r>primario[ADJ][IZO]</r></p></e>
 	<e><p><l>testu_inprimatu[IZE][ARR]</l><r>inprimatu[ADI][SIN]+[AMM][PART]</r></p></e>
 	<e><p><l>aurretiko[ADJ][IZL]</l><r>aurre[IZE][ARR]+[DEK][NUMS]+[DEK][ABL]+[DEK][GEL]</r></p></e>
 	<e><p><l>soldadu_soil[IZE][ARR]</l><r>soil[ADJ][IZO]</r></p></e>
+	<e><p><l>pribilegiatu[ADJ][IZO]</l><r>pribilegiatu[ADI][SIN]+[AMM][PART]</r></p></e>
 	<e><p><l>ekintzak[IZE][ARR]</l><r>ekintza[IZE][ARR]</r></p></e>
 	<e><p><l>mozkinak[IZE][ARR]</l><r>mozkin[IZE][ARR]</r></p></e>
+	<e><p><l>nekazaritza-produktuak[IZE][ARR]</l><r>produktu[IZE][ARR]</r></p></e>
 	<e><p><l>ondorengoak[IZE][ARR]</l><r>ondorengo[IZE][ARR]</r></p></e>
+	<e><p><l>proletario[ADJ][IZL]</l><r>proletario[IZE][ARR]</r></p></e>
 	<e><p><l>promozio[ADJ][IZL]</l><r>promozio[IZE][ARR]</r></p></e>
 	<e><p><l>zentzu_hertsian[ADJ][IZL]</l><r>hertsi[ADJ][IZO]+[DEK][NUMS]+[DEK][INE]</r></p></e>
 	<e><p><l>jabearen[ADJ][IZL]</l><r>jabe[IZE][ARR]+[DEK][GEN]</r></p></e>
 	<e><p><l>prozesatze[IZE][ARR]</l><r>prozesatu[ADI][SIN]tze[ATZ][IZE][ARR]</r></p></e>
 	<e><p><l>izan_litekeen[ADJ][IZL]</l><r>edin[ADL][B7][NR_HU]+n[ERL][MEN][ERLT]</r></p></e>
+	<e><p><l>abaildu[ADJ][IZO]</l><r>abaildu[ADI][SIN]+[AMM][PART]</r></p></e>
 	<e><p><l>atsotitzetako[ADJ][IZL]</l><r>atsotitz[IZE][ARR]+[DEK][MG]+[DEK][GEL]</r></p></e>
 	<e><p><l>probokatzaile[ADJ][IZL]</l><r>probokatzaile[IZE][ARR]</r></p></e>
-	<e><p><l>puztu[ADJ][IZO]</l><r>puztu[ADI][SIN]+[AMM][PART]</r></p></e>
 	<e><p><l>garaiz_iristen_den[ADJ][IZL]</l><r>izan[ADL][A1][NR_HU]+n[ERL][MEN][ERLT]</r></p></e>
 	<e><p><l>bilatze[IZE][ARR]</l><r>bilatu[ADI][SIN]tze[ATZ][IZE][ARR]</r></p></e>
+	<e><p><l>gaitu[ADJ][IZO]</l><r>gaitu[ADI][SIN]+[AMM][PART]</r></p></e>
 	<e><p><l>hiru_hilez_behingo[ADJ][IZL]</l><r>behin[ADB][ADOARR]+[DEK][GEL]</r></p></e>
 	<e><p><l>zorabiatuta[ADJ][IZO]</l><r>zorabiatu[ADI][SIN]+[AMM][PART]+[ERL][MEN][MOD]</r></p></e>
 	<e><p><l>harea_mugikor[IZE][ARR]</l><r>mugikor[ADJ][IZO]</r></p></e>
@@ -914,7 +974,7 @@
 	<e><p><l>ezagutze[IZE][ARR]</l><r>ezagutu[ADI][SIN]tze[ATZ][IZE][ARR]</r></p></e>
 	<e><p><l>adiskidetze[IZE][ARR]</l><r>adiskidetu[ADI][SIN]tze[ATZ][IZE][ARR]</r></p></e>
 	<e><p><l>berreraikitze[IZE][ARR]</l><r>ber[AUR]eraiki[ADI][SIN]tze[ATZ][IZE][ARR]</r></p></e>
-	<e><p><l>aurrekaririk_gabeko[IZE][ARR]</l><r>gabe[ADB][ADOARR]+[DEK][GEL]</r></p></e>
+	<e><p><l>aurrekaririk_gabeko[ADJ][IZL]</l><r>gabe[ADB][ADOARR]+[DEK][GEL]</r></p></e>
 	<e><p><l>berreskuratu[ADI][SIN]</l><r>ber[AUR]eskuratu[ADI][SIN]+[AMM][PART]</r></p></e>
 	<e><p><l>berreskuratze[IZE][ARR]</l><r>ber[AUR]eskuratu[ADI][SIN]tze[ATZ][IZE][ARR]</r></p></e>
 	<e><p><l>errekrutatze[IZE][ARR]</l><r>errekrutatu[ADI][SIN]tze[ATZ][IZE][ARR]</r></p></e>
@@ -922,33 +982,39 @@
 	<e><p><l>birziklatze[IZE][ARR]</l><r>birziklatu[ADI][SIN]tze[ATZ][IZE][ARR]</r></p></e>
 	<e><p><l>berrerosi[ADI][SIN]</l><r>ber[AUR]erosi[ADI][SIN]+[AMM][PART]</r></p></e>
 	<e><p><l>ilegorri[IZE][ARR]</l><r>ilegorri[ADJ][IZO]</r></p></e>
-	<e><p><l>erregeren[IZE][ARR]</l><r>errege[IZE][ARR]+[DEK][GEN][MG]</r></p></e>
-	<e><p><l>eskualdeko[IZE][ARR]</l><r>eskualde[IZE][ARR]+[DEK][NUMS]+[DEK][GEL]</r></p></e>
+	<e><p><l>findu[ADJ][IZO]</l><r>findu[ADI][SIN]+[AMM][PART]</r></p></e>
+	<e><p><l>erregeren[ADJ][IZL]</l><r>errege[IZE][ARR]+[DEK][GEN]</r></p></e>
+	<e><p><l>eskualdeko[ADJ][IZL]</l><r>eskualde[IZE][ARR]+[DEK][NUMS]+[DEK][GEL]</r></p></e>
+	<e><p><l>izena_emanda[ADJ][IZO]</l><r>eman[ADI][SIN]+[AMM][PART]+[ERL][MEN][MOD]</r></p></e>
 	<e><p><l>izen-emate[IZE][ARR]</l><r>eman[ADI][SIN]te[ATZ][IZE][ARR]</r></p></e>
 	<e><p><l>birgaitu[ADI][SIN]</l><r>ber[AUR]gaitu[ADI][SIN]+[AMM][PART]</r></p></e>
 	<e><p><l>birgaitze[IZE][ARR]</l><r>ber[AUR]gaitu[ADI][SIN]tze[ATZ][IZE][ARR]</r></p></e>
 	<e><p><l>berriz_gaixotze[IZE][ARR]</l><r>gaixotu[ADI][SIN]tze[ATZ][IZE][ARR]</r></p></e>
+	<e><p><l>erlazionatuta[ADJ][IZO]</l><r>erlazionatu[ADI][SIN]+[AMM][PART]+[ERL][MEN][MOD]</r></p></e>
 	<e><p><l>lasaitze[IZE][ARR]</l><r>lasaitu[ADI][SIN]tze[ATZ][IZE][ARR]</r></p></e>
 	<e><p><l>gainerako[IZE][ARR]</l><r>gainerako[ADJ][IZL]</r></p></e>
+	<e><p><l>hondakinak[IZE][ARR]</l><r>hondakin[IZE][ARR]</r></p></e>
 	<e><p><l>berriz_ekite[IZE][ARR]</l><r>ekin[ADI][SIN]te[ATZ][IZE][ARR]</r></p></e>
 	<e><p><l>alokatzeko[IZE][ARR]</l><r>alokatu[ADI][SIN]tze[ATZ][IZE][ARR]+[DEK][NUMS]+[DEK][GEL]</r></p></e>
 	<e><p><l>berrantolatu[ADI][SIN]</l><r>ber[AUR]antolatu[ADI][SIN]+[AMM][PART]</r></p></e>
 	<e><p><l>ezeztatze[IZE][ARR]</l><r>ezeztatu[ADI][SIN]tze[ATZ][IZE][ARR]</r></p></e>
 	<e><p><l>uxagarri[IZE][ARR]</l><r>uxatu[ADI][SIN]garri[ATZ][ADJ][IZO]</r></p></e>
 	<e><p><l>errepresiozko[ADJ][IZL]</l><r>errepresio[IZE][ARR]+[DEK][INS][MG]+[DEK][GEL]</r></p></e>
-	<e><p><l>errepublikako[IZE][ARR]</l><r>errepublika[IZE][ARR]+[DEK][NUMS]+[DEK][GEL]</r></p></e>
+	<e><p><l>errepublikako[ADJ][IZL]</l><r>errepublika[IZE][ARR]+[DEK][NUMS]+[DEK][GEL]</r></p></e>
 	<e><p><l>salbatze[IZE][ARR]</l><r>salbatu[ADI][SIN]tze[ATZ][IZE][ARR]</r></p></e>
 	<e><p><l>mindu[ADJ][IZO]</l><r>mindu[ADI][SIN]+[AMM][PART]</r></p></e>
 	<e><p><l>egoitza[ADJ][IZL]</l><r>egoitza[IZE][ARR]</r></p></e>
 	<e><p><l>begirunetsu[ADJ][IZO]</l><r>begirune[IZE][ARR]tsu[ATZ][ADJ][IZO]</r></p></e>
 	<e><p><l>nor_bere[ADJ][IZL]</l><r>bera[DET][ERKIND][NUMS]+[DEK][GEN]</r></p></e>
 	<e><p><l>arnasketako[ADJ][IZL]</l><r>arnasketa[IZE][ARR]+[DEK][NUMS]+[DEK][GEL]</r></p></e>
+	<e><p><l>murriztu[ADJ][IZO]</l><r>murriztu[ADI][SIN]+[AMM][PART]</r></p></e>
 	<e><p><l>murriztaile[ADJ][IZL]</l><r>murriztaile[IZE][ARR]</r></p></e>
 	<e><p><l>berregituratu[ADI][SIN]</l><r>ber[AUR]egituratu[ADI][SIN]+[AMM][PART]</r></p></e>
 	<e><p><l>suspertze[IZE][ARR]</l><r>suspertu[ADI][SIN]tze[ATZ][IZE][ARR]</r></p></e>
 	<e><p><l>berpizte[IZE][ARR]</l><r>berpiztu[ADI][SIN]te[ATZ][IZE][ARR]</r></p></e>
 	<e><p><l>atzeratu[ADJ][IZO]</l><r>atzeratu[ADI][SIN]+[AMM][PART]</r></p></e>
 	<e><p><l>errezeloa_duen[ADJ][IZL]</l><r>edun[ADL][A1][NR_HU][NK_HU]+n[ERL][MEN][ERLT]</r></p></e>
+	<e><p><l>erretiratu[ADJ][IZO]</l><r>erretiratu[ADI][SIN]+[AMM][PART]</r></p></e>
 	<e><p><l>erretiratze[IZE][ARR]</l><r>erretiratu[ADI][SIN]tze[ATZ][IZE][ARR]</r></p></e>
 	<e><p><l>atzera_begirako[ADJ][IZL]</l><r>begi[IZE][ARR]+[DEK][NUMS]+[DEK][ALA]+[DEK][GEL]</r></p></e>
 	<e><p><l>batze[IZE][ARR]</l><r>batu[ADI][SIN]tze[ATZ][IZE][ARR]</r></p></e>
@@ -958,22 +1024,23 @@
 	<e><p><l>lehiakide[ADJ][IZL]</l><r>lehiakide[IZE][ARR]</r></p></e>
 	<e><p><l>erre[IZE][ARR]</l><r>erre[ADI][SIN]+[AMM][PART]</r></p></e>
 	<e><p><l>haragi_erre[IZE][ARR]</l><r>erre[ADI][SIN]+[AMM][PART]</r></p></e>
+	<e><p><l>jostaketa_zalapartatsu[IZE][ARR]</l><r>zalaparta[IZE][ARR]tsu[ATZ][ADJ][IZO]</r></p></e>
 	<e><p><l>arrosa-koloreko[ADJ][IZL]</l><r>kolore[IZE][ARR]+[DEK][NUMS]+[DEK][GEL]</r></p></e>
-	<e><p><l>zeharka[IZE][ARR]</l><r>zeharkatu[ADI][SIN]+[AMM][PART]</r></p></e>
 	<e><p><l>zalapartatsu[ADJ][IZO]</l><r>zalaparta[IZE][ARR]tsu[ATZ][ADJ][IZO]</r></p></e>
-	<e><p><l>erregeren[ADJ][IZL]</l><r>errege[IZE][ARR]+[DEK][GEN]</r></p></e>
 	<e><p><l>errege-erreginen_familia_eta_ahaideak[IZE][ARR]</l><r>ahaide[IZE][ARR]</r></p></e>
 	<e><p><l>damutu[ADJ][IZO]</l><r>damutu[ADI][SIN]+[AMM][PART]</r></p></e>
 	<e><p><l>buru_den[ADJ][IZL]</l><r>izan[ADL][A1][NR_HU]+n[ERL][MEN][ERLT]</r></p></e>
 	<e><p><l>herdoildu[ADJ][IZO]</l><r>herdoildu[ADI][SIN]+[AMM][PART]</r></p></e>
 	<e><p><l>botatze[IZE][ARR]</l><r>botatu[ADI][SIN]tze[ATZ][IZE][ARR]</r></p></e>
 	<e><p><l>sadiko[IZE][ARR]</l><r>sadiko[ADJ][IZO]</r></p></e>
+	<e><p><l>kutxa_gotor[IZE][ARR]</l><r>gotor[ADJ][IZO]</r></p></e>
 	<e><p><l>bere_senean_dagoen[ADJ][IZL]</l><r>egon[ADT][A1][NR_HU]+n[ERL][MEN][ERLT]</r></p></e>
 	<e><p><l>osasun[ADJ][IZL]</l><r>osasun[IZE][ARR]</r></p></e>
 	<e><p><l>satinatu[IZE][ARR]</l><r>satinatu[ADI][SIN]+[AMM][PART]</r></p></e>
 	<e><p><l>asetze[IZE][ARR]</l><r>ase[ADI][SIN]tze[ATZ][IZE][ARR]</r></p></e>
 	<e><p><l>platertxo[IZE][ARR]</l><r>plater[IZE][ARR]txo[ATZ][IZE][ARR]</r></p></e>
 	<e><p><l>aurrezte[IZE][ARR]</l><r>aurreztu[ADI][SIN]te[ATZ][IZE][ARR]</r></p></e>
+	<e><p><l>aldamioak[IZE][ARR]</l><r>aldamio[IZE][ARR]</r></p></e>
 	<e><p><l>eskandaluzko[ADJ][IZL]</l><r>eskandalu[IZE][ARR]+[DEK][INS][MG]+[DEK][GEL]</r></p></e>
 	<e><p><l>eskarlata[ADJ][IZL]</l><r>eskarlata[IZE][ARR]</r></p></e>
 	<e><p><l>eszeptiko[IZE][ARR]</l><r>eszeptiko[ADJ][IZO]</r></p></e>
@@ -991,10 +1058,11 @@
 	<e><p><l>norbera[IZE][ARR]</l><r>norbera[ADJ][IZO]</r></p></e>
 	<e><p><l>bere_buruarekin_ziur_den[ADJ][IZL]</l><r>izan[ADL][A1][NR_HU]+n[ERL][MEN][ERLT]</r></p></e>
 	<e><p><l>bere_buruarekin_konfiantza_duen[ADJ][IZL]</l><r>edun[ADL][A1][NR_HU][NK_HU]+n[ERL][MEN][ERLT]</r></p></e>
+	<e><p><l>autozerbitzu[ADJ][IZL]</l><r>autozerbitzu[IZE][ARR]</r></p></e>
 	<e><p><l>laguntza_behar_ez_duen[ADJ][IZL]</l><r>edun[ADL][A1][NR_HU][NK_HU]+n[ERL][MEN][ERLT]</r></p></e>
 	<e><p><l>zinta_itsasgarri[IZE][ARR]</l><r>itsatsi[ADI][SIN]garri[ATZ][ADJ][IZO]</r></p></e>
 	<e><p><l>zahartzaroko[ADJ][IZL]</l><r>zahartzaro[IZE][ARR]+[DEK][NUMS]+[DEK][GEL]</r></p></e>
-	<e><p><l>zaharrago[ADJ][IZO]</l><r>zahar[ADJ][IZO]+[GRA][KONP]</r></p></e>
+	<e><p><l>zaharrago[IZE][ARR]</l><r>zahar[ADJ][IZO]+[GRA][KONP]</r></p></e>
 	<e><p><l>bereizi[ADJ][IZO]</l><r>bereizi[ADI][SIN]+[AMM][PART]</r></p></e>
 	<e><p><l>jantzi_solteak[ADJ][IZL]</l><r>solte[ADJ][IZO]+[NUMP]</r></p></e>
 	<e><p><l>zerbitzatzeko_mahai-tresnak[IZE][ARR]</l><r>tresna[IZE][ARR]</r></p></e>
@@ -1004,15 +1072,20 @@
 	<e><p><l>etete[IZE][ARR]</l><r>eten[ADI][SIN]te[ATZ][IZE][ARR]</r></p></e>
 	<e><p><l>hondakin-urak[IZE][ARR]</l><r>ur[IZE][ARR]</r></p></e>
 	<e><p><l>girgiluak[IZE][ARR]</l><r>girgilu[IZE][ARR]</r></p></e>
+	<e><p><l>sakonera_txikiko[ADJ][IZL]</l><r>txiki[ADJ][IZO]+[DEK][NUMS]+[DEK][GEL]</r></p></e>
 	<e><p><l>akziodun[IZE][ARR]</l><r>akziodun[ADJ][IZO]</r></p></e>
 	<e><p><l>puntuan[IZE][ARR]</l><r>puntu[IZE][ARR]+[DEK][NUMS]+[DEK][INE]</r></p></e>
 	<e><p><l>sostenitu[IZE][ARR]</l><r>sostenitu[ADJ][IZO]</r></p></e>
 	<e><p><l>aizturrak[IZE][ARR]</l><r>aiztur[IZE][ARR]</r></p></e>
+	<e><p><l>babestu[ADJ][IZO]</l><r>babestu[ADI][SIN]+[AMM][PART]</r></p></e>
+	<e><p><l>erosketak[IZE][ARR]</l><r>erosketa[IZE][ARR]</r></p></e>
+	<e><p><l>film_labur[IZE][ARR]</l><r>labur[ADJ][IZO]</r></p></e>
 	<e><p><l>epe_motzeko[ADJ][IZL]</l><r>motz[ADJ][IZO]+[DEK][NUMS]+[DEK][GEL]</r></p></e>
 	<e><p><l>laburtze[IZE][ARR]</l><r>laburtu[ADI][SIN]tze[ATZ][IZE][ARR]</r></p></e>
 	<e><p><l>bi_lekuren_arteko_garraio-zerbitzu_sarria[IZE][ARR]</l><r>sarri[ADJ][IZO]+[NUMS]</r></p></e>
+	<e><p><l>trebeskako[ADJ][IZL]</l><r>trebeska[ADB][ADOARR]+[DEK][GEL]</r></p></e>
 	<e><p><l>zetazko[ADJ][IZL]</l><r>zeta[IZE][ARR]+[DEK][INS][MG]+[DEK][GEL]</r></p></e>
-	<e><p><l>zilarrezko[IZE][ARR]</l><r>zilar[ADJ][IZO]+[DEK][INS][MG]+[DEK][GEL]</r></p></e>
+	<e><p><l>zilarrezko[ADJ][IZL]</l><r>zilar[ADJ][IZO]+[DEK][INS][MG]+[DEK][GEL]</r></p></e>
 	<e><p><l>seigarren[ADJ][IZL]</l><r>sei[DET][DZH][NUMP]garren[ATZ][DET][ORD]</r></p></e>
 	<e><p><l>sei[IZE][ARR]</l><r>sei[IZE][ARR][RARE]</r></p></e>
 	<e><p><l>borroka_txiki[IZE][ARR]</l><r>txiki[ADJ][IZO]</r></p></e>
@@ -1022,6 +1095,7 @@
 	<e><p><l>lo_dagoen[ADJ][IZL]</l><r>egon[ADT][A1][NR_HU]+n[ERL][MEN][ERLT]</r></p></e>
 	<e><p><l>lorik_egin_gabe[ADJ][IZO]</l><r>gabe[ADJ][IZO][RARE]</r></p></e>
 	<e><p><l>loguratu[ADJ][IZO]</l><r>loguratu[ADI][SIN]+[AMM][PART]</r></p></e>
+	<e><p><l>marea_beltz[IZE][ARR]</l><r>beltz[ADJ][IZO]</r></p></e>
 	<e><p><l>mantsotze[IZE][ARR]</l><r>mantsotu[ADI][SIN]tze[ATZ][IZE][ARR]</r></p></e>
 	<e><p><l>elur_urtu[IZE][ARR]</l><r>urtu[ADI][SIN]+[AMM][PART]</r></p></e>
 	<e><p><l>xaboidun[ADJ][IZO]</l><r>xaboi[IZE][ARR]dun[ATZ][ADJ][IZO]</r></p></e>
@@ -1029,31 +1103,38 @@
 	<e><p><l>mozkor_ez_egote[IZE][ARR]</l><r>egon[ADI][SIN]te[ATZ][IZE][ARR]</r></p></e>
 	<e><p><l>lagunarteko[ADJ][IZL]</l><r>lagunarte[IZE][ARR]+[DEK][NUMS]+[DEK][GEL]</r></p></e>
 	<e><p><l>eguzkiko[ADJ][IZL]</l><r>eguzki[IZE][ARR]+[DEK][NUMS]+[DEK][GEL]</r></p></e>
-	<e><p><l>bakarrik_egindako[IZE][ARR]</l><r>egin[ADI][SIN]+[AMM][PART]+[ERL][MEN][MOD]+[DEK][GEL]</r></p></e>
+	<e><p><l>bakarrik_egindako[ADJ][IZL]</l><r>egin[ADI][SIN]+[AMM][PART]+[ERL][MEN][MOD]+[DEK][GEL]</r></p></e>
 	<e><p><l>soinu[ADJ][IZL]</l><r>soinu[IZE][ARR]</r></p></e>
-	<e><p><l>mindu[IZE][ARR]</l><r>mindu[ADI][SIN]+[AMM][PART]</r></p></e>
-	<e><p><l>osorik[IZE][ARR]</l><r>osorik[ADB][ALGARR]</r></p></e>
+	<e><p><l>sofistikatu[ADJ][IZO]</l><r>sofistikatu[ADI][SIN]+[AMM][PART]</r></p></e>
 	<e><p><l>hego[ADJ][IZL]</l><r>hego[IZE][ARR]</r></p></e>
-	<e><p><l>soberako[ADJ][IZL]</l><r>sobera[ADB][ADOARR]+[DEK][GEL]</r></p></e>
+	<e><p><l>arrabak[IZE][ARR]</l><r>arraba[IZE][ARR]</r></p></e>
+	<e><p><l>programa_berezi[IZE][ARR]</l><r>berezi[ADJ][IZO]</r></p></e>
+	<e><p><l>espezialista[ADJ][IZL]</l><r>espezialista[IZE][ARR]</r></p></e>
 	<e><p><l>betaurrekoak[IZE][ARR]</l><r>betaurreko[IZE][ARR]</r></p></e>
 	<e><p><l>txalupa_motordun[IZE][ARR]</l><r>motordun[ADJ][IZO]</r></p></e>
 	<e><p><l>irute[IZE][ARR]</l><r>irun[ADI][SIN]te[ATZ][IZE][ARR]</r></p></e>
 	<e><p><l>noizbehinkako[ADJ][IZL]</l><r>noizbehinka[ADB][ADOARR]+[DEK][GEL]</r></p></e>
 	<e><p><l>bihurritu[IZE][ARR]</l><r>bihurritu[ADI][SIN]+[AMM][PART]</r></p></e>
 	<e><p><l>mugitzen_ez_den[ADJ][IZL]</l><r>izan[ADL][A1][NR_HU]+n[ERL][MEN][ERLT]</r></p></e>
+	<e><p><l>jarraitzaile_leial[IZE][ARR]</l><r>leial[ADJ][IZO]</r></p></e>
+	<e><p><l>begirada_finko[IZE][ARR]</l><r>finko[ADJ][IZO]</r></p></e>
 	<e><p><l>izartu[ADJ][IZO]</l><r>izartu[ADI][SIN]+[AMM][PART]</r></p></e>
 	<e><p><l>estatuaren[IZE][ARR]</l><r>estatua[IZE][ARR]+[DEK][GEN][MG]</r></p></e>
 	<e><p><l>bulegoko_material[IZE][ARR]</l><r>material[IZE][ARR]</r></p></e>
 	<e><p><l>estatutuko[ADJ][IZL]</l><r>estatutu[IZE][ARR]+[DEK][NUMS]+[DEK][GEL]</r></p></e>
 	<e><p><l>geldiarazi[ADI][SIN]</l><r>gelditu[ADI][SIN]arazi[ATZ][ADI][SIN]+[AMM][PART]</r></p></e>
+	<e><p><l>ekipo_estereo[IZE][ARR]</l><r>estereo[ADJ][IZL]</r></p></e>
 	<e><p><l>antzutasun[IZE][ARR]</l><r>antzu[ADJ][IZO]tasun[ATZ][IZE][ARR]</r></p></e>
 	<e><p><l>antzutze[IZE][ARR]</l><r>antzutu[ADI][SIN]tze[ATZ][IZE][ARR]</r></p></e>
 	<e><p><l>libera_esterlina[IZE][ARR]</l><r>esterlina[ADJ][IZO]</r></p></e>
 	<e><p><l>erregosi[IZE][ARR]</l><r>erregosi[ADI][SIN]+[AMM][PART]</r></p></e>
 	<e><p><l>biltegiratze[IZE][ARR]</l><r>biltegiratu[ADI][SIN]tze[ATZ][IZE][ARR]</r></p></e>
+	<e><p><l>tentsio[ADJ][IZL]</l><r>tentsio[IZE][ARR]</r></p></e>
 	<e><p><l>estresagarri[ADJ][IZO]</l><r>estresatu[ADI][SIN]garri[ATZ][ADJ][IZO]</r></p></e>
 	<e><p><l>egiturazko[ADJ][IZL]</l><r>egitura[IZE][ARR]+[DEK][INS][MG]+[DEK][GEL]</r></p></e>
+	<e><p><l>trabatu[ADJ][IZO]</l><r>trabatu[ADI][SIN]+[AMM][PART]</r></p></e>
 	<e><p><l>aireztatu_gabe[ADJ][IZO]</l><r>gabe[ADJ][IZO][RARE]</r></p></e>
+	<e><p><l>subjuntibo[ADJ][IZL]</l><r>subjuntibo[IZE][ARR]</r></p></e>
 	<e><p><l>normalaz_azpiko[ADJ][IZL]</l><r>azpi[IZE][ARR]+[DEK][NUMS]+[DEK][GEL]</r></p></e>
 	<e><p><l>lurpeko[ADJ][IZL]</l><r>lurpe[IZE][ARR]+[DEK][GEL]</r></p></e>
 	<e><p><l>hiri_inguruko[ADJ][IZL]</l><r>inguru[IZE][ARR]+[DEK][NUMS]+[DEK][GEL]</r></p></e>
@@ -1064,23 +1145,25 @@
 	<e><p><l>udako[IZE][ARR]</l><r>uda[IZE][ARR]+[DEK][NUMS]+[DEK][GEL]</r></p></e>
 	<e><p><l>batzuk[ADJ][IZL]</l><r>batzuk[DET][DZG][NUMP]+[NUMP]</r></p></e>
 	<e><p><l>hondoratu[ADJ][IZO]</l><r>hondoratu[ADI][SIN]+[AMM][PART]</r></p></e>
-	<e><p><l>handiago[IZE][ARR]</l><r>handiagotu[ADI][SIN]+[AMM][PART]</r></p></e>
+	<e><p><l>handiago[ADJ][IZO]</l><r>handi[ADJ][IZO]+[GRA][KONP]</r></p></e>
 	<e><p><l>naturaz_gaindiko[ADJ][IZL]</l><r>gaindi[ADB][ADOARR]+[DEK][GEL]</r></p></e>
 	<e><p><l>gainbegiratze[IZE][ARR]</l><r>gainbegiratu[ADI][SIN]tze[ATZ][IZE][ARR]</r></p></e>
+	<e><p><l>soberako[IZE][ARR]</l><r>sobera[ADB][ADOARR]+[DEK][GEL]</r></p></e>
 	<e><p><l>bizirik_irten_den[IZE][ARR]</l><r>izan[ADL][A1][NR_HU]+n[ERL][MEN][ERLT]</r></p></e>
 	<e><p><l>ekortze[IZE][ARR]</l><r>ekortu[ADI][SIN]tze[ATZ][IZE][ARR]</r></p></e>
 	<e><p><l>zikoitz[IZE][ARR]</l><r>zikoitz[ADJ][IZO]</r></p></e>
+	<e><p><l>handitu[ADJ][IZO]</l><r>handitu[ADI][SIN]+[AMM][PART]</r></p></e>
 	<e><p><l>amiltze[IZE][ARR]</l><r>amildu[ADI][SIN]tze[ATZ][IZE][ARR]</r></p></e>
 	<e><p><l>tabu[ADJ][IZL]</l><r>tabu[IZE][ARR]</r></p></e>
 	<e><p><l>diskreziorik_gabeko[ADJ][IZL]</l><r>gabe[ADB][ADOARR]+[DEK][GEL]</r></p></e>
 	<e><p><l>etxekotu[ADJ][IZO]</l><r>etxekotu[ADI][SIN]+[AMM][PART]</r></p></e>
 	<e><p><l>usain_sendo[IZE][ARR]</l><r>sendo[ADJ][IZO]</r></p></e>
-	<e><p><l>gastatu[IZE][ARR]</l><r>gastatu[ADI][SIN]+[AMM][PART]</r></p></e>
+	<e><p><l>nahaspilatu[ADJ][IZO]</l><r>nahaspilatu[ADI][SIN]+[AMM][PART]</r></p></e>
+	<e><p><l>gastatu[ADJ][IZO]</l><r>gastatu[ADI][SIN]+[AMM][PART]</r></p></e>
 	<e><p><l>tenkatu[ADJ][IZO]</l><r>tenkatu[ADI][SIN]+[AMM][PART]</r></p></e>
 	<e><p><l>teka[IZE][ARR]</l><r>te[IZE][ARR]ka[ATZ][ADB][ADOARR]</r></p></e>
 	<e><p><l>telekomunikazioak[IZE][ARR]</l><r>telekomunikazio[IZE][ARR]</r></p></e>
-	<e><p><l>denboraldiko[IZE][ARR]</l><r>denboraldi[IZE][ARR]+[DEK][NUMS]+[DEK][GEL]</r></p></e>
-	<e><p><l>tenkatu[IZE][ARR]</l><r>tenkatu[ADI][SIN]+[AMM][PART]</r></p></e>
+	<e><p><l>denboraldiko[ADJ][IZL]</l><r>denboraldi[IZE][ARR]+[DEK][NUMS]+[DEK][GEL]</r></p></e>
 	<e><p><l>dudatsu[ADJ][IZO]</l><r>duda[IZE][ARR]tsu[ATZ][ADJ][IZO]</r></p></e>
 	<e><p><l>aritze[IZE][ARR]</l><r>aritu[ADI][SIN]tze[ATZ][IZE][ARR]</r></p></e>
 	<e><p><l>amaitze[IZE][ARR]</l><r>amaitu[ADI][SIN]tze[ATZ][IZE][ARR]</r></p></e>
@@ -1092,6 +1175,7 @@
 	<e><p><l>milagarren[DET][ORD]</l><r>mila[DET][DZH][NUMP]garren[ATZ][DET][ORD]</r></p></e>
 	<e><p><l>higatu[ADJ][IZO]</l><r>higatu[ADI][SIN]+[AMM][PART]</r></p></e>
 	<e><p><l>hiru_dimentsioko[ADJ][IZL]</l><r>dimentsio[IZE][ARR]+[DEK][NUMS]+[DEK][GEL]</r></p></e>
+	<e><p><l>bukatuta[ADJ][IZO]</l><r>bukatu[ADI][SIN]+[AMM][PART]+[ERL][MEN][MOD]</r></p></e>
 	<e><p><l>tik[IZE][ARR]</l><r>tik[IZE][ARR][RARE]</r></p></e>
 	<e><p><l>ilara_gainjarri[IZE][ARR]</l><r>gainjarri[ADI][SIN]+[AMM][PART]</r></p></e>
 	<e><p><l>pantyak[ADJ][IZL]</l><r>panty[IZE][ARR]+[NUMP]</r></p></e>
@@ -1099,7 +1183,6 @@
 	<e><p><l>ogi_txigortu[IZE][ARR]</l><r>txigortu[ADI][SIN]+[AMM][PART]</r></p></e>
 	<e><p><l>gaur[IZE][ARR]</l><r>gaur[ADB][ADOARR]</r></p></e>
 	<e><p><l>bihar[IZE][ARR]</l><r>bihar[ADB][ADOARR]</r></p></e>
-	<e><p><l>gaur_gauean[IZE][ARR]</l><r>gau[IZE][ARR]+[DEK][NUMS]+[DEK][INE]</r></p></e>
 	<e><p><l>gaur_gau[IZE][ARR]</l><r>gau[IZE][ARR]</r></p></e>
 	<e><p><l>erorarazi[ADI][SIN]</l><r>erori[ADI][SIN]arazi[ATZ][ADI][SIN]+[AMM][PART]</r></p></e>
 	<e><p><l>uholdezko[ADJ][IZL]</l><r>uholde[IZE][ARR]+[DEK][INS][MG]+[DEK][GEL]</r></p></e>
@@ -1120,21 +1203,21 @@
 	<e><p><l>hogeigarren[IZE][ARR]</l><r>hogei[DET][DZH][NUMP]garren[ATZ][DET][ORD]</r></p></e>
 	<e><p><l>OHE[IZE][ARR]</l><r>OHE[SIG]</r></p></e>
 	<e><p><l>Erresuma_Batua[IZE][ARR]</l><r>batu[ADI][SIN]+[AMM][PART]</r></p></e>
+	<e><p><l>zilbor[ADJ][IZL]</l><r>zilbor[IZE][ARR]</r></p></e>
 	<e><p><l>NBE[IZE][ARR]</l><r>NBE[SIG]</r></p></e>
 	<e><p><l>aldatu_gabe[ADJ][IZO]</l><r>gabe[ADJ][IZO][RARE]</r></p></e>
 	<e><p><l>asmo_handirik_gabeko[ADJ][IZL]</l><r>gabe[ADB][ADOARR]+[DEK][GEL]</r></p></e>
-	<e><p><l>bere_senean_ez_dagoen[ADJ][IZL]</l><r>egon[ADT][A1][NR_HU]+n[ERL][MEN][ERLT]</r></p></e>
+	<e><p><l>desorekatu[ADJ][IZO]</l><r>desorekatu[ADI][SIN]+[AMM][PART]</r></p></e>
 	<e><p><l>ezin_hautsizko[ADJ][IZL]</l><r>hautsi[ADI][SIN]+[AMM][PART]+[DEK][INS][MG]+[DEK][GEL]</r></p></e>
 	<e><p><l>erabaki_ezin[ADJ][IZL]</l><r>ezin[IZE][ARR]</r></p></e>
 	<e><p><l>kontrolik_gabe[ADJ][IZO]</l><r>gabe[ADJ][IZO][RARE]</r></p></e>
 	<e><p><l>amorerik_ematen_ez_duen[ADJ][IZL]</l><r>edun[ADL][A1][NR_HU][NK_HU]+n[ERL][MEN][ERLT]</r></p></e>
 	<e><p><l>baldintza_gabeko[ADJ][IZL]</l><r>gabe[ADB][ADOARR]+[DEK][GEL]</r></p></e>
 	<e><p><l>konorterik_gabe[ADJ][IZO]</l><r>gabe[ADJ][IZO][RARE]</r></p></e>
-	<e><p><l>lurpean[ADJ][IZL]</l><r>lurpe[IZE][ARR]+[DEK][INE]</r></p></e>
 	<e><p><l>azpiko[ADJ][IZL]</l><r>azpi[IZE][ARR]+[DEK][NUMS]+[DEK][GEL]</r></p></e>
 	<e><p><l>leuntze[IZE][ARR]</l><r>leundu[ADI][SIN]tze[ATZ][IZE][ARR]</r></p></e>
 	<e><p><l>urpean[ADJ][IZL]</l><r>ur[IZE][ARR]pe[ATZ][IZE][ARR]+[DEK][NUMS]+[DEK][INE]</r></p></e>
-	<e><p><l>desira_ez_den[IZE][ARR]</l><r>izan[ADL][A1][NR_HU]+n[ERL][MEN][ERLT]</r></p></e>
+	<e><p><l>desira_ez_den[ADJ][IZL]</l><r>izan[ADL][A1][NR_HU]+n[ERL][MEN][ERLT]</r></p></e>
 	<e><p><l>hutsik_gabe[ADJ][IZO]</l><r>gabe[ADJ][IZO][RARE]</r></p></e>
 	<e><p><l>bidegabe[ADJ][IZL]</l><r>bidegabe[IZE][ARR]</r></p></e>
 	<e><p><l>zauririk_gabe[ADJ][IZO]</l><r>gabe[ADJ][IZO][RARE]</r></p></e>
@@ -1156,18 +1239,23 @@
 	<e><p><l>ez_prest[ADJ][IZO]</l><r>prest[ADJ][IZO][RARE]</r></p></e>
 	<e><p><l>ez_merezi[ADJ][IZL]</l><r>merezi[IZE][ARR]</r></p></e>
 	<e><p><l>idatzi_gabe[ADJ][IZO]</l><r>gabe[ADJ][IZO][RARE]</r></p></e>
+	<e><p><l>atsekabetuta[ADJ][IZO]</l><r>atsekabetu[ADI][SIN]+[AMM][PART]+[ERL][MEN][MOD]</r></p></e>
+	<e><p><l>goranzko[ADJ][IZL]</l><r>gora[ADB][ALGARR]+[DEK][ABZ]+[DEK][GEL]</r></p></e>
 	<e><p><l>Estatu_Batuak[IZE][ARR]</l><r>batu[ADI][SIN]+[AMM][PART]</r></p></e>
 	<e><p><l>ahalik_eta_gehien[IZE][ARR]</l><r>gehien[ADJ][IZO]</r></p></e>
 	<e><p><l>baliozko_gauzak[IZE][ARR]</l><r>gauza[IZE][ARR]</r></p></e>
 	<e><p><l>aldagarri[ADJ][IZO]</l><r>aldatu[ADI][SIN]garri[ATZ][ADJ][IZO]</r></p></e>
+	<e><p><l>era_askotako[ADJ][IZL]</l><r>asko[DET][DZG][MG]+[DEK][MG]+[DEK][GEL]</r></p></e>
 	<e><p><l>BEZ[IZE][ARR]</l><r>BEZ[SIG]</r></p></e>
 	<e><p><l>egiaztatze[IZE][ARR]</l><r>egiaztatu[ADI][SIN]tze[ATZ][IZE][ARR]</r></p></e>
 	<e><p><l>piztiak[IZE][ARR]</l><r>piztia[IZE][ARR]</r></p></e>
 	<e><p><l>gaitasun_askoko[ADJ][IZL]</l><r>asko[ADB][ADOARR]+[DEK][NUMS]+[DEK][GEL]</r></p></e>
+	<e><p><l>hitz-errepikapenak[ADJ][IZL]</l><r>errepikapen[IZE][ARR]+[NUMP]</r></p></e>
 	<e><p><l>beterano[IZE][ARR]</l><r>beterano[ADJ][IZO]</r></p></e>
 	<e><p><l>albaitarien[ADJ][IZL]</l><r>albaitari[IZE][ARR]+[DEK][GEN]</r></p></e>
 	<e><p><l>gizonaren[ADJ][IZL]</l><r>gizon[IZE][ARR]+[DEK][GEN]</r></p></e>
-	<e><p><l>etorkizun-sena_duen[IZE][ARR]</l><r>edun[ADL][A1][NR_HU][NK_HU]+n[ERL][MEN][ERLT]</r></p></e>
+	<e><p><l>etorkizun-sena_duen[ADJ][IZL]</l><r>edun[ADL][A1][NR_HU][NK_HU]+n[ERL][MEN][ERLT]</r></p></e>
+	<e><p><l>ikuste[ADJ][IZL]</l><r>ikuste[IZE][ARR]</r></p></e>
 	<e><p><l>bizitzeko[ADJ][IZL]</l><r>bizitze[IZE][ARR]+[DEK][NUMS]+[DEK][GEL]</r></p></e>
 	<e><p><l>ahots[ADJ][IZL]</l><r>ahots[IZE][ARR]</r></p></e>
 	<e><p><l>haur_galdu[IZE][ARR]</l><r>galdu[ADI][SIN]+[AMM][PART]</r></p></e>
@@ -1179,40 +1267,36 @@
 	<e><p><l>sigi-saga_dabilen[ADJ][IZL]</l><r>ibili[ADT][A1][NR_HU]+n[ERL][MEN][ERLT]</r></p></e>
 	<e><p><l>belar_gaizto[IZE][ARR]</l><r>gaizto[ADJ][IZO]</r></p></e>
 	<e><p><l>asteroko[ADJ][IZL]</l><r>astero[ADB][ADOARR]+[DEK][GEL]</r></p></e>
+	<e><p><l>ongi_etorri[ADJ][IZL]</l><r>etorri[IZE][ARR]</r></p></e>
 	<e><p><l>ongi_zaindutako[ADJ][IZL]</l><r>zaindu[ADI][SIN]+[AMM][PART]+[DEK][MG]+[DEK][GEL]</r></p></e>
 	<e><p><l>ongi_hezi[ADJ][IZO]</l><r>hezi[ADI][SIN]+[AMM][PART]</r></p></e>
 	<e><p><l>asmo_oneko[ADJ][IZL]</l><r>on[ADJ][IZO]+[DEK][NUMS]+[DEK][GEL]</r></p></e>
 	<e><p><l>une_egokian_egindako[ADJ][IZL]</l><r>egin[ADI][SIN]+[AMM][PART]+[ERL][MEN][MOD]+[DEK][GEL]</r></p></e>
-	<e><p><l>mendebaldeko[IZE][ARR]</l><r>mendebalde[IZE][ARR]+[DEK][NUMS]+[DEK][GEL]</r></p></e>
-	<e><p><l>mendebalderantz[IZE][ARR]</l><r>mendebalde[IZE][ARR]+[DEK][NUMS]+[DEK][ABZ]</r></p></e>
+	<e><p><l>mendebaldeko[ADJ][IZL]</l><r>mendebalde[IZE][ARR]+[DEK][NUMS]+[DEK][GEL]</r></p></e>
+	<e><p><l>edozein[ADJ][IZL]</l><r>edozein[DET][NOLARR][MG]</r></p></e>
 	<e><p><l>ordea[LOT][LOK]</l><r>ordea[LOT][LOK][AURK]</r></p></e>
 	<e><p><l>berriz[LOT][LOK]</l><r>berriz[LOT][LOK][AURK]</r></p></e>
 	<e><p><l>handizkako[ADJ][IZL]</l><r>handizka[ADB][ADOARR]+[DEK][GEL]</r></p></e>
 	<e><p><l>gari-bihi_oso[IZE][ARR]</l><r>oso[ADJ][IZO]</r></p></e>
 	<e><p><l>makilak[IZE][ARR]</l><r>makila[IZE][ARR]</r></p></e>
-	<e><p><l>askatasunez[ADJ][IZL]</l><r>askatasun[IZE][ARR]+[DEK][INS][MG]</r></p></e>
 	<e><p><l>neguko[ADJ][IZL]</l><r>negu[IZE][ARR]+[DEK][NUMS]+[DEK][GEL]</r></p></e>
 	<e><p><l>haririk_gabeko[IZE][ARR]</l><r>gabe[ADB][ADOARR]+[DEK][GEL]</r></p></e>
 	<e><p><l>kentze[IZE][ARR]</l><r>kendu[ADI][SIN]tze[ATZ][IZE][ARR]</r></p></e>
 	<e><p><l>andrezale[IZE][ARR]</l><r>andrezale[ADJ][IZO]</r></p></e>
 	<e><p><l>egurrezko[ADJ][IZL]</l><r>egur[IZE][ARR]+[DEK][INS][MG]+[DEK][GEL]</r></p></e>
 	<e><p><l>zurezko[ADJ][IZL]</l><r>zur[IZE][ARR]+[DEK][INS][MG]+[DEK][GEL]</r></p></e>
-	<e><p><l>artilezko[IZE][ARR]</l><r>artile[IZE][ARR]+[DEK][INS][MG]+[DEK][GEL]</r></p></e>
 	<e><p><l>artilezko[ADJ][IZL]</l><r>artile[IZE][ARR]+[DEK][INS][MG]+[DEK][GEL]</r></p></e>
 	<e><p><l>lana_duen[ADJ][IZL]</l><r>edun[ADL][A1][NR_HU][NK_HU]+n[ERL][MEN][ERLT]</r></p></e>
 	<e><p><l>munduko[IZE][ARR]</l><r>mundu[IZE][ARR]+[DEK][NUMS]+[DEK][GEL]</r></p></e>
 	<e><p><l>munduko[ADJ][IZL]</l><r>mundu[IZE][ARR]+[DEK][NUMS]+[DEK][GEL]</r></p></e>
 	<e><p><l>txarrago[ADJ][IZO]</l><r>txar[ADJ][IZO]+[GRA][KONP]</r></p></e>
-	<e><p><l>okerrago[ADJ][IZO]</l><r>oker[ADJ][IZO]+[GRA][KONP]</r></p></e>
 	<e><p><l>txartze[IZE][ARR]</l><r>txartu[ADI][SIN]tze[ATZ][IZE][ARR]</r></p></e>
 	<e><p><l>txarren[ADJ][IZO]</l><r>txar[ADJ][IZO]+[GRA][SUP]</r></p></e>
 	<e><p><l>okerren[ADJ][IZO]</l><r>oker[ADJ][IZO]+[GRA][SUP]</r></p></e>
 	<e><p><l>okerrena[ADJ][IZL]</l><r>oker[ADJ][IZO]+[DEK][GEN]</r></p></e>
 	<e><p><l>balio_duen[ADJ][IZL]</l><r>edun[ADL][A1][NR_HU][NK_HU]+n[ERL][MEN][ERLT]</r></p></e>
 	<e><p><l>merezi_duen[ADJ][IZL]</l><r>edun[ADL][A1][NR_HU][NK_HU]+n[ERL][MEN][ERLT]</r></p></e>
-	<e><p><l>bilgarri[IZE][ARR]</l><r>bilgarri[ADJ][IZO]</r></p></e>
 	<e><p><l>hondoratze[IZE][ARR]</l><r>hondoratu[ADI][SIN]tze[ATZ][IZE][ARR]</r></p></e>
-	<e><p><l>hondakinak[IZE][ARR]</l><r>hondakin[IZE][ARR]</r></p></e>
 	<e><p><l>atzo[IZE][ARR]</l><r>atzo[ADB][ADOARR]</r></p></e>
 	<e><p><l>umeak[ADJ][IZL]</l><r>ume[IZE][ARR]+[NUMP]</r></p></e>
 	<e><p><l>eu_estatua[IZE][LIB]</l><r>estatua[IZE][ARR]</r></p></e>
@@ -1292,7 +1376,6 @@
 	<e><p><l>kristau-ikasbide[IZE][IZB]</l><r>ikasbide[IZE][ARR]</r></p></e>
 	<e><p><l>disko_konpaktu[IZE][ARR]</l><r>konpaktu[ADJ][IZO]</r></p></e>
 	<e><p><l>iraupen-eski[ADJ][IZL]</l><r>eski[IZE][ARR]</r></p></e>
-	<e><p><l>beltz[IZE][ARR]</l><r>beltz[ADJ][IZO]</r></p></e>
 	<e><p><l>saltoki_handiak[IZE][ARR]</l><r>handi[ADJ][IZO]</r></p></e>
 	<e><p><l>minusbaliatuak[ADI][SIN]</l><r>minusbaliatu[ADJ][IZO]</r></p></e>
 	<e><p><l>minusbaliatuak[ADJ][IZO]</l><r>minusbaliatu[ADJ][IZO]</r></p></e>
@@ -1353,7 +1436,6 @@
 	<e><p><l>Noeren_arka[IZE][IZB]</l><r>arka[IZE][ARR]</r></p></e>
 	<e><p><l>iparramerikar[IZE][IZB]</l><r>iparramerikar[IZE][ARR]</r></p></e>
 	<e><p><l>Ipar_polo[IZE][IZB]</l><r>polo[IZE][ARR]</r></p></e>
-	<e><p><l>marea_beltz[IZE][ARR]</l><r>beltz[ADJ][IZO]</r></p></e>
 	<e><p><l>Erramu-domeka[IZE][IZB]</l><r>domeka[IZE][ARR]</r></p></e>
 	<e><p><l>ikastetxe_pribatu[IZE][ARR]</l><r>pribatu[ADJ][IZO]</r></p></e>
 	<e><p><l>foru-aldundi[IZE][IZB]</l><r>aldundi[IZE][ARR]</r></p></e>
@@ -1459,6 +1541,7 @@
 	<e><p><l>norbaiti_bihotza_erdiratu[IZE][ARR]</l><r>erdiratu[ADI][SIN]+[AMM][PART]</r></p></e>
 	<e><p><l>zerbait_irakinarazi[ADI][SIN]</l><r>irakin[ADI][SIN]arazi[ATZ][ADI][SIN]+[AMM][PART]</r></p></e>
 	<e><p><l>zalantzazkotzat_jo[IZE][ARR]</l><r>jo[ADI][SIN]+[AMM][ADOIN]</r></p></e>
+	<e><p><l>erori[IZE][ARR]</l><r>erori[ADI][SIN]+[AMM][PART]</r></p></e>
 	<e><p><l>gertatzen_dena_gertatzen_dela[ADI][SIN]</l><r>izan[ADL][A1][NR_HU]+la[ERL][MEN][KONP]</r></p></e>
 	<e><p><l>norbaiten_arreta_erakarri[IZE][ARR]</l><r>erakarri[ADI][SIN]+[AMM][PART]</r></p></e>
 	<e><p><l>oso_dotore_jantzita[ADI][SIN]</l><r>jantzi[ADI][SIN]+[AMM][PART]+[ERL][MEN][MOD]</r></p></e>

@@ -1,5 +1,5 @@
 # Format:
-# prepEn	caseEU		condition	    exclusion  ## comment
+# prepEs	caseEU		condition	    exclusion  ## comment
 #
 # condition:   (baldintza betetzen bada, itzulpen hori hartu da )
 #   chunk.attrib='value'
@@ -13,20 +13,25 @@
 #   + : baldintza ez bada betetzen,hurrengo urratsean itzulpen hori kontutan hartuko da
 
 
-# prepEn	caseEU		 condition	    exclusion  ## comment
+# prepEs	caseEU		 condition	    exclusion  ## comment
 
 # Not preposition
 #####################
 
--     [ERG]	-			+   
--     [ABS]	-			+   
+-     [INE]     (my.type='data' || my.headsem=~'[DEN+]') && parent.headlem!='izan'   -   # el cuatro de julio, uztailaren lauan    ##Bestelako osagarriak, datak ##denbora adierazten duten hitzak: arratsaldean.
+-     [ABS]	parent.type='adi-pas'	-   # El libro ha sido comprado: liburua erosi du
+-     [ABS]	my.si='dobj'		-   # he comprado un libro, nik liburua erosi dut
+-     [ABS]	my.si='att'		-   # yo soy guapo: polita naiz
+-     [ABS]	my.si!='subj'		-   # Subjektua ez denean...
+-     [ERG]	-			+   # la chica le ha dado el libro, neskak liburua eman dio   ##DU aditza
+-     [ABS]	-			+   # Garikoitz se ha enfadado, Garikoitz haserretu egin da   ##DA aditza
 
 # Sinple prepositions
 #####################
 
 about       [DAT]++buruz            -       +
 about	    [ABL]		    -	    +
-above	    [ABL]++gora/ALA	    -	    +	#(my.leafpos='[Z]' || my.headpos='[Z]') && my.mi='[MG]'   -    
+above	    [ABL]++gora/ALA	    -	    +	#(my.leafpos='[Z]' || my.headpos='[Z]') && my.mi='[MG]'   -    ## más allá de siete,zazpitik gora##zenbakiekin
 above	    [GEN]++gainetik         -       +
 according   [GEN]++arabera          -       +
 across	    [INE]++zehar            -       +
