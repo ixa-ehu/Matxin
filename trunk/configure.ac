@@ -385,6 +385,7 @@ AC_CONFIG_FILES([matxin.pc
                  data/freeling/es/nec/Makefile
 		 data/freeling/es/ner/Makefile
 		 data/freeling/es/corrector/Makefile
+		 data/freeling/es/coref/Makefile
                  data/gram/Makefile
                  data/gram/en-eu/Makefile
                  data/gram/es-eu/Makefile
