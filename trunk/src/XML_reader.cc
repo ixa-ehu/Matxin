@@ -47,7 +47,7 @@ wstring write_xml(wstring s)
   pos = 0;
   while ((pos = s.find(L'\'', pos)) != wstring::npos)
   {
-    if (s[pos - 1] != L'=' && s[pos + 1] != L' ' && pos != (s.size() - 1))
+    if (s.find(L"='") == wstring::npos || (s[pos - 1] != L'=' && s[pos + 1] != L' ' && pos != (s.size() - 1)))
       s.replace(pos, 1, L"&apos;");
     else
       pos++;

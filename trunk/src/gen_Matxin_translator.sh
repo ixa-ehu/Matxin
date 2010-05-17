@@ -5,9 +5,10 @@ usage()
 {
   echo "Script options"
   echo "--------------"
-  echo "USAGE: $(basename $0) -c /path/to/config/file.cfg [-f format] [-i /path/to/input/file] [-u] [module options]"
+  echo "USAGE: $(basename $0) -c /path/to/config/file.cfg [-f format] [-i /path/to/input/file] [-o /path/to/output/file] [-u] [module options]"
   echo " -f format        one of: txt (default), html, rtf"
   echo " -i input file    read input from file"
+  echo " -o output file   write output in file"
   echo " -u               display mark '*' for unknown words"
   echo ""
   echo ""
@@ -25,7 +26,8 @@ do
   case "$i" in
     -c) shift; CONFIG_FILE=$1; shift;;
     -f) shift; FORMAT=$1; shift;;
-    -i) shift; FILENAME=$1; shift;;
+    -i) shift; INPUT=$1; shift;;
+    -o) shift; OUTPUT=$1; shift;;
     -u) RE_FORMATER_PARAM="-u"; shift;;
     -h) usage;;
     --) shift; break;;
@@ -58,8 +60,13 @@ html)
 esac
 
 # Get absolute path for the input file
-if [ "x" != "x$FILENAME" ]; then
-  ABS_FILE=$(readlink -f $(basename $FILENAME))
+if [ "x" != "x$INPUT" ]; then
+  INPUT_ABS=$(readlink -f $INPUT)
+fi
+
+# Get absolute path for the input file
+if [ "x" != "x$OUTPUT" ]; then
+  OUTPUT_ABS=$(readlink -f $OUTPUT)
 fi
 
 cd $MATXIN_DIR/bin >& /dev/null
@@ -68,8 +75,13 @@ FORMAT_TMP=/tmp/matxin-format.$$.xml
 XML_TMP=/tmp/matxin-translation.$$.xml
 
 # The Matxin translation pipe
-./$DE_FORMATER $FORMAT_TMP $ABS_FILE | iconv -f utf-8 -t iso-8859-1 - | ./Analyzer $MATXIN_PARAM | iconv -f iso-8859-1 -t utf-8 - | ./LT $MATXIN_PARAM | ./ST_intra $MATXIN_PARAM | ./ST_inter --inter 1 $MATXIN_PARAM  | ./ST_prep $MATXIN_PARAM  | ./ST_inter --inter 2 $MATXIN_PARAM  | ./ST_verb $MATXIN_PARAM | ./ST_inter --inter 3 $MATXIN_PARAM  | ./SG_inter $MATXIN_PARAM | ./SG_intra $MATXIN_PARAM | ./MG $MATXIN_PARAM > $XML_TMP
-./reFormat $FORMAT_TMP $RE_FORMATER_PARAM < $XML_TMP
+./$DE_FORMATER $FORMAT_TMP $INPUT_ABS | iconv -f utf-8 -t iso-8859-1 - | ./Analyzer $MATXIN_PARAM | iconv -f iso-8859-1 -t utf-8 - | ./LT $MATXIN_PARAM | ./ST_intra $MATXIN_PARAM | ./ST_inter --inter 1 $MATXIN_PARAM  | ./ST_prep $MATXIN_PARAM  | ./ST_inter --inter 2 $MATXIN_PARAM  | ./ST_verb $MATXIN_PARAM | ./ST_inter --inter 3 $MATXIN_PARAM  | ./SG_inter $MATXIN_PARAM | ./SG_intra $MATXIN_PARAM | ./MG $MATXIN_PARAM > $XML_TMP
+
+if [ "x" != "x$OUTPUT" ]; then
+    ./reFormat $FORMAT_TMP $RE_FORMATER_PARAM < $XML_TMP > $OUTPUT_ABS
+else
+    ./reFormat $FORMAT_TMP $RE_FORMATER_PARAM < $XML_TMP
+fi
 
 rm $FORMAT_TMP >& /dev/null
 rm $XML_TMP >& /dev/null
