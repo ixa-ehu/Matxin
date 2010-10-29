@@ -81,15 +81,35 @@
       <xsl:if test="./@eos = string('yes')">
         <xsl:value-of select="string('  isDot = true;&#xA;')"/>
       </xsl:if>
+      <xsl:choose>
+	<xsl:when test="./@inWord = string('yes')">
+          <xsl:value-of select="string('  isInWord = true;&#xA;')"/>
+	</xsl:when>
+	<xsl:otherwise>
+          <xsl:value-of select="string('  isInWord = false;&#xA;')"/>
+	</xsl:otherwise>
+      </xsl:choose>
+      <xsl:choose>
+	<xsl:when test="./@name">
+	  <xsl:value-of select="string('  name = &quot;')"/>
+	  <xsl:value-of select="./@name"/>
+	  <xsl:value-of select="string('&quot;;&#xA;')"/>
+	</xsl:when>
+	<xsl:otherwise>
+          <xsl:value-of select="string('  name = yytext;&#xA;')"/>
+	</xsl:otherwise>
+      </xsl:choose>
       <xsl:value-of select="string('  printBuffer();&#xA;')"/>
 
-      <xsl:value-of select="string('  if (hasWrite_white) {&#xA;    fputws(L&quot; &quot;, yyout);&#xA;')"/>
+      <xsl:value-of select="string('  if (hasWrite_white &amp;&amp; !isInWord) {&#xA;    fputws(L&quot; &quot;, yyout);&#xA;')"/>
       <xsl:value-of select="string('    offset++;&#xA;    hasWrite_white = false;&#xA;  }&#xA;')"/>
 
       <xsl:value-of select="string('  current++;&#xA;  orders.push_back(current);&#xA;')"/>
       <xsl:value-of select="string('  last=&quot;open_tag&quot;;&#xA;  offsets.push_back(offset);&#xA;')"/>
-      <xsl:value-of select="string('  wchar_t symbol[sizeof(yytext) + 1];&#xA;')"/>
-      <xsl:value-of select="string('  mbstowcs(symbol, yytext, MB_CUR_MAX);&#xA;')"/>
+      <xsl:value-of select="string('  wchar_t symbol[strlen(yytext) + 1];&#xA;')"/>
+      <xsl:value-of select="string('  mbstowcs(symbol, yytext, strlen(yytext));&#xA;')"/>
+  symbol[strlen(yytext)] = L&apos;\0&apos;;
+      <xsl:value-of select="string('  names.push_back(name);&#xA;')"/>
       <xsl:value-of select="string('  tags.push_back(symbol);&#xA;}&#xA;')"/>
     </xsl:when>
     <xsl:when test="./@type = 'close'">
@@ -98,8 +118,26 @@
       <xsl:if test="./@eos = string('yes')">
         <xsl:value-of select="string('  isDot = true;&#xA;')"/>
       </xsl:if>
-      <xsl:value-of select="string('  int ind=get_index(yytext);&#xA;')"/>
-      <xsl:value-of select="string('  printBuffer(ind, yytext);&#xA;}&#xA;')"/>
+      <xsl:choose>
+	<xsl:when test="./@inWord = string('yes')">
+          <xsl:value-of select="string('  isInWord = true;&#xA;')"/>
+	</xsl:when>
+	<xsl:otherwise>
+          <xsl:value-of select="string('  isInWord = false;&#xA;')"/>
+	</xsl:otherwise>
+      </xsl:choose>
+      <xsl:choose>
+	<xsl:when test="./@name">
+	  <xsl:value-of select="string('  name = &quot;')"/>
+	  <xsl:value-of select="./@name"/>
+	  <xsl:value-of select="string('&quot;;&#xA;')"/>
+	</xsl:when>
+	<xsl:otherwise>
+          <xsl:value-of select="string('  name = yytext;&#xA;')"/>
+	</xsl:otherwise>
+      </xsl:choose>
+      <xsl:value-of select="string('  int ind=get_index(name);&#xA;')"/>
+      <xsl:value-of select="string('  printBuffer(ind, yytext, isInWord);&#xA;}&#xA;')"/>
     </xsl:when>
     <xsl:when test="./@type = 'comment'">
       <xsl:variable name="thisnode" select="."/>
@@ -146,15 +184,17 @@ using namespace std;
 
 wstring buffer;
 string symbuf = "";
-bool isDot, hasWrite_dot, hasWrite_white;
+bool isDot, isInWord, hasWrite_dot, hasWrite_white;
 FILE *formatfile;
 string last;
+string name;
 int current;
 long int offset;
 
 
 vector&lt;long int&gt; offsets;
 vector&lt;wstring&gt; tags;
+vector&lt;string&gt; names;
 vector&lt;int&gt; orders;
 
 regex_t escape_chars;
@@ -333,16 +373,8 @@ int get_index(string end_tag){
   // Fill tmp with zeros to avoid segfaults
   memset(tmp, '\0', end_tag.size() + 1);
 
-  for (int i=tags.size()-1; i >= 0; i--) {
-    pos = wcstombs(tmp, tags[i].c_str(), tags[i].size());
-    if (pos == (size_t)-1)
-    {
-      wcerr &lt;&lt; L"Encoding error." &lt;&lt; endl;
-      exit(EXIT_FAILURE);
-    }
-    new_end_tag = tmp;
-
-    if (get_tagName(end_tag) == get_tagName(new_end_tag))
+  for (int i=names.size()-1; i >= 0; i--) {
+    if (get_tagName(end_tag) == get_tagName(names[i]))
       return i;
   }
 
@@ -365,7 +397,7 @@ void print_emptyTags() {
 
 <xsl:choose>
   <xsl:when test="$mode=string('matxin')">
-void printBuffer(int ind=-1, string end_tag="")
+void printBuffer(int ind=-1, string end_tag="", bool inWord=true)
 {
   wchar_t tag[250];
   wstring etiketa;
@@ -390,6 +422,7 @@ void printBuffer(int ind=-1, string end_tag="")
     last = "buffer";
     buffer = tags.back() + buffer + wend_tag;
     tags.pop_back();
+    names.pop_back();
     offsets.pop_back();
     orders.pop_back();
   }
@@ -414,7 +447,7 @@ void printBuffer(int ind=-1, string end_tag="")
 
     if ((buffer.size() == 1 &amp;&amp; buffer[0] != ' ') || buffer.size() &gt; 1)
     {
-      if (hasWrite_white)
+      if (hasWrite_white &amp;&amp; !inWord)
       {
         fputws(L" ", yyout);
         offset++;
@@ -440,7 +473,7 @@ void printBuffer(int ind=-1, string end_tag="")
 
     if (ind != -1)
     {
-      if (hasWrite_white)
+      if (hasWrite_white &amp;&amp; !inWord)
       {
         fputws(L" ", yyout);
         offset++;
@@ -468,6 +501,7 @@ void printBuffer(int ind=-1, string end_tag="")
       fputws(tag, formatfile);
 
       tags.erase(tags.begin() + ind);
+      names.erase(names.begin() + ind);
       offsets.erase(offsets.begin() + ind);
       orders.erase(orders.begin() + ind);
     }

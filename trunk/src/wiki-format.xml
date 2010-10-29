@@ -11,31 +11,45 @@
   </options>
 
   <rules>
-    <format-rule type="close" eos="yes" priority="1">
+    <format-rule type="close" eos="yes" name="quot" priority="1">
       <tag regexp='[&quot;&#x027;]\n'/>
     </format-rule>
 
-    <format-rule type="close" eos="no" priority="1">
+    <format-rule type="close" eos="no" name="quot" priority="1">
       <tag regexp='[&quot;&#x027;]\r'/>
     </format-rule>
 
-    <format-rule type="empty" eos="yes" priority="2">
+<!-- Headlines in wiki texts-->
+    <format-rule type="open" eos="no" name="headline" priority="2">
+      <tag regexp='^=+'/>
+    </format-rule>
+
+    <format-rule type="close" eos="yes" name="headline" priority="3">
+      <tag regexp='=+\n'/>
+    </format-rule>
+
+    <format-rule type="close" eos="yes" name="headline" priority="3">
+      <tag regexp='=+\r'/>
+    </format-rule>
+
+
+    <format-rule type="empty" eos="yes" priority="4">
       <tag regexp='(("\n")|("\r\n"))+'/>
     </format-rule>
 
-    <format-rule type="open" eos="no" priority="3">
+    <format-rule type="open" eos="no" name="quot" priority="5">
       <tag regexp='^[&quot;&#x027;]'/>
     </format-rule>
 
-    <format-rule type="open" eos="no" priority="3">
+    <format-rule type="open" eos="no" name="quot" priority="5">
       <tag regexp='[\t ][&quot;&#x027;]'/>
     </format-rule>
 
-    <format-rule type="close" eos="no" priority="4">
+    <format-rule type="close" eos="no" name="quot" priority="6">
       <tag regexp='[&quot;&#x027;][\t ]'/>
     </format-rule>
 
-    <format-rule type="close" eos="yes" priority="4">
+    <format-rule type="close" eos="yes" name="quot" priority="6">
       <tag regexp='[&quot;&#x027;][.,:;]'/>
     </format-rule>
 
@@ -45,60 +59,49 @@
 
 
 <!-- bold & italic in wiki texts-->
-    <format-rule type="open" eos="no" priority="8">
+    <format-rule type="open" eos="no" name="italicbold" priority="9">
       <tag regexp='[\t ]&apos;&apos;&apos;&apos;&apos;'/>
     </format-rule>
 
-    <format-rule type="open" eos="no" priority="8">
+    <format-rule type="open" eos="no" name="italicbold" priority="9">
       <tag regexp='^&apos;&apos;&apos;&apos;&apos;'/>
     </format-rule>
 
-    <format-rule type="close" eos="no" priority="8">
+    <format-rule type="close" eos="no" name="italicbold" priority="9">
       <tag regexp='&apos;&apos;&apos;&apos;&apos;'/>
     </format-rule>
 
 <!-- bold in wiki texts-->
-    <format-rule type="open" eos="no" priority="9">
+    <format-rule type="open" eos="no" name="bold" priority="10">
       <tag regexp='[\t ]&apos;&apos;&apos;'/>
     </format-rule>
 
-    <format-rule type="open" eos="no" priority="9">
+    <format-rule type="open" eos="no" name="bold" priority="10">
       <tag regexp='^&apos;&apos;&apos;'/>
     </format-rule>
 
-    <format-rule type="close" eos="no" priority="9">
+    <format-rule type="close" eos="no" name="bold" priority="10">
       <tag regexp='&apos;&apos;&apos;'/>
     </format-rule>
 
 <!-- italic in wiki texts-->
-    <format-rule type="open" eos="no" priority="10">
+    <format-rule type="open" eos="no" name="italic" priority="11">
       <tag regexp='[\t ]&apos;&apos;'/>
     </format-rule>
 
-    <format-rule type="open" eos="no" priority="10">
+    <format-rule type="open" eos="no" name="italic" priority="11">
       <tag regexp='^&apos;&apos;'/>
     </format-rule>
 
-    <format-rule type="close" eos="no" priority="10">
+    <format-rule type="close" eos="no" name="italic" priority="11">
       <tag regexp='&apos;&apos;'/>
     </format-rule>
 
 
 
 
-<!-- Headlines in wiki texts-->
-    <format-rule type="open" eos="no" priority="11">
-      <tag regexp='^=+'/>
-    </format-rule>
-
-    <format-rule type="close" eos="yes" priority="11">
-      <tag regexp='=+[\n\r ]'/>
-    </format-rule>
-
-
-
 <!-- bulled and numerated lists in wiki texts-->
-    <format-rule type="empty" eos="no" priority="11">
+    <format-rule type="empty" eos="no" priority="12">
       <tag regexp='^[\*\#:;]+'/>
     </format-rule>
 
@@ -106,15 +109,16 @@
 <!-- simple links in wiki texts-->
 
 <!-- errorea ematen du!!
-    <format-rule type="open" eos="no" priority="12">
+-->
+    <format-rule type="open" eos="no" name="link" inWord="yes" priority="13">
       <tag regexp='\[\[[^\]]+\|'/>
     </format-rule>
--->
-    <format-rule type="open" eos="no" priority="13">
+
+    <format-rule type="open" eos="no" name="link" inWord="yes" priority="15">
       <tag regexp='\[\[\#?'/>
     </format-rule>
 
-    <format-rule type="close" eos="no" priority="13">
+    <format-rule type="close" eos="no" name="link" inWord="yes" priority="15">
       <tag regexp='\]\]'/>
     </format-rule>
 

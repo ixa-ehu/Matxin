@@ -11,11 +11,11 @@
   </options>
 
   <rules>
-    <format-rule type="close" eos="yes" priority="1">
+    <format-rule type="close" eos="yes" name="quot" priority="1">
       <tag regexp='[&quot;&#x027;]\n'/>
     </format-rule>
 
-    <format-rule type="close" eos="no" priority="1">
+    <format-rule type="close" eos="no" name="quot" priority="1">
       <tag regexp='[&quot;&#x027;]\r'/>
     </format-rule>
 
@@ -23,19 +23,19 @@
       <tag regexp='(("\n")|("\r\n"))+'/>
     </format-rule>
 
-    <format-rule type="open" eos="no" priority="3">
+    <format-rule type="open" eos="no" name="quot" priority="3">
       <tag regexp='^[&quot;&#x027;]'/>
     </format-rule>
 
-    <format-rule type="open" eos="no" priority="3">
+    <format-rule type="open" eos="no" name="quot" priority="3">
       <tag regexp='[\t ][&quot;&#x027;]'/>
     </format-rule>
 
-    <format-rule type="close" eos="no" priority="4">
+    <format-rule type="close" eos="no" name="quot" priority="4">
       <tag regexp='[&quot;&#x027;][\t ]'/>
     </format-rule>
 
-    <format-rule type="close" eos="yes" priority="4">
+    <format-rule type="close" eos="yes" name="quot" priority="4">
       <tag regexp='[&quot;&#x027;][.,:;]'/>
     </format-rule>
 
