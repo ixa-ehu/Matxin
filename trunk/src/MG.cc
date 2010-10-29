@@ -351,7 +351,7 @@ wstring date_generation(wstring lemma, wstring pos, wstring suf, wstring cas,
 
   lemma = lemma.substr(1, lemma.size() - 2);
 
-  if (lemma.substr(0, 2) == L"s:")
+  if (lemma.substr(0, 2) == L"s:" || lemma.substr(0, 2) == L"S:")
   {
     century = lemma.substr(2);
     week_day = day = month = year = L"??";
