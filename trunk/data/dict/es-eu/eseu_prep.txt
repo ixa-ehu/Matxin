@@ -24,7 +24,7 @@
 -     [ZERO]    my.type='p-buka'	-   # Puntuazio ikurrak ez dute kasurik behar...
 -     [ZERO]    my.type='adi-par'	-   # partizipioa ez da deklinatzen.
 -     [ZERO]    my.type='adbs'		-   # adberbioak ez dira deklinatzen.
--     [INE]     (my.type='data' || my.headsem=~'[DEN+]') && parent.headlem!='izan'   -   # el cuatro de julio, uztailaren lauan    ##Bestelako osagarriak, datak ##denbora adierazten duten hitzak: arratsaldean.
+-     [INE]     (my.type='data' || my.headsem=~'[DEN+]') && parent.headlem!='_izan_'   -   # el cuatro de julio, uztailaren lauan    ##Bestelako osagarriak, datak ##denbora adierazten duten hitzak: arratsaldean.
 -     [ABS]	parent.type='adi-pas'	-   # El libro ha sido comprado: liburua erosi du
 -     [ABS]	my.si='dobj'		-   # he comprado un libro, nik liburua erosi dut
 -     [ABS]	my.si='att'		-   # yo soy guapo: polita naiz
@@ -53,7 +53,7 @@ a		[INE]	my.headpos='[Zm]' || my.headsem=~'[DEN+]'	    -	   ## lo han vendido a 
 a		[DAT]	-		    +	   ## le he dado el libro a Jon, Joni eman diot liburua	##zehar objektua + biziduna
 a		[ABS]	-	    	    +	   ## he visto a Jon, Jon ikusi dut	##objektu zuzena + biziduna
 a		[ALA]	my.si='cc'	    +	   ## he ido a casa, etxera joan naiz;	##ez-bizidun, lekua + mugimenduzko aditza;
-ante		[GEN]++aldean/INE  parent.headlem='izan'  -	## Cualquier casa es pequeña ante la suya, edozein etxe da txikia harenaren aldean ## konparaketa... ##'ser' aditza???; aurretik ADJ. Agian kendu???
+ante		[GEN]++aldean/INE  parent.headlem='_izan_'  -	## Cualquier casa es pequeña ante la suya, edozein etxe da txikia harenaren aldean ## konparaketa... ##'ser' aditza???; aurretik ADJ. Agian kendu???
 ante		[GEN]++aurrean/INE	-	    +      ## se sentó ante el rey, erregearen aurrean eseri zen	##aditz estatikoak
 ante		[GEN]++aurrera/ALA	-	    +      ## lo llevaron ante el rey, erregearen aurrera eraman zuten##mugimenduzko aditzak
 con		+[AMM][PART]+[ERL][MEN][MOD]	my.headpos='[ADI][SIN]'	-	##cree que con hacer eso ya lo tiene todo hecho.
@@ -63,7 +63,7 @@ de		+[AMM][PART]+[ASP][BURU]++izatera	my.headpos='[ADI][SIN]'	-      ##de saberl
 de		[INS]	my.headpos='[ADJ]' || my.headsem=~'[DEN+]'	-	## || ( my.headpos='[IZE][ARR]' && my.mi='[MG]' ) Halakoak itzultzeko erabili daiteke, baina arazoak ematen ditu zenbakiak daramatzaten sintagmekin ('la muerte de 45 inmigrantes'): lo están pintando de verde, berdez pintatzen ari dira;## osasunez hobeto nago##adj eta izen abstraktoa, determinante gabe  ## arratsaldez
 de		[INS]+[GEL]		   my.headsem=~'[GAI+]'		-	## egurrezko
 de		[GEN]	my.headsem=~'[BIZ+]' || my headpos='[IZE][IZB]'	    +					     ## la casa de Juan, Jon-en etxea
-de		[GEL]	parent.type!='adi-kat' && my.headsem=~'[BIZ-]' || parent.type='adi-kat' && parent.headlem='izan' || parent.type!='adi-kat' && ( my.headpos='[Z]' || my.leafpos='[Z]' || my.headpos='[W]' )   +	## la casa del monte, mendiko etxea 
+de		[GEL]	parent.type!='adi-kat' && my.headsem=~'[BIZ-]' || parent.type='adi-kat' && parent.headlem='_izan_' || parent.type!='adi-kat' && ( my.headpos='[Z]' || my.leafpos='[Z]' || my.headpos='[W]' )   +	## la casa del monte, mendiko etxea 
 de		[ABL]			-	      +    ## no sale de casa, ez da etxetik irteten##abiapuntua denean, mugim. aditza
 durante		[INS]	my.headsem=~'[DEN+]'	      -	   ## durante un mes, hilabetez
 durante		[INE]		        -	      +	   ## lo hiciero durante el invierno, neguan egin zuten ## durante 1957	##urteekin
