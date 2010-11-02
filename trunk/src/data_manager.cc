@@ -66,15 +66,16 @@ bool apply_condition(wstring attributes, wstring condition)
       int and_position = condition_1.rfind(L"&&");
       int or_position = condition_1.rfind(L"||");
 
-      if (and_position != int(wstring::npos) && and_position > or_position)
+      if (and_position != int(wstring::npos) &&
+	  (or_position == int(wstring::npos) || and_position > or_position))
       {
         condition_1 = condition.substr(0, and_position);
-        eval = eval & apply_condition(attributes, condition_1);
+        eval = eval && apply_condition(attributes, condition_1);
       }
       else if (or_position != int(wstring::npos))
       {
         condition_1 = condition.substr(0, or_position);
-        eval = eval | apply_condition(attributes, condition_1);
+        eval = eval || apply_condition(attributes, condition_1);
       }
     }
 
@@ -84,15 +85,16 @@ bool apply_condition(wstring attributes, wstring condition)
       int and_position = condition_3.find(L"&&");
       int or_position = condition_3.find(L"||");
 
-      if (and_position != int(wstring::npos) && and_position < or_position)
+      if (and_position != int(wstring::npos) &&
+	  (or_position == int(wstring::npos) || and_position < or_position))
       {
         condition_3 = condition_3.substr(0, and_position);
-        eval = eval & apply_condition(attributes, condition_3);
+        eval = eval && apply_condition(attributes, condition_3);
       }
       else if (or_position != int(wstring::npos))
       {
         condition_3 = condition_3.substr(0, or_position);
-        eval = eval | apply_condition(attributes, condition_3);
+        eval = eval || apply_condition(attributes, condition_3);
       }
     }
 
@@ -279,15 +281,16 @@ bool apply_condition(wstring parent_attributes, wstring child_attributes, wstrin
       int and_position = condition_1.rfind(L"&&");
       int or_position = condition_1.rfind(L"||");
 
-      if (and_position != int(wstring::npos) && and_position > or_position)
+      if (and_position != int(wstring::npos) &&
+	  (or_position == int(wstring::npos) || and_position > or_position))
       {
         condition_1 = condition.substr(0, and_position);
-        eval = eval & apply_condition(parent_attributes, child_attributes, condition_1);
+        eval = eval && apply_condition(parent_attributes, child_attributes, condition_1);
       }
       else if (or_position != int(wstring::npos))
       {
         condition_1 = condition.substr(0, or_position);
-        eval = eval | apply_condition(parent_attributes, child_attributes, condition_1);
+        eval = eval || apply_condition(parent_attributes, child_attributes, condition_1);
       }
     }
 
@@ -297,15 +300,16 @@ bool apply_condition(wstring parent_attributes, wstring child_attributes, wstrin
       int and_position = condition_3.find(L"&&");
       int or_position = condition_3.find(L"||");
 
-      if (and_position != int(wstring::npos) && and_position < or_position)
+      if (and_position != int(wstring::npos) &&
+	  (or_position == int(wstring::npos) || and_position < or_position))
       {
         condition_3 = condition_3.substr(and_position + 2);
-        eval = eval & apply_condition(parent_attributes, child_attributes, condition_3);
+        eval = eval && apply_condition(parent_attributes, child_attributes, condition_3);
       }
       else if (or_position != int(wstring::npos))
       {
         condition_3 = condition_3.substr(or_position + 2);
-        eval = eval | apply_condition(parent_attributes, child_attributes, condition_3);
+        eval = eval || apply_condition(parent_attributes, child_attributes, condition_3);
       }
     }
 
@@ -958,7 +962,7 @@ vector<wstring>
   vector<preposition> current_prep = prepositions[prep];
 
   if (cfg.DoPrepTrace)
-    wcerr << sentenceref << L":" << alloc << L":" << prep;
+    wcerr << sentenceref << L":" << alloc << L":" << prep << "\n\tparent:" << parent_attributes << "\n\tchild:" << child_attributes << endl;
   for (size_t i = 0; i < current_prep.size(); i++)
   {
     if (cfg.DoPrepTrace)
