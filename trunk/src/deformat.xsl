@@ -184,7 +184,8 @@ using namespace std;
 
 wstring buffer;
 string symbuf = "";
-bool isDot, isInWord, hasWrite_dot, hasWrite_white;
+bool isInWord = false;
+bool isDot, hasWrite_dot, hasWrite_white;
 FILE *formatfile;
 string last;
 string name;
@@ -397,7 +398,7 @@ void print_emptyTags() {
 
 <xsl:choose>
   <xsl:when test="$mode=string('matxin')">
-void printBuffer(int ind=-1, string end_tag="", bool inWord=true)
+void printBuffer(int ind=-1, string end_tag="", bool inWord=false)
 {
   wchar_t tag[250];
   wstring etiketa;

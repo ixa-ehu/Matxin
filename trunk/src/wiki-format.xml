@@ -107,9 +107,6 @@
 
 
 <!-- simple links in wiki texts-->
-
-<!-- errorea ematen du!!
--->
     <format-rule type="open" eos="no" name="link" inWord="yes" priority="13">
       <tag regexp='\[\[[^\]]+\|'/>
     </format-rule>
