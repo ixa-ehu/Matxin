@@ -443,8 +443,8 @@ wstring procNODE_AS(xmlTextReaderPtr reader, bool head, wstring& attributes)
                  L" UpCase='" + write_xml(upper_type(attrib(reader, "form"),
                                                      attrib(reader, "mi"),
                                                      attrib(reader, "ord"))) + L"'" +
-                 L" slem='" + attrib(reader, "lem") + L"'" +
-                 L" smi='" + attrib(reader, "mi") + L"'";
+                 L" slem='" + write_xml(attrib(reader, "lem")) + L"'" +
+                 L" smi='" + write_xml(attrib(reader, "mi")) + L"'";
 
     // CHUNKaren burua bada:
     if (head)

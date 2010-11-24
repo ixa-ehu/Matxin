@@ -730,7 +730,7 @@ wstring procNODE(xmlTextReaderPtr reader, wstring chunk_type, wstring cas,
 
 //    form = keep_case(form, attrib(reader, "UpCase"));
 
-    nodes += L"<NODE " + write_xml(L"form='" + form + L"'");
+    nodes += L"<NODE form='" + write_xml(form) + L"'";
     nodes += L" ref ='" + write_xml(attrib(reader, "ref"));
     if (flexioned && cas_ref != L"")
       nodes += L"," + write_xml(cas_ref);
