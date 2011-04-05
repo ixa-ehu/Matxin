@@ -550,3 +550,4 @@ pese_a  nahiz_eta       my.headpos='[ADI][SIN]'       +       ## pese a comer mu
 sin_necesidad_de    [ZERO]++beharrik_gabe   my.headpos='[IZE][ARR]'  +   ## sin necesidad de dinero, diru beharrik gabe  ##izenaren aurretik
 sin_necesidad_de    +[AMM][PART]+[ASP][BURU]++beharrik_gabe  my.headpos='[ADI][SIN]'  +   ## sin necesidad de ir, joan beharrik gabe      ##aditzaren aurretik
 
+
