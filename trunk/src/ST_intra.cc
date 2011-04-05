@@ -99,7 +99,6 @@ wstring procNODE(xmlTextReaderPtr reader, wstring &attributesToChunk,
       if (xmlTextReaderIsEmptyElement(reader) == 1)
       {
         nodes += L"/>\n";
-        return nodes;
       }
       else
       {
@@ -134,6 +133,11 @@ wstring procNODE(xmlTextReaderPtr reader, wstring &attributesToChunk,
           attributesToChunk = text_allAttrib_except(attributesToChunk, attributes_to_move[i].to.attrib) + attribute;
         }
       }
+    }
+
+    if (xmlTextReaderIsEmptyElement(reader) == 1)
+    {
+      return nodes;
     }
   }
 

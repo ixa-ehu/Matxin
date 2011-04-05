@@ -473,10 +473,13 @@ wstring procNODE_AS(xmlTextReaderPtr reader, bool head, wstring& attributes)
                     write_xml(attrib(reader, "mi")) + L"'";
     }
 
-    if (xmlTextReaderIsEmptyElement(reader) == 1 && synonyms == L"")
+    if (xmlTextReaderIsEmptyElement(reader) == 1)
     {
       //Elementu hutsa bada (<NODE .../>) NODE hutsa sortzen da eta NODE honetkin bukatu dugu.
-      nodes += attributes + L"/>\n";
+      if (synonyms == L"")
+	nodes += attributes + L"/>\n";
+      else 
+	nodes += attributes + L">\n" + synonyms + L"</NODE>";
       return nodes;
     }
     else
