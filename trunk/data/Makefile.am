@@ -39,18 +39,18 @@ install-data-hook:
 	@echo "Indexing Wordnet files..."
 	@echo "   Indexing Wordnet Relations..."
 	@rm -f $(pkgdatadir)/freeling/common/wn30-ukb.bin
-	@$(CONVERTDICT) -o $(pkgdatadir)/freeling/common/wn30_ukb.bin $(pkgdatadir)/freeling/common/wnet30_rels.txt
+	@$(COMPILEKB) -o $(pkgdatadir)/freeling/common/wn30_ukb.bin $(pkgdatadir)/freeling/common/wnet30_rels.txt
 	@rm -f $(pkgdatadir)/freeling/common/xwn30-ukb.bin
-	@$(CONVERTDICT) -o $(pkgdatadir)/freeling/common/xwn30_ukb.bin $(pkgdatadir)/freeling/common/wnet30_rels.txt $(pkgdatadir)/freeling/common/wnet30g_rels.txt
+	@$(COMPILEKB) -o $(pkgdatadir)/freeling/common/xwn30_ukb.bin $(pkgdatadir)/freeling/common/wnet30_rels.txt $(pkgdatadir)/freeling/common/wnet30g_rels.txt
  ifeq ($(ES),true)
 	@echo "   Indexing Spanish Wordnet..."
 	@rm -f $(pkgdatadir)/freeling/es/senses30.ukb
-	@cat $(pkgdatadir)/freeling/es/senses30.src | $(CONVERTDICT) $(pkgdatadir)/freeling/es/senses30.ukb
+	@cat $(pkgdatadir)/freeling/es/senses30.src | $(CONVERTDICT) > $(pkgdatadir)/freeling/es/senses30.ukb
  endif
  ifeq ($(EN),true)
 	@echo "   Indexing English Wordnet..."
 	@rm -f $(pkgdatadir)/freeling/en/senses16.ukb
-	@cat $(pkgdatadir)/freeling/en/senses30.src | $(CONVERTDICT) $(pkgdatadir)/freeling/en/senses30.ukb
+	@cat $(pkgdatadir)/freeling/en/senses30.src | $(CONVERTDICT) > $(pkgdatadir)/freeling/en/senses30.ukb
  endif
 
 
@@ -75,14 +75,16 @@ install-data-hook:
  ifeq ($(ES),true)
 	@echo "   Compiling Spanish verb-transfer grammar..."
 	@rm -f $(pkgdatadir)/gram/es-eu/eseuVerbTransfer.fst
-	@$(FOMA) -f $(pkgdatadir)/gram/es-eu/eseuVerbTransfer.foma
+	@cd $(pkgdatadir)/gram/es-eu && $(FOMA) -f $(pkgdatadir)/gram/es-eu/eseuVerbTransfer.foma >& /dev/null
 	@chmod +r $(pkgdatadir)/gram/es-eu/eseuVerbTransfer.fst
  endif
  ifeq ($(EN),true)
 	@echo "   Compiling English verb-transfer grammar..."
 	@rm -f $(pkgdatadir)/gram/en-eu/eneuVerbTransfer.fst
-	@$(FOMA) $(pkgdatadir)/gram/en-eu/eneuVerbTransfer.foma
-	@chmod +r $(pkgdatadir)/gram/en-eu/eneuVerbTransfer.fst
+	@cd $(pkgdatadir)/gram/en-eu
+	## The verb transference for English has not been updated yet
+	## @$(FOMA) $(pkgdatadir)/gram/en-eu/eneuVerbTransfer.foma >& /dev/null
+	## @chmod +r $(pkgdatadir)/gram/en-eu/eneuVerbTransfer.fst
  endif
 
 	@echo

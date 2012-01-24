@@ -1,4 +1,4 @@
 freelingesnecdir = $(pkgdatadir)/freeling/common/corrector
 freelingesnec_DATA = corrector.sampa \
 	edit.dist \
-	phonetics.dist
+	phonetic.dist

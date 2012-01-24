@@ -5,4 +5,4 @@ freelingesnec_DATA = function.dat \
 		     ner.lex \
 		     ner.rgf \
 		     ner.svm \
-		     ner-dat.dat
+		     ner-svm.dat
