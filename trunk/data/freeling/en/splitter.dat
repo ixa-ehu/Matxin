@@ -1,6 +1,6 @@
 <General>
 AllowBetweenMarkers 0
-MaxLines 0
+MaxWords 0
 </General>
 <Markers>
 " "
@@ -14,6 +14,6 @@ MaxLines 0
 ! 0
 </SentenceEnd>
 <SentenceStart>
-¿
-¡
+Â¿
+Â¡
 </SentenceStart>

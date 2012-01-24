@@ -5,7 +5,6 @@ freelingenchunker_DATA = appendix.PRP \
                          grammar.dat \
                          grammar-dep.dat \
                          list.PDTssg \
-                         Makefile.am \
                          nexes.mixtos \
                          nexes.parentetics \
                          nexes.preposicionals \

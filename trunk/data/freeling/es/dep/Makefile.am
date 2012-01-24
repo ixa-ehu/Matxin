@@ -28,8 +28,9 @@ freelingesdep_DATA = adv-espec-verbs-es.dat \
                      verbs-intr-es.dat \
                      verbs-iobj-es.dat \
                      verbs-mov-es.dat \
-                     verbs-prep-a-es.dat \
+                     verbs-pred-es.dat \
                      verbs-prep-acerca-es.dat \
+                     verbs-prep-a-es.dat \
                      verbs-prep-ante-es.dat \
                      verbs-prep-con-es.dat \
                      verbs-prep-contra-es.dat \
@@ -37,7 +38,6 @@ freelingesdep_DATA = adv-espec-verbs-es.dat \
                      verbs-prep-desde-es.dat \
                      verbs-prep-en-es.dat \
                      verbs-prep-entre-es.dat \
-                     verbs-pred-es.dat \
                      verbs-prep-hacia-es.dat \
                      verbs-prep-hasta-es.dat \
                      verbs-prep-para-es.dat \

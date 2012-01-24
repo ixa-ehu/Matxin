@@ -36,15 +36,15 @@ void PrintDepTree(dep_tree::iterator n, int depth, const config &cfg)
   int last, min;
   bool trob;
 
-    cout << string(depth * 2, ' ');
+    wcout << wstring(depth * 2, ' ');
 
-    cout << n->info.get_link()->info.get_label() << "/" << n->info.get_label() << "/";
+    wcout << n->info.get_link()->info.get_label() << L"/" << n->info.get_label() << L"/";
     word w = n->info.get_word();
-    cout << "(" << w.get_form() << " " << w.get_lemma() << " " << w.get_parole() << ")";
+    wcout << L"(" << w.get_form() << L" " << w.get_lemma() << L" " << w.get_tag() << L")";
 
     if (n->num_children() > 0)
     {
-       cout<<" ["<<endl;
+       wcout<<L" ["<<endl;
 
        //Print Nodes
        for (d = n->sibling_begin(); d != n->sibling_end(); ++d)
@@ -76,9 +76,9 @@ void PrintDepTree(dep_tree::iterator n, int depth, const config &cfg)
          last = min;
        }
 
-       cout << string(depth * 2,' ') << "]";
+       wcout << wstring(depth * 2,' ') << L"]";
     }
-    cout << endl;
+    wcout << endl;
 }
 
 
@@ -101,10 +101,10 @@ int get_alloc(dep_tree::iterator n, bool subChunks)
 }
 
 
-string PrintCHUNK(sentence &s, parse_tree & fulltree, dep_tree &tr,
+wstring PrintCHUNK(sentence &s, parse_tree & fulltree, dep_tree &tr,
                   dep_tree::iterator n, int depth, const bool printHead=false);
 
-string PrintNODE(sentence & s, parse_tree & fulltree, dep_tree &tr,
+wstring PrintNODE(sentence & s, parse_tree & fulltree, dep_tree &tr,
                  dep_tree::iterator n, int depth, const bool printHead=false);
 
 //---------------------------------------------
@@ -119,29 +119,29 @@ void PrintResults(list<sentence> &ls, const config &cfg, int &nsentence)
 
   for (is = ls.begin(); is != ls.end(); is++, ++nsentence)
   {
-    ostringstream tree;
+    wostringstream tree;
 
     dep_tree &dep = is->get_dep_tree();
 
-    tree << "<SENTENCE ord='" << nsentence << "' alloc='"
-         << get_alloc(dep.begin(), true) << "'>" << endl;
+    tree << L"<SENTENCE ord='" << nsentence << L"' alloc='"
+         << get_alloc(dep.begin(), true) << L"'>" << endl;
 
     tree << PrintCHUNK(*is,tr,dep,dep.begin(), 0);
 
-    tree << "</SENTENCE>" << endl;
-    cout << tree.str();
+    tree << L"</SENTENCE>" << endl;
+    wcout << tree.str();
 
     if (cfg.DoTrace)
     {
       ostringstream log_fileName_osoa;
-      ofstream log_file;
+      wofstream log_file;
 
       log_fileName_osoa << cfg.Trace_File << (nsentence - 1) << ".xml";
-      log_file.open(log_fileName_osoa.str().c_str(), ofstream::out);
+      log_file.open(log_fileName_osoa.str().c_str(), wfstream::out);
 
-      log_file << "<?xml version='1.0' encoding='UTF-8' ?>" << endl;
-      log_file << "<?xml-stylesheet type='text/xsl' href='profit.xsl'?>" << endl;
-      log_file << "<corpus>\n";
+      log_file << L"<?xml version='1.0' encoding='UTF-8' ?>" << endl;
+      log_file << L"<?xml-stylesheet type='text/xsl' href='profit.xsl'?>" << endl;
+      log_file << L"<corpus>\n";
       log_file << tree.str();
       log_file.close();
     }
@@ -154,10 +154,10 @@ void PrintResults(list<sentence> &ls, const config &cfg, int &nsentence)
 // Plain text, start with tokenizer.
 //---------------------------------------------
 void ProcessPlain(const config &cfg, tokenizer *tk, splitter *sp, maco *morfo,
-                  POS_tagger *tagger, nec* neclass, senses* sens,
+                  POS_tagger *tagger, nec* neclass, senses* sens, disambiguator *dsb,
                   chart_parser *parser, dependency_parser *dep)
 {
-  string text;
+  wstring text;
   list<word> av;
   list<word>::const_iterator i;
   list<sentence> ls;
@@ -168,19 +168,21 @@ void ProcessPlain(const config &cfg, tokenizer *tk, splitter *sp, maco *morfo,
   {
     CppIORedirectHandler ioredirect(cfg);
 
-    cout << "<?xml version='1.0' encoding='UTF-8' ?>" << endl;
+    wcout << L"<?xml version='1.0' encoding='UTF-8' ?>" << endl;
     if (cfg.write_xslt)
-      cout << "<?xml-stylesheet type='text/xsl' href='profit.xsl'?>" << endl;
-    cout << "<corpus>" << endl;
+      wcout << L"<?xml-stylesheet type='text/xsl' href='profit.xsl'?>" << endl;
+    wcout << L"<corpus>" << endl;
 
-    while (std::getline(std::cin, text))
+    while (std::getline(std::wcin, text))
     {
       av = tk->tokenize(text, offset);
       ls = sp->split(av, cfg.AlwaysFlush);
       morfo->analyze(ls);
-      if (cfg.SENSE_SenseAnnotation != NONE)
+      if (cfg.SENSE_WSD_which == MFS or cfg.SENSE_WSD_which == ALL)
         sens->analyze(ls);
       tagger->analyze(ls);
+      if (cfg.SENSE_WSD_which == UKB)
+	dsb->analyze (ls);
       if (cfg.NEC_NEClassification)
         neclass->analyze(ls);
       parser->analyze(ls);
@@ -197,16 +199,18 @@ void ProcessPlain(const config &cfg, tokenizer *tk, splitter *sp, maco *morfo,
     av = tk->tokenize(text, offset);
     ls = sp->split(av, true);  //flush splitter buffer
     morfo->analyze(ls);
-    if (cfg.SENSE_SenseAnnotation!=NONE)
+    if (cfg.SENSE_WSD_which == MFS or cfg.SENSE_WSD_which == ALL)
       sens->analyze(ls);
     tagger->analyze(ls);
+    if (cfg.SENSE_WSD_which == UKB)
+      dsb->analyze (ls);
     if (cfg.NEC_NEClassification)
       neclass->analyze(ls);
     parser->analyze(ls);
     dep->analyze(ls);
 
     PrintResults(ls, cfg, nsentence);
-    cout << "</corpus>" << endl;
+    wcout << L"</corpus>" << endl;
 
     if (!ioredirect.serverOK())
       break;
@@ -226,12 +230,16 @@ int main(int argc, char **argv)
   maco *morfo = NULL;
   nec *neclass = NULL;
   senses *sens = NULL;
+  disambiguator *dsb =NULL;
   POS_tagger *tagger = NULL;
   chart_parser *parser = NULL;
   dependency_parser *dep = NULL;
 
   // read configuration file and command-line options
-  config cfg(argv);
+  config cfg(argc, argv);
+
+  /// set the locale to UTF to properly handle special characters.
+  util::init_locale(cfg.Locale);
 
   // create required analyzers
   tk = new tokenizer(cfg.TOK_TokenizerFile);
@@ -242,21 +250,34 @@ int main(int argc, char **argv)
   maco_options opt(cfg.Lang);
   // boolean options to activate/desactivate modules
   // default: all modules activated (options set to "false")
-  opt.set_active_modules(cfg.MACO_AffixAnalysis,    cfg.MACO_MultiwordsDetection,
-                         cfg.MACO_NumbersDetection, cfg.MACO_PunctuationDetection,
-                         cfg.MACO_DatesDetection,   cfg.MACO_QuantitiesDetection,
-                         cfg.MACO_DictionarySearch, cfg.MACO_ProbabilityAssignment,
-                         cfg.MACO_NER_which,        cfg.MACO_OrthographicCorrection);
+  opt.set_active_modules (cfg.MACO_UserMap,
+			  cfg.MACO_AffixAnalysis,
+			  cfg.MACO_MultiwordsDetection,
+			  cfg.MACO_NumbersDetection,
+			  cfg.MACO_PunctuationDetection,
+			  cfg.MACO_DatesDetection,
+			  cfg.MACO_QuantitiesDetection,
+			  cfg.MACO_DictionarySearch,
+			  cfg.MACO_ProbabilityAssignment,
+			  cfg.MACO_NERecognition,
+			  cfg.MACO_OrthographicCorrection);
   // decimal/thousand separators used by number detection
   opt.set_nummerical_points(cfg.MACO_Decimal, cfg.MACO_Thousand);
   // Minimum probability for a tag for an unkown word
   opt.set_threshold(cfg.MACO_ProbabilityThreshold);
+  // Whether the dictionary offers inverse acces (lemma#pos -> form). 
+  // Only needed if your application is going to do such an access.
+  opt.set_inverse_dict(false);
+  // Whether contractions are splitted by the dictionary right away,
+  // or left for later "retok" option to decide.
+  opt.set_retok_contractions(cfg.MACO_RetokContractions);
   // Data files for morphological submodules. by default set to ""
   // Only files for active modules have to be specified
-  opt.set_data_files(cfg.MACO_LocutionsFile,   cfg.MACO_QuantitiesFile,
-                     cfg.MACO_AffixFile,       cfg.MACO_ProbabilityFile,
-                     cfg.MACO_DictionaryFile,  cfg.MACO_NPdataFile,
-                     cfg.MACO_PunctuationFile, cfg.MACO_CorrectorFile);
+  opt.set_data_files (cfg.MACO_UserMapFile,
+		      cfg.MACO_LocutionsFile, cfg.MACO_QuantitiesFile,
+		      cfg.MACO_AffixFile, cfg.MACO_ProbabilityFile,
+		      cfg.MACO_DictionaryFile, cfg.MACO_NPDataFile,
+		      cfg.MACO_PunctuationFile,cfg.MACO_CorrectorFile);
   // create analyzer with desired options
   morfo = new maco(opt);
 
@@ -268,17 +289,19 @@ int main(int argc, char **argv)
                               cfg.TAGGER_RelaxScaleFactor, cfg.TAGGER_RelaxEpsilon,
                               cfg.TAGGER_Retokenize, cfg.TAGGER_ForceSelect);
 
-  if (cfg.NEC_NEClassification)
-    neclass = new nec("NP", cfg.NEC_FilePrefix);
+  if (cfg.NEC_NEClassification or cfg.COREF_CoreferenceResolution)
+    neclass = new nec (cfg.NEC_NECFile);
 
-  if (cfg.SENSE_SenseAnnotation!=NONE)
+  if (cfg.SENSE_WSD_which!=NONE)
     sens = new senses(cfg.SENSE_SenseFile, cfg.SENSE_DuplicateAnalysis);
+  else if (cfg.SENSE_WSD_which==UKB or cfg.COREF_CoreferenceResolution)
+    dsb = new disambiguator (cfg.UKB_ConfigFile);
 
   parser = new chart_parser(cfg.PARSER_GrammarFile);
   dep = new dep_txala(cfg.DEP_TxalaFile, parser->get_start_symbol());
 
   // Input is plain text.
-  ProcessPlain(cfg, tk, sp, morfo, tagger, neclass, sens, parser, dep);
+  ProcessPlain(cfg, tk, sp, morfo, tagger, neclass, sens, dsb, parser, dep);
 
   // clean up. Note that deleting a null pointer is a safe (yet useless) operation
   delete tk;
@@ -287,6 +310,7 @@ int main(int argc, char **argv)
   delete tagger;
   delete neclass;
   delete sens;
+  delete dsb;
   delete parser;
   delete dep;
 }
@@ -295,33 +319,33 @@ int main(int argc, char **argv)
 //
 // CODI PROFIT
 //
-string xmlencode(string s)
+wstring xmlencode(wstring s)
 {
   size_t pos = 0;
-  while ((pos = s.find("&", pos))!=string::npos)
+  while ((pos = s.find(L"&", pos))!=wstring::npos)
   {
-     s.replace(pos, 1, "&amp;");
+     s.replace(pos, 1, L"&amp;");
      pos += 4;
   }
 
-  while ((pos = s.find('"')) != string::npos)
+  while ((pos = s.find('"')) != wstring::npos)
   {
-    s.replace(pos,1,"&quot;");
+    s.replace(pos,1,L"&quot;");
   }
 
-  while ((pos = s.find("'")) != string::npos)
+  while ((pos = s.find(L"'")) != wstring::npos)
   {
-    s.replace(pos, 1, "&apos;");
+    s.replace(pos, 1, L"&apos;");
   }
 
-  while ((pos = s.find("<")) != string::npos)
+  while ((pos = s.find(L"<")) != wstring::npos)
   {
-    s.replace(pos, 1, "&lt;");
+    s.replace(pos, 1, L"&lt;");
   }
 
-  while ((pos = s.find(">")) != string::npos)
+  while ((pos = s.find(L">")) != wstring::npos)
   {
-    s.replace(pos, 1, "&gt;");
+    s.replace(pos, 1, L"&gt;");
   }
 
   return s;
@@ -342,7 +366,7 @@ int wordPosition(const sentence &s, const word &w)
     ++i;
   }
   if (!found)
-    cerr << "INTERNAL ERROR in determinig Word Position" << endl;
+    wcerr << L"INTERNAL ERROR in determinig Word Position" << endl;
 
   return position;
 }
@@ -365,17 +389,17 @@ void get_chunks(dep_tree::iterator n, map<int, dep_tree::iterator> &chunks)
 }
 
 
-string PrintCHUNK(sentence & s, parse_tree & fulltree, dep_tree &tr,
+wstring PrintCHUNK(sentence & s, parse_tree & fulltree, dep_tree &tr,
                   dep_tree::iterator n, int depth, const bool printHead)
 {
   dep_tree::iterator dm;
-  ostringstream tree;
+  wostringstream tree;
 
-  tree << string(depth * 2, ' ');
+  tree << wstring(depth * 2, ' ');
 
-  tree << "<CHUNK ord='" << n->info.get_chunk_ord() << "' alloc='"<< get_alloc(n, false) << "'";
-  tree << " type='" << xmlencode(n->info.get_link()->info.get_label()).c_str() << "'";
-  tree << " si='" << xmlencode(n->info.get_label()).c_str() << "'>" << endl;
+  tree << L"<CHUNK ord='" << n->info.get_chunk_ord() << L"' alloc='"<< get_alloc(n, false) << L"'";
+  tree << L" type='" << xmlencode(n->info.get_link()->info.get_label()).c_str() << L"'";
+  tree << L" si='" << xmlencode(n->info.get_label()).c_str() << L"'>" << endl;
 
   tree << PrintNODE(s, fulltree, tr, n, depth + 1, printHead);
 
@@ -390,27 +414,27 @@ string PrintCHUNK(sentence & s, parse_tree & fulltree, dep_tree &tr,
     tree << PrintCHUNK(s, fulltree, tr, dm, depth + 1, printHead);
   }
 
-  tree << string(depth * 2, ' ') << "</CHUNK>" << endl;
+  tree << wstring(depth * 2, ' ') << L"</CHUNK>" << endl;
 
   return tree.str();
 }
 
 
-string PrintNODE(sentence & s, parse_tree & fulltree, dep_tree &tr,
+wstring PrintNODE(sentence & s, parse_tree & fulltree, dep_tree &tr,
                  dep_tree::iterator n, int depth, const bool printHead)
 {
-  ostringstream tree;
+  wostringstream tree;
   dep_tree::sibling_iterator d;
 
   word w = n->info.get_word();
 
-  tree << string(depth * 2, ' ');
+  tree << wstring(depth * 2, ' ');
 
-  tree << "<NODE ord='" << wordPosition(s,w) << "'";
-  tree << " alloc='" << w.get_span_start() << "'";
-  tree << " form='" << xmlencode(w.get_form()).c_str() << "'";
-  tree << " lem='" << xmlencode(w.get_lemma()).c_str() << "'";
-  tree << " mi='" << xmlencode(w.get_parole()).c_str() << "'>" << endl;
+  tree << L"<NODE ord='" << wordPosition(s,w) << L"'";
+  tree << L" alloc='" << w.get_span_start() << L"'";
+  tree << L" form='" << xmlencode(w.get_form()).c_str() << L"'";
+  tree << L" lem='" << xmlencode(w.get_lemma()).c_str() << L"'";
+  tree << L" mi='" << xmlencode(w.get_tag()).c_str() << L"'>" << endl;
 
   //Print Nodes
   for (d = n->sibling_begin(); d != n->sibling_end(); ++d)
@@ -421,7 +445,7 @@ string PrintNODE(sentence & s, parse_tree & fulltree, dep_tree &tr,
     }
   }
 
-  tree << string(depth * 2, ' ') << "</NODE>" << endl;
+  tree << wstring(depth * 2, ' ') << L"</NODE>" << endl;
 
   return tree.str();
 }

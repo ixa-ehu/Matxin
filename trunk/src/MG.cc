@@ -923,28 +923,28 @@ wstring procSENTENCE (xmlTextReaderPtr reader, config cfg)
 
 int main(int argc, char *argv[])
 {
-  config cfg(argv);
+  config cfg(argc, argv);
 
   // Set locale information
   locale::global(locale(""));
   
   // Initialization of the transducer for morphological generation.
-  FILE *transducer = fopen(cfg.Morpho_GenFile, "r");
+  FILE *transducer = fopen(cfg.Morpho_GenFile.c_str(), "r");
   fstp_generation.load(transducer);
   fclose(transducer);
   fstp_generation.initBiltrans();
 
-  transducer = fopen(cfg.Measures_GenFile, "r");
+  transducer = fopen(cfg.Measures_GenFile.c_str(), "r");
   fstp_measures.load(transducer);
   fclose(transducer);
   fstp_measures.initBiltrans();
 
-  transducer = fopen(cfg.NoLex_GenFile, "r");
+  transducer = fopen(cfg.NoLex_GenFile.c_str(), "r");
   fstp_nolex_generation.load(transducer);
   fclose(transducer);
   fstp_nolex_generation.initBiltrans();
 
-  transducer = fopen(cfg.Tag_ToGenFile, "r");
+  transducer = fopen(cfg.Tag_ToGenFile.c_str(), "r");
   fstp_pre_generation.load(transducer);
   fclose(transducer);
   fstp_pre_generation.initBiltrans();

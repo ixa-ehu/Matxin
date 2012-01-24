@@ -24,6 +24,7 @@ $ CYP
 $ CZK
 $ DEM
 $ DKK
+$ ECU
 $ EEK
 $ EGP
 $ ESP
@@ -161,7 +162,7 @@ FQ lx
 LN rad
 LN srad
 FQ sv
-LN Å
+LN Ã…
 LN cm
 SP m/s
 SP cm/s
@@ -169,7 +170,7 @@ EN J/K
 EN J
 EN w
 EN T
-EN J/kg·K
+EN J/kgÂ·K
 FR kg/s
 SP km/h
 AC km/h/s
@@ -181,7 +182,7 @@ LN m
 LN mm
 SP mi/h
 FR N
-FR Pa·s
+FR PaÂ·s
 SP ft/h
 SP ft/min
 LN ft
@@ -217,7 +218,7 @@ TM s
 TP K
 TP C
 TP F
-VL ac·ft
+VL acÂ·ft
 VL bu
 VL cl
 VL cm3
@@ -252,9 +253,9 @@ DN g/m3
 </Measure>
 <MeasureNames>
 $ USD NNS I
-¤ ECU NNS I
-£ GBP NNS I
-¥ JPY NNS I
+â‚¬ ECU NNS I
+Â£ GBP NNS I
+Â¥ JPY NNS I
 algerian_<dinar> DZD $2:NN I
 argentine_<peso> ARS $2:NN I
 australian_<dollar> AUD $2:NN I
@@ -395,12 +396,12 @@ venezuelan_<bolivar> VEB $2:NN I
 <won> KRW $1:NN I
 <yen> JPY $1:NN I
 <zloty> PLN $1:NN I
-Å Å NNS I
-<armstrong> Å $1:NN I
-ac-ft ac·ft NNS I
-ac·ft ac·ft NNS I
+Ã… Ã… NNS I
+<armstrong> Ã… $1:NN I
+ac-ft acÂ·ft NNS I
+acÂ·ft acÂ·ft NNS I
 <acre-foot> acre-foot $1:NN
-<acre>_foot ac·ft $1:NN I
+<acre>_foot acÂ·ft $1:NN I
 <acre> ac $1:NN I
 <bit> bit $1:NN I
 <bushel> bu $1:NN I
@@ -502,20 +503,20 @@ gal_Fh_s gal/s $1:NN I
 <gray> Gy $1:NN I
 <degree>_celsius C $1:NN I
 celsius_<degree> C $2:NN I
-ºc C NNS I
-ºf F NNS I
-ºk K NNS I
+Âºc C NNS I
+Âºf F NNS I
+Âºk K NNS I
 <degree>_farenheit F $1:NN I
 <degree>_kelvin K $1:NN I
 farenheit_<degree> F $2:NN I
 kelvin_<degree> K $2:NN I
 <gram>_Fh_liter g/l $1:NN I
-<gram>_Fh_meter_cubic g/m3 $1:NN I
+<gram>_Fh_cubic_meter g/m3 $1:NN I
 <gram> g $1:NN I
 <gram>_per_liter g/l $1:NN I
 g_Fh_l g/l NNS I
 g_Fh_m3 g/m3 NNS I
-<gram>_per_meter_cubic g/m3 $1:NN I
+<gram>_per_cubic_meter g/m3 $1:NN I
 <gigabit> gb $1:NN I
 <gigabyte> gB $1:NN I
 hab_Fh_km2 hab/km2 NN I
@@ -543,7 +544,7 @@ j_Fh_k J/K NN I
 <joule>_per_degree_kelvin J/K $1:NN I
 joule>_per_kelvin_degree J/K $1:NN I
 <joule>_per_kelvin J/K $1:NN I
-j_Fh_kg·k J/kg·K NNS I
+j_Fh_kgÂ·k J/kgÂ·K NNS I
 kg_Fh_cm2 kg/cm2 NNS I
 kg_Fh_m2 kg/m2 NNS I
 kg_Fh_m3 kg/m3 NNS I
@@ -553,7 +554,7 @@ kg kg NNS I
 <kilobyte> kB $1:NN I
 <kilogram>_Fh_square_<centimeter> kg/cm2 $1:NN I
 <kilogram>_Fh_square_<meter> kg/m2 $1:NN I
-<kilogram>_Fh_cubicmeter kg/m3 $1:NN I
+<kilogram>_Fh_cubic_<meter> kg/m3 $1:NN I
 <kilogram>_Fh_second kg/s $1:NN I
 <kilogram> kg $1:NN I
 <kilogram>_per_square_<centimeter> kg/cm2 $1:NN I
@@ -685,15 +686,14 @@ mbps mbps NNS I
 mi_Fh_h mi/h NN I
 <milligram> mg $1:NN I
 <milliliter> ml $1:NN I
-<millimeter>_<square> mm2 $1:NN I
-<millimeter>_<cubic> mm3 $1:NN I
+square_<millimeter> mm2 $2:NN I
+cubic_<millimeter> mm3 $2:NN I
 hg_<millimeter> mmHg $2:NN I
 <millimeter>_hg mmHg $1:NN I
 mercury_<millimeter> mmHg $2:NN I
 <millimeter> mm $1:NN I
 <millisecond> ms $1:NN I
-<second> s $1:NN I
-square_<mile> mi2 $1:NN I
+square_<mile> mi2 $2:NN I
 <mile>_Fh_hour mi/h $1:NN I
 <mile> mi $1:NN I
 <mile>_per_hour mi/h $1:NN I
@@ -734,8 +734,7 @@ water_<foot> ftH2O $2:NN I
 <foot>_minute ft/min $1:NN I
 <foot>_per_hour ft/h $1:NN I
 <foot>_per_minute ft/min $1:NN I
-<foot>_per_second_al_square ft/s2 $1:NN I
-<foot>_per_second_square ft/s2 $1:NN I
+<foot>_per_square_second ft/s2 $1:NN I
 <foot>_per_second_Fh_second ft/s2 $1:NN I
 <foot>_per_second ft/s $1:NN I
 <foot>_per_second_per_second ft/s2 $1:NN I

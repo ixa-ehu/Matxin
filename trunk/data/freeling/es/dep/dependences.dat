@@ -20,14 +20,18 @@
 %% -------------------------------------------------------------------- %%
 
 
-%% ----------- UPDATED: OCTOBER 2009 ------------ %%
+% To execute Txala: analyze -f es.cfg --nec --outf dep
+
+
+%% ----------- UPDATED: NOVEMBER 2009 ------------ %%
 %
 % INCORPORACIONS:
 % Unica assigancio d'objecte directe (dobj) i objecte indirecte (iobj)
 % Objecte directe i objecte indirecte quan PP amb 'a' + amb NP 'Huma' i nom propi
 % No asignacio atribut (att) a PP amb preposicio 'por'
 % No asignacio argument preposicional (sp-obj) a PP amb preposicio 'con' excepte classe verbs amb 'con'
-%
+% Modficacio regles DOBJ/IOBJ referits a persones: d:sn.tonot!=Building|Place
+% Modficacio regles DOBJ referits a persones: p.class!=viobj|ditr (abans) --> p.class=trans (ara)
 %% -------------------------------------------- %%
 %
 %
@@ -74,7 +78,6 @@
 911 - - (sn,subord-rel) top_left RELABEL - % (la persona (con quien ha venido))
 911 - - (sn,subord-rel) top_left RELABEL - % (el libro (que explica la novela))
 911 - - (sn,subord-rel) last_left MATCHING -
-911 - - (sn,sn) top_left RELABEL - % (Garbiñe)
 
 911 - !grup-verb_$$ (sn,subord) top_left RELABEL - % (la norma (que a cada persona le corresponde un salario))
 
@@ -102,12 +105,11 @@
 923 - - (sn[np-tras],grup-sp<tras>) top_left RELABEL - % (reaccion (tras las declaraciones))
 
 927 - - (sn,coor-s-a) top_left RELABEL - % (la charla (monotona i aburrida))
-927 - OUT_$$_OUT (*,F-term<.>) top_left RELABEL - % (la charla (monotona i aburrida))
+
 929 - - (sn,s-adj) top_left RELABEL - % (la charla (monotona))
 
 9001 - - (sn,Fc) top_left RELABEL - % (el presidente del consejo(,))
-%9999 - - (sn,F-term) top_left RELABEL - % signes que no acaben frase
-%9999 - OUT_$$_OUT (sn,F-term<.>) top_left RELABEL - % signes que no acaben frase (Garbiñe-puntuazioa)
+9999 - - (sn,F-term) top_left RELABEL - % signes que no acaben frase
 
 
 %% -------------------------------------------- %% 
@@ -118,10 +120,10 @@
 
 % ADVERBI SUPERLATIU ALS ADJECTIUS (La meva mare es la [mes] xerraire) %
 
-1 - espec-ms_$$ (sadv(m�s),s-adj) top_right RELABEL sadv-sup:- % ((mas) simpatico)
-1 - espec-fs_$$ (sadv(m�s),s-adj) top_right RELABEL sadv-sup:-
-1 - espec-mp_$$ (sadv(m�s),s-adj) top_right RELABEL sadv-sup:-
-1 - espec-fp_$$ (sadv(m�s),s-adj) top_right RELABEL sadv-sup:-
+1 - espec-ms_$$ (sadv(más),s-adj) top_right RELABEL sadv-sup:- % ((mas) simpatico)
+1 - espec-fs_$$ (sadv(más),s-adj) top_right RELABEL sadv-sup:-
+1 - espec-mp_$$ (sadv(más),s-adj) top_right RELABEL sadv-sup:-
+1 - espec-fp_$$ (sadv(más),s-adj) top_right RELABEL sadv-sup:-
 
 1 - espec-ms_$$ (sadv(menos),s-adj) top_right RELABEL sadv-sup:- % ((menos) simpatico)
 1 - espec-fs_$$ (sadv(menos),s-adj) top_right RELABEL sadv-sup:-
@@ -129,10 +131,10 @@
 1 - espec-fp_$$ (sadv(menos),s-adj) top_right RELABEL sadv-sup:-
 
 
-1 - espec-ms_$$ (sadv(m�s),parti-ms) top_right RELABEL sadv-sup:- % ((mas) dormido)
-1 - espec-fs_$$ (sadv(m�s),parti-fs) top_right RELABEL sadv-sup:-
-1 - espec-mp_$$ (sadv(m�s),parti-mp) top_right RELABEL sadv-sup:-
-1 - espec-fp_$$ (sadv(m�s),parti-fp) top_right RELABEL sadv-sup:-
+1 - espec-ms_$$ (sadv(más),parti-ms) top_right RELABEL sadv-sup:- % ((mas) dormido)
+1 - espec-fs_$$ (sadv(más),parti-fs) top_right RELABEL sadv-sup:-
+1 - espec-mp_$$ (sadv(más),parti-mp) top_right RELABEL sadv-sup:-
+1 - espec-fp_$$ (sadv(más),parti-fp) top_right RELABEL sadv-sup:-
 
 1 - espec-ms_$$ (sadv(menos),parti-ms) top_right RELABEL sadv-sup:- % ((menos) dormido)
 1 - espec-fs_$$ (sadv(menos),parti-fs) top_right RELABEL sadv-sup:-
@@ -140,7 +142,7 @@
 1 - espec-fp_$$ (sadv(menos),parti-fp) top_right RELABEL sadv-sup:-
 
 
-% ADJECTIUS ESPECIFICATS i: ADVERBIS (Mi hermano est� [casi] dormido)
+% ADJECTIUS ESPECIFICATS i: ADVERBIS (Mi hermano esta [casi] dormido)
 
 1 - - (sadv,s-adj) top_right RELABEL -:- % ((casi) simpatico)
 
@@ -190,8 +192,7 @@
 
 9101 - - (sp-de,Fc) top_left RELABEL -
 9101 - - (sp-de,Fc) last_left MATCHING sn
-%9969 - - (sp-de,F-term) top_left RELABEL -
-%9969 - OUT_$$_OUT (sp-de,F-term<.>) top_left RELABEL - % (Garbiñe-puntuazioa)
+9969 - - (sp-de,F-term) top_left RELABEL -
 
 %%% GRUP PREPOSICIONAL %%%
 
@@ -200,24 +201,6 @@
 
 221 - OUT_$$_grup-verb (grup-sp,sp-de) last_left MATCHING sn
 221 - ~grup-verb[mov]_$$ (grup-sp,sp-de) last_left MATCHING sn
-
-120 - grup-sp_$$ (sp-de,sp-de) last_left MATCHING sn % (Garbiñe)
-%220 - - (sn,sp-de) last_left MATCHING sn % (Garbiñe)
-219 - - (sp-de,sp-de) last_left MATCHING sn % (Garbiñe)
-221 - - (sn,sp-de) last_left MATCHING sn % (Garbiñe)
-221 - - (grup-sp,grup-sp<de>) last_left MATCHING sn % (Garbiñe)
-221 - - (grup-sp,sp-de) last_left MATCHING sn % (Garbiñe)
-%221 - - (grup-sp,grup-sp) last_left MATCHING sn % (Garbiñe)
-324 - - (sn,grup-sp-inf<de>) last_left MATCHING sn % (Garbiñe)
-324 - - (grup-sp,grup-sp-inf<de>) last_left MATCHING sn % (Garbiñe)
-%223 - - (grup-sp,sn) last_left MATCHING sn % (Garbiñe-G)
-223 - - (grup-sp,parti-flex) last_left MATCHING sn % (Garbiñe)
-
-220 - - (sn,sp-de) last_left MATCHING s-a-ms % (Garbiñe)
-220 - - (sn,sp-de) last_left MATCHING s-a-fs % (Garbiñe)
-220 - - (sn,sp-de) last_left MATCHING s-a-mp % (Garbiñe)
-220 - - (sn,sp-de) last_left MATCHING s-a-fp % (Garbiñe)
-
 
 %223 - - (grup-sp,grup-sp<a>) last_left MATCHING sn[np-a]
 %223 - - (grup-sp,grup-sp<ante>) last_left MATCHING sn[np-ante]
@@ -239,8 +222,7 @@
 
 9201 - - (grup-sp,Fc) top_left RELABEL -
 9201 - - (grup-sp,Fc) last_left MATCHING sn
-%9979 - - (grup-sp,F-term) top_left RELABEL -
-%9979 - OUT_$$_OUT (grup-sp,F-term<.>) top_left RELABEL - %(Garbiñe-puntuazioa)
+9979 - - (grup-sp,F-term) top_left RELABEL -
 
 %%% GRUP PREPOSICIONAL QUE INTRODUEIX UNA SUBORDINADA NO FINITA D'INFINITIU %%%
 
@@ -252,8 +234,7 @@
 
 9301 - - (grup-sp-inf,Fc) top_left RELABEL -
 9301 - - (grup-sp-inf,Fc) last_left MATCHING sn
-%9989 - - (grup-sp-inf,F-term) top_left RELABEL -
-%9989 - OUT_$$_OUT (grup-sp-inf,F-term<.>) top_left RELABEL - %(Garbiñe-puntuazioa)
+9989 - - (grup-sp-inf,F-term) top_left RELABEL -
 
 
 %% -------------------------------------------- %%
@@ -262,8 +243,8 @@
 %						 %
 %% -------------------------------------------- %%
 
-1 - - (neg<no>,sadv<s�lo>) top_right RELABEL -:sadv
-650 - - (sadv<s�lo>,grup-sp) top_left RELABEL grup-verb-el:- % no solo en la escenografia
+1 - - (neg<no>,sadv<sólo>) top_right RELABEL -:sadv
+650 - - (sadv<sólo>,grup-sp) top_left RELABEL grup-verb-el:- % no solo en la escenografia
 721 - - (sadv<a_bordo>,sp-de) top_left RELABEL - % (a bordo (de)) 
 
 
@@ -512,10 +493,6 @@
 4011 - relatiu_$$ (grup-verb,subord) top_left RELABEL - % dins de subordinada
 4011 - prel-adv_$$ (grup-verb,subord) top_left RELABEL - % dins de subordinada
 7011 - - (grup-verb,subord) top_left RELABEL - % (dice (que vengas))
-
-7000 - !OUT_$$ (conj-subord,vaux) top_left RELABEL - % dins de subordinada (Garbiñe)
-%7000 - - (subord,vaux) top_right RELABEL verb % dins de subordinada (Garbiñe)
-%7000 - !OUT_$$ (conj-subord,grup-verb) top_left RELABEL - % dins de subordinada (Garbiñe)
 
 911 - conj-subord_$$ (grup-verb,subord-rel) last_left MATCHING sn % dins de subordinada
 911 - prel_$$ (grup-verb,subord-rel) last_left MATCHING sn % dins de subordinada
@@ -798,7 +775,6 @@
 %%% VERB + SINTAGMA PREPOSICIONAL %%%
 
 4023 - conj-subord_$$ (grup-verb,grup-sp) top_left RELABEL - % dins de subordinada
-%4023 - conj-subord_$$ (vaux,grup-sp) top_left RELABEL - % dins de subordinada (Garbi�e)
 4023 - prel_$$ (grup-verb,grup-sp) top_left RELABEL - % dins de subordinada
 4023 - prel-ms_$$ (grup-verb,grup-sp) top_left RELABEL - % dins de subordinada
 4023 - prel-fs_$$ (grup-verb,grup-sp) top_left RELABEL - % dins de subordinada
@@ -1065,7 +1041,6 @@
 9401 - - (grup-verb,Fc) top_left RELABEL - % (menjar (,))
 9001 - $_grup-verb_$ (grup-verb,F-term<.>) RELABEL - 
 9001 - - (grup-verb,F-term<.>) top_left RELABEL - % (pensar (.))
-%9001 - OUT_$$_OUT (grup-verb,F-term<.>) top_left RELABEL - % (pensar (.))(Garbiñe-puntuazioa)
 9001 - - (grup-verb,F-term) top_left RELABEL - % (acordar (-)) - qualsevol signe de puntuacio
 
 
@@ -1820,7 +1795,6 @@
 
 9901 - - (verb-pass,Fc) top_left RELABEL - % (menjar (,))
 9001 - - (verb-pass,F-term<.>) top_left RELABEL - % (pensar (.))
-%9001 - OUT_$$_OUT (verb-pass,F-term<.>) top_left RELABEL - % (pensar (.))(Garbiñe-puntuazioa)
 9001 - - (verb-pass,F-term) top_left RELABEL - % (acordar (-)) - qualsevol signe de puntuacio
 
 
@@ -1847,8 +1821,6 @@
 4055 - relatiu_$$ (neg,grup-verb) top_right RELABEL - % dins de subordinada
 4055 - prel-adv_$$ (neg,grup-verb) top_right RELABEL - % dins de subordinada
 7055 - - (neg,grup-verb) top_right RELABEL - % ((no) te rias)
-7055 - OUT_$$ (neg,grup-verb) top_right RELABEL - % ((no) te rias)(Garbiñe)
-7055 - OUT_$$ (neg,vaux) top_right RELABEL - % ((no) estar de acuerdo)(Garbiñe)
 
 %%% SINTAGMA PREPOSICIONAL COORDINAT + VERB %%%
 
@@ -1903,7 +1875,6 @@
 4061 - relatiu_$$ (grup-sp-inf,grup-verb) top_right RELABEL - % dins de subordinada
 4061 - prel-adv_$$ (grup-sp-inf,grup-verb) top_right RELABEL - % dins de subordinada
 7061 - - (grup-sp-inf,grup-verb) top_right RELABEL - % ((de comprar pisos) hablamos)
-7061 - - (grup-sp-inf,parti-flex) last_left MATCHING grup-verb-inf % (Garbiñe)
 
 %%% SINTAGMA PREPOSICIONAL AMB PREPOSICIO "DE" + VERB %%%
 
@@ -2049,7 +2020,7 @@
 7071 - $$_F-term (sadv{^PT},grup-verb) top_right RELABEL - % (pregunto (cuando vendriamos)) - interrogativa directa + CUANDO
 7071 - $$_F-term (sadv{^PT},vaux) top_right RELABEL - % (ha preguntado (cuando vendriamos)) - interrogativa i directa + CUANDO
 
-3071 - conj-subord_OUT_$$_grup-verb (sn{^PT},grup-verb) top_left RELABEL subord:- % interrogativa indirecta + CUANTO
+3071 - conj-subord_OUT_$$_grup-verb (sn{^PT},grup-verb) top_left RELABEL subord:- % interrogativa indirecta + CUANTONT
 3071 - prel_OUT_$$_grup-verb (sn{^PT},grup-verb) top_left RELABEL subord:- % interrogativa indirecta + CUANTO
 3071 - prel-ms_OUT_$$_grup-verb (sn{^PT},grup-verb) top_left RELABEL subord:- % interrogativa indirecta + CUANTO
 3071 - prel-fs_OUT_$$_grup-verb (sn{^PT},grup-verb) top_left RELABEL subord:- % interrogativa indirecta + CUANTO
@@ -2867,9 +2838,7 @@
 
 %%% INFINITIU + SUBORDINADA NO FINITA D'INFINITIU %%%
 
-2114 - - (conj-subord,grup-verb-inf) top_left RELABEL - % dins de subordinada (Garbiñe-G)
-2115 - conj-subord_$$ (grup-verb-inf,grup-verb-inf) top_left RELABEL - % dins de subordinada (Garbiñe)
-2115 - - (prel,grup-verb-inf) top_left RELABEL - % dins de subordinada (Garbiñe)
+2115 - conj-subord_$$ (grup-verb-inf,grup-verb-inf) top_left RELABEL - % dins de subordinada
 2115 - prel_$$ (grup-verb-inf,grup-verb-inf) top_left RELABEL - % dins de subordinada
 2115 - prel-ms_$$ (grup-verb-inf,grup-verb-inf) top_left RELABEL - % dins de subordinada
 2115 - prel-fs_$$ (grup-verb-inf,grup-verb-inf) top_left RELABEL - % dins de subordinada
@@ -3025,8 +2994,6 @@
 2129 - quien-p_$$ (grup-verb-inf,s-adj) top_left RELABEL - % dins de subordinada
 2129 - relatiu_$$ (grup-verb-inf,s-adj) top_left RELABEL - % dins de subordinada
 2129 - prel-adv_$$ (grup-verb-inf,s-adj) top_left RELABEL - % dins de subordinada
-2129 - - (grup-verb-inf,sadv) last_left MATCHING grup-verb-inf % (estar (cerca))(Garbiñe)
-
 2129 - - (grup-verb-inf,s-adj) top_left RELABEL - % (correr (feliz))
 
 %%% INFINITIU + SUBORDINADA NO FINITA DE PARTICIPI COORDINADA %%%
@@ -3092,7 +3059,6 @@
 
 9501 - - (grup-verb-inf,Fc) top_left RELABEL - 
 9949 - - (grup-verb-inf,F-term) top_left RELABEL - 
-%9949 - OUT_$$_OUT (grup-verb-inf,F-term<.>) top_left RELABEL - %(Garbiñe-puntuazioa)
 
 
 %% --------------------------------------------------- %%
@@ -3429,8 +3395,7 @@
 %%% SUBORDINADES NO FINITES D'INFINITIU PASSIU AMB VALOR TEMPORAL INTRODUIDES PER PREPOSICIO %%%
 
 9501 - - (inf-pas,Fc) top_left RELABEL - 
-9949 - - (inf-pas,F-term) top_left RELABEL -
-%9949 - OUT_$$_OUT (inf-pas,F-term<.>) top_left RELABEL - %(Garbiñe-puntuazioa)
+9949 - - (inf-pas,F-term) top_left RELABEL - 
 
 
 %% -------------------------------------------- %%
@@ -3827,7 +3792,7 @@
 2323 - prel-adv_$$ (subord-ger,grup-sp) top_left RELABEL - % dins de subordinada
 2323 - - (subord-ger,grup-sp) top_left RELABEL - % (habldo largo rato (con los vecinos))
 
-%%% GERUNDI + SINTAGMA PREPOSICIONAL QUE INTRODUEIX UNA SUBORDINADA NO FINITA D'INFINITIU %%%
+%%% GERUNDI + SINTAGMA PREPOSICIONAL QUE INTRDUEIX UNA SUBORDINADA NO FINITA D'INFINITIU %%%
 
 2325 - conj-subord_$$ (forma-ger,grup-sp-inf) top_left RELABEL subord-ger:- % dins de subordinada
 2325 - prel_$$ (forma-ger,grup-sp-inf) top_left RELABEL subord-ger:- % dins de subordinada
@@ -3932,11 +3897,9 @@
 %%% PUNUTACIO DE LES SUBORDINADES NO FINITES DE GERUNDI %%%
 
 9601 - - (subord-ger,Fc) top_left RELABEL - 
-9939 - - (subord-ger,F-term) top_left RELABEL -
-%9939 - OUT_$$_OUT (subord-ger,F-term<.>) top_left RELABEL - %(Garbiñe-puntuazioa)
+9939 - - (subord-ger,F-term) top_left RELABEL - 
 9601 - - (ger,Fc) top_left RELABEL - 
 9939 - - (ger,F-term) top_left RELABEL - 
-%9939 - OUT_$$_OUT (ger,F-term<.>) top_left RELABEL - %(Garbiñe-puntuazioa)
 
 
 %% -------------------------------------------- %%
@@ -4312,10 +4275,6 @@
 6000 - relatiu_*_$$ (conj-subord,grup-verb) top_left RELABEL subord:- % dins de subordinada
 6000 - prel-adv_*_$$ (conj-subord,grup-verb) top_left RELABEL subord:- % dins de subordinada
 6001 - - (conj-subord,grup-verb) top_left RELABEL subord:- % (que (vinga))
-6000 - OUT_$$ (conj-subord,grup-verb) top_right RELABEL subord:- % (que (vinga)) (Garbi�e)
-6001 - - (conj-subord,vaux) top_left RELABEL subord:- % (porque estamos)(Garbi�e)
-%6001 - - (subord,vaux) top_left RELABEL - % (porque estamos)(Garbi�e)
-%6001 - - (vaux,grup-sp) top_left RELABEL verb - % (porque estamos en casa)(Garbi�e)
 
 %%% SUBORDINADES AMB PRONOM RELATIU ATON INTRODUIT PER PREPOSICIO %%%
 
@@ -4716,10 +4675,8 @@
 
 9401 - - (subord-rel,Fc) top_left RELABEL - 
 9959 - - (subord-rel,F-term) top_left RELABEL -
-%9959 - OUT_$$_OUT (subord-rel,F-term<.>) top_left RELABEL - %(Garbiñe-puntuazioa)
 9401 - - (subord,Fc) top_left RELABEL -
 9959 - - (subord,F-term) top_left RELABEL -
-%9959 - OUT_$$_OUT (subord,F-term<.>) top_left RELABEL - %(Garbiñe-puntuazioa)
 
 
 %% -------------------------------------------- %%
@@ -4746,7 +4703,6 @@
 1103 - - (grup-sp,coor-sp) top_right RELABEL - % ((en la ciudad) y en el pueblo)
 1111 - - (coord,sp-de) top_left RELABEL coor-sp:- % (y (de pueblo))
 1113 - - (sp-de,coor-sp) top_right RELABEL - % ((de ciudad) y de pueblo)
-1113 - - (sp-de,coor-n) top_right RELABEL - % ((de ciudad) y pueblo) (Garbiñe)
 3221 - - (coord,grup-sp-inf) top_left RELABEL coor-sp:- % (y (a comprar))
 3223 - - (grup-sp-inf,coor-sp) top_right RELABEL - % ((a vender) y a comprar)
 1105 - - (Fc,coor-sp) top_right RELABEL -
@@ -4767,20 +4723,19 @@
 
 %%% COORDINACIO DE SINTAGMA ADVERBIAL %%%
 
-% 1701 - - (coor,sadv) top_right RELABEL coor-adv:- % ((alborotadamente) y alegremente)
+1701 - - (coor,sadv) top_right RELABEL coor-adv:- % ((alborotadamente) y alegremente)
 1703 - - (sadv,coor-sadv) top_right RELABEL - % ((alborotadamente) y alegremente)
 1705 - - (Fc,coor-sadv) top_right RELABEL - % ((,) alborotadamente y alegremente)
 </GRPAR>
 
 
 <SEMDB>
-SenseFile  ../senses16.db
-WNFile  ../../common/wn16.db
+SenseFile  ../senses30.src
+WNFile  ../../common/wn30.src
 </SEMDB>
 
 
 <GRLAB>
-UNIQUE subj
 %% ----------- FORMAT of GRLAB rules ---------- %%
 %
 %
@@ -4825,15 +4780,6 @@ grup-verb  subj  d.label=grup-verb-inf  d.side=right  p.class=intr
 grup-verb  subj  d.label=sn*  d.side=right  d.pos=NP00000
 
 %%% SUBJECTE PREVERBAL %%%
-grup-verb  dobj  d.label=sn*  d.side=right
-grup-verb-inf  dobj  d.label=sn*  d.side=right
-subord-ger  dobj  d.label=sn*  d.side=right
-subord-part  dobj  d.label=sn*  d.side=right
-
-grup-verb  dobj  d.label=coor-n  d.side=right
-grup-verb-inf  dobj  d.label=coor-n  d.side=right
-subord-ger  dobj  d.label=coor-n  d.side=right
-subord-part  dobj  d.label=coor-n  d.side=right
 grup-verb  subj  d.label=sn*  d.side=left
 grup-verb  subj  d.label=coor-n  d.side=left
 grup-verb  subj  d.label=subord  d.side=left  d.lemma=que|qui
@@ -4880,32 +4826,31 @@ subord-part  att  d.label=numero  d.side=right  p.class=atrib
 %%% OBJECTE DIRECTE POSTVERBAL: NOMS REFERITS A PERSONES (SP AMB "a") %%%
 
 %Noms comuns%
-grup-verb  dobj  d.label=grup-sp  d.side=right  d.lemma=a|al  d:sn.tonto=Human  p.class!=viobj|ditr
-verb-pass  dobj  d.label=grup-sp  d.side=right  d.lemma=a|al  d:sn.tonto=Human  p.class!=viobj|ditr
-grup-verb-inf  dobj  d.label=grup-sp  d.side=right  d.lemma=a|al  d:sn.tonto=Human  p.class!=viobj|ditr
-subord-ger  dobj  d.label=grup-sp  d.side=right  d.lemma=a|al  d:sn.tonto=Human  p.class!=viobj|ditr
-subord-part  dobj  d.label=grup-sp  d.side=right  d.lemma=a|al  d:sn.tonto=Human  p.class!=viobj|ditr
+grup-verb  dobj  d.label=grup-sp  d.side=right  d.lemma=a|al  d:sn.tonto=Human d:sn.tonto!=Building|Place  p.class=trans
+verb-pass  dobj  d.label=grup-sp  d.side=right  d.lemma=a|al  d:sn.tonto=Human  p.class=trans
+grup-verb-inf  dobj  d.label=grup-sp  d.side=right  d.lemma=a|al  d:sn.tonto=Human  d:sn.tonto!=Building|Place  p.class=trans
+subord-ger  dobj  d.label=grup-sp  d.side=right  d.lemma=a|al  d:sn.tonto=Human  d:sn.tonto!=Building|Place  p.class=trans
+subord-part  dobj  d.label=grup-sp  d.side=right  d.lemma=a|al  d:sn.tonto=Human  d:sn.tonto!=Building|Place  p.class=trans
 
-%grup-verb  dobj  d.label=grup-sp  d.side=right  d.lemma=a|al  
-%verb-pass  dobj  d.label=grup-sp  d.side=right  d.lemma=a|al  
-%grup-verb-inf  dobj  d.label=grup-sp  d.side=right  d.lemma=a|al  
-%subord-ger  dobj  d.label=grup-sp  d.side=right  d.lemma=a|al  
-%subord-part  dobj  d.label=grup-sp  d.side=right  d.lemma=a|al  
-
-
-grup-verb  dobj  d.label=coor-sp  d.side=right  d.lemma=a|al  d:grup-sp:sn.tonto=Human  p.class!=viobj|ditr
-verb-pass  dobj  d.label=coor-sp  d.side=right  d.lemma=a|al  d:grup-sp:sn.tonto=Human  p.class!=viobj|ditr
-grup-verb-inf  dobj  d.label=coor-sp  d.side=right  d.lemma=a|al  d:grup-sp:sn.tonto=Human  p.class!=viobj|ditr
-subord-ger  dobj  d.label=coor-sp  d.side=right  d.lemma=a|al  d.grup-sp:sn.tonto=Human  p.class!=viobj|ditr
-subord-part  dobj  d.label=coor-sp  d.side=right  d.lemma=a|al  d.grup-sp:sn.tonto=Human  p.class!=viobj|ditr
+grup-verb  dobj  d.label=coor-sp  d.side=right  d.lemma=a|al  d:grup-sp:sn.tonto=Human  d:grup-sp:sn.tonto!=Building|Place  p.class=trans
+verb-pass  dobj  d.label=coor-sp  d.side=right  d.lemma=a|al  d:grup-sp:sn.tonto=Human  d:grup-sp:sn.tonto!=Building|Place  p.class=trans
+grup-verb-inf  dobj  d.label=coor-sp  d.side=right  d.lemma=a|al  d:grup-sp:sn.tonto=Human  d:grup-sp:sn.tonto!=Building|Place  p.class=trans
+subord-ger  dobj  d.label=coor-sp  d.side=right  d.lemma=a|al  d.grup-sp:sn.tonto=Human  d:grup-sp:sn.tonto!=Building|Place  p.class=trans
+subord-part  dobj  d.label=coor-sp  d.side=right  d.lemma=a|al  d.grup-sp:sn.tonto=Human  d:grup-sp:sn.tonto!=Building|Place  p.class=trans
 
 %Noms propis%
 %Nomes s'aplica si s'ha activat el reconeixedor de NE
-grup-verb  dobj  d.label=grup-sp  d.side=right  d.lemma=a|al  d:sn.pos=NP00SP0  p.class!=viobj|ditr
-verb-pass  dobj  d.label=grup-sp  d.side=right  d.lemma=a|al  d:sn.pos=NP00SP0  p.class!=viobj|ditr
-grup-verb-inf  dobj  d.label=grup-sp  d.side=right  d.lemma=a|al  d:sn.pos=NP00SP0  p.class!=viobj|ditr
-subord-ger  dobj  d.label=grup-sp  d.side=right  d.lemma=a|al  d:sn.pos=NP00SP0  p.class!=viobj|ditr
-subord-part  dobj  d.label=grup-sp  d.side=right  d.lemma=a|al  d:sn.pos=NP00SP0  p.class!=viobj|ditr
+grup-verb  dobj  d.label=grup-sp  d.side=right  d.lemma=a|al  d:sn.pos=NP00SP0  p.class=trans
+verb-pass  dobj  d.label=grup-sp  d.side=right  d.lemma=a|al  d:sn.pos=NP00SP0  p.class=trans
+grup-verb-inf  dobj  d.label=grup-sp  d.side=right  d.lemma=a|al  d:sn.pos=NP00SP0  p.class=trans
+subord-ger  dobj  d.label=grup-sp  d.side=right  d.lemma=a|al  d:sn.pos=NP00SP0  p.class=trans
+subord-part  dobj  d.label=grup-sp  d.side=right  d.lemma=a|al  d:sn.pos=NP00SP0  p.class=trans
+
+grup-verb  dobj  d.label=coor-sp  d.side=right  d.lemma=a|al  d:grup-sp:sn.pos=NP00SP0  p.class=trans
+verb-pass  dobj  d.label=coor-sp  d.side=right  d.lemma=a|al  d:grup-sp:sn.pos=NP00SP0  p.class=trans
+grup-verb-inf  dobj  d.label=coor-sp  d.side=right  d.lemma=a|al  d:grup-sp:sn.pos=NP00SP0  p.class=trans
+subord-ger  dobj  d.label=coor-sp  d.side=right  d.lemma=a|al  d:grup-sp:sn.pos=NP00SP0  p.class=trans
+subord-part  dobj  d.label=coor-sp  d.side=right  d.lemma=a|al  d:grup-sp:sn.pos=NP00SP0  p.class=trans
 
 %%% OBJECTE DIRECTE POSTVERBAL: SINTAGMA NOMINAL %%%
 grup-verb  dobj  d.label=sn*  d.side=right  p.class!=intr|atrib
@@ -5016,17 +4961,17 @@ subord-rel  obj-prep  d.label=j*
 %%% OBJECTE INDIRECTE POSTVERBAL: AMB BENEFICIARI HUMA %%%
 
 %Noms comuns%
-grup-verb  iobj  d.label=grup-sp  d.side=right  d.lemma=a|para  d:sn.tonto=Human  d:sn.tonto!=Building  p.class=ditr|viobj
-verb-pass  iobj  d.label=grup-sp  d.side=right  d.lemma=a|para  d:sn.tonto=Human  d:sn.tonto!=Building  p.class=ditr|viobj
-grup-verb-inf  iobj  d.label=grup-sp  d.side=right  d.lemma=a|para  d:sn.tonto=Human  d:sn.tonto!=Building  p.class=ditr|viobj
-subord-ger  iobj  d.label=grup-sp  d.side=right  d.lemma=a|para  d:sn.tonto=Human  d:sn.tonto!=Building  p.class=ditr|viobj
-subord-part  iobj  d.label=grup-sp  d.side=right  d.lemma=a|para  d:sn.tonto=Human  d:sn.tonto!=Building  p.class=ditr|viobj 
+grup-verb  iobj  d.label=grup-sp  d.side=right  d.lemma=a|para  d:sn.tonto=Human  d:sn.tonto!=Building|Place  p.class=ditr|viobj
+verb-pass  iobj  d.label=grup-sp  d.side=right  d.lemma=a|para  d:sn.tonto=Human  d:sn.tonto!=Building|Place  p.class=ditr|viobj
+grup-verb-inf  iobj  d.label=grup-sp  d.side=right  d.lemma=a|para  d:sn.tonto=Human  d:sn.tonto!=Building|Place  p.class=ditr|viobj
+subord-ger  iobj  d.label=grup-sp  d.side=right  d.lemma=a|para  d:sn.tonto=Human  d:sn.tonto!=Building|Place  p.class=ditr|viobj
+subord-part  iobj  d.label=grup-sp  d.side=right  d.lemma=a|para  d:sn.tonto=Human  d:sn.tonto!=Building|Place  p.class=ditr|viobj
 
-grup-verb  iobj  d.label=coor-sp  d.side=right  d:grup-sp.lemma=a|para  d:grup-sp:sn.tonto=Human  d:sn.tonto!=Building  p.class=ditr|viobj
-verb-pass  iobj  d.label=coor-sp  d.side=right  d:grup-sp.lemma=a|para  d:grup-sp:sn.tonto=Human  d:sn.tonto!=Building  p.class=ditr|viobj
-grup-verb-inf  iobj  d.label=coor-sp  d.side=right  d:grup-sp.lemma=a|para  d:grup-sp:sn.tonto=Human  d:sn.tonto!=Building  p.class=ditr|viobj
-subord-ger  iobj  d.label=coor-sp  d.side=right  d:grup-sp.lemma=a|para  d:grup-sp:sn.tonto=Human  d:sn.tonto!=Building  p.class=ditr|viobj
-subord-part  iobj  d.label=coor-sp  d.side=right  d:grup-sp.lemma=a|para  d:grup-sp:sn.tonto=Human  d:sn.tonto!=Building  p.class=ditr|viobj
+grup-verb  iobj  d.label=coor-sp  d.side=right  d:grup-sp.lemma=a|para  d:grup-sp:sn.tonto=Human  d:sn.tonto!=Building|Place  p.class=ditr|viobj
+verb-pass  iobj  d.label=coor-sp  d.side=right  d:grup-sp.lemma=a|para  d:grup-sp:sn.tonto=Human  d:sn.tonto!=Building|Place  p.class=ditr|viobj
+grup-verb-inf  iobj  d.label=coor-sp  d.side=right  d:grup-sp.lemma=a|para  d:grup-sp:sn.tonto=Human  d:sn.tonto!=Building|Place  p.class=ditr|viobj
+subord-ger  iobj  d.label=coor-sp  d.side=right  d:grup-sp.lemma=a|para  d:grup-sp:sn.tonto=Human  d:sn.tonto!=Building|Place  p.class=ditr|viobj
+subord-part  iobj  d.label=coor-sp  d.side=right  d:grup-sp.lemma=a|para  d:grup-sp:sn.tonto=Human  d:sn.tonto!=Building|Place  p.class=ditr|viobj
 
 %Noms propis%
 %Nomes s'aplica si s'ha activat el reconeixedor de NE
@@ -5050,13 +4995,11 @@ grup-verb-inf  sp-obj  d.label=grup-sp|grup-sp-inf  d.side=right  d.lemma=a|al  
 subord-ger  sp-obj  d.label=grup-sp|grup-sp-inf  d.side=right  d.lemma=a|al  d:sn.tonto!=Human  p.class=ditr|vp-a
 subord-part  sp-obj  d.label=grup-sp|grup-sp-inf  d.side=right  d.lemma=a|al  d:sn.tonto!=Human  p.class=ditr|vp-a
 
-
 grup-verb  sp-obj  d.label=coor-sp  d.side=right  d:grup-sp.lemma=a|al  d:grup-sp:sn.tonto!=Human  p.class=ditr|vp-a
 verb-pass  sp-obj  d.label=coor-sp  d.side=right  d:grup-sp.lemma=a|al  d:grup-sp:sn.tonto!=Human  p.class=ditr|vp-a
 grup-verb-inf  sp-obj  d.label=coor-sp  d.side=right  d:grup-sp.lemma=a|al  d:grup-sp:sn.tonto!=Human  p.class=ditr|vp-a
 subord-ger  sp-obj  d.label=coor-sp  d.side=right  d:grup-sp.lemma=a|al  d:grup-sp:sn.tonto!=Human  p.class=ditr|vp-a
 subord-part  sp-obj  d.label=coor-sp  d.side=right  d:grup-sp.lemma=a|al  d:grup-sp:sn.tonto!=Human  p.class=ditr|vp-a
-
 
 %%% ARGUMENTS PREPOSICIONALS DE VERBS DE MOVIMENT AMB PREPOSICIO "a" %%%
 grup-verb  sp-obj  d.label=grup-sp|grup-sp-inf  d.side=right  d.lemma=a|al|para|hacia  p.class=mov
@@ -5070,18 +5013,6 @@ verb-pass  sp-obj  d.label=coor-sp  d.side=right  d:grup-sp.lemma=a|para|hacia  
 grup-verb-inf  sp-obj  d.label=coor-sp  d.side=right  d:grup-sp.lemma=a|para|hacia  p.class=mov
 subord-ger  sp-obj  d.label=coor-sp  d.side=right  d:grup-sp.lemma=a|para|hacia  p.class=mov
 subord-part  sp-obj  d.label=coor-sp  d.side=right  d:grup-sp.lemma=a|para|hacia  p.class=mov
-
-%grup-verb  cc  d.label=grup-sp|grup-sp-inf  d.side=right  d.lemma=a|al|para|hacia  p.class=mov
-%verb-pass  cc  d.label=grup-sp|grup-sp-inf  d.side=right  d.lemma=a|al|para|hacia  p.class=mov
-%grup-verb-inf  cc  d.label=grup-sp|grup-sp-inf  d.side=right  d.lemma=a|al|para|hacia  p.class=mov
-%subord-ger  cc  d.label=grup-sp|grup-sp-inf  d.side=right  d.lemma=a|al|para|hacia  p.class=mov
-%subord-part  cc  d.label=grup-sp|grup-sp-inf  d.side=right  d.lemma=a|al|para|hacia  p.class=mov
-
-%grup-verb  cc  d.label=coor-sp  d.side=right  d:grup-sp.lemma=a|para|hacia  p.class=mov
-%verb-pass  cc  d.label=coor-sp  d.side=right  d:grup-sp.lemma=a|para|hacia  p.class=mov
-%grup-verb-inf  cc  d.label=coor-sp  d.side=right  d:grup-sp.lemma=a|para|hacia  p.class=mov
-%subord-ger  cc  d.label=coor-sp  d.side=right  d:grup-sp.lemma=a|para|hacia  p.class=mov
-%subord-part  cc  d.label=coor-sp  d.side=right  d:grup-sp.lemma=a|para|hacia  p.class=mov
 
 %%% ARGUMENTS PREPOSICIONALS AMB PREPOSICIO "acerca" %%%
 grup-verb  sp-obj  d.label=grup-sp|grup-sp-inf  d.side=right  d.lemma=acerca  p.class=vp-acerca
@@ -5336,7 +5267,6 @@ subord-part  ador  d.label=grup-sp|sp-de|grup-sp-inf  d.class=dmark
 
 %%% ADJUNT ORACIONAL: SUBORDINADA FINITA ADVERBIAL %%%
 grup-verb  ador  d.label=subord  d.class=dmark
-%% grup-verb  ador  d.label=conj-subord %% PRUEBA XXX
 verb-pass  ador  d.label=subord  d.class=dmark
 grup-verb-inf  ador  d.label=subord  d.class=dmark
 grup-verb-inf  ador  d.label=subord  d.class=dmark
@@ -5570,7 +5500,6 @@ inf-pas  aux  d.label=parti-flex
 grup-verb-inf  aux  d.label=parti-flex
 verb-pass  aux  d.label=parti-ser
 inf-pass  aux  d.label=parti-ser
-subord grup-verb d.label=vaux
 
 %%% PRONOM REFLEXIU/MORFEMA PRONOMINAL/MORFEMA VERBAL "es" %%%
 grup-verb  es  d.label=morf-pron
@@ -5582,7 +5511,6 @@ subord-ger  es  d.label=morfema-verbal
 grup-verb  es  d.label=PP3CN000
 grup-verb-inf  es  d.label=PP3CN000
 subord-ger  es  d.label=PP3CN000
-%% grup-verb-inf dobj d.label=PP3CNA00
 
 %%% COORDINACIO: TERMES COORDINATS %%%
 coor-vb  co-v  d.label=grup-verb

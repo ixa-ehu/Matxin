@@ -1,5 +1,8 @@
 freelingesnecdir = $(pkgdatadir)/freeling/es/ner
-freelingesnec_DATA = ner.abm \
+freelingesnec_DATA = function.dat \
+		     ner-ab.dat \
+		     ner.abm \
 		     ner.lex \
 		     ner.rgf \
-		     ner.dat
+		     ner.svm \
+		     ner-dat.dat

@@ -521,7 +521,7 @@ wstring procSENTENCE (xmlTextReaderPtr reader, config &cfg)
 
 int main(int argc, char *argv[])
 {
-  config cfg(argv);
+  config cfg(argc, argv);
 
   // Output in the locale's encoding
   locale::global(locale(""));

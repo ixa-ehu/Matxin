@@ -1,3 +1,9 @@
+## Type of NE recognizer (basic/BIO). Changing this value will require
+## changing some sections in the rest of the file
+<Type>
+basic
+</Type>
+
 ## list of words that may be included in a Named Entity
 ## e.g.  "Bank of England"  "Foundation for the Research of Important Things"
 <FunctionWords>
@@ -27,11 +33,20 @@ Fat
 </SpecialPunct>
 ## Tag to be assigned to detected NEs
 <NE_Tag>
-NNP
+NP
 </NE_Tag>
 <TitleLimit>
 0
 </TitleLimit>
+<RE_DateNumPunct>
+(^[FZ]|^W$)
+</RE_DateNumPunct>
+<Affixes>
+mr.  PRE
+mrs. PRE
+jr. SUF
+sr. SUF
+</Affixes>
 <Ignore>
 i 0
 english 0

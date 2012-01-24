@@ -7,7 +7,7 @@
 *    # word).
 *    # Rules can only change sounds to sounds, and categories to categories.
 *    # If a category is to be changed to another category, they should be
-*    # the same length. Otherwise the second category will have its laster
+*    # the same length. Otherwise the second category will have its last
 *    # letter repeated until it has the same length as the first (if it is
 *    # shorter), or characters in the second category that don't match
 *    # characters in the first will not be produced by such a range. Note
@@ -25,14 +25,14 @@
 * Variables
 *
 * vowels, long, short
-U=áéíóú
-V=aeëou
-Z=aeëou
+U=Ã¡Ã©Ã­Ã³Ãº
+V=aeÃ«ou
+Z=aeÃ«ou
 L=aou
-S=eë
+S=eÃ«
 
 * consonants
-C=bcdfghjklmnpqrstvwxyzç+$ñ
+C=bcdfghjklmnpqrstvwxyzÃ§+$Ã±
 
 *
 * Rules
@@ -41,7 +41,7 @@ C=bcdfghjklmnpqrstvwxyzç+$ñ
 
 * remove the pesky accents
 U/V/_
-i/ë/_
+i/Ã«/_
 
 * the f****** r
 r/4/_
@@ -49,12 +49,13 @@ r/4/_
 4/r/#_
 
 * get rid of some digraphs
-ch/ç/_
+ch/Ã§/_
 qu/k/_S
 qu/ku/_L
-qü/ku/_
+qÃ¼/ku/_
 ph/f/_
 ll/ll/_
+y/ll/_
 
 * Long/short vowels problmes
 c/+/_S
@@ -65,7 +66,7 @@ g/x/_S
 * get rid of some digraphs
 gu/g/_S
 gu/gu/_
-gü/gu/_
+gÃ¼/gu/_
 
 
 
@@ -74,10 +75,11 @@ z/+/_
 h//_
 v/b/_
 j/x/_
-y/ë/_
+y/Ã«/_
 q/k/_
-ñ/J/_
+Ã±/J/_
 
-V/Z/_
-C/C/_
+*** commented out.
+*** V/Z/_
+*** C/C/_
 

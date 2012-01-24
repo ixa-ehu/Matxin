@@ -32,6 +32,8 @@
 
 using namespace std;
 
+wofstream fitx_sar;
+wofstream fitx_irt;
 
 wstring lem(wstring nodo)
 {
@@ -447,6 +449,10 @@ wstring procCHUNK(xmlTextReaderPtr reader)
     wstring AS_source = get_AS_source(patterns, chunkSUB, chunkOBJ,
                                       chunkZOBJ, chunkTrans, head_pos);
     wstring AS_target = apply_verbTransference(AS_source);
+    fitx_sar << AS_source << endl;
+    fitx_irt << AS_target << endl;
+    //wcerr << AS_source << endl << AS_target << endl << endl;
+
     if ((separator = AS_target.find(L"&")) != wstring::npos)
     {
       chunkTrans = AS_target.substr(1, separator - 2);
@@ -537,12 +543,16 @@ wstring procSENTENCE (xmlTextReaderPtr reader)
 
 int main(int argc, char *argv[])
 {
-  config cfg(argv);
+  config cfg(argc, argv);
 
   // Output in the locale's encoding
   locale::global(locale(""));
 
   init_verbTrasference(cfg.Verb_TransferFile, cfg.DoVerbTrace);
+
+  fitx_sar.open("/sc04a2/users/jiblaing/verb_trans.sar", wofstream::out);
+  fitx_irt.open("/sc04a2/users/jiblaing/verb_trans.irt", wofstream::out);
+
 
   while (true)
   {
@@ -613,5 +623,8 @@ int main(int argc, char *argv[])
     if (!ioredirect.serverOK())
       break;
   }
+
+  fitx_sar.close();
+  fitx_irt.close();
 }
 

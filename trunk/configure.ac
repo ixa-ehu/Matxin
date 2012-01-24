@@ -36,6 +36,7 @@ m4_define([required_libpcre_version], [6.4])
 # Our configure script should create Makefiles
 #
 AM_INIT_AUTOMAKE([-Wall -Werror foreign])
+#AM_INIT_AUTOMAKE
 AM_CONFIG_HEADER([config.h])
 
 #
@@ -106,6 +107,30 @@ AM_CONDITIONAL(USE_EN, test "$use_en" = "yes")
 #
 # Define include/libs options
 #
+AC_ARG_WITH(boost,
+            [AS_HELP_STRING([--with-boost=DIR],
+                            [Look for boost include/libs in DIR])],
+            [ case "$withval" in
+               no)
+                 ;;
+               *)
+                 CPPFLAGS="-I$withval/include $CPPFLAGS"
+                 LDFLAGS="-L$withval/lib $LDFLAGS"
+                 ;;
+              esac ])
+
+AC_ARG_WITH(foma,
+            [AS_HELP_STRING([--with-foma=DIR],
+                            [Look for foma include/libs in DIR])],
+            [ case "$withval" in
+               no)
+                 ;;
+               *)
+                 CPPFLAGS="-I$withval/include $CPPFLAGS"
+                 LDFLAGS="-L$withval/lib $LDFLAGS"
+                 ;;
+              esac ])
+
 AC_ARG_WITH(freeling,
             [AS_HELP_STRING([--with-freeling=DIR],
                             [Look for freeling include/libs in DIR])],
@@ -127,32 +152,33 @@ AC_ARG_WITH(lttoolbox,
                *)
                  CPPFLAGS="-I$withval/include/lttoolbox-3.2 $CPPFLAGS"
                  LDFLAGS="-L$withval/lib $LDFLAGS"
+		 PKG_CONFIG_PATH=$withval/lib/pkgconfig
                  ;;
               esac ])
 
-AC_ARG_WITH(fries,
-            [AS_HELP_STRING([--with-fries=DIR],
-                            [Look for libfries include/libs in DIR])],
-            [ case "$withval" in
-               no)
-                 ;;
-               *)
-                 CPPFLAGS="-I$withval/include $CPPFLAGS"
-                 LDFLAGS="-L$withval/lib $LDFLAGS"
-                 ;;
-              esac ])
+dnl AC_ARG_WITH(fries,
+dnl             [AS_HELP_STRING([--with-fries=DIR],
+dnl                             [Look for libfries include/libs in DIR])],
+dnl             [ case "$withval" in
+dnl                no)
+dnl                  ;;
+dnl                *)
+dnl                  CPPFLAGS="-I$withval/include $CPPFLAGS"
+dnl                  LDFLAGS="-L$withval/lib $LDFLAGS"
+dnl                  ;;
+dnl               esac ])
 
-AC_ARG_WITH(omlet,
-            [AS_HELP_STRING([--with-omlet=DIR],
-                            [Look for libomlet include/libs in DIR])],
-            [ case "$withval" in
-               no)
-                 ;;
-               *)
-                 CPPFLAGS="-I$withval/include $CPPFLAGS"
-                 LDFLAGS="-L$withval/lib $LDFLAGS"
-                 ;;
-              esac ])
+dnl AC_ARG_WITH(omlet,
+dnl             [AS_HELP_STRING([--with-omlet=DIR],
+dnl                             [Look for libomlet include/libs in DIR])],
+dnl             [ case "$withval" in
+dnl                no)
+dnl                  ;;
+dnl                *)
+dnl                  CPPFLAGS="-I$withval/include $CPPFLAGS"
+dnl                  LDFLAGS="-L$withval/lib $LDFLAGS"
+dnl                  ;;
+dnl               esac ])
 
 AC_ARG_WITH(libxml2,
             [AS_HELP_STRING([--with-libxml2=DIR],
@@ -166,17 +192,17 @@ AC_ARG_WITH(libxml2,
                  ;;
               esac ])
 
-AC_ARG_WITH(libcfg,
-            [AS_HELP_STRING([--with-libcfg=DIR],
-                            [Look for libcfg+ include/libs in DIR])],
-            [ case "$withval" in
-               no)
-                 ;;
-               *)
-                 CPPFLAGS="$CPPFLAGS -I$withval/include"
-                 LDFLAGS="$LDFLAGS -L$withval/lib"
-                 ;;
-              esac ])
+dnl AC_ARG_WITH(libcfg,
+dnl             [AS_HELP_STRING([--with-libcfg=DIR],
+dnl                             [Look for libcfg+ include/libs in DIR])],
+dnl             [ case "$withval" in
+dnl                no)
+dnl                  ;;
+dnl                *)
+dnl                  CPPFLAGS="$CPPFLAGS -I$withval/include"
+dnl                  LDFLAGS="$LDFLAGS -L$withval/lib"
+dnl                  ;;
+dnl               esac ])
 
 AC_ARG_WITH(pcre,
             [AS_HELP_STRING([--with-pcre=DIR],
@@ -318,14 +344,44 @@ then
   AC_MSG_ERROR([lt-comp not found. You may want to adjust your PATH.])
 fi
 
-AC_PATH_PROG(INDEXDICT, indexdict, no)
-if test x$ac_cv_path_INDEXDICT = x
+AC_PATH_PROG(DICC2PHON, dicc2phon, no)
+if test x$ac_cv_path_DICC2PHON = x
 then
-  AC_MSG_ERROR([indexdict not found. You may want to adjust your PATH.])
+  AC_MSG_ERROR([dicc2phon not found. You may want to adjust your PATH.])
 fi
-if test x$ac_cv_path_INDEXDICT = xno
+if test x$ac_cv_path_DICC2PHON = xno
 then
-  AC_MSG_ERROR([indexdict not found. You may want to adjust your PATH.])
+  AC_MSG_ERROR([dicc2phon not found. You may want to adjust your PATH.])
+fi
+
+AC_PATH_PROG(CONVERTDICT, convertdict, no)
+if test x$ac_cv_path_CONVERTDICT = x
+then
+  AC_MSG_ERROR([convertdict not found. You may want to adjust your PATH.])
+fi
+if test x$ac_cv_path_CONVERTDICT = xno
+then
+  AC_MSG_ERROR([convertdict not found. You may want to adjust your PATH.])
+fi
+
+AC_PATH_PROG(COMPILEKB, compile_kb, no)
+if test x$ac_cv_path_COMPILEKB = x
+then
+  AC_MSG_ERROR([compile_kb not found. You may want to adjust your PATH.])
+fi
+if test x$ac_cv_path_COMPILEKB = xno
+then
+  AC_MSG_ERROR([compile_kb not found. You may want to adjust your PATH.])
+fi
+
+AC_PATH_PROG(FOMA, foma, no)
+if test x$ac_cv_path_FOMA = x
+then
+  AC_MSG_ERROR([foma not found. You may want to adjust your PATH.])
+fi
+if test x$ac_cv_path_FOMA = xno
+then
+  AC_MSG_ERROR([foma not found. You may want to adjust your PATH.])
 fi
 
 
@@ -333,6 +389,7 @@ fi
 # Checks for libraries.
 #
 AC_CHECK_LIB(boost_filesystem, main, [true],AC_MSG_ERROR([boost_filesystem found]))
+AC_CHECK_LIB(foma, main, [true],AC_MSG_ERROR([foma found]))
 
 PKG_CHECK_MODULES(MATXIN, [dnl
  lttoolbox-3.2 >= required_lttoolbox_version dnl

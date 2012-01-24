@@ -4,13 +4,13 @@ CppIORedirectHandler::CppIORedirectHandler(const config &cfg):cin_buffer(NULL), 
 {
   if (ok)
   {
-    ifs = new std::ifstream(cfg.InPipe);
+    ifs = new std::ifstream(cfg.InPipe.c_str());
     if (ifs->fail())
     {
       std::cerr << "Cannot open in pipe (" << cfg.InPipe << "). Reverting to Stdio." << std::endl;
       ok = false;
     }
-    ofs = new std::ofstream(cfg.OutPipe);
+    ofs = new std::ofstream(cfg.OutPipe.c_str());
     if (ofs->fail())
     {
       std::cerr << "Cannot open out pipe (" << cfg.OutPipe << "). Reverting to Stdio." << std::endl;
@@ -53,13 +53,13 @@ Fd0WcoutRedirectHandler::Fd0WcoutRedirectHandler(const config &cfg):original_std
   {
     // open input and output pipes
     // open pipe in stdin file descriptor
-    pipe_fd = open(cfg.InPipe, 0);
+    pipe_fd = open(cfg.InPipe.c_str(), 0);
     if (-1 == pipe_fd)
     {
       std::cerr << "Cannot open in pipe (" << cfg.InPipe << "). Reverting to Stdio." << std::endl;
       ok = false;
     }
-    ofs = new std::wofstream(cfg.OutPipe);
+    ofs = new std::wofstream(cfg.OutPipe.c_str());
     if (ofs->fail())
     {
       std::cerr << "Cannot open out pipe (" << cfg.OutPipe << "). Reverting to Stdio." << std::endl;

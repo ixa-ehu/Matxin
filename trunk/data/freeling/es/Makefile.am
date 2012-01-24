@@ -1,8 +1,9 @@
-SUBDIRS = dep nec ner corrector coref
+SUBDIRS = coref corrector dep nec ner
 
 freelingesdir = $(pkgdatadir)/freeling/es
-freelinges_DATA =  constr_gram.dat \
-                   dicc.src.gz \
+freelinges_DATA =  afixos.dat \
+                   constr_gram.dat \
+                   dicc.src \
                    grammar.dat \
                    grammar-dep.dat \
                    grammar-full.dat \
@@ -11,10 +12,9 @@ freelinges_DATA =  constr_gram.dat \
                    np.dat \
                    probabilitats.dat \
                    quantities.dat \
-                   senses16.db \
-                   senses16.src \
+                   senses30.src \
                    splitter.dat \
-                   afixos.dat \
                    tagger.dat \
                    tags.dat \
-                   tokenizer.dat
+                   tokenizer.dat \
+                   wsd.dat

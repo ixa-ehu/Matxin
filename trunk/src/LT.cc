@@ -664,7 +664,7 @@ wstring procSENTENCE (xmlTextReaderPtr reader, config &cfg)
 
 int main(int argc, char *argv[])
 {
-  config cfg(argv);
+  config cfg(argc, argv);
 
   // This sets the C++ locale and affects to C and C++ locales.
   // wcout.imbue doesn't have any effect but the in/out streams use the proper encoding.
@@ -672,7 +672,7 @@ int main(int argc, char *argv[])
 
   // Hiztegi elebidunaren hasieraketa.
   // Parametro moduan jasotzen den fitxagia erabiltzen da hasieraketarako.
-  FILE *transducer = fopen(cfg.DictionaryFile, "r");
+  FILE *transducer = fopen(cfg.DictionaryFile.c_str(), "r");
   fstp.load(transducer);
   fclose(transducer);
   fstp.initBiltrans();

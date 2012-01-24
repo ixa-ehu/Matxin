@@ -724,79 +724,68 @@ struct replacement
 };
 
 
+struct fst{
+  struct fsm *net;
+  struct apply_handle *ah;
+};
+
 static struct
 {
 //  vector<pattern> patterns;
   bool traza;
-  vector<replacement> replacements;
+  vector<fst> tranducers;
 } verbTransference;
 
 
 void init_verbTrasference(string fileName, bool traza)
 {
-  ifstream fitx;
-  fitx.open(fileName.c_str());
+  fsm_read_binary_handle fsrh;
+  struct fsm *net;
 
   verbTransference.traza = traza;
 
-  string lerro;
-  while (getline(fitx, lerro))
-  {
-    size_t pos1 = lerro.find("\t");
-    if (pos1 == string::npos)
-      continue;
-    size_t pos2 = lerro.find("\t", pos1+1);
-    if (pos2 == string::npos)
-      continue;
-    size_t pos3 = lerro.find("\t", pos2+1);
-    if (pos3 == string::npos)
-      continue;
+  char * cstr = new char [fileName.size()+1];
+  strcpy (cstr, fileName.c_str());
 
-    replacement lag;
-    lag.left_context = lerro.substr(0, pos1);
-    lag.attrib = lerro.substr(pos1 + 1, pos2 - pos1 - 1);
-    lag.right_context = lerro.substr(pos2 + 1, pos3 - pos2 - 1);
-    lag.value = lerro.substr(pos3 + 1);
+  if (verbTransference.traza)
+    cerr << cstr << endl;
 
-    verbTransference.replacements.push_back(lag);
+  if ((fsrh = fsm_read_binary_file_multiple_init(cstr)) == NULL) {
+    perror("File error");
+    exit(EXIT_FAILURE);
   }
 
-  fitx.close();
+  fst transducer;
+  while ((net = fsm_read_binary_file_multiple(fsrh)) != NULL) {
+    transducer.net = net;
+    transducer.ah = apply_init(net);
+
+    verbTransference.tranducers.push_back(transducer);
+  }
+
 }
 
 wstring apply_verbTransference(wstring AS_source)
 {
-  string output = UtfConverter::toUtf8(AS_source);
+  string output;
+  string input = UtfConverter::toUtf8(AS_source);
+  
+  char * cstr = new char [input.size()+1];
+  strcpy (cstr, input.c_str());
 
-  for (size_t i = 0; i<verbTransference.replacements.size(); i++)
-  {
-    string pattern = "(" + verbTransference.replacements[i].left_context + ")" +
-                     verbTransference.replacements[i].attrib +
-                     verbTransference.replacements[i].right_context;
-    Reg_Ex regex = Reg_Ex(pattern.c_str());
+  vector<fst>::iterator it = verbTransference.tranducers.begin();
+  while (it != verbTransference.tranducers.end()) {
+    if (verbTransference.traza)
+      cerr << cstr << endl;
 
-    pattern = "(" + verbTransference.replacements[i].left_context +
-              verbTransference.replacements[i].attrib + ")" +
-              verbTransference.replacements[i].right_context;
-    Reg_Ex regex_2 = Reg_Ex(pattern.c_str());
+    cstr = apply_down(it->ah, cstr);
+    output = cstr;
 
-    if (regex.Search(output.c_str()) && regex_2.Search(output.c_str()))
-    {
-      string left_context = regex.Match(1);
-      string attrib = regex_2.Match(1);
-      if (verbTransference.traza)
-        cerr << output << endl << endl << pattern << endl;
+    if (verbTransference.traza)
+      cerr << output << endl << endl;
 
-      size_t attrib_pos = output.find(attrib);
-      // ez da egiaztatzen zerbait aurkitu duela adierazpen erregularraren
-      // emaitza denez segurutzat jotzen da.
-      string value = left_context + verbTransference.replacements[i].value;
-      output.replace(attrib_pos, attrib.size(), value);
-    }
+    it++;
   }
-
-  if (verbTransference.traza)
-    cerr << output << endl << endl << endl;
 
   return UtfConverter::fromUtf8(output);
 }

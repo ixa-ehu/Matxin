@@ -1,11 +1,10 @@
 
 ## macros to be used in RegExps rules
 <Macros>
-ALPHA      [^\]<>[(\.,";:?!¿¡«»'`)^@~|}{_/\\+=&$¤£¢¥#*+%\s\d\-]     
-ALPHANUM   [^\]<>[(\.,";:?!¿¡«»'`)^@~|}{_/\\+=&$¤£¢¥#*+%\s\-]
-NOALPHANUM [\]<>[(\.,";:?!¿¡«»'`)^@~|}{_/\\+=&$¤£¢¥#*+%\s\-]
-PARTNUM    [^\]<>[(";:?!¿¡«»'`)^@~|}{\s]
-OTHERS     [\]<>[(\.,";:?!¿¡«»'`)^@~|}{_/\\+=&$¤£¢¥#*+%\-]
+ALPHA	   [[:alpha:]]
+ALPHANUM   [[:alnum:]ÂºÂ°]
+SYMNUM     [\.:,_/\\=\*\+\-ÂºÂ°&$â‚¬Â£Â¢Â¥#%]
+OTHERS     .
 </Macros>
 
 ## Tokenization rules. They are applied in the order of definition.
@@ -26,15 +25,17 @@ INDEX_SEQUENCE  0  (\.{4,}|-{2,}|\*{2,}|_{2,}|/{2,})
 INITIALS1       1  ([A-Z](\.[A-Z])+)(\.\.\.)
 INITIALS2 	0  ([A-Z]\.)+
 TIMES           0  (([01]?[0-9]|2[0-4]):[0-5][0-9])
-NAMES_CODES	0  ({PARTNUM}*[0-9]{PARTNUM}*{ALPHANUM})
+NAMES_CODES	0  ({ALPHA}|{SYMNUM})*[0-9]({ALPHA}|[0-9]|{SYMNUM}+{ALPHANUM})*
 THREE_DOTS 	0  (\.\.\.)
 QUOTES	        0  (``|<<|>>|'')
+APOSTR_CAT      1  ([dD]')({ALPHA})
 MAILS 	        0  {ALPHANUM}+([\._]{ALPHANUM}+)*@{ALPHANUM}+([\._]{ALPHANUM}+)*
-URLS 	        0  ((mailto:|(news|http|https|ftp|ftps)://)\S+|^(www(\.\S+)+))
-KEEP_COMPOUNDS  0  {ALPHA}+(['_\-]{ALPHA}+)+
+URLS1  	        0  ((mailto:|(news|http|https|ftp|ftps)://)[\w\.\-]+|^(www(\.[\w\-]+)+))
+URLS2           1  ([\w\.\-]+\.(com|org|net))[\s]
+KEEP_COMPOUNDS  0  {ALPHA}+(['_\-\+]{ALPHA}+)+
 *ABREVIATIONS1  0  (({ALPHA}+\.)+)(?!\.\.)
 *ABREVIATIONS2  0  ({ALPHA}+\.)(?!\.\.)
-WORD            0  {ALPHANUM}+
+WORD            0  {ALPHANUM}+[\+]*
 OTHERS_C        0  {OTHERS}
 </RegExps>
 
@@ -47,7 +48,7 @@ abrev.
 a.c.
 adj.
 adm.
-admón.
+admÃ³n.
 afma.
 afmas.
 afmo.
@@ -72,7 +73,7 @@ caps.
 cg.
 cgo.
 cia.
-cía.
+cÃ­a.
 cit.
 co.
 col.
@@ -128,9 +129,9 @@ hnos.
 hros.
 ib.
 ibid.
-ibíd.
+ibÃ­d.
 id.
-íd.
+Ã­d.
 ilm.
 ilma.
 ilmas.
@@ -139,14 +140,14 @@ ilmos.
 iltre.
 inc.
 intr.
-ít.
+Ã­t.
 izq.
 izqda.
 izqdo.
 jr.
 jul.
 jun.
-lám.
+lÃ¡m.
 lda.
 ldo.
 lib.
@@ -154,10 +155,10 @@ lim.
 loc.
 ltd.
 ltda.
-#mar.
-máx.
+mar.
+mÃ¡x.
 may.
-mín.
+mÃ­n.
 mons.
 mr.
 mrs.
@@ -167,14 +168,14 @@ mtro.
 nov.
 ntra.
 ntro.
-núm.
+nÃºm.
 ob.
 obpo.
 oct.
 op.
-pág.
-págs.
-párr.
+pÃ¡g.
+pÃ¡gs.
+pÃ¡rr.
 pd.
 ph.
 pje.
@@ -185,7 +186,7 @@ pp.
 ppal.
 pral.
 prof.
-pról.
+prÃ³l.
 prov.
 ps.
 pta.
@@ -223,11 +224,11 @@ sto.
 sust.
 tech.
 tel.
-teléf.
+telÃ©f.
 telf.
 ten.
 tfono.
-tít.
+tÃ­t.
 tlf.
 ud.
 uds.

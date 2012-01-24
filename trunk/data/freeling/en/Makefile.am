@@ -1,8 +1,8 @@
-SUBDIRS = chunker dep nec corrector
+SUBDIRS = chunker corrector dep nec ner
 
 freelingendir = $(pkgdatadir)/freeling/en
-freelingen_DATA = constr_gram.dat \
-                  dicc.src.gz \
+freelingen_DATA = afixos.dat \
+                  dicc.src \
                   heufull.dat \
                   locucions.dat \
                   moneda.dat \
@@ -10,8 +10,8 @@ freelingen_DATA = constr_gram.dat \
                   np.dat \
                   probabilitats.dat \
                   quantities.dat \
-                  senses16.src \
+                  senses30.src \
                   splitter.dat \
-                  afixos.dat \
                   tagger.dat \
-                  tokenizer.dat
+                  tokenizer.dat \
+		  wsd.dat

@@ -1,12 +1,16 @@
-<ABModel>
+<Model>
 coref.abm
-</ABModel>
-
+</Model>
+<Classes>
+0 NO 1 YES
+</Classes>
 <SEMDB>
-SenseFile       ../senses16.db
-WNFile          ../../common/wn16.db                  
+SenseFile  ../senses30.src
+WNFile     ../../common/wn30.src
 </SEMDB>
-
 <MaxDistance>
 20
 </MaxDistance>
+<Features>
+0xFFFFFFFF
+<Features>

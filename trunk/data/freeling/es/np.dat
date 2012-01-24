@@ -1,5 +1,11 @@
+## Type of NE recognizer (basic/BIO). Changing this value will require
+## changing some sections in the rest of the file
+<Type>
+basic
+</Type>
+
 ## list of words that may be included in a Named Entity
-## e.g.  "Banco de EspaÒa"  "Pedro Villacasas de la Morena"
+## e.g.  "Banco de Espa√±a"  "Pedro Villacasas de la Morena"
 <FunctionWords>
 el
 la
@@ -37,38 +43,44 @@ Fat
 NP00000
 </NE_Tag>
 <TitleLimit>
-3
+0
 </TitleLimit>
+<Affixes>
+don PRE
+do√±a PRE
+sr.  PRE
+sra. PRE
+sras. PRE
+sres. PRE
+srs.  PRE
+srta. PRE
+jr. SUF
+</Affixes>
 <Names>
 amara
 asad
 blanca
 blanco
-bono
 bruce
 carmen
 china
 corriere
-esperanza
 giro
 herrera
-ir·n
-james
 junta
 mayor
-miren
-mirÛ
-parÌs
-pelÈ
-piquÈ
+mir√≥
+par√≠s
+pel√©
+piqu√©
 riera
 rojo
-santos
 soler
 time
 times
-uniÛ
+uni√≥
 zapatero
+miren
 </Names>
 <SplitMultiwords>
 no

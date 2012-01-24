@@ -75,7 +75,7 @@ FORMAT_TMP=/tmp/matxin-format.$$.xml
 XML_TMP=/tmp/matxin-translation.$$.xml
 
 # The Matxin translation pipe
-./$DE_FORMATER $FORMAT_TMP $INPUT_ABS | iconv -f utf-8 -t iso-8859-1 - | ./Analyzer $MATXIN_PARAM | iconv -f iso-8859-1 -t utf-8 - | ./LT $MATXIN_PARAM | ./ST_intra $MATXIN_PARAM | ./ST_inter --inter 1 $MATXIN_PARAM  | ./ST_prep $MATXIN_PARAM  | ./ST_inter --inter 2 $MATXIN_PARAM  | ./ST_verb $MATXIN_PARAM | ./ST_inter --inter 3 $MATXIN_PARAM  | ./SG_inter $MATXIN_PARAM | ./SG_intra $MATXIN_PARAM | ./MG $MATXIN_PARAM > $XML_TMP
+./$DE_FORMATER $FORMAT_TMP $INPUT_ABS | ./Analyzer $MATXIN_PARAM | ./LT $MATXIN_PARAM | ./ST_intra $MATXIN_PARAM | ./ST_inter --inter 1 $MATXIN_PARAM  | ./ST_prep $MATXIN_PARAM  | ./ST_inter --inter 2 $MATXIN_PARAM  | ./ST_verb $MATXIN_PARAM | ./ST_inter --inter 3 $MATXIN_PARAM  | ./SG_inter $MATXIN_PARAM | ./SG_intra $MATXIN_PARAM | ./MG $MATXIN_PARAM > $XML_TMP
 
 if [ "x" != "x$OUTPUT" ]; then
     ./reFormat $FORMAT_TMP $RE_FORMATER_PARAM < $XML_TMP > $OUTPUT_ABS
