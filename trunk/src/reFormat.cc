@@ -638,6 +638,7 @@ int main(int argc, char *argv[])
 {
   format file_format;
   bool mark_unknow = false;
+  bool prev_empty = true;
 
   locale::global(locale(""));
 
@@ -725,15 +726,19 @@ int main(int argc, char *argv[])
           }
           
           if (form != L"." && form != L"," && form != L":" && form != L";" &&
-              form != L"?" && form != L"!" && form != L")")
+              form != L"?" && form != L"!" && form != L")" && !prev_empty)
             wcout << L" ";
 
           if (mark_unknow && is_unknow)
             wcout << L"*";
 
           wcout << form;
-
+	  prev_empty = false;
         }
+	else {
+	  prev_empty = true;
+	}
+
         if (form == L"." || form == L"?" || form == L"!")
           upperCase = true;
         else
