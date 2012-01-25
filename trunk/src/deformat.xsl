@@ -440,7 +440,7 @@ void printBuffer(int ind=-1, string end_tag="", bool inWord=false)
       fputws(tag, formatfile);
 
       fputws(L" .\n", yyout);
-      offset += 2;
+      offset += 3;
       hasWrite_dot = false;
     }
 
