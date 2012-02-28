@@ -1,5 +1,5 @@
 <General>
-AllowBetweenMarkers 0
+AllowBetweenMarkers 1
 MaxWords 0
 </General>
 <Markers>
