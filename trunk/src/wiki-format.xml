@@ -6,7 +6,7 @@
     <output encoding="ISO-8859-1"/>
     <tag-name regexp='[^ \n\t\r]'/>
     <escape-chars regexp='[][\\/@&lt;&gt;^]'/>
-    <space-chars regexp='[ \n\t\r]*'/>
+    <space-chars regexp='[ \n\t\r$*]'/>
     <case-sensitive value="no"/>
   </options>
 
@@ -50,46 +50,48 @@
     </format-rule>
 
 
-
-
+<!-- Imagenes without caption-->
+    <format-rule type="empty" eos="no" priority="7">
+      <tag regexp='\[\[(Fitxategi|Archivo|File):[^\]]+(\|(thumb|thumbnail|frame|right|left|center|none|[0-9]+px))*\]\]'/>
+    </format-rule>
 
 
 <!-- bold & italic in wiki texts-->
-    <format-rule type="open" eos="no" name="italicbold" priority="9">
+    <format-rule type="open" eos="no" name="italicbold" priority="8">
       <tag regexp='[ \n\t\r]&apos;&apos;&apos;&apos;&apos;'/>
     </format-rule>
 
-    <format-rule type="open" eos="no" name="italicbold" priority="9">
+    <format-rule type="open" eos="no" name="italicbold" priority="8">
       <tag regexp='^&apos;&apos;&apos;&apos;&apos;'/>
     </format-rule>
 
-    <format-rule type="close" eos="no" name="italicbold" priority="9">
+    <format-rule type="close" eos="no" name="italicbold" priority="8">
       <tag regexp='&apos;&apos;&apos;&apos;&apos;'/>
     </format-rule>
 
 <!-- bold in wiki texts-->
-    <format-rule type="open" eos="no" name="bold" priority="10">
+    <format-rule type="open" eos="no" name="bold" priority="9">
       <tag regexp='[ \n\t\r]&apos;&apos;&apos;'/>
     </format-rule>
 
-    <format-rule type="open" eos="no" name="bold" priority="10">
+    <format-rule type="open" eos="no" name="bold" priority="9">
       <tag regexp='^&apos;&apos;&apos;'/>
     </format-rule>
 
-    <format-rule type="close" eos="no" name="bold" priority="10">
+    <format-rule type="close" eos="no" name="bold" priority="9">
       <tag regexp='&apos;&apos;&apos;'/>
     </format-rule>
 
 <!-- italic in wiki texts-->
-    <format-rule type="open" eos="no" name="italic" priority="11">
+    <format-rule type="open" eos="no" name="italic" priority="10">
       <tag regexp='[\t ]&apos;&apos;'/>
     </format-rule>
 
-    <format-rule type="open" eos="no" name="italic" priority="11">
+    <format-rule type="open" eos="no" name="italic" priority="10">
       <tag regexp='^&apos;&apos;'/>
     </format-rule>
 
-    <format-rule type="close" eos="no" name="italic" priority="11">
+    <format-rule type="close" eos="no" name="italic" priority="10">
       <tag regexp='&apos;&apos;'/>
     </format-rule>
 
@@ -97,12 +99,15 @@
 
 
 <!-- bulled and numerated lists in wiki texts-->
-    <format-rule type="empty" eos="no" priority="12">
+    <format-rule type="empty" eos="no" priority="11">
       <tag regexp='^[\*\#:;]+'/>
     </format-rule>
 
-
 <!-- simple links in wiki texts-->
+    <format-rule type="open" eos="no" name="link" inWord="yes" priority="12">
+      <tag regexp='\[\[(Fitxategi|Archivo|File):[^\]]+(\|(thumb|thumbnail|frame|right|left|center|none|[0-9]+px))*\|'/>
+    </format-rule>
+
     <format-rule type="open" eos="no" name="link" inWord="yes" priority="13">
       <tag regexp='\[\[[^\]]+\|'/>
     </format-rule>
@@ -114,7 +119,6 @@
     <format-rule type="close" eos="no" name="link" inWord="yes" priority="15">
       <tag regexp='\]\]'/>
     </format-rule>
-
 
     <format-rule type="open" eos="no" name="ext-link" inWord="yes" priority="16">
       <tag regexp='\[http:[^ ]+ '/>
