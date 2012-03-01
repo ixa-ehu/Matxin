@@ -52,7 +52,7 @@
 
 <!-- Imagenes without caption-->
     <format-rule type="empty" eos="no" priority="7">
-      <tag regexp='\[\[(Fitxategi|Archivo|File):[^\]]+(\|(thumb|thumbnail|frame|right|left|center|none|[0-9]+px))*\]\]'/>
+      <tag regexp='\[\[(Fitxategi|Archivo|File):[^\|\]]+(\|(thumb|thumbnail|frame|right|left|center|none|[0-9]+px))*\]\]'/>
     </format-rule>
 
 
@@ -104,10 +104,6 @@
     </format-rule>
 
 <!-- simple links in wiki texts-->
-    <format-rule type="open" eos="no" name="link" inWord="yes" priority="12">
-      <tag regexp='\[\[(Fitxategi|Archivo|File):[^\]]+(\|(thumb|thumbnail|frame|right|left|center|none|[0-9]+px))*\|'/>
-    </format-rule>
-
     <format-rule type="open" eos="no" name="link" inWord="yes" priority="13">
       <tag regexp='\[\[[^\]]+\|'/>
     </format-rule>
