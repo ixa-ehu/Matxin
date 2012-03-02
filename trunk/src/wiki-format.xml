@@ -1,97 +1,102 @@
 <?xml version="1.0" encoding="ISO-8859-1"?>
-<format name="txt">
+<format name="wiki">
   <options>
     <largeblocks size="8192"/>
     <input encoding="ISO-8859-1"/>
     <output encoding="ISO-8859-1"/>
-    <tag-name regexp='[^ \n\t\r]'/>
-    <escape-chars regexp='[][\\/@&lt;&gt;^]'/>
+    <tag-name regexp="[^ \n\t\r&gt;&lt;/]+"/>
+    <escape-chars regexp='[][^@\\/]'/>
     <space-chars regexp='[ \n\t\r$*]'/>
     <case-sensitive value="no"/>
   </options>
 
   <rules>
-    <format-rule type="close" eos="yes" name="quot" priority="1">
+    <format-rule type="comment" eos="no" priority="1">
+      <begin regexp='"&lt;!--"'/>
+      <end regexp='"--&gt;"'/>
+    </format-rule>
+
+    <format-rule type="close" eos="yes" name="quot" priority="2">
       <tag regexp='[&quot;&#x027;]\n'/>
     </format-rule>
 
-    <format-rule type="close" eos="no" name="quot" priority="1">
+    <format-rule type="close" eos="no" name="quot" priority="2">
       <tag regexp='[&quot;&#x027;]\r'/>
     </format-rule>
 
 <!-- Headlines in wiki texts-->
-    <format-rule type="open" eos="no" name="headline" priority="2">
+    <format-rule type="open" eos="no" name="headline" priority="3">
       <tag regexp='^=+'/>
     </format-rule>
 
-    <format-rule type="close" eos="yes" name="headline" priority="3">
+    <format-rule type="close" eos="yes" name="headline" priority="4">
       <tag regexp='=+[ \n\t\r]*(\r|\n|$)'/>
     </format-rule>
 
 
-    <format-rule type="empty" eos="yes" priority="4">
+    <format-rule type="empty" eos="yes" priority="5">
       <tag regexp='(("\n")|("\r\n"))+'/>
     </format-rule>
 
-    <format-rule type="open" eos="no" name="quot" priority="5">
+    <format-rule type="open" eos="no" name="quot" priority="6">
       <tag regexp='^[&quot;&#x027;]'/>
     </format-rule>
 
-    <format-rule type="open" eos="no" name="quot" priority="5">
+    <format-rule type="open" eos="no" name="quot" priority="6">
       <tag regexp='[ \n\t\r][&quot;&#x027;]'/>
     </format-rule>
 
-    <format-rule type="close" eos="no" name="quot" priority="6">
+    <format-rule type="close" eos="no" name="quot" priority="7">
       <tag regexp='[&quot;&#x027;][ \n\t\r]'/>
     </format-rule>
 
-    <format-rule type="close" eos="yes" name="quot" priority="6">
+    <format-rule type="close" eos="yes" name="quot" priority="7">
       <tag regexp='[&quot;&#x027;][.,:;]'/>
     </format-rule>
 
 
 <!-- Imagenes without caption-->
-    <format-rule type="empty" eos="no" priority="7">
+    <format-rule type="empty" eos="no" priority="8">
       <tag regexp='\[\[(Fitxategi|Archivo|File):[^\|\]]+(\|(thumb|thumbnail|frame|right|left|center|none|[0-9]+px))*\]\]'/>
     </format-rule>
 
 
 <!-- bold & italic in wiki texts-->
-    <format-rule type="open" eos="no" name="italicbold" priority="8">
+    <format-rule type="open" eos="no" name="italicbold" priority="9">
       <tag regexp='[ \n\t\r]&apos;&apos;&apos;&apos;&apos;'/>
     </format-rule>
 
-    <format-rule type="open" eos="no" name="italicbold" priority="8">
+    <format-rule type="open" eos="no" name="italicbold" priority="9">
       <tag regexp='^&apos;&apos;&apos;&apos;&apos;'/>
     </format-rule>
 
-    <format-rule type="close" eos="no" name="italicbold" priority="8">
+    <format-rule type="close" eos="no" name="italicbold" priority="9">
       <tag regexp='&apos;&apos;&apos;&apos;&apos;'/>
     </format-rule>
 
 <!-- bold in wiki texts-->
-    <format-rule type="open" eos="no" name="bold" priority="9">
+    <format-rule type="open" eos="no" name="bold" priority="10">
       <tag regexp='[ \n\t\r]&apos;&apos;&apos;'/>
     </format-rule>
 
-    <format-rule type="open" eos="no" name="bold" priority="9">
+    <format-rule type="open" eos="no" name="bold" priority="10">
       <tag regexp='^&apos;&apos;&apos;'/>
     </format-rule>
 
-    <format-rule type="close" eos="no" name="bold" priority="9">
+    <format-rule type="close" eos="no" name="bold" priority="10">
       <tag regexp='&apos;&apos;&apos;'/>
     </format-rule>
 
 <!-- italic in wiki texts-->
-    <format-rule type="open" eos="no" name="italic" priority="10">
+    <format-rule type="open" eos="no" name="italic" priority="11">
       <tag regexp='[\t ]&apos;&apos;'/>
     </format-rule>
 
-    <format-rule type="open" eos="no" name="italic" priority="10">
+    <format-rule type="open" eos="no" name="italic" priority="11">
       <tag regexp='^&apos;&apos;'/>
     </format-rule>
 
-    <format-rule type="close" eos="no" name="italic" priority="10">
+    <format-rule type="close" eos="no" name="italic" priority="11">
       <tag regexp='&apos;&apos;'/>
     </format-rule>
 
@@ -99,7 +104,7 @@
 
 
 <!-- bulled and numerated lists in wiki texts-->
-    <format-rule type="empty" eos="no" priority="11">
+    <format-rule type="empty" eos="no" priority="12">
       <tag regexp='^[\*\#:;]+'/>
     </format-rule>
 
@@ -132,8 +137,8 @@
       <tag regexp='"&lt;/ref"(" "[^&gt;]*)?"&gt;"'/>
     </format-rule>
 
-    <format-rule type="empty" eos="no" priority="25">
-      <tag regexp='\{\{[^\}]+\}\}'/>
+    <format-rule type="empty" eos="no" priority="27">
+      <tag regexp='\{\{[^\}\n]+\}\}'/>
     </format-rule>
 
     <format-rule type="empty" eos="yes" priority="50">

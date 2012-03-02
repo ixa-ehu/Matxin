@@ -576,7 +576,7 @@ void printBuffer()
 </xsl:choose>
 %}
 
-<xsl:if test="count(./rules/format-rule[@type='comment']) &gt; 1">
+<xsl:if test="count(./rules/format-rule[@type='comment']) &gt;= 1">
 <xsl:value-of select="string('%x')"/>
 <xsl:for-each select="./rules/format-rule[@type='comment']">
   <xsl:value-of select="string(' C')"/>
