@@ -134,7 +134,7 @@ CONSTRAINTS
 	(-1 {DetFem});
 
 %% Pre-verbal pronoun "le dijo"
-15.1 PP*
+30.0 PP*
 	(0 D*)
 	(1 VMI* or VMS* or VAI* or VAS* or VSI* or VSS*);
 

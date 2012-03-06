@@ -170,7 +170,7 @@ paton ==> PP3CNA00.	%lo: atribut: inespecificat
 morf-pron ==> P010S000 | P010P000 | P020S000 | P020P000.
 morf-pron ==> P03CN000.	%se-pronominal
 
-morfema-verbal ==> P0000000.	%se impersonal/passiu
+morfema-verbal ==> P00CN000.	%se impersonal/passiu
 grup-verb ==> morf-pron, +grup-verb.
 
 ptonic ==> PP1CSO00(mí).	%mí: cas oblic
@@ -817,6 +817,7 @@ verb ==> vaux, parti-aux, +forma-ger. %(ha estado cantando)
 
 %ha habido
 verb ==> vaux, +parti-aux.
+verb ==> VA*<estar>.
 
 %está cansado | están cantando ... temps verbals simples
 %verb ==> VA*<estar>, +parti-flex | VA*<estar>, +forma-ger.
@@ -825,7 +826,6 @@ verb ==> vaux, +parti-aux.
 verb-pass ==> vser, +parti-flex | vaux, parti-ser,+parti-flex. 
 
 grup-verb ==> +verb | +verb-pass.
-
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %PERÍFRASIS VERBALS
@@ -1085,7 +1085,7 @@ grup-nom-fp ==> espec-fp, +parti-fp.
 
 %%
 %% el indice  se calcula 
-%% el tager diu P0000000 ??
+%% el tager diu P0000000 ??  => ja no, ara diu P00CN000
 %%
 grup-verb ==> morfema-verbal, +grup-verb.
 grup-verb ==> morfema-verbal, patons, +grup-verb.
