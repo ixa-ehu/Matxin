@@ -168,9 +168,12 @@ define PaLe	     [ [ {.él.} "[" {PP3CSD00} "]" ] | [ {.le.} "[" {PP3CSD00} "]" 
 define PaOs	     [ [ {.tú.} "[" {PP2CP000} "]" ] | [ {.tú.} "[" {P020P000} "]" ] | [ {.os.} "[" {PP2CP000} "]" ] | [ {.os.} "[" {P020P000} "]" ] ];
 define PaNos	     [ [ {.yo.} "[" {PP1CP000} "]" ] | [ {.yo.} "[" {P010P000} "]" ] | [ {.nos.} "[" {PP1CP000} "]" ] 
 										     | [ {.nos.} "[" {P010P000} "]" ] ];
-define PaLos	     [ [ {.él.} "[" {PP3MPA00} "]" ] | [ {.los.} "[" {PP3MPA00} "]" ] ];
-define PaLas	     [ [ {.él.} "[" {PP3FPA00} "]" ] | [ {.los.} "[" {PP3FPA00} "]" ] ];
-define PaLes	     [ [ {.él.} "[" {PP3CPD00} "]" ] | [ {.les.} "[" {PP3CPD00} "]" ] ];
+!define PaLos	     [ [ {.él.} "[" {PP3MPA00} "]" ] | [ {.los.} "[" {PP3MPA00} "]" ] ];
+!define PaLas	     [ [ {.él.} "[" {PP3FPA00} "]" ] | [ {.los.} "[" {PP3FPA00} "]" ] ];
+!define PaLes	     [ [ {.él.} "[" {PP3CPD00} "]" ] | [ {.les.} "[" {PP3CPD00} "]" ] ];
+define PaLos	     [ [ {.él.} "[" {PP3MPA00} "]" ] | [ {.lo.} "[" {PP3MPA00} "]" ] ];
+define PaLas	     [ [ {.él.} "[" {PP3FPA00} "]" ] | [ {.lo.} "[" {PP3FPA00} "]" ] ];
+define PaLes	     [ [ {.él.} "[" {PP3CPD00} "]" ] | [ {.le.} "[" {PP3CPD00} "]" ] ];
 define PaSePost	     [ [ {.él.} "[" {PP3CN000} "]" ] | [ {.se.}  "[" {PP3CN000} "]" ] | [ {.se.} "[" {P03CN000} "]" ] ];
 define PaLoPost	     [ [ {.él.} "[" {PP3CNA00} "]" ] | [ {.lo.}  "[" {PP3CNA00} "]" ] ];
 
@@ -288,20 +291,20 @@ echo >> + Input   -> Output ;
 echo >> ======================================== ; 
 
 
-regex   [ [ "$" -> IrtEJ "$" || "#" AdKEJ   _ ] ]  ;
-regex   [ [ "$" -> IrtAR "$" || "#" AdKArr  _ ] ]  ;
+regex  [ [ "$" -> IrtEJ "$" || "#" AdKEJ   _ ] ]  ;
+regex  [ [ "$" -> IrtAR "$" || "#" AdKArr  _ ] ]  ;
 regex  [ [ "$" -> IrtP1 "$" || "#" AdKPer1 _ ] ]  ;
 regex  [ [ "$" -> IrtP2 "$" || "#" AdKPer2 _ ] ]  ;
 regex  [ [ "$" -> IrtP3 "$" || "#" AdKPer3 _ ] ]  ;
 regex  [ [ "$" -> IrtAR "$" || "#" AdKPer4 _ ] ]  ;
 
 
-regex   [ [ "$" -> IrtEJPas "$" || "#" AdKEJPas   _ ] ]  ;
+regex  [ [ "$" -> IrtEJPas "$" || "#" AdKEJPas   _ ] ]  ;
 regex  [ [ "$" -> IrtARPas "$" || "#" AdKArrPas  _ ] ]  ;
-regex [ [ "$" -> IrtP1Pas "$" || "#" AdKPer1Pas _ ] ]  ;
-regex [ [ "$" -> IrtP2Pas "$" || "#" AdKPer2Pas _ ] ]  ;
-regex [ [ "$" -> IrtP3Pas "$" || "#" AdKPer3Pas _ ] ]  ;
-regex [ [ "$" -> IrtARPas "$" || "#" AdKPer4Pas _ ] ]  ;
+regex  [ [ "$" -> IrtP1Pas "$" || "#" AdKPer1Pas _ ] ]  ;
+regex  [ [ "$" -> IrtP2Pas "$" || "#" AdKPer2Pas _ ] ]  ;
+regex  [ [ "$" -> IrtP3Pas "$" || "#" AdKPer3Pas _ ] ]  ;
+regex  [ [ "$" -> IrtARPas "$" || "#" AdKPer4Pas _ ] ]  ;
 
 
 echo >> + Ordezkapenak ;
@@ -938,7 +941,7 @@ echo >> + Save all transucer of the stack in one .fst fils
 echo >> ======================================== ; 
 
 
-save stack ./eseuVerbTransfer.fst
+save stack ./eseu_verb_transfer.fst
 
 echo  >> Bukatu du
 echo  >> Finish

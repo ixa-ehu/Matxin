@@ -1,15 +1,15 @@
-h! EN->EU Aditz Kateen Transferentziarako FST definizioa
+! EN->EU Aditz Kateen Transferentziarako FST definizioa
 
 
 echo >> Definizioak ; 
 
 !Karak barruan daudenak, espresio erregular bihurtzerakoan (konpilatzekoan) tratatzen dira, eta hemengoei ez zaie kasurik egiten.
 
-!define Alfabeto      [  a | b | c | d | e | f | g | h | i | j | k | l | m | n |
-!                        o | p | q | r | s | t | u | v | w | x | y | z ] ;
-!define AlfabetoLarri [  A | B | C | D | E | F | G | H | I | J | K | L | M | N |
-!                        O | P | Q | R | S | T | U | V | W | X | Y | Z ] ;
-!define Zifrak        [ %0 | 1 | 2 | 3 | 4 | 5 | 6 | 7 | 8 | 9 ] ;
+define Alfabeto      [  a | b | c | d | e | f | g | h | i | j | k | l | m | n |
+                        o | p | q | r | s | t | u | v | w | x | y | z ] ;
+define AlfabetoLarri [  A | B | C | D | E | F | G | H | I | J | K | L | M | N |
+                        O | P | Q | R | S | T | U | V | W | X | Y | Z ] ;
+define Zifrak        [ %0 | 1 | 2 | 3 | 4 | 5 | 6 | 7 | 8 | 9 ] ;
 define Karak         [ Alfabeto | AlfabetoLarri | Zifrak | "_" | "-" ] ;
 
 
@@ -23,9 +23,9 @@ define IMInf	     [ "[" [ {VB} "]" ] KarakPlus* ] ;
 define IMPar	     [ "[" [ {VBN} "]" ] KarakPlus* ] ;
 define IMGer	     [ "[" [ {VBG} "]" ] KarakPlus* ] ;
 
-<<<<<<< def_aditz_transf.aer
+!<<<<<<< def_aditz_transf.aer
 
->>>>>>> 1.22
+!>>>>>>> 1.22
 
 
 define IMJok	[ "[" [ {VB}|{VBD}|{VBZ}|{VBP}|{MD} ] "]" KarakPlusPar*  ];
@@ -83,29 +83,12 @@ define IrtARDo	 	[ XXX {ARDO}")" 	"<NAG>" {AspN}		"/" {NOT}  "/" {AdM} {AspM} "/
 
 echo >> + Sarrera->irteera ;
  
-define TransPatrEJ    [ 
-				[ "$" -> IrtEJ 		"$" || "#" AdKEJ   _ ] 
-]  ;
-
-define TransPatrArr   	[ 
-				[ "$" -> IrtAR 		"$" || "#" AdKArrSin _ ] 
-]  ;
-
-define TransPatrArrLag 	[ 
-				[ "$" -> IrtARLag 	"$" || "#" AdKArrLag _ ] 
-] ;
-
-define TransPatrArrDo 	[ 
-				[ "$" -> IrtARDo 	"$" || "#" AdKArrDo _ ] 
-] ;
-
-define TransPatrArrWil 	[ 
-				[ "$" -> IrtARWil 	"$" || "#" AdKArrWil _ ] 
-] ;
-
-define TransPatrArrWil 	[ 
-				[ "$" -> IrtARWilLag 	"$" || "#" AdKArrWilLag _ ] 
-] ;
+regex   [ [ "$" -> IrtEJ 	"$" || "#" AdKEJ   _ ] ]  ;
+regex 	[ [ "$" -> IrtAR 	"$" || "#" AdKArrSin _ ] ]  ;
+regex 	[ [ "$" -> IrtARLag 	"$" || "#" AdKArrLag _ ] ] ;
+regex	[ [ "$" -> IrtARDo 	"$" || "#" AdKArrDo _ ] ] ;
+regex	[ [ "$" -> IrtARWil 	"$" || "#" AdKArrWil _ ] ] ;
+regex 	[ [ "$" -> IrtARWilLag 	"$" || "#" AdKArrWilLag _ ] ] ;
 
 echo >> + TransPatr ;
 
@@ -122,7 +105,8 @@ define edunUkan [
 echo >> Trinkoetan: "/"{AdM}{AspM}"/"{AdL}  bihurtu [ADT]
 
 !!!!trinkoak
-define TransTrinkArr [ 
+!define TransTrinkArr [ 
+regex [
        [  {AspN} ?* "/" {AdL}  -> "[ADT]"	||  ?* [ VB ["]"|Z|P|D] ]  ?* AdTrinkoa ?* XXX {AR} %)  ?*  _ ?* ]
 ];
 
@@ -130,7 +114,8 @@ define TransTrinkArr [
 !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
 echo >> Aditz nagusiaren aspektua (AspN)
 
-define TransAspNEJ [ 
+!define TransAspNEJ [ 
+regex [
        [ {AspN} -> "ADIZE"	||  ?* IMInf		?*  XXX {EJ} ?* _ ?* ] 
        .o.##|
        [ {AspN} -> "INE"	||  ?* IMGer		?*  XXX {EJ} ?* _ ?* ] 
@@ -141,8 +126,9 @@ define TransAspNEJ [
 !       [ {AspN} -> "BURU"	||  ?* IMAdjPar		?*  XXX {EJ} ?* _ ?* ] 
 
 
-define TransAspNArr [ 
-       [ {AspN} -> "EZBU" ||  ?* [ VB ["]"|Z|P] ]				?*  XXX {AR} %) ?* _ ?*  ] 
+!define TransAspNArr [ 
+regex [
+             [ {AspN} -> "EZBU" ||  ?* [ VB ["]"|Z|P] ]				?*  XXX {AR} %) ?* _ ?*  ] 
        .o.##|
        [ {AspN} -> "BURU" ||  ?* [ VBD ]					?*  XXX {AR} %) ?* _ ?*  ] 
        .o.##|
@@ -156,31 +142,36 @@ define TransAspNArr [
 !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
 echo >> Ezezkoa ({EZ})
 
-define TransEZAldatu [
-       [ {NOT}	 	-> "ez[PRT][EGI]"		||   "#" ?* {XX%+} ?* XXX {ARDO} ?* _ ?* ]
+!define TransEZAldatu [
+regex [
+             [ {NOT}	 	-> "ez[PRT][EGI]"		||   "#" ?* {XX%+} ?* XXX {ARDO} ?* _ ?* ]
 ] ;
 
-define TransEZAldatuAL [
-       [ {NOT}	 	-> "al[PRT][ZIU]"		||   "#" ?* %+%+ ?* XXX {ARDO} ?* _ ?* ]
+!define TransEZAldatuAL [
+regex [
+             [ {NOT}	 	-> "al[PRT][ZIU]"		||   "#" ?* %+%+ ?* XXX {ARDO} ?* _ ?* ]
 ] ;
 
-define TransEZKendu [
-       [ "/" {NOT}	 	-> ""			||   "#" ?* XXX {ARDO} ?* _ ?* ]
+!define TransEZKendu [
+regex [
+             [ "/" {NOT}	 	-> ""			||   "#" ?* XXX {ARDO} ?* _ ?* ]
 ] ;
 
 !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
 echo >> Aditz modala eta bere aspektua (AdMod /AspM)
 
 
-define TransAdMAspMKendu1 [
-       [ "/" {AdM} {AspM} 	-> ""		||   "#" [ AdKArr ] ?* XXX {AR} ?* _ ?* ]
+!define TransAdMAspMKendu1 [
+regex [
+             [ "/" {AdM} {AspM} 	-> ""		||   "#" [ AdKArr ] ?* XXX {AR} ?* _ ?* ]
 ] ;
 
 !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
 echo >> Aditz laguntzailea (Bestelako kasuetan) ;
 
-define TransAdL [	
-        [ {AdL}    -> "edin<ADL>""[ADL]"	||   ?* [VMSP | VMSI | VMM] ?* [{DA} | {ZAIO}]  ?*  XXX ?* _ ?* ] 
+!define TransAdL [	
+regex [
+              [ {AdL}    -> "edin<ADL>""[ADL]"	||   ?* [VMSP | VMSI | VMM] ?* [{DA} | {ZAIO}]  ?*  XXX ?* _ ?* ] 
 	.o.##|
         [ {AdL}    -> "izan<ADL>""[ADL]"	||   ?* [{DA} | {ZAIO}]				?*  XXX ?* _ ?* ] 
 	.o.##|
@@ -192,8 +183,9 @@ define TransAdL [
 !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
 echo >> Denbora Modua (DenMod) ;
 
-define TransDenMod [	
-        [ {DenMod}    -> "[B1]"	||   ?*  VH0 ?*  IMPar	 			?*  XXX {ARWILLAG} %) 	?*  _ ?* ] 
+!define TransDenMod [	
+regex [
+              [ {DenMod}    -> "[B1]"	||   ?*  VH0 ?*  IMPar	 			?*  XXX {ARWILLAG} %) 	?*  _ ?* ] 
 	.o.##|
         [ {DenMod}    -> "[A1]"	||   ?* [ VB [ "]" | Z | P ] ]			?*  XXX {AR} [{LAG} | {WIL}]* %) ?*  _ ?* ] 
 	.o.##|
@@ -205,8 +197,9 @@ define TransDenMod [
 
 !        [ {Erl}    -> "+n[ERL][MEN][HELB]"	||   ?*  ["edin<ADL>" | "ezan<ADL>" ] ?* [ "[A1]" | "[A3]" | "[B2]"  | "[B5B]"] ?* _ ?* ] 
 !	.o.##|
-define ErlMorf [	
-        [ {Erl}    -> ""	                ||   ?* _ ?* ] 
+!define ErlMorf [	
+regex [
+              [ {Erl}    -> ""	                ||   ?* _ ?* ] 
 ] ;
 
 
@@ -216,8 +209,9 @@ echo >> Nor(Nr) Sub;
 !!!!!!SUB informazioa dugunean hurrengoa ona eta 00 duena kendu.
 !	[ {Nr}    -> "[NR_HU]"	|| ?* {sub3s} Karak	?* [ "izan<ADL>" | AdTrIntr ?* "[ADT]" | "edin<ADL>" ] ?*  _ ?* ] 
 !	.o.##| 
-define TransNrSub [	
-        [ {Nr}    -> "[NR_NI]"	|| ?* {sub1s} ?* [ "izan<ADL>" | AdTrIntr ?* "[ADT]" | "edin<ADL>" ] ?*  _ ?* ] 
+!define TransNrSub [	
+regex [
+              [ {Nr}    -> "[NR_NI]"	|| ?* {sub1s} ?* [ "izan<ADL>" | AdTrIntr ?* "[ADT]" | "edin<ADL>" ] ?*  _ ?* ] 
 	.o.##|
 	[ {Nr}    -> "[NR_ZU]"	|| ?* {sub2s} ?* [ "izan<ADL>" | AdTrIntr ?* "[ADT]" | "edin<ADL>" ] ?*  _ ?* ] 
 	.o.##| 
@@ -232,8 +226,9 @@ define TransNrSub [
 
 echo >> Nor(Nr) Obj;
 
-define TransNrObj [	
-        [ {Nr}    -> "[NR_NI]"	|| ?*  {obj1s}		?* [ "edun<ADL>" | AdTrTran ?* "[ADT]" | "ezan<ADL>" ]  ?*  _ ?* ] 
+!define TransNrObj [	
+regex [
+              [ {Nr}    -> "[NR_NI]"	|| ?*  {obj1s}		?* [ "edun<ADL>" | AdTrTran ?* "[ADT]" | "ezan<ADL>" ]  ?*  _ ?* ] 
 	.o.##|
 	[ {Nr}    -> "[NR_ZU]"	|| ?*  {obj2s}		?* [ "edun<ADL>" | AdTrTran ?* "[ADT]" | "ezan<ADL>" ]  ?*  _ ?* ] 
 	.o.##| 
@@ -251,8 +246,9 @@ define TransNrObj [
 
 echo >> Nori(Ni);
 
-define TransNi [	
-        [ {Ni}    -> "[NI_NI]"	||   ?* {dat1s} ?* _ ?* ] 
+!define TransNi [	
+regex [
+              [ {Ni}    -> "[NI_NI]"	||   ?* {dat1s} ?* _ ?* ] 
 	.o.##|
 	[ {Ni}    -> "[NI_ZU]"	||   ?* {dat2s} ?* _ ?* ] 
 	.o.##| 
@@ -273,8 +269,9 @@ echo >> Nork(Nk);
 !!!!!!SUB informazioa dugunean hurrengoa ona eta 00 duena kendu.
 !	[ {Nk}    -> "[NK_HU]"	||    ?* {sub3s} ?* [ "edun<ADL>" | AdTrTran ?* "[ADT]" | "ezan<ADL>" ] ?*    _ ?* ]
 !	.o.##| 
-define TransNk [	
-        [ {Nk}    -> "[NK_NI]"	||    ?* {sub1s} ?* [ "edun<ADL>" | AdTrTran ?* "[ADT]" | "ezan<ADL>" ] ?*    _ ?* ] 
+!define TransNk [	
+regex [
+              [ {Nk}    -> "[NK_NI]"	||    ?* {sub1s} ?* [ "edun<ADL>" | AdTrTran ?* "[ADT]" | "ezan<ADL>" ] ?*    _ ?* ] 
 	.o.##|
 	[ {Nk}    -> "[NK_ZU]"	||    ?* {sub2s} ?* [ "edun<ADL>" | AdTrTran ?* "[ADT]" | "ezan<ADL>" ] ?*    _ ?* ]
 	.o.##| 
@@ -295,8 +292,9 @@ define TransNk [
 echo >>  Aspektuak osatu ;
 
 
-define TransAspOsatu [  		     		     		     		     
-       [  "PART"   -> "[ADI][SIN]+[AMM][PART]" ]				     #!!#
+!define TransAspOsatu [  		     		     		     		     
+regex [
+             [  "PART"   -> "[ADI][SIN]+[AMM][PART]" ]				     #!!#
        .o.								     
        [  "ADOIN"  -> "[ADI][SIN]+[AMM][ADOIN]" ]				     #!!#
        .o.								     
@@ -324,8 +322,9 @@ define TransAspOsatu [
 ];
 
 
-define ukanIzan [
-		      [ "ukan" -> "izan" || ?* _ XXX ?* "<""NAG"">""[""ADI""]""[""SIN""]" ?* ]
+!define ukanIzan [
+regex [
+      		      [ "ukan" -> "izan" || ?* _ XXX ?* "<""NAG"">""[""ADI""]""[""SIN""]" ?* ]
 		      .o.
 		      [ "ukan" -> "izan" || ?* _ XXX ?* "<""NAG"">""[""ADI""]""[""SIN""]" ?* ]
 
@@ -335,14 +334,16 @@ define ukanIzan [
 !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
 echo >> Irteera garbitzeko;
 
-define TransIrteera1 [
-		      [ "#" ?* "&" ?* "&" -> "" ]
+!define TransIrteera1 [
+regex [
+      		      [ "#" ?* "&" ?* "&" -> "" ]
 		      .o.
 		      [ XXX  ?* ")"		 -> "" ]
 		    ];	
 
-define TransIrteera2 [
-		      [ "$"			-> ""	]
+!define TransIrteera2 [
+regex [
+      		      [ "$"			-> ""	]
 		      .o.
 		      [ "#"			-> ""	]
 		    ];
@@ -351,5 +352,20 @@ define TransIrteera2 [
 
 
 
+
+!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+
 echo 
-echo >> + Automatak gorde
+echo >> + Automata guztiak .fst bakar bateank gorde
+echo >> + Save all transucer of the stack in one .fst fils
+echo >> ======================================== ; 
+
+
+save stack ./eneu_verb_transfer.fst
+
+echo  >> Bukatu du
+echo  >> Finish
+echo >> ======================================== ; 
