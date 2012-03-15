@@ -917,7 +917,7 @@ inf ==>infaux, VMP00SM(podido), +infinitiu.
 inf ==>infaux, VMP00SM(solido), +infinitiu.
 
 %Perífrasis de gerundi en infinitiu
-inf ==>VMN0000(estar), +gerundi.
+inf ==>VAN0000(estar), +gerundi.
 inf ==>VMN0000(acabar), +gerundi.
 inf ==>VMN0000(andar), +gerundi.
 inf ==>VMN0000(comenzar), +gerundi.
@@ -995,7 +995,7 @@ verb ==> VMI*<echarse>, SPS00(a), +infinitiu | VMS*<echarse>, SPS00(a), +infinit
 verb ==> VMI*<romper>, SPS00(a), +infinitiu | VMS*<romper>, SPS00(a), +infinitiu.
 verb ==> VMI*<volver>, SPS00(a), +infinitiu | VMS*<volver>, SPS00(a), +infinitiu.
 verb ==> VMI*<acostumbrar>, SPS00(a), +infinitiu | VMS*<acostumbrar>, SPS00(a), +infinitiu.
-verb ==> VMI*<estar>, SPS00(a_punto_de), +infinitiu | VMS*<estar>, SPS00(a_punto_de), +infinitiu.
+verb ==> VAI*<estar>, SPS00(a_punto_de), +infinitiu | VAS*<estar>, SPS00(a_punto_de), +infinitiu.
 verb ==> VMI*<soler>, +infinitiu | VMS*<soler>, +infinitiu.
 verb ==> VMI*<acabar>, SPS00(de), +infinitiu | VMS*<acabar>, SPS00(de), +infinitiu.
 verb ==> VMI*<terminar>, SPS00(de), +infinitiu | VMS*<terminar>, SPS00(de), +infinitiu.
@@ -1009,7 +1009,7 @@ verb ==> VMI*<andar>, +gerundi | VMS*<andar>, +gerundi.
 verb ==> VMI*<comenzar>, +gerundi | VMS*<comenzar>, +gerundi.
 verb ==> VMI*<empezar>, +gerundi | VMS*<empezar>, +gerundi.
 verb ==> VMI*<continuar>, +gerundi | VMS*<continuar>, +gerundi.
-verb ==> VMI*<estar>, +gerundi | VMS*<estar>, +gerundi.
+verb ==> VAI*<estar>, +gerundi | VAS*<estar>, +gerundi.
 verb ==> VMI*<ir>, +gerundi | VMS*<ir>, +gerundi.
 verb ==> VMI*<llevar>, +gerundi | VMS*<llevar>, +gerundi.
 verb ==> VMI*<seguir>, +gerundi | VMS*<seguir>, +gerundi.

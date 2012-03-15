@@ -159,7 +159,7 @@ echo >> Espainierazko izenordainen definizioak;
 echo >> Spanish pronouns' definitions;
 
 !!! Hay que quitar estos comentarios. Dan problema por las tildes
-define PaSe	     [ [ {.se.} "[" {P0000000} "]" ] | [ {.él.} "[" {P0300000} "]" ] | [ {.se.} "[" {P03CN000} "]" ]];
+define PaSe	     [ [ {.se.} "[" {P00CN000} "]" ] | [ {.se.} "[" {P0000000} "]" ] | [ {.él.} "[" {P0300000} "]" ] | [ {.se.} "[" {P03CN000} "]" ]];
 define PaMe	     [ [ {.yo.} "[" {PP1CS000} "]" ] | [ {.yo.} "[" {P010S000} "]" ] | [ {.me.} "[" {PP1CS000} "]" ] | [ {.me.} "[" {P010S000} "]" ] ];
 define PaTe	     [ [ {.tú.} "[" {PP2CS000} "]" ] | [ {.tú.} "[" {P020S000} "]" ] | [ {.te.} "[" {PP2CS000} "]" ] | [ {.te.} "[" {P020S000} "]" ] ];
 define PaLo	     [ [ {.él.} "[" {PP3MSA00} "]" ] | [ {.lo.} "[" {PP3MSA00} "]" ] ];
@@ -437,13 +437,15 @@ regex [
 
 !define TransAspNArrPer3 [ 
 regex [
-       [ {AspN} -> "EZBU"  ||  ?* [ VMIP | VMII ]				?*  XXX [{AR}|{P3}] ?* _ ?*  ] 
+       [ {AspN} -> "EZBU"  ||  ?* [ VMIP | VMII ]			?*  XXX [{AR}|{P3}] ?* _ ?*  ] 
        .o.
-       [ {AspN} -> "BURU"  ||  ?* [ VMIS | VAIP | VAII | VAIS | VAIF | VASP ]	?*  XXX [{AR}|{P3}] ?* _ ?*  ] 
+       [ {AspN} -> "BURU"  ||  ?* [ VMIS | VAIP | VAII | VAIS | VASP ]	?*  XXX [{AR}|{P3}] ?* _ ?*  ] 
        .o.
-       [ {AspN} -> "GERO"  ||  ?* [ VMIF | VMIC | VAIC | VASI ]			?*  XXX [{AR}|{P3}] ?* _ ?*  ] 
+       [ {AspN} -> "GERO"  ||  ?* [ VMIF | VMIC | VAIC | VASI ]		?*  XXX [{AR}|{P3}] ?* _ ?*  ] 
        .o.
-       [ {AspN} -> "ADOIN" ||  ?* [ VMSP | VMSI | VMM ]				?*  XXX [{AR}|{P3}] ?* _ ?*  ] 
+       [ {AspN} -> "ADOIN" ||  ?* [ VMSP | VMSI | VMM ]			?*  XXX [{AR}|{P3}] ?* _ ?*  ] 
+       .o.
+       [ {AspN} -> "ABS" ||  ?*   [ VAIF]			 	?*  XXX [{AR}|{P3}] ?* _ ?*  ] 
 ] ;
 
 
@@ -454,6 +456,8 @@ regex [
 regex [
        [ {AspN} -> "HUR"  ||  ?* {.estar.} IM %+ {.a}"_"{punto}"_"{de.}				 ?* XXX {P1} ?*  _ ?*  ] 
        .o.
+       [ {AspN} -> "ALA"  ||  ?* {.ir.}	IM %+ {.a.}						 ?* XXX {P1} ?*  _ ?*  ] 
+       .o.
        [ {AspN} -> "EZBU" ||  ?* [ [{.empezar.}|{.comenzar.}|{.echar.}|{.romper.}] 	IM %+ {.a.}			      #...
 				    | {.terminar.}				   	IM %+ {.de.} 
 				    |  [ {.acabar.}|{.andar.}|{.comenzar.}|{.empezar.}
@@ -463,8 +467,6 @@ regex [
        .o.
        [ {AspN} -> "BURU" ||  ?* [[{.tener.}|{.haber.}] IM %+ {.que.}
 				    |{.haber.} IM %+ {.de.}|{.poder.}|{.deber.}]		 ?* XXX {P1} ?*  _ ?*  ] 
-       .o.
-       [ {AspN} -> "ALA"  ||  ?* {.ir.}	IM %+ {.a.}						 ?* XXX {P1} ?*  _ ?*  ] 
        .o.
        [ {AspN} -> "DAT"  ||  ?* {.dejar.} IM %+ {.de.}						 ?* XXX {P1} ?*  _ ?*  ] 
        .o.
@@ -514,7 +516,7 @@ regex [
 	.o.
 	[ {Per} -> {eraman}		||   ?* [ {.llevar.} ]							?*   _ ?* ]
 	.o.
-	[ {Per} -> {etorri}		||   ?* [ {.venir.} ]							?*   _ ?* ]
+	[ {Per} -> {etorri}		||   ?* [ {.venir.} ]						?*   _ ?* ]
 	.o.
 	[ {Per} -> {hasi}	  	||   ?* [ {.empezar.}|{.comenzar.}|{.echar.}|{.romper.} ]		?*   _ ?* ]
 	.o.
@@ -533,12 +535,20 @@ regex [
 !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
 echo >> Aditz perifrastiko (P1) trinkoak;
 
+!Aingeru. Adi: gehitu dut 
 !define TransTrinkPer [ 
-regex [
-	[ {AspP} ?* "/"{AdL}  -> "[ADT]" ||   ?* [VMIP | VMII] ?*  XXX {P1} ?* "/" AdTrinkoa "<"{PER}">" ?* _ ?* ] 
+
+regex [	[ {AspP} ?* "/"{AdL}  -> "[ADT]" ||   ?* [VMIP | VMII ] ?*  XXX {P1} ?* "/" AdTrinkoa "<"{PER}">" ?* _ ?* ] ];
+regex [	[ {AspP} ?* "/"{AdL}  -> "[ADT]" ||   ?* [VAIP | VAII ] ?*  XXX {P1} ?* "/" {egon} "<"{PER}">" ?* _ ?* ] ];
+
+!regex [
+!	[ {AspP} ?* "/"{AdL}  -> "[ADT]" ||   ?* [VMIP | VMII ] ?*  XXX {P1} ?* "/" AdTrinkoa "<"{PER}">" ?* _ ?* ] 
+!        |
+!	[ {AspP} ?* "/"{AdL}  -> "[ADT]" ||   ?* [VAIP | VAII ] ?*  XXX {P1} ?* "/" {egon} "<"{PER}">" ?* _ ?*    ]
+!
 !##    |
 !##    [ ~ [ ?* [VMIP | VMII] ?*  XXX {P1} ?* "/" AdTrinkoa "<"{PER}">" ?* {AspP} ?* "/"{AdL} ?* ] ]
-] ;
+!] ;
 
 !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
 echo >> Aditz perifrastikoetan (P1) aspektuaren (AspP) itzulpena;
@@ -613,7 +623,7 @@ regex [
 echo >> Aditz modala eta bere aspektua (AdMod /AspM)
 
 
-!! AINGERU: Adi: {aritu} gehitu dut
+!! AINGERU: Adi: {aritu}  gehitu dut
 
 
 !define TransAdMAspMKendu1 [
@@ -888,6 +898,8 @@ regex [
        [  "DAT"    -> "[ADI][SIN]+[AMM][ADIZE]+[DEK][DAT][NUMS]" ]	     #!!#
        .o.								    
        [  "INE"    -> "[ADI][SIN]+[AMM][ADIZE]+[DEK][INE]" ]		     #!!#
+       .o.								    
+       [  "ABS"    -> "[ADI][SIN]+[AMM][PART]+[DEK][ABS][NUMS]" ]		     #!!#
        .o.								    
        [  "IZE"    -> "[IZE][ARR]"  ||                        "<PER>" _ ?* ]					     #!!#
 ];
