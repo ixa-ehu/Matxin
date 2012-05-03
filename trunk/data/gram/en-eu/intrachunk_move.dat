@@ -18,7 +18,7 @@ lem='' && prep='' && sub='' && cas=''/alloc	/casalloc	concat
 pos!=''/pos	/headpos	no-overwrite
 lem!=''/lem	/headlem	no-overwrite
 sem!=''/sem	/headsem	no-overwrite
-pos='[Z]'/pos	/leafpos	overwrite
+pos='[Z]' && lem!='1'/pos	/leafpos	overwrite
 pos='[Z]'/'[MG]'	/mi	overwrite
 pos='[Zu]'/'[MG]'	/mi	overwrite
 

@@ -22,4 +22,4 @@ pos='[Z]' && lem>1800 && lem<2050/'[NUMS]'	headpos=''/mi	overwrite
 pos!=''/pos	/headpos	no-overwrite
 lem!=''/lem	/headlem	no-overwrite
 sem!=''/sem	/headsem	no-overwrite
-pos='[Z]'/pos	/leafpos	overwrite
+pos='[Z]' && lem!='1'/pos	/leafpos	overwrite
