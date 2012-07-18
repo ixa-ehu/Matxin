@@ -107,9 +107,11 @@ wstring procNODE(xmlTextReaderPtr reader, wstring &attributesToChunk,
     }
 
     // CHUNKari pasatu behar zaizkion atributuak jaso.
-    vector<movement> attributes_to_move = get_node_movements_byfrom(myAttributes);
+    vector<movement> attributes_to_move = get_node_movements_bypair(myAttributes, attributesToChunk, L"up");
+    wcerr << myAttributes << endl << attributesToChunk << endl;
     for (size_t i = 0; i < attributes_to_move.size(); i++)
     {
+      wcerr << "\t" << attributes_to_move[i].from.attrib << L"\t" << attributes_to_move[i].to.attrib << L"\t" << attributes_to_move[i].write_type << endl;
       if (text_attrib(myAttributes, attributes_to_move[i].from.attrib) != L"")
       {
         if (text_attrib(attributesToChunk, attributes_to_move[i].to.attrib) == L"")
@@ -215,31 +217,14 @@ wstring procCHUNK(xmlTextReaderPtr reader)
   // Atributu guztiak mantentzen dira
   if (tagName == L"CHUNK" and tagType != XML_READER_TYPE_END_ELEMENT)
   {
-    wstring my_attributes = allAttrib(reader);
-    attributes = my_attributes;
-
     tree = L"<CHUNK";
+    wstring attributesToChunk = allAttrib(reader);;
 
     // Menpeko NODOak tratatzen dira.
     nextTag(reader);
-    wstring attributesToChunk;
     wstring nodes = procNODE(reader, attributesToChunk, L"Head");
 
-    // NODOetatik goratutako attributuak idazten dira.
-    vector<movement> attributes_to_move = get_node_movements_byto(my_attributes);
-    for (size_t i = 0; i < attributes_to_move.size(); i++)
-    {
-      if (text_attrib(attributes, attributes_to_move[i].to.attrib) == L"" &&
-          text_attrib(attributesToChunk, attributes_to_move[i].to.attrib) != L"")
-      {
-        wstring attribute = L" " + attributes_to_move[i].to.attrib + L"='" +
-                            text_attrib(attributesToChunk, attributes_to_move[i].to.attrib) +
-                            L"' ";
-        attributes += attribute;
-      }
-    }
-
-    tree += write_xml(attributes) + L">\n" + nodes;
+    tree += write_xml(attributesToChunk) + L">\n" + nodes;
   }
   else
   {
