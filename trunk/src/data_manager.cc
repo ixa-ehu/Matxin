@@ -34,8 +34,29 @@ chunk text2chunk(wstring text)
   return output;
 }
 
+wstring interpretate(wstring value, wstring attributes, wstring parent_attributes) {
+  if (value.size() >= 2 && value[0] == L'\'' &&
+      value[value.size()-1] == L'\'')
+  {
+    return value.substr(1, value.size()-2);
+  }
 
-bool apply_condition(wstring attributes, wstring condition)
+  int dot_position = value.rfind(L".");
+  if (dot_position == int(wstring::npos)) 
+    dot_position = -1;
+
+  wstring chunk = value.substr(0,dot_position);
+  wstring attribute = value.substr(dot_position+1);
+
+  if (chunk == L"parent") {
+    return text_attrib(parent_attributes, attribute);
+  }
+  else {
+    return text_attrib(attributes, attribute);
+  }
+}
+
+bool apply_condition(wstring condition, wstring attributes, wstring parent_attributes=L"")
 {
   if (condition == L"true")
   {
@@ -58,7 +79,7 @@ bool apply_condition(wstring attributes, wstring condition)
 
     wstring condition_2 = condition.substr(open_position + 1,
                                            close_position - open_position - 1);
-    bool eval = apply_condition(attributes, condition_2);
+    bool eval = apply_condition(condition_2, attributes, parent_attributes);
 
     if (open_position != 0)
     {
@@ -70,227 +91,12 @@ bool apply_condition(wstring attributes, wstring condition)
 	  (or_position == int(wstring::npos) || and_position > or_position))
       {
         condition_1 = condition.substr(0, and_position);
-        eval = eval && apply_condition(attributes, condition_1);
+        eval = eval && apply_condition(condition_1, attributes, parent_attributes);
       }
       else if (or_position != int(wstring::npos))
       {
         condition_1 = condition.substr(0, or_position);
-        eval = eval || apply_condition(attributes, condition_1);
-      }
-    }
-
-    if (close_position != condition.size())
-    {
-      wstring condition_3 = condition.substr(close_position + 1);
-      int and_position = condition_3.find(L"&&");
-      int or_position = condition_3.find(L"||");
-
-      if (and_position != int(wstring::npos) &&
-	  (or_position == int(wstring::npos) || and_position < or_position))
-      {
-        condition_3 = condition_3.substr(0, and_position);
-        eval = eval && apply_condition(attributes, condition_3);
-      }
-      else if (or_position != int(wstring::npos))
-      {
-        condition_3 = condition_3.substr(0, or_position);
-        eval = eval || apply_condition(attributes, condition_3);
-      }
-    }
-
-    return eval;
-  }
-  else if (condition.find(L"||") != wstring::npos)
-  {
-    int operator_position = condition.find(L"||");
-
-    return (apply_condition(attributes, condition.substr(0, operator_position)) || 
-            apply_condition(attributes, condition.substr(operator_position + 2)));
-  }
-  else if (condition.find(L"&&") != wstring::npos)
-  {
-    int operator_position = condition.find(L"&&");
-
-    return (apply_condition(attributes, condition.substr(0, operator_position)) &&
-            apply_condition(attributes, condition.substr(operator_position + 2)));
-  }
-  else
-  {
-    if (condition.find(L"!=") != wstring::npos)
-    {
-      int operator_position = condition.find(L"!=");
-      int blank_position = condition.rfind(L" ", operator_position);
-      if (blank_position == int(wstring::npos))
-        blank_position = -1;
-
-      wstring attribute = condition.substr(blank_position + 1,
-                                           operator_position - blank_position - 1);
-
-      blank_position = condition.find(L" ", operator_position);
-      if (blank_position == int(int(wstring::npos)))
-        blank_position = condition.size();
-
-      if (condition[operator_position + 2] == L'\'' and
-          condition[blank_position-1] == L'\'')
-      {
-        blank_position--;
-        operator_position++;
-      }
-      wstring value = condition.substr(operator_position + 2,
-                                       blank_position - operator_position - 2);
-
-      return (text_attrib(attributes, attribute) != value);
-    }
-    else if (condition.find(L"=~") != wstring::npos)
-    {
-      int operator_position = condition.find(L"=~");
-      int blank_position = condition.rfind(L" ", operator_position);
-      if (blank_position == int(wstring::npos))
-        blank_position = -1;
-
-      wstring attribute = condition.substr(blank_position + 1,
-                                           operator_position - blank_position - 1);
-
-      blank_position = condition.find(L" ", operator_position);
-      if (blank_position == int(wstring::npos))
-        blank_position = condition.size();
-
-      if (condition[operator_position+2] == L'\'' and
-          condition[blank_position-1] == L'\'')
-      {
-        blank_position--;
-        operator_position++;
-      }
-      wstring value = condition.substr(operator_position + 2,
-                                       blank_position-operator_position - 2);
-
-      return (text_attrib(attributes, attribute).find(value) != wstring::npos);
-    }
-    else if (condition.find(L"=") != wstring::npos)
-    {
-      int operator_position = condition.find(L"=");
-      int blank_position = condition.rfind(L" ", operator_position);
-      if (blank_position == int(wstring::npos))
-        blank_position = -1;
-
-      wstring attribute = condition.substr(blank_position + 1,
-                                           operator_position - blank_position - 1);
-
-      blank_position = condition.find(L" ", operator_position);
-      if (blank_position == int(wstring::npos))
-        blank_position = condition.size();
-
-      if (condition[operator_position+1] == L'\'' and
-          condition[blank_position-1] == L'\'')
-      {
-        blank_position--;
-        operator_position++;
-      }
-      wstring value = condition.substr(operator_position + 1,
-                                       blank_position-operator_position - 1);
-
-      return (text_attrib(attributes, attribute) == value);
-    }
-    else if (condition.find(L">") != wstring::npos)
-    {
-      int operator_position = condition.find(L">");
-      int blank_position = condition.rfind(L" ", operator_position);
-      if (blank_position == int(wstring::npos))
-        blank_position = -1;
-
-      wstring attribute = condition.substr(blank_position + 1,
-                                           operator_position - blank_position - 1);
-
-      blank_position = condition.find(L" ", operator_position);
-      if (blank_position == int(wstring::npos))
-        blank_position = condition.size();
-
-      if (condition[operator_position+1] == L'\'' and
-          condition[blank_position-1] == L'\'')
-      {
-        wstring value = condition.substr(operator_position + 2,
-                                         blank_position-operator_position - 3);
-        return text_attrib(attributes, attribute) > value;
-      }
-      else
-      {
-        wstring value = condition.substr(operator_position + 1,
-                                         blank_position - operator_position - 1);
-        return watoi(text_attrib(attributes, attribute).c_str()) > watoi(value.c_str());
-      }
-    }
-    else if (condition.find(L"<") != string::npos)
-    {
-      int operator_position = condition.find(L"<");
-      int blank_position = condition.rfind(L" ", operator_position);
-      if (blank_position == int(wstring::npos))
-        blank_position = -1;
-
-      wstring attribute = condition.substr(blank_position + 1,
-                                           operator_position - blank_position - 1);
-
-      blank_position = condition.find(L" ", operator_position);
-      if (blank_position == int(wstring::npos))
-        blank_position = condition.size();
-
-      if (condition[operator_position+1] == L'\'' and
-          condition[blank_position-1] == L'\'')
-      {
-        wstring value = condition.substr(operator_position + 2,
-                                         blank_position - operator_position - 3);
-        return text_attrib(attributes, attribute) < value;
-      }
-      else
-      {
-        wstring value = condition.substr(operator_position + 1,
-                                         blank_position - operator_position - 1);
-        return watoi(text_attrib(attributes, attribute).c_str()) < watoi(value.c_str());
-      }
-    }
-  }
-
-  return true;
-}
-
-
-bool apply_condition(wstring parent_attributes, wstring child_attributes, wstring condition)
-{
-  if (condition.find(L"(") != wstring::npos)
-  {
-    size_t open_position = condition.find(L"(");
-    size_t close_position = condition.find(L")", open_position + 1);
-
-    while (condition.find(L"(", open_position + 1) < close_position)
-    {
-
-      open_position = condition.find(L"(", open_position + 1);
-      close_position = condition.find(L")", open_position + 1);
-
-      if (close_position == wstring::npos)
-        return false;
-    }
-    open_position = condition.find(L"(");
-
-    wstring condition_2 = condition.substr(open_position + 1,
-                                           close_position - open_position - 1);
-    bool eval = apply_condition(parent_attributes, child_attributes, condition_2);
-
-    if (open_position != 0)
-    {
-      wstring condition_1 = condition.substr(0, open_position);
-      int and_position = condition_1.rfind(L"&&");
-      int or_position = condition_1.rfind(L"||");
-
-      if (and_position != int(wstring::npos) &&
-	  (or_position == int(wstring::npos) || and_position > or_position))
-      {
-        condition_1 = condition.substr(0, and_position);
-        eval = eval && apply_condition(parent_attributes, child_attributes, condition_1);
-      }
-      else if (or_position != int(wstring::npos))
-      {
-        condition_1 = condition.substr(0, or_position);
-        eval = eval || apply_condition(parent_attributes, child_attributes, condition_1);
+        eval = eval || apply_condition(condition_1, attributes, parent_attributes);
       }
     }
 
@@ -304,12 +110,12 @@ bool apply_condition(wstring parent_attributes, wstring child_attributes, wstrin
 	  (or_position == int(wstring::npos) || and_position < or_position))
       {
         condition_3 = condition_3.substr(and_position + 2);
-        eval = eval && apply_condition(parent_attributes, child_attributes, condition_3);
+        eval = eval && apply_condition(condition_3, attributes, parent_attributes);
       }
       else if (or_position != int(wstring::npos))
       {
         condition_3 = condition_3.substr(or_position + 2);
-        eval = eval || apply_condition(parent_attributes, child_attributes, condition_3);
+        eval = eval || apply_condition(condition_3, attributes, parent_attributes);
       }
     }
 
@@ -319,17 +125,17 @@ bool apply_condition(wstring parent_attributes, wstring child_attributes, wstrin
   {
     int operator_position = condition.find(L"||");
 
-    return (apply_condition(parent_attributes, child_attributes, condition.substr(0, operator_position)) ||
-            apply_condition(parent_attributes, child_attributes, condition.substr(operator_position+2)));
+    return (apply_condition(condition.substr(0, operator_position), attributes, parent_attributes) || 
+            apply_condition(condition.substr(operator_position + 2), attributes, parent_attributes));
   }
   else if (condition.find(L"&&") != wstring::npos)
   {
     int operator_position = condition.find(L"&&");
 
-    return (apply_condition(parent_attributes, child_attributes, condition.substr(0, operator_position)) &&
-	          apply_condition(parent_attributes, child_attributes, condition.substr(operator_position+2)));
+    return (apply_condition(condition.substr(0, operator_position), attributes, parent_attributes) &&
+            apply_condition(condition.substr(operator_position + 2), attributes, parent_attributes));
   }
-  else 
+  else
   {
     if (condition.find(L"!=") != wstring::npos)
     {
@@ -337,29 +143,20 @@ bool apply_condition(wstring parent_attributes, wstring child_attributes, wstrin
       int blank_position = condition.rfind(L" ", operator_position);
       if (blank_position == int(wstring::npos))
         blank_position = -1;
-      int dot_position = condition.rfind(L".", operator_position);
-      if (dot_position == int(wstring::npos))
-        blank_position = -1;
 
-      wstring attribute = condition.substr(dot_position + 1, operator_position-dot_position - 1);
-      wstring chunk = condition.substr(blank_position + 1, dot_position-blank_position - 1);
+      wstring attribute = condition.substr(blank_position + 1,
+                                           operator_position - blank_position - 1);
+      attribute = interpretate(attribute, attributes, parent_attributes);
 
       blank_position = condition.find(L" ", operator_position);
-      if (blank_position == int(wstring::npos)) blank_position = condition.size();
+      if (blank_position == int(int(wstring::npos)))
+        blank_position = condition.size();
 
-      if (condition[operator_position + 2] == L'\'' and
-          condition[blank_position - 1] == L'\'')
-      {
-        blank_position--;
-        operator_position++;
-      }
-      wstring value = condition.substr(operator_position + 2,
-                                       blank_position-operator_position - 2);
+      wstring value = condition.substr(operator_position + 2, blank_position-operator_position - 2);
+      value = interpretate(value, attributes, parent_attributes);
 
-      if (chunk == L"parent")
-        return (text_attrib(parent_attributes, attribute) != value);
-      else
-        return (text_attrib(child_attributes, attribute) != value);
+      //wcerr << condition << L": " << attribute << L" != " << value << endl;
+      return (attribute != value);
     }
     else if (condition.find(L"=~") != wstring::npos)
     {
@@ -367,32 +164,41 @@ bool apply_condition(wstring parent_attributes, wstring child_attributes, wstrin
       int blank_position = condition.rfind(L" ", operator_position);
       if (blank_position == int(wstring::npos))
         blank_position = -1;
-      int dot_position = condition.rfind(L".", operator_position);
-      if (dot_position == int(wstring::npos))
-        blank_position = -1;
 
-      wstring attribute = condition.substr(dot_position + 1,
-                                           operator_position-dot_position - 1);
-      wstring chunk = condition.substr(blank_position + 1,
-                                       dot_position-blank_position - 1);
+      wstring attribute = condition.substr(blank_position + 1,
+                                           operator_position - blank_position - 1);
+      attribute = interpretate(attribute, attributes, parent_attributes);
 
       blank_position = condition.find(L" ", operator_position);
-      if (blank_position == int(wstring::npos))
+      if (blank_position == int(int(wstring::npos)))
         blank_position = condition.size();
 
-      if (condition[operator_position+2] == L'\'' and
-          condition[blank_position-1] == L'\'')
-      {
-        blank_position--;
-        operator_position++;
-      }
-      wstring value = condition.substr(operator_position + 2,
-                                       blank_position-operator_position - 2);
+      wstring value = condition.substr(operator_position + 2, blank_position-operator_position - 2);
+      value = interpretate(value, attributes, parent_attributes);
 
-      if (chunk == L"parent")
-        return (text_attrib(parent_attributes, attribute).find(value) != wstring::npos);
-      else
-        return (text_attrib(child_attributes, attribute).find(value) != wstring::npos);
+      //wcerr << condition << L": " << attribute << L" =~ " << value << endl;
+      return (attribute.find(value) != wstring::npos);
+    }
+    else if (condition.find(L"!~") != wstring::npos)
+    {
+      int operator_position = condition.find(L"!~");
+      int blank_position = condition.rfind(L" ", operator_position);
+      if (blank_position == int(wstring::npos))
+        blank_position = -1;
+
+      wstring attribute = condition.substr(blank_position + 1,
+                                           operator_position - blank_position - 1);
+      attribute = interpretate(attribute, attributes, parent_attributes);
+
+      blank_position = condition.find(L" ", operator_position);
+      if (blank_position == int(int(wstring::npos)))
+        blank_position = condition.size();
+
+      wstring value = condition.substr(operator_position + 2, blank_position-operator_position - 2);
+      value = interpretate(value, attributes, parent_attributes);
+
+      //wcerr << condition << L": " << attribute << L" !~ " << value << endl;
+      return (attribute.find(value) == wstring::npos);
     }
     else if (condition.find(L"=") != wstring::npos)
     {
@@ -400,32 +206,20 @@ bool apply_condition(wstring parent_attributes, wstring child_attributes, wstrin
       int blank_position = condition.rfind(L" ", operator_position);
       if (blank_position == int(wstring::npos))
         blank_position = -1;
-      int dot_position = condition.rfind(L".", operator_position);
-      if (dot_position == int(wstring::npos))
-        blank_position = -1;
 
-      wstring attribute = condition.substr(dot_position + 1,
-                                           operator_position - dot_position - 1);
-      wstring chunk = condition.substr(blank_position + 1,
-                                       dot_position - blank_position - 1);
+      wstring attribute = condition.substr(blank_position + 1,
+                                           operator_position - blank_position - 1);
+      attribute = interpretate(attribute, attributes, parent_attributes);
 
       blank_position = condition.find(L" ", operator_position);
-      if (blank_position == int(wstring::npos))
+      if (blank_position == int(int(wstring::npos)))
         blank_position = condition.size();
 
-      if (condition[operator_position+1] == L'\'' and
-          condition[blank_position-1] == L'\'')
-      {
-        blank_position--;
-        operator_position++;
-      }
-      wstring value = condition.substr(operator_position + 1,
-                                       blank_position-operator_position - 1);
+      wstring value = condition.substr(operator_position + 1, blank_position-operator_position - 1);
+      value = interpretate(value, attributes, parent_attributes);
 
-      if (chunk == L"parent")
-        return (text_attrib(parent_attributes, attribute) == value);
-      else
-        return (text_attrib(child_attributes, attribute) == value);
+      //wcerr << condition << L": " << attribute << L" = " << value << endl;
+      return (attribute == value);
     }
     else if (condition.find(L">") != wstring::npos)
     {
@@ -433,86 +227,289 @@ bool apply_condition(wstring parent_attributes, wstring child_attributes, wstrin
       int blank_position = condition.rfind(L" ", operator_position);
       if (blank_position == int(wstring::npos))
         blank_position = -1;
-      int dot_position = condition.rfind(L".", operator_position);
-      if (dot_position == int(wstring::npos))
-        blank_position = -1;
 
-      wstring attribute = condition.substr(dot_position + 1,
-                                           operator_position-dot_position - 1);
-      wstring chunk = condition.substr(blank_position + 1,
-                                       dot_position-blank_position - 1);
+      wstring attribute = condition.substr(blank_position + 1,
+                                           operator_position - blank_position - 1);
+      attribute = interpretate(attribute, attributes, parent_attributes);
 
       blank_position = condition.find(L" ", operator_position);
-      if (blank_position == int(wstring::npos))
+      if (blank_position == int(int(wstring::npos)))
         blank_position = condition.size();
 
-      if (condition[operator_position+1] == L'\'' and
-          condition[blank_position-1] == L'\'')
-      {
-        wstring value = condition.substr(operator_position + 2,
-                                         blank_position-operator_position - 3);
+      wstring value = condition.substr(operator_position + 1, blank_position-operator_position - 1);
+      value = interpretate(value, attributes, parent_attributes);
 
-        if (chunk == L"parent")
-          return text_attrib(parent_attributes, attribute) > value;
-        else
-          return text_attrib(child_attributes, attribute) > value;
-      }
-      else
-      {
-        wstring value = condition.substr(operator_position + 1,
-                                         blank_position - operator_position - 1);
-
-        if (chunk == L"parent")
-          return watoi(text_attrib(parent_attributes, attribute).c_str()) > watoi(value.c_str());
-        else
-          return watoi(text_attrib(child_attributes, attribute).c_str()) > watoi(value.c_str());
-      }
+      //wcerr << condition << L": " << attribute << L" > " << value << endl;
+      return (watoi(attribute.c_str()) > watoi(value.c_str()));
     }
-    else if (condition.find(L"<") != wstring::npos)
+    else if (condition.find(L"<") != string::npos)
     {
       int operator_position = condition.find(L"<");
       int blank_position = condition.rfind(L" ", operator_position);
       if (blank_position == int(wstring::npos))
         blank_position = -1;
-      int dot_position = condition.rfind(L".", operator_position);
-      if (dot_position == int(wstring::npos))
-        blank_position = -1;
 
-      wstring attribute = condition.substr(dot_position + 1,
-                                           operator_position-dot_position - 1);
-      wstring chunk = condition.substr(blank_position + 1,
-                                       dot_position-blank_position - 1);
+      wstring attribute = condition.substr(blank_position + 1,
+                                           operator_position - blank_position - 1);
+      attribute = interpretate(attribute, attributes, parent_attributes);
 
       blank_position = condition.find(L" ", operator_position);
-      if (blank_position == int(wstring::npos))
+      if (blank_position == int(int(wstring::npos)))
         blank_position = condition.size();
 
-      if (condition[operator_position+1] == L'\'' and
-          condition[blank_position-1] == L'\'')
-      {
-        wstring value = condition.substr(operator_position + 2,
-                                         blank_position - operator_position - 3);
+      wstring value = condition.substr(operator_position + 1, blank_position-operator_position - 1);
+      value = interpretate(value, attributes, parent_attributes);
 
-        if (chunk == L"parent")
-          return text_attrib(parent_attributes, attribute) < value;
-        else
-          return text_attrib(child_attributes, attribute) < value;
-      }
-      else
-      {
-        wstring value = condition.substr(operator_position + 1,
-                                         blank_position - operator_position - 1);
-
-        if (chunk == L"parent")
-          return watoi(text_attrib(parent_attributes, attribute).c_str()) < watoi(value.c_str());
-        else
-          return watoi(text_attrib(child_attributes, attribute).c_str()) < watoi(value.c_str());
-      }
+      //wcerr << condition << L": " << attribute << L" < " << value << endl;
+      return (watoi(attribute.c_str()) < watoi(value.c_str()));
     }
   }
 
   return true;
 }
+
+
+// bool apply_condition(wstring parent_attributes, wstring child_attributes, wstring condition)
+// {
+//   if (condition.find(L"(") != wstring::npos)
+//   {
+//     size_t open_position = condition.find(L"(");
+//     size_t close_position = condition.find(L")", open_position + 1);
+
+//     while (condition.find(L"(", open_position + 1) < close_position)
+//     {
+
+//       open_position = condition.find(L"(", open_position + 1);
+//       close_position = condition.find(L")", open_position + 1);
+
+//       if (close_position == wstring::npos)
+//         return false;
+//     }
+//     open_position = condition.find(L"(");
+
+//     wstring condition_2 = condition.substr(open_position + 1,
+//                                            close_position - open_position - 1);
+//     bool eval = apply_condition(parent_attributes, child_attributes, condition_2);
+
+//     if (open_position != 0)
+//     {
+//       wstring condition_1 = condition.substr(0, open_position);
+//       int and_position = condition_1.rfind(L"&&");
+//       int or_position = condition_1.rfind(L"||");
+
+//       if (and_position != int(wstring::npos) &&
+// 	  (or_position == int(wstring::npos) || and_position > or_position))
+//       {
+//         condition_1 = condition.substr(0, and_position);
+//         eval = eval && apply_condition(parent_attributes, child_attributes, condition_1);
+//       }
+//       else if (or_position != int(wstring::npos))
+//       {
+//         condition_1 = condition.substr(0, or_position);
+//         eval = eval || apply_condition(parent_attributes, child_attributes, condition_1);
+//       }
+//     }
+
+//     if (close_position != condition.size())
+//     {
+//       wstring condition_3 = condition.substr(close_position + 1);
+//       int and_position = condition_3.find(L"&&");
+//       int or_position = condition_3.find(L"||");
+
+//       if (and_position != int(wstring::npos) &&
+// 	  (or_position == int(wstring::npos) || and_position < or_position))
+//       {
+//         condition_3 = condition_3.substr(and_position + 2);
+//         eval = eval && apply_condition(parent_attributes, child_attributes, condition_3);
+//       }
+//       else if (or_position != int(wstring::npos))
+//       {
+//         condition_3 = condition_3.substr(or_position + 2);
+//         eval = eval || apply_condition(parent_attributes, child_attributes, condition_3);
+//       }
+//     }
+
+//     return eval;
+//   }
+//   else if (condition.find(L"||") != wstring::npos)
+//   {
+//     int operator_position = condition.find(L"||");
+
+//     return (apply_condition(parent_attributes, child_attributes, condition.substr(0, operator_position)) ||
+//             apply_condition(parent_attributes, child_attributes, condition.substr(operator_position+2)));
+//   }
+//   else if (condition.find(L"&&") != wstring::npos)
+//   {
+//     int operator_position = condition.find(L"&&");
+
+//     return (apply_condition(parent_attributes, child_attributes, condition.substr(0, operator_position)) &&
+// 	    apply_condition(parent_attributes, child_attributes, condition.substr(operator_position+2)));
+//   }
+//   else 
+//   {
+//     if (condition.find(L"!=") != wstring::npos)
+//     {
+//       int operator_position = condition.find(L"!=");
+//       int blank_position = condition.rfind(L" ", operator_position);
+//       if (blank_position == int(wstring::npos))
+//         blank_position = -1;
+//       int dot_position = condition.rfind(L".", operator_position);
+//       if (dot_position == int(wstring::npos))
+//         blank_position = -1;
+
+//       wstring attribute = condition.substr(dot_position + 1, operator_position-dot_position - 1);
+//       wstring chunk = condition.substr(blank_position + 1, dot_position-blank_position - 1);
+
+//       blank_position = condition.find(L" ", operator_position);
+//       if (blank_position == int(wstring::npos)) blank_position = condition.size();
+
+//       wstring value = condition.substr(operator_position + 2, blank_position-operator_position - 2);
+//       value = interpretate(value, child_attributes, parent_attributes);
+
+//       if (chunk == L"parent")
+//         return (text_attrib(parent_attributes, attribute) != value);
+//       else
+//         return (text_attrib(child_attributes, attribute) != value);
+//     }
+//     else if (condition.find(L"=~") != wstring::npos)
+//     {
+//       int operator_position = condition.find(L"=~");
+//       int blank_position = condition.rfind(L" ", operator_position);
+//       if (blank_position == int(wstring::npos))
+//         blank_position = -1;
+//       int dot_position = condition.rfind(L".", operator_position);
+//       if (dot_position == int(wstring::npos))
+//         blank_position = -1;
+
+//       wstring attribute = condition.substr(dot_position + 1,
+//                                            operator_position-dot_position - 1);
+//       wstring chunk = condition.substr(blank_position + 1,
+//                                        dot_position-blank_position - 1);
+
+//       blank_position = condition.find(L" ", operator_position);
+//       if (blank_position == int(wstring::npos))
+//         blank_position = condition.size();
+
+//       wstring value = condition.substr(operator_position + 2, blank_position-operator_position - 2);
+//       value = interpretate(value, child_attributes, parent_attributes);
+
+//       if (chunk == L"parent")
+//         return (text_attrib(parent_attributes, attribute).find(value) != wstring::npos);
+//       else
+//         return (text_attrib(child_attributes, attribute).find(value) != wstring::npos);
+//     }
+//     else if (condition.find(L"!~") != wstring::npos)
+//     {
+//       int operator_position = condition.find(L"!~");
+//       int blank_position = condition.rfind(L" ", operator_position);
+//       if (blank_position == int(wstring::npos))
+//         blank_position = -1;
+//       int dot_position = condition.rfind(L".", operator_position);
+//       if (dot_position == int(wstring::npos))
+//         blank_position = -1;
+
+//       wstring attribute = condition.substr(dot_position + 1,
+//                                            operator_position-dot_position - 1);
+//       wstring chunk = condition.substr(blank_position + 1,
+//                                        dot_position-blank_position - 1);
+
+//       blank_position = condition.find(L" ", operator_position);
+//       if (blank_position == int(wstring::npos))
+//         blank_position = condition.size();
+
+//       wstring value = condition.substr(operator_position + 2, blank_position-operator_position - 2);
+//       value = interpretate(value, child_attributes, parent_attributes);
+
+//       if (chunk == L"parent")
+//         return (text_attrib(parent_attributes, attribute).find(value) == wstring::npos);
+//       else
+//         return (text_attrib(child_attributes, attribute).find(value) == wstring::npos);
+//     }
+//     else if (condition.find(L"=") != wstring::npos)
+//     {
+//       int operator_position = condition.find(L"=");
+//       int blank_position = condition.rfind(L" ", operator_position);
+//       if (blank_position == int(wstring::npos))
+//         blank_position = -1;
+//       int dot_position = condition.rfind(L".", operator_position);
+//       if (dot_position == int(wstring::npos))
+//         blank_position = -1;
+
+//       wstring attribute = condition.substr(dot_position + 1,
+//                                            operator_position - dot_position - 1);
+//       wstring chunk = condition.substr(blank_position + 1,
+//                                        dot_position - blank_position - 1);
+
+//       blank_position = condition.find(L" ", operator_position);
+//       if (blank_position == int(wstring::npos))
+//         blank_position = condition.size();
+
+//       wstring value = condition.substr(operator_position + 2, blank_position-operator_position - 2);
+//       value = interpretate(value, child_attributes, parent_attributes);
+
+//       if (chunk == L"parent")
+//         return (text_attrib(parent_attributes, attribute) == value);
+//       else
+//         return (text_attrib(child_attributes, attribute) == value);
+//     }
+//     else if (condition.find(L">") != wstring::npos)
+//     {
+//       int operator_position = condition.find(L">");
+//       int blank_position = condition.rfind(L" ", operator_position);
+//       if (blank_position == int(wstring::npos))
+//         blank_position = -1;
+//       int dot_position = condition.rfind(L".", operator_position);
+//       if (dot_position == int(wstring::npos))
+//         blank_position = -1;
+
+//       wstring attribute = condition.substr(dot_position + 1,
+//                                            operator_position-dot_position - 1);
+//       wstring chunk = condition.substr(blank_position + 1,
+//                                        dot_position-blank_position - 1);
+
+//       blank_position = condition.find(L" ", operator_position);
+//       if (blank_position == int(wstring::npos))
+//         blank_position = condition.size();
+
+//       wstring value = condition.substr(operator_position + 2, blank_position-operator_position - 2);
+//       value = interpretate(value, child_attributes, parent_attributes);
+
+//       if (chunk == L"parent")
+// 	return watoi(text_attrib(parent_attributes, attribute).c_str()) > watoi(value.c_str());
+//       else
+// 	return watoi(text_attrib(child_attributes, attribute).c_str()) > watoi(value.c_str());
+//     }
+//     else if (condition.find(L"<") != wstring::npos)
+//     {
+//       int operator_position = condition.find(L"<");
+//       int blank_position = condition.rfind(L" ", operator_position);
+//       if (blank_position == int(wstring::npos))
+//         blank_position = -1;
+//       int dot_position = condition.rfind(L".", operator_position);
+//       if (dot_position == int(wstring::npos))
+//         blank_position = -1;
+
+//       wstring attribute = condition.substr(dot_position + 1,
+//                                            operator_position-dot_position - 1);
+//       wstring chunk = condition.substr(blank_position + 1,
+//                                        dot_position-blank_position - 1);
+
+//       blank_position = condition.find(L" ", operator_position);
+//       if (blank_position == int(wstring::npos))
+//         blank_position = condition.size();
+
+//       wstring value = condition.substr(operator_position + 2, blank_position-operator_position - 2);
+//       value = interpretate(value, child_attributes, parent_attributes);
+
+//       if (chunk == L"parent")
+// 	return watoi(text_attrib(parent_attributes, attribute).c_str()) < watoi(value.c_str());
+//       else
+// 	return watoi(text_attrib(child_attributes, attribute).c_str()) < watoi(value.c_str());
+//     }
+//   }
+
+//   return true;
+// }
 
 
 static struct chunkMovements
@@ -561,8 +558,8 @@ vector<movement> get_chunk_movements(wstring fromAttributes,
 
   for (size_t i = 0; i < chunkAttribMovement.movements.size(); i++)
   {
-    if (apply_condition(fromAttributes, chunkAttribMovement.movements[i].from.condition) &&
-        apply_condition(toAttributes, chunkAttribMovement.movements[i].to.condition) &&
+    if (apply_condition(chunkAttribMovement.movements[i].from.condition, fromAttributes) &&
+        apply_condition(chunkAttribMovement.movements[i].to.condition, toAttributes) &&
         chunkAttribMovement.movements[i].direction == direction)
     {
       output.push_back(chunkAttribMovement.movements[i]);
@@ -617,7 +614,7 @@ vector<movement> get_node_movements_byfrom(wstring attributes)
   for (size_t i = 0; i < nodeAttribMovement.movements.size(); i++)
   {
 
-    if (apply_condition(attributes, nodeAttribMovement.movements[i].from.condition))
+    if (apply_condition(nodeAttribMovement.movements[i].from.condition, attributes))
     {
       output.push_back(nodeAttribMovement.movements[i]);
     }
@@ -633,7 +630,28 @@ vector<movement> get_node_movements_byto(wstring attributes)
 
   for (size_t i = 0; i < nodeAttribMovement.movements.size(); i++)
   {
-    if (apply_condition(attributes, nodeAttribMovement.movements[i].to.condition))
+    if (apply_condition(nodeAttribMovement.movements[i].to.condition, attributes))
+    {
+      output.push_back(nodeAttribMovement.movements[i]);
+    }
+  }
+
+  return output;
+}
+
+
+vector<movement> get_node_movements_bypair(wstring fromAttributes, wstring toAttributes, wstring direction)
+{
+  vector<movement> output;
+
+
+  for (size_t i = 0; i < nodeAttribMovement.movements.size(); i++)
+  {
+    if ((direction == L"down" && apply_condition(nodeAttribMovement.movements[i].from.condition, fromAttributes) && 
+	 apply_condition(nodeAttribMovement.movements[i].to.condition, toAttributes, fromAttributes))
+	|| 
+	(direction == L"up" && apply_condition(nodeAttribMovement.movements[i].to.condition, toAttributes) && 
+	 apply_condition(nodeAttribMovement.movements[i].from.condition, fromAttributes, toAttributes)))
     {
       output.push_back(nodeAttribMovement.movements[i]);
     }
@@ -855,7 +873,7 @@ wstring get_chunk_order(wstring parent_attribs, wstring child_attribs,
   for (size_t i = 0; i < order_inter.size(); i++)
   {
 
-    if (apply_condition(parent_attribs, order_inter[i].parent_condition) and apply_condition(child_attribs, order_inter[i].child_condition) and
+    if (apply_condition(order_inter[i].parent_condition, parent_attribs) and apply_condition(order_inter[i].child_condition, child_attribs) and
 	(order_inter[i].relative_order == L".*?" or 
 	 order_inter[i].relative_order[0] == L'=' and relative_order == watoi(order_inter[i].relative_order.substr(1, order_inter[i].relative_order.size()).c_str()) or
 	 order_inter[i].relative_order[0] == L'>' and relative_order > watoi(order_inter[i].relative_order.substr(1, order_inter[i].relative_order.size()).c_str()) or
@@ -962,7 +980,7 @@ vector<wstring>
       maintain_cases.push_back(current_prep[i].cas);
 
     if (cfg.UsePrepRules and current_prep[i].condition != L"-" and
-        apply_condition(parent_attributes, child_attributes, current_prep[i].condition))
+        apply_condition(current_prep[i].condition, child_attributes, parent_attributes))
     {
       vector<wstring> translation_case;
 
@@ -1086,8 +1104,8 @@ vector<wstring>
       default_case.insert(default_case.begin(), child_attributes[i]);
 
     if (cfg.UseLexRules && current_rule.condition != L"" and
-        apply_condition(parent_attributes, attributes,
-                        current_rule.condition))
+        apply_condition(current_rule.condition,
+			attributes, parent_attributes))
     {
       vector<wstring> translation_case;
 
