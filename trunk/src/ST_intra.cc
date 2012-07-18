@@ -96,7 +96,7 @@ wstring procNODE(xmlTextReaderPtr reader, wstring &attributesToChunk,
     {
       nodes += L"<NODE" + write_xml(allAttrib(reader));
 
-      if (xmlTextReaderIsEmptyElement(reader) == 1)
+      if (xmlTextReaderIsEmptyElement(reader) == 1 && myNodeType != L"NewHead")
       {
         nodes += L"/>\n";
       }
@@ -216,8 +216,9 @@ wstring procCHUNK(xmlTextReaderPtr reader)
   if (tagName == L"CHUNK" and tagType != XML_READER_TYPE_END_ELEMENT)
   {
     wstring my_attributes = allAttrib(reader);
+    attributes = my_attributes;
 
-    tree = L"<CHUNK" + write_xml(allAttrib(reader));
+    tree = L"<CHUNK";
 
     // Menpeko NODOak tratatzen dira.
     nextTag(reader);
