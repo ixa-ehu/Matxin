@@ -52,6 +52,7 @@ vector<movement> get_chunk_movements(wstring fromAttributes, wstring toAttribute
 void init_nodeMovement(string fitxName);
 vector<movement> get_node_movements_byfrom(wstring attributes);
 vector<movement> get_node_movements_byto(wstring attributes);
+vector<movement> get_node_movements_bypair(wstring fromAttributes, wstring toAttributes, wstring direction);
 
 void init_lexInfo(wstring name, string fitxName);
 wstring get_lexInfo(wstring name, wstring type_es);
