@@ -108,10 +108,8 @@ wstring procNODE(xmlTextReaderPtr reader, wstring &attributesToChunk,
 
     // CHUNKari pasatu behar zaizkion atributuak jaso.
     vector<movement> attributes_to_move = get_node_movements_bypair(myAttributes, attributesToChunk, L"up");
-    wcerr << myAttributes << endl << attributesToChunk << endl;
     for (size_t i = 0; i < attributes_to_move.size(); i++)
     {
-      wcerr << "\t" << attributes_to_move[i].from.attrib << L"\t" << attributes_to_move[i].to.attrib << L"\t" << attributes_to_move[i].write_type << endl;
       if (text_attrib(myAttributes, attributes_to_move[i].from.attrib) != L"")
       {
         if (text_attrib(attributesToChunk, attributes_to_move[i].to.attrib) == L"")
