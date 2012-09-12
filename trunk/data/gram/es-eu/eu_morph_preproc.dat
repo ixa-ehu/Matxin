@@ -1,7 +1,14 @@
+
+
 # Aditz erroak
 #[ADI][SIN]	Lema Kas
 #[ADL]		Lema Kas
 
+# erostearekin
+[ADI][SIN](.*?)[AMM][ADIZE]\+[DEK](.*?)[SOZ]	LemaMorf Kas [NUMS]
+[ADI][FAK](.*?)[AMM][ADIZE]\+[DEK](.*?)[SOZ]	LemaMorf Kas [NUMS]
+
+# erostera, erosteari
 [ADI][SIN](.*?)>(.*?)>(.*?)[AMM][ADIZE]\+[DEK](.*?)		LemaMorf Kas
 [ADI][FAK](.*?)>(.*?)>(.*?)[AMM][ADIZE]\+[DEK](.*?)		LemaMorf Kas
 
@@ -19,9 +26,9 @@
 
 
 [ADI][SIN]tze[ATZ][IZE][ARR](.*?)[(ABS|ERG|SOZ|DES|GEN|DAT|INS)]	LemaMorf +[DEK] Kas Num
-[ADI][FAK]te[ATZ][IZE][ARR](.*?)[(ABS|ERG|SOZ|DES|GEN|DAT|INS)]	LemaMorf +[DEK] Kas Num
+[ADI][FAK]te[ATZ][IZE][ARR](.*?)[(ABS|ERG|SOZ|DES|GEN|DAT|INS)]		LemaMorf +[DEK] Kas Num
 [ADI][SIN]tze[ATZ][IZE][ARR](.*?)[(PAR)]				LemaMorf +[DEK] Kas [MG]
-[ADI][FAK]te[ATZ][IZE][ARR](.*?)[(PAR)]				LemaMorf +[DEK] Kas [MG]
+[ADI][FAK]te[ATZ][IZE][ARR](.*?)[(PAR)]					LemaMorf +[DEK] Kas [MG]
 [ADI][SIN]tze[ATZ][IZE][ARR](.*?)					LemaMorf +[DEK] Num +[DEK] Kas
 [ADI][FAK]te[ATZ][IZE][ARR](.*?)					LemaMorf +[DEK] Num +[DEK] Kas
 
@@ -100,6 +107,9 @@ gutxi[DET][DZH](.*?)	LemaMorf +[DEK] Kas
 [IZE][(IZB|LIB)](.*?)[(INE|ALA|ABL|ABU|GEL)]	LemaMorf +[DEK] Num +[DEK] Kas
 [IZE][(IZB|LIB)]				LemaMorf +[DEK] Kas [MG]
 
+# [INS]+[GEL] "de madera"-> "zurezko"
+(.*?)[INS][GEL]				LemaMorf +[DEK][INS][MG]+[DEK][GEL]
+
 
 #IZEnak , ADJetiboak eta DETerminatzaileak DZG... #
 	#bizidunak 'gan' daraman forma hartzeko erregelak.
@@ -121,8 +131,13 @@ gutxi[DET][DZH](.*?)	LemaMorf +[DEK] Kas
 #[ADI][SIN](.*?)[GEN]			LemaMorfHasiera +tze[AMM][ADIZE]+[DEK][INS][NUMS][MUGM]
 
 
+
+
 # Besterik
 (.*?)					LemaMorf +[DEK] Num +[DEK] Kas
+
+
+
 
 
 

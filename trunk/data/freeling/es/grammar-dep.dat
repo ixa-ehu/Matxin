@@ -21,6 +21,7 @@
 %%Regles afegides per opentrad
 verb ==> VMI*<querer>, +infinitiu | VMS*<querer>, +infinitiu.
 verb ==> vaux, VMP00SM(solido), +infinitiu.
+verb ==> vaux, VMP00SM(querido), +infinitiu.
 grup-verb-part ==> parti-flex.
 %Gorkak kendu du.
 %grup-verb ==> +verb, grup-verb-part.

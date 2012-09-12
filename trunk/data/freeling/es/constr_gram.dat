@@ -66,6 +66,23 @@ VerbCompl = <acentuar> <aceptar> <aconsejar> <acordar> <admitir> <advertir>
 
 CONSTRAINTS
 
+% prefer 1st person if precedeed by 1st person pronoun
+
+5.0 VMIP1*     (-1* <yo> or <nosotros> barrier N* or PP* );
+5.0 VMIP1*     (-1* <yo> or <nosotros> barrier N* or PP* );
+5.0 VMII1*     (-1* <yo> or <nosotros> barrier N* or PP* );
+5.0 VMSI1*     (-1* <yo> or <nosotros> barrier N* or PP* );
+5.0 VMIC1*     (-1* <yo> or <nosotros> barrier N* or PP* );
+5.0 VAII1*     (-1* <yo> or <nosotros> barrier N* or PP* );
+5.0 VSII1*     (-1* <yo> or <nosotros> barrier N* or PP* );
+5.0 VASI1*     (-1* <yo> or <nosotros> barrier N* or PP* );
+5.0 VSSI1*     (-1* <yo> or <nosotros> barrier N* or PP* );
+5.0 VSSP1*     (-1* <yo> or <nosotros> barrier N* or PP* );
+5.0 VASP1*     (-1* <yo> or <nosotros> barrier N* or PP* );
+5.0 VAIC1*     (-1* <yo> or <nosotros> barrier N* or PP* );
+5.0 VSIC1*     (-1* <yo> or <nosotros> barrier N* or PP* );
+
+
 %% prefer indicative to imperative
 0.7 VMI*
     (0 VMM*);

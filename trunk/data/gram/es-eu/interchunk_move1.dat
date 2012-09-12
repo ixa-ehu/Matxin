@@ -12,3 +12,10 @@ vpost!=''/vpostalloc	type='adi-kat'/relalloc	down	concat
 
 type='ez'/'adi-kat-ez'	type='adi-kat'/type	up	overwrite
 type='ez'/'adi-pas-ez'	type='adi-pas'/type	up	overwrite
+
+/'[NUMS]'	type!='adi-kat' && def='[MUGM]' && num='[NUMS]'/mi	down	no-overwrite
+/'[NUMP]'	type!='adi-kat' && def='[MUGM]' && num='[NUMP]'/mi	down	no-overwrite
+/'[NUMS]'	type!='adi-kat' && def='' && num='[NUMS]'/mi	down	no-overwrite
+/'[NUMP]'	type!='adi-kat' && def='' && num='[NUMP]'/mi	down	no-overwrite
+/'[MG]'	type!='adi-kat' && def='[MG]'/mi	down	no-overwrite
+
