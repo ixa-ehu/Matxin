@@ -4743,8 +4743,7 @@
 
 
 <SEMDB>
-SenseFile  ../senses30.src
-WNFile  ../../common/wn30.src
+../semdb.dat
 </SEMDB>
 
 
@@ -4845,11 +4844,11 @@ grup-verb-inf  dobj  d.label=grup-sp  d.side=right  d.lemma=a|al  d:sn.tonto=Hum
 subord-ger  dobj  d.label=grup-sp  d.side=right  d.lemma=a|al  d:sn.tonto=Human  d:sn.tonto!=Building|Place  p.class=trans
 subord-part  dobj  d.label=grup-sp  d.side=right  d.lemma=a|al  d:sn.tonto=Human  d:sn.tonto!=Building|Place  p.class=trans
 
-grup-verb  dobj  d.label=coor-sp  d.side=right  d.lemma=a|al  d:grup-sp:sn.tonto=Human  d:grup-sp:sn.tonto!=Building|Place  p.class=trans
-verb-pass  dobj  d.label=coor-sp  d.side=right  d.lemma=a|al  d:grup-sp:sn.tonto=Human  d:grup-sp:sn.tonto!=Building|Place  p.class=trans
-grup-verb-inf  dobj  d.label=coor-sp  d.side=right  d.lemma=a|al  d:grup-sp:sn.tonto=Human  d:grup-sp:sn.tonto!=Building|Place  p.class=trans
-subord-ger  dobj  d.label=coor-sp  d.side=right  d.lemma=a|al  d.grup-sp:sn.tonto=Human  d:grup-sp:sn.tonto!=Building|Place  p.class=trans
-subord-part  dobj  d.label=coor-sp  d.side=right  d.lemma=a|al  d.grup-sp:sn.tonto=Human  d:grup-sp:sn.tonto!=Building|Place  p.class=trans
+grup-verb  dobj  d.label=coor-sp  d.side=right  d:grup-sp.lemma=a|al  d:grup-sp:sn.tonto=Human  d:grup-sp:sn.tonto!=Building|Place  p.class=trans
+verb-pass  dobj  d.label=coor-sp  d.side=right  d:grup-sp.lemma=a|al  d:grup-sp:sn.tonto=Human  d:grup-sp:sn.tonto!=Building|Place  p.class=trans
+grup-verb-inf  dobj  d.label=coor-sp  d.side=right  d:grup-sp.lemma=a|al  d:grup-sp:sn.tonto=Human  d:grup-sp:sn.tonto!=Building|Place  p.class=trans
+subord-ger  dobj  d.label=coor-sp  d.side=right  d:grup-sp.lemma=a|al  d:grup-sp:sn.tonto=Human  d:grup-sp:sn.tonto!=Building|Place  p.class=trans
+subord-part  dobj  d.label=coor-sp  d.side=right  d:grup-sp.lemma=a|al  d:grup-sp:sn.tonto=Human  d:grup-sp:sn.tonto!=Building|Place  p.class=trans
 
 %Noms propis%
 %Nomes s'aplica si s'ha activat el reconeixedor de NE

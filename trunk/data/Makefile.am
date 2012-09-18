@@ -36,55 +36,34 @@ install-data-hook:
  endif
 
 	@echo
-	@echo "Indexing Wordnet files..."
-	@echo "   Indexing Wordnet Relations..."
-	@rm -f $(pkgdatadir)/freeling/common/wn30-ukb.bin
-	@$(COMPILEKB) -o $(pkgdatadir)/freeling/common/wn30_ukb.bin $(pkgdatadir)/freeling/common/wnet30_rels.txt
-	@rm -f $(pkgdatadir)/freeling/common/xwn30-ukb.bin
-	@$(COMPILEKB) -o $(pkgdatadir)/freeling/common/xwn30_ukb.bin $(pkgdatadir)/freeling/common/wnet30_rels.txt $(pkgdatadir)/freeling/common/wnet30g_rels.txt
- ifeq ($(ES),true)
-	@echo "   Indexing Spanish Wordnet..."
-	@rm -f $(pkgdatadir)/freeling/es/senses30.ukb
-	@cat $(pkgdatadir)/freeling/es/senses30.src | $(CONVERTDICT) > $(pkgdatadir)/freeling/es/senses30.ukb
- endif
- ifeq ($(EN),true)
-	@echo "   Indexing English Wordnet..."
-	@rm -f $(pkgdatadir)/freeling/en/senses16.ukb
-	@cat $(pkgdatadir)/freeling/en/senses30.src | $(CONVERTDICT) > $(pkgdatadir)/freeling/en/senses30.ukb
- endif
-
-
-	@echo
 	@echo "Indexing Freeling dictionaries."
  ifeq ($(ES),true)
 	@echo "   Indexing Spanish dictionary..."
 	@rm -f $(pkgdatadir)/freeling/es/corrector/corrector.src
-	@cat $(pkgdatadir)/freeling/es/dicc.src | $(DICC2PHON) $(pkgdatadir)/freeling/es/corrector/corrector.rules $(pkgdatadir)/freeling/common/corrector/corrector.SoundDictFile $(pkgdatadir)/freeling/common/corrector/corrector.sampa > $(pkgdatadir)/freeling/es/corrector/corrector.src
+	@cat $(pkgdatadir)/freeling/es/dicc.src | $(DICC2PHON) $(pkgdatadir)/freeling/es/corrector/phonetics-corr.dat > $(pkgdatadir)/freeling/es/corrector/corrector.src
 	@chmod +r $(pkgdatadir)/freeling/es/corrector/corrector.src
  endif
- ifeq ($(EN),true)
-	@echo "   Indexing English dictionary..."
-	@rm -f $(pkgdatadir)/freeling/en/corrector/corrector.src
-	@cat $(pkgdatadir)/freeling/en/dicc.src | $(DICC2PHON) $(pkgdatadir)/freeling/en/corrector/corrector.rules $(pkgdatadir)/freeling/common/corrector/corrector.SoundDictFile $(pkgdatadir)/freeling/common/corrector/corrector.sampa > $(pkgdatadir)/freeling/en/corrector/corrector.src
-	@chmod +r $(pkgdatadir)/freeling/en/corrector/corrector.src
- endif
+ # ifeq ($(EN),true)
+ # 	@echo "   Indexing English dictionary..."
+ # 	@rm -f $(pkgdatadir)/freeling/en/corrector/corrector.src
+ # 	@cat $(pkgdatadir)/freeling/en/dicc.src | $(DICC2PHON) $(pkgdatadir)/freeling/en/corrector/phonetics-corr.dat > $(pkgdatadir)/freeling/en/corrector/corrector.src
+ # 	@chmod +r $(pkgdatadir)/freeling/en/corrector/corrector.src
+ # endif
 
 
 	@echo
 	@echo "Compiling verb-transfer grammar."
  ifeq ($(ES),true)
 	@echo "   Compiling Spanish verb-transfer grammar..."
-	@rm -f $(pkgdatadir)/gram/es-eu/eseuVerbTransfer.fst
-	@cd $(pkgdatadir)/gram/es-eu && $(FOMA) -f $(pkgdatadir)/gram/es-eu/eseuVerbTransfer.foma >& /dev/null
-	@chmod +r $(pkgdatadir)/gram/es-eu/eseuVerbTransfer.fst
+	@rm -f $(pkgdatadir)/gram/es-eu/eseu_verb_transfer.fst
+	@cd $(pkgdatadir)/gram/es-eu && $(FOMA) -f $(pkgdatadir)/gram/es-eu/eseu_verb_transfer.foma >& /dev/null
+	@chmod +r $(pkgdatadir)/gram/es-eu/eseu_verb_transfer.fst
  endif
  ifeq ($(EN),true)
 	@echo "   Compiling English verb-transfer grammar..."
-	@rm -f $(pkgdatadir)/gram/en-eu/eneuVerbTransfer.fst
-	@cd $(pkgdatadir)/gram/en-eu
-	## The verb transference for English has not been updated yet
-	## @$(FOMA) $(pkgdatadir)/gram/en-eu/eneuVerbTransfer.foma >& /dev/null
-	## @chmod +r $(pkgdatadir)/gram/en-eu/eneuVerbTransfer.fst
+	@rm -f $(pkgdatadir)/gram/en-eu/eseu_verb_transfer.fst
+	@cd $(pkgdatadir)/gram/en-eu && $(FOMA) $(pkgdatadir)/gram/en-eu/eseu_verb_transfer.foma >& /dev/null
+	@chmod +r $(pkgdatadir)/gram/en-eu/eseu_verb_transfer.fst
  endif
 
 	@echo

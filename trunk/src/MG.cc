@@ -998,6 +998,7 @@ int main(int argc, char *argv[])
         log_fileName_osoa << cfg.Trace_File << i++ << ".xml";
   
         log_file.open(log_fileName_osoa.str().c_str(), ofstream::out | ofstream::app);
+	log_file << L"<!-- Morphological generation (final tree) -->" << endl;
         log_file << tree << L"</corpus>\n";
         log_file.close();
       }

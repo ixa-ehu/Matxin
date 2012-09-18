@@ -6,8 +6,5 @@ CheckDictWords ^(V|NC|NP|NNP)
 CheckUnknown yes
 
 SimilarWordsDict ./corrector.src
-PhoneticRules ./corrector.rules
-WordSoundDict none
-SampaCodes ../../common/corrector/corrector.sampa
+PhoneticsConfigFile ./phonetics-corr.dat
 DistanceFunction  ../../common/corrector/phonetic.dist
-

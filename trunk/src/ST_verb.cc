@@ -590,6 +590,7 @@ int main(int argc, char *argv[])
         log_fileName_osoa << cfg.Trace_File << i++ << ".xml";
   
         log_file.open(log_fileName_osoa.str().c_str(), wofstream::out | wofstream::app);
+	log_file << L"<!-- verb-transference -->" << endl;
         log_file << tree;
         log_file.close();
       }

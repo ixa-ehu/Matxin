@@ -729,6 +729,7 @@ int main(int argc, char *argv[])
   
         log_file.open(log_fileName_osoa.str().c_str(),
                       wofstream::out | wofstream::app);
+	log_file << L"<!-- Lexical transference -->" << endl;
         log_file << tree;
         log_file.close();
       }

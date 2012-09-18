@@ -34,7 +34,6 @@
 #include <boost/program_options.hpp>
 namespace po = boost::program_options;
 
-//#include "freeling/morfo/traces.h"
 #include "freeling/morfo/util.h"
 
 #define MOD_TRACENAME L"CONFIG_OPTIONS"
@@ -42,30 +41,12 @@ namespace po = boost::program_options;
 
 #define DefaultConfigFile "analyzer.cfg" // default ConfigFile
 
-// codes for input-output formats
-#define PLAIN    0
-#define IDENT    1
-#define TOKEN    2
-#define SPLITTED 3
-#define MORFO    4
-#define TAGGED   5
-#define SENSES   6
-#define SHALLOW  7
-#define PARSED   8
-#define DEP      9
-
 // codes for tagging algorithms
 #define HMM   0
 #define RELAX 1
 
 // codes for dependency parsers
 #define TXALA	0
-
-// codes for sense annotation
-#define NONE  0
-#define ALL   1
-#define MFS   2
-#define UKB   3
 
 // codes for ForceSelect
 #define FORCE_NONE   0
@@ -87,8 +68,6 @@ class config {
     std::wstring Lang;
     /// Locale of text to process
     std::wstring Locale;
-    /// Level of analysis in input and output
-    int InputFormat, OutputFormat;
     /// Flush splitter at each line
     bool AlwaysFlush;
     /// produce output in a format suitable to train the tagger.
@@ -109,9 +88,6 @@ class config {
     /// Morphological analyzer options
     std::wstring MACO_Decimal, MACO_Thousand;
 
-    /// Language identifier options
-    std::wstring IDENT_identFile;
-
     /// Morphological analyzer options
     std::wstring MACO_UserMapFile, MACO_LocutionsFile,   MACO_QuantitiesFile,
             MACO_AffixFile,   MACO_ProbabilityFile, MACO_DictionaryFile, 
@@ -123,12 +99,6 @@ class config {
     // NEC options
     bool NEC_NEClassification;
     std::wstring NEC_NECFile;
-
-    // Sense annotator options
-    int SENSE_WSD_which;
-    std::wstring SENSE_SenseFile;
-    bool SENSE_DuplicateAnalysis;
-    std::wstring UKB_ConfigFile;
 
     /// Tagger options
     std::wstring TAGGER_HMMFile;
@@ -145,9 +115,6 @@ class config {
 
     /// Dependency options
     std::wstring DEP_TxalaFile;    
-
-    bool COREF_CoreferenceResolution;
-    std::wstring COREF_CorefFile;
 
    ///////////////////////////////OPTIONS OF MATXIN///////////////////////////////////////
     /// Morphological analyzer server options
@@ -209,13 +176,12 @@ class config {
 
       // Auxiliary variables to store options read as strings before they are converted
       // to their final enumerate/integer values 
-      std::string InputF, OutputF, Tagger, SenseAnot, Force;
+      std::string Tagger, Force;
       //std::string tracemod;
-      std::string language, locale, identFile, tokFile, splitFile, macoDecimal, macoThousand,
+      std::string language, locale, tokFile, splitFile, macoDecimal, macoThousand,
  	   usermapFile, locutionsFile, quantitiesFile, affixFile, probabilityFile,
-	   dictionaryFile, npDataFile, punctuationFile, correctorFile; 
-      std::string necFile, senseFile, duplicateAnalysis, ukbFile;
-      std::string hmmFile,relaxFile,grammarFile,txalaFile,corefFile;
+	   dictionaryFile, npDataFile, punctuationFile, correctorFile;
+      std::string necFile, hmmFile,relaxFile,grammarFile,txalaFile;
  
       po::options_description vis_cl("Available command-line options");
       vis_cl.add_options()
@@ -229,10 +195,7 @@ class config {
 	("locale",po::value<std::string>(&locale),"locale encoding of input text (\"default\"=en_US.UTF-8, \"system\"=current system locale, [other]=any valid locale string installed in the system (e.g. ca_ES.UTF-8,it_IT.UTF-8,...)")
 	("flush","Consider each newline as a sentence end")
 	("noflush","Do not consider each newline as a sentence end")
-	("inpf",po::value<std::string>(&InputF),"Input format (plain,token,splitted,morfo,sense,tagged)")
-	("outf",po::value<std::string>(&OutputF),"Output format (ident,token,splitted,morfo,tagged,shallow,parsed,dep)")
 	("train","Produce output format suitable for train scripts")
-	("fidn,I",po::value<std::string>(&identFile),"Language identifier file")
 	("ftok",po::value<std::string>(&tokFile),"Tokenizer rules file")
 	("fsplit",po::value<std::string>(&splitFile),"Splitter option file")
 	("afx","Perform affix analysis")
@@ -274,11 +237,6 @@ class config {
 	("nec","Perform NE classification")
 	("nonec","Do not perform NE classification")
 	("fnec",po::value<std::string>(&necFile),"NEC configuration file")
-	("sense,s",po::value<std::string>(&SenseAnot),"Type of sense annotation (no|none,all,mfs,ukb)")
-	("fsense,W",po::value<std::string>(&senseFile),"Sense dictionary file")
-	("fukb,U",po::value<std::string>(&ukbFile),"Configuration file for UKB word sense disambiguator")
-	("dup","Duplicate analysis for each different sense")
-	("nodup","Do not duplicate analysis for each different sense")
 	("hmm,H",po::value<std::string>(&hmmFile),"Data file for HMM tagger")
 	("rlx,R",po::value<std::string>(&relaxFile),"Data file for RELAX tagger")
 	("tag,t",po::value<std::string>(&Tagger),"Tagging alogrithm to use (hmm, relax)")
@@ -290,9 +248,6 @@ class config {
 	("force",po::value<std::string>(&Force),"When the tagger must be forced to select only one tag per word (no|none,tagger,retok)")
 	("grammar,G",po::value<std::string>(&grammarFile),"Grammar file for chart parser")
 	("txala,T",po::value<std::string>(&txalaFile),"Rule file for Txala dependency parser")
-	("coref","Perform coreference resolution")
-	("nocoref","Do not perform coreference resolution")
-	("fcorf,C",po::value<std::string>(&corefFile),"Coreference solver data file")
 
 	//Matxin-en aukerak
 	("TraceFile",po::value<std::string>(&Trace_File),"")
@@ -352,8 +307,6 @@ class config {
 	("Lang",po::value<std::string>(&language),"Language of the input text")
 	("Locale",po::value<std::string>(&locale)->default_value("default"),"locale encoding of input text (\"default\"=en_US.UTF-8, \"system\"=current system locale, [other]=any valid locale string installed in the system (e.g. ca_ES.UTF-8,it_IT.UTF-8,...)")
 	("AlwaysFlush",po::value<bool>(&AlwaysFlush)->default_value(false),"Consider each newline as a sentence end")
-	("InputFormat",po::value<std::string>(&InputF)->default_value("plain"),"Input format (plain,token,splitted,morfo,sense,tagged)")
-	("OutputFormat",po::value<std::string>(&OutputF)->default_value("tagged"),"Output format (token,splitted,morfo,tagged,shallow,parsed,dep)")
 	("TokenizerFile",po::value<std::string>(&tokFile),"Tokenizer rules file")
 	("SplitterFile",po::value<std::string>(&splitFile),"Splitter option file")
 
@@ -385,10 +338,6 @@ class config {
 	("NEClassification",po::value<bool>(&NEC_NEClassification)->default_value(false),"Perform NE classification")
 
 	("NECFile",po::value<std::string>(&necFile),"NEC configuration file")
-	("SenseAnnotation",po::value<std::string>(&SenseAnot)->default_value("none"),"Type of sense annotation (no|none,all,mfs,ukb)")
-	("SenseFile",po::value<std::string>(&senseFile),"Sense dictionary file")
-	("UKBConfigFile",po::value<std::string>(&ukbFile),"Configuration file for UKB word sense disambiguator")
-	("DuplicateAnalysis",po::value<bool>(&SENSE_DuplicateAnalysis)->default_value(false),"Duplicate analysis for each different sense")
 	("TaggerHMMFile",po::value<std::string>(&hmmFile),"Data file for HMM tagger")
 	("TaggerRelaxFile",po::value<std::string>(&relaxFile),"Data file for RELAX tagger")
 	("Tagger",po::value<std::string>(&Tagger)->default_value("hmm"),"Tagging alogrithm to use (hmm, relax)")
@@ -399,8 +348,6 @@ class config {
 	("TaggerForceSelect",po::value<std::string>(&Force)->default_value("retok"),"When the tagger must be forced to select only one tag per word (no|none,tagger,retok)")
 	("GrammarFile",po::value<std::string>(&grammarFile),"Grammar file for chart parser")
 	("DepTxalaFile",po::value<std::string>(&txalaFile),"Rule file for Txala dependency parser")
-	("CoreferenceResolution",po::value<bool>(&COREF_CoreferenceResolution)->default_value(false),"Perform coreference resolution")
-	("CorefFile",po::value<std::string>(&corefFile),"Coreference solver data file")
 
 	//Matxin-en aukerak
 	("TraceFile",po::value<std::string>(&Trace_File),"")
@@ -437,18 +384,6 @@ class config {
 	("DoGenTrace",po::value<bool>(&DoGenTrace)->default_value(false),"")
 	("DoPrepTrace",po::value<bool>(&DoPrepTrace)->default_value(false),"")
       ;
-
-      /* po::options_description hid_cl("Hidden CL options"); */
-      /* hid_cl.add_options() */
-      /* 	("tlevel,l",po::value<int>(&traces::TraceLevel),"Debug traces verbosity") */
-      /*   ("tmod,m",po::value<std::string>(&tracemod),"Mask indicating which modules to trace") */
-      /* ; */
-
-      /* po::options_description hid_cf("Hidden CF options"); */
-      /* hid_cf.add_options() */
-      /*   ("TraceLevel",po::value<int>(&traces::TraceLevel)->default_value(0),"Debug traces verbosity") */
-      /*   ("TraceModule",po::value<std::string>(&tracemod)->default_value("0x0"),"Mask indicating which modules to trace") */
-      /* ; */
 
       po::options_description cl_op("All command line options");
       //cl_op.add(vis_cl).add(hid_cl);
@@ -491,13 +426,6 @@ class config {
 	exit(0); // return to system
       }
 
-      if (OutputF=="ident") {
-	// if ident requested, do not expect a config file, only identFile
-	ExpandFileName(identFile);
-	IDENT_identFile = util::string2wstring(identFile);
-	OutputFormat = IDENT;
-      }
-      else {
 	// normal process requested. Load config file.
 	std::wifstream fcfg;
 	util::open_utf8_file(fcfg,util::string2wstring(ConfigFile));
@@ -527,13 +455,10 @@ class config {
 	ExpandFileName(punctuationFile);
 	ExpandFileName(correctorFile);
 	ExpandFileName(necFile); 
-	ExpandFileName(senseFile); 
-	ExpandFileName(ukbFile); 
 	ExpandFileName(hmmFile);
 	ExpandFileName(relaxFile); 
 	ExpandFileName(grammarFile); 
 	ExpandFileName(txalaFile);
-	ExpandFileName(corefFile); 
 	
 	// translate string options (including expanded filenames) to wstrings
 	Lang = util::string2wstring(language);
@@ -552,13 +477,10 @@ class config {
 	MACO_PunctuationFile = util::string2wstring(punctuationFile);
 	MACO_CorrectorFile = util::string2wstring(correctorFile);
 	NEC_NECFile = util::string2wstring(necFile);
-	SENSE_SenseFile = util::string2wstring(senseFile);
-	UKB_ConfigFile = util::string2wstring(ukbFile);
 	TAGGER_HMMFile = util::string2wstring(hmmFile);
 	TAGGER_RelaxFile = util::string2wstring(relaxFile);
 	PARSER_GrammarFile = util::string2wstring(grammarFile);
 	DEP_TxalaFile = util::string2wstring(txalaFile);
-	COREF_CorefFile = util::string2wstring(corefFile);
 	
 	// Handle boolean options expressed with --myopt or --nomyopt in command line
 	SetBooleanOptionCL(vm.count("train"),!vm.count("train"),TrainingOutput,"train");
@@ -576,9 +498,7 @@ class config {
 	SetBooleanOptionCL(vm.count("prob"),vm.count("noprob"),MACO_ProbabilityAssignment,"prob");
 	SetBooleanOptionCL(vm.count("orto"),vm.count("noorto"),MACO_OrthographicCorrection,"orto");
 	SetBooleanOptionCL(vm.count("nec"),vm.count("nonec"),NEC_NEClassification,"nec");
-	SetBooleanOptionCL(vm.count("dup"),vm.count("nodup"),SENSE_DuplicateAnalysis,"dup");
 	SetBooleanOptionCL(vm.count("rtk"),vm.count("nortk"),TAGGER_Retokenize,"rtk");
-	SetBooleanOptionCL(vm.count("coref"),vm.count("nocoref"),COREF_CoreferenceResolution,"coref");
 
 	//Matxin-en aukerak
 	SetBooleanOptionCL(vm.count("lexrules"),vm.count("nolexrules"),UseLexRules,"lexrules");
@@ -600,24 +520,6 @@ class config {
 	server = false;
 	if (vm.count("server")) server = true;
 	
-	// translate InputF and OutputF strings to more useful integer values.
-	if (InputF=="plain") InputFormat = PLAIN;
-	else if (InputF=="token") InputFormat = TOKEN;
-	else if (InputF=="splitted") InputFormat = SPLITTED;
-	else if (InputF=="morfo") InputFormat = MORFO;
-	else if (InputF=="tagged") InputFormat = TAGGED;
-	else if (InputF=="sense") InputFormat = SENSES;
-	else { std::wcerr << L"ERROR: Unknown or invalid input format: "+util::string2wstring(InputF) << std::endl; exit(1);}
-	
-	if (OutputF=="token") OutputFormat = TOKEN;
-	else if (OutputF=="splitted") OutputFormat = SPLITTED;
-	else if (OutputF=="morfo") OutputFormat = MORFO;
-	else if (OutputF=="tagged") OutputFormat = TAGGED;
-	else if (OutputF=="shallow") OutputFormat = SHALLOW;
-	else if (OutputF=="parsed") OutputFormat = PARSED;
-	else if (OutputF=="dep") OutputFormat = DEP;
-	else { std::wcerr << L"ERROR: Unknown or invalid output format: "+util::string2wstring(OutputF) << std::endl; exit(1);}
-		
 	// translate Tagger string to more useful integer values.
 	if (Tagger=="hmm") TAGGER_which = HMM;
 	else if (Tagger=="relax") TAGGER_which = RELAX;
@@ -635,21 +537,10 @@ class config {
 	  std::wcerr << L"WARNING: Invalid ForceSelect value '"+util::string2wstring(Force)+L"'. Using default." << std::endl;
 	}
 	
-	// translate SenseAnot string to more useful integer values.
-	if (SenseAnot=="none" || SenseAnot=="no") SENSE_WSD_which = NONE;
-	else if (SenseAnot=="all") SENSE_WSD_which = ALL;
-	else if (SenseAnot=="mfs") SENSE_WSD_which = MFS;
-	else if (SenseAnot=="ukb") SENSE_WSD_which = UKB;
-	else {
-	  SENSE_WSD_which = NONE;
-	  std::wcerr << L"WARNING: Invalid sense annotation option '"+util::string2wstring(SenseAnot)+L"'. Using default." << std::endl;
-	}
-	
 	/* // translate tracmod string (hex) into traces::TraceModule unsinged long */
 	/* std::stringstream sin; */
 	/* sin << std::hex << tracemod; */
 	/* sin >> traces::TraceModule; */
-      }
     }
 
  private:
@@ -689,4 +580,3 @@ class config {
 
 
 #endif
-

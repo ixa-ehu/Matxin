@@ -100,7 +100,6 @@ int get_alloc(dep_tree::iterator n, bool subChunks)
   return alloc;
 }
 
-
 wstring PrintCHUNK(sentence &s, parse_tree & fulltree, dep_tree &tr,
                   dep_tree::iterator n, int depth, const bool printHead=false);
 
@@ -141,7 +140,8 @@ void PrintResults(list<sentence> &ls, const config &cfg, int &nsentence)
 
       log_file << L"<?xml version='1.0' encoding='UTF-8' ?>" << endl;
       log_file << L"<?xml-stylesheet type='text/xsl' href='profit.xsl'?>" << endl;
-      log_file << L"<corpus>\n";
+      log_file << L"<corpus>" << endl;
+      log_file << L"<!-- Analysis-->" << endl;
       log_file << tree.str();
       log_file.close();
     }
@@ -154,8 +154,8 @@ void PrintResults(list<sentence> &ls, const config &cfg, int &nsentence)
 // Plain text, start with tokenizer.
 //---------------------------------------------
 void ProcessPlain(const config &cfg, tokenizer *tk, splitter *sp, maco *morfo,
-                  POS_tagger *tagger, nec* neclass, senses* sens, disambiguator *dsb,
-                  chart_parser *parser, dependency_parser *dep)
+                  POS_tagger *tagger, nec* neclass, chart_parser *parser,
+		  dependency_parser *dep)
 {
   wstring text;
   list<word> av;
@@ -178,11 +178,7 @@ void ProcessPlain(const config &cfg, tokenizer *tk, splitter *sp, maco *morfo,
       av = tk->tokenize(text, offset);
       ls = sp->split(av, cfg.AlwaysFlush);
       morfo->analyze(ls);
-      if (cfg.SENSE_WSD_which == MFS or cfg.SENSE_WSD_which == ALL)
-        sens->analyze(ls);
       tagger->analyze(ls);
-      if (cfg.SENSE_WSD_which == UKB)
-	dsb->analyze (ls);
       if (cfg.NEC_NEClassification)
         neclass->analyze(ls);
       parser->analyze(ls);
@@ -199,11 +195,7 @@ void ProcessPlain(const config &cfg, tokenizer *tk, splitter *sp, maco *morfo,
     av = tk->tokenize(text, offset);
     ls = sp->split(av, true);  //flush splitter buffer
     morfo->analyze(ls);
-    if (cfg.SENSE_WSD_which == MFS or cfg.SENSE_WSD_which == ALL)
-      sens->analyze(ls);
     tagger->analyze(ls);
-    if (cfg.SENSE_WSD_which == UKB)
-      dsb->analyze (ls);
     if (cfg.NEC_NEClassification)
       neclass->analyze(ls);
     parser->analyze(ls);
@@ -229,8 +221,6 @@ int main(int argc, char **argv)
   splitter *sp = NULL;
   maco *morfo = NULL;
   nec *neclass = NULL;
-  senses *sens = NULL;
-  disambiguator *dsb =NULL;
   POS_tagger *tagger = NULL;
   chart_parser *parser = NULL;
   dependency_parser *dep = NULL;
@@ -289,19 +279,14 @@ int main(int argc, char **argv)
                               cfg.TAGGER_RelaxScaleFactor, cfg.TAGGER_RelaxEpsilon,
                               cfg.TAGGER_Retokenize, cfg.TAGGER_ForceSelect);
 
-  if (cfg.NEC_NEClassification or cfg.COREF_CoreferenceResolution)
+  if (cfg.NEC_NEClassification)
     neclass = new nec (cfg.NEC_NECFile);
-
-  if (cfg.SENSE_WSD_which!=NONE)
-    sens = new senses(cfg.SENSE_SenseFile, cfg.SENSE_DuplicateAnalysis);
-  else if (cfg.SENSE_WSD_which==UKB or cfg.COREF_CoreferenceResolution)
-    dsb = new disambiguator (cfg.UKB_ConfigFile);
 
   parser = new chart_parser(cfg.PARSER_GrammarFile);
   dep = new dep_txala(cfg.DEP_TxalaFile, parser->get_start_symbol());
 
   // Input is plain text.
-  ProcessPlain(cfg, tk, sp, morfo, tagger, neclass, sens, dsb, parser, dep);
+  ProcessPlain(cfg, tk, sp, morfo, tagger, neclass, parser, dep);
 
   // clean up. Note that deleting a null pointer is a safe (yet useless) operation
   delete tk;
@@ -309,8 +294,6 @@ int main(int argc, char **argv)
   delete morfo;
   delete tagger;
   delete neclass;
-  delete sens;
-  delete dsb;
   delete parser;
   delete dep;
 }
