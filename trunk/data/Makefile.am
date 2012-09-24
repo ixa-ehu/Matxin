@@ -61,9 +61,9 @@ install-data-hook:
  endif
  ifeq ($(EN),true)
 	@echo "   Compiling English verb-transfer grammar..."
-	@rm -f $(pkgdatadir)/gram/en-eu/eseu_verb_transfer.fst
-	@cd $(pkgdatadir)/gram/en-eu && $(FOMA) $(pkgdatadir)/gram/en-eu/eseu_verb_transfer.foma >& /dev/null
-	@chmod +r $(pkgdatadir)/gram/en-eu/eseu_verb_transfer.fst
+	@rm -f $(pkgdatadir)/gram/en-eu/eneu_verb_transfer.fst
+	@cd $(pkgdatadir)/gram/en-eu && $(FOMA) -f $(pkgdatadir)/gram/en-eu/eneu_verb_transfer.foma >& /dev/null
+	@chmod +r $(pkgdatadir)/gram/en-eu/eneu_verb_transfer.fst
  endif
 
 	@echo

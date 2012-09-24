@@ -1,5 +1,5 @@
 gramdataeseudir = $(pkgdatadir)/gram/es-eu
-gramdataeseu_DATA = eseuVerbTransfer.foma \
+gramdataeseu_DATA = eseu_verb_transfer.foma \
                     eu_interchunk_order.dat \
                     eu_intrachunk_order.dat \
                     eu_morph_preproc.dat \

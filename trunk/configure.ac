@@ -439,11 +439,11 @@ AC_CONFIG_FILES([matxin.pc
                  data/freeling/en/ner/Makefile
 		 data/freeling/en/corrector/Makefile
                  data/freeling/es/Makefile
-                 data/freeling/es/dep/Makefile
-                 data/freeling/es/nec/Makefile
 		 data/freeling/es/ner/Makefile
+                 data/freeling/es/nec/Makefile
+                 data/freeling/es/dep/Makefile
 		 data/freeling/es/corrector/Makefile
-		 data/freeling/es/coref/Makefile
+		 data/freeling/es/chunker/Makefile
                  data/gram/Makefile
                  data/gram/en-eu/Makefile
                  data/gram/es-eu/Makefile
