@@ -4,9 +4,15 @@
 #[ADI][SIN]	Lema Kas
 #[ADL]		Lema Kas
 
+
 # erostearekin
 [ADI][SIN](.*?)[AMM][ADIZE]\+[DEK](.*?)[SOZ]	LemaMorf Kas [NUMS]
 [ADI][FAK](.*?)[AMM][ADIZE]\+[DEK](.*?)[SOZ]	LemaMorf Kas [NUMS]
+
+# erosteaz
+[ADI][SIN](.*?)[AMM][ADIZE]\+[DEK](.*?)[INS]	LemaMorf Kas [NUMS]
+[ADI][FAK](.*?)[AMM][ADIZE]\+[DEK](.*?)[INS]	LemaMorf Kas [NUMS]
+
 
 # erostera, erosteari
 [ADI][SIN](.*?)>(.*?)>(.*?)[AMM][ADIZE]\+[DEK](.*?)		LemaMorf Kas
@@ -15,6 +21,7 @@
 
 [ADI][SIN](.*?)[AMM][ADIZE]\+[DEK](.*?)		LemaMorf
 [ADI][FAK](.*?)[AMM][ADIZE]\+[DEK](.*?)		LemaMorf
+
 
 [ADI][SIN](.*?)[AMM][PART]>(.*?)[(INE|ABL|ALA|ABU|ABZ)](.*?)[BIZ\+]		LemaMorf +[DEK][GEN] Num +[DEK] Kas [GAN]
 [ADI][FAK](.*?)[AMM][PART]>(.*?)[(INE|ABL|ALA|ABU|ABZ)](.*?)[BIZ\+]		LemaMorf +[DEK][GEN] Num +[DEK] Kas [GAN]

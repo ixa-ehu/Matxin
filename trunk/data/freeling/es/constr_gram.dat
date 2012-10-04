@@ -134,7 +134,8 @@ CONSTRAINTS
 	(-1 {DetFem});
 
 %% Pre-verbal pronoun "le dijo"
-30.0 PP*
+%% Changed from 30.0 PP* to 30.0 P* to make "todo era muy bonito" (Aingeru)
+30.0 P*
 	(0 D*)
 	(1 VMI* or VMS* or VAI* or VAS* or VSI* or VSS*);
 

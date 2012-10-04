@@ -23,8 +23,8 @@
 -     [ZERO]    my.type='p-ez-koma'	-   # Puntuazio ikurrak ez dute kasurik behar...
 -     [ZERO]    my.type='p-buka'	-   # Puntuazio ikurrak ez dute kasurik behar...
 -     [ZERO]    my.type='adi-par'	-   # partizipioa ez da deklinatzen.
--     [ZERO]    my.type='adbs'		-   # adberbioak ez dira deklinatzen.
--     [INE]     (my.type='data' || my.headsem=~'[DEN+]') && parent.headlem!='_izan_'   -   # el cuatro de julio, uztailaren lauan    ##Bestelako osagarriak, datak ##denbora adierazten duten hitzak: arratsaldean.
+-     [ZERO]    my.type='adbs'		-   # adberbioak ez dira deklinatzen.	    
+-     [INE]    (my.type='data' || my.headsem=~'[DEN+]') && parent.headlem!='_izan_'	-	# el cuatro de julio, uztailaren lauan#Bestelako osagarriak, datak #denbora adierazten duten hitzak:arratsaldean
 -     [ABS]	parent.type='adi-pas'	-   # El libro ha sido comprado: liburua erosi du
 -     [ABS]	my.si='dobj'		-   # he comprado un libro, nik liburua erosi dut
 -     [ABS]	my.si='att'		-   # yo soy guapo: polita naiz
@@ -38,30 +38,43 @@
 
 # sinple unambiguous
 
-bajo		[GEN]++azpian/INE		-	    +			
-contra		[GEN]++kontra/INE		-	    +
+bajo		[GEN]++azpian/INE	-	    +			
+contra		[GEN]++kontra/INE	-	    +
 desde		[ABL]			-	    +			
 dirección	[ABZ]			-	    +
-entre		[GEN]++artean/INE	-	      +	   ## Colocala entre las dos mesas, argia bi mahaien artean ipin ezazu
-según		[GEN]++arabera/ABS         -       +
-mediante	[GEN]++bitartez		-	+
+entre		[GEN]++artean/INE	-	    +	   ## Colócala entre las dos mesas, argia bi mahaien artean ipin ezazu
+según		[GEN]++arabera/ABS      -	    +
+mediante	[GEN]++bitartez		-	    +
 
 # sinple ambiguous
 
-a		+[AMM][ADIZE]+[DEK][ALA]/ALA	my.headpos='[ADI][SIN]'	-	##han ido a comprar patatas
-a		[INE]	my.headpos='[Zm]' || my.headsem=~'[DEN+]'	    -	   ## lo han vendido a 3 euros, 3 eurotan saldu dute	##ez-bizidun, prezioa
-a		[DAT]	-		    +	   ## le he dado el libro a Jon, Joni eman diot liburua	##zehar objektua + biziduna
-a		[ABS]	-	    	    +	   ## he visto a Jon, Jon ikusi dut	##objektu zuzena + biziduna
-#a		[ALA]	my.si='cc'	    +	   ## he ido a casa, etxera joan naiz;	##ez-bizidun, lekua + mugimenduzko aditza;
-a		[ALA]	-	    +	   ## he ido a casa, etxera joan naiz;	##ez-bizidun, lekua + mugimenduzko aditza;
-ante		[GEN]++aldean/INE  parent.headlem='_izan_'  -	## Cualquier casa es pequeña ante la suya, edozein etxe da txikia harenaren aldean ## konparaketa... ##'ser' aditza???; aurretik ADJ. Agian kendu???
-ante		[GEN]++aurrean/INE	-	    +      ## se sentó ante el rey, erregearen aurrean eseri zen	##aditz estatikoak
-ante		[GEN]++aurrera/ALA	-	    +      ## lo llevaron ante el rey, erregearen aurrera eraman zuten##mugimenduzko aditzak
-con		+[AMM][ADIZE]+[DEK][SOZ]	my.headpos='[ADI][SIN]'	-	##cree que con hacer eso ya lo tiene todo hecho.
-con		[SOZ]			-	    +
-de		+[AMM][ADIZE]+[DEK][GEL]	(my.headpos='[ADI][SIN]' && parent.headpos='[IZE][ARR]')	-	##la petición de ilegalizar... = legez kanpo uzteko eskaera.
-de		+[AMM][PART]+[ASP][BURU]++izatera	my.headpos='[ADI][SIN]'	-      ##de saberlo antes, no hubiese venido.
-de		[INS]	my.headpos=~'[ADJ]' || my.headsem=~'[DEN+]'	-	## || ( my.headpos='[IZE][ARR]' && my.mi='[MG]' ) Halakoak itzultzeko erabili daiteke, baina arazoak ematen ditu zenbakiak daramatzaten sintagmekin ('la muerte de 45 inmigrantes'): lo están pintando de verde, berdez pintatzen ari dira;## osasunez hobeto nago##adj eta izen abstraktoa, determinante gabe  ## arratsaldez
+a		+[AMM][ADIZE]+[DEK][ALA]/ALA	my.headpos='[ADI][SIN]'	    -   ##han ido a comprar patatas
+a		[INE]	my.headpos='[Zm]' || my.headsem=~'[DEN+]'	    -   ## lo han vendido a 3 euros, 3 eurotan saldu dute	  ##ez-bizidun, prezioa
+a		[DAT]	my.si='iobj'					    +   ## le he dado el libro a Jon, Joni eman diot liburua ##zehar objektua + biziduna
+a		[ABS]	-						    +   ## he visto a Jon, Jon ikusi dut	##objektu zuzena + biziduna
+a		[ALA]	-						    +   ## he ido a casa, etxera joan naiz; ##ez-bizidun, lekua + mugimenduzko aditza;
+
+#a		[ALA]	my.si='cc'					    +   ## he ido a casa, etxera joan naiz; ##ez-bizidun, lekua + mugimenduzko aditza;
+#a		[ALA]	parent.headlem!='_eraman_'			    +   ## he ido a casa, etxera joan naiz; ##ez-bizidun, lekua + mugimenduzko aditza;
+#a		[ALA]	(my.headpos!~'[IZB]' && parent.headlem!='_eraman_') -   ## he ido a casa, etxera joan naiz; ##ez-bizidun, lekua + mugimenduzko aditza;
+
+ante		[GEN]++aldean/INE	     parent.headlem='_izan_'  -	    ## Cualquier casa es pequeña ante la suya, edozein etxe da txikia harenaren aldean 
+									    ## konparaketa... ##'ser' aditza???; aurretik ADJ. Agian kendu???
+ante		[GEN]++aurrean/INE	     -			      +     ## se sentó ante el rey, erregearen aurrean eseri zen	##aditz estatikoak
+ante		[GEN]++aurrera/ALA	     -			      +     ## lo llevaron ante el rey, erregearen aurrera eraman zuten##mugimenduzko aditzak
+
+con		+[AMM][ADIZE]+[DEK][SOZ]     my.headpos='[ADI][SIN]'  -	    ##cree que con hacer eso ya lo tiene todo hecho.
+con		[SOZ]			     -			      +							 
+
+de		+[AMM][ADIZE]+[DEK][GEL]   (my.headpos='[ADI][SIN]' && parent.headpos='[IZE][ARR]')   - ##la petición de ilegalizar>legez kanpo uzteko eskaera
+de		+[AMM][PART]+[ASP][BURU]++izatera  my.headpos='[ADI][SIN]' && my.si='top'	        - ##de saberlo antes > no hubiese venido.
+de		+[AMM][ADIZE]+[DEK][INS]	   my.headpos='[ADI][SIN]' && (parent.headlem='_ahaztu_' || parent.headlem='_nekatu_')	  -  
+													  ##se olvidaron de cantar > Kantatzeaz ahaztu ziren.
+de		+[AMM][ADIZE]+[DEK][ABL]	   my.headpos='[ADI][SIN]' && my.si='sp-obj'	        - ##han venido de comprar > erostetik etorri dira.
+de		+[AMM][ADIZE]+[DEK][GEL]	   my.headpos='[ADI][SIN]' && my.si='cc'	        - ##... ???
+
+de		[INS]	my.headpos=~'[ADJ]' || my.headsem=~'[DEN+]'	-	## || ( my.headpos='[IZE][ARR]' && my.mi='[MG]' ) 
+										## Halakoak itzultzeko erabili daiteke, baina arazoak ematen ditu zenbakiak daramatzaten sintagmekin ('la muerte de 45 inmigrantes'): lo están pintando de verde, berdez pintatzen ari dira;## osasunez hobeto nago##adj eta izen abstraktoa, determinante gabe  ## arratsaldez
 de		[INS][GEL]		   my.headsem=~'[GAI+]'		-	## egurrezko
 de		[GEN]	my.headsem=~'[BIZ+]' || my headpos='[IZE][IZB]'	    +			     ## la casa de Juan, Jon-en etxea
 de		[GEL]	(parent.type!='adi-kat' && my.headsem=~'[BIZ-]') || (parent.type='adi-kat' && parent.headlem='_izan_') || (parent.type!='adi-kat' && ( my.headpos='[Z]' || my.leafpos='[Z]' || my.headpos='[W]' ) )   +	## la casa del monte, mendiko etxea 
