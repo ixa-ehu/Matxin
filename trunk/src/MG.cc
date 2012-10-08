@@ -63,7 +63,7 @@ wstring keep_case(wstring form, wstring UpCase)
 
 wstring verb_generation(wstring lemma, wstring pos, wstring suf, wstring cas,
                         wstring mi, wstring chunk_mi, wstring head_sem,
-                        bool is_last, bool &flexioned, config cfg)
+                        bool &flexioned, config cfg)
 {
   wstring analisys, form, prefix, postposizio, pre_lemma, lemma_osoa;
   lemma_osoa = lemma;
@@ -98,6 +98,16 @@ wstring verb_generation(wstring lemma, wstring pos, wstring suf, wstring cas,
 
     if (prefix.find(L"[") != wstring::npos)
       prefix.insert(prefix.find(L"["), L"+");
+  }
+
+  if (cas.find(L"+") == 0) {
+    size_t position = mi.find(L"+n[ERL][MEN]");
+    if (position != wstring::npos) {
+      mi = mi.substr(0,position);
+    }
+
+    mi = mi + cas;
+    cas = L"";
   }
 
   size_t position1 = lemma.rfind(L' ');
@@ -156,8 +166,7 @@ wstring verb_generation(wstring lemma, wstring pos, wstring suf, wstring cas,
     }
   }
 
-  if (is_last)
-    lemmaMorf = prefix + lemmaMorf;
+  lemmaMorf = prefix + lemmaMorf;
 
   if (cfg.DoGenTrace)
     wcerr << lemmaMorf << endl;
@@ -219,8 +228,7 @@ wstring verb_generation(wstring lemma, wstring pos, wstring suf, wstring cas,
 
   form = disanbiguate(form);
   form = pre_lemma + form;
-  if (flexioned)
-    form += postposizio;
+  form += postposizio;
 
   if (cfg.DoGenTrace)
     wcerr << form << endl << endl;
@@ -230,8 +238,7 @@ wstring verb_generation(wstring lemma, wstring pos, wstring suf, wstring cas,
 
 
 wstring number_generation(wstring lemma, wstring pos, wstring suf, wstring cas,
-                          wstring mi, wstring head_sem, bool is_last,
-                          bool &flexioned, config cfg)
+                          wstring mi, wstring head_sem, bool &flexioned, config cfg)
 {
   wstring analisys, form, prefix, postposizio, pre_lemma, lemma_osoa;
 
@@ -254,7 +261,6 @@ wstring number_generation(wstring lemma, wstring pos, wstring suf, wstring cas,
     lemma = ratio + L"/" + number;
   }
 
-
   if (mi == L"")
     mi = L"[MG]";
 
@@ -264,7 +270,7 @@ wstring number_generation(wstring lemma, wstring pos, wstring suf, wstring cas,
     cas = cas.substr(0, cas.find(L"++"));
   }
 
-  if (is_last)
+  if (cas != L"")
   {
     wstring lemmaMorf = lemma + pos;
     if (cfg.DoGenTrace)
@@ -337,17 +343,16 @@ wstring number_generation(wstring lemma, wstring pos, wstring suf, wstring cas,
 
 
 wstring date_generation(wstring lemma, wstring pos, wstring suf, wstring cas,
-                        wstring mi, wstring head_sem, bool is_last,
-                        bool &flexioned, config cfg)
+                        wstring mi, wstring head_sem, bool &flexioned, config cfg)
 {
   wstring analisys, form, prefix, postposizio, pre_lemma, lemma_osoa;
+  bool is_last = true;
 
   if (cfg.DoGenTrace)
     wcerr << lemma << L" " << pos << L" " << mi << L" " << cas << endl;
 
   wstring century, week_day, day, month, year, hour, meridiam;
   wstring century_cas, week_day_cas, day_cas, month_cas, year_cas, hour_cas;
-  bool century_last, week_day_last, day_last, month_last, year_last, hour_last;
 
   lemma = lemma.substr(1, lemma.size() - 2);
 
@@ -374,100 +379,82 @@ wstring date_generation(wstring lemma, wstring pos, wstring suf, wstring cas,
     century = L"??";
   }
 
-  if (century != L"??" && cas != L"")
+  if (century != L"??" && is_last)
   {
     century_cas = cas;
-    cas = L"";
-    century_last = is_last;
-    is_last = true;
+    is_last=false;
   }
   else
   {
     century_cas = L"[INE]";
-    century_last = is_last;
   }
 
-  if (day != L"??" && cas != L"")
+  if (day != L"??" && is_last)
   {
     day_cas = cas;
-    cas = L"";
-    day_last = is_last;
-    is_last = true;
+    is_last=false;
   }
   else
   {
     day_cas = L"[INE]";
-    day_last = is_last;
   }
 
-  if (month != L"??" && cas != L"")
+  if (month != L"??" && is_last)
   {
     month_cas = cas;
-    cas = L"";
-    month_last = is_last;
-    is_last = true;
+    is_last=false;
   }
   else
   {
     month_cas = L"[GEN]";
-    month_last = is_last;
   }
 
-  if (year != L"??" && cas != L"")
+  if (year != L"??" && is_last)
   {
     year_cas = cas;
-    cas = L"";
-    year_last = is_last;
-    is_last = true;
+    is_last=false;
   }
   else
   {
     year_cas = L"[GEL]";
-    year_last = is_last;
   }
 
-  if (week_day != L"??" && cas != L"")
+  if (week_day != L"??" && is_last)
   {
     week_day_cas = cas;
-    cas = L"";
-    week_day_last = is_last;
-    is_last = true;
+    is_last=false;
   }
   else
   {
     week_day_cas = L"[ABS]";
-    week_day_last = is_last;
   }
 
-  if (hour != L"??.??" && cas != L"")
+  if (hour != L"??.??" && is_last)
   {
     hour_cas = cas;
-    cas = L"";
-    hour_last = is_last;
-    is_last = true;
+    is_last=false;
   }
   else
   {
     hour_cas = L"[INE]";
-    hour_last = is_last;
   }
 
 
 
   if (century != L"??")
     form = number_generation(century, L"[CN]", suf, century_cas, L"[NUMS]",
-                             head_sem, century_last, flexioned, cfg);
+                             head_sem, flexioned, cfg);
 
   if (year != L"??")
     form = number_generation(year, L"[Z]", suf, year_cas, L"[NUMS]", head_sem,
-                             year_last, flexioned, cfg);
+                             flexioned, cfg);
 
   if (month != L"??")
   {
     if (form != L"")
       form += L" ";
     form += number_generation(month, L"[MM]", suf, month_cas, L"[NUMS]",
-                              head_sem, month_last, flexioned, cfg);
+                              head_sem, flexioned, cfg);
   }
 
   if (day != L"??")
@@ -475,7 +462,7 @@ wstring date_generation(wstring lemma, wstring pos, wstring suf, wstring cas,
     if (form != L"")
       form += L" ";
     form += number_generation(day, L"[Z]", suf, day_cas, L"[NUMS]", head_sem,
-                              day_last, flexioned, cfg);
+                              flexioned, cfg);
   }
 
   if (week_day != L"??")
@@ -483,7 +470,7 @@ wstring date_generation(wstring lemma, wstring pos, wstring suf, wstring cas,
     if (form != L"")
       form += L", ";
     form += number_generation(week_day, L"[WD]", suf, week_day_cas, L"[NUMS]",
-                              head_sem, week_day_last, flexioned, cfg);
+                              head_sem, flexioned, cfg);
   }
 
   if (hour != L"??.??")
@@ -491,7 +478,7 @@ wstring date_generation(wstring lemma, wstring pos, wstring suf, wstring cas,
     if (form != L"")
       form += L", ";
     form += number_generation(hour, L"[Z]", suf, hour_cas, L"[MG]", head_sem,
-                              hour_last, flexioned, cfg);
+                              flexioned, cfg);
     if (meridiam != L"??")
       form += L" (" + meridiam + L")";
   }
@@ -503,7 +490,7 @@ wstring date_generation(wstring lemma, wstring pos, wstring suf, wstring cas,
 
 
 wstring generation(wstring lemma, wstring pos, wstring suf, wstring cas,
-                   wstring mi, wstring head_sem, bool is_last, bool &flexioned,
+                   wstring mi, wstring head_sem, bool &flexioned,
                    config cfg)
 {
   wstring analisys, form, prefix, postposizio, pre_lemma, lemma_osoa;
@@ -519,13 +506,11 @@ wstring generation(wstring lemma, wstring pos, wstring suf, wstring cas,
       lemma[i]= L' ';
   }
 
-  if ((!is_last && suf == L"") || cas == L"")
+  if (suf == L"" && cas == L"")
     return lemma;
 
   if (mi == L"")
     mi = L"[NUMS]";
-  if (!is_last)
-    cas = L"";
 
   flexioned = true;
   if (cas.find(L"++") != wstring::npos)
@@ -682,10 +667,7 @@ wstring procSYN (xmlTextReaderPtr reader)
   return syns;
 }
 
-
-wstring procNODE(xmlTextReaderPtr reader, wstring chunk_type, wstring cas,
-                 wstring cas_alloc, wstring cas_ref, wstring mi,
-                 wstring head_sem, int chunk_len, config cfg)
+wstring procNODE(xmlTextReaderPtr reader, wstring chunk_type, config cfg)
 {
   wstring nodes;
   wstring tagName = getTagName(reader);
@@ -696,8 +678,11 @@ wstring procNODE(xmlTextReaderPtr reader, wstring chunk_type, wstring cas,
     wstring lem = attrib(reader, "lem");
     wstring pos = attrib(reader, "pos");
     wstring suf = attrib(reader, "suf");
+    wstring cas = attrib(reader, "cas");
+    wstring mi = attrib(reader, "mi");
+    wstring head_sem = attrib(reader, "headsem");
+
     wstring form;
-    bool is_last = (watoi(attrib(reader, "ord").c_str()) == (chunk_len - 1));
     bool flexioned = false;
 
     lem = keep_case(lem, attrib(reader, "UpCase"));
@@ -705,23 +690,23 @@ wstring procNODE(xmlTextReaderPtr reader, wstring chunk_type, wstring cas,
     if (chunk_type.substr(0, 4) == L"adi-")
     {
       form = verb_generation(lem, pos, suf, cas, attrib(reader, "mi"),
-                             mi, head_sem, is_last, flexioned, cfg);
+                             mi, head_sem, flexioned, cfg);
     }
     else if (pos == L"[W]")
     {
       form = date_generation(lem, pos, suf, cas, mi, head_sem, 
-			     is_last, flexioned, cfg);
+			     flexioned, cfg);
     }
     else if (pos == L"[Z]" || pos == L"[Zu]" || pos == L"[Zm]" 
 	     || pos == L"[Zp]" || pos == L"[Zd]")
     {
       form = number_generation(lem, pos, suf, cas, mi, head_sem, 
-			       is_last, flexioned, cfg);
+			       flexioned, cfg);
     }
     else
     {
       form = generation(lem, pos, suf, cas, mi, head_sem, 
-			is_last, flexioned, cfg);
+			flexioned, cfg);
     }
 
     for (size_t i = 0; i<form.size(); i++)
@@ -730,14 +715,7 @@ wstring procNODE(xmlTextReaderPtr reader, wstring chunk_type, wstring cas,
 
 //    form = keep_case(form, attrib(reader, "UpCase"));
 
-    nodes += L"<NODE form='" + write_xml(form) + L"'";
-    nodes += L" ref ='" + write_xml(attrib(reader, "ref"));
-    if (flexioned && cas_ref != L"")
-      nodes += L"," + write_xml(cas_ref);
-    nodes += L"' alloc ='" + write_xml(attrib(reader, "alloc"));
-    if (flexioned && cas_alloc != L"")
-      nodes += L"," + write_xml(cas_alloc);
-    nodes += L"'" + write_xml(text_allAttrib_except(allAttrib_except(reader, L"alloc"), L"ref"));
+    nodes += L"<NODE form='" + write_xml(form) + L"'" + write_xml(allAttrib(reader));
 
     if (xmlTextReaderIsEmptyElement(reader) == 1)
     {
@@ -773,8 +751,7 @@ wstring procNODE(xmlTextReaderPtr reader, wstring chunk_type, wstring cas,
 
   while (ret == 1 and tagName == L"NODE" and tagType == XML_READER_TYPE_ELEMENT)
   {
-    nodes += procNODE(reader, chunk_type, cas, cas_alloc, cas_ref, mi, head_sem,
-                      chunk_len, cfg);
+    nodes += procNODE(reader, chunk_type, cfg);
 
     nextTag(reader);
     tagName = getTagName(reader);
@@ -801,38 +778,12 @@ wstring procCHUNK(xmlTextReaderPtr reader, config cfg)
 {
   wstring tagName = getTagName(reader);
   int tagType = xmlTextReaderNodeType(reader);
-  wstring tree, det_cas, cas, cas_alloc, cas_ref, mi, type, head_sem;
-  int chunk_len;
+  wstring tree, type;
 
   if (tagName == L"CHUNK" and tagType == XML_READER_TYPE_ELEMENT)
   {
     type = attrib(reader, "type");
-    det_cas = attrib(reader, "case");
-    cas = attrib(reader, "cas");
-    cas_alloc = attrib(reader, "casalloc");
-    cas_ref = attrib(reader, "casref");
-    mi = attrib(reader, "mi");
-    head_sem = attrib(reader, "headsem");
-    chunk_len = watoi(attrib(reader, "length").c_str());
     tree = L"<CHUNK" + write_xml(allAttrib(reader)) + L">\n";
-
-
-    if (det_cas != L"" && det_cas.rfind(L"++") != wstring::npos)
-    {
-      bool flexioned;
-      wstring postposizio = det_cas.substr(det_cas.rfind(L"++") + 2);
-      if (cfg.DoGenTrace)
-        wcerr << postposizio << L" " << cas << endl;
-      postposizio = generation(postposizio, L"", cas, L"", mi, head_sem, true,
-                               flexioned, cfg);
-      if (cfg.DoGenTrace)
-        wcerr << postposizio << endl;
-      cas = det_cas.substr(0, det_cas.rfind(L"++") + 2) + postposizio;
-      if (cfg.DoGenTrace)
-        wcerr << cas << endl;
-    }
-
-
   }
   else
   {
@@ -845,8 +796,7 @@ wstring procCHUNK(xmlTextReaderPtr reader, config cfg)
   tagName = getTagName(reader);
   tagType = xmlTextReaderNodeType(reader);
 
-  tree += procNODE(reader, type, cas, cas_alloc, cas_ref, mi, head_sem,
-                   chunk_len, cfg);
+  tree += procNODE(reader, type, cfg);
 
   ret = nextTag(reader);
   tagName = getTagName(reader);

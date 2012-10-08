@@ -175,17 +175,17 @@ wstring writeNODE_AS(wstring ref, wstring alloc, wstring &length, wstring rel,
   size_t separator1, separator2;
   int len = 1;
 
-  size_t pos_separator = AS_target.rfind(L"/");
-  size_t pos_erl = AS_target.rfind(L"+n[ERL][MEN]");
+  // size_t pos_separator = AS_target.rfind(L"/");
+  // size_t pos_erl = AS_target.rfind(L"+n[ERL][MEN]");
 
-  if (rel != L"" && pos_erl != wstring::npos &&
-      (pos_separator == wstring::npos || pos_separator < pos_erl))
-  {
-    AS_target = AS_target.substr(0, pos_erl);
-  }
+  // if (rel != L"" && pos_erl != wstring::npos &&
+  //     (pos_separator == wstring::npos || pos_separator < pos_erl))
+  // {
+  //   AS_target = AS_target.substr(0, pos_erl);
+  // }
 
-  if (rel[0] == L'+' && AS_target.find(L"<") != wstring::npos)
-    AS_target += rel;
+  // if (rel[0] == L'+' && AS_target.find(L"<") != wstring::npos)
+  //   AS_target += rel;
 
 
   separator2 = AS_target.find(L"/");
@@ -222,7 +222,7 @@ wstring writeNODE_AS(wstring ref, wstring alloc, wstring &length, wstring rel,
 
   nodes += L"</NODE>\n";
   wostringstream dummy;
-  dummy << len;
+  dummy << (len - 1);
   length = dummy.str();
 
   return nodes;

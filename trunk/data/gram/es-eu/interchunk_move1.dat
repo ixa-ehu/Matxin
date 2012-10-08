@@ -7,6 +7,7 @@ spost!=''/spostref	si='dobj'/casref	down	overwrite
 spost!=''/spostalloc	si='dobj'/casalloc	down	overwrite
 
 vpost!=''/vpost	type='adi-kat'/rel	down	concat
+vpost!=''/'[ZERO]'	type='adi-kat'/cas	down	concat
 vpost!=''/vpostref	type='adi-kat'/relref	down	concat
 vpost!=''/vpostalloc	type='adi-kat'/relalloc	down	concat
 

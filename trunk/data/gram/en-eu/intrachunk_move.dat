@@ -1,6 +1,7 @@
-mi!=''/mi	type!='adi-kat'/mi	no-overwrite
+num!=''/num	type!='adi-kat'/num	no-overwrite
+def!=''/def	type!='adi-kat'/def	no-overwrite
+def='[MG]'/def	type!='adi-kat'/def	overwrite
 per!=''/per	type!='adi-kat'/per	no-overwrite
-mi='[MG]'/mi	type!='adi-kat'/mi	overwrite
 cas!=''/cas	/cas	concat
 cas!=''/ref	/casref	concat
 cas!=''/alloc	/casalloc	concat
@@ -19,8 +20,8 @@ pos!=''/pos	/headpos	no-overwrite
 lem!=''/lem	/headlem	no-overwrite
 sem!=''/sem	/headsem	no-overwrite
 pos='[Z]' && lem!='1'/pos	/leafpos	overwrite
-pos='[Z]'/'[MG]'	/mi	overwrite
-pos='[Zu]'/'[MG]'	/mi	overwrite
+pos='[Z]'/'[MG]'	/def	overwrite
+pos='[Zu]'/'[MG]'	/def	overwrite
 
 
 lema='.not.'/'adi-kat-ez'	type='adi-kat'/type	overwrite

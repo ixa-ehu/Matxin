@@ -1,6 +1,6 @@
 EXTRA_DIST = config.h data_manager.h matxin_string_utils.h simpleregex.h string_utils.h utf_converter.h XML_reader.h gen_fst2regex.sh gen_Matxin_translator.sh deformat.xsl txt-format.xml wiki-format.xml rtf-format.xml html-format.xml
 
-bin_PROGRAMS = Analyzer LT ST_intra ST_inter ST_prep ST_verb SG_inter SG_intra \
+bin_PROGRAMS = Analyzer LT ST_intra ST_inter ST_prep ST_verb SG_inter SG_intra SG_move \
                MG reFormat txt-deformat wiki-deformat html-deformat rtf-deformat
 
 bin_SCRIPTS = Matxin_translator fst2regex.pl
@@ -28,6 +28,9 @@ SG_inter_LDADD = -lfreeling -lfoma -lboost_filesystem -lboost_program_options
 
 SG_intra_SOURCES = SG_intra.cc utf_converter.cc data_manager.cc XML_reader.cc simpleregex.cc matxin_string_utils.cc matxin_string_utils.h IORedirectHandler.cc IORedirectHandler.hpp
 SG_intra_LDADD = -lfreeling -lfoma -lboost_filesystem -lboost_program_options
+
+SG_move_SOURCES = SG_move.cc utf_converter.cc data_manager.cc XML_reader.cc simpleregex.cc matxin_string_utils.cc matxin_string_utils.h IORedirectHandler.cc IORedirectHandler.hpp
+SG_move_LDADD = -lfreeling -lfoma -lboost_filesystem -lboost_program_options
 
 MG_SOURCES = MG.cc data_manager.cc utf_converter.cc XML_reader.cc simpleregex.cc matxin_string_utils.cc matxin_string_utils.h IORedirectHandler.cc IORedirectHandler.hpp
 MG_LDADD = -lfreeling -lfoma -lboost_filesystem -lboost_program_options

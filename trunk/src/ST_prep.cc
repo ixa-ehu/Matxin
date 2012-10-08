@@ -233,7 +233,7 @@ vector<wstring> procCHUNK(xmlTextReaderPtr reader, wstring &attributesFromParent
   }
 
   wostringstream length_attrib;
-  length_attrib << L" length='" << length << L"'";
+  length_attrib << L" length='" << (length-1) << L"'";
   my_attributes += length_attrib.str();
 
   while (ret == 1 and tagName == L"CHUNK" and tagType == XML_READER_TYPE_ELEMENT)
@@ -267,10 +267,10 @@ vector<wstring> procCHUNK(xmlTextReaderPtr reader, wstring &attributesFromParent
         cases.push_back(text_attrib(chunk_attributes[i], L"cas"));
         chunk_attributes[i] = text_allAttrib_except(chunk_attributes[i], L"cas");
       }
-      else if (text_attrib(chunk_attributes[i], L"rel") != L"")
-      {
-        cases.push_back(text_attrib(chunk_attributes[i], L"rel"));
-      }
+      // else if (text_attrib(chunk_attributes[i], L"rel") != L"")
+      // {
+      //   cases.push_back(text_attrib(chunk_attributes[i], L"rel"));
+      // }
       else
         cases  = preposition_transference(my_attributes, chunk_attributes[i], sentenceref, sentencealloc, cfg);
 
@@ -454,10 +454,10 @@ wstring procSENTENCE (xmlTextReaderPtr reader, config &cfg)
         cases.push_back(text_attrib(child_attributes[i], L"cas"));
         child_attributes[i] = text_allAttrib_except(child_attributes[i], L"cas");
       }
-      else if (text_attrib(child_attributes[i], L"rel") != L"")
-      {
-        cases.push_back(text_attrib(child_attributes[i], L"rel"));
-      }
+      // else if (text_attrib(child_attributes[i], L"rel") != L"")
+      // {
+      //   cases.push_back(text_attrib(child_attributes[i], L"rel"));
+      // }
       else
         cases  = preposition_transference(L"", child_attributes[i], ref, sentencealloc, cfg);
 

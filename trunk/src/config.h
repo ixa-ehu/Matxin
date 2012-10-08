@@ -164,6 +164,8 @@ class config {
     std::string Node_OrderFile;
     std::string POS_ToOrderFile;
 
+    std::string Generation_MovementsFile;
+
     /// Morphological Generation
     std::string Morpho_GenFile;
     std::string Measures_GenFile;
@@ -259,6 +261,7 @@ class config {
 	("interMov1",po::value<std::string>(&Inter_Movements1File),"")
 	("interMov2",po::value<std::string>(&Inter_Movements2File),"")
 	("interMov3",po::value<std::string>(&Inter_Movements3File),"")
+	("genMov",po::value<std::string>(&Generation_MovementsFile),"")
 	("subcatF",po::value<std::string>(&SubcatFile),"")
 	("prep",po::value<std::string>(&PrepositionsFile),"")
 	("tripletF",po::value<std::string>(&Noun_SubcatFile),"")
@@ -359,6 +362,7 @@ class config {
 	("InterMoveFile1",po::value<std::string>(&Inter_Movements1File),"")
 	("InterMoveFile2",po::value<std::string>(&Inter_Movements2File),"")
 	("InterMoveFile3",po::value<std::string>(&Inter_Movements3File),"")
+	("GenerationMoveFile",po::value<std::string>(&Generation_MovementsFile),"")
 	("SubCatFile",po::value<std::string>(&SubcatFile),"")
 	("PrepFile",po::value<std::string>(&PrepositionsFile),"")
 	("TripletsFile",po::value<std::string>(&Noun_SubcatFile),"")

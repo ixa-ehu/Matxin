@@ -1,3 +1,8 @@
+/'[NUMS]'	type!='adi-kat' && def='[MUGM]' && num='[NUMS]'/mi	down	no-overwrite
+/'[NUMP]'	type!='adi-kat' && def='[MUGM]' && num='[NUMP]'/mi	down	no-overwrite
+/'[NUMS]'	type!='adi-kat' && def='' && num='[NUMS]'/mi	down	no-overwrite
+/'[NUMP]'	type!='adi-kat' && def='' && num='[NUMP]'/mi	down	no-overwrite
+
 prep!=''/prep	type=~'coor'/prep	up	overwrite
 prep!=''/casref	type=~'coor'/casref	up	overwrite
 prep!=''/casalloc	type=~'coor'/casalloc	up	overwrite

@@ -5,7 +5,7 @@
     <input encoding="ISO-8859-1"/>
     <output encoding="ISO-8859-1"/>
     <tag-name regexp="[^ \n\t\r&gt;&lt;/]+"/>
-    <escape-chars regexp='[][^@\\/]'/>
+    <escape-chars regexp='[@\\/]'/>
     <space-chars regexp='[ \n\t\r$*]'/>
     <case-sensitive value="no"/>
   </options>
@@ -89,7 +89,7 @@
 
 <!-- italic in wiki texts-->
     <format-rule type="open" eos="no" name="italic" priority="11">
-      <tag regexp='[\t ]&apos;&apos;'/>
+      <tag regexp='[ \n\t\r]&apos;&apos;'/>
     </format-rule>
 
     <format-rule type="open" eos="no" name="italic" priority="11">
@@ -110,7 +110,7 @@
 
 <!-- simple links in wiki texts-->
     <format-rule type="open" eos="no" name="link" inWord="yes" priority="13">
-      <tag regexp='\[\[[^\]]+\|'/>
+      <tag regexp='\[\[[^\]\n]+\|'/>
     </format-rule>
 
     <format-rule type="open" eos="no" name="link" inWord="yes" priority="15">
