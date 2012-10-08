@@ -307,7 +307,7 @@ vector<wstring> procCHUNK(xmlTextReaderPtr reader, wstring &attributesFromParent
         vector<wstring> subj_subTree;
         for (int i = 0; i < int(chunk_attributes.size()); i++)
         {
-          if (text_attrib(chunk_attributes[i], L"si") == L"subj")
+          if (text_attrib(chunk_attributes[i], L"subject") == L"true")
           {
             merge_cases(subj_cases, chunk_cases[i]);
             chunk_cases.erase(chunk_cases.begin() + i);

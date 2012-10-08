@@ -26,3 +26,5 @@ pos!=''/pos	/headpos	no-overwrite
 lem!=''/lem	/headlem	no-overwrite
 sem!=''/sem	/headsem	no-overwrite
 pos='[Z]'/pos	/leafpos	overwrite
+
+/'true'	si='subj'/subject	overwrite
