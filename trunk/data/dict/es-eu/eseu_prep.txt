@@ -66,7 +66,7 @@ ante		[GEN]++aurrera/ALA	     -			      +     ## lo llevaron ante el rey, errege
 con		+[AMM][ADIZE]+[DEK][SOZ]     my.headpos='[ADI][SIN]'  -	    ##cree que con hacer eso ya lo tiene todo hecho.
 con		[SOZ]			     -			      +							 
 
-de		+[AMM][ADIZE]+[DEK][GEL]   (my.headpos='[ADI][SIN]' && parent.headpos='[IZE][ARR]')   - ##la petición de ilegalizar>legez kanpo uzteko eskaera
+de		+[AMM][ADIZE]+[DEK][GEL]   (my.headpos='[ADI][SIN]' && parent.headpos='[IZE][ARR]')     - ##la petición de ilegalizar>legez kanpo uzteko eskaera
 de		+[AMM][PART]+[ASP][BURU]++izatera  my.headpos='[ADI][SIN]' && my.si='top'	        - ##de saberlo antes > no hubiese venido.
 de		+[AMM][ADIZE]+[DEK][INS]	   my.headpos='[ADI][SIN]' && (parent.headlem='_ahaztu_' || parent.headlem='_nekatu_')	  -  
 													  ##se olvidaron de cantar > Kantatzeaz ahaztu ziren.
@@ -75,24 +75,26 @@ de		+[AMM][ADIZE]+[DEK][GEL]	   my.headpos='[ADI][SIN]' && my.si='cc'	        - 
 
 de		[INS]	my.headpos=~'[ADJ]' || my.headsem=~'[DEN+]'	-	## || ( my.headpos='[IZE][ARR]' && my.mi='[MG]' ) 
 										## Halakoak itzultzeko erabili daiteke, baina arazoak ematen ditu zenbakiak daramatzaten sintagmekin ('la muerte de 45 inmigrantes'): lo están pintando de verde, berdez pintatzen ari dira;## osasunez hobeto nago##adj eta izen abstraktoa, determinante gabe  ## arratsaldez
-de		[INS][GEL]		   my.headsem=~'[GAI+]'		-	## egurrezko
-de		[GEN]	my.headsem=~'[BIZ+]' || my headpos='[IZE][IZB]'	    +			     ## la casa de Juan, Jon-en etxea
-de		[GEL]	(parent.type!='adi-kat' && my.headsem=~'[BIZ-]') || (parent.type='adi-kat' && parent.headlem='_izan_') || (parent.type!='adi-kat' && ( my.headpos='[Z]' || my.leafpos='[Z]' || my.headpos='[W]' ) )   +	## la casa del monte, mendiko etxea 
-de		[ABL]			-	      +    ## no sale de casa, ez da etxetik irteten##abiapuntua denean, mugim. aditza
-durante		[INS]	my.headsem=~'[DEN+]'	      -	   ## durante un mes, hilabetez
-durante		[INE]		        -	      +	   ## lo hiciero durante el invierno, neguan egin zuten ## durante 1957	##urteekin
-en		[INS]	my.headsem=~'[GLU+]' && ( my.def='' || my.def='[MG]') || my.headsem=~'[HZK+]' 	      -	   ## gailuekin: trenez, kotxez,...; eta hizkuntzekin: euskaraz, espainieraz,...
-en		[INE]			-	    +	   ## está en Donosti, Donostian dago	##
-hacia		[ABS]++aldera/ALA	my.headpos='[W]' -	   ## hacia las diez, hamarrak aldera	##orduak, datak (W)
-hacia		[ABZ]			-	      +	   ## El niño va hacia su madre: umea bere amaganantz doa	##bizidunekin
-hasta		+[AMM][PART]+[ASP][BURU]++arte	my.headpos='[ADI][SIN]'	-      ##hasta llegar, todo era muy bonito.
-hasta		[ABS]++arte		my.headpos='[W]' -	   ## hasta las doce, hamabiak arte; noiz arte	##denbora
-hasta		[ABU]			-	      +	   ## hasta donostia, Donostiaraino		##lekuak
-para		+[AMM][ADIZE]+[DEK][GEL]	my.headpos='[ADI][SIN]'	-	##he venido para comprarlo.
-para		[DES]			-	      +	   ## esto es para el niño, haurrarentzat da	##bizidunak
-para		[ABZ]			-	      +	   ## Vamos para la escuela: eskolarantz goaz	##lekuak
-por		+[AMM][ADIZE]+[DEK][NUMS]+[DEK][MOT]	my.headpos='[ADI][SIN]'	-	##he venido por verle (ikusteagatik).
-#por		+[AMM][ADIZE]+[DEK][GEL]	my.headpos='[ADI][SIN]'	-	##he venido por verle.
+de		[INS][GEL]   my.headsem=~'[GAI+]'				-	## egurrezko
+de		[GEN]	     my.headsem=~'[BIZ+]' || my headpos='[IZE][IZB]'	+	## la casa de Juan, Jon-en etxea
+de		[GEL]	     (parent.type!='adi-kat' && my.headsem=~'[BIZ-]') || (parent.type='adi-kat' && parent.headlem='_izan_') || (parent.type!='adi-kat' && ( my.headpos='[Z]' || my.leafpos='[Z]' || my.headpos='[W]' ) )    +     ## la casa del monte, mendiko etxea 
+de		[ABL]	-				     +     ## no sale de casa, ez da etxetik irteten##abiapuntua denean, mugim. aditza
+durante		[INS]	my.headsem=~'[DEN+]'		     -	   ## durante un mes, hilabetez
+durante		[INE]	-				     +	   ## lo hiciero durante el invierno, neguan egin zuten ## durante 1957	##urteekin
+en		[INS]	my.headsem=~'[GLU+]' && ( my.def='' || my.def='[MG]') || my.headsem=~'[HZK+]'	  -	   ## gailuekin: trenez, kotxez,...; 
+														   ##eta hizkuntzekin: euskaraz, espainieraz,...
+en		[INE]			-		     +	   ## está en Donosti, Donostian dago	##
+hacia		[ABS]++aldera/ALA	my.headpos='[W]'     -	   ## hacia las diez, hamarrak aldera	##orduak, datak (W)
+hacia		[ABS]++aldera/ALA	my.headpos='[Z]'     -	   ## hacia las diez, hamarrak aldera	##orduak, datak (W)
+hacia		[ABZ]			-		     +	   ## El niño va hacia su madre: umea bere amaganantz doa	##bizidunekin
+hasta		+[AMM][PART]+[ASP][BURU]++arte	my.headpos='[ADI][SIN]'	        -      ##hasta llegar, todo era muy bonito.
+hasta		[ABS]++arte		my.headpos='[W]'			-      ## hasta las doce, hamabiak arte; noiz arte	##denbora
+hasta		[ABU]			-					+      ## hasta donostia, Donostiaraino		##lekuak
+para		+[AMM][ADIZE]+[DEK][GEL]	my.headpos='[ADI][SIN]'		-      ##he venido para comprarlo.
+para		[DES]			-					+      ## esto es para el niño, haurrarentzat da	##bizidunak
+para		[ABZ]			-					+      ## Vamos para la escuela: eskolarantz goaz	##lekuak
+por		+[AMM][ADIZE]+[DEK][NUMS]+[DEK][MOT]	my.headpos='[ADI][SIN]'	-      ##he venido por verle (ikusteagatik).
+#por		+[AMM][ADIZE]+[DEK][GEL]		my.headpos='[ADI][SIN]'	-      ##he venido por verle.
 por		[ERG]	parent.type='adi-pas'	      -	   ## ha sido firmado por el alcalde, alkateak sinatua izan da	##pasiba
 por		[GEL]	my.headpos='[ADI]'	      -	   ## está por hacer, egiteko dago	##por + infinitibo!!!!!!!!!!!????????
 por		[GEL]	my.headsem=~'[NEU+]'	      -	   ## por kilómetro.
