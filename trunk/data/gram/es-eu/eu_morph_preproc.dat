@@ -96,7 +96,7 @@ bat[DET][DZH](.*?)[(INE|ABL|ALA|ABU|ABZ)](.*?)[BIZ\+]		LemaMorf +[DEK][GEN]+[DEK
 
 	#besteak
 bat[DET][DZH](.*?)[(INE|ALA|ABL|ABU|GEL)]	LemaMorf +[DEK] Num +[DEK] Kas
-bat[DET][DZH](.*?)[(ABS|ERG|DAT|SOZ)]		LemaMorf +[DEK] Kas [MG]
+bat[DET][DZH](.*?)[(ABS|ERG|DAT|SOZ|INS)]		LemaMorf +[DEK] Kas [MG]
 bat[DET][DZH](.*?)[(.*?)]			LemaMorf +[DEK] Kas
 
 # DZH 'gutxi' #
@@ -113,6 +113,9 @@ gutxi[DET][DZH](.*?)	LemaMorf +[DEK] Kas
 # izen bereziak #
 [IZE][(IZB|LIB)](.*?)[(INE|ALA|ABL|ABU|GEL)]	LemaMorf +[DEK] Num +[DEK] Kas
 [IZE][(IZB|LIB)]				LemaMorf +[DEK] Kas [MG]
+
+# [INS]+[GEL]+[ABS] "de madera"-> "zurezko"
+(.*?)[INS][GEL][ABS]				LemaMorf +[DEK][INS][MG]+[DEK][GEL]+[DEK][ABS] Num
 
 # [INS]+[GEL] "de madera"-> "zurezko"
 (.*?)[INS][GEL]				LemaMorf +[DEK][INS][MG]+[DEK][GEL]
