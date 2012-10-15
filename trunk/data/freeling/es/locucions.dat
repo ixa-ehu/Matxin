@@ -14358,7 +14358,7 @@ el_príncipe_de_las_tinieblas el_príncipe_de_las_tinieblas $2:NC I
 el_que_más_y_el_que_menos el_que_más_y_el_que_menos RG I
 el_qué_dirán el_qué_dirán RG I
 el_respetable el_respetable $2:AQ I
-el_suyo el_suyo PX3MS000 I
+el_suyo el_suyo PX3MS0C0 I
 el_tal el_tal RG I
 el_tuyo el_tuyo PX2MS0S0 I
 el_vil_metal el_vil_metal $2:AQ I
@@ -15154,7 +15154,7 @@ la_noche_de_el_5_de_enero la_noche_del_5_de_enero $2:NC I
 la_nuestra el_nuestro PX1FS0P0 I
 la_otra_vida la_otra_vida RG I
 la_próxima_vez la_próxima_vez $2:AQ I
-la_suya el_suyo PX3FS000 I
+la_suya el_suyo PX3FS0C0 I
 la_tuya el_tuyo PX2FS0S0 I
 la_vuestra el_vuestro PX2FS0P0 I
 la_última_vez la_última_vez RG I
@@ -15167,7 +15167,7 @@ largo_y_tendido largo_y_tendido RG I
 las_mías el_mío PX1FP0S0 I
 las_nuestras el_nuestro PX1FP0P0 I
 las_palabras_se_las_lleva_el_viento las_palabras_se_las_lleva_el_viento $2:NC I
-las_suyas el_suyo PX3FP000 I
+las_suyas el_suyo PX3FP0C0 I
 las_tuyas el_tuyo PX2FP0S0 I
 las_vuestras el_vuestro PX2FP0P0 I
 lejos_de lejos_de SPS00 I
@@ -15228,7 +15228,7 @@ los_más los_más RG I
 los_míos el_mío PX1MP0S0 I
 los_nuestros el_nuestro PX1MP0P0 I
 los_pros_y_los_contras los_pros_y_los_contras $2:NC I
-los_suyos el_suyo PX3MP000 I
+los_suyos el_suyo PX3MP0C0 I
 los_tuyos el_tuyo PX2MP0S0 I
 los_vuestros el_vuestro PX2MP0P0 I
 luces_de_gálibo luces_de_gálibo $1:NC I
