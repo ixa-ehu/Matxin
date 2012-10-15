@@ -48,20 +48,21 @@ mediante	[GEN]++bitartez		-	    +
 
 # sinple ambiguous
 
-a		+[AMM][ADIZE]+[DEK][ALA]/ALA	my.headpos='[ADI][SIN]'	    -   ##han ido a comprar patatas
-a		[INE]	my.headpos='[Zm]' || my.headsem=~'[DEN+]'	    -   ## lo han vendido a 3 euros, 3 eurotan saldu dute	  ##ez-bizidun, prezioa
-a		[DAT]	my.si='iobj'					    +   ## le he dado el libro a Jon, Joni eman diot liburua ##zehar objektua + biziduna
-a		[ABS]	-						    +   ## he visto a Jon, Jon ikusi dut	##objektu zuzena + biziduna
-a		[ALA]	-						    +   ## he ido a casa, etxera joan naiz; ##ez-bizidun, lekua + mugimenduzko aditza;
+a		+[AMM][ADIZE]+[DEK][ALA]/ALA	my.headpos='[ADI][SIN]'	  -   ##han ido a comprar patatas
+a		[INE]	my.headpos='[Zm]' || my.headsem=~'[DEN+]'	  -   ## lo han vendido a 3 euros, 3 eurotan saldu dute	  ##ez-bizidun, prezioa
+a		[DAT]	my.si='iobj'					  +   ## le he dado el libro a Jon, Joni eman diot liburua 
+									      ##zehar objektua + biziduna
+a		[ABS]	-						  +   ## he visto a Jon, Jon ikusi dut	##objektu zuzena + biziduna
+a		[ALA]	-						  +   ## he ido a casa, etxera joan naiz; ##ez-bizidun,lekua + mugimenduzko aditza
 
-#a		[ALA]	my.si='cc'					    +   ## he ido a casa, etxera joan naiz; ##ez-bizidun, lekua + mugimenduzko aditza;
-#a		[ALA]	parent.headlem!='_eraman_'			    +   ## he ido a casa, etxera joan naiz; ##ez-bizidun, lekua + mugimenduzko aditza;
-#a		[ALA]	(my.headpos!~'[IZB]' && parent.headlem!='_eraman_') -   ## he ido a casa, etxera joan naiz; ##ez-bizidun, lekua + mugimenduzko aditza;
+#a		[ALA]	my.si='cc'					  +   ## he ido a casa, etxera joan naiz; ##ez-bizidun, lekua + mugimenduzko aditza
+#a		[ALA]	parent.headlem!='_eraman_'			  +   ## he ido a casa, etxera joan naiz; ##ez-bizidun, lekua + mugimenduzko aditza
+#a		[ALA] (my.headpos!~'[IZB]' && parent.headlem!='_eraman_') -   ## he ido a casa, etxera joan naiz; ##ez-bizidun, lekua + mugimenduzko aditza
 
-ante		[GEN]++aldean/INE	     parent.headlem='_izan_'  -	    ## Cualquier casa es pequeña ante la suya, edozein etxe da txikia harenaren aldean 
-									    ## konparaketa... ##'ser' aditza???; aurretik ADJ. Agian kendu???
-ante		[GEN]++aurrean/INE	     -			      +     ## se sentó ante el rey, erregearen aurrean eseri zen	##aditz estatikoak
-ante		[GEN]++aurrera/ALA	     -			      +     ## lo llevaron ante el rey, erregearen aurrera eraman zuten##mugimenduzko aditzak
+ante		[GEN]++aldean/INE	     parent.headlem='_izan_'  -	 ## Cualquier casa es pequeña ante la suya, edozein etxe da txikia harenaren aldean
+									 ## konparaketa... ##'ser' aditza???; aurretik ADJ. Agian kendu???
+ante		[GEN]++aurrean/INE	     -			      +  ## se sentó ante el rey, erregearen aurrean eseri zen	##aditz estatikoak
+ante		[GEN]++aurrera/ALA	     -			      +  ## lo llevaron ante el rey, erregearen aurrera eraman zuten##mugimenduzko aditzak
 
 con		+[AMM][ADIZE]+[DEK][SOZ]     my.headpos='[ADI][SIN]'  -	    ##cree que con hacer eso ya lo tiene todo hecho.
 con		[SOZ]			     -			      +							 
@@ -69,7 +70,7 @@ con		[SOZ]			     -			      +
 de		+[AMM][ADIZE]+[DEK][GEL]   (my.headpos='[ADI][SIN]' && parent.headpos='[IZE][ARR]')     - ##la petición de ilegalizar>legez kanpo uzteko eskaera
 de		+[AMM][PART]+[ASP][BURU]++izatera  my.headpos='[ADI][SIN]' && my.si='top'	        - ##de saberlo antes > no hubiese venido.
 de		+[AMM][ADIZE]+[DEK][INS]	   my.headpos='[ADI][SIN]' && (parent.headlem='_ahaztu_' || parent.headlem='_nekatu_')	  -  
-													  ##se olvidaron de cantar > Kantatzeaz ahaztu ziren.
+													  ##se olvidaron de cantar> Kantatzeaz ahaztu ziren
 de		+[AMM][ADIZE]+[DEK][ABL]	   my.headpos='[ADI][SIN]' && my.si='sp-obj'	        - ##han venido de comprar > erostetik etorri dira.
 de		+[AMM][ADIZE]+[DEK][GEL]	   my.headpos='[ADI][SIN]' && my.si='cc'	        - ##... ???
 
@@ -83,8 +84,8 @@ de		[GEL]	     (parent.type!='adi-kat' && my.headsem=~'[BIZ-]') || (parent.type=
 de		[ABL]	-				     +     ## no sale de casa, ez da etxetik irteten##abiapuntua denean, mugim. aditza
 durante		[INS]	my.headsem=~'[DEN+]'		     -	   ## durante un mes, hilabetez
 durante		[INE]	-				     +	   ## lo hiciero durante el invierno, neguan egin zuten ## durante 1957	##urteekin
-en		[INS]	my.headsem=~'[GLU+]' && ( my.def='' || my.def='[MG]') || my.headsem=~'[HZK+]'	  -	   ## gailuekin: trenez, kotxez,...; 
-														   ##eta hizkuntzekin: euskaraz, espainieraz,...
+en		[INS]	my.headsem=~'[GLU+]' && ( my.def='' || my.def='[MG]') || my.headsem=~'[HZK+]'	  -  ## gailuekin: trenez, kotxez,...; 
+													     ##eta hizkuntzekin: euskaraz, espainieraz,...
 en		[INE]			-		     +	   ## está en Donosti, Donostian dago	##
 hacia		[ABS]++aldera/ALA	my.headpos='[W]'     -	   ## hacia las diez, hamarrak aldera	##orduak, datak (W)
 hacia		[ABS]++aldera/ALA	my.headpos='[Z]'     -	   ## hacia las diez, hamarrak aldera	##orduak, datak (W)
@@ -102,10 +103,11 @@ por		[GEL]	my.headpos='[ADI]'	      -	   ## está por hacer, egiteko dago	##por 
 por		[GEL]	my.headsem=~'[NEU+]'	      -	   ## por kilómetro.
 por		[INE]	my.headsem=~'[DEN+]'	      -	   ## por la tarde, arratsaldean. 
 por		[INS]	my.headsem=~'[KOM+]'	      -	   ## komunikazioa: por telefono, telefonoz; por radio, irratiz,...
-por		[MOT]			-	      +	   ## lo he hecho por tí, zuregatik egin dut	##bizidunak
+por		[MOT]	my.headpos= '[IOR][PERARR]'   -	   ## lo he hecho por ti, zuregatik egin dut	##bizidunak
+por		[MOT]			-	      +	   ## lo he hecho por ti, zuregatik egin dut	##bizidunak
 por		[ABL]			-	      +	   ## vinieron por otro camino, beste bide batetik etorri ziren	##
 por		[GEL]			-	      +	   ## helburuzkoa
-por		[GEN]++ordez		-	      +	   ## vete tú por mi, joan zaitez nire ordez	##XXXXXXXXX<<<<<
+por		[GEN]++ordez		-	      +	   ## vete tú por mí, joan zaitez nire ordez	##XXXXXXXXX<<<<<
 por		[GEN]++alde		-	      +	   ## estoy por la paz, bakearen alde nago	##XXXXXXXXXXXXXX<<<<<<
 sin		+[AMM][PART]+[ASP][BURU]++gabe/ABS	my.headpos='[ADI][SIN]'	-      ##lo hacen sin pensar
 sin		[PAR]++gabe/ABS		-	    +	

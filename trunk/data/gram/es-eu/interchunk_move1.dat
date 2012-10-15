@@ -20,3 +20,6 @@ type='ez'/'adi-pas-ez'	type='adi-pas'/type	up	overwrite
 /'[NUMP]'	type!='adi-kat' && def='' && num='[NUMP]'/mi	down	no-overwrite
 /'[MG]'	type!='adi-kat' && def='[MG]'/mi	down	no-overwrite
 
+type='adi-pas'/'true'	prep='por'/subject	down	overwrite
+
+
