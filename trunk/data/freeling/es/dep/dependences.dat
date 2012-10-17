@@ -108,7 +108,7 @@
 
 929 - - (sn,s-adj) top_left RELABEL - % (la charla (monotona))
 
-%Kendu ditut esaldi bukaerako puntuazio ikurrak soilik errotik zintzilikatzeko (aingeru)
+%Kendu ditut esaldi bukaerako puntuazio ikurrak soilik errotik zintzilikatzeko (MATXIN - aingeru)
 %9001 - - (sn,Fc) top_left RELABEL - % (el presidente del consejo(,))
 %9999 - - (sn,F-term) top_left RELABEL - % signes que no acaben frase
 
@@ -191,7 +191,7 @@
 123 - - (sp-de,grup-sp<sobre>) last_left MATCHING sn[np-sobre]
 123 - - (sp-de,grup-sp<tras>) last_left MATCHING sn[np-tras]
 
-%(aingeru)
+%(MATXIN - aingeru)
 %9101 - - (sp-de,Fc) top_left RELABEL -
 %9101 - - (sp-de,Fc) last_left MATCHING sn
 %9969 - - (sp-de,F-term) top_left RELABEL -
@@ -222,7 +222,7 @@
 %223 - - (grup-sp,grup-sp<sobre>) last_left MATCHING sn[np-sobre]
 %223 - - (grup-sp,grup-sp<tras>) last_left MATCHING sn[np-tras]
 
-%(aingeru)
+%(MATXIN - aingeru)
 %9201 - - (grup-sp,Fc) top_left RELABEL -
 %9201 - - (grup-sp,Fc) last_left MATCHING sn
 %9979 - - (grup-sp,F-term) top_left RELABEL -
@@ -235,7 +235,7 @@
 
 323 - - (grup-sp-inf,grup-sp) last_left MATCHING grup-verb-inf
 
-%(aingeru)
+%(MATXIN - aingeru)
 %9301 - - (grup-sp-inf,Fc) top_left RELABEL -
 %9301 - - (grup-sp-inf,Fc) last_left MATCHING sn
 %9989 - - (grup-sp-inf,F-term) top_left RELABEL -
@@ -1042,7 +1042,7 @@
 
 %%% PUNTUACIO DEL SINTAGMA VERBAL %%%
 
-%(aingeru)
+%(MATXIN - aingeru)
 %9401 - - (grup-verb,Fc) top_left RELABEL - % (menjar (,))
 %9001 - $_grup-verb_$ (grup-verb,F-term<.>) RELABEL - 
 %9001 - - (grup-verb,F-term<.>) top_left RELABEL - % (pensar (.))
@@ -1798,7 +1798,7 @@
 
 %%% PUNTUACIO DEL SINTAGMA VERBAL %%%
 
-%(aingeru)
+%(MATXIN - aingeru)
 %9901 - - (verb-pass,Fc) top_left RELABEL - % (menjar (,))
 %9001 - - (verb-pass,F-term<.>) top_left RELABEL - % (pensar (.))
 %9001 - - (verb-pass,F-term) top_left RELABEL - % (acordar (-)) - qualsevol signe de puntuacio
@@ -2292,7 +2292,7 @@
 
 %%% PUNTUACIO DEL SINTAGMA VERBAL %%%
 
-%(aingeru)
+%(MATXIN - aingeru)
 %9901 - - (grup-verb,Fc) top_right RELABEL - % (menjar (,))
 %9901 - - (grup-verb,F-term) top_right RELABEL - % (acordar (-)) - qualsevol signe de puntuacio
 %9901 - - (F-no-c{Fia},grup-verb) top_right RELABEL - % interrogant marge esquerre
@@ -2725,7 +2725,7 @@
 
 %%% PUNTUACIO DEL SINTAGMA VERBAL %%%
 
-%(aingeru)
+%(MATXIN - aingeru)
 %9901 - - (verb-pass,Fc) top_right RELABEL - % (comer (,))
 %9901 - - (verb-pass,F-term) top_right RELABEL - % (acordar (-)) - qualsevol signe de puntuacio
 %9901 - - (F-no-c{Fia},verb-pass) top_right RELABEL - % interrogant marge esquerre
@@ -3065,7 +3065,7 @@
 
 %%% PUNTUACIO DE LES SUBORDINADES NO FINITES D'INFINITIU %%%
 
-%(aingeru)
+%(MATXIN - aingeru)
 %9501 - - (grup-verb-inf,Fc) top_left RELABEL - 
 %9949 - - (grup-verb-inf,F-term) top_left RELABEL - 
 
@@ -3403,7 +3403,7 @@
 
 %%% SUBORDINADES NO FINITES D'INFINITIU PASSIU AMB VALOR TEMPORAL INTRODUIDES PER PREPOSICIO %%%
 
-%(aingeru)
+%(MATXIN - aingeru)
 %9501 - - (inf-pas,Fc) top_left RELABEL - 
 %9949 - - (inf-pas,F-term) top_left RELABEL - 
 
@@ -3906,7 +3906,7 @@
 
 %%% PUNUTACIO DE LES SUBORDINADES NO FINITES DE GERUNDI %%%
 
-%(aingeru)
+%(MATXIN - aingeru)
 %9601 - - (subord-ger,Fc) top_left RELABEL - 
 %9939 - - (subord-ger,F-term) top_left RELABEL - 
 %9601 - - (ger,Fc) top_left RELABEL - 
@@ -4259,7 +4259,7 @@
 
 %%% PUNTUACIO DE LES SUBORDINADES NO FINITES DE PARTICIPI %%%
 
-%(aingeru)
+%(MATXIN - aingeru)
 %9601 - - (subord-part,Fc) top_left RELABEL - 
 %9929 - - (subord-part,Fc-no-c) top_left RELABEL - 
 
@@ -4685,7 +4685,7 @@
 
 %%% PUNTUACIO DE LES SUBORDINADES FINITES %%%
 
-%(aingeru)
+%(MATXIN - aingeru)
 %9401 - - (subord-rel,Fc) top_left RELABEL - 
 %9959 - - (subord-rel,F-term) top_left RELABEL -
 %9401 - - (subord,Fc) top_left RELABEL -

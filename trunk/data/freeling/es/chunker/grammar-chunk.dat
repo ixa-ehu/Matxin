@@ -18,6 +18,41 @@
 % P0300000 --> P03CN000
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
+%REGLAS PARA MATXIN=======
+
+% Aingeru: Matxin reconoce el_mío junto como PX1MS0S0
+%Por ello necesitamos que esa etiqueta la procese tb, sin determinante
+%Pronoms possessius + determinante - todo en uno
+
+% el_mío|el_nuestro|el_tuyo|el_vuestro|el_suyo 
+pposs-ms ==> +PX1MS0S0 | +PX1MS0P0 | +PX2MS0S0 | 
+             +PX2MS0P0 | +PX3MS0C0.
+
+% lo_mío|lo_nuestro|lo_tuyo|lo_vuestro|lo_suyo 
+pposs-ns ==> +PX1NS0S0 | +PX1NS0P0 | +PX2NS0S0 | 
+             +PX2NS0P0 | +PX3NS0C0.
+
+% la_mía|la_nuestra|la_tuya|la_vuestra|la_suya
+pposs-fs ==> +PX1FS0S0 | +PX1FS0P0 | +PX2FS0S0 | 
+             +PX2FS0P0 | +PX3FS0C0. 
+
+% los_míos|los_nuestros|los_tuyos|los_vuestros|los_suyos
+pposs-mp ==> +PX1MP0S0 | +PX1MP0P0 | +PX2MP0S0 | 
+             +PX2MP0P0 | +PX3MP0C0.
+
+% las_mías|las_nuestras|las_tuyas|las_vuestras|las_suyas
+pposs-fp ==> +PX1FP0S0 | +PX1FP0P0 |  +PX2FP0S0 | 
+             +PX2FP0P0 | +PX3FP0C0.
+
+
+% Aingeru: añadido para juntar en un mismo chunk el adverbio y el adjetivo (muy saludable)
+s-adj ==> grad-adv, +s-a-ms | grad-adv, +s-a-fs | grad-adv, +s-a-mp | grad-adv, +s-a-fp.
+grad-adv ==> RG(muy) | RG(bastante) | RG(muy), +RG(poco).
+
+%==========================
+
+
+
 %%Regles afegides per opentrad
 verb ==> VMI*<querer>, +infinitiu | VMS*<querer>, +infinitiu.
 verb ==> vaux, VMP00SM(solido), +infinitiu.
@@ -220,29 +255,7 @@ pposs-mp ==> DA0MP0, +PX1MP0S0 | DA0MP0, +PX1MP0P0 | DA0MP0, +PX2MP0S0 |
 pposs-fp ==> DA0FP0, +PX1FP0S0 | DA0FP0, +PX1FP0P0 | DA0FP0, +PX2FP0S0 | 
              DA0FP0, +PX2FP0P0 | DA0FP0, +PX3FP0C0.
 
-% Aingeru: Matxin reconoce el_mío junto como PX1MS0S0
-%Por ello necesitamos que esa etiqueta la procese tb, sin determinante
-%Pronoms possessius + determinante - todo en uno
 
-% el_mío|el_nuestro|el_tuyo|el_vuestro|el_suyo 
-pposs-ms ==> +PX1MS0S0 | +PX1MS0P0 | +PX2MS0S0 | 
-             +PX2MS0P0 | +PX3MS0C0.
-
-% lo_mío|lo_nuestro|lo_tuyo|lo_vuestro|lo_suyo 
-pposs-ns ==> +PX1NS0S0 | +PX1NS0P0 | +PX2NS0S0 | 
-             +PX2NS0P0 | +PX3NS0C0.
-
-% la_mía|la_nuestra|la_tuya|la_vuestra|la_suya
-pposs-fs ==> +PX1FS0S0 | +PX1FS0P0 | +PX2FS0S0 | 
-             +PX2FS0P0 | +PX3FS0C0. 
-
-% los_míos|los_nuestros|los_tuyos|los_vuestros|los_suyos
-pposs-mp ==> +PX1MP0S0 | +PX1MP0P0 | +PX2MP0S0 | 
-             +PX2MP0P0 | +PX3MP0C0.
-
-% las_mías|las_nuestras|las_tuyas|las_vuestras|las_suyas
-pposs-fp ==> +PX1FP0S0 | +PX1FP0P0 |  +PX2FP0S0 | 
-             +PX2FP0P0 | +PX3FP0C0.
 
 
 
@@ -702,6 +715,8 @@ sn ==> +CC(ni), sn, CC(ni), sn.  %%No sé què passa: no funciona!!
 %%%%
 
 s-adj ==> s-a-ms | s-a-fs | s-a-mp | s-a-fp.
+
+
 
 s-a-ms ==> Fe, +s-a-ms, Fe | Fpa, +s-a-ms, Fpt.
 s-a-ms ==> a-ms | s-a-ms, +Fc, s-a-ms | s-a-ms, +Fc, s-a-ms, Fs. %enumeració amb .../etc al final
