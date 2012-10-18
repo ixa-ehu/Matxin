@@ -1286,7 +1286,8 @@ wstring
   vector<subcategorisation> subcat = subcategorisations[verb_lemma];
   if (subcat.size() == 0) 
   {
-    wcerr << L"'" << verb_lemma << L"' sarrerak ez du azpikategorizazio informaziorik, horren ordez '" << lemma_root << L"' erabiliko da" << endl;
+    if (cfg.DoPrepTrace)
+      wcerr << L"'" << verb_lemma << L"' sarrerak ez du azpikategorizazio informaziorik, horren ordez '" << lemma_root << L"' erabiliko da" << endl;
     verb_lemma = lemma_root;
     subcat = subcategorisations[lemma_root];
   }
