@@ -62,7 +62,7 @@ wstring write_CHUNK(vector<wstring> tree, vector<wstring> order)
 }
 
 
-vector<wstring> merge(vector<wstring> order, int &head_index,
+vector<wstring> merge(vector<wstring> order, int &head_index, int &head_length,
                       vector<wstring> child_order, wstring relative_order)
 {
   if (relative_order == L"x1.x2")
@@ -88,11 +88,13 @@ vector<wstring> merge(vector<wstring> order, int &head_index,
       output_order.push_back(child_order[i]);
     }
 
-    output_order.push_back(order[head_index]);
-    output_head = output_order.size() - 1;
+    output_head = output_order.size();
+    for (size_t i = head_index; i < head_index+head_length; i++) {
+      output_order.push_back(order[i]);
+    }
     output_order.push_back(child_order[child_order.size() - 1]);
 
-    for (size_t i = head_index + 1; i < order.size(); i++)
+    for (size_t i = head_index + head_length; i < order.size(); i++)
     {
       output_order.push_back(order[i]);
     }
@@ -121,6 +123,30 @@ vector<wstring> merge(vector<wstring> order, int &head_index,
       output_order.push_back(order[i]);
     }
     head_index = output_head;
+    head_length = head_length + child_order.size();
+
+    return output_order;
+  }
+  else if (relative_order == L"x1+x2")
+  {
+    vector<wstring> output_order;
+    int output_head;
+    for (size_t i = 0; i < head_index+head_length; i++)
+    {
+      output_order.push_back(order[i]);
+    }
+
+    for (size_t i = 0; i < child_order.size(); i++)
+    {
+      output_order.push_back(child_order[i]);
+    }
+
+    for (size_t i = head_index; i < order.size(); i++)
+    {
+      output_order.push_back(order[i]);
+    }
+
+    head_length = head_length + child_order.size();
 
     return output_order;
   }
@@ -268,11 +294,13 @@ vector<wstring> procCHUNK(xmlTextReaderPtr reader, vector<wstring> &tree,
   wstring subtree;
   vector<wstring> order;
   int head_index;
+  int head_length;
 
   if (tagName == L"CHUNK" and tagType == XML_READER_TYPE_ELEMENT)
   {
     order.push_back(attrib(reader, "ref"));
     head_index = 0;
+    head_length = 1;
 
     attribs = allAttrib(reader);
     ref = watoi(attrib(reader, "ref").c_str());
@@ -303,7 +331,7 @@ vector<wstring> procCHUNK(xmlTextReaderPtr reader, vector<wstring> &tree,
     vector<wstring> suborder = procCHUNK(reader, tree, child_attribs, child_ref);
 
     wstring relative_order = get_chunk_order(attribs, child_attribs, child_ref - ref);
-    order = merge(order, head_index, suborder, relative_order);
+    order = merge(order, head_index, head_length, suborder, relative_order);
 
     ret = nextTag(reader);
     tagName = getTagName(reader);
