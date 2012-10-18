@@ -1279,11 +1279,21 @@ wstring
                          wstring subj_attributes, wstring sentenceref,
                          int sentencealloc, config &cfg)
 {
+  wstring lemma_root = verb_lemma;
+  size_t pos = verb_lemma.find(L'_');
+  if (pos != wstring::npos) lemma_root = verb_lemma.substr(pos+1, verb_lemma.size());
+
   vector<subcategorisation> subcat = subcategorisations[verb_lemma];
+  if (subcat.size() == 0) 
+  {
+    wcerr << L"'" << verb_lemma << L"' sarrerak ez du azpikategorizazio informaziorik, horren ordez '" << lemma_root << L"' erabiliko da" << endl;
+    verb_lemma = lemma_root;
+    subcat = subcategorisations[lemma_root];
+  }
 
   if (cfg.DoPrepTrace)
   {
-    wcerr << L"AZPIKATEGORIZAZIOA APLIKATZEN: " << verb_lemma << L" (" << subcat.size() << L" azpikategorizazio desberdin aurkitu dira)" << endl;
+    wcerr << L"AZPIKATEGORIZAZIOA APLIKATZEN: " << verb_lemma << L"-" << lemma_root << L" (" << subcat.size() << L" azpikategorizazio desberdin aurkitu dira)" << endl;
     wstring prep = text_attrib(subj_attributes, L"prep");
     if (prep == L"")
       prep = L"-";
