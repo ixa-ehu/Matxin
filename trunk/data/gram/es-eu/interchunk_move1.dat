@@ -6,6 +6,11 @@ spost!=''/spost	si='dobj'/cas	down	overwrite
 spost!=''/spostref	si='dobj'/casref	down	overwrite
 spost!=''/spostalloc	si='dobj'/casalloc	down	overwrite
 
+spost!='' && ref='1'/spost	ref='2'/cas	down	overwrite
+spost!='' && ref='1'/spostref	ref='2'/casref	down	overwrite
+spost!='' && ref='1'/spostalloc	ref='2'/casalloc	down	overwrite
+
+
 vpost!=''/vpost	type='adi-kat'/rel	down	concat
 vpost!=''/'[ZERO]'	type='adi-kat'/cas	down	concat
 vpost!=''/vpostref	type='adi-kat'/relref	down	concat
@@ -21,5 +26,6 @@ type='ez'/'adi-pas-ez'	type='adi-pas'/type	up	overwrite
 /'[MG]'	type!='adi-kat' && def='[MG]'/mi	down	no-overwrite
 
 type='adi-pas'/'true'	prep='por'/subject	down	overwrite
+type='adi-pas'/'subj'	prep='por'/si	down	overwrite
 
 
