@@ -80,7 +80,7 @@ wstring upper_type(wstring form, wstring mi, wstring ord)
       form_end = form.find(L"_", form_begin + 1);
   }
 
-  if (upper_case > lower_case)
+  if (upper_case > lower_case && upper_case > 1)
     case_type = L"all";
 
   return case_type;
