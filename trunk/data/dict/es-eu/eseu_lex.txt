@@ -26,5 +26,5 @@
 'meta'		'helmuga'	my.smi=~'NCF'	+
 'radio'		'erradio'	my.smi=~'NCM'	-
 'radio'		'irrati'	my.smi=~'NCF'	+
-'donde'		''	my.vpost='+n[ERL][MEN][MOS]++leku' && parent.ref=''	-
-'donde'		''	my.vpost='+n[ERL][MEN][MOS]'	+
+'donde'		''	my.vpost='+n[ERL][MEN][MOS]++leku' && parent.slem=''	-
+'donde'		''	my.vpost='+n[ERL][MEN][MOS]' && parent.slem!=''	+
