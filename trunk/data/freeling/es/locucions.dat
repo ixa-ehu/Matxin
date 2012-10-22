@@ -12184,6 +12184,7 @@ a_distancia a_distancia RG I
 a_distinción_de a_distinción_de SPS00 I
 a_docenas a_docenas RG I
 a_domicilio a_domicilio RG I
+a_donde a_donde PR000000 I
 a_donde a_donde RG I
 a_dos_dedos_de a_dos_dedos_de SPS00 I
 a_dos_haces a_dos_haces RG I
