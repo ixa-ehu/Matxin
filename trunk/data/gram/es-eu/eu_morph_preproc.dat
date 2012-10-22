@@ -22,6 +22,7 @@
 [ADI][SIN](.*?)[AMM][ADIZE]\+[DEK](.*?)		LemaMorf
 [ADI][FAK](.*?)[AMM][ADIZE]\+[DEK](.*?)		LemaMorf
 
+(.*?)>(.*?)>(.*?)[(NUMS|NUMP|MG)](.*?)>(.*?)		LemaMorf +[DEK] Kas
 
 [ADI][SIN](.*?)[AMM][PART]>(.*?)[(INE|ABL|ALA|ABU|ABZ)](.*?)[BIZ\+]		LemaMorf +[DEK][GEN] Num +[DEK] Kas [GAN]
 [ADI][FAK](.*?)[AMM][PART]>(.*?)[(INE|ABL|ALA|ABU|ABZ)](.*?)[BIZ\+]		LemaMorf +[DEK][GEN] Num +[DEK] Kas [GAN]

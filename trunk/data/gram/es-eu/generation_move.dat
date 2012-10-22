@@ -4,6 +4,11 @@ type!~'adi-' && cas!=''/casalloc	ord=parent.length/alloc	concat
 type!~'adi-' && cas!=''/casref	ord=parent.length/ref	concat
 type!~'adi-'/headsem	ord=parent.length/headsem	overwrite
 
+type!~'adi-'/npost	ord++=parent.length/cas	overwrite
+type!~'adi-' && npost!=''/npostalloc	ord++=parent.length/alloc	concat
+type!~'adi-' && npost!=''/npostref	ord++=parent.length/ref	concat
+type!~'adi-' && npost!=''/headsem	ord++=parent.length/headsem	overwrite
+
 type='adi-inf'/cas	ord=parent.length/cas	overwrite
 type='adi-inf' && cas!=''/casalloc	ord=parent.length/alloc	concat
 type='adi-inf' && cas!=''/casref	ord=parent.length/ref	concat

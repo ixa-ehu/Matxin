@@ -200,6 +200,48 @@ bool apply_condition(wstring condition, wstring attributes, wstring parent_attri
       //wcerr << condition << L": " << attribute << L" !~ " << value << endl;
       return (attribute.find(value) == wstring::npos);
     }
+    else if (condition.find(L"++=") != wstring::npos)
+    {
+      int operator_position = condition.find(L"++=");
+      int blank_position = condition.rfind(L" ", operator_position);
+      if (blank_position == int(wstring::npos))
+        blank_position = -1;
+
+      wstring attribute = condition.substr(blank_position + 1,
+                                           operator_position - blank_position - 1);
+      attribute = interpretate(attribute, attributes, parent_attributes);
+
+      blank_position = condition.find(L" ", operator_position);
+      if (blank_position == int(int(wstring::npos)))
+        blank_position = condition.size();
+
+      wstring value = condition.substr(operator_position + 3, blank_position-operator_position - 3);
+      value = interpretate(value, attributes, parent_attributes);
+
+      //wcerr << condition << L": " << attribute << L" ++= " << value << endl;
+      return (watoi(attribute.c_str())+1 == watoi(value.c_str()));
+    }
+    else if (condition.find(L"--=") != wstring::npos)
+    {
+      int operator_position = condition.find(L"--=");
+      int blank_position = condition.rfind(L" ", operator_position);
+      if (blank_position == int(wstring::npos))
+        blank_position = -1;
+
+      wstring attribute = condition.substr(blank_position + 1,
+                                           operator_position - blank_position - 1);
+      attribute = interpretate(attribute, attributes, parent_attributes);
+
+      blank_position = condition.find(L" ", operator_position);
+      if (blank_position == int(int(wstring::npos)))
+        blank_position = condition.size();
+
+      wstring value = condition.substr(operator_position + 3, blank_position-operator_position - 3);
+      value = interpretate(value, attributes, parent_attributes);
+
+      //wcerr << condition << L": " << attribute << L" ++= " << value << endl;
+      return (watoi(attribute.c_str())-1 == watoi(value.c_str()));
+    }
     else if (condition.find(L"=") != wstring::npos)
     {
       int operator_position = condition.find(L"=");
