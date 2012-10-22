@@ -1063,7 +1063,8 @@ struct disambiguation_rule
   wstring default_value;
 };
 
-map<wstring, map<wstring, disambiguation_rule > > disambiguation_rules;
+map<wstring, map<wstring, vector<disambiguation_rule > > > disambiguation_rules;
+//map<wstring, map<wstring, disambiguation_rule > > disambiguation_rules;
 
 
 void init_lexical_selection(string filename)
@@ -1112,7 +1113,7 @@ void init_lexical_selection(string filename)
 
     if (trgt_lemma[0] == L'\'' && trgt_lemma[trgt_lemma.size()-1] == L'\'') trgt_lemma = trgt_lemma.substr(1,trgt_lemma.size()-2);
 
-    disambiguation_rules[src_lemma][trgt_lemma] = current;
+    disambiguation_rules[src_lemma][trgt_lemma].push_back(current);
   }
 
   file.close();
@@ -1140,22 +1141,23 @@ vector<wstring>
     attributes = common_attribs + L" " + child_attributes[i];
 
     trgt_lemma = text_attrib(attributes, L"lem");
-    disambiguation_rule current_rule = disambiguation_rules[src_lemma][trgt_lemma];
+    for (size_t j = 0; j < disambiguation_rules[src_lemma][trgt_lemma].size(); j++) {
+      disambiguation_rule current_rule = disambiguation_rules[src_lemma][trgt_lemma].at(j);
 
-    if (current_rule.default_value == L"+")
-      default_case.insert(default_case.begin(), child_attributes[i]);
+      if (current_rule.default_value == L"+")
+	default_case.insert(default_case.begin(), child_attributes[i]);
 
-    if (cfg.UseLexRules && current_rule.condition != L"" and
-        apply_condition(current_rule.condition,
-			attributes, parent_attributes))
-    {
-      vector<wstring> translation_case;
+      if (cfg.UseLexRules && current_rule.condition != L"" and
+	  apply_condition(current_rule.condition,
+			  attributes, parent_attributes))
+	{
+	  vector<wstring> translation_case;
 
-      translation_case.push_back(child_attributes[i]);
-
-      return translation_case;
+	  translation_case.push_back(child_attributes[i]);
+	  
+	  return translation_case;
+	}
     }
-
   }
 
   return default_case;

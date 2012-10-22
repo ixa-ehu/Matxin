@@ -11,7 +11,7 @@
 #     + : default value for lemmaSRC
 
 
-'posición'	'postu'	parent.lem='_jaitsi_' || parent.lem='_igo_'	-
+'posiciÃ³n'	'postu'	parent.lem='_jaitsi_' || parent.lem='_igo_'	-
 'final'		'bukaera'	my.smi=~'NCM'	-
 'final'		'final'	my.smi=~'NCF'	+
 'capital'	'kapital'	my.smi=~'NCM'	+
@@ -20,9 +20,11 @@
 'corte'		'mozketa'	my.smi=~'NCM'	+
 'padre'		'gurasoak'	my.smi=~'NCMP'	-
 'uno'		''	parent.smi=~'Zp'	-
-'c�mara'	'kameralari'	my.smi=~'NCM'	-
-'c�mara'	'kamera'	my.smi=~'NCF'	+
+'cámara'	'kameralari'	my.smi=~'NCM'	-
+'cámara'	'kamera'	my.smi=~'NCF'	+
 'meta'		'atezain'	my.smi=~'NCM'	-
 'meta'		'helmuga'	my.smi=~'NCF'	+
 'radio'		'erradio'	my.smi=~'NCM'	-
 'radio'		'irrati'	my.smi=~'NCF'	+
+'donde'		''	my.vpost='+n[ERL][MEN][MOS]++leku' && parent.ref=''	-
+'donde'		''	my.vpost='+n[ERL][MEN][MOS]'	+
