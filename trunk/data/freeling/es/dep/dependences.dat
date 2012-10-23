@@ -4594,6 +4594,10 @@
 6000 - prel-adv_*_$$ (prel-adv,grup-verb) top_left RELABEL subord-rel:- % dins de subordinada
 6001 - - (prel-adv,grup-verb) top_left RELABEL subord-rel:- % la tienda (donde (comprasteis el ordenador))
 
+%% MATXIN (aingeru)
+6001 - - (prel-adv,grup-verb-inf) top_left RELABEL subord-rel:- % la tienda donde comprar.
+
+
 %%% PRONOMS RELATIUS COMPOSTOS: agrupacio especificador i pronom relatiu %%%
 
 %4000 - - (prep,espec-ms) top_left RELABEL - % ha canviat: ESPEC depen del RELATIU; veg. les regles (espec*,prel)
