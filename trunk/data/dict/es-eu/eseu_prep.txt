@@ -26,6 +26,7 @@
 -     [ZERO]    my.type='adbs'		-   # adberbioak ez dira deklinatzen.	    
 -     [INE]    (my.type='data' || my.headsem=~'[DEN+]') && parent.headlem!='_izan_'	-	# el cuatro de julio, uztailaren lauan#Bestelako osagarriak, datak #denbora adierazten duten hitzak:arratsaldean
 -     [ABS]	parent.type='adi-pas'	-   # El libro ha sido comprado: liburua erosi du
+-     [PAR]	parent.type='adi-kat-ez' && my.si='dobj' && def=''	-   # No ha comprado pan > Ez du ogirik erosi.
 -     [ABS]	my.si='dobj'		-   # he comprado un libro, nik liburua erosi dut
 -     [ABS]	my.si='att'		-   # yo soy guapo: polita naiz
 -     [ABS]	my.si!='subj'		-   # Subjektua ez denean...
