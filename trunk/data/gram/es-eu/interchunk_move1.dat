@@ -16,6 +16,12 @@ vpost!=''/'[ZERO]'	type='adi-kat'/cas	down	concat
 vpost!=''/vpostref	type='adi-kat'/relref	down	concat
 vpost!=''/vpostalloc	type='adi-kat'/relalloc	down	concat
 
+vpost!=''/vpost	type='adi-inf'/rel	down	concat
+vpost!=''/'[ZERO]'	type='adi-inf'/cas	down	concat
+vpost!=''/vpostref	type='adi-inf'/relref	down	concat
+vpost!=''/vpostalloc	type='adi-inf'/relalloc	down	concat
+
+
 type='ez'/'adi-kat-ez'	type='adi-kat'/type	up	overwrite
 type='ez'/'adi-pas-ez'	type='adi-pas'/type	up	overwrite
 

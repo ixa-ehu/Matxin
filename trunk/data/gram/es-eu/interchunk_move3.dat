@@ -7,3 +7,5 @@ type=~'emen'/cas	type='is'/cas	down	overwrite
 
 /'[MG]'	type!='adi-kat' && def='' && num='[NUMS]' && cas='[INS]'/mi	down	overwrite
 /'[MG]'	type!='adi-kat' && def='' && num='[NUMS]' && cas='[INS][GEL]'/mi	down	overwrite
+
+/'+[DEK][GEL]'	type='adi-inf' && rel='+n[ERL][MEN][MOS]'/cas	down	overwrite
