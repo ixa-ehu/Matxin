@@ -1,4 +1,5 @@
-
+###################
+## ADITZAK ########
 
 # Aditz erroak
 #[ADI][SIN]	Lema Kas
@@ -53,6 +54,20 @@
 [(ADL|ADT)]				LemaMorf
 
 
+
+#######################
+## BESTELAKOAK ########
+
+# nirea/zurea...
+([IOR][PERARR](.*?)\+[DEK][GEN])(.*?)[(INE|ABL|ALA|ABU|ABZ)]			LemaMorf +[DEK] Num +[DEK] Kas
+([IOR][PERARR](.*?)\+[DEK][GEN])(.*?)[(ABS|ERG|DAT|INS|SOZ|DES|GEN)]		LemaMorf +[DEK] Kas Num
+
+# haren
+([DET][ERKARR](.*?)\+[DEK][GEN])(.*?)[(INE|ABL|ALA|ABU|ABZ)]			LemaMorf +[DEK] Num +[DEK] Kas
+([IOR][PERARR](.*?)\+[DEK][GEN])(.*?)[(ABS|ERG|DAT|INS|SOZ|DES|GEN)]		LemaMorf +[DEK] Kas Num
+
+
+
 # 'hau', 'hori', 'hura' #
 	#bizidunentzat
 [DET][ERKARR][NUMS](.*?)[(INE|ABL|ALA|ABU|ABZ)](.*?)[BIZ\+]		LemaMorf +[DEK][GEN]+[DEK] Kas [GAN]
@@ -82,6 +97,8 @@
 ([IOR][PERARR][NUMP][ZUEK][(.*?)])(.*?)[(ABS|ERG|DAT|INS|SOZ|DES|GEN)]		LemaMorf +[DEK] Kas [NUMP]
 ([IOR][PERARR][NUMP][ZUEK][(.*?)])(.*?)[(PRO)]					LemaMorf +[DEK][GEN][NUMP]+[DEK] Kas Num
 ([IOR][PERARR][NUMP][ZUEK][(.*?)])(.*?)[(MOT)]					LemaMorf +[DEK][GEN][NUMP]+[DEK] Kas
+
+
 
 	#besteak
 ([IOR][(.*?)])(.*?)[(INE|ABL|ALA|ABU|ABZ)]	LemaMorf +[DEK][GEN]+[DEK] Kas [GAN]

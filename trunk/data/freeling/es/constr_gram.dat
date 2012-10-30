@@ -66,6 +66,19 @@ VerbCompl = <acentuar> <aceptar> <aconsejar> <acordar> <admitir> <advertir>
 
 CONSTRAINTS
 
+%% Customization for MATXIN (aingeru)=========================================
+500.0 VMI*(como)
+          (-1*  PP1* barrier N* or PP*);
+
+%100.0 AQ0MS0<bueno>
+%    (0 <bueno>);
+
+100.0 AQ0MS0<bueno>
+    (-1* V*);
+
+
+%% MATXIN =====================================================================
+
 %% prefer indicative to imperative
 0.7 VMI*
     (0 VMM*);

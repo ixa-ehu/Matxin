@@ -38079,7 +38079,6 @@ brutas AQ-NC AQ 1 NC 0
 bruto AQ-NC AQ 1 NC 0
 brutos AQ-NC AQ 1 NC 0
 budistas AQ-NC AQ 1 NC 0
-bueno AQ-I AQ 14 I 17
 burda AQ-NC AQ 1 NC 0
 burgos NC-NP NC 0 NP 1
 burgués AQ-NC AQ 0 NC 1
@@ -42202,4 +42201,5 @@ zurren VMM-VMS VMM 0 VMS 1
 ópticas AQ-NC AQ 1 NC 0
 óptico AQ-NC AQ 1 NC 0
 útil AQ-NC AQ 2 NC 0
+bueno AQ-I AQ 14 I 17
 </FormTagFreq>

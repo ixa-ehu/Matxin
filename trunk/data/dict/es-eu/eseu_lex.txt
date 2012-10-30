@@ -28,3 +28,7 @@
 'radio'		'irrati'	my.smi=~'NCF'	+
 'donde'		''	my.vpost='+n[ERL][MEN][MOS]++lekua' && parent.slem=''	-
 'donde'		''	my.vpost='+n[ERL][MEN][MOS]' && parent.slem!=''	+
+'adonde'		''	my.vpost='+n[ERL][MEN][MOS]++lekura' && parent.slem=''	-
+'adonde'		''	my.vpost='+n[ERL][MEN][MOS]' && parent.slem!=''	+
+'a_donde'		''	my.vpost='+n[ERL][MEN][MOS]++lekura' && parent.slem=''	-
+'a_donde'		''	my.vpost='+n[ERL][MEN][MOS]' && parent.slem!=''	+
