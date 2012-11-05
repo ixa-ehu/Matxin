@@ -29,4 +29,6 @@ parti-flex	adi-par		#participio			 partizipioa
 paton	obj-ior	#pronombres átonos	objektua markatzen duen izenordaina
 morf-pron	morf-pron	#"se" pronominal	aditzaren "se" pronominala
 grup-verb-inf	adi-inf	#infinitibo	infinitiboa/aditz-transferentziara doan guztia
-grup-sp-inf	post-sint-inf	#infinitibo	infinitiboa/aditz-transferentziara doan guztia
+grup-sp-inf	post-sint-inf	#infinitivo	infinitiboa/aditz-transferentziara doan guztia
+
+interjeccio	interj		#interjección	interjekzioa
