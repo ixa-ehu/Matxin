@@ -108,6 +108,12 @@
 
 929 - - (sn,s-adj) top_left RELABEL - % (la charla (monotona))
 
+
+%Gehituta MATXIN (aingeru)
+930 - - (sn,grup-sp-inf<de>) top_left RELABEL - % Tenían (pocas ganas (de venir)) .
+930 - - (grup-sp,grup-sp-inf<de>) top_left RELABEL - % Vinieron (con ganas (de comer)) .
+
+
 %Kendu ditut esaldi bukaerako puntuazio ikurrak soilik errotik zintzilikatzeko (MATXIN - aingeru)
 %9001 - - (sn,Fc) top_left RELABEL - % (el presidente del consejo(,))
 %9999 - - (sn,F-term) top_left RELABEL - % signes que no acaben frase
