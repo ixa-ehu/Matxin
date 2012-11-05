@@ -1,0 +1,271 @@
+# Format:
+# prepEs	caseEU		condition	    exclusion  ## comment
+#
+# condition:   (baldintza betetzen bada, itzulpen hori hartu da )
+#   chunk.attrib='value'
+#
+#   chunk:   
+#     my	= the current chunk
+#     parent	= the parent of the current chunk
+#
+# exclusion
+#   -  : ez ba du baldintza betetzen, itzulpen hori ez da kontutan hartuko
+#   + : baldintza ez bada betetzen,hurrengo urratsean itzulpen hori kontutan hartuko da
+
+
+# prepEs	caseEU		 condition	    exclusion  ## comment
+
+# Not preposition
+#####################
+
+-     [INE]     (my.type='data' || my.headsem=~'[DEN+]') && parent.headlem!='izan'   -   # el cuatro de julio, uztailaren lauan    ##Bestelako osagarriak, datak ##denbora adierazten duten hitzak: arratsaldean.
+-     [ABS]	parent.type='adi-pas'	-   # El libro ha sido comprado: liburua erosi du
+-     [ABS]	my.si='dobj'		-   # he comprado un libro, nik liburua erosi dut
+-     [ABS]	my.si='att'		-   # yo soy guapo: polita naiz
+-     [ABS]	my.si!='subj'		-   # Subjektua ez denean...
+-     [ERG]	-			+   # la chica le ha dado el libro, neskak liburua eman dio   ##DU aditza
+-     [ABS]	-			+   # Garikoitz se ha enfadado, Garikoitz haserretu egin da   ##DA aditza
+
+# Sinple prepositions
+#####################
+
+about       [DAT]++buruz            -       +
+about	    [ABL]		    -	    +
+above	    [ABL]++gora/ALA	    -	    +	#(my.leafpos='[Z]' || my.headpos='[Z]') && my.mi='[MG]'   -    ## más allá de siete,zazpitik gora##zenbakiekin
+above	    [GEN]++gainetik         -       +
+according   [GEN]++arabera          -       +
+across	    [INE]++zehar            -       +
+against	    [GEN]++aurka	    -	    +
+#albeit	albeit	IN>nahiz\eta	[LOT][JNT]\[LOT][JNT]	nahiz[LOT][JNT][HAUT]\eta[LOT][JNT][EMEN]	-	-	-	-
+albeit	    nahiz_eta            -       +
+along	    [INE]++zehar            -       +
+alongside   [GEN]++ondoan/INE	    -	    +
+alongside   [SOZ]++batera	    -	    +
+#although	although	IN>nahiz\eta	[LOT][JNT]\[LOT][JNT]	nahiz[LOT][JNT][HAUT]\eta[LOT][JNT][EMEN]	-	-	-	-
+although	nahiz_eta	-		+
+among	    [GEN]++artean/INE	    -	    +
+apropos	    [ZERO]++dela_eta        -       +
+around	    [ABL]++zehar            -       +
+around	    [GEN]++inguruan         -       +
+around	    [ABL]++hurbil           -       +
+as	    [ZERO]++bezala	    -	    +
+#as	as	IN>nahiz\eta	[LOT][JNT]\[LOT][JNT]	nahiz[LOT][JNT][HAUT]\eta[LOT][JNT][EMEN]	-	-	-	-
+as	nahiz_eta		-			+
+at	    [INE]		    -	    +
+at	    [INE]		    -	    +	#denbora:	my.headpos='[Zm]' || my.headsem=~'[DEN+]'	    -	   ## lo han vendido a 3 euros, 3 eurotan saldu dute	##ez-bizidun, prezioa
+at	    [DAT]		    -	    +
+at	    [SOZ]		    -	    +
+#because	because	IN>-	-	-	-	-	-	+lako[ERL][MEN][KAUS]
+because		+lako[ERL][MEN][KAUS]	-	+
+because_of	[MOT]			-	      +
+before	    [ABS]++baino_lehen      -       +
+before	    [GEN]++aurrean	    -	    +
+#before	before	IN>-	-	-	-	-	-	[AMM][PART]+[ASP][BURU]++baino lehen
+behind	    [GEN]++atzean/INE	    -       + 
+behind	    [GEN]++alde		    -	    +
+behind	    [GEN]++atzetik	    -       + 
+below	    [INS]++azpitik          -       +
+below	    [GEN]++azpian	    -       +
+beneath	    [GEN]++azpian	    -       +
+beneath	    [GEN]++azpitik	    -       +
+beside	    [GEN]++ondoan	    -	    +
+besides	    [INS]++gain		    -	    +
+besides	    ++izan_ezik		    -       +
+between	    [GEN]++artean/INE	    -	    +	
+between	    [GEN]++bitartean	    -	    +
+beyond	    [INS]++haraindi	    -	    +
+beyond	    [ABL]++aurrera	    -	    +
+beyond	    [INS]++kanpo	    -	    +
+beyond	    [ABL]++gora		    -	    +
+but	    ++izan_ezik		    -	    +
+but	    ++baino		    -	    +
+by	    [ERG]		    -	    +
+by	    [INS]		    -	    +
+by	    [INE]		    -	    +
+by	    [GEN]++ondoan	    -	    +
+by	    [GEN]++aurretik	    -	    +
+by	    [ABL]		    -	    +
+by	    [GEN]++arabera	    -	    +
+by	    [ALA]+[GEL]		    -	    +
+by	    ++bider		    -	    +
+concerning  [DAT]++buruz	    -	    +
+considering ++kontuan_izanik	    -	    +
+despite	    ++egonda_ere	    -	    +
+down	    [INE]++behera	    -	    +
+during	    [INE]		    -	    +
+except	    ++izan_ezik		    -	    +
+following   [GEN]++ondoren	    -	    +
+for	    [DES]		    -	    +
+for	    [GEN]++ordez	    -	    +
+for	    [GEN]++alde		    -	    +
+for	    [INS]		    -	    +
+for	    [INE]		    -	    +
+for	    +[AMM][ADIZE]+[DEK][GEL]	    -	+	#my.headpos='[ADI][SIN]'	-	##he venido para comprarlo.
+for	    +lako[ERL][MEN][KAUS]	    -	+	#my.headpos='[ADI][SIN]'	   -   ## Debido a que no hay peras, he comido una manzana: udarerik ez dagoelako sagarra jan dut      ##aditzaren aurretik!!!???
+for	    [ALA]+[GEL]		    -	    +
+for	    [GEN]++truke	    -	    +
+for	    [GEN]		    -	    +
+from	    [ABL]		    -	    +
+from	    [GEN]		    -	    +
+from	    [INS]		    -	    +
+from	    [MOT]		    -	    +
+from	    ++eta		    -	    +
+given	    +nez[ERL][MEN][KAUS]    -	    +
+#if	if	IN>-	-	-	-	-	-	ba[ERL][MEN][BALD]+
+if	ba[ERL][MEN][BALD]+	-	+
+in	    [INE]		    -	    +
+in	    [GEN]++barruan	    -	    +
+in	    [ZERO]++inguru	    -	    +
+in	    [INS]		    -	    +
+in	    [GEN]++goian	    -	    +
+in	    [GEL]		    -	    +
+including   ++barne		    -	    +
+inside	    [ZERO]++barru	    -	    +
+into	    [INE]		    -	    +
+into	    [ALA]		    -	    +
+into	    [SOZ]		    -	    +
+into	    [DAT]++buruz	    -	    +
+into	    ++zati		    -	    +
+less	    ++izan_ezik		    -	    +
+like	    [GEN]++gisako	    -	    +
+like	    ++bezala		    -	    +
+like	    ++nola		    -	    +
+minus	    ++ken		    -	    +
+minus	    [ZERO]++azpitik	    -	    +
+near	    [ABL]++hurbil	    -	    +
+near	    +[AMM][ADIZE]+[DEK][GEL]++zorian	-	+	#	my.headpos='[ADI][SIN]'          -
+of	    [GEN]		-	+
+of	    [GEL]		-	+
+of	    [GEN]++artean	-	+
+of	    [INS]		-	+
+of	    [INS]+[GEL]		-	+
+off	    [ABL]		-	+
+off	    [ABL]++kanpo	-	+
+off	    [GEN]++ez_zale	-	+
+off	    [DAT]		-	+
+on	    [INE]		-	+
+on	    [INS]		-	+
+on	    +[AMM][ADIZE]+[DEK][INE]	-	+
+on	    [DAT]++buruz	-	+
+on	    [GEN]++gain		-	+
+on	    [GEN]++mende	-	+
+on	    [GEN]++kontura	-	+
+#once	once	IN>behin\-	[ADB][ADOARR]\-		behin[ADB][ADOARR]\-	-\-	-\-	-\-	-\[AMM][PART]+[DEK][PAR][MG]
+once	behin	-		+			#fintzeke
+onto	    [GEN]++gainean	-	+
+onto	    [GEN]++gainera	-	+
+onto	    [ALA]		-	+
+onto	    [DAT]		-	+
+onto	    [GEN]++ekintzen_jakitun	-	+
+onto	    [SOZ]++harremanetan	-	+
+opposite    [GEN]++aurrean	-	+
+outside	    [ABL]++kanpo	-	+
+outside	    ++izan_ezik		-	+
+over	    [GEN]++gainean	-	+
+over	    [GEN]++beste_aldean	-	+
+over	    [INE]++zehar	-	+
+over	    ++baino_gehiago	-	+
+over	    [GEN]++inguruan	-	+
+over	    [INE]		-	+
+over	    [INS]		-	+
+past	    ++eta		-	+
+past	    [GEN]++aurertik	-	+
+past	    [INS]++gaindi	-	+
+pending	    ++arte		-	+
+per	    [GEL]		-	+
+plus	    ++gehi		-	+
+regarding   [DAT]++buruz	-	+
+regardless  ++kontuan_hartu_gabe	-	+
+round	    [GEN]++inguruan	-	+
+round	    [INE]++barrena	-	+
+round	    [ZERO]++inguru	-	+
+round	    [GEN]++beste_aldean	-	+
+save	    ++izan_ezik		-	+
+since	    [ABL]		-	+
+#since	since	IN>-	-	-	-	-	-	+netik[ERL][MEN][DENB]
+since	+netik[ERL][MEN][DENB]	-	+
+#than	than	IN>baino	[LOT][JNT]	baino[LOT][JNT][AURK]	-	-	-	-
+than	++baino	-		+
+#that	that	IN>-	-	-	-	-	-	+la[ERL][MEN][KONP]
+that	+la[ERL][MEN][KONP]	-	+
+#though	though	IN>nahiz\eta	[LOT][JNT]\[LOT][JNT]	nahiz[LOT][JNT][HAUT]\eta[LOT][JNT][EMEN]	-	-	-	-
+though	nahiz_eta		-			+
+through	    [INE]++zehar	-	+
+through	    [INE]		-	+
+through	    [ABL]		-	+
+through	    [GEN]++ondorioz	-	+
+through	    [GEN]++bidez	-	+
+throughout  [GEL]++leku_guztietan	-	+
+throughout  [INE]		-	+
+till	    ++arte		-	+
+#till	till	IN>-	-	-	-	-	-	[AMM][PART]+[ASP][BURU]++arte
+till	++arte	-	+
+to	+[AMM][ADIZE]+[DEK][GEL]	my.type='inf-to'	-	##I come to read it.
+to	    [ALA]		-	+
+to	    [DAT]		-	+
+to	    [ABU]		-	+
+to	    ++arte		-	+
+to	    [ZERO]++gutxi	-	+	#orduekin
+to	    [GEL]		-	+
+to	    [GEN]		-	+
+to	    [GEN]++iritziz	-	+
+to	    ++baino		-	+
+toward	    [ABZ]		-	+
+toward	    [SOZ]+[GEL]		-	+
+toward	    [GEN]++aldean	-	+
+toward	    [ALA]+[GEL]		-	+
+towards	    [ABZ]		-	+
+towards	    [SOZ]+[GEL]		-	+
+towards	    [GEN]++aldean	-	+
+towards	    [ALA]+[GEL]		-	+
+under	    [GEN]++azpian	-	+
+under	    [GEN]++azpitik	-	+
+under	    [GEN]++azpira	-	+
+under	    ++baino_gutxiago	-	+
+under	    [GEN]++mende	-	+
+under	    [GEN]++arabera	-	+
+under	    +[AMM][ADIZE]++bidean	-	+
+under	    [GEN]++eraginpean	-	+
+underneath  [GEN]++azpian	-	+
+underneath  [GEN]++azpitik	-	+
+underneath  [GEN]++azpira	-	+
+#unless	unless	IN>-	-	-	-	-	-	[AMM][PART]+[ASP][BURU]++ezean
+unless	++ezean	-	+
+unlike	    ++desberdin		-	+
+unlike	    ++ez_bezala		-	+
+until	    ++arte		-	+
+#until	until	IN>-	-	-	-	-	-	[AMM][PART]+[ASP][BURU]++arte
+up	    [INE]++gora		-	+
+up	    [GEN]++gainean	-	+
+up	    [INE]++aurrerago	-	+
+upon	    [GEN]++gainean	-	+
+upon	    ++gainean		-	+
+upon	    +[AMM][ADIZE]+[DEK][INE]	-	+
+upon	    ++milaka		-	+
+versus	    ++versus		-	+
+versus	    [GEN]++kontra	-	+
+via	    [INE]++barrena	-	+
+via	    [GEN]++bidez	-	+
+#where	where	CS>ordea	[LOT][LOK]	ordea[LOT][LOK][AURK]	-	-	-	-	
+where	ordea	-		+
+#whereas	whereas	IN>berriz	[ADB][ADOARR]	-	-	-	-	-
+whereas		berriz	-		+
+#whether	whether	IN>-	-	-	-	-	-	+n[ERL][MEN][ZHG]
+whether		+n[ERL][MEN][ZHG]	-	+
+#while	while	IN>-	-	-	-	-	-	+n[ERL][MEN][ERLT]++bitartean
+while	+n[ERL][MEN][ERLT]++bitartean	-	+
+with	    [SOZ]		-	+
+with	    [INS]		-	+
+with	    +dun[ATZ][ADJ][IZO]	-	+
+with	    +ki[ATZ][ADB][IDOARR]	-	+
+with	    [GEN]++aurka	-	+
+with	    [DAT]++dagokionez	-	+
+with	    [GEN]++alde		-	+
+with	    ++gorabehera	-	+
+within	    [GEN]++barruan	-	+
+within	    ++baino_gutxiagotan	-	+
+within	    [GEL]++epean	-	+
+within	    ++baino_gertuago	-	+
+without	    [PAR]++gabe		-	+
+'s	    [GEN]		-	+
+

@@ -793,7 +793,7 @@ static struct
 {
 //  vector<pattern> patterns;
   bool traza;
-  vector<fst> tranducers;
+  vector<fst> transducers;
 } verbTransference;
 
 
@@ -820,7 +820,7 @@ void init_verbTrasference(string fileName, bool traza)
     transducer.net = net;
     transducer.ah = apply_init(net);
 
-    verbTransference.tranducers.push_back(transducer);
+    verbTransference.transducers.push_back(transducer);
   }
 
 }
@@ -833,8 +833,8 @@ wstring apply_verbTransference(wstring AS_source)
   char * cstr = new char [input.size()+1];
   strcpy (cstr, input.c_str());
 
-  vector<fst>::iterator it = verbTransference.tranducers.begin();
-  while (it != verbTransference.tranducers.end()) {
+  vector<fst>::iterator it = verbTransference.transducers.begin();
+  while (it != verbTransference.transducers.end()) {
     if (verbTransference.traza)
       cerr << cstr << endl;
 

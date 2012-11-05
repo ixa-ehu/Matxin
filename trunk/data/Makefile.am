@@ -55,62 +55,51 @@ install-data-hook:
 	@echo "Compiling verb-transfer grammar."
  ifeq ($(ES),true)
 	@echo "   Compiling Spanish verb-transfer grammar..."
-	@rm -f $(pkgdatadir)/gram/es-eu/eseu_verb_transfer.fst
-	@cd $(pkgdatadir)/gram/es-eu && $(FOMA) -f $(pkgdatadir)/gram/es-eu/eseu_verb_transfer.foma >& /dev/null
-	@chmod +r $(pkgdatadir)/gram/es-eu/eseu_verb_transfer.fst
+	@rm -f $(pkgdatadir)/gram/es-eu/verb_transfer.fst
+	@cd $(pkgdatadir)/gram/es-eu && $(FOMA) -f $(pkgdatadir)/gram/es-eu/verb_transfer.foma >& /dev/null
+	@chmod +r $(pkgdatadir)/gram/es-eu/verb_transfer.fst
  endif
  ifeq ($(EN),true)
 	@echo "   Compiling English verb-transfer grammar..."
-	@rm -f $(pkgdatadir)/gram/en-eu/eneu_verb_transfer.fst
-	@cd $(pkgdatadir)/gram/en-eu && $(FOMA) -f $(pkgdatadir)/gram/en-eu/eneu_verb_transfer.foma >& /dev/null
-	@chmod +r $(pkgdatadir)/gram/en-eu/eneu_verb_transfer.fst
+	@rm -f $(pkgdatadir)/gram/en-eu/verb_transfer.fst
+	@cd $(pkgdatadir)/gram/en-eu && $(FOMA) -f $(pkgdatadir)/gram/en-eu/verb_transfer.foma >& /dev/null
+	@chmod +r $(pkgdatadir)/gram/en-eu/verb_transfer.fst
  endif
 
 	@echo
 	@echo "Compiling dictionaries using lttoolbox."
+
+	rm -f $(pkgdatadir)/dict/eu/morph_gen.bin
+	$(LT_COMP) rl $(pkgdatadir)/dict/eu/morph_gen_mur.xml $(pkgdatadir)/dict/eu/morph_gen.bin
+	chmod +r $(pkgdatadir)/dict/eu/morph_gen.bin
+
+	@rm -f $(pkgdatadir)/dict/eu/measures_gen.bin
+	@$(LT_COMP) rl $(pkgdatadir)/dict/eu/measures_gen.xml $(pkgdatadir)/dict/eu/measures_gen.bin
+	@chmod +r $(pkgdatadir)/dict/eu/measures_gen.bin
+
+	@rm -f $(pkgdatadir)/dict/eu/morph_nolex.bin
+	@$(LT_COMP) rl $(pkgdatadir)/dict/eu/morph_nolex.xml $(pkgdatadir)/dict/eu/morph_nolex.bin
+	@chmod +r $(pkgdatadir)/dict/eu/morph_nolex.bin
+
  ifeq ($(ES),true)
 	@echo "   Compiling Spanish dictionary..."
-	@rm -f $(pkgdatadir)/dict/es-eu/eseu.bin
-	@$(LT_COMP) lr $(pkgdatadir)/dict/es-eu/eseu_mur.xml $(pkgdatadir)/dict/es-eu/eseu.bin
-	@chmod +r $(pkgdatadir)/dict/es-eu/eseu.bin
+	@rm -f $(pkgdatadir)/dict/es-eu/bilingual.bin
+	@$(LT_COMP) lr $(pkgdatadir)/dict/es-eu/bilingual_mur.xml $(pkgdatadir)/dict/es-eu/bilingual.bin
+	@chmod +r $(pkgdatadir)/dict/es-eu/bilingual.bin
 
-	@rm -f $(pkgdatadir)/dict/es-eu/eu_changes_morph.bin
-	@$(LT_COMP) lr $(pkgdatadir)/dict/es-eu/eu_changes_morph.xml $(pkgdatadir)/dict/es-eu/eu_changes_morph.bin
-	@chmod +r $(pkgdatadir)/dict/es-eu/eu_changes_morph.bin
-
-	@rm -f $(pkgdatadir)/dict/es-eu/eu_measures_gen.bin
-	@$(LT_COMP) rl $(pkgdatadir)/dict/es-eu/eu_measures_gen.xml $(pkgdatadir)/dict/es-eu/eu_measures_gen.bin
-	@chmod +r $(pkgdatadir)/dict/es-eu/eu_measures_gen.bin
-
-	rm -f $(pkgdatadir)/dict/es-eu/eu_morph_gen.bin
-	$(LT_COMP) rl $(pkgdatadir)/dict/es-eu/eu_morph_gen_mur.xml $(pkgdatadir)/dict/es-eu/eu_morph_gen.bin
-	chmod +r $(pkgdatadir)/dict/es-eu/eu_morph_gen.bin
-
-	@rm -f $(pkgdatadir)/dict/es-eu/eu_morph_nolex.bin
-	@$(LT_COMP) rl $(pkgdatadir)/dict/es-eu/eu_morph_nolex.xml $(pkgdatadir)/dict/es-eu/eu_morph_nolex.bin
-	@chmod +r $(pkgdatadir)/dict/es-eu/eu_morph_nolex.bin
+	@rm -f $(pkgdatadir)/dict/es-eu/changes_morph.bin
+	@$(LT_COMP) lr $(pkgdatadir)/dict/es-eu/changes_morph.xml $(pkgdatadir)/dict/es-eu/changes_morph.bin
+	@chmod +r $(pkgdatadir)/dict/es-eu/changes_morph.bin
  endif
 
  ifeq ($(EN),true)
 	@echo "   Compiling English dictionary..."
-	@rm -f $(pkgdatadir)/dict/en-eu/eneu.bin
-	@$(LT_COMP) lr $(pkgdatadir)/dict/en-eu/eneu_mur.xml $(pkgdatadir)/dict/en-eu/eneu.bin
-	@chmod +r $(pkgdatadir)/dict/en-eu/eneu.bin
+	@rm -f $(pkgdatadir)/dict/en-eu/bilingual.bin
+	@$(LT_COMP) lr $(pkgdatadir)/dict/en-eu/bilingual_mur.xml $(pkgdatadir)/dict/en-eu/bilingual.bin
+	@chmod +r $(pkgdatadir)/dict/en-eu/bilingual.bin
 
-	@rm -f $(pkgdatadir)/dict/en-eu/eu_changes_morph.bin
-	@$(LT_COMP) lr $(pkgdatadir)/dict/en-eu/eu_changes_morph.xml $(pkgdatadir)/dict/en-eu/eu_changes_morph.bin
-	@chmod +r $(pkgdatadir)/dict/en-eu/eu_changes_morph.bin
-
-	@rm -f $(pkgdatadir)/dict/en-eu/eu_measures_gen.bin
-	@$(LT_COMP) rl $(pkgdatadir)/dict/en-eu/eu_measures_gen.xml $(pkgdatadir)/dict/en-eu/eu_measures_gen.bin
-	@chmod +r $(pkgdatadir)/dict/en-eu/eu_measures_gen.bin
-
-	rm -f $(pkgdatadir)/dict/en-eu/eu_morph_gen.bin
-	$(LT_COMP) rl $(pkgdatadir)/dict/en-eu/eu_morph_gen_mur.xml $(pkgdatadir)/dict/en-eu/eu_morph_gen.bin
-	chmod +r $(pkgdatadir)/dict/en-eu/eu_morph_gen.bin
-
-	@rm -f $(pkgdatadir)/dict/en-eu/eu_morph_nolex.bin
-	@$(LT_COMP) rl $(pkgdatadir)/dict/en-eu/eu_morph_nolex.xml $(pkgdatadir)/dict/en-eu/eu_morph_nolex.bin
-	@chmod +r $(pkgdatadir)/dict/en-eu/eu_morph_nolex.bin
+	@rm -f $(pkgdatadir)/dict/en-eu/changes_morph.bin
+	@$(LT_COMP) lr $(pkgdatadir)/dict/en-eu/changes_morph.xml $(pkgdatadir)/dict/en-eu/changes_morph.bin
+	@chmod +r $(pkgdatadir)/dict/en-eu/changes_morph.bin
  endif
 

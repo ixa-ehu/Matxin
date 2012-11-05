@@ -1,0 +1,27 @@
+type!~'adi-'/mi	ord=parent.length/mi	overwrite
+type!~'adi-'/cas	ord=parent.length/cas	overwrite
+type!~'adi-' && cas!=''/casalloc	ord=parent.length/alloc	concat
+type!~'adi-' && cas!=''/casref	ord=parent.length/ref	concat
+type!~'adi-'/headsem	ord=parent.length/headsem	overwrite
+
+type!~'adi-'/npost	ord++=parent.length/cas	overwrite
+type!~'adi-'/mi	ord++=parent.length/mi	overwrite
+type!~'adi-' && npost!=''/npostalloc	ord++=parent.length/alloc	concat
+type!~'adi-' && npost!=''/npostref	ord++=parent.length/ref	concat
+type!~'adi-' && npost!=''/headsem	ord++=parent.length/headsem	overwrite
+
+type='adi-inf'/cas	ord=parent.length/cas	overwrite
+type='adi-inf' && cas!=''/casalloc	ord=parent.length/alloc	concat
+type='adi-inf' && cas!=''/casref	ord=parent.length/ref	concat
+
+type=~'adi-kat' && length='0'/rel	/cas	overwrite
+type=~'adi-kat' && length='0' && rel!=''/relalloc	/alloc	concat
+type=~'adi-kat' && length='0' && rel!=''/relref	/ref	concat
+
+type='adi-kat' && length>'0'/rel	pos='[ADL]' || (pos='[PER]' && ord=parent.length)/cas	overwrite
+type='adi-kat' && length>'0' && rel!=''/relalloc	pos='[ADL]' || (pos='[PER]' && ord=parent.length)/alloc	concat
+type='adi-kat' && length>'0' && rel!=''/relref	pos='[ADL]' || (pos='[PER]' && ord=parent.length)/ref	concat
+
+type='adi-kat-ez' && length>'0'/rel	pos='[ADL]'/cas	overwrite
+type='adi-kat-ez' && length>'0' && rel!=''/relalloc	pos='[ADL]'/alloc	concat
+type='adi-kat-ez' && length>'0' && rel!=''/relref	pos='[ADL]'/ref	concat

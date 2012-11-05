@@ -10,4 +10,4 @@ else
 EN_DIR=
 endif
 
-SUBDIRS = $(ES_DIR) $(EN_DIR)
+SUBDIRS = eu $(ES_DIR) $(EN_DIR)

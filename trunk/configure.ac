@@ -426,6 +426,7 @@ AC_CONFIG_FILES([matxin.pc
                  data/Makefile
                  data/config/Makefile
                  data/dict/Makefile
+                 data/dict/eu/Makefile
                  data/dict/en-eu/Makefile
                  data/dict/es-eu/Makefile
                  data/freeling/Makefile
@@ -445,6 +446,7 @@ AC_CONFIG_FILES([matxin.pc
 		 data/freeling/es/corrector/Makefile
 		 data/freeling/es/chunker/Makefile
                  data/gram/Makefile
+                 data/gram/eu/Makefile
                  data/gram/en-eu/Makefile
                  data/gram/es-eu/Makefile
                  src/Makefile])

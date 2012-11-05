@@ -1,0 +1,57 @@
+#Categoría	#Kategoria	#Descripción	#Azalpena
+n-chunk		is		#sintagma nominal	izen-sintagma
+sn-chunk	is		#sintagma nominal	izen-sintagma
+sp-chunk	post-sint	#sintagma preposicional (todas las preposiciones excepto "de")	postposizio-sintagma
+punt		p-ez-koma	#todos los signos de puntuación que no sean "coma"	koma es diren puntuazio-ikurrak
+attrib		adjs	#sintagma adjetivo	adjektibo-sintagma
+sv-coor		emen-as	#sintagma verbal que contiene una conjunción coordinada	emendiozko juntagailua duen aditz-sintagma
+sn-coor		emen-is	#sintagma nominal que contiene una conjunción coordinada	emendiozko juntagailua duen izen-sintagma
+sp-coor		emen-ps	#sintagma preposicional que contiene una conjunción coordinada	emendiozko juntagailua duen postposizio-sintagma
+rel-cl	erlt	#pronombre relativo	erlatibozko mofema
+inf-mk	inf-to	   #para traducir el type del "to"	"to"ren type-a itzultzeko
+
+claus		adi-kat		#grupo verbal	aditz-katea
+vb-chunk	adi-kat		#grupo verbal	aditz-katea
+vb-be		adi-kat		#grupo verbal	aditz-katea
+sv		adi-kat		#grupo verbal	aditz-katea
+rel		adi-kat		#grupo verbal debajo de "rel"	"rel" (that) baten azpiko aditz-katea
+vb-compl	adi-kat		#grupo verbal	aditz-katea	berez ez dakit zer den, baina top batean agertu zaigu eta badaezpada sartu dut (Climate change report shows things going from bad to worse .)
+
+sf-brk		p-koma	#signo de puntuación "koma"	puntuazioa: koma
+st-brk		p-buka		#punto	      puntua
+ex-brk		p-buka		#exclamación	      harridura-ikurra
+in-brk		p-buka		#interrogación	      galdera-ikurra
+
+#####aurrekoak es-eu
+sn	is	#sintagma nominal	izen-sintagma
+s-adj	adjs	#sintagma adjetivo	adjektibo-sintagma
+sp-de	post-izls	#sintagma preposicional con la preposición "de"	izenlagun-sintagma
+grup-sp	post-sint	#sintagma preposicional (todas las preposiciones excepto "de")	postposizio-sintagma
+Fc	p-koma	#signo de puntuación "koma"	puntuazioa: koma
+F-no-c	p-ez-koma	#todos los signos de puntuación que no sean "coma"	koma es diren puntuazio-ikurrak
+F-term	p-buka		#puntuación que significa término de sentencia ('.!?)	esaldi amaiera adierazten duten ikurrak
+			
+número	zki	#cualquier número cardinal	edozein zenbaki kardinal
+grup-verb	adi-kat	#grupo verbal	aditz-katea
+sadv	adbs	#sintagma adverbial	adberbio-sintagma
+neg	ez	#negación	ezeztapena
+coord	emen	#conjunción coordinada	emendiozko juntagailua
+coor-sp	emen-post	#sintagma preposicional que contiene una conjunción coordinada	emendiozko juntagailua duen postposizio-sintagma
+coor-n	emen-is	#sintagma nominal que contiene una conjunción coordinada	emendiozko juntagailua duen izen-sintagma
+coor-vb	emen-as	#sintagma verbal que contiene una conjunción coordinada	emendiozko juntagailua duen aditz-sintagma
+coor-adj	emen-adjs	#sintagma adjetivo que contiene una conjunción coordinada	emendiozko juntagailua duen adjektibo-sintagma
+verb-pass	adi-pas	#verbo en forma pasiva	espainieraz aditz pasiboa agertzen den chunk-a/aditz-transferentziara doan guztia
+subord	mend-p	#oración subordinada	mendeko perpausa
+conj-subord	mend	#conjunción subordinada	menderagailua
+subord-ger	adi-ger-mend	#subordinada con un gerundio	gerundiodun menderagailua
+sn-que	erlt-sint	#sintagma nominal que contiene un pronombre relativo "que"	erlatibozko sintagma
+prel	erlt	#pronombre relativo	erlatibozko mofema
+prel-adv	erlt-adb   #pronombre relativo adberbial (donde...)	erlatibozko adberbioa
+inf	adi-inf	#infinitibo	infinitiboa/aditz-transferentziara doan guztia
+ger	adi-ger	#gerundio	gerundioa/aditz-transferentziara doan guztia
+parti-flex	adi-par		#participio			 partizipioa
+paton	obj-ior	#pronombres átonos	objektua markatzen duen izenordaina
+morf-pron	morf-pron	#"se" pronominal	aditzaren "se" pronominala
+grup-verb-inf	adi-inf	#infinitibo	infinitiboa/aditz-transferentziara doan guztia
+grup-sp-inf	post-sint-inf	#infinitibo	infinitiboa/aditz-transferentziara doan guztia
+
