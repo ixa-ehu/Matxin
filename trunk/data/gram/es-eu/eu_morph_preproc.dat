@@ -99,7 +99,8 @@
 ([IOR][PERARR][NUMP][ZUEK][(.*?)])(.*?)[(PRO)]					LemaMorf +[DEK][GEN][NUMP]+[DEK] Kas Num
 ([IOR][PERARR][NUMP][ZUEK][(.*?)])(.*?)[(MOT)]					LemaMorf +[DEK][GEN][NUMP]+[DEK] Kas
 
-	#edonor IZGMGB
+	#edonor/zerbait... IZGMGB
+(zerbait[IOR][IZGMGB])(.*?)[SOZ]				LemaMorf +[DEK] Kas
 ([IOR][IZGMGB])(.*?)[(INE|ABL|ALA|ABU|ABZ)]			LemaMorf +[DEK][GEN][MG]+[DEK] Kas
 ([IOR][IZGMGB])(.*?)[(ABS|ERG|DAT|INS|SOZ|DES|GEN)]		LemaMorf +[DEK] Kas [MG]
 ([IOR][IZGMGB])(.*?)[(PRO)]					LemaMorf +[DEK][GEN][MG]+[DEK] Kas [MG]
