@@ -600,9 +600,11 @@ vector<movement> get_chunk_movements(wstring fromAttributes,
 
   for (size_t i = 0; i < chunkAttribMovement.movements.size(); i++)
   {
-    if (apply_condition(chunkAttribMovement.movements[i].from.condition, fromAttributes) &&
-        apply_condition(chunkAttribMovement.movements[i].to.condition, toAttributes) &&
-        chunkAttribMovement.movements[i].direction == direction)
+    if ((direction == L"down" && apply_condition(chunkAttribMovement.movements[i].from.condition, fromAttributes) && 
+	 apply_condition(chunkAttribMovement.movements[i].to.condition, toAttributes, fromAttributes))
+	|| 
+	(direction == L"up" && apply_condition(chunkAttribMovement.movements[i].to.condition, toAttributes) && 
+	 apply_condition(chunkAttribMovement.movements[i].from.condition, fromAttributes, toAttributes)))
     {
       output.push_back(chunkAttribMovement.movements[i]);
     }
