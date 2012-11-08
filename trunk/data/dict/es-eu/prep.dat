@@ -23,7 +23,9 @@
 -     [ZERO]    my.type='p-ez-koma'	-   # Puntuazio ikurrak ez dute kasurik behar...
 -     [ZERO]    my.type='p-buka'	-   # Puntuazio ikurrak ez dute kasurik behar...
 -     [ZERO]    my.type='adi-par'	-   # partizipioa ez da deklinatzen.
--     [ZERO]    my.type='adbs'		-   # adberbioak ez dira deklinatzen.	    
+-     [ZERO]    my.type='adi-kat'	-   # aditz kate jokatuei ez zaie kasu markarik esleitzen.
+-     [ZERO]    my.type='adi-pas'	-   # aditz kate jokatuei ez zaie kasu markarik esleitzen.
+-     [ZERO]    my.type=~'adbs'		-   # adberbioak ez dira deklinatzen.	    
 -     [ZERO]    my.type='interj'	-   # interjekzioak ez dira deklinatzen.	    
 -     [INE]    (my.type='data' || my.headsem=~'[DEN+]') && parent.headlem!='_izan_'	-	# el cuatro de julio, uztailaren lauan#Bestelako osagarriak, datak #denbora adierazten duten hitzak:arratsaldean
 -     [ABS]	parent.type='adi-pas'	-   # El libro ha sido comprado: liburua erosi du

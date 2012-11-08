@@ -31,3 +31,8 @@ sem!=''/sem	/headsem	no-overwrite
 pos='[Z]'/pos	/leafpos	overwrite
 
 /'true'	si='subj'/subject	overwrite
+
+smi='Fit'/'p-int'	/type	overwrite
+smi='Fia'/'p-int'	/type	overwrite
+
+pos='[ADB][ADOGAL]'/'adbs-gal'	/type	overwrite

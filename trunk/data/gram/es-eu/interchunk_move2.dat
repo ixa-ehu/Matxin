@@ -1,37 +1,13 @@
-si='subj'/per	type='adi-kat'/subMi	up	overwrite
-si='dobj'/per	type='adi-kat'/objMi	up	overwrite
-cas='[DAT]'/per	type='adi-kat'/datMi	up	overwrite
-si='iobj' && cas!='[DAT]'/per	type='adi-kat'/objMi	up	overwrite
-si='subj' && per=''/mi	type='adi-kat'/subMi	up	overwrite
-si='iobj' && cas='[ABS]' && per=''/mi	type='adi-kat'/objMi	up	overwrite
-cas='[DAT]' && per=''/mi	type='adi-kat'/datMi	up	overwrite
-si='dobj' && per=''/mi	type='adi-kat'/objMi	up	overwrite
-si='dobj' && per='' && leafpos='[Z]'/'[NUMP]'	type='adi-kat'/objMi	up	overwrite
-si='subj' && per='' && leafpos='[Z]'/'[NUMP]'	type='adi-kat'/subMi	up	overwrite
-cas='[DAT]' && per='' && leafpos='[Z]'/'[NUMP]'	type='adi-kat'/datMi	up	overwrite
-
-si='subj'/per	type='adi-pas'/subMi	up	overwrite
-si='dobj'/per	type='adi-pas'/objMi	up	overwrite
-si='iobj' && cas!='[DAT]'/per	type='adi-pas'/objMi	up	overwrite
-si='subj' && per=''/mi	type='adi-pas'/subMi	up	overwrite
-si='dobj' && per=''/mi	type='adi-pas'/objMi	up	overwrite
-si='iobj' && cas!='[DAT]' && per=''/mi	type='adi-pas'/objMi	up	overwrite
-cas='[DAT]'/mi	type='adi-pas'/datMi	up	overwrite
-
-si='subj'/per	type='adi-kat-ez'/subMi	up	overwrite
-si='dobj'/per	type='adi-kat-ez'/objMi	up	overwrite
-si='iobj' && cas!='[DAT]'/per	type='adi-kat-ez'/objMi	up	overwrite
-si='subj' && per=''/mi	type='adi-kat-ez'/subMi	up	overwrite
-si='dobj' && per=''/mi	type='adi-kat-ez'/objMi	up	overwrite
-si='iobj' && cas!='[DAT]' && per=''/mi	type='adi-kat-ez'/objMi	up	overwrite
-cas='[DAT]'/mi	type='adi-kat-ez'/datMi	up	overwrite
-
-si='subj'/per	type='adi-pas-ez'/subMi	up	overwrite
-si='dobj'/per	type='adi-pas-ez'/objMi	up	overwrite
-si='iobj' && cas!='[DAT]'/per	type='adi-pas-ez'/objMi	up	overwrite
-si='subj' && per=''/mi	type='adi-pas-ez'/subMi	up	overwrite
-si='dobj' && per=''/mi	type='adi-pas-ez'/objMi	up	overwrite
-si='iobj' && cas!='[DAT]' && per=''/mi	type='adi-pas-ez'/objMi	up	overwrite
-cas='[DAT]'/mi	type='adi-pas-ez'/datMi	up	overwrite
+si='subj'/per	type=~'adi-'/subMi	up	overwrite
+si='dobj'/per	type=~'adi-'/objMi	up	overwrite
+cas='[DAT]'/per	type=~'adi-'/datMi	up	overwrite
+si='iobj' && cas!='[DAT]'/per	type=~'adi-'/objMi	up	overwrite
+si='subj' && per=''/mi	type=~'adi-'/subMi	up	overwrite
+si='iobj' && cas='[ABS]' && per=''/mi	type=~'adi-'/objMi	up	overwrite
+cas='[DAT]' && per=''/mi	type=~'adi-'/datMi	up	overwrite
+si='dobj' && per=''/mi	type=~'adi-'/objMi	up	overwrite
+si='dobj' && per='' && leafpos='[Z]'/'[NUMP]'	type=~'adi-'/objMi	up	overwrite
+si='subj' && per='' && leafpos='[Z]'/'[NUMP]'	type=~'adi-'/subMi	up	overwrite
+cas='[DAT]' && per='' && leafpos='[Z]'/'[NUMP]'	type=~'adi-'/datMi	up	overwrite
 
 
