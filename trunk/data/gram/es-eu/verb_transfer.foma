@@ -103,7 +103,12 @@ define AdP1GJok    [   [ {.acabar.} | {.andar.} | {.comenzar.} | {.empezar.}
 			 | {.continuar.} | {.continuar.} | {.estar.} | {.ir.}  
 			 | {.llevar.} | {.seguir.} | {.terminar.} | {.venir.}]    IMJok
 		     ];
-define AdP1Jok     [ AdP1IJok | AdP1GJok ];
+
+! Con participio!!!!!!!!!!!!!
+define AdP1PJok    [    {.estar.}     IMJok
+		     ];
+
+!!!define AdP1Jok     [ AdP1IJok | AdP1GJok | AdP1PJok];
 
 define AdP2Jok     [   {.soler.}						  IMJok
 		       | [ {.deber.} | {.acabar.} ]				  IMJok %+ {.de.}         IM
@@ -113,6 +118,7 @@ define AdP3Jok     [   {.volver.}						  IMJok %+ {.a.}          IM
 		     ];
 define AdP4Jok     [   [ {.llegar.} | {.acertar.} | {.alcanzar.} ]		  IMJok %+ {.a.}          IM
 		     ];
+
 
 define AdP1IPar  [   [ {.poder.} | {.deber.} | {.querer.}]			  IMPar
 		       | [ {.tener.}| {.haber.} ]				  IMPar %+ {.que.}			IM
@@ -125,7 +131,11 @@ define AdP1GPar    [   [ {.acabar.} | {.andar.} | {.comenzar.} | {.empezar.}
 			 | {.llevar.} | {.seguir.} | {.terminar.} | {.venir.}]    IMPar
 		     ];
 
-define AdP1Par     [ AdP1IPar | AdP1GPar ];
+!!!!!!
+define AdP1PPar    [    {.estar.}     IMJok
+		     ];
+
+!!!define AdP1Par     [ AdP1IPar | AdP1GPar | AdP1PPar ];
 
 define AdP2Par     [   {.soler.}						  IMPar
 		       | [ {.deber.} | {.acabar.} ]				  IMPar %+ {.de.}         IM
@@ -217,6 +227,10 @@ define AdKPer1ISin [ [Pr %+]*                           AdP1IJok [%+ Pr]*  %+ Ad
 define AdKPer1ILag [ [Pr %+]* HaberLag IMJok [%+Pr]* %+ AdP1IPar	   %+ AdNES IMInf [%+ Pr]* "&" Sub Obj Dat "&" Trans "&" AdNEU ];
 define AdKPer1GSin [ [Pr %+]*	  	                AdP1GJok [%+ Pr]*  %+ AdNES IMGer [%+ Pr]* "&" Sub Obj Dat "&" Trans "&" AdNEU ];
 define AdKPer1GLag [ [Pr %+]* HaberLag IMJok [%+Pr]* %+ AdP1GPar	   %+ AdNES IMGer [%+ Pr]* "&" Sub Obj Dat "&" Trans "&" AdNEU ];
+!!!!!!! Aingeruk gehituta
+define AdKPer1PSin [ [Pr %+]*	  	                AdP1PJok [%+ Pr]*  %+ AdNES IMPar [%+ Pr]* "&" Sub Obj Dat "&" Trans "&" AdNEU ];
+define AdKPer1PLag [ [Pr %+]* HaberLag IMJok [%+Pr]* %+ AdP1PPar	   %+ AdNES IMPar [%+ Pr]* "&" Sub Obj Dat "&" Trans "&" AdNEU ];
+!!!!!!
 define AdKPer2Sin  [ [Pr %+]*	 	                AdP2Jok  [%+ Pr]*  %+ AdNES IMInf [%+ Pr]* "&" Sub Obj Dat "&" Trans "&" AdNEU ];
 define AdKPer2Lag  [ [Pr %+]* HaberLag IMJok [%+Pr]* %+ AdP2Par	      	   %+ AdNES IMInf [%+ Pr]* "&" Sub Obj Dat "&" Trans "&" AdNEU ];
 define AdKPer3Sin  [ [Pr %+]*	 	                AdP3Jok  [%+ Pr]*  %+ AdNES IMInf [%+ Pr]* "&" Sub Obj Dat "&" Trans "&" AdNEU ];
@@ -231,6 +245,10 @@ define AdKPer1ISinPas [[Pr %+]*                   AdP1IJok %+ SerPas IMInf  %+ A
 define AdKPer1ILagPas [[Pr %+]* HaberLag IMJok %+ AdP1IPar %+ SerPas IMInf  %+ AdNES IMPar [%+ Pr]* "&" Sub Obj Dat "&" Trans "&" AdNEU ];
 define AdKPer1GSinPas [[Pr %+]*                   AdP1GJok %+ SerPas IMGer  %+ AdNES IMPar [%+ Pr]* "&" Sub Obj Dat "&" Trans "&" AdNEU ];
 define AdKPer1GLagPas [[Pr %+]* HaberLag IMJok %+ AdP1GPar %+ SerPas IMGer  %+ AdNES IMPar [%+ Pr]* "&" Sub Obj Dat "&" Trans "&" AdNEU ];
+!!!!!
+define AdKPer1PSinPas [[Pr %+]*                   AdP1PJok %+ SerPas IMPar  %+ AdNES IMPar [%+ Pr]* "&" Sub Obj Dat "&" Trans "&" AdNEU ];
+define AdKPer1PLagPas [[Pr %+]* HaberLag IMJok %+ AdP1PPar %+ SerPas IMPar  %+ AdNES IMPar [%+ Pr]* "&" Sub Obj Dat "&" Trans "&" AdNEU ];
+!!!!!!
 define AdKPer2SinPas  [[Pr %+]*                   AdP2Jok  %+ SerPas IMInf  %+ AdNES IMPar [%+ Pr]* "&" Sub Obj Dat "&" Trans "&" AdNEU ];
 define AdKPer2LagPas  [[Pr %+]* HaberLag IMJok %+ AdP2Par  %+ SerPas IMInf  %+ AdNES IMPar [%+ Pr]* "&" Sub Obj Dat "&" Trans "&" AdNEU ];
 define AdKPer3SinPas  [[Pr %+]*		   	  AdP3Jok  %+ SerPas IMInf  %+ AdNES IMPar [%+ Pr]* "&" Sub Obj Dat "&" Trans "&" AdNEU ];
@@ -239,11 +257,11 @@ define AdKPer4SinPas  [[Pr %+]*		   	  AdP4Jok  %+ SerPas IMInf  %+ AdNES IMPar 
 define AdKPer4LagPas  [[Pr %+]* HaberLag IMJok %+ AdP4Par  %+ SerPas IMInf  %+ AdNES IMPar [%+ Pr]* "&" Sub Obj Dat "&" Trans "&" AdNEU ];
 
 
-define AdKPer1Sin     [ AdKPer1ISin | AdKPer1GSin ] ;
-define AdKPer1Lag     [ AdKPer1ILag | AdKPer1GLag ] ;
+define AdKPer1Sin     [ AdKPer1ISin | AdKPer1GSin | AdKPer1PSin] ;
+define AdKPer1Lag     [ AdKPer1ILag | AdKPer1GLag | AdKPer1PLag ] ;
 
-define AdKPer1SinPas  [ AdKPer1ISinPas | AdKPer1GSinPas ] ;
-define AdKPer1LagPas  [ AdKPer1ILagPas | AdKPer1GLagPas ] ;
+define AdKPer1SinPas  [ AdKPer1ISinPas | AdKPer1GSinPas | AdKPer1PSinPas ] ;
+define AdKPer1LagPas  [ AdKPer1ILagPas | AdKPer1GLagPas | AdKPer1PLagPas ] ;
 
 
 define AdKArr     [ AdKArrSin  | AdKArrLag  ] ;
@@ -458,6 +476,8 @@ regex [
        .o.
        [ {AspN} -> "ALA"  ||  ?* {.ir.}	IM %+ {.a.}						 ?* XXX {P1} ?*  _ ?*  ] 
        .o.
+       [ {AspN} -> "MOD" ||	 ?* {.estar.} ?* %+ AdNES IMPar					 ?* XXX {P1} ?*  _ ?*  ] 
+       .o.
        [ {AspN} -> "EZBU" ||  ?* [ [{.empezar.}|{.comenzar.}|{.echar.}|{.romper.}] 	IM %+ {.a.}			      #...
 				    | {.terminar.}				   	IM %+ {.de.} 
 				    |  [ {.acabar.}|{.andar.}|{.comenzar.}|{.empezar.}
@@ -509,6 +529,9 @@ regex [
 	[ {Per} -> {amaitu}		||   ?* [ {.acabar.} | {.terminar.} ]					?*   _ ?* ]
 	.o.
 	[ {Per} -> {egon}		||   ?* {.estar.} IM %+ {.a}"_"{punto}"_"{de.}				?*   _ ?* ]
+!!!! Aingeruk gehituta
+	.o.	    
+	[ {Per} -> {egon}		||   ?* {.estar.} ?* %+ AdNES IMPar					?*   _ ?* ]
 	.o.	    
 	[ {Per} -> {ari} {_izan}	||   ?* [ {.andar.}  | {.estar.} ]					?*   _ ?* ]
 	.o.
