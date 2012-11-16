@@ -529,7 +529,7 @@ regex [
 	[ {Per} -> {amaitu}		||   ?* [ {.acabar.} | {.terminar.} ]					?*   _ ?* ]
 	.o.
 	[ {Per} -> {egon}		||   ?* {.estar.} IM %+ {.a}"_"{punto}"_"{de.}				?*   _ ?* ]
-!!!! Aingeruk gehituta
+!!!! Aingeruk gehituta (está cansado -> nekatuta dago)
 	.o.	    
 	[ {Per} -> {egon}		||   ?* {.estar.} ?* %+ AdNES IMPar					?*   _ ?* ]
 	.o.	    
@@ -807,7 +807,8 @@ regex [
 	.o.
 	[ {Nr}    -> "[NR_ZU]"	|| ?*  {obj2s}		?* [ "edun<ADL>" | AdTrTran ?* "[ADT]" | "ezan<ADL>" ]  ?*  _ ?* ] 
 	.o. 
-	[ {Nr}    -> "[NR_HU]"	|| ?*  {obj}[{3s}|{00}] ?* [ "edun<ADL>" | AdTrTran ?* "[ADT]" | "ezan<ADL>" ]  ?*  _ ?* ] 
+	[ {Nr}    -> "[NR_HU]"	|| ?* [{obj}[{3s}|{00}] 
+				      |{utzi}"<PER>"   ] ?* [ "edun<ADL>" | AdTrTran ?* "[ADT]" | "ezan<ADL>" ]  ?*  _ ?* ] 
 	.o. 
 	[ {Nr}    -> "[NR_GU]"	|| ?*  {obj1p}		?* [ "edun<ADL>" | AdTrTran ?* "[ADT]" | "ezan<ADL>" ]  ?*  _ ?* ] 
 	.o. 
@@ -827,7 +828,7 @@ regex [
 	.o.
 	[ {Ni}    -> "[NI_ZU]"	||   ?* {dat2s} ?* _ ?* ] 
 	.o. 
-	[ {Ni}    -> "[NI_HU]"	||   ?* [ {dat3s}| {utzi}"<PER>" ] ?* _ ?* ] 
+	[ {Ni}    -> "[NI_HU]"	||   ?* [ {dat3s} | {utzi}"<PER>" ] ?* _ ?* ] 
 	.o. 
 	[ {Ni}    -> "[NI_GU]"	||   ?* {dat1p} ?* _ ?* ] 
 	.o. 

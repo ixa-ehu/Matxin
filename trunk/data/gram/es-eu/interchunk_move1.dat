@@ -21,6 +21,7 @@ vpost!=''/'[ZERO]'	type='adi-inf'/cas	down	concat
 vpost!=''/vpostref	type='adi-inf'/relref	down	concat
 vpost!=''/vpostalloc	type='adi-inf'/relalloc	down	concat
 
+/'[NUMS]'	type='mend-p'/mi	down	overwrite
 
 /'[NUMS]'	type!~'adi-' && def='[MUGM]' && num='[NUMS]'/mi	down	no-overwrite
 /'[NUMP]'	type!~'adi-' && def='[MUGM]' && num='[NUMP]'/mi	down	no-overwrite
@@ -38,6 +39,8 @@ type='p-int'/'true'	type=~'adi-'/int	down	overwrite
 type='ez'/'true'	type=~'adi-'/neg	up	overwrite
 type='ez'/'adi-kat-ez'	type='adi-kat'/type	up	overwrite
 type='ez'/'adi-pas-ez'	type='adi-pas'/type	up	overwrite
+
+wh-q='true'/'true'	type=~'adi-'/wh-q	up	overwrite
 
 
 

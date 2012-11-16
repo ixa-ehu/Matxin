@@ -4,30 +4,34 @@
 #
 #####################################
 
-# guraso			ume		posErlt	Ordena
-type=~'adi-kat'			type=~'MENP'	.*?	x1.x2
-#type=~'adi-kat-ez'		type=~'ez'	.*?	x2+x1	#Ezezko esaldiak
-type=~'adi-kat' && neg='true'	type=~'ez'	.*?	x2+x1	#Ezezko esaldiak
+# GURASO					UME		POSERLT ORDENA
+
+type=~'adi-'					type=~'MENP'	.*?	x1.x2
+type=~'adi-' && neg='true'			type=~'ez'	.*?	x2+x1	#Ezezko esaldiak
 
 # Koordinazioetan orden berdina mantendu dezan...
-type=~'emen'			true		>0	x1.x2	# <Juan> <y> <Pedro>  ==> <Juan> <eta> <PEDRO>
-type=~'emen'			true		<0	x2.x1	# <Juan> <y> <Pedro>  ==> <JUAN> <eta> <Pedro>
+type=~'emen'					true		>0	x1.x2	# <Juan> <y> <Pedro>  ==> <Juan> <eta> <PEDRO>
+type=~'emen'					true		<0	x2.x1	# <Juan> <y> <Pedro>  ==> <JUAN> <eta> <Pedro>
 
 # Puntuazio ikurra bukaeran
-true				type=~'F'	.*?	x1.x2	# <el perro><.> ==> <txakurra><.>
-true				type=~'p-'	.*?	x1.x2	# <el perro><.> ==> <txakurra><.>
+true						type=~'F'	.*?	x1.x2	# <el perro><.> ==> <txakurra><.>
+true						type=~'p-'	.*?	x1.x2	# <el perro><.> ==> <txakurra><.>
 
 # Galderetan
-type=~'adi-kat' && int='true'	type='adbs-gal'	.*?	x2.x1	# <Yo><corto><el pan><en casa><para ti> ==> <Nik><<OGIA>><mozten dut><etxean><zuretzat>
-type=~'adi-kat' && int='true'	true		.*?	x1.x2	# <Yo><corto><el pan><en casa><para ti> ==> <Nik><<OGIA>><mozten dut><etxean><zuretzat>
+type=~'adi-' && int='true'			wh-q='true'	.*?	x2.x1	#(adb-gal) <¿><Cuando><cortas><el pan><?> ==><<NOIZ>><mozten duzu><ogia><?>
+										#(is-gal) <¿><Quien><corta><el pan><?> ==> <<NORK>><mozten du><ogia><?>
+type=~'adi-' && int='true' && wh-q!='true'	si=~'subj'	.*?	x2.x1	#<¿><Tú><cortas><el pan><?> ==> <<ZUK>><mozten duzu><ogia><?>
+type=~'adi-' && int='true'			true		.*?	x1.x2	# <¿><Cuando><cortas><el pan><?> ==> <<Noiz>><mozten duzu><OGIA><?>
 
+# Menpeko esaldietan wh-q bat dagoenean 
+type=~'mend-p' && wh-q='true'			type=~'adi-'	.*?	x1.x2   # Me preguntaron quién llegó. ==> <<NOR>><iritsi zen>...
 
 # Aditzaren modifikatzaileak atzean, gazteleraz aditzaren atzetik bazeuden, 1.a ezik
-type=~'adi-kat'			true		=1	x2+x1	# <Yo><corto><el pan><en casa><para ti> ==> <Nik><<OGIA>><mozten dut><etxean><zuretzat>
-type=~'adi-kat'			si='subj'	.*?	x2.x1	# <Yo><corto><el pan><en casa><para tí> ==> <NIK><ogia><mozten dut><etxean><zuretzat>
-#type=~'adi-kat'		true		<1	x2.x1	# <Yo><corto><el pan><en casa><para ti> ==> <<NIK>><ogia><mozten dut><etxean><zuretzat>
-type=~'adi-kat'			true		>1	x1.x2	# <Yo><corto><el pan><en casa><para ti> ==> <Nik><ogia><mozten dut><<ETXEAN>><<ZURETZAT>>
+type=~'adi-'					true		=1	x2+x1	# <Yo><corto><el pan><en casa> ==> <Nik><<OGIA>><mozten dut><etxean>
+type=~'adi-'					si='subj'	.*?	x2.x1	# <Yo><corto><el pan><en casa> ==> <NIK><ogia><mozten dut><etxean>
+#type=~'adi-'					true		<1	x2.x1	# <Yo><corto><el pan><en casa> ==> <<NIK>><ogia><mozten dut><etxean>
+type=~'adi-'					true		>1	x1.x2	# <Yo><corto><el pan><en casa> ==> <Nik><ogia><mozten dut><<ETXEAN>>
 
 
-true				true		.*?	x2.x1
+true						true		.*?	x2.x1
 
