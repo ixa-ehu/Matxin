@@ -1,0 +1,2 @@
+mi=~[NR_NI] || mi=~[NR_ZU] mi=~[NR_HU]/'[NUMS]'	type!~'adi-'/subjNum	overwrite
+mi=~[NR_GU] || mi=~[NR_ZK] mi=~[NR_HK]/'[NUMP]'	type!~'adi-'/subjNum	overwrite
