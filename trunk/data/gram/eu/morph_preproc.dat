@@ -57,6 +57,9 @@
 #######################
 ## BESTELAKOAK ########
 
+# nondik / nongo
+non[ADB][ALGGAL](.*?)[ABL]			nondik[ADB][ALGGAL]
+non[ADB][ALGGAL](.*?)[GEL]			nongo<ADJ><IZL>+<DEK><ABS><NUMS>
 
 # nirea/zurea...
 ([IOR][PERARR](.*?)\+[DEK][GEN])(.*?)[(INE|ABL|ALA|ABU|ABZ)]			LemaMorf +[DEK] Num +[DEK] Kas
