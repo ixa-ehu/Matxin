@@ -82,10 +82,11 @@ de		+[AMM][ADIZE]+[DEK][GEL]	   my.headpos='[ADI][SIN]' && my.si='cc'	        - 
 de		[INS]	my.headpos=~'[ADJ]' && my.def!='[MUGM]' || my.headsem=~'[DEN+]'	-	## || ( my.headpos='[IZE][ARR]' && my.mi='[MG]' ) 
 										## Halakoak itzultzeko erabili daiteke, baina arazoak ematen ditu zenbakiak daramatzaten sintagmekin ('la muerte de 45 inmigrantes'): lo están pintando de verde, berdez pintatzen ari dira;## osasunez hobeto nago##adj eta izen abstraktoa, determinante gabe  ## arratsaldez
 
-de		[INS][GEL][ABS]		my.headsem=~'[GAI+]' && my.si='att'		-	## egurrezkoa
-de		[INS][GEL]		my.headsem=~'[GAI+]'				-	## egurrezko
-de		[GEN]			my.headsem=~'[BIZ+]' || my headpos='[IZE][IZB]'	+	## la casa de Juan, Jon-en etxea
-de		[GEL]	     (parent.type!='adi-kat' && my.headsem=~'[BIZ-]') || (parent.type='adi-kat' && parent.headlem='_izan_') || (parent.type!='adi-kat' && ( my.headpos='[Z]' || my.leafpos='[Z]' || my.headpos='[W]' ) )    +     ## la casa del monte, mendiko etxea 
+de		[INS][GEL][ABS]		my.headsem=~'[GAI+]' && my.si='att'					-	## egurrezkoa
+de		[INS][GEL]		my.headsem=~'[GAI+]'							-	## egurrezko
+de		[GEN]			my.headsem=~'[BIZ+]' || my headpos='[IZE][IZB]' || my headlem='nor'	+	## la casa de Juan, Jon-en etxea
+de		[GEL]	     (parent.type!='adi-kat' && my.headsem=~'[BIZ-]') || (parent.type='adi-kat' && parent.headlem='_izan_') || (parent.type!='adi-kat' && ( my.headpos='[Z]' || my.leafpos='[Z]' || my.headpos='[W]' ) )   					    +     ## la casa del monte, mendiko etxea 
+
 de		[ABL]	-				     +     ## no sale de casa, ez da etxetik irteten##abiapuntua denean, mugim. aditza
 durante		[INS]	my.headsem=~'[DEN+]'		     -	   ## durante un mes, hilabetez
 durante		[INE]	-				     +	   ## lo hiciero durante el invierno, neguan egin zuten ## durante 1957	##urteekin

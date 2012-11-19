@@ -23,7 +23,6 @@
 [ADI][SIN](.*?)[AMM][ADIZE]\+[DEK](.*?)		LemaMorf
 [ADI][FAK](.*?)[AMM][ADIZE]\+[DEK](.*?)		LemaMorf
 
-(.*?)>(.*?)>(.*?)[(NUMS|NUMP|MG)](.*?)>(.*?)		LemaMorf +[DEK] Kas
 
 [ADI][SIN](.*?)[AMM][PART]>(.*?)[(INE|ABL|ALA|ABU|ABZ)](.*?)[BIZ\+]		LemaMorf +[DEK][GEN] Num +[DEK] Kas [GAN]
 [ADI][FAK](.*?)[AMM][PART]>(.*?)[(INE|ABL|ALA|ABU|ABZ)](.*?)[BIZ\+]		LemaMorf +[DEK][GEN] Num +[DEK] Kas [GAN]
@@ -58,6 +57,7 @@
 #######################
 ## BESTELAKOAK ########
 
+
 # nirea/zurea...
 ([IOR][PERARR](.*?)\+[DEK][GEN])(.*?)[(INE|ABL|ALA|ABU|ABZ)]			LemaMorf +[DEK] Num +[DEK] Kas
 ([IOR][PERARR](.*?)\+[DEK][GEN])(.*?)[(ABS|ERG|DAT|INS|SOZ|DES|GEN)]		LemaMorf +[DEK] Kas Num
@@ -65,8 +65,6 @@
 # haren/bere
 ([DET][ERK(.*?)](.*?)\+[DEK][GEN])(.*?)[(INE|ABL|ALA|ABU|ABZ)]			LemaMorf +[DEK] Num +[DEK] Kas
 ([DET][ERK(.*?)](.*?)\+[DEK][GEN])(.*?)[(ABS|ERG|DAT|INS|SOZ|DES|GEN)]		LemaMorf +[DEK] Kas Num
-
-
 
 
 # 'hau', 'hori', 'hura' #
@@ -93,18 +91,23 @@
 
 
 #izenordainak
-	#ZUEK
-([IOR][PERARR][NUMP][ZUEK][(.*?)])(.*?)[(INE|ABL|ALA|ABU|ABZ)]			LemaMorf +[DEK][GEN][NUMP]+[DEK] Kas [GAN]
-([IOR][PERARR][NUMP][ZUEK][(.*?)])(.*?)[(ABS|ERG|DAT|INS|SOZ|DES|GEN)]		LemaMorf +[DEK] Kas [NUMP]
-([IOR][PERARR][NUMP][ZUEK][(.*?)])(.*?)[(PRO)]					LemaMorf +[DEK][GEN][NUMP]+[DEK] Kas Num
-([IOR][PERARR][NUMP][ZUEK][(.*?)])(.*?)[(MOT)]					LemaMorf +[DEK][GEN][NUMP]+[DEK] Kas
+
+	# nor, norekin, nori...
+[IOR][IZGGAL](.*?)[GEN],[ABS][NUMS]		LemaMorf +[DEK][GEN][MG]+[DEK][ABS][NUMS]
+[IOR][IZGGAL]					LemaMorf +[DEK] Kas [MG]
+
+	#zuek
+[IOR][PERARR][NUMP][ZUEK][(.*?)](.*?)[(INE|ABL|ALA|ABU|ABZ)]			LemaMorf +[DEK][GEN][NUMP]+[DEK] Kas [GAN]
+[IOR][PERARR][NUMP][ZUEK][(.*?)](.*?)[(ABS|ERG|DAT|INS|SOZ|DES|GEN)]		LemaMorf +[DEK] Kas [NUMP]
+[IOR][PERARR][NUMP][ZUEK][(.*?)](.*?)[(PRO)]					LemaMorf +[DEK][GEN][NUMP]+[DEK] Kas Num
+[IOR][PERARR][NUMP][ZUEK][(.*?)](.*?)[(MOT)]					LemaMorf +[DEK][GEN][NUMP]+[DEK] Kas
 
 	#edonor/zerbait... IZGMGB
-(zerbait[IOR][IZGMGB])(.*?)[SOZ]				LemaMorf +[DEK] Kas
-([IOR][IZGMGB])(.*?)[(INE|ABL|ALA|ABU|ABZ)]			LemaMorf +[DEK][GEN][MG]+[DEK] Kas
-([IOR][IZGMGB])(.*?)[(ABS|ERG|DAT|INS|SOZ|DES|GEN)]		LemaMorf +[DEK] Kas [MG]
-([IOR][IZGMGB])(.*?)[(PRO)]					LemaMorf +[DEK][GEN][MG]+[DEK] Kas [MG]
-([IOR][IZGMGB])(.*?)[(MOT)]					LemaMorf +[DEK][GEN][MG]+[DEK] Kas
+zerbait[IOR][IZGMGB](.*?)[SOZ]				LemaMorf +[DEK] Kas
+[IOR][IZGMGB](.*?)[(INE|ABL|ALA|ABU|ABZ)]			LemaMorf +[DEK][GEN][MG]+[DEK] Kas
+[IOR][IZGMGB](.*?)[(ABS|ERG|DAT|INS|SOZ|DES|GEN)]		LemaMorf +[DEK] Kas [MG]
+[IOR][IZGMGB](.*?)[(PRO)]					LemaMorf +[DEK][GEN][MG]+[DEK] Kas [MG]
+[IOR][IZGMGB](.*?)[(MOT)]					LemaMorf +[DEK][GEN][MG]+[DEK] Kas
 
 
 	#besteak
@@ -132,18 +135,28 @@ gutxi[DET][DZH](.*?)	LemaMorf +[DEK] Kas
 [Z(u|m)?](.*?)[(INE|ALA|ABL|ABU|GEL)]			LemaMorf +[DEK] Num +[DEK] Kas
 
 
-[IZE][IZB](.*?)[(INE|ABL|ALA|ABU|ABZ)]		LemaMorf +[DEK][GEN][MG] +[DEK] Kas [GAN]
+
+
+# "de madera"-> "zurezko"  [INS]+[GEL]+[ABS] 
+(.*?)[INS][GEL][ABS]				LemaMorf +[DEK][INS][MG]+[DEK][GEL]+[DEK][ABS] Num
+
+# "de madera"-> "zurezko" [INS]+[GEL] 
+(.*?)[INS][GEL]				LemaMorf +[DEK][INS][MG]+[DEK][GEL]
+
+# "es de Hernani" "HernaniKOA da" [GEL]+[ABS] 
+(.*?)[GEL],[ABS][NUMS]				LemaMorf +[DEK][NUMS]+[DEK][GEL]+[DEK][ABS][NUMS]
+
+#LekuREN batetik datoz leku<IZE><ARR>+<DEK><GEN><MG>
+(.*?)>(.*?)>(.*?)[(NUMS|NUMP|MG)](.*?)>(.*?)		LemaMorf +[DEK] Kas
+
+
 
 
 # izen bereziak #
+[IZE][IZB](.*?)[(INE|ABL|ALA|ABU|ABZ)]		LemaMorf +[DEK][GEN][MG] +[DEK] Kas [GAN]
 [IZE][(IZB|LIB)](.*?)[(INE|ALA|ABL|ABU|GEL)]	LemaMorf +[DEK] Num +[DEK] Kas
 [IZE][(IZB|LIB)]				LemaMorf +[DEK] Kas [MG]
 
-# [INS]+[GEL]+[ABS] "de madera"-> "zurezko"
-(.*?)[INS][GEL][ABS]				LemaMorf +[DEK][INS][MG]+[DEK][GEL]+[DEK][ABS] Num
-
-# [INS]+[GEL] "de madera"-> "zurezko"
-(.*?)[INS][GEL]				LemaMorf +[DEK][INS][MG]+[DEK][GEL]
 
 
 #IZEnak , ADJetiboak eta DETerminatzaileak DZG... #
