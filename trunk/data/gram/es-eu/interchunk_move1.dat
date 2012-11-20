@@ -10,16 +10,13 @@ spost!='' && ref='1'/spost	ref='2'/cas	down	overwrite
 spost!='' && ref='1'/spostref	ref='2'/casref	down	overwrite
 spost!='' && ref='1'/spostalloc	ref='2'/casalloc	down	overwrite
 
+type='mend-p'/vpost	type='zehazt-s'/'+[DEK][ABS][NUMS]'	up	concat 
+type='mend-p'/vpost	type='zehazt-p'/'+[DEK][ABS][NUMP]'	up	concat 
 
-vpost!=''/vpost	type='adi-kat'/rel	down	concat
-vpost!=''/'[ZERO]'	type='adi-kat'/cas	down	concat
-vpost!=''/vpostref	type='adi-kat'/relref	down	concat
-vpost!=''/vpostalloc	type='adi-kat'/relalloc	down	concat
-
-vpost!=''/vpost	type='adi-inf'/rel	down	concat
-vpost!=''/'[ZERO]'	type='adi-inf'/cas	down	concat
-vpost!=''/vpostref	type='adi-inf'/relref	down	concat
-vpost!=''/vpostalloc	type='adi-inf'/relalloc	down	concat
+vpost!=''/vpost	type=~'adi-'/rel	down	concat
+vpost!=''/'[ZERO]'	type=~'adi-'/cas	down	concat
+vpost!=''/vpostref	type=~'adi-'/relref	down	concat
+vpost!=''/vpostalloc	type=~'adi-'/relalloc	down	concat
 
 /'[NUMS]'	type='mend-p'/mi	down	overwrite
 
@@ -41,7 +38,5 @@ type='ez'/'adi-kat-ez'	type='adi-kat'/type	up	overwrite
 type='ez'/'adi-pas-ez'	type='adi-pas'/type	up	overwrite
 
 wh-q='true'/'true'	type=~'adi-'/wh-q	up	overwrite
-
-
 
 
