@@ -40,3 +40,7 @@ type='ez'/'adi-pas-ez'	type='adi-pas'/type	up	overwrite
 wh-q='true'/'true'	type=~'adi-'/wh-q	up	overwrite
 
 
+si='dobj' && type='mend-p'/'[NUMS]'	type=~'adi-'/objMi	up	overwrite
+si='dobj'/'[NUMS]'	type=~'adi-'/objMi	up	overwrite
+
+
