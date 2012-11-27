@@ -18,19 +18,22 @@ true						type=~'F'	.*?	x1.x2	# <el perro><.> ==> <txakurra><.>
 true						type=~'p-'	.*?	x1.x2	# <el perro><.> ==> <txakurra><.>
 
 # Galderetan
-type=~'adi-' && int='true'			wh-q='true'	.*?	x2.x1	#(adb-gal) <¿><Cuando><cortas><el pan><?> ==><<NOIZ>><mozten duzu><ogia><?>
+type=~'adi-' && quest='true'			qtype='wh'	.*?	x2.x1	#(adb-gal) <¿><Cuando><cortas><el pan><?> ==><<NOIZ>><mozten duzu><ogia><?>
 										#(is-gal) <¿><Quien><corta><el pan><?> ==> <<NORK>><mozten du><ogia><?>
-type=~'adi-' && int='true' && wh-q!='true'	si=~'subj'	.*?	x2.x1	#<¿><Tú><cortas><el pan><?> ==> <<ZUK>><mozten duzu><ogia><?>
-type=~'adi-' && int='true'			true		.*?	x1.x2	# <¿><Cuando><cortas><el pan><?> ==> <<Noiz>><mozten duzu><OGIA><?>
+type=~'adi-' && quest='true' && qtype!='wh'	si=~'subj'	.*?	x2.x1	#<¿><Tú><cortas><el pan><?> ==> <<ZUK>><mozten duzu><ogia><?>
+type=~'adi-' && quest='true'			true		.*?	x1.x2	# <¿><Cuando><cortas><el pan><?> ==> <<Noiz>><mozten duzu><OGIA><?>
 
 # Menpeko esaldietan wh-q bat dagoenean 
-type=~'mend-p' && wh-q='true'			type=~'adi-'	.*?	x1.x2   # Me preguntaron quién llegó. ==> <<NOR>><iritsi zen>...
+type=~'mend-p' && qtype='wh'			type=~'adi-'	.*?	x1.x2   # Me preguntaron quién llegó. ==> <<NOR>><iritsi zen>...
 
 # Aditzaren modifikatzaileak atzean, gazteleraz aditzaren atzetik bazeuden, 1.a ezik
 type=~'adi-'					true		=1	x2+x1	# <Yo><corto><el pan><en casa> ==> <Nik><<OGIA>><mozten dut><etxean>
 type=~'adi-'					si='subj'	.*?	x2.x1	# <Yo><corto><el pan><en casa> ==> <NIK><ogia><mozten dut><etxean>
 #type=~'adi-'					true		<1	x2.x1	# <Yo><corto><el pan><en casa> ==> <<NIK>><ogia><mozten dut><etxean>
 type=~'adi-'					true		>1	x1.x2	# <Yo><corto><el pan><en casa> ==> <Nik><ogia><mozten dut><<ETXEAN>>
+
+# Menpeko perpausen juntagailuak
+type=~'mend-p'					type=~'adi-'	.*?	x1.x2
 
 
 true						true		.*?	x2.x1

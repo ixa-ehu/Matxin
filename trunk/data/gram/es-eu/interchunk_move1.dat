@@ -31,13 +31,13 @@ type='adi-pas'/'subj'	prep='por'/si	down	overwrite
 
 type=~'adi-kat'/'true'	ref--=parent.ref/focus	down	overwrite
 
-type='p-int'/'true'	type=~'adi-'/int	down	overwrite
+type='p-int'/'true'	type=~'adi-'/quest	down	overwrite
 
 type='ez'/'true'	type=~'adi-'/neg	up	overwrite
 type='ez'/'adi-kat-ez'	type='adi-kat'/type	up	overwrite
 type='ez'/'adi-pas-ez'	type='adi-pas'/type	up	overwrite
 
-wh-q='true'/'true'	type=~'adi-'/wh-q	up	overwrite
+qtype='wh'/'wh'	type=~'adi-'/qtype	up	overwrite
 
 
 si='dobj' && type='mend-p'/'[NUMS]'	type=~'adi-'/objMi	up	overwrite

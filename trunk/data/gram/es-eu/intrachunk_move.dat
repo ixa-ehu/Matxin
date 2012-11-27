@@ -35,9 +35,9 @@ pos='[Z]'/pos	/leafpos	overwrite
 smi='Fit'/'p-int'	/type	overwrite
 smi='Fia'/'p-int'	/type	overwrite
 
-pos='[ADB][ADOGAL]'/'true'	/wh-q	overwrite
-pos='[ADB][ALGGAL]'/'true'	/wh-q	overwrite
-pos='[IOR][IZGGAL]'/'true'	/wh-q	overwrite
-pos='[DET][NOLGAL]'/'true'	/wh-q	overwrite
+pos='[ADB][ADOGAL]'/'wh'	/qtype	overwrite
+pos='[ADB][ALGGAL]'/'wh'	/qtype	overwrite
+pos='[IOR][IZGGAL]'/'wh'	/qtype	overwrite
+pos='[DET][NOLGAL]'/'wh'	/qtype	overwrite
 
 true/'[NUMP]'	type='subord' && si='dobj'/mi	overwrite

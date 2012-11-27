@@ -220,8 +220,8 @@ echo >> Input: Spanish pronounswhole verb-chains' definitions;
 
 !Gorkak aldatua 
 !define AdKEJ       [							   AdNES IMEzJok		 		      "&" AdNEU ];
-define AdKEJ       [							        AdNES IMEzJok       "&" Sub Obj Dat "&" Trans "&" AdNEU ];
-define AdKArrSin   [ [Pr %+]* 					        AdNES IMJok [%+ Pr]* "&" Sub Obj Dat "&" Trans "&" AdNEU ];
+define AdKEJ       [ [Pr %+]* 						    AdNES IMEzJok [%+ Pr]* "&" Sub Obj Dat "&" Trans "&" AdNEU ];
+define AdKArrSin   [ [Pr %+]* 					              AdNES IMJok [%+ Pr]* "&" Sub Obj Dat "&" Trans "&" AdNEU ];
 define AdKArrLag   [ [Pr %+]* HaberLag IMJok [%+Pr]*			   %+ AdNES IMPar [%+ Pr]* "&" Sub Obj Dat "&" Trans "&" AdNEU ];
 define AdKPer1ISin [ [Pr %+]*                           AdP1IJok [%+ Pr]*  %+ AdNES IMInf [%+ Pr]* "&" Sub Obj Dat "&" Trans "&" AdNEU ];
 define AdKPer1ILag [ [Pr %+]* HaberLag IMJok [%+Pr]* %+ AdP1IPar	   %+ AdNES IMInf [%+ Pr]* "&" Sub Obj Dat "&" Trans "&" AdNEU ];
@@ -380,6 +380,8 @@ regex [
        [  {DU} -> {DA}    || ?* [ PaMe   ?* {1S} | PaTe  ?* {2S} | PaSe  ?* {3S}  ] ?*	"["{obj00}"]""["{dat00}"]" ?*	_ ?*  ]
        .o.
        [  {DU} -> {DA}    || ?* [ PaNos  ?* {1P} | PaOs  ?* {2P} | PaSe  ?* {3P}  ] ?*	"["{obj00}"]""["{dat00}"]" ?*	_ ?*  ]
+!       .o.
+!       [  {DU} -> {DA}    || ?*   PaSe   ?* ~Pr ?* {3P}  			    ?*  "["{sub00}"]"              ?*	_ ?*  ]
        .o.
        [  {DU} -> {DA}    || ?* PaSe ?* [ PaMe | PaTe | PaLe | PaNos | PaOs ]  ?* [{3S}|{3P}] ?*	_ ?*  ]
 ];
