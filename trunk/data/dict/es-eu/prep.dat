@@ -26,7 +26,8 @@
 -     [ZERO]    my.type='adi-kat'					-   # aditz kate jokatuei ez zaie kasu markarik esleitzen.
 -     [ZERO]    my.type='adi-pas'					-   # aditz kate jokatuei ez zaie kasu markarik esleitzen.
 -     [ZERO]    my.type=~'adbs'						-   # adberbioak ez dira deklinatzen.	    
--     [ZERO]    my.type='interj'					-   # interjekzioak ez dira deklinatzen.	    
+-     [ZERO]    my.type='interj'					-   # 'ez' ez da deklinatzen.	    
+-     [ZERO]    my.type='ez'					-   # zehaztaileak ez dira deklinatzen.	    
 -     [INE]    (my.type='data' || my.headsem=~'[DEN+]') && parent.headlem!='_izan_'	-	# el cuatro de julio, uztailaren lauan
 												#Bestelako osagarriak, datak 
 												#denbora adierazten duten hitzak:arratsaldean
