@@ -38371,7 +38371,7 @@ comienza VMI-VMM VMI 6 VMM 0
 comienzo NC-VMI NC 2 VMI 0
 comisaría NC-VMI NC 1 VMI 0
 comisiones NC-VMS NC 3 VMS 0
-como CC-CS-PR-SP-VMI CC 0 CS 562 PR 0 SP 0 VMI 0
+como CC-CS-PR-SP-VMI CC 0 CS 562 PR 0 SP 0 VMI 50
 compactos AQ-NC AQ 1 NC 0
 compadre NC-VMM-VMS NC 3 VMM 0 VMS 0
 compadres NC-VMS NC 1 VMS 0

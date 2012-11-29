@@ -32,3 +32,4 @@
 'adonde'		''	my.vpost='+n[ERL][MEN][MOS]' && parent.slem!=''	+
 'a_donde'		''	my.vpost='+n[ERL][MEN][MOS]++lekura' && parent.slem=''	-
 'a_donde'		''	my.vpost='+n[ERL][MEN][MOS]' && parent.slem!=''	+
+## 'como'		'bezala'	chunk.type='grup-sp' - ????????

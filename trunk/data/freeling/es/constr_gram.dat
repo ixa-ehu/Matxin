@@ -67,8 +67,10 @@ VerbCompl = <acentuar> <aceptar> <aconsejar> <acordar> <admitir> <advertir>
 CONSTRAINTS
 
 %% Customization for MATXIN (aingeru)=========================================
-500.0 VMI*(como)
-          (-1*  PP1* barrier N* or PP*);
+%5000.0 VMIP1S0<como>
+%          (-1*  PP1* barrier N* or PP* or V*);
+% Lerro hau gehitutaaldatuta fitxategi honetan:  probabilitas.dat
+%como CC-CS-PR-SP-VMI CC 0 CS 562 PR 0 SP 0 VMI 50
 
 %100.0 AQ0MS0<bueno>
 %    (0 <bueno>);
@@ -76,8 +78,14 @@ CONSTRAINTS
 100.0 AQ0MS0<bueno>
     (-1* V*);
 
+% Aingeru 2012-XI-28
+% prefer "demasiado" as determinant to adverb % demasiado chocolate / demasiado caro  
+20.0 DI0MS0<demasiado>
+          (1  NC* or AQ*);
 
-%% MATXIN =====================================================================
+%% End Customization for MATXIN ===============================================
+
+
 
 %% prefer indicative to imperative
 0.7 VMI*

@@ -11,10 +11,4 @@ si='subj' && per='' && leafpos='[Z]'/'[NUMP]'	type=~'adi-'/subMi	up	overwrite
 cas='[DAT]' && per='' && leafpos='[Z]'/'[NUMP]'	type=~'adi-'/datMi	up	overwrite
 si='vsubord'/'[NUMS]'	type=~'adi-'/objMi	up	overwrite
 
-
-vpost!=''/vpost	type=~'adi-'/rel	down	concat
-vpost!=''/'[ZERO]'	type=~'adi-'/cas	down	concat
-vpost!=''/vpostref	type=~'adi-'/relref	down	concat
-vpost!=''/vpostalloc	type=~'adi-'/relalloc	down	concat
-
 /'yn'	type=~'adi-' && quest='true' && qtype!='wh'/qtype	up	overwrite
