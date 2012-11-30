@@ -69,11 +69,19 @@ non[ADB][ALGGAL](.*?)[GEL]			nongo<ADJ><IZL>+<DEK><ABS><NUMS>
 ([DET][ERK(.*?)](.*?)\+[DEK][GEN])(.*?)[(INE|ABL|ALA|ABU|ABZ)]			LemaMorf +[DEK] Num +[DEK] Kas
 ([DET][ERK(.*?)](.*?)\+[DEK][GEN])(.*?)[(ABS|ERG|DAT|INS|SOZ|DES|GEN)]		LemaMorf +[DEK] Kas Num
 
+# bera, berak, beraren, berera, beretik
+	#bizidunentzat
+[DET][ERKIND](.*?)[(INE|ABL|ALA|ABU|ABZ)](.*?)[BIZ\+]		LemaMorf +[DEK][GEN] Num +[DEK] Kas [GAN]
+	#besteak
+[DET][ERKIND](.*?)[(ABS|SOZ|DES|GEN|ERG|DAT)]	LemaMorf +[DEK] Kas Num
+[DET][ERKIND](.*?)[(INE|ABL|ALA)]		LemaMorf +[DEK] Kas
+[DET][ERKIND](.*?)[(.*?)]			LemaMorf +[DEK] Kas Num
+
+
 
 # 'hau', 'hori', 'hura' #
 	#bizidunentzat
 [DET][ERKARR][NUMS](.*?)[(INE|ABL|ALA|ABU|ABZ)](.*?)[BIZ\+]		LemaMorf +[DEK][GEN]+[DEK] Kas [GAN]
-
 	#besteak
 [DET][ERKARR][NUMS](.*?)[(ABS|SOZ|DES|GEN)]	LemaMorf +[DEK] Kas
 [DET][ERKARR][NUMS](.*?)[(ERG|DAT)]		LemaMorf +[DEK] Kas Num
@@ -84,7 +92,6 @@ non[ADB][ALGGAL](.*?)[GEL]			nongo<ADJ><IZL>+<DEK><ABS><NUMS>
 # 'hauek', 'horiek', 'bere', 'beraien'#
 	#bizidunentzat
 ([DET][ERKARR][NUMP]|[DET][ERKIND][(.*?)])(.*?)[(INE|ABL|ALA|ABU|ABZ)](.*?)[BIZ\+]		LemaMorf +[DEK][GEN]+[DEK] Kas [GAN]
-
 	#besteak
 ([DET][ERKARR][NUMP]|[DET][ERKIND][(.*?)])(.*?)[(INE|ABL|ALA|ABU|ABZ|GEL)]	LemaMorf +[DEK] Num +[DEK] Kas
 ([DET][ERKARR][NUMP]|[DET][ERKIND][(.*?)])(.*?)[(SOZ|DES|GEN)]			LemaMorf +[DEK] Kas
