@@ -4294,6 +4294,10 @@
 6000 - prel-adv_*_$$ (conj-subord,grup-verb) top_left RELABEL subord:- % dins de subordinada
 6001 - - (conj-subord,grup-verb) top_left RELABEL subord:- % (que (vinga))
 
+%MATXIN (AINGERUk gehituta)
+6001 - - (conj-subord,sn) top_left RELABEL subord-sn:- % (como (los lobos))
+
+
 %%% SUBORDINADES AMB PRONOM RELATIU ATON INTRODUIT PER PREPOSICIO %%%
 
 6000 - conj-subord_*_prep_$$ (prel,grup-verb) top_left RELABEL prel-comp:- % dins de subordinada

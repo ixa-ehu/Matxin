@@ -165,7 +165,7 @@ cuantif ==> RG(casi).
 
 %Preposicions
 prep ==> SPS00.
-prep ==> CS(como).
+%prep ==> CS(como).
 
 %Preposicions en contracció (ja no s'usa, les contraccions es separen)
 prepc-ms ==> SPCMS.
