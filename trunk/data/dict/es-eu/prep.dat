@@ -57,7 +57,7 @@ mediante	[GEN]++bitartez		-	    +
 
 a		+[AMM][ADIZE]+[DEK][ALA]/ALA	my.headpos='[ADI][SIN]'	  -   ##han ido a comprar patatas
 a		[INE]	my.headpos='[Zm]' || my.headsem=~'[DEN+]'	  -   ## lo han vendido a 3 euros, 3 eurotan saldu dute	  ##ez-bizidun, prezioa
-a		[DAT]	parent.headlem=~'_egin_' || parent.headlem=~'_eman_'	  +   ## le he dado el libro a Jon, Joni eman diot liburua 
+a		[DAT]	parent.headlem=~'_egin_' || parent.headlem=~'_eman_' || parent.headlem=~'_esan_' || parent.headlem=~'_erantzun_' || parent.headlem=~'_kontatu_'	+   ## le he dado el libro a Jon, Joni eman diot liburua 
 a		[DAT]	my.si='iobj'					  +   ## le he dado el libro a Jon, Joni eman diot liburua 
 									      ##zehar objektua + biziduna
 a		[ABS]	-						  +   ## he visto a Jon, Jon ikusi dut	##objektu zuzena + biziduna

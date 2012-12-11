@@ -4,7 +4,8 @@ cas='[DAT]'/per	type=~'adi-'/datMi	up	overwrite
 si='iobj' && cas!='[DAT]'/per	type=~'adi-'/objMi	up	overwrite
 si='subj' && per=''/mi	type=~'adi-'/subMi	up	overwrite
 si='iobj' && cas='[ABS]' && per=''/mi	type=~'adi-'/objMi	up	overwrite
-cas='[DAT]' && per=''/mi	type=~'adi-'/datMi	up	overwrite
+cas='[DAT]' && per=''&& mi!='[MG]'/mi	type=~'adi-'/datMi	up	overwrite
+cas='[DAT]' && per='' && mi='[MG]'/'[NUMS]'	type=~'adi-'/datMi	up	overwrite
 si='dobj' && per=''/mi	type=~'adi-'/objMi	up	overwrite
 si='dobj' && per='' && leafpos='[Z]'/'[NUMP]'	type=~'adi-'/objMi	up	overwrite
 si='subj' && per='' && leafpos='[Z]'/'[NUMP]'	type=~'adi-'/subMi	up	overwrite

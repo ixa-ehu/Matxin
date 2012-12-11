@@ -74,7 +74,7 @@ non[ADB][ALGGAL](.*?)[GEL]			nongo<ADJ><IZL>+<DEK><ABS><NUMS>
 [DET][ERKIND](.*?)[(INE|ABL|ALA|ABU|ABZ)](.*?)[BIZ\+]		LemaMorf +[DEK][GEN] Num +[DEK] Kas [GAN]
 	#besteak
 [DET][ERKIND](.*?)[(ABS|SOZ|DES|GEN|ERG|DAT)]	LemaMorf +[DEK] Kas Num
-[DET][ERKIND](.*?)[(INE|ABL|ALA)]		LemaMorf +[DEK] Kas
+[DET][ERKIND](.*?)[(INE|ABL|ALA|ABU|ABZ)]		LemaMorf +[DEK] Kas
 [DET][ERKIND](.*?)[(.*?)]			LemaMorf +[DEK] Kas Num
 
 
@@ -113,7 +113,7 @@ non[ADB][ALGGAL](.*?)[GEL]			nongo<ADJ><IZL>+<DEK><ABS><NUMS>
 [IOR][PERARR][NUMP][ZUEK][(.*?)](.*?)[(MOT)]					LemaMorf +[DEK][GEN][NUMP]+[DEK] Kas
 
 	#edonor/zerbait... IZGMGB
-zerbait[IOR][IZGMGB](.*?)[SOZ]				LemaMorf +[DEK] Kas
+(zerbait|norbait)[IOR][IZGMGB](.*?)[SOZ]			LemaMorf +[DEK] Kas
 [IOR][IZGMGB](.*?)[(INE|ABL|ALA|ABU|ABZ)]			LemaMorf +[DEK][GEN][MG]+[DEK] Kas
 [IOR][IZGMGB](.*?)[(ABS|ERG|DAT|INS|SOZ|DES|GEN)]		LemaMorf +[DEK] Kas [MG]
 [IOR][IZGMGB](.*?)[(PRO)]					LemaMorf +[DEK][GEN][MG]+[DEK] Kas [MG]
@@ -138,6 +138,10 @@ bat[DET][DZH](.*?)[(ABS|ERG|DAT|SOZ|INS|DES)]	LemaMorf +[DEK] Kas [MG]
 bat[DET][DZH](.*?)[(.*?)]			LemaMorf +[DEK] Kas
 
 # DZH 'gutxi' #
+gutxi[DET][DZG](.*?)[(INE|ALA|ABL|ABU|GEL)]	LemaMorf +[DEK][MG] +[DEK] Kas 
+gutxi[DET][DZG](.*?)	LemaMorf +[DEK] Kas [MG]
+
+# DZH 'gutxi' # ????? <<<<<----- ?????
 gutxi[DET][DZH](.*?)	LemaMorf +[DEK] Kas
 
 #txanponak eta neurriak
