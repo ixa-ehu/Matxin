@@ -725,6 +725,7 @@ int main(int argc, char *argv[])
         ostringstream log_fileName_osoa;
         wofstream log_file;
   
+	log_fileName_osoa.imbue(std::locale("C"));
         log_fileName_osoa << cfg.Trace_File << i++ << ".xml";
   
         log_file.open(log_fileName_osoa.str().c_str(),
