@@ -24,29 +24,33 @@
 [ADI][FAK](.*?)[AMM][ADIZE]\+[DEK](.*?)		LemaMorf
 
 
-[ADI][SIN](.*?)[AMM][PART]>(.*?)[(INE|ABL|ALA|ABU|ABZ)](.*?)[BIZ\+]		LemaMorf +[DEK][GEN] Num +[DEK] Kas [GAN]
-[ADI][FAK](.*?)[AMM][PART]>(.*?)[(INE|ABL|ALA|ABU|ABZ)](.*?)[BIZ\+]		LemaMorf +[DEK][GEN] Num +[DEK] Kas [GAN]
-[ADI][SIN](.*?)[AMM][PART]>(.*?)[(ABS|ERG|SOZ|DES|GEN|DAT|INS)]			LemaMorf +[DEK] Kas Num
-[ADI][FAK](.*?)[AMM][PART]>(.*?)[(ABS|ERG|SOZ|DES|GEN|DAT|INS)]			LemaMorf +[DEK] Kas Num
-[ADI][SIN](.*?)[AMM][PART]>(.*?)[(PAR)]						LemaMorf +[DEK] Kas [MG]
-[ADI][FAK](.*?)[AMM][PART]>(.*?)[(PAR)]						LemaMorf +[DEK] Kas [MG]
+[ADI][SIN](.*?)[AMM][PART]>(.*?)>[(INE|ABL|ALA|ABU|ABZ)](.*?)[BIZ\+]		LemaMorf +[DEK][GEN] Num +[DEK] Kas [GAN]
+[ADI][FAK](.*?)[AMM][PART]>(.*?)>[(INE|ABL|ALA|ABU|ABZ)](.*?)[BIZ\+]		LemaMorf +[DEK][GEN] Num +[DEK] Kas [GAN]
+[ADI][SIN](.*?)[AMM][PART]>(.*?)>[(ABS|ERG|SOZ|DES|GEN|DAT|INS)]			LemaMorf +[DEK] Kas Num
+[ADI][FAK](.*?)[AMM][PART]>(.*?)>[(ABS|ERG|SOZ|DES|GEN|DAT|INS)]			LemaMorf +[DEK] Kas Num
+[ADI][SIN](.*?)[AMM][PART]>(.*?)>[(PAR)]						LemaMorf +[DEK] Kas [MG]
+[ADI][FAK](.*?)[AMM][PART]>(.*?)>[(PAR)]						LemaMorf +[DEK] Kas [MG]
 
 
 
-[ADI][SIN]tze[ATZ][IZE][ARR](.*?)[(ABS|ERG|SOZ|DES|GEN|DAT|INS)]	LemaMorf +[DEK] Kas Num
-[ADI][FAK]te[ATZ][IZE][ARR](.*?)[(ABS|ERG|SOZ|DES|GEN|DAT|INS)]		LemaMorf +[DEK] Kas Num
-[ADI][SIN]tze[ATZ][IZE][ARR](.*?)[(PAR)]				LemaMorf +[DEK] Kas [MG]
-[ADI][FAK]te[ATZ][IZE][ARR](.*?)[(PAR)]					LemaMorf +[DEK] Kas [MG]
-[ADI][SIN]tze[ATZ][IZE][ARR](.*?)					LemaMorf +[DEK] Num +[DEK] Kas
-[ADI][FAK]te[ATZ][IZE][ARR](.*?)					LemaMorf +[DEK] Num +[DEK] Kas
+[ADI][SIN]tze[ATZ][IZE][ARR](.*?)>(.*?)>[(ABS|ERG|SOZ|DES|GEN|DAT|INS)]	LemaMorf +[DEK] Kas Num
+[ADI][FAK]te[ATZ][IZE][ARR](.*?)>(.*?)>[(ABS|ERG|SOZ|DES|GEN|DAT|INS)]	LemaMorf +[DEK] Kas Num
+[ADI][SIN]tze[ATZ][IZE][ARR](.*?)>(.*?)>[(PAR)]				LemaMorf +[DEK] Kas [MG]
+[ADI][FAK]te[ATZ][IZE][ARR](.*?)>(.*?)>[(PAR)]				LemaMorf +[DEK] Kas [MG]
+[ADI][SIN]tze[ATZ][IZE][ARR](.*?)>(.*?)>>				LemaMorf
+[ADI][FAK]te[ATZ][IZE][ARR](.*?)>(.*?)>>				LemaMorf
+[ADI][SIN]tze[ATZ][IZE][ARR](.*?)>(.*?)>				LemaMorf +[DEK] Num +[DEK] Kas
+[ADI][FAK]te[ATZ][IZE][ARR](.*?)>(.*?)>					LemaMorf +[DEK] Num +[DEK] Kas
 
 
-[ADI][SIN](.*?)[AMM][ADIZE](.*?)[(ABS|ERG|SOZ|DES|GEN|DAT|INS)]	LemaMorf +[DEK] Kas [NUMS]
-[ADI][FAK](.*?)[AMM][ADIZE](.*?)[(ABS|ERG|SOZ|DES|GEN|DAT|INS)]	LemaMorf +[DEK] Kas [NUMS]
-[ADI][SIN](.*?)[AMM][ADIZE](.*?)[(PAR)]				LemaMorf +[DEK] Kas [MG]
-[ADI][FAK](.*?)[AMM][ADIZE](.*?)[(PAR)]				LemaMorf +[DEK] Kas [MG]
-[ADI][SIN](.*?)[AMM][ADIZE](.*?)				LemaMorf +[DEK] [NUMS] +[DEK] Kas
-[ADI][FAK](.*?)[AMM][ADIZE](.*?)				LemaMorf +[DEK] [NUMS] +[DEK] Kas
+[ADI][SIN](.*?)[AMM][ADIZE](.*?)>(.*?)>[(ABS|ERG|SOZ|DES|GEN|DAT|INS)]	LemaMorf +[DEK] Kas [NUMS]
+[ADI][FAK](.*?)[AMM][ADIZE](.*?)>(.*?)>[(ABS|ERG|SOZ|DES|GEN|DAT|INS)]	LemaMorf +[DEK] Kas [NUMS]
+[ADI][SIN](.*?)[AMM][ADIZE](.*?)>(.*?)>[(PAR)]				LemaMorf +[DEK] Kas [MG]
+[ADI][FAK](.*?)[AMM][ADIZE](.*?)>(.*?)>[(PAR)]				LemaMorf +[DEK] Kas [MG]
+[ADI][SIN](.*?)[AMM][ADIZE](.*?)>(.*?)>>				LemaMorf
+[ADI][FAK](.*?)[AMM][ADIZE](.*?)>(.*?)>>				LemaMorf
+[ADI][SIN](.*?)[AMM][ADIZE](.*?)>(.*?)>					LemaMorf +[DEK] [NUMS] +[DEK] Kas
+[ADI][FAK](.*?)[AMM][ADIZE](.*?)>(.*?)>					LemaMorf +[DEK] [NUMS] +[DEK] Kas
 
 [ADI][SIN]				LemaMorf
 [ADI][FAK]				LemaMorf
