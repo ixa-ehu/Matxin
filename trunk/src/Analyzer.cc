@@ -17,6 +17,8 @@
  *  02110-1301  USA
  */
 
+using namespace std;
+
 #include <sstream>
 #include <iostream>
 
@@ -27,8 +29,6 @@
 #include "freeling.h"
 #include "IORedirectHandler.hpp"
 
-using namespace std;
-using namespace freeling;
 
 void PrintDepTree(dep_tree::iterator n, int depth, const config &cfg)
 {
@@ -273,7 +273,7 @@ int main(int argc, char **argv)
   morfo = new maco(opt);
 
   if (cfg.TAGGER_which == HMM)
-    tagger = new hmm_tagger(cfg.TAGGER_HMMFile, cfg.TAGGER_Retokenize,
+    tagger = new hmm_tagger(cfg.Lang, cfg.TAGGER_HMMFile, cfg.TAGGER_Retokenize,
                             cfg.TAGGER_ForceSelect);
   else if (cfg.TAGGER_which == RELAX)
     tagger = new relax_tagger(cfg.TAGGER_RelaxFile, cfg.TAGGER_RelaxMaxIter,

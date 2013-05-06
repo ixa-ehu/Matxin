@@ -432,7 +432,7 @@ class config {
 
 	// normal process requested. Load config file.
 	std::wifstream fcfg;
-	freeling::util::open_utf8_file(fcfg,freeling::util::string2wstring(ConfigFile));
+	util::open_utf8_file(fcfg,util::string2wstring(ConfigFile));
 	if (fcfg.fail()) {
 	  std::cerr<<"Can not open config file '"+ConfigFile+"'."<<std::endl;
 	  exit(1);
@@ -465,26 +465,26 @@ class config {
 	ExpandFileName(txalaFile);
 	
 	// translate string options (including expanded filenames) to wstrings
-	Lang = freeling::util::string2wstring(language);
-	Locale = freeling::util::string2wstring(locale);
-	TOK_TokenizerFile = freeling::util::string2wstring(tokFile);
-	SPLIT_SplitterFile = freeling::util::string2wstring(splitFile);
-	MACO_Decimal = freeling::util::string2wstring(macoDecimal);
-	MACO_Thousand = freeling::util::string2wstring(macoThousand);
-	MACO_UserMapFile = freeling::util::string2wstring(usermapFile);
-	MACO_LocutionsFile = freeling::util::string2wstring(locutionsFile);
-	MACO_QuantitiesFile = freeling::util::string2wstring(quantitiesFile);
-	MACO_AffixFile = freeling::util::string2wstring(affixFile);
-	MACO_ProbabilityFile = freeling::util::string2wstring(probabilityFile);
-	MACO_DictionaryFile = freeling::util::string2wstring(dictionaryFile);
-	MACO_NPDataFile = freeling::util::string2wstring(npDataFile);
-	MACO_PunctuationFile = freeling::util::string2wstring(punctuationFile);
-	MACO_CorrectorFile = freeling::util::string2wstring(correctorFile);
-	NEC_NECFile = freeling::util::string2wstring(necFile);
-	TAGGER_HMMFile = freeling::util::string2wstring(hmmFile);
-	TAGGER_RelaxFile = freeling::util::string2wstring(relaxFile);
-	PARSER_GrammarFile = freeling::util::string2wstring(grammarFile);
-	DEP_TxalaFile = freeling::util::string2wstring(txalaFile);
+	Lang = util::string2wstring(language);
+	Locale = util::string2wstring(locale);
+	TOK_TokenizerFile = util::string2wstring(tokFile);
+	SPLIT_SplitterFile = util::string2wstring(splitFile);
+	MACO_Decimal = util::string2wstring(macoDecimal);
+	MACO_Thousand = util::string2wstring(macoThousand);
+	MACO_UserMapFile = util::string2wstring(usermapFile);
+	MACO_LocutionsFile = util::string2wstring(locutionsFile);
+	MACO_QuantitiesFile = util::string2wstring(quantitiesFile);
+	MACO_AffixFile = util::string2wstring(affixFile);
+	MACO_ProbabilityFile = util::string2wstring(probabilityFile);
+	MACO_DictionaryFile = util::string2wstring(dictionaryFile);
+	MACO_NPDataFile = util::string2wstring(npDataFile);
+	MACO_PunctuationFile = util::string2wstring(punctuationFile);
+	MACO_CorrectorFile = util::string2wstring(correctorFile);
+	NEC_NECFile = util::string2wstring(necFile);
+	TAGGER_HMMFile = util::string2wstring(hmmFile);
+	TAGGER_RelaxFile = util::string2wstring(relaxFile);
+	PARSER_GrammarFile = util::string2wstring(grammarFile);
+	DEP_TxalaFile = util::string2wstring(txalaFile);
 	
 	// Handle boolean options expressed with --myopt or --nomyopt in command line
 	SetBooleanOptionCL(vm.count("train"),!vm.count("train"),TrainingOutput,"train");
@@ -529,7 +529,7 @@ class config {
 	else if (Tagger=="relax") TAGGER_which = RELAX;
 	else {
 	  TAGGER_which = HMM;
-	  std::wcerr << L"WARNING: Invalid tagger algorithm '"+freeling::util::string2wstring(Tagger)+L"'. Using default." << std::endl;
+	  std::wcerr << L"WARNING: Invalid tagger algorithm '"+util::string2wstring(Tagger)+L"'. Using default." << std::endl;
 	}
 	
 	// Translate ForceSelect string to more useful integer values.
@@ -538,7 +538,7 @@ class config {
 	else if (Force=="retok") TAGGER_ForceSelect = FORCE_RETOK;
 	else {
 	  TAGGER_ForceSelect = FORCE_RETOK;
-	  std::wcerr << L"WARNING: Invalid ForceSelect value '"+freeling::util::string2wstring(Force)+L"'. Using default." << std::endl;
+	  std::wcerr << L"WARNING: Invalid ForceSelect value '"+util::string2wstring(Force)+L"'. Using default." << std::endl;
 	}
 	
 	/* // translate tracmod string (hex) into traces::TraceModule unsinged long */
@@ -559,7 +559,7 @@ class config {
 	if (i==std::string::npos) i=name.size();
 	char* exp=getenv(name.substr(n+1,i-n-1).c_str());
 	if (exp==NULL){
-	  std::wcerr << L"WARNING: Undefined variable "+freeling::util::string2wstring(name.substr(n+1,i-n-1))+L" in configuration file "+freeling::util::string2wstring(ConfigFile)+L" expanded as empty string." << std::endl;
+	  std::wcerr << L"WARNING: Undefined variable "+util::string2wstring(name.substr(n+1,i-n-1))+L" in configuration file "+util::string2wstring(ConfigFile)+L" expanded as empty string." << std::endl;
 	  name = name.substr(0,n) + name.substr(i);
 	}
 	else {
@@ -572,7 +572,7 @@ class config {
     
     void SetBooleanOptionCL (const int pos, const int neg, bool &opt, const std::string &name) {
       if (pos && neg)  
-	std::wcerr << L"WARNING: Ambiguous specification for option --"+freeling::util::string2wstring(name)+L" in command line. Using default value." << std::endl;
+	std::wcerr << L"WARNING: Ambiguous specification for option --"+util::string2wstring(name)+L" in command line. Using default value." << std::endl;
       else if (pos)
 	opt=true;
       else if (neg)
