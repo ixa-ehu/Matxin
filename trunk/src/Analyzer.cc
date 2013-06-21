@@ -167,7 +167,7 @@ void ProcessPlain(const config &cfg, tokenizer *tk, splitter *sp, maco *morfo,
   long unsigned int offset = 0;
   while (true)
   {
-    CppIORedirectHandler ioredirect(cfg);
+    Fd0WcoutRedirectHandler ioredirect(cfg);
 
     wcout << L"<?xml version='1.0' encoding='UTF-8' ?>" << endl;
     if (cfg.write_xslt)
