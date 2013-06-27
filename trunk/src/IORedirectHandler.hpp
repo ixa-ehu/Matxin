@@ -28,6 +28,19 @@ public:
   bool serverOK();
 };
 
+class CppWIORedirectHandler
+{
+  std::wstreambuf *cin_buffer;
+  std::wstreambuf *cout_buffer;
+  std::wifstream *ifs;
+  std::wofstream *ofs;
+  bool ok;
+public:
+  CppWIORedirectHandler(const config &cfg);
+  ~CppWIORedirectHandler();
+  bool serverOK();
+};
+
 class Fd0WcoutRedirectHandler
 {
   int original_stdin;

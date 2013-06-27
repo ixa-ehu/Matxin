@@ -38,6 +38,44 @@ bool CppIORedirectHandler::serverOK()
   return ok;
 }
 
+CppWIORedirectHandler::CppWIORedirectHandler(const config &cfg):cin_buffer(NULL), cout_buffer(NULL), ifs(NULL), ofs(NULL), ok(cfg.server)
+{
+  if (ok)
+  {
+    ifs = new std::wifstream(cfg.InPipe.c_str());
+    if (ifs->fail())
+    {
+      std::cerr << "Cannot open in pipe (" << cfg.InPipe << "). Reverting to Stdio." << std::endl;
+      ok = false;
+    }
+    ofs = new std::wofstream(cfg.OutPipe.c_str());
+    if (ofs->fail())
+    {
+      std::cerr << "Cannot open out pipe (" << cfg.OutPipe << "). Reverting to Stdio." << std::endl;
+      ok = false;
+    }
+
+    if (ok)
+    {
+      cin_buffer = std::wcin.rdbuf(ifs->rdbuf());
+      cout_buffer = std::wcout.rdbuf(ofs->rdbuf());
+    }
+  }
+}
+CppWIORedirectHandler::~CppWIORedirectHandler()
+{
+  if (cin_buffer)
+    std::wcin.rdbuf(cin_buffer);      
+  if (cout_buffer)
+    std::wcout.rdbuf(cout_buffer);      
+  delete ifs;
+  delete ofs;
+}
+bool CppWIORedirectHandler::serverOK()
+{
+  return ok;
+}
+
 #include <unistd.h>
 #include <stdlib.h>
 #include <stdio.h>
