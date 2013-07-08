@@ -282,7 +282,7 @@ vector<wstring> procCHUNK(xmlTextReaderPtr reader, wstring &attributesFromParent
   {
     for (size_t i=0; i < chunk_attributes.size(); i++)
     {
-      tree += L"<CHUNK" + write_xml(chunk_attributes[i]) + L">\n" + chunk_subTrees[i];
+      if (chunk_subTrees[i] != L"") tree += L"<CHUNK" + write_xml(chunk_attributes[i]) + L">\n" + chunk_subTrees[i];
     }
     tree += L"</CHUNK>\n";
   }
@@ -296,11 +296,15 @@ vector<wstring> procCHUNK(xmlTextReaderPtr reader, wstring &attributesFromParent
   if (length > 0)
   {
     chunk_attributes.clear();
-    chunk_attributes.push_back(my_attributes);
-
     chunk_subTrees.clear();
-    chunk_subTrees.push_back(tree);
   }
+  else
+  {
+    tree = L"";
+  }
+
+  chunk_attributes.push_back(my_attributes);
+  chunk_subTrees.push_back(tree);
 
   return chunk_subTrees;
 }
@@ -340,7 +344,7 @@ wstring procSENTENCE (xmlTextReaderPtr reader)
 
     for (size_t i = 0; i < child_attributes.size(); i++)
     {
-      tree += L"<CHUNK" + write_xml(child_attributes[i]) + L">\n" + subTree[i];
+      if (subTree[i] != L"") tree += L"<CHUNK" + write_xml(child_attributes[i]) + L">\n" + subTree[i];
     }
 
     ret = nextTag(reader);
