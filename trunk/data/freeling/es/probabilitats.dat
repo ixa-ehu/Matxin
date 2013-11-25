@@ -38669,7 +38669,7 @@ cuándo PE-PT PE 0 PT 1
 cuánta DE-DT-PE-PT DE 0 DT 1 PE 0 PT 0
 cuántas DE-DT-PE-PT DE 0 DT 1 PE 0 PT 0
 cuánto DE-DT-PE-PT DE 0 DT 1 PE 0 PT 1
-cuántos DE-DT-PE-PT DE 0 DT 0 PE 0 PT 2
+cuántos DE-DT-PE-PT DE 0 DT 2 PE 0 PT 2
 cándido AQ-NP AQ 0 NP 1
 cáscaras I-NC I 0 NC 1
 césar NC-NP NC 0 NP 1
@@ -41196,7 +41196,7 @@ quinto AO-NC-VMI AO 1 NC 1 VMI 0
 quita AQ-NC-VMI-VMM AQ 0 NC 0 VMI 4 VMM 0
 quitas AQ-NC-VMI AQ 0 NC 0 VMI 1
 quién PE-PT PE 0 PT 14
-qué DE-DT-PE-PT DE 14 DT 27 PE 1 PT 93
+qué DE-DT-PE-PT DE 14 DT 87 PE 1 PT 93
 química AQ-NC-NP AQ 3 NC 0 NP 1
 químicas AQ-NC AQ 4 NC 0
 químico AQ-NC AQ 2 NC 0

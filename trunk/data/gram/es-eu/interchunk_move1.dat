@@ -18,13 +18,12 @@ vpost!=''/'[ZERO]'	type=~'adi-'/cas	down	overwrite
 vpost!=''/vpostref	type=~'adi-'/relref	down	overwrite
 vpost!=''/vpostalloc	type=~'adi-'/relalloc	down	overwrite
 
-/'[NUMS]'	type='mend-p'/mi	down	overwrite
-
-/'[NUMS]'	type!~'adi-' && def='[MUGM]' && num='[NUMS]'/mi	down	no-overwrite
-/'[NUMP]'	type!~'adi-' && def='[MUGM]' && num='[NUMP]'/mi	down	no-overwrite
-/'[NUMS]'	type!~'adi-' && def='' && num='[NUMS]'/mi	down	no-overwrite
-/'[NUMP]'	type!~'adi-' && def='' && num='[NUMP]'/mi	down	no-overwrite
-/'[MG]'	type!~'adi-' && def='[MG]'/mi	down	no-overwrite
+#/'[NUMS]'	type='mend-p'/mi	down	overwrite
+#/'[NUMS]'	type!~'adi-' && def='[MUGM]' && num='[NUMS]'/mi	down	no-overwrite
+#/'[NUMP]'	type!~'adi-' && def='[MUGM]' && num='[NUMP]'/mi	down	no-overwrite
+#/'[NUMS]'	type!~'adi-' && def='' && num='[NUMS]'/mi	down	no-overwrite
+#/'[NUMP]'	type!~'adi-' && def='' && num='[NUMP]'/mi	down	no-overwrite
+#/'[MG]'	type!~'adi-' && def='[MG]'/mi	down	no-overwrite
 
 type='adi-pas'/'true'	prep='por'/subject	down	overwrite
 type='adi-pas'/'subj'	prep='por'/si	down	overwrite
@@ -40,7 +39,6 @@ type='ez'/'adi-pas-ez'	type='adi-pas'/type	up	overwrite
 qtype='wh'/'wh'	type=~'adi-'/qtype	up	overwrite
 
 
-si='dobj' && type='mend-p'/'[NUMS]'	type=~'adi-'/objMi	up	overwrite
-si='dobj'/'[NUMS]'	type=~'adi-'/objMi	up	overwrite
-
+#si='dobj' && type='mend-p'/'[NUMS]'	type=~'adi-'/objMi	up	overwrite
+#si='dobj'/'[NUMS]'	type=~'adi-'/objMi	up	overwrite
 

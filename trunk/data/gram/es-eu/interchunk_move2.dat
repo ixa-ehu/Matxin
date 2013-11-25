@@ -1,15 +1,26 @@
 si='subj'/per	type=~'adi-'/subMi	up	overwrite
 si='dobj'/per	type=~'adi-'/objMi	up	overwrite
+
 cas='[DAT]'/per	type=~'adi-'/datMi	up	overwrite
 si='iobj' && cas!='[DAT]'/per	type=~'adi-'/objMi	up	overwrite
+
 si='subj' && per=''/mi	type=~'adi-'/subMi	up	overwrite
 si='iobj' && cas='[ABS]' && per=''/mi	type=~'adi-'/objMi	up	overwrite
+
 cas='[DAT]' && per=''&& mi!='[MG]'/mi	type=~'adi-'/datMi	up	overwrite
 cas='[DAT]' && per='' && mi='[MG]'/'[NUMS]'	type=~'adi-'/datMi	up	overwrite
+
 si='dobj' && per=''/mi	type=~'adi-'/objMi	up	overwrite
 si='dobj' && per='' && leafpos='[Z]'/'[NUMP]'	type=~'adi-'/objMi	up	overwrite
+
+# ¿Cuántas manzanas has comprado? ->  Zenbat sagar erosi DITUZU?
+si='dobj' && per='' && qtype='wh'/num	type=~'adi-'/objMi	up	overwrite
+
+
 si='subj' && per='' && leafpos='[Z]'/'[NUMP]'	type=~'adi-'/subMi	up	overwrite
+
 cas='[DAT]' && per='' && leafpos='[Z]'/'[NUMP]'	type=~'adi-'/datMi	up	overwrite
 si='vsubord'/'[NUMS]'	type=~'adi-'/objMi	up	overwrite
 
 /'yn'	type=~'adi-' && quest='true' && qtype!='wh'/qtype	up	overwrite
+

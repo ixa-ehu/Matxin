@@ -4805,8 +4805,35 @@ grup-verb  subj  d.label=grup-verb-inf  d.side=right  p.class=intr
 %%% SUBJECTE POSTVERBAL: NOMS PROPIS SENSE PREPOSICIO %%%
 grup-verb  subj  d.label=sn*  d.side=right  d.pos=NP00000
 
+
+
+%%% OBJETO DIRECTO PREVERBAL %%% MATXIN-Aingeru
+
+% MATXIN-Aingeru: Con estas reglas evitamos que ponga sujeto cuando no concuerdan el sn y el verbo, poniendo doj
+% En singular (El libro ya lo hemos comprado)
+grup-verb  dobj  d.label=sn* d.side=left d.pos=NC.S.*|PT..S* p.pos!=V...3S. p:vaux.pos!=V...3S. 
+% En plural (Los libros ya los hemos comprado) siempre que el sn no sea humano (Los profesores comemos tarde)
+grup-verb  dobj  d.label=sn* d.side=left d.pos=NC.P.* p.pos!=V...3P. p:vaux.pos!=V...3P.  d.tonto!=Human
+
+% '¿Cuantos libros han comprado?' convertir a dob si no es humano, como en '¿Cuántos padres han comprado manzanas?')
+% También ¿Qué plato ha roto el niño? ((Qué: DT0CN0))
+grup-verb  dobj  d.label=sn*  d.side=left d:espec-ms.pos=DT0MS0|DT0CN0 d.tonto!=Human
+grup-verb  dobj  d.label=sn*  d.side=left d:espec-mp.pos=DT0MP0|DT0CN0 d.tonto!=Human
+grup-verb  dobj  d.label=sn*  d.side=left d:espec-fs.pos=DT0FS0|DT0CN0 d.tonto!=Human
+grup-verb  dobj  d.label=sn*  d.side=left d:espec-fp.pos=DT0FP0|DT0CN0 d.tonto!=Human
+
+% '¿Cuantos has comprado?' convertir a dob a no ser que haya otro sn ('¿Cuántos padres han comprado manzanas?')
+grup-verb  dobj  d.label=sn*  d.side=left d:espec-ms.pos=PT0MS000 As.label!=sn* 
+grup-verb  dobj  d.label=sn*  d.side=left d:espec-mp.pos=PT0MP000 As.label!=sn* 
+grup-verb  dobj  d.label=sn*  d.side=left d:espec-fs.pos=PT0FS000 As.label!=sn* 
+grup-verb  dobj  d.label=sn*  d.side=left d:espec-fp.pos=PT0FP000 As.label!=sn* 
+
+
 %%% SUBJECTE PREVERBAL %%%
-grup-verb  subj  d.label=sn*  d.side=left
+
+grup-verb  subj  d.label=sn*  d.side=left 
+
+
 grup-verb  subj  d.label=coor-n  d.side=left
 grup-verb  subj  d.label=subord  d.side=left  d.lemma=que|qui
 grup-verb  subj  d.label=grup-verb-inf  d.side=left
@@ -4899,6 +4926,12 @@ grup-verb-inf  dobj  d.label=coor-n  d.side=right
 subord-ger  dobj  d.label=coor-n  d.side=right
 subord-part  dobj  d.label=coor-n  d.side=right
 
+
+%%% SUJETO POST-VERBAL   (MATXIN- Aingeru)
+% ¿Cuántos libros compraron LAS MADRES?
+grup-verb  subj  d.label=sn*  d.side=right d.tonto=Human
+
+
 %%% ATRIBUT DE VERBS COPULATIUS: PRONOMS ATONS %%%
 grup-verb  att  d.label=patons  d.pos=PP3CNA00  p.class=atrib
 grup-verb-inf  att  d.label=patons  d.pos=PP3CNA00  p.class=atrib
@@ -4938,6 +4971,8 @@ grup-verb-inf  dobj  d.label=numero  d.side=right  p.class!=intr|atrib
 subord-ger  dobj  d.label=numero  d.side=right  p.class!=intr|atrib
 subord-part  dobj  d.label=numero  d.side=right  p.class!=intr|atrib
 verb-pass  agent  d.label=grup-sp  d:grup-sp.lemma=por
+
+
 
 %%% AGENT EN CONSTRUCCIONS PASSIVES %%%
 inf-pas  agent  d.label=grup-sp  d:grup-sp.lemma=por
