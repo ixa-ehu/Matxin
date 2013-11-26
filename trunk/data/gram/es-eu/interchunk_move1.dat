@@ -13,7 +13,7 @@ spost!='' && ref='1'/spostalloc	ref='2'/casalloc	down	overwrite
 type='mend-p'/vpost	type='zehazt-s'/'+[DEK][ABS][NUMS]'	up	concat 
 type='mend-p'/vpost	type='zehazt-p'/'+[DEK][ABS][NUMP]'	up	concat 
 
-vpost!=''/vpost	type=~'adi-'/rel	down	overwrite
+type='mend-p' && vpost!=''/vpost	type=~'adi-'/rel	down	overwrite
 vpost!=''/'[ZERO]'	type=~'adi-'/cas	down	overwrite
 vpost!=''/vpostref	type=~'adi-'/relref	down	overwrite
 vpost!=''/vpostalloc	type=~'adi-'/relalloc	down	overwrite

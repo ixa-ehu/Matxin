@@ -940,6 +940,12 @@
 4035 - prel-adv_$$ (grup-verb,coor-sadv) top_left RELABEL - % dins de subordinada
 7035 - - (grup-verb,coor-sadv) top_left RELABEL - % (habla (ayer y hoy))
 
+
+%%% SINTAGMA ADVERBIAL {PT} + VERB
+%%% preguntan [<cómo> <han llegado>]
+%% MATXIN - Aingeru
+7036 - grup-verb_$$ (sadv{PT},grup-verb) top_left RELABEL subord % preguntan [<cómo> <han llegado>] 
+
 %%% VERB + SINTAGMA ADVERBIAL %%%
 
 4037 - conj-subord_$$ (grup-verb,sadv) top_left RELABEL - % dins de subordinada

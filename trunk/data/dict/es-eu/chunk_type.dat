@@ -18,6 +18,7 @@ coor-vb	emen-as	#sintagma verbal que contiene una conjunción coordinada	emendio
 coor-adj	emen-adjs	#sintagma adjetivo que contiene una conjunción coordinada	emendiozko juntagailua duen adjektibo-sintagma
 verb-pass	adi-pas	#verbo en forma pasiva	espainieraz aditz pasiboa agertzen den chunk-a/aditz-transferentziara doan guztia
 subord	mend-p	#oración subordinada	mendeko perpausa
+subord-rel	mend-p	#oración subordinada de relativo	erlatibozko mendeko perpausa
 conj-subord	mend	#conjunción subordinada	menderagailua
 subord-ger	adi-ger-mend	#subordinada con un gerundio	gerundiodun menderagailua
 sn-que	erlt-sint	#sintagma nominal que contiene un pronombre relativo "que"	erlatibozko sintagma

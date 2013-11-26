@@ -41885,7 +41885,7 @@ titular AQ-NC-VMN AQ 0 NC 1 VMN 0
 toca NC-VMI-VMM NC 0 VMI 1 VMM 0
 tocador AQ-NC AQ 0 NC 1
 toda DI-PI DI 60 PI 1
-todas DI-PI DI 60 PI 3
+todas DI-PI DI 60 PI 60
 toditos NC-PI NC 0 PI 1
 todo DI-NC-PI-RG DI 91 NC 1 PI 70 RG 0
 todo_lo_contrario I-RG I 1 RG 1
@@ -41994,7 +41994,7 @@ u CC-NC CC 8 NC 0
 ultralimpias AQ-NC-VMI AQ 1 NC 0 VMI 0
 ultramarinos AQ-NC AQ 0 NC 1
 un DI-Z DI 1251 Z 16
-una DI-PI-VMM-VMS-Z DI 894 PI 25 VMM 0 VMS 0 Z 20
+una DI-PI-VMM-VMS-Z DI 894 PI 894 VMM 0 VMS 0 Z 20
 unas DI-PI-VMS DI 33 PI 2 VMS 0
 une VMI-VMM VMI 3 VMM 0
 ungido NC-VMP NC 0 VMP 1
@@ -42051,9 +42051,9 @@ vaqueros AQ-NC AQ 0 NC 1
 varas NC-VMI NC 1 VMI 0
 variable AQ-NC AQ 2 NC 0
 variantes AQ-NC AQ 0 NC 1
-varias AQ-DI-PI AQ 0 DI 10 PI 0
+varias AQ-DI-PI AQ 0 DI 10 PI 10
 variolosos AQ-NC AQ 1 NC 0
-varios AQ-DI-NC-PI AQ 0 DI 13 NC 0 PI 1
+varios AQ-DI-NC-PI AQ 0 DI 13 NC 0 PI 13
 vas NC-VMI NC 0 VMI 2
 vasca AQ-NC AQ 1 NC 0
 vasco AQ-NC AQ 4 NC 0

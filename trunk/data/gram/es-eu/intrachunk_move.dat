@@ -6,18 +6,28 @@ mi='[MG]'/mi	type!='adi-kat'/def	overwrite
 cas!=''/cas	/cas	concat
 cas!=''/ref	/casref	concat
 cas!=''/alloc	/casalloc	concat
+
 vpost!=''/vpost	/vpost	overwrite
 vpost!=''/ref	/vpostref	overwrite
 vpost!=''/alloc	/vpostalloc	overwrite
+
+pos='[ADB][ADOGAL]'/'+n[ERL][MEN][MOS]'	type='mend-p'/vpost	overwrite
+%Gehitu:
+%vpost!=''/ref	/vpostref	overwrite
+%vpost!=''/alloc	/vpostalloc	overwrite
+
 spost!=''/spost	/spost	concat
 spost!=''/ref	/spostref	concat
 spost!=''/alloc	/spostalloc	concat
+
 npost!=''/npost	/npost	concat
 npost!=''/ref	/npostref	concat
 npost!=''/alloc	/npostalloc	concat
+
 prep!=''/prep	/prep	concat
 prep!=''/ref	/casref	concat
 prep!=''/alloc	/casalloc	concat
+
 lem='' && prep='' && sub='' && cas=''/ref	/casref	concat
 lem='' && prep='' && sub='' && cas=''/alloc	/casalloc	concat
 

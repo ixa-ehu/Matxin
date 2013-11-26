@@ -964,6 +964,8 @@ sadv ==> RG(junto), SPS00(a), +sadv.
 % EL SINTAGMA VERBAL %%SV%% TINDR`A UN GRUP-VERBAL I ALTRES SINTAGMES.
 %%%%%%%%
 
+prop ==> sadv, +sv.				% MATXIN/Aingeru preguntan cómo venir
+
 sv ==> +grup-verb, sn, prop.
 sv ==> +grup-verb, s-adj.
 sv ==> +grup-verb, s-adj, grup-sp.
