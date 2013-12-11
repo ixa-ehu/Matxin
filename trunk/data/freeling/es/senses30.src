@@ -38205,7 +38205,7 @@
 15134340-n espacio intervalo
 15134490-n período
 15134913-n valor valor_del_tiempo
-15136147-n semana
+15136147-n semana semana_pasada semana_que_viene
 15136342-n media_semana
 15137676-n ocio
 15137890-n vacaciones

@@ -4789,12 +4789,21 @@
 UNIQUE subj
 UNIQUE dobj
 
+
 %%% CIRCUMSTANCIAL: SN AMB VALOR TEMPORAL %%%
-grup-verb  cc  d.label=sn*  d.tonto=Time
+grup-verb  cc  d.label=sn*  d.tonto=Time 
 verb-pass  cc  d.label=sn*  d.tonto=Time
 grup-verb-inf  cc  d.label=sn*  d.tonto=Time
 subord-ger  cc  d.label=sn*  d.tonto=Time
 subord-part  cc  d.label=sn*  d.tonto=Time
+%MATXIN(Aingeru): modificado para que ponga cc sólo si el verbo es intranstitivo o durar|tardar
+%%% CIRCUMSTANCIAL: SN AMB VALOR TEMPORAL %%%
+%grup-verb  cc  d.label=sn*  d.tonto=Time p.class=intr
+%verb-pass  cc  d.label=sn*  d.tonto=Time p.class=intr
+%grup-verb-inf  cc  d.label=sn*  d.tonto=Time p.class=intr
+%subord-ger  cc  d.label=sn*  d.tonto=Time p.class=intr
+%subord-part  cc  d.label=sn*  d.tonto=Time p.class=intr
+
 
 %%% CIRCUMSTANCIAL: "HACER X TIEMPO" %%%
 grup-verb  cc  d.label=sn*  d.lemma=hacer

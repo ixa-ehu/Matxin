@@ -14576,6 +14576,7 @@ en_casa_de_el_herrero_cuchillo_de_palo en_casa_del_herrero_cuchillo_de_palo RG I
 en_caso_de en_caso_de SPS00 I
 en_caso_de_fuerza_mayor en_caso_de_fuerza_mayor RG I
 en_caso_de_que en_caso_de_que CS I
+en_castellano en_castellano RG I
 en_celo en_celo RG I
 en_chancletas en_chancletas RG I
 en_cierne en_cierne RG I
@@ -14678,12 +14679,14 @@ en_el_término_de en_el_término_de SPS00 I
 en_el_ínterin en_el_ínterin RG I
 en_entredicho en_entredicho RG I
 en_espaldera en_espaldera RG I
+en_español en_español RG I
 en_especial en_especial RG I
 en_especie en_especie RG I
 en_espera_de en_espera_de SPS00 I
 en_esta_ocasión en_esta_ocasión RG I
 en_esta_parte en_esta_parte $3:NC I
 en_este_mismo_instante en_este_mismo_instante RG I
+en_euskara en_euskara RG I
 en_evitación_de en_evitación_de SPS00 I
 en_exceso en_exceso RG I
 en_falso en_falso RG I
@@ -14694,6 +14697,7 @@ en_fila_india en_fila_india RG I
 en_fin en_fin RG I
 en_fin_de_cuentas en_fin_de_cuentas RG I
 en_flor en_flor RG I
+en_francés en_francés RG I
 en_franquía en_franquía RG I
 en_frente en_frente RG I
 en_frío en_frío RG I
@@ -14712,10 +14716,12 @@ en_honor_de en_honor_de SPS00 I
 en_horre en_horre RG I
 en_igualdad_de_condiciones en_igualdad_de_condiciones RG I
 en_inferioridad_de_condiciones en_inferioridad_de_condiciones RG I
+en_inglés en_inglés RG I
 en_interés en_interés RG I
 en_interés_casacional en_interés_casacional RG I
 en_interés_de en_interés_de SPS00 I
 en_interés_particular en_interés_particular RG I
+en_italiano en_italiano RG I
 en_junto en_junto RG I
 en_la_actualidad en_la_actualidad RG I
 en_la_cuerda_floja en_la_cuerda_floja RG I
@@ -14934,6 +14940,7 @@ en_una_tirada en_una_tirada RG I
 en_unas_palabras en_unas_palabras RG I
 en_vano en_vano RG I
 en_varias_ocasiones en_varias_ocasiones RG I
+en_vasco en_vasco RG I
 en_vela en_vela RG I
 en_vez_de en_vez_de SPS00 I
 en_vez_de_que en_vez_de_que CS I

@@ -40958,7 +40958,7 @@ pobre AQ-I-NC AQ 8 I 0 NC 1
 pobres AQ-NC AQ 4 NC 7
 poca DI-PI DI 4 PI 0
 pocas DI-PI DI 9 PI 0
-poco DI-PI-RG DI 10 PI 27 RG 44
+poco DI-PI-RG DI 10 PI 44 RG 44
 pocos DI-PI DI 10 PI 7
 podamos VMI-VMM-VMS VMI 0 VMM 0 VMS 1
 podemos VMI-VMM-VMS VMI 11 VMM 0 VMS 0
@@ -41818,7 +41818,7 @@ tamaño AQ-NC AQ 0 NC 5
 tamaños AQ-NC AQ 0 NC 3
 tanta DI-PI DI 7 PI 0
 tantas DI-PI DI 8 PI 0
-tanto CC-DI-NC-PI-RG CC 0 DI 9 NC 1 PI 0 RG 65
+tanto CC-DI-NC-PI-RG CC 0 DI 9 NC 1 PI 0 RG 15
 tantos DI-NC-PI DI 13 NC 0 PI 0
 tapias NC-VMI NC 1 VMI 0
 tapones NC-VMS NC 1 VMS 0
