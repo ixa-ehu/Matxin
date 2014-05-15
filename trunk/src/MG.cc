@@ -62,8 +62,7 @@ wstring keep_case(wstring form, wstring UpCase)
 
 
 wstring verb_generation(wstring lemma, wstring pos, wstring suf, wstring cas,
-                        wstring mi, wstring chunk_mi, wstring head_sem,
-                        bool &flexioned, config cfg)
+                        wstring mi, wstring head_sem, bool &flexioned, config cfg)
 {
   wstring analisys, form, prefix, postposizio, pre_lemma, lemma_osoa;
   lemma_osoa = lemma;
@@ -172,7 +171,7 @@ wstring verb_generation(wstring lemma, wstring pos, wstring suf, wstring cas,
     wcerr << lemmaMorf << endl;
 
 
-  analisys = L"^" + get_generation_order(prefix, lemmaMorf, chunk_mi, cas, head_sem) + L"$";
+  analisys = L"^" + get_generation_order(prefix, lemmaMorf, mi, cas, head_sem) + L"$";
 
   if (cfg.DoGenTrace)
     wcerr << analisys << endl;
@@ -182,7 +181,7 @@ wstring verb_generation(wstring lemma, wstring pos, wstring suf, wstring cas,
   if (analisys.find(L"Lema") != wstring::npos)
     analisys.replace(analisys.find(L"Lema"), 4, lemma);
   if (analisys.find(L"Num") != wstring::npos)
-    analisys.replace(analisys.find(L"Num"), 3, chunk_mi);
+    analisys.replace(analisys.find(L"Num"), 3, mi);
   if (analisys.find(L"Kas") != wstring::npos)
   {
     analisys.replace(analisys.find(L"Kas"), 3, cas);
@@ -689,8 +688,8 @@ wstring procNODE(xmlTextReaderPtr reader, wstring chunk_type, config cfg)
 
     if (chunk_type.substr(0, 4) == L"adi-")
     {
-      form = verb_generation(lem, pos, suf, cas, attrib(reader, "mi"),
-                             mi, head_sem, flexioned, cfg);
+      form = verb_generation(lem, pos, suf, cas, mi, head_sem,
+			     flexioned, cfg);
     }
     else if (pos == L"[W]")
     {

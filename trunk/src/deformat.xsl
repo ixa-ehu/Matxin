@@ -251,12 +251,7 @@ void init_escape()
 
 void init_tagNames()
 {  
-  if(regcomp(&amp;names_regexp, "<xsl:call-template name="replaceString">
-      <xsl:with-param name="haystack" 
-		      select="/format/options/tag-name/@regexp"/>
-      <xsl:with-param name="needle" select="string('\')"/>
-      <xsl:with-param name="replacement" select="string('\\')"/>
-    </xsl:call-template>", REG_EXTENDED))
+  if(regcomp(&amp;names_regexp, "<xsl:value-of select="/format/options/tag-name/@regexp"/>", REG_EXTENDED))
   {
     cerr &lt;&lt; "ERROR: Illegal regular expression for tag-names" &lt;&lt; endl;
     exit(EXIT_FAILURE);

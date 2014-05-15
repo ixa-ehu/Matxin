@@ -232,11 +232,12 @@ vector<wstring> get_translation(wstring lem, wstring mi,
       input = L"^@" + lem + L"<parol>" + mi + L"$";
       trad = fstp.biltrans(input);
       trad = trad.substr(3, trad.size() - 4);
-      if (trad[0] == L'@')
-        trad.erase(0, 1);
+      // if (trad[0] == L'@')
+      //   trad.erase(0, 1);
 
-      if (trad[0] == L'@' || trad.find(L">") < trad.find(L"<"))
+      if (trad[0] == L'@' || trad.find(L">") < trad.find(L"<")) {
         trad = lem + L"<pos>" +  mi.substr(0, 2);
+      }
     }
     unknown = true;
   }
