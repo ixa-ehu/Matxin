@@ -1,3 +1,6 @@
+<TagsetFile>
+./tags.dat
+</TagsetFile>
 <Forbidden>
 *.PT.NC
 *.VAI<haber>.SP

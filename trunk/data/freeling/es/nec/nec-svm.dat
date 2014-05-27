@@ -6,7 +6,7 @@ SVM
 </Classifier>
 <RGF>
 nec.rgf
-<RGF>
+</RGF>
 <ModelFile>
 nec.svm
 </ModelFile>

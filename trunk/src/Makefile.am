@@ -6,34 +6,34 @@ bin_PROGRAMS = Analyzer LT ST_intra ST_inter ST_prep ST_verb SG_inter SG_intra S
 bin_SCRIPTS = Matxin_translator fst2regex.pl
 
 Analyzer_SOURCES = Analyzer.cc IORedirectHandler.cc IORedirectHandler.hpp
-Analyzer_LDADD = -lfreeling -lboost_filesystem -lboost_program_options
+Analyzer_LDADD = -lfreeling -lboost_system -lboost_program_options
 
 LT_SOURCES = LT.cc utf_converter.cc data_manager.cc XML_reader.cc simpleregex.cc matxin_string_utils.cc matxin_string_utils.h IORedirectHandler.cc IORedirectHandler.hpp
-LT_LDADD = -lfreeling -lfoma -lboost_filesystem -lboost_program_options
+LT_LDADD = -lfreeling -lfoma -lboost_system -lboost_program_options
 
 ST_intra_SOURCES = ST_intra.cc utf_converter.cc data_manager.cc XML_reader.cc simpleregex.cc matxin_string_utils.cc matxin_string_utils.h IORedirectHandler.cc IORedirectHandler.hpp
-ST_intra_LDADD = -lfreeling -lfoma -lboost_filesystem -lboost_program_options
+ST_intra_LDADD = -lfreeling -lfoma -lboost_system -lboost_program_options
 
 ST_inter_SOURCES = ST_inter.cc utf_converter.cc data_manager.cc XML_reader.cc simpleregex.cc matxin_string_utils.cc matxin_string_utils.h IORedirectHandler.cc IORedirectHandler.hpp
-ST_inter_LDADD = -lfreeling -lfoma -lboost_filesystem -lboost_program_options
+ST_inter_LDADD = -lfreeling -lfoma -lboost_system -lboost_program_options
 
 ST_prep_SOURCES = ST_prep.cc utf_converter.cc data_manager.cc XML_reader.cc simpleregex.cc matxin_string_utils.cc matxin_string_utils.h IORedirectHandler.cc IORedirectHandler.hpp
-ST_prep_LDADD = -lfreeling -lfoma -lboost_filesystem -lboost_program_options
+ST_prep_LDADD = -lfreeling -lfoma -lboost_system -lboost_program_options
 
 ST_verb_SOURCES = ST_verb.cc utf_converter.cc data_manager.cc XML_reader.cc simpleregex.cc matxin_string_utils.cc matxin_string_utils.h IORedirectHandler.cc IORedirectHandler.hpp
-ST_verb_LDADD = -lfreeling -lfoma -lboost_filesystem -lboost_program_options
+ST_verb_LDADD = -lfreeling -lfoma -lboost_system -lboost_program_options
 
 SG_inter_SOURCES = SG_inter.cc utf_converter.cc data_manager.cc XML_reader.cc simpleregex.cc matxin_string_utils.cc matxin_string_utils.h IORedirectHandler.cc IORedirectHandler.hpp
-SG_inter_LDADD = -lfreeling -lfoma -lboost_filesystem -lboost_program_options
+SG_inter_LDADD = -lfreeling -lfoma -lboost_system -lboost_program_options
 
 SG_intra_SOURCES = SG_intra.cc utf_converter.cc data_manager.cc XML_reader.cc simpleregex.cc matxin_string_utils.cc matxin_string_utils.h IORedirectHandler.cc IORedirectHandler.hpp
-SG_intra_LDADD = -lfreeling -lfoma -lboost_filesystem -lboost_program_options
+SG_intra_LDADD = -lfreeling -lfoma -lboost_system -lboost_program_options
 
 SG_move_SOURCES = SG_move.cc utf_converter.cc data_manager.cc XML_reader.cc simpleregex.cc matxin_string_utils.cc matxin_string_utils.h IORedirectHandler.cc IORedirectHandler.hpp
-SG_move_LDADD = -lfreeling -lfoma -lboost_filesystem -lboost_program_options
+SG_move_LDADD = -lfreeling -lfoma -lboost_system -lboost_program_options
 
 MG_SOURCES = MG.cc data_manager.cc utf_converter.cc XML_reader.cc simpleregex.cc matxin_string_utils.cc matxin_string_utils.h IORedirectHandler.cc IORedirectHandler.hpp
-MG_LDADD = -lfreeling -lfoma -lboost_filesystem -lboost_program_options
+MG_LDADD = -lfreeling -lfoma -lboost_system -lboost_program_options
 
 reFormat_SOURCES = reFormat.cc utf_converter.cc data_manager.cc XML_reader.cc simpleregex.cc matxin_string_utils.cc matxin_string_utils.h IORedirectHandler.cc IORedirectHandler.hpp
 reFormat_LDADD = -lfoma

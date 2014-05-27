@@ -273,7 +273,9 @@ int main(int argc, char **argv)
   morfo = new maco(opt);
 
   if (cfg.TAGGER_which == HMM)
-    tagger = new hmm_tagger(cfg.Lang, cfg.TAGGER_HMMFile, cfg.TAGGER_Retokenize,
+    // tagger = new hmm_tagger(cfg.Lang, cfg.TAGGER_HMMFile, cfg.TAGGER_Retokenize,
+    //                         cfg.TAGGER_ForceSelect);
+    tagger = new hmm_tagger(cfg.TAGGER_HMMFile, cfg.TAGGER_Retokenize,
                             cfg.TAGGER_ForceSelect);
   else if (cfg.TAGGER_which == RELAX)
     tagger = new relax_tagger(cfg.TAGGER_RelaxFile, cfg.TAGGER_RelaxMaxIter,

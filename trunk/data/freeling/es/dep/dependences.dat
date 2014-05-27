@@ -944,8 +944,8 @@
 %%% SINTAGMA ADVERBIAL {PT} + VERB
 %%% preguntan [<cómo> <han llegado>]
 %% MATXIN - Aingeru
-7036 - grup-verb_$$ (sadv{PT},grup-verb) top_left RELABEL subord % preguntan [<cómo> <han llegado>] 
-7036 - grup-verb_$$ (sadv{PT},grup-verb-inf) top_left RELABEL subord % preguntan [<cómo> <llegar>] 
+%7036 - grup-verb_$$ (sadv{PT},grup-verb) top_left RELABEL subord % preguntan [<cómo> <han llegado>] 
+%7036 - grup-verb_$$ (sadv{PT},grup-verb-inf) top_left RELABEL subord % preguntan [<cómo> <llegar>] 
 
 %%% VERB + SINTAGMA ADVERBIAL %%%
 

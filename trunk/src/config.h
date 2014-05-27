@@ -53,6 +53,8 @@ namespace po = boost::program_options;
 #define FORCE_TAGGER 1
 #define FORCE_RETOK  2
 
+using namespace freeling;
+
 ////////////////////////////////////////////////////////////////
 ///  Class config implements a set of specific options
 /// for the NLP analyzer, providing a C++ wrapper to 
