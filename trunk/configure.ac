@@ -354,15 +354,15 @@ then
   AC_MSG_ERROR([dicc2phon not found. You may want to adjust your PATH.])
 fi
 
-AC_PATH_PROG(CONVERTDICT, convertdict, no)
-if test x$ac_cv_path_CONVERTDICT = x
-then
-  AC_MSG_ERROR([convertdict not found. You may want to adjust your PATH.])
-fi
-if test x$ac_cv_path_CONVERTDICT = xno
-then
-  AC_MSG_ERROR([convertdict not found. You may want to adjust your PATH.])
-fi
+dnl AC_PATH_PROG(CONVERTDICT, convertdict, no)
+dnl if test x$ac_cv_path_CONVERTDICT = x
+dnl then
+dnl   AC_MSG_ERROR([convertdict not found. You may want to adjust your PATH.])
+dnl fi
+dnl if test x$ac_cv_path_CONVERTDICT = xno
+dnl then
+dnl   AC_MSG_ERROR([convertdict not found. You may want to adjust your PATH.])
+dnl fi
 
 AC_PATH_PROG(COMPILEKB, compile_kb, no)
 if test x$ac_cv_path_COMPILEKB = x
